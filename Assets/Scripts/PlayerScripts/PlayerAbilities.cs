@@ -109,15 +109,14 @@ public class PlayerAbilities : MonoBehaviour {
     {
         if(!coroutineCalled)
         {
-            StartCoroutine("Reflect");
             coroutineCalled = true;
+            StartCoroutine("Reflect");
         }
     }
 
     IEnumerator Reflect()
     {
         reflect.SetActive(true);
-        cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         yield return new WaitForSeconds(2f);
         reflect.SetActive(false);
         coroutineCalled = false;
