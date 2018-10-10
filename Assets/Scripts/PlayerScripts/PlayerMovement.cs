@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D playerRigidbody;
-    private float horizontalMovement;
-    private float verticalMovement;
+    public Rigidbody2D playerRigidbody;
+    public float horizontalMovement;
+    public float verticalMovement;
     public float movementSpeed = 5;
 
 	// Use this for initialization
