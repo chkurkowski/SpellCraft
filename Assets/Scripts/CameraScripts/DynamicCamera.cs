@@ -8,12 +8,6 @@ public class DynamicCamera : MonoBehaviour
     public GameObject Boss;
     private float distance;
     private float zoomSize;
-
-	// Use this for initialization
-	void Start () 
-    {
-
-	}
 	
 	// Update is called once per frame
 	void Update ()
@@ -28,6 +22,5 @@ public class DynamicCamera : MonoBehaviour
         {
             GetComponent<Camera>().orthographicSize = zoomSize;
         }
-
     }
 }
