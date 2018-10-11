@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public PlayerAbilities abilities;
     public Rigidbody2D playerRigidbody;
     public float horizontalMovement;
     public float verticalMovement;
@@ -13,12 +14,14 @@ public class PlayerMovement : MonoBehaviour
 	void Start ()
     {
         playerRigidbody = gameObject.GetComponent<Rigidbody2D>();
+        abilities = GetComponent<PlayerAbilities>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Movement();
+        if(abilities.state.ToString() != "EVADE")
+            Movement();
 	}
 
     public void Movement()

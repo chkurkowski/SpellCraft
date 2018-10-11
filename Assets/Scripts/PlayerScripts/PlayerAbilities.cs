@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerAbilities : MonoBehaviour {
 
+    //Public World Variables
     public GameObject fireball;
     public GameObject reflect;
     public PlayerMovement movement;
+    public Vector2 cursorInWorldPos;
 
+    //FSM Variables
     public enum State {
         IDLE,
         LONGATK,
@@ -18,11 +21,18 @@ public class PlayerAbilities : MonoBehaviour {
         LR
     }
     public State state;
-    public float atkSpeed = 25;
-    public Vector2 cursorInWorldPos;
 
+    //Attack Variables
+    public float atkSpeed = 25;
+
+    //Dash Variables
+    public float dashSpeed;
+    public float dashDistance;
+
+    //Booleans
     private bool alive;
-    private bool coroutineCalled;
+    private bool reflectCalled;
+    private bool evadeCalled;
 
     //Ability timers
     private float LONGATKCOOLDOWN = 1f;
@@ -35,7 +45,8 @@ public class PlayerAbilities : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         alive = true;
-        coroutineCalled = false;
+        reflectCalled = false;
+        evadeCalled = false;
         longATKTimer = LONGATKCOOLDOWN;
         evadeTimer = EVADECOOLDOWN;
         reflectTimer = REFLECTCOOLDOWN;
@@ -61,7 +72,7 @@ public class PlayerAbilities : MonoBehaviour {
                     LongAttack();
                     break;
                 case State.EVADE:
-                    Evade();
+                    EvadeHandler();
                     break;
                 case State.REFLECT:
                     ReflectHandler();
@@ -99,17 +110,30 @@ public class PlayerAbilities : MonoBehaviour {
         state = State.IDLE;
     }
 
-    public void Evade()
+    public void EvadeHandler()
     {
+        if(!evadeCalled)
+        {
+            evadeCalled = true;
+            StartCoroutine("Evade");
+        }
+    }
 
+    IEnumerator Evade()
+    {
+        Vector2 direction = cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
+        direction.Normalize();
+        gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(.5f);
+        evadeCalled = false;
         state = State.IDLE;
     }
 
     public void ReflectHandler()
     {
-        if(!coroutineCalled)
+        if(!reflectCalled)
         {
-            coroutineCalled = true;
+            reflectCalled = true;
             StartCoroutine("Reflect");
         }
     }
@@ -119,7 +143,7 @@ public class PlayerAbilities : MonoBehaviour {
         reflect.SetActive(true);
         yield return new WaitForSeconds(2f);
         reflect.SetActive(false);
-        coroutineCalled = false;
+        reflectCalled = false;
         state = State.IDLE;
     }
 
