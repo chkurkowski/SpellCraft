@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D playerRigidbody;
-    private float horizontalMovement;
-    private float verticalMovement;
+    public PlayerAbilities abilities;
+    public Rigidbody2D playerRigidbody;
+    public float horizontalMovement;
+    public float verticalMovement;
     public float movementSpeed = 5;
 
 	// Use this for initialization
 	void Start ()
     {
         playerRigidbody = gameObject.GetComponent<Rigidbody2D>();
+        abilities = GetComponent<PlayerAbilities>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Movement();
+        if(abilities.GetTimer("evade") >= abilities.GetCooldown("evade"))
+            Movement();
 	}
 
     public void Movement()
