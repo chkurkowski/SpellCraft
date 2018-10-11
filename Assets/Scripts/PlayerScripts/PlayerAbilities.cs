@@ -95,6 +95,7 @@ public class PlayerAbilities : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Space) && evadeTimer >= EVADECOOLDOWN)
         {
             evadeTimer = 0f;
+            gameObject.GetComponent<Collider2D>().enabled = false;
             state = State.EVADE;
         }
 
@@ -153,6 +154,8 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 
+        if(evadeTimer >= EVADECOOLDOWN)
+            gameObject.GetComponent<Collider2D>().enabled = true;
         if (reflectTimer >= 2f)
             reflect.SetActive(false);
     }
