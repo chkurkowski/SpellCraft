@@ -31,13 +31,12 @@ public class PlayerAbilities : MonoBehaviour {
 
     //Booleans
     private bool alive;
-    private bool reflectCalled;
     private bool evadeCalled;
 
     //Ability timers
-    private float LONGATKCOOLDOWN = 1f;
-    private float EVADECOOLDOWN = 1f;
-    private float REFLECTCOOLDOWN = 1f;
+    private const float LONGATKCOOLDOWN = .35f;
+    private const float EVADECOOLDOWN = .6f;
+    private const float REFLECTCOOLDOWN = 3f;
     private float longATKTimer;
     private float evadeTimer;
     private float reflectTimer;
@@ -45,7 +44,6 @@ public class PlayerAbilities : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         alive = true;
-        reflectCalled = false;
         evadeCalled = false;
         longATKTimer = LONGATKCOOLDOWN;
         evadeTimer = EVADECOOLDOWN;
@@ -72,10 +70,10 @@ public class PlayerAbilities : MonoBehaviour {
                     LongAttack();
                     break;
                 case State.EVADE:
-                    EvadeHandler();
+                    Evade();
                     break;
                 case State.REFLECT:
-                    ReflectHandler();
+                    Reflect();
                     break;
             }
             yield return null;
@@ -84,19 +82,25 @@ public class PlayerAbilities : MonoBehaviour {
 
     public void Idle()
     {
+        TimerHandler();
+
         cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         if (Input.GetKeyDown(KeyCode.Mouse0) && longATKTimer >= LONGATKCOOLDOWN)
         {
+            longATKTimer = 0f;
             state = State.LONGATK;
         }
 
         if(Input.GetKeyDown(KeyCode.Space) && evadeTimer >= EVADECOOLDOWN)
         {
+            evadeTimer = 0f;
             state = State.EVADE;
         }
 
-        if(Input.GetKeyDown(KeyCode.R) && reflectTimer >= REFLECTCOOLDOWN)
+        if(Input.GetKeyDown(KeyCode.Mouse1) && reflectTimer >= REFLECTCOOLDOWN)
         {
+            reflectTimer = 0f;
             state = State.REFLECT;
         }
     }
@@ -110,45 +114,66 @@ public class PlayerAbilities : MonoBehaviour {
         state = State.IDLE;
     }
 
-    public void EvadeHandler()
-    {
-        if(!evadeCalled)
-        {
-            evadeCalled = true;
-            StartCoroutine("Evade");
-        }
-    }
-
-    IEnumerator Evade()
+    public void Evade()
     {
         Vector2 direction = cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
         direction.Normalize();
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(.5f);
-        evadeCalled = false;
         state = State.IDLE;
     }
 
-    public void ReflectHandler()
-    {
-        if(!reflectCalled)
-        {
-            reflectCalled = true;
-            StartCoroutine("Reflect");
-        }
-    }
-
-    IEnumerator Reflect()
+    public void Reflect()
     {
         reflect.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        reflect.SetActive(false);
-        reflectCalled = false;
         state = State.IDLE;
     }
 
-    private void Timers(string str)
+    private void AttackDash()
     {
 
+    }
+
+    private void Absorb()
+    {
+
+    }
+
+    /*
+    public void UndeterminedAttack()
+    {
+
+    }
+    */
+
+    private void TimerHandler()
+    {
+        longATKTimer += Time.deltaTime;
+        evadeTimer += Time.deltaTime;
+        reflectTimer += Time.deltaTime;
+
+
+
+        if (reflectTimer >= 2f)
+            reflect.SetActive(false);
+    }
+
+    public float GetTimer(string str)
+    {
+        if (str == "attack")
+            return longATKTimer;
+        else if (str == "evade")
+            return evadeTimer;
+        else
+            return reflectTimer;
+    }
+
+    public float GetCooldown(string str)
+    {
+        if (str == "attack")
+            return LONGATKCOOLDOWN;
+        else if (str == "evade")
+            return EVADECOOLDOWN;
+        else
+            return REFLECTCOOLDOWN;
     }
 }

@@ -367,7 +367,7 @@ MonoBehaviour:
   cursorInWorldPos: {x: 0, y: 0}
   state: 0
   atkSpeed: 25
-  dashSpeed: 65
+  dashSpeed: 60
   dashDistance: 0
 --- !u!1 &324568975
 GameObject:
@@ -587,6 +587,10 @@ Prefab:
     - target: {fileID: 1731771503315754, guid: 34f2983fedf064dd698c061eb3685c09, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731771503315754, guid: 34f2983fedf064dd698c061eb3685c09, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34f2983fedf064dd698c061eb3685c09, type: 2}
