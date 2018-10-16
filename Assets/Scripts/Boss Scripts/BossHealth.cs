@@ -4,28 +4,31 @@ using UnityEngine;
 using UnityEngine.UI;
 public class BossHealth : MonoBehaviour
 {
-    //boss health bar
-    public Image bossHealthBar;
-    public GameObject boss;
+
+    public Image healthBar;
 
 
 
-	// Use this for initialization
-	void Start () 
+    // Use this for initialization
+    void Start()
     {
-	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
-	}
-
-
-    private void OnCollisionEnter(Collision col)
-    {
-        if(col.gameObject.name == "Fireball(Clone)") 
-        {
-            bossHealthBar.fillAmount -= 10;
-        }
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
+
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Projectile")
+        {
+            healthBar.fillAmount -= 0.05f;
+        }
+       
+
+    }
+
+
+
 }
