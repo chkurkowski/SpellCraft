@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(abilities.GetTimer("evade") >= abilities.GetCooldown("evade"))
             Movement();
-        //if()
+
             Rotate();
 	}
 
