@@ -12,13 +12,13 @@ public class Fireball : MonoBehaviour
     // Use this for initialization
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Boss")
+        if(col.gameObject.tag == "Boss" && gameObject.tag == "Projectile")
         {
             //Do damage
             print("Hit: 5 damage");
             Destroy(gameObject);
         }
-        else if(col.gameObject.tag != "Player")
+        else if(col.gameObject.tag != "Player" && gameObject.tag != "EnemyProjectile")
             Destroy(gameObject);
 
     }
