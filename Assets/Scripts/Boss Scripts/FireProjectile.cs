@@ -8,7 +8,7 @@ public class FireProjectile : MonoBehaviour {
 
     private float MAXTIMER = 2;
     private float timer = 0;
-    private float atkSpeed = 25;
+    private float atkSpeed = 50;
 	
 	// Update is called once per frame
 	void Update () 
