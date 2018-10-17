@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireProjectile : MonoBehaviour {
+public class FireProjectile : MonoBehaviour 
+{
 
     public GameObject iceball;
 

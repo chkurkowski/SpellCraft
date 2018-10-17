@@ -19,10 +19,10 @@ public class BossHealth : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-       // destroy boss if health = 0
+       //destroy boss if health = 0
         if(healthBar.fillAmount <= 0)
         {
-            //   Destroy(boss);
+               Destroy(boss);
             print("you win woohoo!");
         }
     }
@@ -31,7 +31,7 @@ public class BossHealth : MonoBehaviour
     {
         if(col.gameObject.tag == "Projectile") 
         {
-            healthBar.fillAmount = healthBar.fillAmount - 0.5f;
+            healthBar.fillAmount = healthBar.fillAmount - 0.05f;
         }
      }
 
