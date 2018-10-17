@@ -6,6 +6,7 @@ public class BossHealth : MonoBehaviour
 {
 
     public Image healthBar;
+    public GameObject boss;
 
 
 
@@ -17,6 +18,12 @@ public class BossHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       // destroy boss if health = 0
+        if(healthBar.fillAmount <= 0)
+        {
+            //   Destroy(boss);
+            print("you win woohoo!");
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D col)
@@ -25,9 +32,7 @@ public class BossHealth : MonoBehaviour
         {
             healthBar.fillAmount -= 0.05f;
         }
-       
-
-    }
+     }
 
 
 
