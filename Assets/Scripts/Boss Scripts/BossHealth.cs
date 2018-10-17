@@ -5,8 +5,6 @@ using UnityEngine.UI;
 public class BossHealth : MonoBehaviour
 {
     //boss health bar
-    public Image bossHealthBar;
-    public GameObject boss;
 
     public Image healthBar;
     public GameObject boss;
@@ -32,7 +30,7 @@ public class BossHealth : MonoBehaviour
     {
         if(col.gameObject.name == "Fireball(Clone)") 
         {
-            bossHealthBar.fillAmount -= 10;
+            healthBar.fillAmount -= 10;
         }
      }
 
