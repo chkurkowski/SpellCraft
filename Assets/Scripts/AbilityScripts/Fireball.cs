@@ -18,13 +18,13 @@ public class Fireball : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D col)
 >>>>>>> parent of a7640f5... Merge pull request #5 from zeke1498/health-bar-branch
     {
-        if(col.gameObject.tag == "Boss")
+        if(col.gameObject.tag == "Boss" && gameObject.tag == "Projectile")
         {
             //Do damage
             print("Hit: 5 damage");
             Destroy(gameObject);
         }
-        else if(col.gameObject.tag != "Player")
+        else if(col.gameObject.tag != "Player" && gameObject.tag != "EnemyProjectile")
             Destroy(gameObject);
 
     }
