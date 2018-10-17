@@ -10,7 +10,7 @@ public class Fireball : MonoBehaviour {
 	// Use this for initialization
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Boss" && gameObject.tag == "Projectile")
+        if(col.gameObject.tag == "Boss" )
         {
             //Do damage
             print("Hit: 5 damage");

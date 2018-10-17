@@ -13,6 +13,7 @@ public class BossHealth : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
+
 	}
 	
 	// Update is called once per frame
@@ -26,11 +27,11 @@ public class BossHealth : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.name == "Fireball(Clone)") 
+        if(col.gameObject.tag == "Projectile") 
         {
-            healthBar.fillAmount -= 10;
+            healthBar.fillAmount = healthBar.fillAmount - 0.5f;
         }
      }
 
