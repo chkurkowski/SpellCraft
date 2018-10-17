@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour {
 
+    
 	// Use this for initialization
     private void OnTriggerEnter2D(Collider2D col)
     {
