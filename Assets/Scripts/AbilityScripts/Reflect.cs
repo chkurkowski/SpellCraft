@@ -12,11 +12,12 @@ public class Reflect : MonoBehaviour {
         abilities = FindObjectOfType<PlayerAbilities>();
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.tag == "EnemyProjectile")
         {
-
+            //print(col.gameObject.GetComponent<Rigidbody2D>().velocity);
+            col.gameObject.GetComponent<Rigidbody2D>().velocity = -col.gameObject.GetComponent<Rigidbody2D>().velocity;
         }
     }
 }
