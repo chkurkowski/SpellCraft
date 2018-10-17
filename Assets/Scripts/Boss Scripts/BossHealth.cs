@@ -8,6 +8,8 @@ public class BossHealth : MonoBehaviour
     public Image bossHealthBar;
     public GameObject boss;
 
+    public Image healthBar;
+    public GameObject boss;
 
 
 	// Use this for initialization
@@ -18,8 +20,13 @@ public class BossHealth : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-	}
-
+       // destroy boss if health = 0
+        if(healthBar.fillAmount <= 0)
+        {
+            //   Destroy(boss);
+            print("you win woohoo!");
+        }
+    }
 
     private void OnCollisionEnter(Collision col)
     {
@@ -27,5 +34,8 @@ public class BossHealth : MonoBehaviour
         {
             bossHealthBar.fillAmount -= 10;
         }
-    }
+     }
+
+
+
 }
