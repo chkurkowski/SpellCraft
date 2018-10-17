@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float horizontalMovement;
     public float verticalMovement;
     public float movementSpeed = 5;
+    public float rotSpeed = 25f;
 
 	// Use this for initialization
 	void Start ()
@@ -22,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if(abilities.GetTimer("evade") >= abilities.GetCooldown("evade"))
             Movement();
+        //if()
+            Rotate();
 	}
 
     public void Movement()
@@ -29,5 +32,14 @@ public class PlayerMovement : MonoBehaviour
         horizontalMovement = Input.GetAxis("Horizontal");
         verticalMovement = Input.GetAxis("Vertical");
         playerRigidbody.velocity = new Vector3(horizontalMovement * movementSpeed * Time.deltaTime * 100, verticalMovement * movementSpeed * Time.deltaTime * 100);
+    }
+
+    public void Rotate()
+    {
+        Vector3 vectorToTarget = abilities.cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
+        float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
+        angle -= 90;
+        Quaternion rotAngle = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotAngle, rotSpeed);
     }
 }
