@@ -9,7 +9,7 @@ public class BossBehaviours : MonoBehaviour {
     public GameObject fireball;
     public float fireBallSpeed = 50f;
 
-    private float actionRate = 6f;
+    private float actionRate = 3f;
     private float actionTimer = 0f;
     private bool isBusy = false;
 
@@ -84,7 +84,7 @@ public class BossBehaviours : MonoBehaviour {
         {
             actionTimer = 0f;
             //int randomAction = Random.Range(0, 4);
-            int randomAction = 1;
+            int randomAction = 0;
             if(!isBusy && randomAction == 0)
             {
                 isBusy = true;
@@ -179,10 +179,16 @@ public class BossBehaviours : MonoBehaviour {
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle-90, transform.forward);
 
-        Instantiate(fireball, transform.position, transform.rotation);
+        gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * chargeSpeed, ForceMode2D.Impulse);
+
+        Invoke("StopMovement", 1);
         
     }
 
+    public void StopMovement()
+    {
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+    }
     public void SpinToWin()
     {
         transform.Rotate(0, 0, 10);

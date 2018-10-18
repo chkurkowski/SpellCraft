@@ -8,15 +8,7 @@ public class MagicBall : MonoBehaviour {
     public float magicBallSpeed = 50;
    
 
-    private void Start()
-    {
-        transform.Rotate(new Vector3(0, 0, 90));
-    }
-    private void Update()
-    {
-        transform.Translate(Vector3.right * Time.deltaTime * magicBallSpeed);
-        // transform.localScale += new Vector3(1,0);
-    }
+   
     // Use this for initialization
     private void OnTriggerEnter2D(Collider2D col)
     {

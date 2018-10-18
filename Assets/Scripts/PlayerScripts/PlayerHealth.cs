@@ -47,11 +47,29 @@ public class PlayerHealth : MonoBehaviour
             playerHealth -= projectileDamage;
             Destroy(col.gameObject);
         }
+        else if (col.gameObject.tag == "Boss")
+        {
+            InvokeRepeating("MeleeDamage", 0, .5f);
+        }
 
         if (col.gameObject.tag == "CheckPoint")
         {
             respawnManagerInfo.currentCheckPoint = col.gameObject;
             Debug.Log("CheckPoint was found!");
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D trig)
+    {
+        if (trig.gameObject.tag == "Boss")
+        {
+            CancelInvoke("MeleeDamage");
+        }
+    }
+
+    public void MeleeDamage()
+    {
+        playerHealth -= 10;
+        playerHealthBar.fillAmount -= .10f;
     }
 }

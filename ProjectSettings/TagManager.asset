@@ -25,8 +25,8 @@ TagManager:
   - Projectiles
   - Triggers
   - Boss
-  - 
-  - 
+  - PlayerProjectiles
+  - Player
   - 
   - 
   - 
