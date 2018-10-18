@@ -93,7 +93,7 @@ public class BossBehaviours : MonoBehaviour {
 
     private void Idle()
     {
-        if (isActivated)
+        if (bossHealthInfo.isAlive)
         {
             actionTimer += Time.deltaTime;
             if (actionTimer >= actionRate)

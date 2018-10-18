@@ -29,6 +29,9 @@ public class BossHealth : MonoBehaviour
         {
             //Destroy(boss);
             isAlive = false;
+            Color c = gameObject.GetComponent<SpriteRenderer>().color;
+            c.a = .8f;
+            gameObject.GetComponent<SpriteRenderer>().color = c;
             print("you win woohoo!");
         }
         else if(bossHealth <= (bossMaxHealth /5))

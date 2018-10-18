@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public Image playerHealthBar;
+    public bool isAlive;
     public float maxPlayerHealth = 100f;
     public float playerHealth = 100f;
     private RespawnManager respawnManagerInfo;
@@ -14,7 +15,8 @@ public class PlayerHealth : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-        respawnManagerInfo = GameObject.Find("RespawnManager").GetComponent<RespawnManager>();	
+        respawnManagerInfo = GameObject.Find("RespawnManager").GetComponent<RespawnManager>();
+        isAlive = true;
 	}
 	
 	// Update is called once per frame
@@ -23,7 +25,9 @@ public class PlayerHealth : MonoBehaviour
 
         if(playerHealth <= 0)
         {
-            respawnManagerInfo.KillPlayer();
+            //respawnManagerInfo.KillPlayer();
+            Destroy(gameObject);
+
         }
         else if(playerHealth > maxPlayerHealth)
         {

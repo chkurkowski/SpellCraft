@@ -10,6 +10,7 @@ public class PlayerAbilities : MonoBehaviour {
     public GameObject absorb;
     public GameObject dashCollider;
     public PlayerMovement movement;
+    public PlayerHealth health;
     public Vector2 cursorInWorldPos;
 
 
@@ -65,6 +66,7 @@ public class PlayerAbilities : MonoBehaviour {
         swapTeleportTimer = SWAPTELEPORTCOOLDOWN;
 
         movement = GetComponent<PlayerMovement>();
+        health = GetComponent<PlayerHealth>();
 
         state = State.IDLE;
 
@@ -109,6 +111,9 @@ public class PlayerAbilities : MonoBehaviour {
         TimerHandler();
         
         cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (absorb.activeSelf && reflect.activeSelf)
+            reflect.SetActive(false);
 
         if(Input.GetKeyDown(KeyCode.Mouse0) && evadeTimer <= EVADECOOLDOWN && atkDashTimer >= ATKDASHCOOLDOWN)
         {
