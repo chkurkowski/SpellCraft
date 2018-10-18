@@ -46,6 +46,7 @@ public class PlayerAbilities : MonoBehaviour {
     private const float SWAPTELEPORTCOOLDOWN = 6f;
 
     private const float ATKDASHEND = .6f;
+    private const float ABSORBEND = 4.5f;
 
     private float longATKTimer, evadeTimer, reflectTimer, 
     atkDashTimer, absorbTimer, swapTeleportTimer;
@@ -119,7 +120,12 @@ public class PlayerAbilities : MonoBehaviour {
             state = State.LONGATK;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && longATKTimer <= LONGATKCOOLDOWN && atkDashTimer >= ATKDASHCOOLDOWN)
+        if(Input.GetKeyDown(KeyCode.Space) && reflectTimer <= REFLECTCOOLDOWN && absorbTimer >= ABSORBCOOLDOWN)
+        {
+            absorbTimer = 0f;
+            state = State.ABSORB;
+        }
+        else if(Input.GetKeyDown(KeyCode.Space) && longATKTimer <= LONGATKCOOLDOWN && atkDashTimer >= ATKDASHCOOLDOWN)
         {
             atkDashTimer = 0f;
             state = State.ATKDASH;
@@ -127,7 +133,7 @@ public class PlayerAbilities : MonoBehaviour {
         else if(Input.GetKeyDown(KeyCode.Space) && evadeTimer >= EVADECOOLDOWN)
         {
             evadeTimer = 0f;
-            gameObject.GetComponent<Collider2D>().enabled = false;
+            gameObject.GetComponent<Collider2D>().isTrigger = true;
             state = State.EVADE;
         }
 
@@ -136,7 +142,7 @@ public class PlayerAbilities : MonoBehaviour {
             absorbTimer = 0f;
             state = State.ABSORB;
         }
-        if(Input.GetKeyDown(KeyCode.Mouse1) && reflectTimer >= REFLECTCOOLDOWN)
+        else if(Input.GetKeyDown(KeyCode.Mouse1) && reflectTimer >= REFLECTCOOLDOWN)
         {
             reflectTimer = 0f;
             state = State.REFLECT;
@@ -185,6 +191,7 @@ public class PlayerAbilities : MonoBehaviour {
 
     private void Absorb()
     {
+        print("absorb");
         absorb.SetActive(true);
         state = State.IDLE;
     }
@@ -205,7 +212,7 @@ public class PlayerAbilities : MonoBehaviour {
         absorbTimer += Time.deltaTime;
 
         if(evadeTimer >= EVADECOOLDOWN)
-            gameObject.GetComponent<Collider2D>().enabled = true;
+            gameObject.GetComponent<Collider2D>().isTrigger = false;
         if (reflectTimer >= 2f)
             reflect.SetActive(false);
         if(atkDashTimer >= ATKDASHEND)
@@ -213,7 +220,7 @@ public class PlayerAbilities : MonoBehaviour {
             gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
             dashCollider.SetActive(false);
         }
-        if(absorbTimer >= ABSORBCOOLDOWN)
+        if(absorbTimer >= ABSORBEND)
         {
             absorb.SetActive(false);
         }
