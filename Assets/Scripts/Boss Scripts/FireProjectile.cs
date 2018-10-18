@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FireProjectile : MonoBehaviour 
 {
-
-    public GameObject iceball;
+    //this shoots the fireballs
+    public GameObject fireball;
 
     private float MAXTIMER = 2;
     private float timer = 0;
@@ -18,7 +18,7 @@ public class FireProjectile : MonoBehaviour
 
         if(timer >= MAXTIMER)
         {
-            GameObject fb = Instantiate(iceball, transform.position, Quaternion.identity);
+            GameObject fb = Instantiate(fireball, transform.position + Vector3.down * 10 , Quaternion.identity);
             fb.GetComponent<Rigidbody2D>().velocity = Vector2.down * atkSpeed;
             timer = 0;
         }

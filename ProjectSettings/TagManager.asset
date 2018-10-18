@@ -7,6 +7,10 @@ TagManager:
   - Boss
   - Projectile
   - EnemyProjectile
+  - CheckPoint
+  - Reflect
+  - Environment
+  - CameraTrigger
   layers:
   - Default
   - TransparentFX
