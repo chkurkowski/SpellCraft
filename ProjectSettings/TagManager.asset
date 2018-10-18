@@ -7,6 +7,7 @@ TagManager:
   - Boss
   - Projectile
   - EnemyProjectile
+  - DashAttack
   - CheckPoint
   - Reflect
   - Environment
