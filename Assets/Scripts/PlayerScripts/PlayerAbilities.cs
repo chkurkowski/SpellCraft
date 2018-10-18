@@ -9,6 +9,7 @@ public class PlayerAbilities : MonoBehaviour {
     public GameObject reflect;
     public PlayerMovement movement;
     public Vector2 cursorInWorldPos;
+    public GameObject dashCollider;
 
     //FSM Variables
     public enum State {
@@ -18,7 +19,7 @@ public class PlayerAbilities : MonoBehaviour {
         REFLECT,
         ATKDASH,
         ABSORB,
-        LR
+        SWAPTELEPORT
     }
     public State state;
 
@@ -37,9 +38,15 @@ public class PlayerAbilities : MonoBehaviour {
     private const float LONGATKCOOLDOWN = .35f;
     private const float EVADECOOLDOWN = .6f;
     private const float REFLECTCOOLDOWN = 3f;
-    private float longATKTimer;
-    private float evadeTimer;
-    private float reflectTimer;
+    private const float ATKDASHCOOLDOWN = 3f;
+    private const float ABSORBCOOLDOWN = 6f;
+    private const float SWAPTELEPORTCOOLDOWN = 6f;
+
+    private const float ATKDASHEND = .6f;
+
+    private float longATKTimer, evadeTimer, reflectTimer, 
+    atkDashTimer, absorbTimer, swapTeleportTimer;
+
 
 	// Use this for initialization
 	void Start () {
@@ -48,6 +55,9 @@ public class PlayerAbilities : MonoBehaviour {
         longATKTimer = LONGATKCOOLDOWN;
         evadeTimer = EVADECOOLDOWN;
         reflectTimer = REFLECTCOOLDOWN;
+        atkDashTimer = ATKDASHCOOLDOWN;
+        absorbTimer = ABSORBCOOLDOWN;
+        swapTeleportTimer = SWAPTELEPORTCOOLDOWN;
 
         movement = GetComponent<PlayerMovement>();
 
@@ -75,6 +85,9 @@ public class PlayerAbilities : MonoBehaviour {
                 case State.REFLECT:
                     Reflect();
                     break;
+                case State.ATKDASH:
+                    AttackDash();
+                    break;
             }
             yield return null;
         }
@@ -86,13 +99,25 @@ public class PlayerAbilities : MonoBehaviour {
 
         cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && longATKTimer >= LONGATKCOOLDOWN)
+        if(Input.GetKeyDown(KeyCode.Mouse0) && longATKTimer <= LONGATKCOOLDOWN && absorbTimer >= ABSORBCOOLDOWN)
+        {
+            atkDashTimer = 0f;
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            state = State.ATKDASH;
+        }
+        else if (Input.GetKeyDown(KeyCode.Mouse0) && longATKTimer >= LONGATKCOOLDOWN)
         {
             longATKTimer = 0f;
             state = State.LONGATK;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && evadeTimer >= EVADECOOLDOWN)
+        if(Input.GetKeyDown(KeyCode.Space) && longATKTimer <= LONGATKCOOLDOWN && atkDashTimer >= ATKDASHCOOLDOWN)
+        {
+            atkDashTimer = 0f;
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            state = State.ATKDASH;
+        }
+        else if(Input.GetKeyDown(KeyCode.Space) && evadeTimer >= EVADECOOLDOWN)
         {
             evadeTimer = 0f;
             gameObject.GetComponent<Collider2D>().enabled = false;
@@ -131,7 +156,12 @@ public class PlayerAbilities : MonoBehaviour {
 
     private void AttackDash()
     {
-
+        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        dashCollider.SetActive(true);
+        Vector2 direction = cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
+        direction.Normalize();
+        gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
+        state = State.IDLE;
     }
 
     private void Absorb()
@@ -151,13 +181,17 @@ public class PlayerAbilities : MonoBehaviour {
         longATKTimer += Time.deltaTime;
         evadeTimer += Time.deltaTime;
         reflectTimer += Time.deltaTime;
-
-
+        atkDashTimer += Time.deltaTime;
 
         if(evadeTimer >= EVADECOOLDOWN)
             gameObject.GetComponent<Collider2D>().enabled = true;
         if (reflectTimer >= 2f)
             reflect.SetActive(false);
+        if(atkDashTimer >= ATKDASHEND)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+            dashCollider.SetActive(false);
+        }
     }
 
     public float GetTimer(string str)
@@ -166,8 +200,14 @@ public class PlayerAbilities : MonoBehaviour {
             return longATKTimer;
         else if (str == "evade")
             return evadeTimer;
-        else
+        else if (str == "reflect")
             return reflectTimer;
+        else if (str == "atkdash")
+            return atkDashTimer;
+        else if (str == "absorb")
+            return absorbTimer;
+        else
+            return swapTeleportTimer;
     }
 
     public float GetCooldown(string str)
@@ -176,7 +216,13 @@ public class PlayerAbilities : MonoBehaviour {
             return LONGATKCOOLDOWN;
         else if (str == "evade")
             return EVADECOOLDOWN;
-        else
+        else if (str == "reflect")
             return REFLECTCOOLDOWN;
+        else if (str == "atkdash")
+            return ATKDASHEND;
+        else if (str == "absorb")
+            return ABSORBCOOLDOWN;
+        else
+            return SWAPTELEPORTCOOLDOWN;
     }
 }

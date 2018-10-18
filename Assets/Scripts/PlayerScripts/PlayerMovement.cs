@@ -22,7 +22,10 @@ public class PlayerMovement : MonoBehaviour
 	void Update ()
     {
         if(abilities.GetTimer("evade") >= abilities.GetCooldown("evade"))
-            Movement();
+        {
+            if(abilities.GetTimer("atkdash") >= abilities.GetCooldown("atkdash"))
+                Movement();
+        }
         //if()
             Rotate();
 	}
@@ -32,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         horizontalMovement = Input.GetAxis("Horizontal");
         verticalMovement = Input.GetAxis("Vertical");
         playerRigidbody.velocity = new Vector3(horizontalMovement * movementSpeed * Time.deltaTime * 100, verticalMovement * movementSpeed * Time.deltaTime * 100);
+        //gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
     }
 
     public void Rotate()
@@ -42,4 +46,5 @@ public class PlayerMovement : MonoBehaviour
         Quaternion rotAngle = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotAngle, rotSpeed);
     }
+    
 }

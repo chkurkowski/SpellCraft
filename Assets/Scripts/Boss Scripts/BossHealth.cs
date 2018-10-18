@@ -25,8 +25,11 @@ public class BossHealth : MonoBehaviour
         {
             healthBar.fillAmount -= 0.05f;
         }
-       
 
+        if (col.gameObject.tag == "DashAttack")
+        {
+            healthBar.fillAmount -= 0.15f;
+        }
     }
 
 
