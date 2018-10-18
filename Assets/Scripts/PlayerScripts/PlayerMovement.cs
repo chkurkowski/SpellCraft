@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public PlayerHealth health;
     public PlayerAbilities abilities;
     public Rigidbody2D playerRigidbody;
     public float horizontalMovement;
@@ -16,12 +17,13 @@ public class PlayerMovement : MonoBehaviour
     {
         playerRigidbody = gameObject.GetComponent<Rigidbody2D>();
         abilities = GetComponent<PlayerAbilities>();
+        health = GetComponent<PlayerHealth>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if(abilities.GetTimer("evade") >= abilities.GetCooldown("evade"))
+        if(abilities.GetTimer("evade") >= abilities.GetCooldown("evade") && abilities.health.isAlive)
         {
             if(abilities.GetTimer("atkdash") >= abilities.GetCooldown("atkdash"))
                 Movement();

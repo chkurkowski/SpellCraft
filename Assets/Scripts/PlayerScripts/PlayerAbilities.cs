@@ -75,9 +75,9 @@ public class PlayerAbilities : MonoBehaviour {
 	
     IEnumerator FSM()
     {
-        while(alive)
+        while(health.isAlive)
         {
-            //print(state);
+            print(state);
             switch (state)
             {
                 case State.IDLE:
