@@ -18,6 +18,7 @@ public class PlayerAbilities : MonoBehaviour {
         EVADE,
         REFLECT,
         ATKDASH,
+        ATKHANDLER,
         ABSORB,
         SWAPTELEPORT
     }
@@ -88,6 +89,9 @@ public class PlayerAbilities : MonoBehaviour {
                 case State.ATKDASH:
                     AttackDash();
                     break;
+                case State.ATKHANDLER:
+                    AttackDashHandler();
+                    break;
             }
             yield return null;
         }
@@ -99,11 +103,10 @@ public class PlayerAbilities : MonoBehaviour {
 
         cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if(Input.GetKeyDown(KeyCode.Mouse0) && longATKTimer <= LONGATKCOOLDOWN && absorbTimer >= ABSORBCOOLDOWN)
+        if(Input.GetKeyDown(KeyCode.Mouse0) && evadeTimer <= EVADECOOLDOWN && atkDashTimer >= ATKDASHCOOLDOWN)
         {
             atkDashTimer = 0f;
-            gameObject.GetComponent<Collider2D>().enabled = false;
-            state = State.ATKDASH;
+            state = State.ATKHANDLER;
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0) && longATKTimer >= LONGATKCOOLDOWN)
         {
@@ -114,7 +117,6 @@ public class PlayerAbilities : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Space) && longATKTimer <= LONGATKCOOLDOWN && atkDashTimer >= ATKDASHCOOLDOWN)
         {
             atkDashTimer = 0f;
-            gameObject.GetComponent<Collider2D>().enabled = false;
             state = State.ATKDASH;
         }
         else if(Input.GetKeyDown(KeyCode.Space) && evadeTimer >= EVADECOOLDOWN)
@@ -161,6 +163,13 @@ public class PlayerAbilities : MonoBehaviour {
         Vector2 direction = cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
         direction.Normalize();
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
+        state = State.IDLE;
+    }
+
+    private void AttackDashHandler()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        dashCollider.SetActive(true);
         state = State.IDLE;
     }
 
