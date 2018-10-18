@@ -1050,6 +1050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad409bb7ce718f4594589d5f82c09d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 0}
   abilities: {fileID: 0}
   playerRigidbody: {fileID: 0}
   horizontalMovement: 0
@@ -1202,7 +1203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealthBar: {fileID: 1516673321}
-  isAlive: 0
+  isAlive: 1
   maxPlayerHealth: 100
   playerHealth: 100
 --- !u!61 &721968419
@@ -2308,7 +2309,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1762310221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 84.6, y: -132.3, z: 0}
+  m_LocalPosition: {x: 84.6, y: 15.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2088468319}
