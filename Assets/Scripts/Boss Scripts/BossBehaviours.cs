@@ -86,22 +86,22 @@ public class BossBehaviours : MonoBehaviour {
             actionTimer = 0f;
             int randomAction = Random.Range(0, 3);
             //int randomAction = 2;////CHANGE THIS BEFORE I GO
-            if(!isBusy && randomAction == 0)
+            if(!bossHealthInfo.isFrenzied && !isBusy && randomAction == 0)
             {
                 isBusy = true;
                 state = State.SPIN;
             }
-            else if(!isBusy && randomAction == 1)
+            else if(!bossHealthInfo.isFrenzied && !isBusy && randomAction == 1)
             {
                 isBusy = true;
                 state = State.CHARGE;
             }
-            else if(!isBusy && randomAction == 2)
+            else if(!bossHealthInfo.isFrenzied && !isBusy && randomAction == 2)
             {
                 isBusy = true;
                 state = State.BOMB;
             }
-            else if(!isBusy && bossHealthInfo.isFrenzied && randomAction >= 3)
+            else if(!isBusy && bossHealthInfo.isFrenzied)
             {
                 isBusy = true;
                 state = State.COMBINED;
@@ -208,7 +208,18 @@ public class BossBehaviours : MonoBehaviour {
         Instantiate(bomb, transform.position, transform.rotation);
     }
 
+    public void WomboCombo()
+    {
+        
+        ChargeAttack();
 
+        Instantiate(bomb, transform.position, Quaternion.AngleAxis(90, transform.forward));
+        Instantiate(bomb, transform.position, Quaternion.AngleAxis(-90, transform.forward));
+        Instantiate(bomb, transform.position, Quaternion.AngleAxis(-180, transform.forward));
+        Instantiate(bomb, transform.position, Quaternion.AngleAxis(180, transform.forward));
+
+
+    }
 
 
 
