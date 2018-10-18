@@ -58,32 +58,36 @@ public class BossBehaviours : MonoBehaviour {
 
     IEnumerator FSM()
     {
+
         while (bossHealthInfo.isAlive)
         {
             if (isActivated)
             {
+
                 Debug.Log("The Boss's current state is: " + state);
-                switch (state)
-                {
-                    case State.IDLE:
-                        Idle();
-                        break;
-                    case State.CHARGE:
-                        Charge();
-                        break;
-                    case State.SPIN:
-                        Spin();
-                        break;
-                    case State.BOMB:
-                        Bomb();
-                        break;
-                    case State.COMBINED:
-                        Combined();
-                        break;
-                }
-                yield return null;
+            switch (state)
+            {
+                case State.IDLE:
+                    Idle();
+                    break;
+                case State.CHARGE:
+                    Charge();
+                    break;
+                case State.SPIN:
+                    Spin();
+                    break;
+                case State.BOMB:
+                    Bomb();
+                    break;
+                case State.COMBINED:
+                    Combined();
+                    break;
+            }
+            yield return null;
+
             }
         }
+        
     }
 
     private void Idle()
