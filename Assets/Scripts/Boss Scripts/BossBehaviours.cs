@@ -101,17 +101,17 @@ public class BossBehaviours : MonoBehaviour {
                 actionTimer = 0f;
                 int randomAction = Random.Range(0, 3);
                 //int randomAction = 2;////CHANGE THIS BEFORE I GO
-                if (!bossHealthInfo.isFrenzied && !isBusy && randomAction == 0)
+                if (!bossHealthInfo.isFrenzied && !isBusy && randomAction == 0 && isActivated)
                 {
                     isBusy = true;
                     state = State.SPIN;
                 }
-                else if (!bossHealthInfo.isFrenzied && !isBusy && randomAction == 1)
+                else if (!bossHealthInfo.isFrenzied && !isBusy && randomAction == 1 && isActivated)
                 {
                     isBusy = true;
                     state = State.CHARGE;
                 }
-                else if (!bossHealthInfo.isFrenzied && !isBusy && randomAction == 2)
+                else if (!bossHealthInfo.isFrenzied && !isBusy && randomAction == 2 && isActivated)
                 {
                     isBusy = true;
                     state = State.BOMB;
