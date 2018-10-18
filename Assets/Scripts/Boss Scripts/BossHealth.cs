@@ -30,7 +30,7 @@ public class BossHealth : MonoBehaviour
             //Destroy(boss);
             isAlive = false;
             Color c = gameObject.GetComponent<SpriteRenderer>().color;
-            c.a = .8f;
+            c.a = .6f;
             gameObject.GetComponent<SpriteRenderer>().color = c;
             print("you win woohoo!");
         }
