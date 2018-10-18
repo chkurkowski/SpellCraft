@@ -12,6 +12,7 @@ public class BossHealth : MonoBehaviour
     public float bossMaxHealth = 100;
     public bool isAlive = true;
     public bool isFrenzied = false;
+   
 
 
 	// Use this for initialization
@@ -30,7 +31,7 @@ public class BossHealth : MonoBehaviour
             isAlive = false;
             print("you win woohoo!");
         }
-        else if(bossHealth <= (bossMaxHealth /8))
+        else if(bossHealth <= (bossMaxHealth /5))
         {
             isFrenzied = true;
         }

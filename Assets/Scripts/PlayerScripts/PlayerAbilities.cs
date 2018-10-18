@@ -115,7 +115,7 @@ public class PlayerAbilities : MonoBehaviour {
             atkDashTimer = 0f;
             state = State.ATKHANDLER;
         }
-        else if (Input.GetKeyDown(KeyCode.Mouse0) && longATKTimer >= LONGATKCOOLDOWN)
+        else if (Input.GetKey(KeyCode.Mouse0) && longATKTimer >= LONGATKCOOLDOWN)
         {
             longATKTimer = 0f;
             state = State.LONGATK;
