@@ -12,6 +12,7 @@ TagManager:
   - Reflect
   - Environment
   - CameraTrigger
+  - Absorb
   layers:
   - Default
   - TransparentFX
@@ -24,10 +25,10 @@ TagManager:
   - PostProcessing
   - Projectiles
   - Triggers
-  - 
-  - 
-  - 
-  - 
+  - Boss
+  - PlayerProjectiles
+  - Player
+  - Dash
   - 
   - 
   - 

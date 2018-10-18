@@ -25,18 +25,24 @@ public class PlayerHealth : MonoBehaviour
         {
             respawnManagerInfo.KillPlayer();
         }
+        else if(playerHealth > maxPlayerHealth)
+        {
+            playerHealth = maxPlayerHealth;
+        }
 
+    }
+
+    public void HealPlayer(float healAmount)
+    {
+        playerHealth += healAmount;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "EnemyProjectile")
+
+       if (col.gameObject.tag == "Boss")
         {
-            Debug.Log("Player was hit!");
-            float projectileDamage = col.gameObject.GetComponent<Fireball>().fireBallDamage;
-            playerHealthBar.fillAmount = playerHealthBar.fillAmount - (projectileDamage / 100);
-            playerHealth -= projectileDamage;
-            Destroy(col.gameObject);
+            InvokeRepeating("MeleeDamage", 0, .5f);
         }
 
         if (col.gameObject.tag == "CheckPoint")
@@ -44,5 +50,19 @@ public class PlayerHealth : MonoBehaviour
             respawnManagerInfo.currentCheckPoint = col.gameObject;
             Debug.Log("CheckPoint was found!");
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D trig)
+    {
+        if (trig.gameObject.tag == "Boss")
+        {
+            CancelInvoke("MeleeDamage");
+        }
+    }
+
+    public void MeleeDamage()
+    {
+        playerHealth -= 10;
+        playerHealthBar.fillAmount -= .10f;
     }
 }
