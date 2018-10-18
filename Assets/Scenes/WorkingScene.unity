@@ -828,6 +828,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1318807354050872, guid: f1573a96bd769422f889ed373175e7c8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1573a96bd769422f889ed373175e7c8, type: 2}
   m_IsPrefabAsset: 0
@@ -1991,13 +1995,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireball: {fileID: 1852356439421700, guid: f288824703f634f45b225f671d7c99d3, type: 2}
+  bomb: {fileID: 1581581200255988, guid: 5e07e1b1b56f0a54c9510b652207fd50, type: 2}
   fireBallSpeed: 50
   spinTimeLength: 6
   chargeTimeLength: 6
-  bombTimeLength: 0
-  comboTimeLength: 0
+  bombTimeLength: 4
+  comboTimeLength: 5
   spinFireRate: 0.01
-  spinRotationAmount: 0
+  spinRotationAmount: 10
   bombFireRate: 3
   chargeFireRate: 1
   chargeSpeed: 75

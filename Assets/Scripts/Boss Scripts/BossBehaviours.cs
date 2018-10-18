@@ -7,6 +7,7 @@ public class BossBehaviours : MonoBehaviour {
     private GameObject player;
 
     public GameObject fireball;
+    public GameObject bomb;
     public float fireBallSpeed = 50f;
 
     private float actionRate = 3f;
@@ -19,7 +20,7 @@ public class BossBehaviours : MonoBehaviour {
     public float comboTimeLength = 4f;
 
     public float spinFireRate = .5f;
-    public float spinRotationAmount;
+    public float spinRotationAmount = 10f;
 
     public float bombFireRate = 3f;
 
@@ -83,8 +84,8 @@ public class BossBehaviours : MonoBehaviour {
         if(actionTimer >= actionRate)
         {
             actionTimer = 0f;
-            //int randomAction = Random.Range(0, 4);
-            int randomAction = 0;
+            int randomAction = Random.Range(0, 3);
+            //int randomAction = 2;////CHANGE THIS BEFORE I GO
             if(!isBusy && randomAction == 0)
             {
                 isBusy = true;
@@ -189,11 +190,22 @@ public class BossBehaviours : MonoBehaviour {
     {
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
     }
+
+
     public void SpinToWin()
     {
-        transform.Rotate(0, 0, 10);
+        transform.Rotate(0, 0, spinRotationAmount);
 
         Instantiate(fireball, transform.position, transform.rotation);
+    }
+
+    public void BombTown()
+    {
+        Vector3 dir = player.transform.position - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
+
+        Instantiate(bomb, transform.position, transform.rotation);
     }
 
 

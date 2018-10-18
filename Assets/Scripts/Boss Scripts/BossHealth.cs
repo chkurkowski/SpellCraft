@@ -30,7 +30,7 @@ public class BossHealth : MonoBehaviour
             isAlive = false;
             print("you win woohoo!");
         }
-        else if(bossHealth <= (bossMaxHealth /2))
+        else if(bossHealth <= (bossMaxHealth /8))
         {
             isFrenzied = true;
         }
@@ -48,7 +48,7 @@ public class BossHealth : MonoBehaviour
             }
             else
             {
-                projectileDamage = col.gameObject.GetComponent<Fireball>().fireBallDamage;
+                projectileDamage = col.gameObject.GetComponent<Fireball>().fireBallDamage/3;
             }
             
             bossHealth -= projectileDamage;

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MagicBall : MonoBehaviour {
 
-    public float magicBallDamage = 2;
-    public float magicBallSpeed = 50;
+    public float magicBallDamage = 1;
+    public float magicBallSpeed = 75;
    
 
    

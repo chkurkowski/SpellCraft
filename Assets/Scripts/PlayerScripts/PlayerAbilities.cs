@@ -107,7 +107,7 @@ public class PlayerAbilities : MonoBehaviour {
     public void Idle()
     {
         TimerHandler();
-
+        
         cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if(Input.GetKeyDown(KeyCode.Mouse0) && evadeTimer <= EVADECOOLDOWN && atkDashTimer >= ATKDASHCOOLDOWN)
@@ -164,7 +164,17 @@ public class PlayerAbilities : MonoBehaviour {
         Vector2 direction = cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
         direction.Normalize();
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
+        gameObject.layer = 14;// changes physics layers to avoid collision
+        Invoke("ResetPhysicsLayer", 1);//basically delays physics layer reset to give player invincibility frames.
         state = State.IDLE;
+    }
+
+    public void ResetPhysicsLayer()
+    {
+        if (gameObject.layer != 0)
+        {
+            gameObject.layer = 0;//reset's the player's physics layer.
+        }
     }
 
     public void Reflect()
