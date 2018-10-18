@@ -18,11 +18,8 @@ public class Fireball : MonoBehaviour {
         }
         else if(col.gameObject.tag != "Player" && gameObject.tag != "Reflect")
         {
-
-            Debug.Log("SHITS HAPPENING!");
             if(col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger")
             {
-                print(col.tag);
                 Destroy(gameObject);
             }
           
