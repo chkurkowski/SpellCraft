@@ -6,21 +6,24 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public Image playerHealthBar;
-    public GameObject Player;
+    public float maxPlayerHealth = 100f;
+    public float playerHealth = 100f;
+    private RespawnManager respawnManagerInfo;
+
 
 	// Use this for initialization
 	void Start () 
     {
-		
+        respawnManagerInfo = GameObject.Find("RespawnManager").GetComponent<RespawnManager>();	
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        if (playerHealthBar.fillAmount <= 0)
+
+        if(playerHealth <= 0)
         {
-            Destroy(Player);
-            print("You Died");
+            respawnManagerInfo.KillPlayer();
         }
 
     }
@@ -29,7 +32,17 @@ public class PlayerHealth : MonoBehaviour
     {
         if (col.gameObject.tag == "EnemyProjectile")
         {
-            playerHealthBar.fillAmount = playerHealthBar.fillAmount - 0.075f;
+            Debug.Log("Player was hit!");
+            float projectileDamage = col.gameObject.GetComponent<Fireball>().fireBallDamage;
+            playerHealthBar.fillAmount = playerHealthBar.fillAmount - (projectileDamage / 100);
+            playerHealth -= projectileDamage;
+            Destroy(col.gameObject);
+        }
+
+        if (col.gameObject.tag == "CheckPoint")
+        {
+            respawnManagerInfo.currentCheckPoint = col.gameObject;
+            Debug.Log("CheckPoint was found!");
         }
     }
 }

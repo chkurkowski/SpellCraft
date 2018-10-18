@@ -16,7 +16,8 @@ public class DynamicCamera : MonoBehaviour
     {
         distance = Vector2.Distance(Player.transform.position, Boss.transform.position);
         zoomSize = distance + zoomTweak;
-        if(distance <=25)
+        gameObject.transform.position = new Vector3(((Player.transform.position.x + Boss.transform.position.x)/2), ((Player.transform.position.y + Boss.transform.position.y) / 2), -5f);
+        if (distance <=25)
         {
             GetComponent<Camera>().orthographicSize = 25;
         }

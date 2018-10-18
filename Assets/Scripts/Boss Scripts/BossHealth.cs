@@ -31,7 +31,9 @@ public class BossHealth : MonoBehaviour
     {
         if(col.gameObject.tag == "Projectile") 
         {
-            healthBar.fillAmount = healthBar.fillAmount - 0.05f;
+            float projectileDamage = col.gameObject.GetComponent<Fireball>().fireBallDamage;
+
+            healthBar.fillAmount = healthBar.fillAmount - (projectileDamage / 100f);
         }
      }
 
