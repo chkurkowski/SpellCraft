@@ -7,9 +7,11 @@ public class PlayerAbilities : MonoBehaviour {
     //Public World Variables
     public GameObject fireball;
     public GameObject reflect;
+    public GameObject absorb;
+    public GameObject dashCollider;
     public PlayerMovement movement;
     public Vector2 cursorInWorldPos;
-    public GameObject dashCollider;
+
 
     //FSM Variables
     public enum State {
@@ -175,7 +177,8 @@ public class PlayerAbilities : MonoBehaviour {
 
     private void Absorb()
     {
-
+        absorb.SetActive(true);
+        state = State.IDLE;
     }
 
     /*
@@ -191,6 +194,7 @@ public class PlayerAbilities : MonoBehaviour {
         evadeTimer += Time.deltaTime;
         reflectTimer += Time.deltaTime;
         atkDashTimer += Time.deltaTime;
+        absorbTimer += Time.deltaTime;
 
         if(evadeTimer >= EVADECOOLDOWN)
             gameObject.GetComponent<Collider2D>().enabled = true;
@@ -200,6 +204,10 @@ public class PlayerAbilities : MonoBehaviour {
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
             dashCollider.SetActive(false);
+        }
+        if(absorbTimer >= ABSORBCOOLDOWN)
+        {
+            absorb.SetActive(false);
         }
     }
 
