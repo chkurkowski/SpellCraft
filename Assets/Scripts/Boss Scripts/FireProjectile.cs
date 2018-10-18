@@ -12,7 +12,7 @@ public class FireProjectile : MonoBehaviour
     private float atkSpeed = 50;
 	
 	// Update is called once per frame
-	void Update () 
+	/*void Update () 
     {
         timer += Time.deltaTime;
 
@@ -22,5 +22,5 @@ public class FireProjectile : MonoBehaviour
             fb.GetComponent<Rigidbody2D>().velocity = Vector2.down * atkSpeed;
             timer = 0;
         }
-	}
+	}*/
 }

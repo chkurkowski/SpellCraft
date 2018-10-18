@@ -14,7 +14,8 @@ public class PlayerAbilities : MonoBehaviour {
 
 
     //FSM Variables
-    public enum State {
+    public enum State
+    {
         IDLE,
         LONGATK,
         EVADE,
@@ -74,7 +75,7 @@ public class PlayerAbilities : MonoBehaviour {
     {
         while(alive)
         {
-            print(state);
+            //print(state);
             switch (state)
             {
                 case State.IDLE:

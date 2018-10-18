@@ -8,6 +8,10 @@ public class BossHealth : MonoBehaviour
 
     public Image healthBar;
     public GameObject boss;
+    public float bossHealth = 100;
+    public float bossMaxHealth = 100;
+    public bool isAlive = true;
+    public bool isFrenzied = false;
 
 
 	// Use this for initialization
@@ -20,10 +24,15 @@ public class BossHealth : MonoBehaviour
 	void Update () 
     {
        //destroy boss if health = 0
-        if(healthBar.fillAmount <= 0)
+        if(bossHealth <= 0)
         {
-               Destroy(boss);
+            //Destroy(boss);
+            isAlive = false;
             print("you win woohoo!");
+        }
+        else if(bossHealth <= (bossMaxHealth /2))
+        {
+            isFrenzied = true;
         }
     }
 
@@ -32,6 +41,7 @@ public class BossHealth : MonoBehaviour
         if(col.gameObject.tag == "Projectile") 
         {
             float projectileDamage = col.gameObject.GetComponent<Fireball>().fireBallDamage;
+            bossHealth -= projectileDamage;
 
             healthBar.fillAmount = healthBar.fillAmount - (projectileDamage / 100f);
         }

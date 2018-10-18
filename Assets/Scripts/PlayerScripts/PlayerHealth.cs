@@ -25,7 +25,16 @@ public class PlayerHealth : MonoBehaviour
         {
             respawnManagerInfo.KillPlayer();
         }
+        else if(playerHealth > maxPlayerHealth)
+        {
+            playerHealth = maxPlayerHealth;
+        }
 
+    }
+
+    public void HealPlayer(float healAmount)
+    {
+        playerHealth += healAmount;
     }
 
     private void OnTriggerEnter2D(Collider2D col)

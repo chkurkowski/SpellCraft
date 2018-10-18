@@ -10,7 +10,8 @@ public class Absorb : MonoBehaviour {
     {
         if(col.tag == "EnemyProjectile")
         {
-            //gameObject.GetComponentInParent<PlayerHealth>()
+            float healAmount = col.GetComponent<Fireball>().fireBallDamage;
+            gameObject.GetComponentInParent<PlayerHealth>().HealPlayer(healAmount);
             //Heal the player
         }
     }
