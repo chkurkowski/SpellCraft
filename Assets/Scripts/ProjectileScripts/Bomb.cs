@@ -14,7 +14,7 @@ public class Bomb : MonoBehaviour {
     {
         player = GameObject.Find("Player");
         transform.Rotate(new Vector3(0, 0, 90));
-        Destroy(gameObject, 6);
+        Invoke("Explode", 2);
     }
     private void Update()
     {
@@ -31,8 +31,7 @@ public class Bomb : MonoBehaviour {
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealth -= bombDamage;
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= .25f;
-            
-            
+
         }
 
         else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger")

@@ -5,9 +5,13 @@ using UnityEngine;
 public class BossBehaviours : MonoBehaviour {
     private BossHealth bossHealthInfo;
     private GameObject player;
+    
 
     public GameObject fireball;
     public GameObject bomb;
+
+    public bool isActivated = false;
+
     public float fireBallSpeed = 50f;
 
     private float actionRate = 3f;
@@ -44,6 +48,7 @@ public class BossBehaviours : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
+      
         player = GameObject.Find("Player");
         bossHealthInfo = gameObject.GetComponent<BossHealth>();
         state = State.IDLE;
@@ -55,26 +60,29 @@ public class BossBehaviours : MonoBehaviour {
     {
         while (bossHealthInfo.isAlive)
         {
-            Debug.Log("The Boss's current state is: " + state);
-            switch (state)
+            if (isActivated)
             {
-                case State.IDLE:
-                    Idle();
-                    break;
-                case State.CHARGE:
-                    Charge();
-                    break;
-                case State.SPIN:
-                    Spin();
-                    break;
-                case State.BOMB:
-                    Bomb();
-                    break;
-                case State.COMBINED:
-                    Combined();
-                    break;
+                Debug.Log("The Boss's current state is: " + state);
+                switch (state)
+                {
+                    case State.IDLE:
+                        Idle();
+                        break;
+                    case State.CHARGE:
+                        Charge();
+                        break;
+                    case State.SPIN:
+                        Spin();
+                        break;
+                    case State.BOMB:
+                        Bomb();
+                        break;
+                    case State.COMBINED:
+                        Combined();
+                        break;
+                }
+                yield return null;
             }
-            yield return null;
         }
     }
 

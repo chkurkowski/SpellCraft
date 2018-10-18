@@ -12,6 +12,7 @@ public class BossHealth : MonoBehaviour
     public float bossMaxHealth = 100;
     public bool isAlive = true;
     public bool isFrenzied = false;
+   
 
 
 	// Use this for initialization
