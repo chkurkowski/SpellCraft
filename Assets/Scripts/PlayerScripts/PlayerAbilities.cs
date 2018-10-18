@@ -94,6 +94,9 @@ public class PlayerAbilities : MonoBehaviour {
                 case State.ATKHANDLER:
                     AttackDashHandler();
                     break;
+                case State.ABSORB:
+                    Absorb();
+                    break;
             }
             yield return null;
         }
@@ -128,6 +131,11 @@ public class PlayerAbilities : MonoBehaviour {
             state = State.EVADE;
         }
 
+        if(Input.GetKeyDown(KeyCode.Mouse1) && evadeTimer <= EVADECOOLDOWN && absorbTimer >= ABSORBCOOLDOWN)
+        {
+            absorbTimer = 0f;
+            state = State.ABSORB;
+        }
         if(Input.GetKeyDown(KeyCode.Mouse1) && reflectTimer >= REFLECTCOOLDOWN)
         {
             reflectTimer = 0f;
