@@ -13,12 +13,12 @@ public class BossBehaviours : MonoBehaviour {
     private float actionTimer = 0f;
     private bool isBusy = false;
 
-    public float spinTimeLength;
-    public float chargeTimeLength;
-    public float bombTimeLength;
-    public float comboTimeLength;
+    public float spinTimeLength = 8f;
+    public float chargeTimeLength = 6f;
+    public float bombTimeLength = 4f;
+    public float comboTimeLength = 4f;
 
-    public float spinFireRate = 1f;
+    public float spinFireRate = .5f;
     public float spinRotationAmount;
 
     public float bombFireRate = 3f;
@@ -44,9 +44,10 @@ public class BossBehaviours : MonoBehaviour {
 	void Start () 
     {
         player = GameObject.Find("Player");
+        bossHealthInfo = gameObject.GetComponent<BossHealth>();
         state = State.IDLE;
         StartCoroutine("FSM");
-        bossHealthInfo = gameObject.GetComponent<BossHealth>();
+        
 	}
 
     IEnumerator FSM()
@@ -79,7 +80,7 @@ public class BossBehaviours : MonoBehaviour {
     private void Idle()
     {
         actionTimer += Time.deltaTime;
-        if(actionTimer == actionRate)
+        if(actionTimer >= actionRate)
         {
             actionTimer = 0f;
             //int randomAction = Random.Range(0, 4);
@@ -176,10 +177,17 @@ public class BossBehaviours : MonoBehaviour {
     {
         Vector3 dir = player.transform.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.down);
+        transform.rotation = Quaternion.AngleAxis(angle-90, transform.forward);
 
-        GameObject fb = Instantiate(fireball, transform.position + Vector3.down * 10, Quaternion.identity);
-        fb.GetComponent<Rigidbody2D>().velocity = Vector2.down * fireBallSpeed;
+        Instantiate(fireball, transform.position, transform.rotation);
+        
+    }
+
+    public void SpinToWin()
+    {
+        transform.Rotate(0, 0, 10);
+
+        Instantiate(fireball, transform.position, transform.rotation);
     }
 
 
