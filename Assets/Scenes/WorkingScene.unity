@@ -1308,7 +1308,7 @@ GameObject:
   - component: {fileID: 1100293230}
   - component: {fileID: 1100293232}
   - component: {fileID: 1100293231}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ArenaArea
   m_TagString: CameraTrigger
   m_Icon: {fileID: 0}
