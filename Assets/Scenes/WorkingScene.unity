@@ -619,12 +619,24 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1731771503315754, guid: 34f2983fedf064dd698c061eb3685c09, type: 2}
       propertyPath: m_TagString
-      value: Player
+      value: Reflect
       objectReference: {fileID: 0}
     - target: {fileID: 212180945954854496, guid: 34f2983fedf064dd698c061eb3685c09,
         type: 2}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320829344130968, guid: 34f2983fedf064dd698c061eb3685c09, type: 2}
+      propertyPath: m_TagString
+      value: Reflect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4169569213738898, guid: 34f2983fedf064dd698c061eb3685c09, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4169569213738898, guid: 34f2983fedf064dd698c061eb3685c09, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34f2983fedf064dd698c061eb3685c09, type: 2}
@@ -830,6 +842,7 @@ GameObject:
   - component: {fileID: 721968416}
   - component: {fileID: 721968415}
   - component: {fileID: 721968414}
+  - component: {fileID: 721968419}
   - component: {fileID: 721968413}
   - component: {fileID: 721968412}
   - component: {fileID: 721968417}
@@ -1005,6 +1018,31 @@ MonoBehaviour:
   playerHealthBar: {fileID: 1516673321}
   maxPlayerHealth: 100
   playerHealth: 100
+--- !u!61 &721968419
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721968411}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.12, y: 5.12}
+  m_EdgeRadius: 0
 --- !u!1 &763249064
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,10 +1265,6 @@ Prefab:
     - target: {fileID: 4558047781334432, guid: 4c476e14dd22a4b68bcb0960b6a64afa, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1049907719914592, guid: 4c476e14dd22a4b68bcb0960b6a64afa, type: 2}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c476e14dd22a4b68bcb0960b6a64afa, type: 2}
@@ -1830,7 +1864,6 @@ GameObject:
   - component: {fileID: 1578211637}
   - component: {fileID: 1578211642}
   - component: {fileID: 1578211641}
-  - component: {fileID: 1578211636}
   m_Layer: 11
   m_Name: Boss
   m_TagString: Boss
@@ -1838,18 +1871,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1578211636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1578211635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb01fa229b78a45fa8f3f3ba94d59427, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireball: {fileID: 1852356439421700, guid: f288824703f634f45b225f671d7c99d3, type: 2}
 --- !u!61 &1578211637
 BoxCollider2D:
   m_ObjectHideFlags: 0

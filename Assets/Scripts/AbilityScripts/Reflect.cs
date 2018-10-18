@@ -17,7 +17,8 @@ public class Reflect : MonoBehaviour {
         if(col.gameObject.tag == "EnemyProjectile")
         {
             //print(col.gameObject.GetComponent<Rigidbody2D>().velocity);
-            col.gameObject.GetComponent<Rigidbody2D>().velocity = -col.gameObject.GetComponent<Rigidbody2D>().velocity;
+            // col.gameObject.GetComponent<Rigidbody2D>().velocity = -col.gameObject.GetComponent<Rigidbody2D>().velocity;
+            //col.gameObject.GetComponent<Fireball>().fireBallSpeed *= -1;
         }
     }
 }

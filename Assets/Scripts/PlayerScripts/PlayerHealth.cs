@@ -39,15 +39,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "EnemyProjectile")
-        {
-            Debug.Log("Player was hit!");
-            float projectileDamage = col.gameObject.GetComponent<Fireball>().fireBallDamage;
-            playerHealthBar.fillAmount = playerHealthBar.fillAmount - (projectileDamage / 100);
-            playerHealth -= projectileDamage;
-            Destroy(col.gameObject);
-        }
-        else if (col.gameObject.tag == "Boss")
+
+       if (col.gameObject.tag == "Boss")
         {
             InvokeRepeating("MeleeDamage", 0, .5f);
         }

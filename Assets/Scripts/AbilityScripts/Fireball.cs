@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour {
 	
-    public int fireBallDamage = 5;
+    public float fireBallDamage = 5;
     public float fireBallSpeed = 50;
     private GameObject player;
+    private bool reflected = false;
 
     private void Start()
     {
@@ -14,25 +15,44 @@ public class Fireball : MonoBehaviour {
     }
     private void Update()
     {
-        transform.Translate(Vector3.right  * Time.deltaTime * fireBallSpeed);
+        if(!reflected)
+        {
+            transform.Translate(Vector3.right * Time.deltaTime * fireBallSpeed);
+        }
+        else if(reflected)
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * fireBallSpeed);
+        }
+       
        // transform.localScale += new Vector3(1,0);
     }
     // Use this for initialization
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Boss" )
+       
+        if(col.gameObject.tag == "Reflect")
         {
-            //Do damage
-            print("Hit: 5 damage");
+            Debug.Log("Reflect happened");
+            reflected = true;
+            gameObject.tag = "Projectile";
+            gameObject.layer = 12; //changes physics layers, do not touch or I stab you
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 255);
+        }
+        else if(col.gameObject.tag == "Player")
+        {
+            GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealth -= fireBallDamage;
+            GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= .05f;
             Destroy(gameObject);
         }
-        else if(col.gameObject.tag != "Player" && gameObject.tag != "Reflect")
+        else if(col.gameObject.tag == "Absorb")
         {
-            if(col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger")
-            {
-                Destroy(gameObject);
-            }
-          
+            GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealth += fireBallDamage;
+            GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .05f;
+            Destroy(gameObject);
+        }
+        else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger")
+        {
+            Destroy(gameObject);
         }
     }
 }

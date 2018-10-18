@@ -12,6 +12,7 @@ TagManager:
   - Reflect
   - Environment
   - CameraTrigger
+  - Absorb
   layers:
   - Default
   - TransparentFX
