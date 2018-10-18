@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
             if(abilities.GetTimer("atkdash") >= abilities.GetCooldown("atkdash"))
                 Movement();
         }
-        //if()
             Rotate();
 	}
 
