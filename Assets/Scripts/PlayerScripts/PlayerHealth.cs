@@ -40,10 +40,7 @@ public class PlayerHealth : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
 
-       if (col.gameObject.tag == "Boss")
-        {
-            InvokeRepeating("MeleeDamage", 0, .5f);
-        }
+      
 
         if (col.gameObject.tag == "CheckPoint")
         {
@@ -52,17 +49,5 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D trig)
-    {
-        if (trig.gameObject.tag == "Boss")
-        {
-            CancelInvoke("MeleeDamage");
-        }
-    }
-
-    public void MeleeDamage()
-    {
-        playerHealth -= 10;
-        playerHealthBar.fillAmount -= .10f;
-    }
+   
 }

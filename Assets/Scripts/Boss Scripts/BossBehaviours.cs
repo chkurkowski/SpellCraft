@@ -10,6 +10,8 @@ public class BossBehaviours : MonoBehaviour {
     public GameObject fireball;
     public GameObject bomb;
 
+    private bool isCharging = false;
+
     public bool isActivated = false;
 
     public float fireBallSpeed = 50f;
@@ -61,8 +63,7 @@ public class BossBehaviours : MonoBehaviour {
 
         while (bossHealthInfo.isAlive)
         {
-            if (isActivated)
-            {
+           
 
                 Debug.Log("The Boss's current state is: " + state);
             switch (state)
@@ -85,38 +86,41 @@ public class BossBehaviours : MonoBehaviour {
             }
             yield return null;
 
-            }
+            
         }
         
     }
 
     private void Idle()
     {
-        actionTimer += Time.deltaTime;
-        if(actionTimer >= actionRate)
+        if (isActivated)
         {
-            actionTimer = 0f;
-            int randomAction = Random.Range(0, 3);
-            //int randomAction = 2;////CHANGE THIS BEFORE I GO
-            if(!bossHealthInfo.isFrenzied && !isBusy && randomAction == 0)
+            actionTimer += Time.deltaTime;
+            if (actionTimer >= actionRate)
             {
-                isBusy = true;
-                state = State.SPIN;
-            }
-            else if(!bossHealthInfo.isFrenzied && !isBusy && randomAction == 1)
-            {
-                isBusy = true;
-                state = State.CHARGE;
-            }
-            else if(!bossHealthInfo.isFrenzied && !isBusy && randomAction == 2)
-            {
-                isBusy = true;
-                state = State.BOMB;
-            }
-            else if(!isBusy && bossHealthInfo.isFrenzied)
-            {
-                isBusy = true;
-                state = State.COMBINED;
+                actionTimer = 0f;
+                int randomAction = Random.Range(0, 3);
+                //int randomAction = 2;////CHANGE THIS BEFORE I GO
+                if (!bossHealthInfo.isFrenzied && !isBusy && randomAction == 0)
+                {
+                    isBusy = true;
+                    state = State.SPIN;
+                }
+                else if (!bossHealthInfo.isFrenzied && !isBusy && randomAction == 1)
+                {
+                    isBusy = true;
+                    state = State.CHARGE;
+                }
+                else if (!bossHealthInfo.isFrenzied && !isBusy && randomAction == 2)
+                {
+                    isBusy = true;
+                    state = State.BOMB;
+                }
+                else if (!isBusy && bossHealthInfo.isFrenzied)
+                {
+                    isBusy = true;
+                    state = State.COMBINED;
+                }
             }
         }
     }
@@ -126,6 +130,7 @@ public class BossBehaviours : MonoBehaviour {
         if (isBusy)
         {
             isBusy = false;
+            isCharging = true;
 
 
             InvokeRepeating("ChargeAttack", 0, chargeFireRate);
@@ -178,6 +183,7 @@ public class BossBehaviours : MonoBehaviour {
 
     private void ResetState()
     {
+        isCharging = false;
         CancelInvoke();
         state = State.IDLE;
     }
@@ -193,7 +199,7 @@ public class BossBehaviours : MonoBehaviour {
         transform.rotation = Quaternion.AngleAxis(angle-90, transform.forward);
 
         gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * chargeSpeed, ForceMode2D.Impulse);
-
+       
         Invoke("StopMovement", 1);
         
     }
@@ -233,8 +239,32 @@ public class BossBehaviours : MonoBehaviour {
 
     }
 
+    public void MeleeDamage()
+    {
+        player.GetComponent<PlayerHealth>().playerHealth -= 10;
+        player.GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= .10f;
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            if(isCharging)
+            {
+                InvokeRepeating("MeleeDamage", 0, .5f);
+                    
+                   
+            }
+        }
+    }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            CancelInvoke("MeleeDamage");
+        }
+    }
 
 
 }
