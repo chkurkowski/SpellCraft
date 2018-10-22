@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4361513253035776}
   - component: {fileID: 212364383337131410}
   - component: {fileID: 61003154557271750}
+  - component: {fileID: 114660700429970512}
   m_Layer: 9
   m_Name: FlameWall
   m_TagString: EnemyProjectile
@@ -66,6 +67,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12}
   m_EdgeRadius: 0
+--- !u!114 &114660700429970512
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1383420110440926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4ca8cb7d12cc448853b77bbec53a5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212364383337131410
 SpriteRenderer:
   m_ObjectHideFlags: 1
