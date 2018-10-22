@@ -21,7 +21,7 @@ public class BossShieldScript : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision Happened!");
+      
         if(collision.gameObject.tag == "Projectile")
         {
             Debug.Log("Collision 2 Happened!");
