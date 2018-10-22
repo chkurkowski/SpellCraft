@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class AbzugManager : MonoBehaviour
+public class SystemsManager : MonoBehaviour
 {
 	// Use this for initialization
 	void Start ()
