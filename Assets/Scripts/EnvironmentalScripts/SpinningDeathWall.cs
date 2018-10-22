@@ -2,21 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireWallScript : MonoBehaviour {
-
+public class SpinningDeathWall : MonoBehaviour {
+    public float spinSpeed;
     private RespawnManager respawnManagerInfo;
-
-    private void Start()
+    // Use this for initialization
+    void Start ()
     {
         respawnManagerInfo = GameObject.Find("RespawnManager").GetComponent<RespawnManager>();
-        InvokeRepeating("DeathSpin",0, .001f);
     }
-
-    private void DeathSpin()
+	
+	// Update is called once per frame
+	void Update ()
     {
-        transform.Rotate(0, 0, 1);
-    }
-
+        transform.Rotate(0,0,spinSpeed);
+	}
 
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -26,6 +25,6 @@ public class FireWallScript : MonoBehaviour {
             Debug.Log("Fire Wall Collision Happened!");
             respawnManagerInfo.KillPlayer();
         }
-       
+
     }
 }
