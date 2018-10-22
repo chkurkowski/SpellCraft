@@ -55,7 +55,7 @@ public class PlayerHealth : MonoBehaviour
         if (col.gameObject.tag == "CheckPoint")
         {
             respawnManagerInfo.currentCheckPoint = col.gameObject;
-            Debug.Log("CheckPoint was found!");
+           
         }
     }
 

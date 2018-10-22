@@ -32,7 +32,7 @@ public class Fireball : MonoBehaviour {
        
         if(col.gameObject.tag == "Reflect")
         {
-            Debug.Log("Reflect happened");
+           // Debug.Log("Reflect happened");
             reflected = true;
             gameObject.tag = "Projectile";
             gameObject.layer = 12; //changes physics layers, do not touch or I stab you

@@ -20,10 +20,10 @@ public class FireWallScript : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("Collision Happened!");
+       
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Fire Wall Collision Happened!");
+           
             respawnManagerInfo.KillPlayer();
         }
        

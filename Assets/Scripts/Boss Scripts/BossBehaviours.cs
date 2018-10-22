@@ -65,7 +65,7 @@ public class BossBehaviours : MonoBehaviour {
         {
            
 
-                Debug.Log("The Boss's current state is: " + state);
+                //Debug.Log("The Boss's current state is: " + state);
             switch (state)
             {
                 case State.IDLE:
