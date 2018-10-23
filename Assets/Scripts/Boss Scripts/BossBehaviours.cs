@@ -9,7 +9,7 @@ public class BossBehaviours : MonoBehaviour {
 
     public GameObject fireball;
     public GameObject bomb;
-
+    private float spinDefault;
     private bool isCharging = false;
 
     public bool isActivated = false;
@@ -50,7 +50,7 @@ public class BossBehaviours : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-      
+        spinDefault = spinRotationAmount;
         player = GameObject.Find("Player");
         bossHealthInfo = gameObject.GetComponent<BossHealth>();
         state = State.IDLE;
@@ -80,9 +80,6 @@ public class BossBehaviours : MonoBehaviour {
                 case State.BOMB:
                     Bomb();
                     break;
-                case State.COMBINED:
-                    Combined();
-                    break;
             }
             yield return null;
 
@@ -99,27 +96,23 @@ public class BossBehaviours : MonoBehaviour {
             if (actionTimer >= actionRate)
             {
                 actionTimer = 0f;
-                //int randomAction = Random.Range(0, 3);
-                int randomAction = 0;////CHANGE THIS BEFORE I GO
-                if (!bossHealthInfo.isFrenzied && !isBusy && randomAction == 0 && isActivated)
+
+                int randomAction = Random.Range(0, 3);
+              
+                if (!isBusy && randomAction == 0 && isActivated)
                 {
                     isBusy = true;
                     state = State.SPIN;
                 }
-                else if (!bossHealthInfo.isFrenzied && !isBusy && randomAction == 1 && isActivated)
+                else if (!isBusy && randomAction == 1 && isActivated)
                 {
                     isBusy = true;
                     state = State.CHARGE;
                 }
-                else if (!bossHealthInfo.isFrenzied && !isBusy && randomAction == 2 && isActivated)
+                else if (!isBusy && randomAction == 2 && isActivated)
                 {
                     isBusy = true;
                     state = State.BOMB;
-                }
-                else if (!isBusy && bossHealthInfo.isFrenzied)
-                {
-                    isBusy = true;
-                    state = State.COMBINED;
                 }
             }
         }
@@ -144,9 +137,10 @@ public class BossBehaviours : MonoBehaviour {
        if(isBusy)
         {
             isBusy = false;
-
+            spinRotationAmount = spinDefault;
             InvokeRepeating("SpinToWin", 0, spinFireRate);
             Invoke("ResetState", spinTimeLength);
+            
 
         }
 
@@ -166,21 +160,6 @@ public class BossBehaviours : MonoBehaviour {
 
     }
 
-
-
-    private void Combined()
-    {
-        if (isBusy)
-        {
-            isBusy = false;
-
-            InvokeRepeating("WomboCombo", 0, comboFireRate);
-            Invoke("ResetState", comboTimeLength);
-        }
-
-
-    }
-
     private void ResetState()
     {
         isCharging = false;
@@ -188,18 +167,13 @@ public class BossBehaviours : MonoBehaviour {
         state = State.IDLE;
     }
 
-
-
-
     ////////////////////////////ACTUAL ATTACKS
     public void ChargeAttack()
     {
         Vector3 dir = player.transform.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle-90, transform.forward);
-
         gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * chargeSpeed, ForceMode2D.Impulse);
-       
         Invoke("StopMovement", 1);
         
     }
@@ -211,10 +185,10 @@ public class BossBehaviours : MonoBehaviour {
 
 
     public void SpinToWin()
-    {
-        gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * chargeSpeed, ForceMode2D.Impulse);
+    {  
         transform.Rotate(0, 0, spinRotationAmount);
             Instantiate(fireball, transform.position, transform.rotation);
+        spinRotationAmount -= .01f;
     }
 
     public void BombTown()
@@ -226,18 +200,6 @@ public class BossBehaviours : MonoBehaviour {
         Instantiate(bomb, transform.position, transform.rotation);
     }
 
-    public void WomboCombo()
-    {
-        
-        ChargeAttack();
-
-        Instantiate(bomb, transform.position, Quaternion.AngleAxis(90, transform.forward));
-        Instantiate(bomb, transform.position, Quaternion.AngleAxis(-90, transform.forward));
-        Instantiate(bomb, transform.position, Quaternion.AngleAxis(-180, transform.forward));
-        Instantiate(bomb, transform.position, Quaternion.AngleAxis(180, transform.forward));
-
-
-    }
 
     public void MeleeDamage()
     {

@@ -3910,7 +3910,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 721968411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 357, y: -231.9, z: 0}
+  m_LocalPosition: {x: 13, y: -118, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1288023011}
@@ -8017,7 +8017,7 @@ MonoBehaviour:
   chargeTimeLength: 6
   bombTimeLength: 4
   comboTimeLength: 5
-  spinFireRate: 0.01
+  spinFireRate: 0.001
   spinRotationAmount: 10
   bombFireRate: 3
   chargeFireRate: 1
