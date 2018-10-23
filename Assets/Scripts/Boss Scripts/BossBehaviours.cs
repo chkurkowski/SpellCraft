@@ -99,8 +99,8 @@ public class BossBehaviours : MonoBehaviour {
             if (actionTimer >= actionRate)
             {
                 actionTimer = 0f;
-                int randomAction = Random.Range(0, 3);
-                //int randomAction = 2;////CHANGE THIS BEFORE I GO
+                //int randomAction = Random.Range(0, 3);
+                int randomAction = 0;////CHANGE THIS BEFORE I GO
                 if (!bossHealthInfo.isFrenzied && !isBusy && randomAction == 0 && isActivated)
                 {
                     isBusy = true;
@@ -212,9 +212,9 @@ public class BossBehaviours : MonoBehaviour {
 
     public void SpinToWin()
     {
+        gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * chargeSpeed, ForceMode2D.Impulse);
         transform.Rotate(0, 0, spinRotationAmount);
-
-        Instantiate(fireball, transform.position, transform.rotation);
+            Instantiate(fireball, transform.position, transform.rotation);
     }
 
     public void BombTown()
