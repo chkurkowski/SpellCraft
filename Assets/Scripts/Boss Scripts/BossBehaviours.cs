@@ -97,7 +97,8 @@ public class BossBehaviours : MonoBehaviour {
             {
                 actionTimer = 0f;
 
-                int randomAction = Random.Range(0, 3);
+               // int randomAction = Random.Range(0, 3);
+                int randomAction = 1;
               
                 if (!isBusy && randomAction == 0 && isActivated)
                 {
@@ -175,6 +176,22 @@ public class BossBehaviours : MonoBehaviour {
         transform.rotation = Quaternion.AngleAxis(angle-90, transform.forward);
         gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * chargeSpeed, ForceMode2D.Impulse);
         Invoke("StopMovement", 1);
+        if(bossHealthInfo.isMad)
+        {
+            GameObject bomb1 = Instantiate(bomb, transform.position, transform.rotation);
+            bomb1.transform.Rotate(0,0,45);
+            GameObject bomb2 = Instantiate(bomb, transform.position, transform.rotation);
+            bomb2.transform.Rotate(0, 0, -45);
+          
+            if(bossHealthInfo.isFrenzied)
+            {
+                GameObject bomb3 = Instantiate(bomb, transform.position, transform.rotation);
+                bomb3.transform.Rotate(0, 0, 135);
+                GameObject bomb4 = Instantiate(bomb, transform.position, transform.rotation);
+                bomb4.transform.Rotate(0, 0, -135);
+            }
+            
+        }
         
     }
 
