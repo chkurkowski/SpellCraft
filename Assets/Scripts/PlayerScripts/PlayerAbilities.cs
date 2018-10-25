@@ -12,6 +12,7 @@ public class PlayerAbilities : MonoBehaviour {
     public PlayerMovement movement;
     public PlayerHealth health;
     public Vector2 cursorInWorldPos;
+    public GameObject simulacrum;
 
 
     //FSM Variables
@@ -21,10 +22,10 @@ public class PlayerAbilities : MonoBehaviour {
         LONGATK,
         EVADE,
         REFLECT,
-        ATKDASH,
+        ATKSIM,
         ATKHANDLER,
         ABSORB,
-        SWAPTELEPORT
+        REFLECTSIM
     }
     public State state;
 
@@ -92,14 +93,17 @@ public class PlayerAbilities : MonoBehaviour {
                 case State.REFLECT:
                     Reflect();
                     break;
-                case State.ATKDASH:
-                    AttackDash();
+                case State.ATKSIM:
+                    AttackSimulacrum();
                     break;
                 case State.ATKHANDLER:
                     AttackDashHandler();
                     break;
                 case State.ABSORB:
                     Absorb();
+                    break;
+                case State.REFLECTSIM:
+                    ReflectSimulacrum();
                     break;
             }
             yield return null;
@@ -134,7 +138,7 @@ public class PlayerAbilities : MonoBehaviour {
         else if(Input.GetKeyDown(KeyCode.Space) && longATKTimer <= LONGATKCOOLDOWN && atkDashTimer >= ATKDASHCOOLDOWN)
         {
             atkDashTimer = 0f;
-            state = State.ATKDASH;
+            state = State.ATKSIM;
         }
         else if(Input.GetKeyDown(KeyCode.Space) && evadeTimer >= EVADECOOLDOWN)
         {
@@ -188,13 +192,9 @@ public class PlayerAbilities : MonoBehaviour {
         state = State.IDLE;
     }
 
-    private void AttackDash()
+    private void AttackSimulacrum()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-        dashCollider.SetActive(true);
-        Vector2 direction = cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
-        direction.Normalize();
-        gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
+
         state = State.IDLE;
     }
 
@@ -212,12 +212,10 @@ public class PlayerAbilities : MonoBehaviour {
         state = State.IDLE;
     }
 
-    /*
-    public void UndeterminedAttack()
+    public void ReflectSimulacrum()
     {
 
     }
-    */
 
     private void TimerHandler()
     {
