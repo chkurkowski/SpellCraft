@@ -10,10 +10,11 @@ public class PlayerHealth : MonoBehaviour
     public float maxPlayerHealth = 100f;
     public float playerHealth = 100f;
     private RespawnManager respawnManagerInfo;
+    public Text playerHealthNumber;
+    
 
-
-	// Use this for initialization
-	void Start () 
+    // Use this for initialization
+    void Start () 
     {
         respawnManagerInfo = GameObject.Find("RespawnManager").GetComponent<RespawnManager>();
 	}
@@ -33,18 +34,19 @@ public class PlayerHealth : MonoBehaviour
             //Color c = gameObject.GetComponent<SpriteRenderer>().color;
            // c.a = .55f;
             //gameObject.GetComponent<SpriteRenderer>().color = c;
-
         }
         else if(playerHealth > maxPlayerHealth)
         {
             playerHealth = maxPlayerHealth;
         }
 
+        playerHealthNumber.text = playerHealth.ToString();  
     }
 
     public void HealPlayer(float healAmount)
     {
         playerHealth += healAmount;
+
     }
 
     private void OnTriggerEnter2D(Collider2D col)
