@@ -97,8 +97,8 @@ public class BossBehaviours : MonoBehaviour {
             {
                 actionTimer = 0f;
 
-               // int randomAction = Random.Range(0, 3);
-                int randomAction = 1;
+                int randomAction = Random.Range(0, 3);
+               // int randomAction = 1;
               
                 if (!isBusy && randomAction == 0 && isActivated)
                 {
