@@ -12,6 +12,7 @@ public class BossHealth : MonoBehaviour
     public float bossMaxHealth = 100;
     public bool isAlive = true;
     public bool isFrenzied = false;
+    public Text bossHealthNumber;
 	
 	// Update is called once per frame
 	void Update () 
@@ -30,6 +31,8 @@ public class BossHealth : MonoBehaviour
         {
             isFrenzied = true;
         }
+
+        bossHealthNumber.text = bossHealth.ToString();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
