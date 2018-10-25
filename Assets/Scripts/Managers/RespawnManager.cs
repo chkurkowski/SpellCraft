@@ -23,5 +23,6 @@ public class RespawnManager : MonoBehaviour{
         playerHealthInfo.transform.position = currentCheckPoint.transform.position;
         playerHealthInfo.playerHealth = playerHealthInfo.maxPlayerHealth;
         playerHealthInfo.playerHealthBar.fillAmount += 1;
+       
     }
 }

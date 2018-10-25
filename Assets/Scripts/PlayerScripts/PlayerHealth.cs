@@ -29,10 +29,8 @@ public class PlayerHealth : MonoBehaviour
         if(playerHealth <= 0)
         {
             respawnManagerInfo.KillPlayer();
-            isAlive = false;
-            //Color c = gameObject.GetComponent<SpriteRenderer>().color;
-           // c.a = .55f;
-            //gameObject.GetComponent<SpriteRenderer>().color = c;
+           
+          
 
         }
         else if(playerHealth > maxPlayerHealth)
