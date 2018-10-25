@@ -41,14 +41,14 @@ public class PlayerAbilities : MonoBehaviour {
 
     //Ability timers
     private const float LONGATKCOOLDOWN = .35f;
-    private const float EVADECOOLDOWN = .6f;
+    private const float EVADECOOLDOWN = .5f;
     private const float REFLECTCOOLDOWN = 3f;
     private const float ATKDASHCOOLDOWN = 3f;
     private const float ABSORBCOOLDOWN = 6f;
     private const float SWAPTELEPORTCOOLDOWN = 6f;
 
     private const float ATKDASHEND = .6f;
-    private const float ABSORBEND = 4.5f;
+    private const float ABSORBEND = 3f;
 
     private float longATKTimer, evadeTimer, reflectTimer, 
     atkDashTimer, absorbTimer, swapTeleportTimer;
@@ -166,7 +166,7 @@ public class PlayerAbilities : MonoBehaviour {
 
     public void Evade()
     {
-        Vector2 direction = cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
+        Vector2 direction = new Vector2(movement.horizontalMovement, movement.verticalMovement);
         direction.Normalize();
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
         gameObject.layer = 14;// changes physics layers to avoid collision
@@ -272,5 +272,14 @@ public class PlayerAbilities : MonoBehaviour {
             return ABSORBCOOLDOWN;
         else
             return SWAPTELEPORTCOOLDOWN;
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.tag == "Environment" && evadeTimer <= EVADECOOLDOWN)
+        {
+            //print("Hit wall");
+            evadeTimer += EVADECOOLDOWN;
+        }
     }
 }
