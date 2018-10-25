@@ -97,8 +97,8 @@ public class BossBehaviours : MonoBehaviour {
             {
                 actionTimer = 0f;
 
-                int randomAction = Random.Range(0, 3);
-               // int randomAction = 1;
+                //int randomAction = Random.Range(0, 3);
+                int randomAction = 0;
               
                 if (!isBusy && randomAction == 0 && isActivated)
                 {
@@ -206,7 +206,9 @@ public class BossBehaviours : MonoBehaviour {
     {  
         transform.Rotate(0, 0, spinRotationAmount);
             Instantiate(fireball, transform.position, transform.rotation);
-        spinRotationAmount -= .01f;
+        spinRotationAmount = spinDefault;
+        spinRotationAmount += .05f;
+        
     }
 
     public void BombTown()
