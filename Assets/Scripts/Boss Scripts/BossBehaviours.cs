@@ -166,6 +166,7 @@ public class BossBehaviours : MonoBehaviour {
         isCharging = false;
         CancelInvoke();
         state = State.IDLE;
+        spinRotationAmount = spinDefault;
     }
 
     ////////////////////////////ACTUAL ATTACKS
