@@ -1839,7 +1839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &295384273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1885,7 +1885,7 @@ Canvas:
   m_GameObject: {fileID: 295384272}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1098178469}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -3065,7 +3065,7 @@ Transform:
   m_LocalScale: {x: 170, y: 170, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &582115167
 CircleCollider2D:
@@ -4060,7 +4060,7 @@ Transform:
   - {fileID: 1232743021}
   - {fileID: 1062934187}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &721968417
 MonoBehaviour:
@@ -8039,7 +8039,7 @@ Transform:
   m_Children:
   - {fileID: 619142212}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1578211641
 MonoBehaviour:
@@ -8054,13 +8054,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireball: {fileID: 1852356439421700, guid: f288824703f634f45b225f671d7c99d3, type: 2}
   bomb: {fileID: 1581581200255988, guid: 5e07e1b1b56f0a54c9510b652207fd50, type: 2}
+  megaBomb: {fileID: 1930379783095238, guid: 0b21bc60cbc36694db305ca47d206bf5, type: 2}
   isActivated: 0
   fireBallSpeed: 50
   spinTimeLength: 6
   chargeTimeLength: 6
   bombTimeLength: 4
   comboTimeLength: 5
-  spinFireRate: 0.001
+  spinFireRate: 0.03
   spinRotationAmount: 10
   bombFireRate: 3
   chargeFireRate: 1

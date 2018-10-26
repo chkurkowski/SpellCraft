@@ -9,7 +9,8 @@ public class BossBehaviours : MonoBehaviour {
 
     public GameObject fireball;
     public GameObject bomb;
-    private float spinDefault;
+    public GameObject megaBomb;
+    private const float SPIN_DEFAULT = 10;
     private bool isCharging = false;
 
     public bool isActivated = false;
@@ -50,7 +51,7 @@ public class BossBehaviours : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        spinDefault = spinRotationAmount;
+        //spinDefault = spinRotationAmount;
         player = GameObject.Find("Player");
         bossHealthInfo = gameObject.GetComponent<BossHealth>();
         state = State.IDLE;
@@ -97,8 +98,8 @@ public class BossBehaviours : MonoBehaviour {
             {
                 actionTimer = 0f;
 
-                //int randomAction = Random.Range(0, 3);
-                int randomAction = 0;
+                int randomAction = Random.Range(0, 3);
+                //int randomAction = 0;
               
                 if (!isBusy && randomAction == 0 && isActivated)
                 {
@@ -138,7 +139,27 @@ public class BossBehaviours : MonoBehaviour {
        if(isBusy)
         {
             isBusy = false;
-            spinRotationAmount = spinDefault;
+            // spinRotationAmount = spinDefault;
+            if (bossHealthInfo.isFrenzied)
+            {
+                spinFireRate = .01f;
+                GameObject bomb4 = Instantiate(bomb, transform.position, transform.rotation);
+                bomb4.transform.Rotate(0, 0, -45);
+                GameObject bomb5 = Instantiate(bomb, transform.position, transform.rotation);
+                bomb5.transform.Rotate(0, 0, 90);
+                GameObject bomb6 = Instantiate(bomb, transform.position, transform.rotation);
+                bomb6.transform.Rotate(0, 0, -90);
+            }
+            if (bossHealthInfo.isMad)
+            {
+                GameObject bomb1 = Instantiate(bomb, transform.position, transform.rotation);
+                bomb1.transform.Rotate(0, 0, 180);
+                GameObject bomb2 = Instantiate(bomb, transform.position, transform.rotation);
+                bomb2.transform.Rotate(0, 0, 0);
+                GameObject bomb3 = Instantiate(bomb, transform.position, transform.rotation);
+                bomb3.transform.Rotate(0, 0, 45);
+             
+            }
             InvokeRepeating("SpinToWin", 0, spinFireRate);
             Invoke("ResetState", spinTimeLength);
             
@@ -146,6 +167,18 @@ public class BossBehaviours : MonoBehaviour {
         }
 
         
+    }
+
+    public void SpinToWin()
+    {
+       
+        transform.Rotate(0, 0, spinRotationAmount);
+        Instantiate(fireball, transform.position, transform.rotation);
+        
+        //spinRotationAmount = spinDefault;
+        spinRotationAmount = SPIN_DEFAULT;
+        spinRotationAmount += .05f;
+
     }
 
     private void Bomb()
@@ -161,12 +194,42 @@ public class BossBehaviours : MonoBehaviour {
 
     }
 
+
+    public void BombTown()
+    {
+        Vector3 dir = player.transform.position - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
+        if(bossHealthInfo.isFrenzied)
+        {
+            GameObject bomb1 = Instantiate(megaBomb, transform.position, transform.rotation);
+            GameObject bomb2 = Instantiate(megaBomb, transform.position, transform.rotation);
+          
+            bomb2.transform.Rotate(0, 0, 180);
+      
+        }
+        else if(bossHealthInfo.isMad)
+        {
+            Debug.Log("BOMB IS MAD HAPPENED!");
+           GameObject bomb1 = Instantiate(bomb, transform.position, transform.rotation);
+           GameObject bomb2 = Instantiate(bomb, transform.position, transform.rotation);
+            bomb2.transform.Rotate(0, 0, 90);
+           GameObject bomb3 = Instantiate(bomb, transform.position, transform.rotation);
+            bomb3.transform.Rotate(0, 0, -90);
+        }
+        else
+        {
+            Instantiate(bomb, transform.position, transform.rotation);
+        }
+      
+    }
+
     private void ResetState()
     {
         isCharging = false;
         CancelInvoke();
         state = State.IDLE;
-        spinRotationAmount = spinDefault;
+        //spinRotationAmount = spinDefault;
     }
 
     ////////////////////////////ACTUAL ATTACKS
@@ -202,23 +265,8 @@ public class BossBehaviours : MonoBehaviour {
     }
 
 
-    public void SpinToWin()
-    {  
-        transform.Rotate(0, 0, spinRotationAmount);
-            Instantiate(fireball, transform.position, transform.rotation);
-        spinRotationAmount = spinDefault;
-        spinRotationAmount += .05f;
-        
-    }
+   
 
-    public void BombTown()
-    {
-        Vector3 dir = player.transform.position - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
-
-        Instantiate(bomb, transform.position, transform.rotation);
-    }
 
 
     public void MeleeDamage()
