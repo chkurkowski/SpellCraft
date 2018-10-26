@@ -27,11 +27,11 @@ public class BossHealth : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().color = c;
             print("you win woohoo!");
         }
-        else if(bossHealth <= (bossMaxHealth/2))
+        if(bossHealth <= (bossMaxHealth/2))
         {
             isMad = true;
         }
-        else if(bossHealth <= (bossMaxHealth /5))
+        if(bossHealth <= (bossMaxHealth / 5))
         {
             isFrenzied = true;
         }
