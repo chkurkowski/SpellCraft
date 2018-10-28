@@ -25,8 +25,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(abilities.GetTimer("evade") >= abilities.GetCooldown("evade") && abilities.health.isAlive)
         {
-            if(abilities.GetTimer("atkdash") >= abilities.GetCooldown("atkdash"))
-                Movement();
+            Movement();
         }
             Rotate();
 	}

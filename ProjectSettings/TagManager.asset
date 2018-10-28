@@ -13,6 +13,7 @@ TagManager:
   - Environment
   - CameraTrigger
   - Absorb
+  - PlayerSim
   layers:
   - Default
   - TransparentFX

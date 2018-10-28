@@ -44,6 +44,11 @@ public class Fireball : MonoBehaviour {
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= .05f;
             Destroy(gameObject);
         }
+        else if (col.gameObject.tag == "Simulacrum")
+        {
+            col.gameObject.GetComponent<SimulacrumAbilities>().AbsorbDamage(fireBallDamage);
+            Destroy(gameObject);
+        }
         else if(col.gameObject.tag == "Absorb")
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealth += fireBallDamage/2;

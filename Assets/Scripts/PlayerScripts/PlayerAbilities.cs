@@ -44,15 +44,15 @@ public class PlayerAbilities : MonoBehaviour {
     private const float LONGATKCOOLDOWN = .35f;
     private const float EVADECOOLDOWN = .5f;
     private const float REFLECTCOOLDOWN = 3f;
-    private const float ATKDASHCOOLDOWN = 3f;
+    private const float ATKSIMCOOLDOWN = 2f;
     private const float ABSORBCOOLDOWN = 6f;
-    private const float SWAPTELEPORTCOOLDOWN = 6f;
+    private const float REFLECTSIMCOOLDOWN = 6f;
 
     private const float ATKDASHEND = .6f;
     private const float ABSORBEND = 3f;
 
     private float longATKTimer, evadeTimer, reflectTimer, 
-    atkDashTimer, absorbTimer, swapTeleportTimer;
+    atkSimTimer, absorbTimer, reflectSimTimer;
 
 
 	// Use this for initialization
@@ -62,9 +62,9 @@ public class PlayerAbilities : MonoBehaviour {
         longATKTimer = LONGATKCOOLDOWN;
         evadeTimer = EVADECOOLDOWN;
         reflectTimer = REFLECTCOOLDOWN;
-        atkDashTimer = ATKDASHCOOLDOWN;
+        atkSimTimer = ATKSIMCOOLDOWN;
         absorbTimer = ABSORBCOOLDOWN;
-        swapTeleportTimer = SWAPTELEPORTCOOLDOWN;
+        reflectSimTimer = REFLECTSIMCOOLDOWN;
 
         movement = GetComponent<PlayerMovement>();
         health = GetComponent<PlayerHealth>();
@@ -96,9 +96,6 @@ public class PlayerAbilities : MonoBehaviour {
                 case State.ATKSIM:
                     AttackSimulacrum();
                     break;
-                case State.ATKHANDLER:
-                    AttackDashHandler();
-                    break;
                 case State.ABSORB:
                     Absorb();
                     break;
@@ -119,10 +116,16 @@ public class PlayerAbilities : MonoBehaviour {
         if (absorb.activeSelf && reflect.activeSelf)
             reflect.SetActive(false);
 
-        if(Input.GetKeyDown(KeyCode.Mouse0) && evadeTimer <= EVADECOOLDOWN && atkDashTimer >= ATKDASHCOOLDOWN)
+        // Left click abilities || Base long attack
+        if (Input.GetKeyDown(KeyCode.Mouse0) && evadeTimer <= EVADECOOLDOWN && atkSimTimer >= ATKSIMCOOLDOWN)
         {
-            atkDashTimer = 0f;
-            state = State.ATKHANDLER;
+            atkSimTimer = 0f;
+            state = State.ATKSIM;
+        }
+        else if(Input.GetKeyDown(KeyCode.Mouse0) && reflectTimer <= REFLECTCOOLDOWN && reflectSimTimer >= REFLECTSIMCOOLDOWN)
+        {
+            reflectSimTimer = 0f;
+            state = State.REFLECTSIM;
         }
         else if (Input.GetKey(KeyCode.Mouse0) && longATKTimer >= LONGATKCOOLDOWN)
         {
@@ -130,14 +133,15 @@ public class PlayerAbilities : MonoBehaviour {
             state = State.LONGATK;
         }
 
+        //Space abilities || Base evade
         if(Input.GetKeyDown(KeyCode.Space) && reflectTimer <= REFLECTCOOLDOWN && absorbTimer >= ABSORBCOOLDOWN)
         {
             absorbTimer = 0f;
             state = State.ABSORB;
         }
-        else if(Input.GetKeyDown(KeyCode.Space) && longATKTimer <= LONGATKCOOLDOWN && atkDashTimer >= ATKDASHCOOLDOWN)
+        else if(Input.GetKeyDown(KeyCode.Space) && longATKTimer <= LONGATKCOOLDOWN && atkSimTimer >= ATKSIMCOOLDOWN)
         {
-            atkDashTimer = 0f;
+            atkSimTimer = 0f;
             state = State.ATKSIM;
         }
         else if(Input.GetKeyDown(KeyCode.Space) && evadeTimer >= EVADECOOLDOWN)
@@ -147,10 +151,16 @@ public class PlayerAbilities : MonoBehaviour {
             state = State.EVADE;
         }
 
+        //Right Click Abilities || Base Reflect
         if(Input.GetKeyDown(KeyCode.Mouse1) && evadeTimer <= EVADECOOLDOWN && absorbTimer >= ABSORBCOOLDOWN)
         {
             absorbTimer = 0f;
             state = State.ABSORB;
+        }
+        else if(Input.GetKeyDown(KeyCode.Mouse1) && longATKTimer <= LONGATKCOOLDOWN && reflectSimTimer >= REFLECTSIMCOOLDOWN)
+        {
+            reflectSimTimer = 0f;
+            state = State.REFLECTSIM;
         }
         else if(Input.GetKeyDown(KeyCode.Mouse1) && reflectTimer >= REFLECTCOOLDOWN)
         {
@@ -194,14 +204,8 @@ public class PlayerAbilities : MonoBehaviour {
 
     private void AttackSimulacrum()
     {
-
-        state = State.IDLE;
-    }
-
-    private void AttackDashHandler()
-    {
-        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-        dashCollider.SetActive(true);
+        GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
+        sim.GetComponent<SimulacrumAbilities>().type = "Attack";
         state = State.IDLE;
     }
 
@@ -214,7 +218,9 @@ public class PlayerAbilities : MonoBehaviour {
 
     public void ReflectSimulacrum()
     {
-
+        GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
+        sim.GetComponent<SimulacrumAbilities>().type = "Absorb";
+        state = State.IDLE;
     }
 
     private void TimerHandler()
@@ -222,18 +228,14 @@ public class PlayerAbilities : MonoBehaviour {
         longATKTimer += Time.deltaTime;
         evadeTimer += Time.deltaTime;
         reflectTimer += Time.deltaTime;
-        atkDashTimer += Time.deltaTime;
+        atkSimTimer += Time.deltaTime;
         absorbTimer += Time.deltaTime;
+        reflectSimTimer += Time.deltaTime;
 
-        if(evadeTimer >= EVADECOOLDOWN)
+        if (evadeTimer >= EVADECOOLDOWN)
             gameObject.GetComponent<Collider2D>().isTrigger = false;
         if (reflectTimer >= 2f)
             reflect.SetActive(false);
-        if(atkDashTimer >= ATKDASHEND)
-        {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-            dashCollider.SetActive(false);
-        }
         if(absorbTimer >= ABSORBEND)
         {
             absorb.SetActive(false);
@@ -249,11 +251,11 @@ public class PlayerAbilities : MonoBehaviour {
         else if (str == "reflect")
             return reflectTimer;
         else if (str == "atkdash")
-            return atkDashTimer;
+            return atkSimTimer;
         else if (str == "absorb")
             return absorbTimer;
         else
-            return swapTeleportTimer;
+            return reflectSimTimer;
     }
 
     public float GetCooldown(string str)
@@ -265,11 +267,11 @@ public class PlayerAbilities : MonoBehaviour {
         else if (str == "reflect")
             return REFLECTCOOLDOWN;
         else if (str == "atkdash")
-            return ATKDASHEND;
+            return ATKSIMCOOLDOWN;
         else if (str == "absorb")
             return ABSORBCOOLDOWN;
         else
-            return SWAPTELEPORTCOOLDOWN;
+            return REFLECTSIMCOOLDOWN;
     }
 
     private void OnCollisionEnter2D(Collision2D col)
