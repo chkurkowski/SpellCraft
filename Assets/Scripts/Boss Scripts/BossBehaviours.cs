@@ -275,6 +275,11 @@ public class BossBehaviours : MonoBehaviour {
         player.GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= .10f;
     }
 
+    public void SimulacrumMelee()
+    {
+        GameObject.FindWithTag("Simulacrum").GetComponent<SimulacrumAbilities>().AbsorbDamage(10);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
@@ -286,11 +291,20 @@ public class BossBehaviours : MonoBehaviour {
                    
             }
         }
+        else if (collision.gameObject.tag == "Simulacrum")
+        {
+            if (isCharging)
+            {
+                InvokeRepeating("SimulacrumMelee", 0, .5f);
+
+
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Simulacrum")
         {
             CancelInvoke("MeleeDamage");
         }

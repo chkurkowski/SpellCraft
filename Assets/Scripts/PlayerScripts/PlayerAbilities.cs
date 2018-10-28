@@ -46,7 +46,7 @@ public class PlayerAbilities : MonoBehaviour {
     private const float REFLECTCOOLDOWN = 3f;
     private const float ATKSIMCOOLDOWN = 2f;
     private const float ABSORBCOOLDOWN = 6f;
-    private const float REFLECTSIMCOOLDOWN = 6f;
+    private const float REFLECTSIMCOOLDOWN = 12f;
 
     private const float ATKDASHEND = .6f;
     private const float ABSORBEND = 3f;

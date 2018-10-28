@@ -23,11 +23,13 @@ public class SimulacrumAbilities : MonoBehaviour
     private const float ATTACKCOOLDOWN = .7f;
     private float attackTimer;
     private float damageTaken = 0;
+    private Transform boss;
     private Vector2 cursorInWorldPos;
 
     // Use this for initialization
     void Start()
     {
+        boss = GameObject.Find("Boss").transform;
         Invoke("Destroy", 8f);
         StartCoroutine("FSM");
     }
@@ -85,22 +87,22 @@ public class SimulacrumAbilities : MonoBehaviour
         if(type == "Absorb")
         {
             damageTaken += amt;
-            //print(damageTaken);
+            print(damageTaken);
         }
     }
 
     public void Explode()
     {
-        int explodeAmount = Mathf.CeilToInt(damageTaken);
+        int explodeAmount = Mathf.CeilToInt(damageTaken/2);
 
         LookAtBoss();
 
         for (int i = 0; i < explodeAmount; i++)
         {
-            Vector2 direction = GameObject.Find("Boss").transform.position - transform.position;
+            Vector2 direction = new Vector3(Random.Range(boss.position.x - 20, boss.position.x + 20), Random.Range(boss.position.y - 10, boss.position.y + 10), boss.position.x) - transform.position;
             direction.Normalize();
             GameObject fb = Instantiate(fireball, transform.position, Quaternion.identity);
-            fb.GetComponent<Rigidbody2D>().velocity = direction * atkSpeed;
+            fb.GetComponent<Rigidbody2D>().velocity = direction * Random.Range(atkSpeed - 20, atkSpeed + 20);
         }
     }
 
