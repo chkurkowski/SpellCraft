@@ -2832,56 +2832,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &516442312
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 721968416}
-    m_Modifications:
-    - target: {fileID: 4850398618194400, guid: f1573a96bd769422f889ed373175e7c8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4850398618194400, guid: f1573a96bd769422f889ed373175e7c8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4850398618194400, guid: f1573a96bd769422f889ed373175e7c8, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4850398618194400, guid: f1573a96bd769422f889ed373175e7c8, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4850398618194400, guid: f1573a96bd769422f889ed373175e7c8, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4850398618194400, guid: f1573a96bd769422f889ed373175e7c8, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4850398618194400, guid: f1573a96bd769422f889ed373175e7c8, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4850398618194400, guid: f1573a96bd769422f889ed373175e7c8, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4614663714464856, guid: f1573a96bd769422f889ed373175e7c8, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1318807354050872, guid: f1573a96bd769422f889ed373175e7c8, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f1573a96bd769422f889ed373175e7c8, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &551197929
 GameObject:
   m_ObjectHideFlags: 0
@@ -4125,7 +4075,6 @@ Transform:
   m_Children:
   - {fileID: 1288023011}
   - {fileID: 927977458}
-  - {fileID: 1232743021}
   - {fileID: 1062934187}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -4144,11 +4093,11 @@ MonoBehaviour:
   fireball: {fileID: 1269839615260892, guid: ccf371fb7d5d54c62b0619b9ac65ffdf, type: 2}
   reflect: {fileID: 1288023010}
   absorb: {fileID: 927977457}
-  dashCollider: {fileID: 1232743020}
+  dashCollider: {fileID: 0}
   movement: {fileID: 0}
   health: {fileID: 0}
   cursorInWorldPos: {x: 0, y: 0}
-  simulacrum: {fileID: 0}
+  simulacrum: {fileID: 1756307218520016, guid: 24e563f41ef354c129fbea10a5e2a649, type: 2}
   state: 0
   atkSpeed: 125
   dashSpeed: 50
@@ -5448,7 +5397,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 721968416}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &1062934188
 SpriteRenderer:
@@ -6409,16 +6358,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4361513253035776, guid: 29188576af6bfdf4792cd5c0a5e29809,
     type: 2}
   m_PrefabInternal: {fileID: 612117912}
---- !u!1 &1232743020 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1318807354050872, guid: f1573a96bd769422f889ed373175e7c8,
-    type: 2}
-  m_PrefabInternal: {fileID: 516442312}
---- !u!4 &1232743021 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4614663714464856, guid: f1573a96bd769422f889ed373175e7c8,
-    type: 2}
-  m_PrefabInternal: {fileID: 516442312}
 --- !u!1 &1260229421
 GameObject:
   m_ObjectHideFlags: 0

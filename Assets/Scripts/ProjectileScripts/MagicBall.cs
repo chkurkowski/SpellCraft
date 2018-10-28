@@ -18,7 +18,7 @@ public class MagicBall : MonoBehaviour {
            // print("Hit: 5 damage");
             Destroy(gameObject);
         }
-        else if (col.gameObject.tag != "Player" && gameObject.tag != "Reflect")
+        else if (col.gameObject.tag != "Player" && gameObject.tag != "Reflect" && col.gameObject.tag != "Simulacrum")
         {
             if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger")
             {

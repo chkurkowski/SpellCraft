@@ -27,11 +27,16 @@ public class Bomb : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D col)
     {
 
-       if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player")
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealth -= bombDamage;
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= .25f;
 
+        }
+        else if(col.gameObject.tag == "Simulacrum")
+        {
+            col.gameObject.GetComponent<SimulacrumAbilities>().AbsorbDamage(bombDamage);
+            Explode();
         }
 
         else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger")
