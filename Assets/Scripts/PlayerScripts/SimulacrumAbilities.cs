@@ -39,7 +39,8 @@ public class SimulacrumAbilities : MonoBehaviour
         while (alive)
         {
             cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //print(state);
+            if (type == "Absorb")
+                gameObject.GetComponent<SpriteRenderer>().color = Color.green;
             switch (state)
             {
                 case State.IDLE:
@@ -93,7 +94,7 @@ public class SimulacrumAbilities : MonoBehaviour
 
     public void Explode()
     {
-        int explodeAmount = Mathf.CeilToInt(damageTaken/2);
+        int explodeAmount = Mathf.CeilToInt(damageTaken/4);
 
         LookAtBoss();
 
