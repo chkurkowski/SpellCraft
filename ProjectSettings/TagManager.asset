@@ -14,6 +14,7 @@ TagManager:
   - CameraTrigger
   - Absorb
   - PlayerSim
+  - Simulacrum
   layers:
   - Default
   - TransparentFX
