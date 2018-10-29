@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114885621135801818}
   m_Layer: 0
   m_Name: Simulacrum
-  m_TagString: Player
+  m_TagString: Simulacrum
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireball: {fileID: 1269839615260892, guid: ccf371fb7d5d54c62b0619b9ac65ffdf, type: 2}
   state: 0
-  atkRate: 80
+  atkSpeed: 80
   alive: 1
   rotSpeed: 25
   type: Attack
