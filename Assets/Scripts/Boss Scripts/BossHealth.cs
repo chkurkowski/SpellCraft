@@ -32,7 +32,7 @@ public class BossHealth : MonoBehaviour
             isFrenzied = true;
         }
 
-        bossHealthNumber.text = bossHealth.ToString();
+        bossHealthNumber.text = bossHealth.ToString("F0");
     }
 
     private void OnTriggerEnter2D(Collider2D col)

@@ -8382,6 +8382,7 @@ MonoBehaviour:
   bossMaxHealth: 100
   isAlive: 1
   isFrenzied: 0
+  bossHealthNumber: {fileID: 552397407}
 --- !u!1001 &1609261196
 Prefab:
   m_ObjectHideFlags: 0
