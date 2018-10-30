@@ -10,6 +10,11 @@ public class BossBehaviours : MonoBehaviour {
     public GameObject fireball;
     public GameObject bomb;
     public GameObject megaBomb;
+    public GameObject bossArt;
+    private SpriteRenderer spriteInfo;
+    public Sprite idleSprite;
+    public Sprite chargeSprite;
+    public Sprite spinSprite;
     private const float SPIN_DEFAULT = 10;
     private bool isCharging = false;
 
@@ -54,6 +59,7 @@ public class BossBehaviours : MonoBehaviour {
         //spinDefault = spinRotationAmount;
         player = GameObject.Find("Player");
         bossHealthInfo = gameObject.GetComponent<BossHealth>();
+        spriteInfo = bossArt.gameObject.GetComponent<SpriteRenderer>();
         state = State.IDLE;
         StartCoroutine("FSM");
         
@@ -93,6 +99,8 @@ public class BossBehaviours : MonoBehaviour {
     {
         if (bossHealthInfo.isAlive)
         {
+
+            spriteInfo.sprite = idleSprite;
             actionTimer += Time.deltaTime;
             if (actionTimer >= actionRate)
             {
@@ -122,6 +130,7 @@ public class BossBehaviours : MonoBehaviour {
 
     private void Charge()
     {
+        spriteInfo.sprite = chargeSprite;
         if (isBusy)
         {
             isBusy = false;
@@ -136,7 +145,8 @@ public class BossBehaviours : MonoBehaviour {
 
     private void Spin()
     {
-       if(isBusy)
+        spriteInfo.sprite = spinSprite;
+        if (isBusy)
         {
             isBusy = false;
             // spinRotationAmount = spinDefault;
