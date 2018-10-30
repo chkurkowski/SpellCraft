@@ -6060,6 +6060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 721968411}
   Boss: {fileID: 1578211635}
+  cam: {fileID: 0}
   zoomTweak: 0
 --- !u!114 &1098178471
 MonoBehaviour:
@@ -8968,6 +8969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b8c3374e20f65e45b17901b75c6a682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  options: {fileID: 126543946}
 --- !u!4 &1827082929
 Transform:
   m_ObjectHideFlags: 0
