@@ -70,7 +70,6 @@ public class BossBehaviours : MonoBehaviour {
 
         while (bossHealthInfo.isAlive)
         {
-           
 
                 //Debug.Log("The Boss's current state is: " + state);
             switch (state)
