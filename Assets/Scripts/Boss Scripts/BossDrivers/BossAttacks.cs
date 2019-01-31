@@ -8,7 +8,24 @@ public class BossAttacks : BossInfo
     /// Lich , Pylon, Alchemist, Charmer, or Reflector
     /// </summary>
     public string bossName = "";
+   
     private int previousAttack = 0;
+
+    [HideInInspector]
+    public bool isAttacking = false;
+    [Space(15)]
+    public float bossRageLevel = 0f;
+
+    [Space(15)]
+    public float bossRageThreshold1 = 25f;
+    public float bossRageThreshold2 = 50f;
+    public float bosssRageThreshold3 = 75f;
+
+    private bool canAttack = true;
+
+    private float actionTimer = 0f;
+    private float actionRate = 3f;
+
 
     private BossHealth bossHealthInfo;
 
@@ -33,13 +50,7 @@ public class BossAttacks : BossInfo
     
 
    
-
-    private bool isAttacking = false;
-    private bool canAttack = true;
-
-    private float actionTimer = 0f;
-    private float actionRate = 3f;
-
+    
     public enum State
     {
         IDLE,

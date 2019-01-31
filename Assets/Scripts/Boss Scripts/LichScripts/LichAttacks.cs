@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class LichAttacks : MonoBehaviour
 {
-
+    private BossAttacks bossAttacksInfo;
     private Animator lichAnimatorInfo;
     // Use this for initialization
     void Start ()
     {
+        bossAttacksInfo = gameObject.GetComponent<BossAttacks>();
         lichAnimatorInfo = gameObject.GetComponent<Animator>();
     }
 	
@@ -19,7 +20,7 @@ public class LichAttacks : MonoBehaviour
 	}
 
 
-   public void Attack(int attackNumber)
+    public void Attack(int attackNumber)
     {
         switch (attackNumber)
         {
@@ -29,19 +30,40 @@ public class LichAttacks : MonoBehaviour
                 break;
 
             case 1:
-
-
+                AttackOne();
                 break;
 
             case 2:
-
-
+                AttackTwo();
                 break;
 
             case 3:
-
-
+                AttackThree();
                 break;
-
         }
+    }
+
+
+    public void AttackOne()
+    {
+
+
+
+        bossAttacksInfo.isAttacking = false;
+    }
+
+    public void AttackTwo()
+    {
+
+
+        bossAttacksInfo.isAttacking = false;
+    }
+
+    public void AttackThree()
+    {
+
+
+
+        bossAttacksInfo.isAttacking = false;
+    }
 }

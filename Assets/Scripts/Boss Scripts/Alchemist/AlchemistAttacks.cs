@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class AlchemistAttack : MonoBehaviour
 {
-
+    private BossAttacks bossAttacksInfo;
     private Animator alchemistAnimatorInfo;
 
     // Use this for initialization
     void Start ()
     {
+        bossAttacksInfo = gameObject.GetComponent<BossAttacks>();
         alchemistAnimatorInfo = gameObject.GetComponent<Animator>();
     }
 	
@@ -21,7 +22,6 @@ public class AlchemistAttack : MonoBehaviour
 
     public void Attack(int attackNumber)
     {
-
         switch (attackNumber)
         {
             case 0:
@@ -30,19 +30,44 @@ public class AlchemistAttack : MonoBehaviour
                 break;
 
             case 1:
-
-
+                AttackOne();
                 break;
 
             case 2:
-
-
+                AttackTwo();
                 break;
 
             case 3:
-
-
+                AttackThree();
                 break;
-
         }
+    }
+
+
+    public void AttackOne()
+    {
+
+
+
+        bossAttacksInfo.isAttacking = false;
+    }
+
+    public void AttackTwo()
+    {
+
+
+
+
+        bossAttacksInfo.isAttacking = false;
+    }
+
+    public void AttackThree()
+    {
+
+
+
+
+        bossAttacksInfo.isAttacking = false;
+    }
+
 }
