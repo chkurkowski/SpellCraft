@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 5;
     public float rotSpeed = 25f;
 
+    private bool canMove = true;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -23,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if(abilities.GetTimer("evade") >= abilities.GetCooldown("evade") && abilities.health.isAlive)
+        if(abilities.GetTimer("evade") >= abilities.GetCooldown("evade") && abilities.health.isAlive && canMove)
         {
             Movement();
         }
