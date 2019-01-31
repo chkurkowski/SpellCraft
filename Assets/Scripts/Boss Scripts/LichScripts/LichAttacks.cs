@@ -19,9 +19,29 @@ public class LichAttacks : MonoBehaviour
 	}
 
 
-   public void Attack()
+   public void Attack(int attackNumber)
     {
+        switch (attackNumber)
+        {
+            case 0:
+
+                Debug.Log("An incorrect attackNumber was passed as 0");
+                break;
+
+            case 1:
 
 
-    }
+                break;
+
+            case 2:
+
+
+                break;
+
+            case 3:
+
+
+                break;
+
+        }
 }

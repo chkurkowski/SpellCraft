@@ -8,6 +8,7 @@ public class BossAttacks : BossInfo
     /// Lich , Pylon, Alchemist, Charmer, or Reflector
     /// </summary>
     public string bossName = "";
+    private int previousAttack = 0;
 
     private BossHealth bossHealthInfo;
 
@@ -56,9 +57,10 @@ public class BossAttacks : BossInfo
     // Use this for initialization
     void Start()
     {
+        bossHealthInfo = gameObject.GetComponent<BossHealth>();
         BossInitializer(bossName);   
         state = State.IDLE;
-        bossHealthInfo = gameObject.GetComponent<BossHealth>();
+        
         StartCoroutine("FSM");
     }
 
@@ -75,7 +77,8 @@ public class BossAttacks : BossInfo
                     break;
 
                 case State.ATTACK:
-                    AttackDriver(bossName);
+                    AttackDecider();
+                    AttackDriver(bossName, previousAttack);
                     break;
 
             }
@@ -87,7 +90,6 @@ public class BossAttacks : BossInfo
     /// /////////////////////////////////////////////////// BossName stuff!
     public void BossInitializer(string bossName)
     {
-
         switch (bossName)
         {
             case "Lich":
@@ -109,7 +111,6 @@ public class BossAttacks : BossInfo
             case "Alchemist":
                 alchemistAttackInfo = gameObject.GetComponent<AlchemistAttack>();
                 break;
-
         }
 
     }
@@ -129,48 +130,54 @@ public class BossAttacks : BossInfo
                 if(!isAttacking && canAttack)
                 {
                    state = State.ATTACK;
+                    isAttacking = true;
                 }
             }
         }
     }//Idle end
 
-    /// /////////////////////////////////////////////////// ATTACK DRIVER!
+    /////////////////////////////////////////////////////// ATTACK DECIDER!
+    
+    public void AttackDecider()
+    {
+        int randAttack = Random.Range(1, 4);
+        if(randAttack == previousAttack)
+        {
+           AttackDecider();
+        }
+        else
+        {
+            previousAttack = randAttack;
+        }
+    }
+    
+    /////////////////////////////////////////////////////// ATTACK DRIVER!
 
-    public void AttackDriver(string bossName)
+    public void AttackDriver(string bossName, int attackNumber)
     {
         switch (bossName)
         {
             case "Lich":
-                lichAttackInfo.Attack();
+                lichAttackInfo.Attack(attackNumber);
                 break;
 
             case "Pylon":
-                pylonAttackInfo.Attack();
+                pylonAttackInfo.Attack(attackNumber);
                 break;
 
             case "Charmer":
-                charmerAttackInfo.Attack();
+                charmerAttackInfo.Attack(attackNumber);
                 break;
 
             case "Reflector":
-                reflectorAttackInfo.Attack();
+                reflectorAttackInfo.Attack(attackNumber);
                 break;
 
             case "Alchemist":
-                alchemistAttackInfo.Attack();
+                alchemistAttackInfo.Attack(attackNumber);
                 break;
         }
     }//AttackDriver end
 
-
-    /// /////////////////////////////////////////////////// CHARGEUP!
-
-    public void ChargeUp(string bossName)
-    {
-
-    }//ChargeUp end
-
-
-    /// /////////////////////////////////////////////////// WindDown!
 
 }
