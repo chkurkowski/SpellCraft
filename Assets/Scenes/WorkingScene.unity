@@ -6134,8 +6134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 721968411}
-  Boss: {fileID: 1578211635}
-  cam: {fileID: 0}
+  Boss: {fileID: 1125146705}
+  cam: {fileID: 1098178469}
   zoomTweak: 0
 --- !u!114 &1098178471
 MonoBehaviour:
@@ -6344,6 +6344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossHealthInfo: {fileID: 0}
+  isMad: 0
+  isEnraged: 0
   bossRageLevel: 0
   bossRageThreshold1: 25
   bossRageThreshold2: 50
@@ -6356,6 +6358,7 @@ MonoBehaviour:
   agroDistance: 3
   rageState: 0
   bossName: 
+  previousAttack: 0
   isAttacking: 0
   attackRate: 3
   attackState: 0
@@ -6375,7 +6378,7 @@ MonoBehaviour:
   spinRotationAmount: 10
   bombFireRate: 3
   chargeFireRate: 2
-  chargeSpeed: 25
+  chargeSpeed: 45
   isCharging: 0
 --- !u!114 &1125146707
 MonoBehaviour:
@@ -6546,6 +6549,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossHealthInfo: {fileID: 0}
+  isMad: 0
+  isEnraged: 0
   bossRageLevel: 0
   bossRageThreshold1: 25
   bossRageThreshold2: 50
@@ -6558,6 +6563,7 @@ MonoBehaviour:
   agroDistance: 10
   rageState: 0
   bossName: 
+  previousAttack: 0
   isAttacking: 0
   attackRate: 3
   attackState: 0
@@ -6573,6 +6579,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossHealthInfo: {fileID: 0}
+  isMad: 0
+  isEnraged: 0
   bossRageLevel: 0
   bossRageThreshold1: 25
   bossRageThreshold2: 50
@@ -6585,6 +6593,7 @@ MonoBehaviour:
   agroDistance: 3
   rageState: 0
   canMove: 1
+  SHOULDMOVE: 1
   movesRandomly: 1
   facesPlayer: 1
   isMoving: 0
@@ -6605,6 +6614,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossHealthInfo: {fileID: 0}
+  isMad: 0
+  isEnraged: 0
   bossRageLevel: 0
   bossRageThreshold1: 25
   bossRageThreshold2: 50
