@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReflectorAttacks : MonoBehaviour
+public class ReflectorAttacks : BossAttacks
 {
     private BossAttacks bossAttacksInfo;
     private Animator reflectorAnimatorInfo;
@@ -46,24 +46,21 @@ public class ReflectorAttacks : MonoBehaviour
     public void AttackOne()
     {
 
-
-
-        bossAttacksInfo.isAttacking = false;
     }
 
     public void AttackTwo()
     {
 
-
-
-        bossAttacksInfo.isAttacking = false;
     }
 
     public void AttackThree()
     {
 
+    }
 
-
-        bossAttacksInfo.isAttacking = false;
+    public void StopAttack()
+    {
+        isAttacking = false;
+        CancelInvoke();
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PylonAttacks : MonoBehaviour
+public class PylonAttacks : BossAttacks
 {
     private BossAttacks bossAttacksInfo;
     private Animator pylonAnimatorInfo;
@@ -55,29 +55,26 @@ public class PylonAttacks : MonoBehaviour
         {
             //invoke attack version 2
         }
-        else if(bossAttacksInfo.bossRageLevel <= bossAttacksInfo.bosssRageThreshold3)
+        else if(bossAttacksInfo.bossRageLevel <= bossAttacksInfo.bossRageThreshold3)
         {
             //invoke attack version 3
         }
-
-
-        bossAttacksInfo.isAttacking = false;
     }
 
     public void AttackTwo()//Self Explosion
     {
 
-
-
-        bossAttacksInfo.isAttacking = false;
     }
 
     public void AttackThree()//Energy Veins??
     {
 
-
-
-        bossAttacksInfo.isAttacking = false;
     }
 
+
+    public void StopAttack()
+    {
+        isAttacking = false;
+        CancelInvoke();
+    }
 }

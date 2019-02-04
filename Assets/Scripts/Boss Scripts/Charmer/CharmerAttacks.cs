@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharmerAttacks : MonoBehaviour {
+public class CharmerAttacks : BossAttacks
+{
 
     private BossAttacks bossAttacksInfo;
     private Animator charmerAnimatorInfo;
@@ -46,24 +47,23 @@ public class CharmerAttacks : MonoBehaviour {
     public void AttackOne()
     {
 
-
-
-        bossAttacksInfo.isAttacking = false;
     }
 
     public void AttackTwo()
     {
 
-
-
-        bossAttacksInfo.isAttacking = false;
     }
 
     public void AttackThree()
     {
 
+    }
 
 
-        bossAttacksInfo.isAttacking = false;
+
+    public void StopAttack()
+    {
+        isAttacking = false;
+        CancelInvoke();
     }
 }

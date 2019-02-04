@@ -11,8 +11,6 @@ public class BossHealth : MonoBehaviour
     public float bossHealth = 100;
     public float bossMaxHealth = 100;
     public bool isAlive = true;
-    public bool isFrenzied = false;
-    public bool isMad = false;
 	
 	// Update is called once per frame
 	void Update () 
@@ -26,14 +24,6 @@ public class BossHealth : MonoBehaviour
             c.a = .6f;
             gameObject.GetComponent<SpriteRenderer>().color = c;
             print("you win woohoo!");
-        }
-        if(bossHealth <= (bossMaxHealth/2))
-        {
-            isMad = true;
-        }
-        if(bossHealth <= (bossMaxHealth / 5))
-        {
-            isFrenzied = true;
         }
     }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LichAttacks : MonoBehaviour
+public class LichAttacks : BossAttacks
 {
     private BossAttacks bossAttacksInfo;
     private Animator lichAnimatorInfo;
@@ -18,7 +18,6 @@ public class LichAttacks : MonoBehaviour
     {
 		
 	}
-
 
     public void Attack(int attackNumber)
     {
@@ -43,27 +42,24 @@ public class LichAttacks : MonoBehaviour
         }
     }
 
-
     public void AttackOne()
     {
 
-
-
-        bossAttacksInfo.isAttacking = false;
     }
 
     public void AttackTwo()
     {
 
-
-        bossAttacksInfo.isAttacking = false;
     }
 
     public void AttackThree()
     {
 
+    }
 
-
-        bossAttacksInfo.isAttacking = false;
+    public void StopAttack()
+    {
+        isAttacking = false;
+        CancelInvoke();
     }
 }

@@ -8,70 +8,63 @@ public class BossAttacks : BossInfo
     /// Lich , Pylon, Alchemist, Charmer, or Reflector
     /// </summary>
     public string bossName = "";
-   
+
     private int previousAttack = 0;
 
     [HideInInspector]
     public bool isAttacking = false;
-    [Space(15)]
-    public float bossRageLevel = 0f;
-
-    [Space(15)]
-    public float bossRageThreshold1 = 25f;
-    public float bossRageThreshold2 = 50f;
-    public float bosssRageThreshold3 = 75f;
 
     private bool canAttack = true;
 
-    private float actionTimer = 0f;
-    private float actionRate = 3f;
+    private float attackTimer = 0f;
+    public float attackRate = 3f;
 
 
     private BossHealth bossHealthInfo;
 
     ///////////////////////////////////Lich Info
     private LichAttacks lichAttackInfo;
-  
+
 
     /////////////////////////////////////Pylon Info
     private PylonAttacks pylonAttackInfo;
-   
+
 
     /////////////////////////////////////////Charmer Info
     private CharmerAttacks charmerAttackInfo;
-    
+
 
     /////////////////////////////////////////////Reflector Info
     private ReflectorAttacks reflectorAttackInfo;
-   
+
 
     /////////////////////////////////////////////////Alchemist Info
     private AlchemistAttack alchemistAttackInfo;
-    
 
-   
-    
-    public enum State
+    /////////////////////////////////////////////////PrototypeBoss Info
+    private PrototypeBossAttack prototypeBossAttackInfo;
+
+
+
+    public enum AttackState
     {
         IDLE,
-        CHARGEUP,
         ATTACK,
-        CHARGEDOWN,
         STUN,
     }
 
-    public State state;
-   
+    public AttackState attackState;
+
 
 
 
     // Use this for initialization
     void Start()
     {
+        bossName = gameObject.name;
         bossHealthInfo = gameObject.GetComponent<BossHealth>();
-        BossInitializer(bossName);   
-        state = State.IDLE;
-        
+        BossInitializer(bossName);
+        attackState = AttackState.IDLE;
         StartCoroutine("FSM");
     }
 
@@ -81,20 +74,20 @@ public class BossAttacks : BossInfo
     {
         while (bossHealthInfo.isAlive)
         {
-            switch (state)
+            switch (attackState)
             {
-                case State.IDLE:
+                case AttackState.IDLE:
                     Idle();
                     break;
 
-                case State.ATTACK:
+                case AttackState.ATTACK:
                     AttackDecider();
                     AttackDriver(bossName, previousAttack);
                     break;
 
             }
         }
-            yield return null;
+        yield return null;
     }
 
 
@@ -122,6 +115,11 @@ public class BossAttacks : BossInfo
             case "Alchemist":
                 alchemistAttackInfo = gameObject.GetComponent<AlchemistAttack>();
                 break;
+
+            case "PrototypeBoss":
+                prototypeBossAttackInfo = gameObject.GetComponent<PrototypeBossAttack>();
+                break;
+
         }
 
     }
@@ -133,14 +131,14 @@ public class BossAttacks : BossInfo
     {
         if (bossHealthInfo.isAlive)
         {
-            actionTimer += Time.deltaTime;
-            if(actionTimer >= actionRate)
+            attackTimer += Time.deltaTime;
+            if (attackTimer >= attackRate)
             {
-                actionTimer = 0;
+                attackTimer = 0;
 
-                if(!isAttacking && canAttack)
+                if (!isAttacking && canAttack)
                 {
-                   state = State.ATTACK;
+                    attackState = AttackState.ATTACK;
                     isAttacking = true;
                 }
             }
@@ -148,20 +146,20 @@ public class BossAttacks : BossInfo
     }//Idle end
 
     /////////////////////////////////////////////////////// ATTACK DECIDER!
-    
+
     public void AttackDecider()
     {
         int randAttack = Random.Range(1, 4);
-        if(randAttack == previousAttack)
+        if (randAttack == previousAttack)
         {
-           AttackDecider();
+            AttackDecider();
         }
         else
         {
             previousAttack = randAttack;
         }
     }
-    
+
     /////////////////////////////////////////////////////// ATTACK DRIVER!
 
     public void AttackDriver(string bossName, int attackNumber)
@@ -169,26 +167,70 @@ public class BossAttacks : BossInfo
         switch (bossName)
         {
             case "Lich":
-                lichAttackInfo.Attack(attackNumber);
+                if(!isAttacking)
+                    lichAttackInfo.Attack(attackNumber);
                 break;
 
             case "Pylon":
-                pylonAttackInfo.Attack(attackNumber);
+                if (!isAttacking)
+                    pylonAttackInfo.Attack(attackNumber);
                 break;
 
             case "Charmer":
-                charmerAttackInfo.Attack(attackNumber);
+                if (!isAttacking)
+                    charmerAttackInfo.Attack(attackNumber);
                 break;
 
             case "Reflector":
-                reflectorAttackInfo.Attack(attackNumber);
+                if (!isAttacking)
+                    reflectorAttackInfo.Attack(attackNumber);
                 break;
 
             case "Alchemist":
-                alchemistAttackInfo.Attack(attackNumber);
+                if (!isAttacking)
+                    alchemistAttackInfo.Attack(attackNumber);
+                break;
+
+            case "PrototypeBoss":
+                if (!isAttacking)
+                    prototypeBossAttackInfo.Attack(attackNumber);
                 break;
         }
     }//AttackDriver end
+
+    public void CancelAttack()
+    {
+        canAttack = false;
+        isAttacking = false;
+
+        switch (bossName)
+        {
+            case "Lich":
+                lichAttackInfo.StopAttack();
+                break;
+
+            case "Pylon":
+                pylonAttackInfo.StopAttack();
+                break;
+
+            case "Charmer":
+                charmerAttackInfo.StopAttack();
+                break;
+
+            case "Reflector":
+                reflectorAttackInfo.StopAttack();
+                break;
+
+            case "Alchemist":
+                alchemistAttackInfo.StopAttack();
+                break;
+        }
+    }
+
+    public void ResumeAttack()
+    {
+        canAttack = true;
+    }
 
 
 }

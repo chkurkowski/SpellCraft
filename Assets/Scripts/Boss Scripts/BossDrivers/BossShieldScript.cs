@@ -6,7 +6,8 @@ public class BossShieldScript : MonoBehaviour {
     public float bossShieldHealth = 4f;
     private BossBehaviours bossBehaviourInfo;
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         bossBehaviourInfo = GameObject.Find("Boss").GetComponent<BossBehaviours>();
 	}
 	

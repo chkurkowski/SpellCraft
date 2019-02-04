@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossBehaviours : MonoBehaviour {
+public class BossBehaviours : MonoBehaviour
+{
+
+
     private BossHealth bossHealthInfo;
     private GameObject player;
     
@@ -149,7 +152,7 @@ public class BossBehaviours : MonoBehaviour {
         {
             isBusy = false;
             // spinRotationAmount = spinDefault;
-            if (bossHealthInfo.isFrenzied)
+           // if (bossHealthInfo.isFrenzied)
             {
                 spinFireRate = .01f;
                 GameObject bomb4 = Instantiate(bomb, transform.position, transform.rotation);
@@ -159,7 +162,7 @@ public class BossBehaviours : MonoBehaviour {
                 GameObject bomb6 = Instantiate(bomb, transform.position, transform.rotation);
                 bomb6.transform.Rotate(0, 0, -90);
             }
-            if (bossHealthInfo.isMad)
+           // if (bossHealthInfo.isMad)
             {
                 GameObject bomb1 = Instantiate(bomb, transform.position, transform.rotation);
                 bomb1.transform.Rotate(0, 0, 180);
@@ -204,34 +207,34 @@ public class BossBehaviours : MonoBehaviour {
     }
 
 
-    public void BombTown()
+    /*public void BombTown()
     {
         Vector3 dir = player.transform.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
-        if(bossHealthInfo.isFrenzied)
-        {
+        //if(bossHealthInfo.isFrenzied)
+       // {
             GameObject bomb1 = Instantiate(megaBomb, transform.position, transform.rotation);
             GameObject bomb2 = Instantiate(megaBomb, transform.position, transform.rotation);
           
             bomb2.transform.Rotate(0, 0, 180);
       
-        }
-        else if(bossHealthInfo.isMad)
-        {
+       // }
+       // else if(bossHealthInfo.isMad)
+       // {
             Debug.Log("BOMB IS MAD HAPPENED!");
            GameObject bomb1 = Instantiate(bomb, transform.position, transform.rotation);
            GameObject bomb2 = Instantiate(bomb, transform.position, transform.rotation);
             bomb2.transform.Rotate(0, 0, 90);
            GameObject bomb3 = Instantiate(bomb, transform.position, transform.rotation);
             bomb3.transform.Rotate(0, 0, -90);
-        }
-        else
-        {
+        //}
+        //else
+        //{
             Instantiate(bomb, transform.position, transform.rotation);
-        }
+       // }
       
-    }
+    }*/
 
     private void ResetState()
     {
@@ -249,14 +252,14 @@ public class BossBehaviours : MonoBehaviour {
         transform.rotation = Quaternion.AngleAxis(angle-90, transform.forward);
         gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * chargeSpeed, ForceMode2D.Impulse);
         Invoke("StopMovement", 1);
-        if(bossHealthInfo.isMad)
+       // if(bossHealthInfo.isMad)
         {
             GameObject bomb1 = Instantiate(bomb, transform.position, transform.rotation);
             bomb1.transform.Rotate(0,0,45);
             GameObject bomb2 = Instantiate(bomb, transform.position, transform.rotation);
             bomb2.transform.Rotate(0, 0, -45);
           
-            if(bossHealthInfo.isFrenzied)
+        //    if(bossHealthInfo.isFrenzied)
             {
                 GameObject bomb3 = Instantiate(bomb, transform.position, transform.rotation);
                 bomb3.transform.Rotate(0, 0, 135);

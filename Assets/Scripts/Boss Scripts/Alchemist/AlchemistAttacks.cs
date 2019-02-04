@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlchemistAttack : MonoBehaviour
+public class AlchemistAttack : BossAttacks
 {
     private BossAttacks bossAttacksInfo;
     private Animator alchemistAnimatorInfo;
@@ -47,27 +47,24 @@ public class AlchemistAttack : MonoBehaviour
     public void AttackOne()
     {
 
-
-
-        bossAttacksInfo.isAttacking = false;
     }
 
     public void AttackTwo()
     {
 
-
-
-
-        bossAttacksInfo.isAttacking = false;
     }
 
     public void AttackThree()
     {
 
+    }
 
 
 
-        bossAttacksInfo.isAttacking = false;
+    public void StopAttack()
+    {
+        isAttacking = false;
+        CancelInvoke();
     }
 
 }
