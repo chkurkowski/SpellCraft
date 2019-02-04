@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public Image playerHealthBar;
     public bool isAlive = true;
     public float maxPlayerHealth = 100f;
-    public float playerHealth = 100f;
+    private float playerHealth = 100f;
     private RespawnManager respawnManagerInfo;
 
 
@@ -40,9 +40,34 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
+    public void DamagePlayer(float dmg)
+    {
+        playerHealth -= dmg;
+        StartCoroutine(InvincibilityFrames());
+    }
+
     public void HealPlayer(float healAmount)
     {
         playerHealth += healAmount;
+    }
+
+    private IEnumerator InvincibilityFrames()
+    {
+        gameObject.layer = 14;
+        Color firstColor = gameObject.GetComponent<SpriteRenderer>().color;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(.07f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        yield return new WaitForSeconds(.10f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(.07f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        yield return new WaitForSeconds(.10f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(.07f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        yield return new WaitForSeconds(.10f);
+        gameObject.layer = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
