@@ -29,7 +29,7 @@ public class Bomb : MonoBehaviour {
 
         if (col.gameObject.tag == "Player")
         {
-            GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealth -= bombDamage;
+            GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(bombDamage);
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= .25f;
 
         }

@@ -40,7 +40,7 @@ public class Fireball : MonoBehaviour {
         }
         else if(col.gameObject.tag == "Player")
         {
-            GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealth -= fireBallDamage;
+            GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(fireBallDamage);
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= .05f;
             Destroy(gameObject);
         }
@@ -51,7 +51,7 @@ public class Fireball : MonoBehaviour {
         }
         else if(col.gameObject.tag == "Absorb")
         {
-            GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealth += fireBallDamage/2;
+            GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(fireBallDamage/2);
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .025f;
             Destroy(gameObject);
         }

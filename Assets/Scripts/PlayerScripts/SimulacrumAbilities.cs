@@ -69,6 +69,8 @@ public class SimulacrumAbilities : MonoBehaviour
                 state = State.LONGATK;
             }
         }
+        else
+            LookAtBoss();
 
     }
 
@@ -88,7 +90,6 @@ public class SimulacrumAbilities : MonoBehaviour
         if(type == "Absorb")
         {
             damageTaken += amt;
-            print(damageTaken);
         }
     }
 
