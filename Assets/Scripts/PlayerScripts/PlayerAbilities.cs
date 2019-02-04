@@ -42,7 +42,8 @@ public class PlayerAbilities : MonoBehaviour {
     private bool alive;
     private bool evadeCalled;
 
-    private List<string> LastAttacks = new List<string>();
+    private List<string> lastAttacks = new List<string>();
+    private List<string> ritualList = new List<string>();
 
     //Ability timers
     private const float LONGATKCOOLDOWN = .35f;
@@ -139,7 +140,7 @@ public class PlayerAbilities : MonoBehaviour {
         if (Input.GetKey(KeyCode.Mouse0) && longATKTimer >= LONGATKCOOLDOWN)
         {
             longATKTimer = 0f;
-            AttackArrayHandler("Projectile");
+            AttackArrayHandler("Projectile", lastAttacks);
             state = State.LONGATK;
         }
 
@@ -148,7 +149,7 @@ public class PlayerAbilities : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Space) && evadeTimer >= EVADECOOLDOWN)
         {
             evadeTimer = 0f;
-            AttackArrayHandler("Zone");
+            AttackArrayHandler("Zone", lastAttacks);
             state = State.EVADE;
         }
 
@@ -156,7 +157,7 @@ public class PlayerAbilities : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Mouse1) && reflectTimer >= REFLECTCOOLDOWN)
         {
             reflectTimer = 0f;
-            AttackArrayHandler("Self");
+            AttackArrayHandler("Self", lastAttacks);
             state = State.REFLECT;
         }
 
@@ -165,7 +166,7 @@ public class PlayerAbilities : MonoBehaviour {
             state = State.RITUALCAST;
         }
 
-        if(Input.GetKeyDown(KeyCode.Mouse2))
+        if (Input.GetKeyDown(KeyCode.Mouse2))
         {
             state = State.BURSTCAST;
         }
@@ -240,26 +241,74 @@ public class PlayerAbilities : MonoBehaviour {
 
     private void RitualCast()
     {
-        List<string> RitualList = new List<string>();
+        print("Ritual Casting");
+        print("List has " + ritualList.Count + " moves.");
+
+        cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        InputHandler();
+
+        if (ritualList.Count == 2)
+        {
+            if (lastAttacks.Contains("Projectile") && lastAttacks.Contains("Zone") && atkSimTimer >= ATKSIMCOOLDOWN)
+            {
+                print("AtkSim Cast");
+                atkSimTimer = 0;
+                state = State.ATKSIM;
+            }
+            else if (lastAttacks.Contains("Projectile") && lastAttacks.Contains("Self") && reflectSimTimer >= REFLECTSIMCOOLDOWN)
+            {
+                print("Reflect Cast");
+                reflectSimTimer = 0;
+                state = State.REFLECTSIM;
+            }
+            else if (lastAttacks.Contains("Self") && lastAttacks.Contains("Zone") && absorbTimer >= ABSORBCOOLDOWN)
+            {
+                print("Absorb Cast");
+                absorbTimer = 0;
+                state = State.ABSORB;
+            }
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+        {
+            ritualList.Clear();
+            state = State.IDLE;
+        }
+    }
+
+    private void InputHandler()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            AttackArrayHandler("Projectile", ritualList);
+        }
+        else if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            AttackArrayHandler("Self", ritualList);
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            AttackArrayHandler("Zone", ritualList);
+        }
     }
 
     private void BurstCast()
     {
-        if (LastAttacks.Contains("Projectile") && LastAttacks.Contains("Zone") && burstTimer >= BURSTCOOLDOWN)
+        if (lastAttacks.Contains("Projectile") && lastAttacks.Contains("Zone") && burstTimer >= BURSTCOOLDOWN)
         {
             print("AtkSim Cast");
             //LastAttacks.Clear();
             burstTimer = 0;
             state = State.ATKSIM;
         }
-        else if(LastAttacks.Contains("Projectile") && LastAttacks.Contains("Self") && burstTimer >= BURSTCOOLDOWN)
+        else if(lastAttacks.Contains("Projectile") && lastAttacks.Contains("Self") && burstTimer >= BURSTCOOLDOWN)
         {
             print("Reflect Cast");
             //LastAttacks.Clear();
             burstTimer = 0;
             state = State.REFLECTSIM;
         }
-        else if(LastAttacks.Contains("Self") && LastAttacks.Contains("Zone") && burstTimer >= BURSTCOOLDOWN)
+        else if(lastAttacks.Contains("Self") && lastAttacks.Contains("Zone") && burstTimer >= BURSTCOOLDOWN)
         {
             print("Absorb Cast");
             //LastAttacks.Clear();
@@ -270,15 +319,15 @@ public class PlayerAbilities : MonoBehaviour {
             state = State.IDLE;
     }
 
-    private void AttackArrayHandler(string newAttack)
+    private void AttackArrayHandler(string newAttack, List<string> list)
     {
-        if(!LastAttacks.Contains(newAttack))
+        if(!list.Contains(newAttack))
         {
-            if (LastAttacks.Count >= 2)
+            if (list.Count >= 2)
             {
-                LastAttacks.RemoveAt(1);
+                list.RemoveAt(1);
             }
-            LastAttacks.Insert(0, newAttack);
+            list.Insert(0, newAttack);
         }
     }
 
