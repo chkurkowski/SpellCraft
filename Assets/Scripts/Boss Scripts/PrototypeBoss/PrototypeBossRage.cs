@@ -13,11 +13,11 @@ public class PrototypeBossRage : BossHealth
 	
 	// Update is called once per frame
 	void Update () {
-        if (bossHealth <= (bossMaxHealth / 2))
+        if (bossHealth <= (bossMaxHealth / (1.5f)))
         {
             bossInfo.SetRageAmount(50);
         }
-        if (bossHealth <= (bossMaxHealth / 5))
+        if (bossHealth <= (bossMaxHealth / 3))
         {
             bossInfo.SetRageAmount(75);
         }

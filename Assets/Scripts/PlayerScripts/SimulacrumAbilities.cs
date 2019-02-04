@@ -88,7 +88,7 @@ public class SimulacrumAbilities : MonoBehaviour
         if(type == "Absorb")
         {
             damageTaken += amt;
-            print(damageTaken);
+            //print(damageTaken);
         }
     }
 

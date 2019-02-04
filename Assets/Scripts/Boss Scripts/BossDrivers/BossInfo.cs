@@ -6,9 +6,12 @@ public class BossInfo : MonoBehaviour
 {
     private BossAttacks bossAttackInfo;
     private BossMovement bossMovementInfo;
-
     [HideInInspector]
-    public Transform playerLocation;
+    public BossHealth bossHealthInfo;
+
+    public bool isMad = false;
+    public bool isEnraged = false;
+    private Transform playerLocation;
     // Use this for initialization
 
     [Space(15)]
@@ -38,8 +41,14 @@ public class BossInfo : MonoBehaviour
 
     public RageState rageState;
 
+    private void Awake()
+    {
+        bossHealthInfo = gameObject.GetComponent<BossHealth>();
+    }
+
     void Start ()
     {
+       
         bossAttackInfo = gameObject.GetComponent<BossAttacks>();
         bossMovementInfo = gameObject.GetComponent<BossMovement>();
         playerLocation = GameObject.Find("Player").GetComponent<Transform>();
@@ -60,15 +69,16 @@ public class BossInfo : MonoBehaviour
 
     IEnumerator StunTracker()
     {
-
-        if (bossStunLevel >= bossStunThreshold)
+        while (bossHealthInfo.isAlive)
         {
-            bossStunLevel = 0;
-            Invoke("StartStun", 0);
-            Invoke("EndStun", bossStunTime);
+            if (bossStunLevel >= bossStunThreshold)
+            {
+                bossStunLevel = 0;
+                Invoke("StartStun", 0);
+                Invoke("EndStun", bossStunTime);
+            }
+            yield return null;
         }
-
-        yield return null;
     }
 
     public void StartStun()
@@ -105,28 +115,37 @@ public class BossInfo : MonoBehaviour
 
     IEnumerator RageTracker()
     {
-        if (bossRageLevel <= bossRageThreshold1)
+        while (bossHealthInfo.isAlive)
         {
-            rageState = RageState.CALM;
-        }
-        else if (bossRageLevel <= bossRageThreshold2)
-        {
-            rageState = RageState.MAD;
-        }
-        else if (bossRageLevel <= bossRageThreshold3)
-        {
-            rageState = RageState.ENRAGED;
-        }
+            if (bossRageLevel <= bossRageThreshold1)
+            {
+                isMad = false;
+                isEnraged = false;
+                rageState = RageState.CALM;
+            }
+            else if (bossRageLevel <= bossRageThreshold2)
+            {
+                isMad = true;
+                isEnraged = false;
+                rageState = RageState.MAD;
+            }
+            else if (bossRageLevel <= bossRageThreshold3)
+            {
+                isMad = false;
+                isEnraged = true;
+                rageState = RageState.ENRAGED;
+            }
 
-        if (bossRageLevel > 100)
-        {
-            bossRageLevel = 100;
+            if (bossRageLevel > 100)
+            {
+                bossRageLevel = 100;
+            }
+            if (bossRageLevel < 0)
+            {
+                bossRageLevel = 0;
+            }
+            yield return null;
         }
-        if (bossRageLevel < 0)
-        {
-            bossRageLevel = 0;
-        }
-        yield return null;
     }
 
     public void AddRageAmount(float rageAmount)
@@ -153,13 +172,26 @@ public class BossInfo : MonoBehaviour
 
     IEnumerator AgroTracker()
     {
-        if (Vector2.Distance(transform.position, playerLocation.position) <= agroDistance)
+        while (bossHealthInfo.isAlive)
         {
-            isActivated = true;
-            StopCoroutine(AgroTracker());
+            if (Vector2.Distance(transform.position, playerLocation.position) <= agroDistance)
+            {
+                isActivated = true;
+                //Debug.Log(isActivated + " is the value of isActivated");
+                StopCoroutine(AgroTracker());
+            }
+            yield return null;
         }
-        yield return null;
     }
 
+    public bool GetIsActivated()
+    {
+        return isActivated;
+    }
+
+    public Transform GetPlayerLocation()
+    {
+        return playerLocation;
+    }
 
 }

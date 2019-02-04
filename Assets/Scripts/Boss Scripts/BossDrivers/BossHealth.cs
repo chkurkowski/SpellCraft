@@ -11,9 +11,13 @@ public class BossHealth : MonoBehaviour
     public float bossHealth = 100;
     public float bossMaxHealth = 100;
     public bool isAlive = true;
-	
-	// Update is called once per frame
-	void Update () 
+
+    private void Start()
+    {
+        healthBar = GameObject.Find("BossHealthBar").GetComponent<Image>();
+    }
+    // Update is called once per frame
+    void Update () 
     {
        //destroy boss if health = 0
         if(bossHealth <= 0)

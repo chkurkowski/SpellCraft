@@ -5,9 +5,16 @@ using UnityEngine;
 public class BossMovement : BossInfo
 {
 
-    private BossHealth bossHealthInfo;
-    public bool canMove = false;
+    //private BossHealth bossHealthInfo;
+
+    private BossInfo bossInfo;
+    private BossAttacks bossAttackInfoInfo;
+    public bool canMove = true;
+
+    public bool SHOULDMOVE = true;
+
     public bool movesRandomly = true;
+    public bool facesPlayer = true;
     public bool isMoving = false;
     [Space(25)]
     private float moveTimer = 0f;
@@ -25,35 +32,63 @@ public class BossMovement : BossInfo
 
     public MoveState moveState;
 
-    // Use this for initialization
+
     void Start ()
     {
-        moveState = MoveState.IDLE;
+        bossInfo = gameObject.GetComponent<BossInfo>();
+        bossAttackInfoInfo = gameObject.GetComponent<BossAttacks>();
+        StartCoroutine("Movement");
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    private void Update()
     {
-    if(isActivated)
+        if(bossAttackInfoInfo.isAttacking)
         {
-            switch (moveState)
-            {
-                case MoveState.IDLE:
-                    Idle();
-                    break;
-
-                case MoveState.MOVE:
-                    Move();
-                    Invoke("Idle", moveDuration);
-                    break;
-
-                case MoveState.STUN:
-                    Stun();
-                    break;
-            }
+            SHOULDMOVE = false;
+            moveState = MoveState.IDLE;
         }
-		
-	}
+        else if(bossAttackInfoInfo.isAttacking == false)
+        {
+            SHOULDMOVE = true;
+        }
+        if(facesPlayer)
+        {
+            Vector3 dir = bossInfo.GetPlayerLocation().transform.position - transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
+        }
+    }
+
+    IEnumerator Movement()
+    {
+        while(bossHealthInfo.isAlive)
+        { 
+            if (bossInfo.isActivated)
+            {
+                switch (moveState)
+                {
+                    case MoveState.IDLE:
+                        Idle();
+                        break;
+
+                    case MoveState.MOVE:
+                        if(!isMoving)
+                        {
+                            Move();
+                        }
+                        StartCoroutine(EndMovement());
+                        break;
+
+                    case MoveState.STUN:
+                        Stun();
+                        break;
+                }
+            }
+
+            yield return null;
+        }///end while loop
+    }
+
 
     /// //////////////////////////////////////IDLE
 
@@ -61,12 +96,15 @@ public class BossMovement : BossInfo
     {
         if (bossHealthInfo.isAlive)
         {
+            isMoving = false;
+            CancelInvoke();
+            ///also cancel any boss specific movement!
             moveTimer += Time.deltaTime;
             if (moveTimer >= moveRate)
             {
                 moveTimer = 0;
 
-                if (canMove)
+                if (canMove && SHOULDMOVE)
                 {
                     moveState = MoveState.MOVE;
                 }
@@ -86,38 +124,38 @@ public class BossMovement : BossInfo
 
     public void Move()
     {
-        if(movesRandomly)
+        isMoving = true;
+        if (movesRandomly)
         {
            InvokeRepeating("RandomMovement",0, randomMoveFrequency);
         }
-
     }
 
     public void RandomMovement()
     {
-        Vector3 dir = playerLocation.transform.position - transform.position;
+        Vector3 dir = bossInfo.GetPlayerLocation().transform.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
 
         int randDirection = Random.Range(0, 4);
         if(randDirection == 0)
         {
-            //moves towards player
+            //Debug.Log("Boss moves towards player.");
             gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * moveSpeed, ForceMode2D.Impulse);
         }
         else if(randDirection == 1)
         {
-            //moves away from player
+            //Debug.Log("Boss moves away from player.");
             gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * moveSpeed * -1, ForceMode2D.Impulse);
         }
         else if(randDirection == 2)
         {
-            //strafes right relative to the boss
+           //Debug.Log("Boss strafes right.");
             gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right * moveSpeed, ForceMode2D.Impulse);
         }
         else if (randDirection >= 3)
         {
-            //strafes left relative to the boss
+            //Debug.Log("Boss strafes left.");
             gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right * moveSpeed * -1, ForceMode2D.Impulse);
         }
 
@@ -127,7 +165,9 @@ public class BossMovement : BossInfo
     
     public void Stun()
     {
+        CancelInvoke();
         canMove = false;
+        isMoving = false;
     }
 
     public void CancelMovement()
@@ -138,6 +178,14 @@ public class BossMovement : BossInfo
     public void ResumeMovement()
     {
         canMove = true;
+        moveState = MoveState.IDLE;
+    }
+
+
+    IEnumerator EndMovement()
+    {
+        yield return new WaitForSeconds(moveDuration);
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
         moveState = MoveState.IDLE;
     }
 }

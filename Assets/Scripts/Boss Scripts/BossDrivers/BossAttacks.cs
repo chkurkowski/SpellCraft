@@ -8,19 +8,16 @@ public class BossAttacks : BossInfo
     /// Lich , Pylon, Alchemist, Charmer, or Reflector
     /// </summary>
     public string bossName = "";
+    private BossInfo bossInfo;
+    public int previousAttack = 0;
 
-    private int previousAttack = 0;
 
-    [HideInInspector]
     public bool isAttacking = false;
 
     private bool canAttack = true;
 
     private float attackTimer = 0f;
     public float attackRate = 3f;
-
-
-    private BossHealth bossHealthInfo;
 
     ///////////////////////////////////Lich Info
     private LichAttacks lichAttackInfo;
@@ -62,7 +59,7 @@ public class BossAttacks : BossInfo
     void Start()
     {
         bossName = gameObject.name;
-        bossHealthInfo = gameObject.GetComponent<BossHealth>();
+        bossInfo = gameObject.GetComponent<BossInfo>();
         BossInitializer(bossName);
         attackState = AttackState.IDLE;
         StartCoroutine("FSM");
@@ -81,13 +78,18 @@ public class BossAttacks : BossInfo
                     break;
 
                 case AttackState.ATTACK:
-                    AttackDecider();
-                    AttackDriver(bossName, previousAttack);
+                    if(canAttack)
+                    {
+                        AttackDecider();
+                        AttackDriver(bossName, previousAttack);
+                    }
+                    canAttack = false;
                     break;
 
             }
+            yield return null;
         }
-        yield return null;
+        
     }
 
 
@@ -131,17 +133,21 @@ public class BossAttacks : BossInfo
     {
         if (bossHealthInfo.isAlive)
         {
-            attackTimer += Time.deltaTime;
-            if (attackTimer >= attackRate)
+            if(bossInfo.isActivated)
             {
-                attackTimer = 0;
-
-                if (!isAttacking && canAttack)
+                attackTimer += Time.deltaTime;
+                if (attackTimer >= attackRate)
                 {
-                    attackState = AttackState.ATTACK;
-                    isAttacking = true;
+                    attackTimer = 0;
+
+                    if (!isAttacking && canAttack)
+                    {
+                        attackState = AttackState.ATTACK;
+                       
+                    }
                 }
             }
+            
         }
     }//Idle end
 
@@ -164,6 +170,8 @@ public class BossAttacks : BossInfo
 
     public void AttackDriver(string bossName, int attackNumber)
     {
+        //Debug.Log(bossName + " is the name that was passed");
+       // Debug.Log(isAttacking + " is the value of isAttacking");
         switch (bossName)
         {
             case "Lich":
@@ -193,7 +201,11 @@ public class BossAttacks : BossInfo
 
             case "PrototypeBoss":
                 if (!isAttacking)
+                {
+                    //Debug.Log("The BossAttack script");
                     prototypeBossAttackInfo.Attack(attackNumber);
+                }
+                   
                 break;
         }
     }//AttackDriver end
@@ -230,6 +242,14 @@ public class BossAttacks : BossInfo
     public void ResumeAttack()
     {
         canAttack = true;
+    }
+
+
+   public void EndAttack()
+    {
+        attackState = AttackState.IDLE;
+        canAttack = true;
+        isAttacking = false;
     }
 
 

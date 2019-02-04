@@ -62,7 +62,6 @@ public class BossBehaviours : MonoBehaviour
         //spinDefault = spinRotationAmount;
         player = GameObject.Find("Player");
         bossHealthInfo = gameObject.GetComponent<BossHealth>();
-        spriteInfo = bossArt.gameObject.GetComponent<SpriteRenderer>();
         state = State.IDLE;
         StartCoroutine("FSM");
         

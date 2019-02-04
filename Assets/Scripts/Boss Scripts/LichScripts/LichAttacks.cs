@@ -59,7 +59,8 @@ public class LichAttacks : BossAttacks
 
     public void StopAttack()
     {
-        isAttacking = false;
+        bossAttacksInfo.EndAttack();
+        bossAttacksInfo.isAttacking = false;
         CancelInvoke();
     }
 }
