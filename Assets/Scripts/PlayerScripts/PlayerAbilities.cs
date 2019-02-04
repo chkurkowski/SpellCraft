@@ -129,9 +129,7 @@ public class PlayerAbilities : MonoBehaviour {
 
     public void Idle()
     {
-        TimerHandler();
-        
-        cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        BasicHandlers();
 
         if (absorb.activeSelf && reflect.activeSelf)
             reflect.SetActive(false);
@@ -244,30 +242,35 @@ public class PlayerAbilities : MonoBehaviour {
         print("Ritual Casting");
         print("List has " + ritualList.Count + " moves.");
 
-        cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        BasicHandlers();
 
         InputHandler();
 
         if (ritualList.Count == 2)
         {
-            if (lastAttacks.Contains("Projectile") && lastAttacks.Contains("Zone") && atkSimTimer >= ATKSIMCOOLDOWN)
+            if (ritualList.Contains("Projectile") && ritualList.Contains("Zone") && atkSimTimer >= ATKSIMCOOLDOWN)
             {
                 print("AtkSim Cast");
                 atkSimTimer = 0;
+                ritualList.Clear();
                 state = State.ATKSIM;
             }
-            else if (lastAttacks.Contains("Projectile") && lastAttacks.Contains("Self") && reflectSimTimer >= REFLECTSIMCOOLDOWN)
+            else if (ritualList.Contains("Projectile") && ritualList.Contains("Self") && reflectSimTimer >= REFLECTSIMCOOLDOWN)
             {
                 print("Reflect Cast");
                 reflectSimTimer = 0;
+                ritualList.Clear();
                 state = State.REFLECTSIM;
             }
-            else if (lastAttacks.Contains("Self") && lastAttacks.Contains("Zone") && absorbTimer >= ABSORBCOOLDOWN)
+            else if (ritualList.Contains("Self") && ritualList.Contains("Zone") && absorbTimer >= ABSORBCOOLDOWN)
             {
                 print("Absorb Cast");
                 absorbTimer = 0;
+                ritualList.Clear();
                 state = State.ABSORB;
             }
+            else
+                ritualList.Clear();
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
         {
@@ -333,7 +336,14 @@ public class PlayerAbilities : MonoBehaviour {
 
     #endregion
 
-    #region Timers
+    #region Handlers
+
+    private void BasicHandlers()
+    {
+        TimerHandler();
+
+        cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
 
     private void TimerHandler()
     {
