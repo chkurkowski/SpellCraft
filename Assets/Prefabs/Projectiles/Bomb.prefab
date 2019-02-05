@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac2635571f89f24e9c7eb0514264e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombDamage: 25
+  bombDamage: 10
   fireBallSpeed: 50
   fireBall: {fileID: 1852356439421700, guid: f288824703f634f45b225f671d7c99d3, type: 2}
   fireBallSpawnAmount: 20

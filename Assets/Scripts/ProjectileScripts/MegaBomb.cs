@@ -38,8 +38,13 @@ public class MegaBomb : MonoBehaviour {
             col.gameObject.GetComponent<SimulacrumAbilities>().AbsorbDamage(bombDamage);
             Explode();
         }
-
-        else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger")
+        else if (col.gameObject.tag == "Absorb")
+        {
+            GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(bombDamage / 2);
+            GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .025f;
+            Destroy(gameObject);
+        }
+        else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger" || col.gameObject.tag == "Player")
         {
             Explode();
         }
