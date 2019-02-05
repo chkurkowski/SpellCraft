@@ -34,13 +34,13 @@ public class BossPositionLimiter : MonoBehaviour {
             if (gameObject.transform.position.y < bottomLimit.transform.position.y)
             {
                 Debug.Log("Bottom Limit Triggered!");
-                gameObject.transform.position = new Vector2(gameObject.transform.position.y, bottomLimit.transform.position.y);
+                gameObject.transform.position = new Vector2(gameObject.transform.position.x, bottomLimit.transform.position.y);
             }
 
             if (gameObject.transform.position.y > topLimit.transform.position.y)
             {
                 Debug.Log("Top Limit Triggered!");
-                gameObject.transform.position = new Vector2(gameObject.transform.position.y, topLimit.transform.position.y);
+                gameObject.transform.position = new Vector2(gameObject.transform.position.x, topLimit.transform.position.y);
             }
         }
     }
