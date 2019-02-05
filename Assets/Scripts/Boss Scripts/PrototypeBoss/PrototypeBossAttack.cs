@@ -182,7 +182,7 @@ public class PrototypeBossAttack : BossAttacks
 
     public void MeleeDamage()
     {
-        player.GetComponent<PlayerHealth>().playerHealth -= 10;
+        player.GetComponent<PlayerHealth>().DamagePlayer(10);
         player.GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= .10f;
     }
 

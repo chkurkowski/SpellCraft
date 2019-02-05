@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*======================================================
+TODO:
+* Seperate out all the combos and attacks
+* Build out the combo system to fit any given feedback
+=======================================================*/
+
 public class PlayerAbilities : MonoBehaviour {
 
     //Public World Variables
@@ -129,6 +135,8 @@ public class PlayerAbilities : MonoBehaviour {
 
     public void Idle()
     {
+        movement.slowed = false;
+
         BasicHandlers();
 
         if (absorb.activeSelf && reflect.activeSelf)
@@ -241,6 +249,8 @@ public class PlayerAbilities : MonoBehaviour {
     {
         print("Ritual Casting");
         print("List has " + ritualList.Count + " moves.");
+
+        movement.slowed = true;
 
         BasicHandlers();
 
@@ -408,40 +418,3 @@ public class PlayerAbilities : MonoBehaviour {
 
     #endregion
 }
-
-/* Long attack Combos
-        if (Input.GetKeyDown(KeyCode.Mouse0) && evadeTimer <= EVADECOOLDOWN && atkSimTimer >= ATKSIMCOOLDOWN)
-        {
-            atkSimTimer = 0f;
-            state = State.ATKSIM;
-        }
-        else if(Input.GetKeyDown(KeyCode.Mouse0) && reflectTimer <= REFLECTCOOLDOWN && reflectSimTimer >= REFLECTSIMCOOLDOWN)
-        {
-            reflectSimTimer = 0f;
-            state = State.REFLECTSIM;
-        }
-        
-Combos for the Evade
-    if (Input.GetKeyDown(KeyCode.Space) && reflectTimer <= REFLECTCOOLDOWN && absorbTimer >= ABSORBCOOLDOWN)
-    {
-        absorbTimer = 0f;
-        state = State.ABSORB;
-    }
-    else if(Input.GetKeyDown(KeyCode.Space) && longATKTimer <= LONGATKCOOLDOWN && atkSimTimer >= ATKSIMCOOLDOWN)
-    {
-        atkSimTimer = 0f;
-        state = State.ATKSIM;
-    }
-    
-Combos for the Reflect
-        if (Input.GetKeyDown(KeyCode.Mouse1) && evadeTimer <= EVADECOOLDOWN && absorbTimer >= ABSORBCOOLDOWN)
-        {
-            absorbTimer = 0f;
-            state = State.ABSORB;
-        }
-        else if(Input.GetKeyDown(KeyCode.Mouse1) && longATKTimer <= LONGATKCOOLDOWN && reflectSimTimer >= REFLECTSIMCOOLDOWN)
-        {
-            reflectSimTimer = 0f;
-            state = State.REFLECTSIM;
-        }
-*/

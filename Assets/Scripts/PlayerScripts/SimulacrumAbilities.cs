@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*=============================================
+TODO:
+* Start() and LookAtBoss() need to be
+* updated to work with all the bosses.
+=============================================*/
+
 public class SimulacrumAbilities : MonoBehaviour
 {
 
@@ -29,7 +35,7 @@ public class SimulacrumAbilities : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        boss = GameObject.Find("Boss").transform;
+        boss = GameObject.Find("PrototypeBoss").transform;
         Invoke("Destroy", 8f);
         StartCoroutine("FSM");
     }
@@ -119,7 +125,7 @@ public class SimulacrumAbilities : MonoBehaviour
 
     public void LookAtBoss()
     {
-        Vector3 vectorToTarget = GameObject.Find("Boss").transform.position - transform.position;
+        Vector3 vectorToTarget = GameObject.Find("PrototypeBoss").transform.position - transform.position;
         float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
         angle -= 90;
         Quaternion rotAngle = Quaternion.AngleAxis(angle, Vector3.forward);

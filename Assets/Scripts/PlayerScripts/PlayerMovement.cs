@@ -10,7 +10,9 @@ public class PlayerMovement : MonoBehaviour
     public float horizontalMovement;
     public float verticalMovement;
     public float movementSpeed = 5;
+    public float slowedSpeed;
     public float rotSpeed = 25f;
+    public bool slowed = false;
 
     private bool canMove = true;
 
@@ -20,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody = gameObject.GetComponent<Rigidbody2D>();
         abilities = GetComponent<PlayerAbilities>();
         health = GetComponent<PlayerHealth>();
+        slowedSpeed = movementSpeed * .75f;
 	}
 	
 	// Update is called once per frame
@@ -36,8 +39,10 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalMovement = Input.GetAxis("Horizontal");
         verticalMovement = Input.GetAxis("Vertical");
-        playerRigidbody.velocity = new Vector3(horizontalMovement * movementSpeed * Time.deltaTime * 100, verticalMovement * movementSpeed * Time.deltaTime * 100);
-        //gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+        if(slowed)
+            playerRigidbody.velocity = new Vector3(horizontalMovement * slowedSpeed * Time.deltaTime * 100, verticalMovement * slowedSpeed * Time.deltaTime * 100);
+        else
+            playerRigidbody.velocity = new Vector3(horizontalMovement * movementSpeed * Time.deltaTime * 100, verticalMovement * movementSpeed * Time.deltaTime * 100);
     }
 
     public void Rotate()
