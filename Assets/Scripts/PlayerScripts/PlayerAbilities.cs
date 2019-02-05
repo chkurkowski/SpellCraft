@@ -25,7 +25,9 @@ public class PlayerAbilities : MonoBehaviour {
         ATKSIM,
         ATKHANDLER,
         ABSORB,
-        REFLECTSIM
+        REFLECTSIM,
+        RITUALCAST,
+        BURSTCAST
     }
     public State state;
 
@@ -40,6 +42,9 @@ public class PlayerAbilities : MonoBehaviour {
     private bool alive;
     private bool evadeCalled;
 
+    private List<string> lastAttacks = new List<string>();
+    private List<string> ritualList = new List<string>();
+
     //Ability timers
     private const float LONGATKCOOLDOWN = .35f;
     private const float EVADECOOLDOWN = .5f;
@@ -47,12 +52,13 @@ public class PlayerAbilities : MonoBehaviour {
     private const float ATKSIMCOOLDOWN = 2f;
     private const float ABSORBCOOLDOWN = 6f;
     private const float REFLECTSIMCOOLDOWN = 12f;
+    private const float BURSTCOOLDOWN = 2f;
 
     private const float ATKDASHEND = .6f;
     private const float ABSORBEND = 3f;
 
     private float longATKTimer, evadeTimer, reflectTimer, 
-    atkSimTimer, absorbTimer, reflectSimTimer;
+    atkSimTimer, absorbTimer, reflectSimTimer, burstTimer;
 
 
 	// Use this for initialization
@@ -65,6 +71,7 @@ public class PlayerAbilities : MonoBehaviour {
         atkSimTimer = ATKSIMCOOLDOWN;
         absorbTimer = ABSORBCOOLDOWN;
         reflectSimTimer = REFLECTSIMCOOLDOWN;
+        burstTimer = BURSTCOOLDOWN;
 
         movement = GetComponent<PlayerMovement>();
         health = GetComponent<PlayerHealth>();
@@ -73,7 +80,9 @@ public class PlayerAbilities : MonoBehaviour {
 
         StartCoroutine("FSM");
 	}
-	
+
+    #region FiniteStateMachine
+
     IEnumerator FSM()
     {
         while(health.isAlive)
@@ -102,70 +111,62 @@ public class PlayerAbilities : MonoBehaviour {
                 case State.REFLECTSIM:
                     ReflectSimulacrum();
                     break;
+                case State.RITUALCAST:
+                    RitualCast();
+                    break;
+                case State.BURSTCAST:
+                    BurstCast();
+                    break;
+                    
             }
             yield return null;
         }
     }
 
+    #endregion
+
+    #region GeneralStateFunctions
+
     public void Idle()
     {
-        TimerHandler();
-        
-        cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        BasicHandlers();
 
         if (absorb.activeSelf && reflect.activeSelf)
             reflect.SetActive(false);
 
         // Left click abilities || Base long attack
-        if (Input.GetKeyDown(KeyCode.Mouse0) && evadeTimer <= EVADECOOLDOWN && atkSimTimer >= ATKSIMCOOLDOWN)
-        {
-            atkSimTimer = 0f;
-            state = State.ATKSIM;
-        }
-        else if(Input.GetKeyDown(KeyCode.Mouse0) && reflectTimer <= REFLECTCOOLDOWN && reflectSimTimer >= REFLECTSIMCOOLDOWN)
-        {
-            reflectSimTimer = 0f;
-            state = State.REFLECTSIM;
-        }
-        else if (Input.GetKey(KeyCode.Mouse0) && longATKTimer >= LONGATKCOOLDOWN)
+        if (Input.GetKey(KeyCode.Mouse0) && longATKTimer >= LONGATKCOOLDOWN)
         {
             longATKTimer = 0f;
+            AttackArrayHandler("Projectile", lastAttacks);
             state = State.LONGATK;
         }
 
+
         //Space abilities || Base evade
-        if(Input.GetKeyDown(KeyCode.Space) && reflectTimer <= REFLECTCOOLDOWN && absorbTimer >= ABSORBCOOLDOWN)
-        {
-            absorbTimer = 0f;
-            state = State.ABSORB;
-        }
-        else if(Input.GetKeyDown(KeyCode.Space) && longATKTimer <= LONGATKCOOLDOWN && atkSimTimer >= ATKSIMCOOLDOWN)
-        {
-            atkSimTimer = 0f;
-            state = State.ATKSIM;
-        }
-        else if(Input.GetKeyDown(KeyCode.Space) && evadeTimer >= EVADECOOLDOWN)
+        if(Input.GetKeyDown(KeyCode.Space) && evadeTimer >= EVADECOOLDOWN)
         {
             evadeTimer = 0f;
-            //gameObject.GetComponent<Collider2D>().isTrigger = true;
+            AttackArrayHandler("Zone", lastAttacks);
             state = State.EVADE;
         }
 
         //Right Click Abilities || Base Reflect
-        if(Input.GetKeyDown(KeyCode.Mouse1) && evadeTimer <= EVADECOOLDOWN && absorbTimer >= ABSORBCOOLDOWN)
-        {
-            absorbTimer = 0f;
-            state = State.ABSORB;
-        }
-        else if(Input.GetKeyDown(KeyCode.Mouse1) && longATKTimer <= LONGATKCOOLDOWN && reflectSimTimer >= REFLECTSIMCOOLDOWN)
-        {
-            reflectSimTimer = 0f;
-            state = State.REFLECTSIM;
-        }
-        else if(Input.GetKeyDown(KeyCode.Mouse1) && reflectTimer >= REFLECTCOOLDOWN)
+        if(Input.GetKeyDown(KeyCode.Mouse1) && reflectTimer >= REFLECTCOOLDOWN)
         {
             reflectTimer = 0f;
+            AttackArrayHandler("Self", lastAttacks);
             state = State.REFLECT;
+        }
+
+        if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            state = State.RITUALCAST;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse2))
+        {
+            state = State.BURSTCAST;
         }
     }
 
@@ -202,25 +203,146 @@ public class PlayerAbilities : MonoBehaviour {
         state = State.IDLE;
     }
 
+    #endregion
+
+    #region BaseCombos
+
+    //Offensive Simulacrum = attack + evade
     private void AttackSimulacrum()
     {
+        atkSimTimer = 0f;
         GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
         sim.GetComponent<SimulacrumAbilities>().type = "Attack";
         state = State.IDLE;
     }
 
+    //Absorb = reflect + evade
     private void Absorb()
     {
-        print("absorb");
+        absorbTimer = 0f;
         absorb.SetActive(true);
         state = State.IDLE;
     }
 
+    //Defensive Simulacrum = reflect + attack
     public void ReflectSimulacrum()
     {
+        reflectSimTimer = 0f;
         GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
         sim.GetComponent<SimulacrumAbilities>().type = "Absorb";
         state = State.IDLE;
+    }
+
+    #endregion
+
+    #region ComboHandling
+
+    private void RitualCast()
+    {
+        print("Ritual Casting");
+        print("List has " + ritualList.Count + " moves.");
+
+        BasicHandlers();
+
+        InputHandler();
+
+        if (ritualList.Count == 2)
+        {
+            if (ritualList.Contains("Projectile") && ritualList.Contains("Zone") && atkSimTimer >= ATKSIMCOOLDOWN)
+            {
+                print("AtkSim Cast");
+                atkSimTimer = 0;
+                ritualList.Clear();
+                state = State.ATKSIM;
+            }
+            else if (ritualList.Contains("Projectile") && ritualList.Contains("Self") && reflectSimTimer >= REFLECTSIMCOOLDOWN)
+            {
+                print("Reflect Cast");
+                reflectSimTimer = 0;
+                ritualList.Clear();
+                state = State.REFLECTSIM;
+            }
+            else if (ritualList.Contains("Self") && ritualList.Contains("Zone") && absorbTimer >= ABSORBCOOLDOWN)
+            {
+                print("Absorb Cast");
+                absorbTimer = 0;
+                ritualList.Clear();
+                state = State.ABSORB;
+            }
+            else
+                ritualList.Clear();
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+        {
+            ritualList.Clear();
+            state = State.IDLE;
+        }
+    }
+
+    private void InputHandler()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            AttackArrayHandler("Projectile", ritualList);
+        }
+        else if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            AttackArrayHandler("Self", ritualList);
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            AttackArrayHandler("Zone", ritualList);
+        }
+    }
+
+    private void BurstCast()
+    {
+        if (lastAttacks.Contains("Projectile") && lastAttacks.Contains("Zone") && burstTimer >= BURSTCOOLDOWN)
+        {
+            print("AtkSim Cast");
+            //LastAttacks.Clear();
+            burstTimer = 0;
+            state = State.ATKSIM;
+        }
+        else if(lastAttacks.Contains("Projectile") && lastAttacks.Contains("Self") && burstTimer >= BURSTCOOLDOWN)
+        {
+            print("Reflect Cast");
+            //LastAttacks.Clear();
+            burstTimer = 0;
+            state = State.REFLECTSIM;
+        }
+        else if(lastAttacks.Contains("Self") && lastAttacks.Contains("Zone") && burstTimer >= BURSTCOOLDOWN)
+        {
+            print("Absorb Cast");
+            //LastAttacks.Clear();
+            burstTimer = 0;
+            state = State.ABSORB;
+        }
+        else
+            state = State.IDLE;
+    }
+
+    private void AttackArrayHandler(string newAttack, List<string> list)
+    {
+        if(!list.Contains(newAttack))
+        {
+            if (list.Count >= 2)
+            {
+                list.RemoveAt(1);
+            }
+            list.Insert(0, newAttack);
+        }
+    }
+
+    #endregion
+
+    #region Handlers
+
+    private void BasicHandlers()
+    {
+        TimerHandler();
+
+        cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void TimerHandler()
@@ -231,6 +353,7 @@ public class PlayerAbilities : MonoBehaviour {
         atkSimTimer += Time.deltaTime;
         absorbTimer += Time.deltaTime;
         reflectSimTimer += Time.deltaTime;
+        burstTimer += Time.deltaTime;
 
         if (evadeTimer >= EVADECOOLDOWN)
             gameObject.GetComponent<Collider2D>().isTrigger = false;
@@ -282,4 +405,43 @@ public class PlayerAbilities : MonoBehaviour {
             evadeTimer += EVADECOOLDOWN;
         }
     }
+
+    #endregion
 }
+
+/* Long attack Combos
+        if (Input.GetKeyDown(KeyCode.Mouse0) && evadeTimer <= EVADECOOLDOWN && atkSimTimer >= ATKSIMCOOLDOWN)
+        {
+            atkSimTimer = 0f;
+            state = State.ATKSIM;
+        }
+        else if(Input.GetKeyDown(KeyCode.Mouse0) && reflectTimer <= REFLECTCOOLDOWN && reflectSimTimer >= REFLECTSIMCOOLDOWN)
+        {
+            reflectSimTimer = 0f;
+            state = State.REFLECTSIM;
+        }
+        
+Combos for the Evade
+    if (Input.GetKeyDown(KeyCode.Space) && reflectTimer <= REFLECTCOOLDOWN && absorbTimer >= ABSORBCOOLDOWN)
+    {
+        absorbTimer = 0f;
+        state = State.ABSORB;
+    }
+    else if(Input.GetKeyDown(KeyCode.Space) && longATKTimer <= LONGATKCOOLDOWN && atkSimTimer >= ATKSIMCOOLDOWN)
+    {
+        atkSimTimer = 0f;
+        state = State.ATKSIM;
+    }
+    
+Combos for the Reflect
+        if (Input.GetKeyDown(KeyCode.Mouse1) && evadeTimer <= EVADECOOLDOWN && absorbTimer >= ABSORBCOOLDOWN)
+        {
+            absorbTimer = 0f;
+            state = State.ABSORB;
+        }
+        else if(Input.GetKeyDown(KeyCode.Mouse1) && longATKTimer <= LONGATKCOOLDOWN && reflectSimTimer >= REFLECTSIMCOOLDOWN)
+        {
+            reflectSimTimer = 0f;
+            state = State.REFLECTSIM;
+        }
+*/
