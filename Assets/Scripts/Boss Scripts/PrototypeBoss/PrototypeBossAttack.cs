@@ -126,7 +126,7 @@ public class PrototypeBossAttack : BossAttacks
     public void SpinToWin()
     {
   
-        spinRotationAmount = SPIN_DEFAULT;
+        //spinRotationAmount = SPIN_DEFAULT;
      
       
         if(bossInfoInfo.isMad || bossInfoInfo.isEnraged)
