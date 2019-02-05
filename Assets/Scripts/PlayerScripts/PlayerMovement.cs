@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody = gameObject.GetComponent<Rigidbody2D>();
         abilities = GetComponent<PlayerAbilities>();
         health = GetComponent<PlayerHealth>();
-        slowedSpeed = movementSpeed * .75f;
+        slowedSpeed = movementSpeed * .65f;
 	}
 	
 	// Update is called once per frame

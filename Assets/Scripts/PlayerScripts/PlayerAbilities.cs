@@ -172,7 +172,7 @@ public class PlayerAbilities : MonoBehaviour {
             state = State.RITUALCAST;
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse2))
+        if (Input.GetKeyDown(KeyCode.Mouse2) || Input.GetKeyDown(KeyCode.Q))
         {
             state = State.BURSTCAST;
         }
