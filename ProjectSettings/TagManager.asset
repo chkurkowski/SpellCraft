@@ -7,6 +7,14 @@ TagManager:
   - Boss
   - Projectile
   - EnemyProjectile
+  - DashAttack
+  - CheckPoint
+  - Reflect
+  - Environment
+  - CameraTrigger
+  - Absorb
+  - PlayerSim
+  - Simulacrum
   layers:
   - Default
   - TransparentFX
@@ -17,13 +25,13 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Projectiles
+  - Triggers
+  - Boss
+  - PlayerProjectiles
+  - Player
+  - Dash
+  - Tutorial
   - 
   - 
   - 
