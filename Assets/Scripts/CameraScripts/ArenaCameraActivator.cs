@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class ArenaCameraActivator : MonoBehaviour
 {
-    public GameObject mainCamera;
+    private GameObject mainCamera;
     /// <summary>
     /// type the name of the boss that the arena belongs to
     /// </summary>
-
     public string associatedBossName = "";
 
     public GameObject prototypeBoss;
@@ -23,30 +22,30 @@ public class ArenaCameraActivator : MonoBehaviour
     {
         mainCamera = GameObject.Find("Main Camera");
 
-        switch (BossName)
+        switch (associatedBossName)
         {
             case "Lich":
-                
+                mainCamera.GetComponent<DynamicCamera>().Boss = lichBoss;
                 break;
 
             case "Pylon":
-               
+                mainCamera.GetComponent<DynamicCamera>().Boss = pylonBoss;
                 break;
 
             case "Charmer":
-               
+                mainCamera.GetComponent<DynamicCamera>().Boss = charmerBoss;
                 break;
 
             case "Reflector":
-               
+                mainCamera.GetComponent<DynamicCamera>().Boss = reflectorBoss;
                 break;
 
             case "Alchemist":
-             
+                mainCamera.GetComponent<DynamicCamera>().Boss = alchemistBoss;
                 break;
 
             case "PrototypeBoss":
-              
+                mainCamera.GetComponent<DynamicCamera>().Boss = prototypeBoss;
                 break;
 
         }
