@@ -47,6 +47,8 @@ public class SimulacrumAbilities : MonoBehaviour
             cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (type == "Absorb")
                 gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+            else
+                gameObject.GetComponent<Collider2D>().enabled = false;
             switch (state)
             {
                 case State.IDLE:

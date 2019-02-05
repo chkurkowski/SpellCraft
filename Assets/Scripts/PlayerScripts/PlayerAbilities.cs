@@ -137,6 +137,8 @@ public class PlayerAbilities : MonoBehaviour {
     {
         movement.slowed = false;
 
+        gameObject.GetComponent<ParticleSystem>().Stop();
+
         BasicHandlers();
 
         if (absorb.activeSelf && reflect.activeSelf)
@@ -251,6 +253,8 @@ public class PlayerAbilities : MonoBehaviour {
         print("List has " + ritualList.Count + " moves.");
 
         movement.slowed = true;
+
+        gameObject.GetComponent<ParticleSystem>().Play();
 
         BasicHandlers();
 
