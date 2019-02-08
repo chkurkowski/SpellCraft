@@ -6,7 +6,21 @@ public class PylonAttacks : BossAttacks
 {
     private BossAttacks bossAttacksInfo;
     private Animator pylonAnimatorInfo;
-  
+
+    public GameObject laserAttackOne;
+    public GameObject laserOneHitpoint;
+    public GameObject laserAttackTwo;
+    public GameObject laserTwoHitpoint;
+    public GameObject laserAttackThree;
+    public GameObject laserThreeHitpoint;
+
+    public Transform laserMuzzleOne;
+    public Transform laserMuzzleTwo;
+    public Transform laserMuzzleThree;
+    public Transform laserMuzzleFour;
+    public Transform laserMuzzleFive;
+
+
 
     // Use this for initialization
     void Start ()
@@ -15,11 +29,7 @@ public class PylonAttacks : BossAttacks
         pylonAnimatorInfo = gameObject.GetComponent<Animator>();
     }
 	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
+
 
     public void Attack(int attackNumber)
     {
