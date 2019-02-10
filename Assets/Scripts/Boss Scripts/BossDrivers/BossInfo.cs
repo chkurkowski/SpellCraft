@@ -9,6 +9,7 @@ public class BossInfo : MonoBehaviour
     [HideInInspector]
     public BossHealth bossHealthInfo;
 
+    
     public bool isMad = false;
     public bool isEnraged = false;
     private Transform playerLocation;
