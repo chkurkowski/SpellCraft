@@ -7,18 +7,19 @@ public class PylonAttacks : BossAttacks
     private BossAttacks bossAttacksInfo;
     private Animator pylonAnimatorInfo;
 
-    public GameObject laserAttackOne;
-    public GameObject laserOneHitpoint;
-    public GameObject laserAttackTwo;
-    public GameObject laserTwoHitpoint;
-    public GameObject laserAttackThree;
-    public GameObject laserThreeHitpoint;
-
+    public float laserAttackDuration = 5f;
+    public float laserProjectileDamageSetter = 1f;
+    [Space(10)]
     public Transform laserMuzzleOne;
     public Transform laserMuzzleTwo;
     public Transform laserMuzzleThree;
     public Transform laserMuzzleFour;
     public Transform laserMuzzleFive;
+    [Space(30)]
+    public float vortexGrowthRate = .001f;
+    public float vortexGrowthAmount = .1f;
+    public float vortexDamage = 25f;
+    //[Space(30)]
 
 
 

@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public Image playerHealthBar;
     public bool isAlive = true;
     public float maxPlayerHealth = 100f;
-    private float playerHealth = 100f;
+    public float playerHealth = 100f;
     private RespawnManager respawnManagerInfo;
 
 
