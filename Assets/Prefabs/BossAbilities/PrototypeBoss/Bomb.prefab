@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 58150130187167160}
   - component: {fileID: 50207278257007372}
   - component: {fileID: 114138955980105278}
-  - component: {fileID: 114756518671468274}
   m_Layer: 9
   m_Name: Bomb
   m_TagString: EnemyProjectile
@@ -94,18 +93,6 @@ MonoBehaviour:
   fireBallSpeed: 50
   fireBall: {fileID: 1852356439421700, guid: f288824703f634f45b225f671d7c99d3, type: 2}
   fireBallSpawnAmount: 20
---- !u!114 &114756518671468274
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1581581200255988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8cfa863dadb4bc4397a9a84dd7babfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileDamage: 10
 --- !u!212 &212641488806885046
 SpriteRenderer:
   m_ObjectHideFlags: 1

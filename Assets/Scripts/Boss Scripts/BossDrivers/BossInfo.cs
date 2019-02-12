@@ -19,9 +19,9 @@ public class BossInfo : MonoBehaviour
     public float bossRageLevel = 0f;
 
     [Space(15)]
-    public float bossRageThreshold1 = 33f;
-    public float bossRageThreshold2 = 66f;
-    
+    public float bossRageThreshold1 = 25f;
+    public float bossRageThreshold2 = 50f;
+    public float bossRageThreshold3 = 75f;
 
     [Space(15)]
     public float bossStunLevel = 0f;
@@ -57,7 +57,7 @@ public class BossInfo : MonoBehaviour
 
         StartCoroutine("StunTracker");
         StartCoroutine("RageTracker");
-       // StartCoroutine("AgroTracker"); // might just do this through camera script!
+        StartCoroutine("AgroTracker");
             
     }
 
@@ -124,13 +124,13 @@ public class BossInfo : MonoBehaviour
                 isEnraged = false;
                 rageState = RageState.CALM;
             }
-            else if (bossRageLevel < bossRageThreshold2)
+            else if (bossRageLevel <= bossRageThreshold2)
             {
                 isMad = true;
                 isEnraged = false;
                 rageState = RageState.MAD;
             }
-            else if (bossRageLevel >= bossRageThreshold2)
+            else if (bossRageLevel <= bossRageThreshold3)
             {
                 isMad = false;
                 isEnraged = true;

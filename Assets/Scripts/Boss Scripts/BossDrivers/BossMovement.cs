@@ -131,13 +131,6 @@ public class BossMovement : BossInfo
         }
     }
 
-    public void FacePlayer()
-    {
-        Vector3 dir = bossInfo.GetPlayerLocation().transform.position - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
-    }
-
     public void RandomMovement()
     {
         Vector3 dir = bossInfo.GetPlayerLocation().transform.position - transform.position;

@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Fireball : MonoBehaviour {
-
-    private ProjectileDamage projectileDamageInfo;
-    public float fireBallDamage;
+	
+    public float fireBallDamage = 5;
     public float fireBallSpeed = 50;
     private GameObject player;
     private bool reflected = false;
 
     private void Start()
     {
-        projectileDamageInfo = gameObject.GetComponent<ProjectileDamage>();
-        fireBallDamage = projectileDamageInfo.projectileDamage;
         transform.Rotate(new Vector3(0, 0, 90));
     }
     private void Update()
@@ -54,19 +51,10 @@ public class Fireball : MonoBehaviour {
         }
         else if(col.gameObject.tag == "Absorb")
         {
-            GameObject.Find("Player").GetComponent<PlayerHealth>().HealPlayer(fireBallDamage/2);
+            GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(fireBallDamage/2);
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .025f;
             Destroy(gameObject);
         }
-        else if(col.gameObject.tag == "Boss" && gameObject.tag == "EnemyProjectile")
-        {
-            //do nothing
-        }
-        else if(col.gameObject.tag == "CameraTrigger")
-        {
-            //do nothing
-        }
-              
         else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger")
         {
             Destroy(gameObject);
