@@ -20,8 +20,12 @@ public class MagicBall : MonoBehaviour {
         if (col.gameObject.tag == "Boss")
         {
             //Do damage
-           // print("Hit: 5 damage");
+            // print("Hit: 5 damage");
             Destroy(gameObject);
+        }
+        else if (col.gameObject.tag == "Vortex" || col.gameObject.tag == "EnemyProjectile")
+        {
+            //do nothing
         }
         else if (col.gameObject.tag != "Player" && gameObject.tag != "Reflect" && col.gameObject.tag != "Simulacrum")
         {

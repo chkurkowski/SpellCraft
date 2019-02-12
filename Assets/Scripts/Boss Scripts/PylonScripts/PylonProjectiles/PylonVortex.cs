@@ -5,24 +5,35 @@ using UnityEngine;
 public class PylonVortex : MonoBehaviour
 {
     private ProjectileDamage projectileDamageInfo;
+    private PylonAttacks pylonAttackInfo;
+    private float originalVortexLimit;
     private float originalDamage;
     private GameObject player;
+ 
+   
+ 
+   
+
+    public float vortexLimitIncreaseAmount = 2.5f;
 
     private void Start()
     {
         projectileDamageInfo = gameObject.GetComponent<ProjectileDamage>();
+        pylonAttackInfo = GameObject.Find("Pylon").GetComponent<PylonAttacks>();
+        originalVortexLimit = pylonAttackInfo.vortexGrowthLimit;
         originalDamage = projectileDamageInfo.projectileDamage;
+      
+        
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Environment")
-        {
-            //collision.gameObject.transform.parent = gameObject.transform;
-        }
+     
         if(collision.tag == "Projectile")
         {
-           // projectileDamageInfo.projectileDamage += collision.gameObject.GetComponent<ProjectileDamage>().projectileDamage;
+            projectileDamageInfo.projectileDamage += collision.gameObject.GetComponent<ProjectileDamage>().projectileDamage;
+            pylonAttackInfo.vortexGrowthLimit += vortexLimitIncreaseAmount;
         }
         if(collision.tag == "Player")
         {
@@ -47,7 +58,8 @@ public class PylonVortex : MonoBehaviour
 
     public void FlushVortex()
     {
-        gameObject.transform.DetachChildren();
+        CancelInvoke("VortexPlayer");
         projectileDamageInfo.projectileDamage = originalDamage;
+        pylonAttackInfo.vortexGrowthLimit = originalVortexLimit;
     }
 }
