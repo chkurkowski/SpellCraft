@@ -42,12 +42,16 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamagePlayer(float dmg)
     {
+        //TODO add player damage sound here
+
         playerHealth -= dmg;
         StartCoroutine(InvincibilityFrames());
     }
 
     public void HealPlayer(float healAmount)
     {
+        //TODO add player heal sound here
+
         playerHealth += healAmount;
     }
 

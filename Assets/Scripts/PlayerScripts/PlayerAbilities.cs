@@ -77,9 +77,6 @@ public class PlayerAbilities : MonoBehaviour {
 				case State.IDLE:
 					Idle();
 					break;
-				// case State.ABILITY:
-				// 	Ability();
-				// 	break;
 				case State.EVADE:
 					Evade();
 					break;
@@ -149,6 +146,8 @@ public class PlayerAbilities : MonoBehaviour {
 
 	private void Evade()
 	{
+		//TODO add evade sound here
+
 		Vector2 direction = new Vector2(movement.horizontalMovement, movement.verticalMovement);
         direction.Normalize();
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
@@ -158,6 +157,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 	private void RitualCast()
 	{
+		//TODO Play any ritual sounds here, this would be a sound while you hold the ritual cast button before a combo cast.
 		pSystem.Play();
 		InputHandler();
 		movement.slowed = true;

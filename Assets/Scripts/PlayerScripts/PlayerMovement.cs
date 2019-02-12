@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Movement()
     {
+        //TODO Add movement sounds here, only play if velocity != 0 (More complex logic can be added later)
         horizontalMovement = Input.GetAxis("Horizontal");
         verticalMovement = Input.GetAxis("Vertical");
         if(slowed)

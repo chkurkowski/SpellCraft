@@ -93,6 +93,7 @@ public class AbilityHandler : MonoBehaviour {
         if(longATKTimer >= LONGATKCOOLDOWN)
         {
             //TODO Add MagicMissile Sound
+
             float tempX = 0; //Random.Range(-.15f, .15f);
 
             Vector2 direction = cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
@@ -159,7 +160,7 @@ public class AbilityHandler : MonoBehaviour {
         }
     }
 
-    //NewName - ReflectSim
+    //NewName - AbsorbSim
     private void AbsorbSim(bool isBurst)
     {
         if(isBurst)
