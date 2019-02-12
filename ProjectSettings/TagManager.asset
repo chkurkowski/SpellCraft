@@ -9,13 +9,12 @@ TagManager:
   - EnemyProjectile
   - DashAttack
   - CheckPoint
+  - Reflect
   - Environment
   - CameraTrigger
   - Absorb
   - PlayerSim
   - Simulacrum
-  - Reflect
-  - Vortex
   layers:
   - Default
   - TransparentFX

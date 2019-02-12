@@ -24,17 +24,5 @@ public class LaserTutorialScript : MonoBehaviour
         laserHit.position = hit.point;//makes the direction object(laserHit) move with the raycast
         lineRender.SetPosition(0, transform.position);
         lineRender.SetPosition(1, laserHit.position);
-        //Debug.Log(hit.transform.tag);
-        // if (hit.transform.FindChild("Reflect"))
-        //{
-        //    //  Debug.Log("reflect detected!");
-        //    lineRender.positionCount++;
-        //    Vector2 refDir  = Vector2.Reflect(transform.up, hit.normal );
-        //    lineRender.SetPosition(2, refDir);
-        //   
-        //
-        //
-        //
-        //}
-    }
+	}
 }
