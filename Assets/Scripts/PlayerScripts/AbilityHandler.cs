@@ -12,11 +12,11 @@ public class AbilityHandler : MonoBehaviour {
 	public Vector2 cursorInWorldPos;
 
 	//Attack Variables
-	public float atkSpeed = 75f;
+	private float atkSpeed = 135f;
 
 	//Ability timers -- For the Attacks scripts
-    private const float LONGATKCOOLDOWN = .35f;
-    private const float EVADECOOLDOWN = .5f;
+    private const float LONGATKCOOLDOWN = .2f;
+    private const float HEALSTUNCOOLDOWN = .5f;
     private const float REFLECTCOOLDOWN = 3f;
     private const float ATKSIMCOOLDOWN = 2f;
     private const float ABSORBCOOLDOWN = 6f;
@@ -25,14 +25,14 @@ public class AbilityHandler : MonoBehaviour {
 
     private const float ABSORBEND = 3f;
 
-    private float longATKTimer, evadeTimer, reflectTimer, 
+    private float longATKTimer, healStunTimer, reflectTimer, 
     atkSimTimer, absorbTimer, absorbSimTimer, burstTimer;
 
 
 	// Use this for initialization
 	void Start () {
         longATKTimer = LONGATKCOOLDOWN;
-        evadeTimer = EVADECOOLDOWN;
+        healStunTimer = HEALSTUNCOOLDOWN;
         reflectTimer = REFLECTCOOLDOWN;
         atkSimTimer = ATKSIMCOOLDOWN;
         absorbTimer = ABSORBCOOLDOWN;
@@ -75,13 +75,13 @@ public class AbilityHandler : MonoBehaviour {
 				switch (spell)
 				{
 					case 7:
-						ComboOne(isBurst);
+						AttackSim(isBurst);
 						break;
 					case 8:
-						ComboTwo(isBurst);
+						Absorb(isBurst);
 						break;
 					case 9:
-						ComboThree(isBurst);
+						AbsorbSim(isBurst);
 						break;
 				}
 				break;
@@ -90,40 +90,93 @@ public class AbilityHandler : MonoBehaviour {
 
 	private void MagicMissile()
 	{
-		Vector2 direction = cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
-        direction.Normalize();
-        GameObject fb = Instantiate(magicMissile, transform.position, Quaternion.identity);
-        fb.GetComponent<Rigidbody2D>().velocity = direction * atkSpeed;
-        longATKTimer = 0;
+        if(longATKTimer >= LONGATKCOOLDOWN)
+        {
+            //TODO Add MagicMissile Sound
+            float tempX = 0; //Random.Range(-.15f, .15f);
+
+            Vector2 direction = cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
+            direction.Normalize();
+            GameObject fb = Instantiate(magicMissile, transform.position, Quaternion.identity);
+            fb.GetComponent<Rigidbody2D>().velocity = (direction + new Vector2(tempX, 0)) * atkSpeed;
+            longATKTimer = 0;
+        }
 	}
 
 	private void Reflect()
 	{
-		reflect.SetActive(true);
-		reflectTimer = 0;
+        if(reflectTimer >= REFLECTCOOLDOWN)
+        {
+            //TODO Add Reflect Sound
+
+            reflect.SetActive(true);
+            reflectTimer = 0;
+        }
 	}
 
 	private void HealStun()
 	{
-
+        //TODO Add HealStun Sound
 	}
 
-	//NewName
-	private void ComboOne(bool isBurst)
+	//NewName - AtkSim
+	private void AttackSim(bool isBurst)
 	{
+        if(isBurst)
+        {
+            //TODO Add AttackSim Burst Sound
 
+            GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
+            sim.GetComponent<SimulacrumAbilities>().type = "Attack";
+            sim.GetComponent<SimulacrumAbilities>().SetLifetime(4f);
+        }
+        else
+        {
+            //TODO Add AttackSim Ritual Sound
+
+            GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
+            sim.GetComponent<SimulacrumAbilities>().type = "Attack";
+            atkSimTimer = 0f;
+        }
 	}
 
-	//NewName
-	private void ComboTwo(bool isBurst)
+	//NewName - Absorb
+	private void Absorb(bool isBurst)
 	{
+        if(isBurst)
+        {
+            //TODO Add Absorb Burst Sound
 
+            absorb.SetActive(true);
+            absorbTimer = 0f;  
+        }
+        else
+        {
+            //TODO Add Absorb Ritual Sound
+
+            absorb.SetActive(true);
+            absorbTimer = 0f;  
+        }
 	}
 
-	//NewName
-	private void ComboThree(bool isBurst)
+	//NewName - ReflectSim
+	private void AbsorbSim(bool isBurst)
 	{
+        if(isBurst)
+        {
+            //TODO Add AbsorbSim Burst Sound
 
+            GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
+            sim.GetComponent<SimulacrumAbilities>().type = "Absorb";
+        }
+        else
+        {
+            //TODO Add AbsorbSim Ritual Sound
+
+            GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
+            sim.GetComponent<SimulacrumAbilities>().type = "Absorb";
+            absorbSimTimer = 0f;
+        }
 	}
 
 	#endregion
@@ -143,15 +196,13 @@ public class AbilityHandler : MonoBehaviour {
     private void TimerHandler()
     {
         longATKTimer += Time.deltaTime;
-        evadeTimer += Time.deltaTime;
+        healStunTimer += Time.deltaTime;
         reflectTimer += Time.deltaTime;
         atkSimTimer += Time.deltaTime;
         absorbTimer += Time.deltaTime;
         absorbSimTimer += Time.deltaTime;
         burstTimer += Time.deltaTime;
 
-        if (evadeTimer >= EVADECOOLDOWN)
-            gameObject.GetComponent<Collider2D>().isTrigger = false;
         if (reflectTimer >= 2f)
             reflect.SetActive(false);
         if(absorbTimer >= ABSORBEND)
@@ -164,8 +215,8 @@ public class AbilityHandler : MonoBehaviour {
     {
         if (str == "attack")
             return longATKTimer;
-        else if (str == "evade")
-            return evadeTimer;
+        else if (str == "healstun")
+            return healStunTimer;
         else if (str == "reflect")
             return reflectTimer;
         else if (str == "atkdash")
@@ -180,8 +231,8 @@ public class AbilityHandler : MonoBehaviour {
     {
         if (str == "attack")
             return LONGATKCOOLDOWN;
-        else if (str == "evade")
-            return EVADECOOLDOWN;
+        else if (str == "healstun")
+            return HEALSTUNCOOLDOWN;
         else if (str == "reflect")
             return REFLECTCOOLDOWN;
         else if (str == "atkdash")
@@ -190,15 +241,6 @@ public class AbilityHandler : MonoBehaviour {
             return ABSORBCOOLDOWN;
         else
             return ABSORBSIMCOOLDOWN;
-    }
-
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        if(col.gameObject.tag == "Environment" && evadeTimer <= EVADECOOLDOWN)
-        {
-            //print("Hit wall");
-            evadeTimer += EVADECOOLDOWN;
-        }
     }
 
     #endregion

@@ -13283,7 +13283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06da57123b10c114eb1b56a4d6c80deb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationIncrement: 0.01
+  rotationIncrement: 0
   rotationAmount: 0.1
 --- !u!1 &340377948
 GameObject:
@@ -18128,7 +18128,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 0}
   health: {fileID: 0}
-  handlers: {fileID: 0}
   dashSpeed: 50
   dashDistance: 0
   state: 0
@@ -22753,7 +22752,7 @@ MonoBehaviour:
   absorb: {fileID: 927977457}
   simulacrum: {fileID: 1756307218520016, guid: 24e563f41ef354c129fbea10a5e2a649, type: 2}
   cursorInWorldPos: {x: 0, y: 0}
-  atkSpeed: 75
+  atkSpeed: 135
 --- !u!1 &726470779
 GameObject:
   m_ObjectHideFlags: 0

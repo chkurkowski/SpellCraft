@@ -36,9 +36,15 @@ public class PlayerAbilities : MonoBehaviour {
 	private int leftMouseAbility = 1;
 	private int rightMouseAbility = 2;
 	private int keyboardAbility = 3;
+	private int comboOne = 7;
+	private int comboTwo = 8;
+	private int comboThree = 9;
 
 	private const float BURSTCOOLDOWN = 2f;
-	private const float EVADECOOLDOWN = .5f;
+	private const float EVADECOOLDOWN = .25f;
+
+	private  float evadeEnd = .35f;
+
 	private float burstTimer, evadeTimer;
 
 	private void Start()
@@ -65,19 +71,26 @@ public class PlayerAbilities : MonoBehaviour {
 		while(health.isAlive)
 		{
 			print(state);
+			print(lastAttacks.Count);
 			switch (state)
 			{
 				case State.IDLE:
 					Idle();
 					break;
-				case State.ABILITY:
-					Ability();
-					break;
+				// case State.ABILITY:
+				// 	Ability();
+				// 	break;
 				case State.EVADE:
 					Evade();
 					break;
 				case State.STUN:
 					Stun();
+					break;
+				case State.RITUALCAST:
+					RitualCast();
+					break;
+				case State.BURSTCAST:
+					BurstCast();
 					break;
 			}
 			yield return null;
@@ -91,21 +104,31 @@ public class PlayerAbilities : MonoBehaviour {
 	private void Idle()
 	{
 		//Left Click Ability
-		if(Input.GetKeyDown(KeyCode.Mouse0))
+		if(Input.GetKey(KeyCode.Mouse0))
 		{
 			handlers.AbilityChecker(leftMouseAbility, false, false);
+			AttackArrayHandler("Projectile", lastAttacks);
 		}
 
 		//Right Click Ability
 		if(Input.GetKeyDown(KeyCode.Mouse1))
 		{
 			handlers.AbilityChecker(rightMouseAbility, false, false);
+			AttackArrayHandler("Self", lastAttacks);
 		}
 
 		//E or F Ability
 		if(Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.E))
 		{
 			handlers.AbilityChecker(keyboardAbility, false, false);
+			AttackArrayHandler("Zone", lastAttacks);
+		}
+
+		//Evade
+		if(Input.GetKeyDown(KeyCode.Space) && evadeTimer > EVADECOOLDOWN)
+		{
+			state = State.EVADE;
+			evadeTimer = 0;
 		}
 
 		//Shift Ritual Cast
@@ -124,14 +147,13 @@ public class PlayerAbilities : MonoBehaviour {
         TimerHandlers();
 	}
 
-	private void Ability()
-	{
-
-	}
-
 	private void Evade()
 	{
-
+		Vector2 direction = new Vector2(movement.horizontalMovement, movement.verticalMovement);
+        direction.Normalize();
+        gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
+        gameObject.layer = 14;// changes physics layers to avoid collision
+        Invoke("ResetPhysicsLayer", evadeEnd);//basically delays physics layer reset to give player invincibility frames.
 	}
 
 	private void RitualCast()
@@ -144,14 +166,20 @@ public class PlayerAbilities : MonoBehaviour {
         {
             if (ritualList.Contains("Projectile") && ritualList.Contains("Zone"))
             {
+            	print("hitone");
+            	handlers.AbilityChecker(comboOne, true, false);
                 ritualList.Clear();
             }
             else if (ritualList.Contains("Projectile") && ritualList.Contains("Self"))
             {
+            	print("hittwo");
+            	handlers.AbilityChecker(comboThree, true, false);
                 ritualList.Clear();
             }
             else if (ritualList.Contains("Self") && ritualList.Contains("Zone"))
             {
+	        	print("hitthree");
+	        	handlers.AbilityChecker(comboTwo, true, false);
                 ritualList.Clear();
             }
             else
@@ -167,19 +195,19 @@ public class PlayerAbilities : MonoBehaviour {
 
 	private void BurstCast()
 	{
-		if (lastAttacks.Contains("Projectile") && lastAttacks.Contains("Zone"))
+		if (lastAttacks.Contains("Projectile") && lastAttacks.Contains("Zone") && burstTimer >= BURSTCOOLDOWN)
         {
-            print("AtkSim Cast");
+            handlers.AbilityChecker(comboOne, true, true);
             burstTimer = 0;
         }
-        else if(lastAttacks.Contains("Projectile") && lastAttacks.Contains("Self"))
+        else if(lastAttacks.Contains("Projectile") && lastAttacks.Contains("Self") && burstTimer >= BURSTCOOLDOWN)
         {
-            print("Reflect Cast");
+            handlers.AbilityChecker(comboThree, true, true);
             burstTimer = 0;
         }
-        else if(lastAttacks.Contains("Self") && lastAttacks.Contains("Zone"))
+        else if(lastAttacks.Contains("Self") && lastAttacks.Contains("Zone") && burstTimer >= BURSTCOOLDOWN)
         {
-            print("Absorb Cast");
+            handlers.AbilityChecker(comboTwo, true, true);
             burstTimer = 0;
         }
         else
@@ -209,6 +237,16 @@ public class PlayerAbilities : MonoBehaviour {
         }
     }
 
+    //TODO: Maybe change to 13 - player layer
+    public void ResetPhysicsLayer()
+    {
+        if (gameObject.layer != 13)
+        {
+            gameObject.layer = 13;//reset's the player's physics layer.
+        }
+        state = State.IDLE;
+    }
+
     //Handles the Inputs for the RitualCasting System
 	private void InputHandler()
     {
@@ -220,7 +258,7 @@ public class PlayerAbilities : MonoBehaviour {
         {
             AttackArrayHandler("Self", ritualList);
         }
-        else if (Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.F))
         {
             AttackArrayHandler("Zone", ritualList);
         }
@@ -230,6 +268,31 @@ public class PlayerAbilities : MonoBehaviour {
     {
     	burstTimer += Time.deltaTime;
     	evadeTimer += Time.deltaTime;
+    }
+
+    public float GetTimer(string str)
+    {
+        if (str == "evade")
+            return evadeTimer;
+        else
+            return burstTimer;
+    }
+
+    public float GetCooldown(string str)
+    {
+        if (str == "evade")
+            return EVADECOOLDOWN;
+        else
+            return BURSTCOOLDOWN;
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.tag == "Environment" && evadeTimer <= EVADECOOLDOWN)
+        {
+            //print("Hit wall");
+            evadeTimer += EVADECOOLDOWN;
+        }
     }
 
 	#endregion
