@@ -4,25 +4,48 @@ using UnityEngine;
 
 public class PylonLaserShard : MonoBehaviour, IPooledObject
 {
+    ProjectileDamage projectileDamageInfo;
     public float laserShardDamage = 1;
     public float laserShardSpeed = 50;
+    public float minLaserSpread = -.5f;
+    public float maxLaserSpread = .5f;
     private GameObject player;
     private bool reflected = false;
+    private Color32 originalColor;
+    private float randNum;
 
+    public void Start()
+    {
+        projectileDamageInfo = gameObject.GetComponent<ProjectileDamage>();
+        laserShardDamage = projectileDamageInfo.projectileDamage;
+        originalColor = gameObject.GetComponent<SpriteRenderer>().color;
+    }
     public void OnObjectSpawn()
     {
-        transform.Rotate(new Vector3(0, 0, 90));
+        randNum = Random.Range(minLaserSpread, maxLaserSpread);
+        //transform.Rotate(new Vector3(0, 0, 90));
+        //gotta undo any potential reflects!
+        if(reflected)
+        {
+            gameObject.tag = "EnemyProjectile";
+            reflected = false;
+            gameObject.GetComponent<SpriteRenderer>().color = originalColor;
+            gameObject.layer = 9;
+        }
+
+        transform.Rotate(0,0,randNum);
+        
     }
 
     public void Update()
     {
         if (!reflected)
         {
-            transform.Translate(Vector3.right * Time.deltaTime * laserShardSpeed);
+            transform.Translate(Vector3.up * Time.deltaTime * laserShardSpeed);
         }
         else if (reflected)
         {
-            transform.Translate(Vector3.left * Time.deltaTime * laserShardSpeed);
+            transform.Translate(Vector3.up *-1 * Time.deltaTime * laserShardSpeed);
         }
     }
 
@@ -42,22 +65,26 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(laserShardDamage);
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= (laserShardDamage/ 100f);
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         else if (col.gameObject.tag == "Simulacrum")
         {
             col.gameObject.GetComponent<SimulacrumAbilities>().AbsorbDamage(laserShardDamage);
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         else if (col.gameObject.tag == "Absorb")
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().HealPlayer(laserShardDamage / 2);
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .005f;
-            Destroy(gameObject);
+            // Destroy(gameObject);
+            gameObject.SetActive(false);
         }
-        else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger")
+        else if (col.gameObject.tag != "EnemyProjectile" && col.gameObject.tag != "Boss" && col.gameObject.tag != "CameraTrigger")
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

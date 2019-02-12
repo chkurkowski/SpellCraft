@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class PylonAttacks : BossAttacks
 {
+    private BossInfo bossInfoInfo;
     private BossAttacks bossAttacksInfo;
     private Animator pylonAnimatorInfo;
+    private PylonMovement pylonMovementInfo;
 
+    public const float laserAttackDurationCONST = 5f;
     public float laserAttackDuration = 5f;
     public float laserProjectileDamageSetter = 1f;
     [Space(10)]
-    public Transform laserMuzzleOne;
-    public Transform laserMuzzleTwo;
-    public Transform laserMuzzleThree;
-    public Transform laserMuzzleFour;
-    public Transform laserMuzzleFive;
+    public GameObject laserMuzzleOne;
+    public GameObject laserMuzzleTwo;
+    public GameObject laserMuzzleThree;
+    public GameObject laserMuzzleFour;
+    public GameObject laserMuzzleFive;
     [Space(30)]
     public float vortexGrowthRate = .001f;
     public float vortexGrowthAmount = .1f;
@@ -26,6 +29,13 @@ public class PylonAttacks : BossAttacks
     // Use this for initialization
     void Start ()
     {
+        laserMuzzleOne.SetActive(false);
+        laserMuzzleTwo.SetActive(false);
+        laserMuzzleThree.SetActive(false);
+        laserMuzzleFour.SetActive(false);
+        laserMuzzleFive.SetActive(false);
+        bossInfoInfo = gameObject.GetComponent<BossInfo>();
+        pylonMovementInfo = gameObject.GetComponent<PylonMovement>();
         bossAttacksInfo = gameObject.GetComponent<BossAttacks>();
         pylonAnimatorInfo = gameObject.GetComponent<Animator>();
     }
@@ -34,6 +44,9 @@ public class PylonAttacks : BossAttacks
 
     public void Attack(int attackNumber)
     {
+        attackNumber = 1;//for laser testing
+        //attackNumber = 2; // for vortex testing
+        //attackNumber = 3; // for third attack testing
         switch (attackNumber)
         {
             case 0:
@@ -58,33 +71,73 @@ public class PylonAttacks : BossAttacks
 
     public void AttackOne()//Laser Beam
     {
-        if(bossAttacksInfo.bossRageLevel <= bossAttacksInfo.bossRageThreshold1)
+     
+        if(!bossInfoInfo.isMad && !bossInfoInfo.isEnraged)
         {
-            //invoke attack version 1
+            laserMuzzleOne.SetActive(true);
+            laserAttackDuration = laserAttackDurationCONST;
+            pylonMovementInfo.LaserAttackMovement(laserAttackDuration);
         }
-        else if(bossAttacksInfo.bossRageLevel <= bossAttacksInfo.bossRageThreshold2)
+       else if (bossInfoInfo.isMad)
         {
-            //invoke attack version 2
+            laserMuzzleOne.SetActive(true);
+            laserMuzzleFour.SetActive(true);
+            laserMuzzleFive.SetActive(true);
+            pylonMovementInfo.LaserAttackMovement(laserAttackDuration, .0005f); // the number subtracted from the frequency of turns
         }
-        else if(bossAttacksInfo.bossRageLevel <= bossAttacksInfo.bossRageThreshold3)
+        else if (bossInfoInfo.isEnraged)
         {
-            //invoke attack version 3
+            laserMuzzleOne.SetActive(true);
+            laserMuzzleTwo.SetActive(true);
+            laserMuzzleThree.SetActive(true);
+            laserMuzzleFour.SetActive(true);
+            laserMuzzleFive.SetActive(true);
+            pylonMovementInfo.LaserAttackMovement(laserAttackDuration, .001f); // the number subtracted from the frequency of turns
+
         }
+        Invoke("StopAttack", laserAttackDuration);
     }
 
     public void AttackTwo()//Self Explosion
     {
+        if (!bossInfoInfo.isMad && !bossInfoInfo.isEnraged)
+        {
 
+        }
+        else if (bossInfoInfo.isMad)
+        {
+
+        }
+        else if (bossInfoInfo.isEnraged)
+        {
+
+        }
     }
 
     public void AttackThree()//Energy Veins??
     {
+        if (!bossInfoInfo.isMad && !bossInfoInfo.isEnraged)
+        {
 
+        }
+        else if (bossInfoInfo.isMad)
+        {
+
+        }
+        else if (bossInfoInfo.isEnraged)
+        {
+
+        }
     }
 
 
     public void StopAttack()
     {
+        laserMuzzleOne.SetActive(false);
+        laserMuzzleTwo.SetActive(false);
+        laserMuzzleThree.SetActive(false);
+        laserMuzzleFour.SetActive(false);
+        laserMuzzleFive.SetActive(false);
         bossAttacksInfo.EndAttack();
         bossAttacksInfo.isAttacking = false;
         CancelInvoke();

@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Fireball : MonoBehaviour {
-	
-    public float fireBallDamage = 5;
+
+    private ProjectileDamage projectileDamageInfo;
+    public float fireBallDamage;
     public float fireBallSpeed = 50;
     private GameObject player;
     private bool reflected = false;
 
     private void Start()
     {
+        projectileDamageInfo = gameObject.GetComponent<ProjectileDamage>();
+        fireBallDamage = projectileDamageInfo.projectileDamage;
         transform.Rotate(new Vector3(0, 0, 90));
     }
     private void Update()

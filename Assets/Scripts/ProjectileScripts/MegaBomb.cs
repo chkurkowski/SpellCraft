@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MegaBomb : MonoBehaviour {
 
-    public float bombDamage = 25f;
+    private ProjectileDamage projectileDamageInfo;
+    private float bombDamage;
     public float fireBallSpeed = 50;
 
     public GameObject bomb;
@@ -12,7 +13,8 @@ public class MegaBomb : MonoBehaviour {
 
     private void Start()
     {
-
+        projectileDamageInfo = gameObject.GetComponent<ProjectileDamage>();
+        bombDamage = projectileDamageInfo.projectileDamage;
         transform.Rotate(new Vector3(0, 0, 90));
         Invoke("Explode", 2);
     }

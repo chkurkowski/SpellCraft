@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class AlchemistAttack : BossAttacks
 {
+    private BossInfo bossInfoInfo;
     private BossAttacks bossAttacksInfo;
     private Animator alchemistAnimatorInfo;
 
     // Use this for initialization
     void Start ()
     {
+        bossInfoInfo = gameObject.GetComponent<BossInfo>();
         bossAttacksInfo = gameObject.GetComponent<BossAttacks>();
         alchemistAnimatorInfo = gameObject.GetComponent<Animator>();
     }
@@ -46,17 +48,38 @@ public class AlchemistAttack : BossAttacks
 
     public void AttackOne()
     {
+        if (bossInfoInfo.isMad)
+        {
 
+        }
+        else if (bossInfoInfo.isEnraged)
+        {
+
+        }
     }
 
     public void AttackTwo()
     {
+        if (bossInfoInfo.isMad)
+        {
 
+        }
+        else if (bossInfoInfo.isEnraged)
+        {
+
+        }
     }
 
     public void AttackThree()
     {
+        if (bossInfoInfo.isMad)
+        {
 
+        }
+        else if (bossInfoInfo.isEnraged)
+        {
+
+        }
     }
 
 
