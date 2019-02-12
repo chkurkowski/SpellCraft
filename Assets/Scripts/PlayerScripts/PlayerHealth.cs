@@ -67,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(.07f);
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
         yield return new WaitForSeconds(.10f);
-        gameObject.layer = 0;
+        gameObject.layer = 13;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
