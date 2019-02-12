@@ -10,6 +10,8 @@ public class Fireball : MonoBehaviour {
     private GameObject player;
     private bool reflected = false;
 
+    //Test
+
     private void Start()
     {
         projectileDamageInfo = gameObject.GetComponent<ProjectileDamage>();
