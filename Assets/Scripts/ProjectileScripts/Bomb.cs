@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour {
-
+    private ProjectileDamage projectileDamageInfo;
     public float bombDamage = 25f;
     public float fireBallSpeed = 50;
 
@@ -12,7 +12,8 @@ public class Bomb : MonoBehaviour {
 
     private void Start()
     {
-     
+        projectileDamageInfo = gameObject.GetComponent<ProjectileDamage>();
+        bombDamage = projectileDamageInfo.projectileDamage;
         transform.Rotate(new Vector3(0, 0, 90));
         Invoke("Explode", 2);
     }
@@ -40,9 +41,13 @@ public class Bomb : MonoBehaviour {
         }
         else if (col.gameObject.tag == "Absorb")
         {
-            GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(bombDamage / 2);
+            GameObject.Find("Player").GetComponent<PlayerHealth>().HealPlayer(bombDamage / 2);
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .025f;
             Destroy(gameObject);
+        }
+        else if (col.gameObject.tag == "CameraTrigger")
+        {
+            //do nothing
         }
 
         else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger")
