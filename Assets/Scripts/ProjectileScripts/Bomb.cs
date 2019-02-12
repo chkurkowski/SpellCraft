@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour {
-
+    private ProjectileDamage projectileDamageInfo;
     public float bombDamage = 25f;
     public float fireBallSpeed = 50;
 
@@ -12,7 +12,8 @@ public class Bomb : MonoBehaviour {
 
     private void Start()
     {
-     
+        projectileDamageInfo = gameObject.GetComponent<ProjectileDamage>();
+        bombDamage = projectileDamageInfo.projectileDamage;
         transform.Rotate(new Vector3(0, 0, 90));
         Invoke("Explode", 2);
     }

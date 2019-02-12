@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class MagicBall : MonoBehaviour {
 
-    public float magicBallDamage = 1;
+    private ProjectileDamage projectileDamageInfo;
+     public float magicBallDamage;
     public float magicBallSpeed = 75;
-   
 
-   
+    private void Start()
+    {
+        projectileDamageInfo = gameObject.GetComponent<ProjectileDamage>();
+        magicBallDamage = projectileDamageInfo.projectileDamage;
+    }
+
     // Use this for initialization
     private void OnTriggerEnter2D(Collider2D col)
     {
