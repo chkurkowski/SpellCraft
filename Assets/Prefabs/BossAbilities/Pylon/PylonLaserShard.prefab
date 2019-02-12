@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dd93c51fdf494488f51323a138cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserShardDamage: 0.1
+  laserShardDamage: 1
   laserShardSpeed: 200
   minLaserSpread: -4
   maxLaserSpread: 4
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8cfa863dadb4bc4397a9a84dd7babfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileDamage: 0.1
+  projectileDamage: 1
 --- !u!212 &212768252463440004
 SpriteRenderer:
   m_ObjectHideFlags: 1
