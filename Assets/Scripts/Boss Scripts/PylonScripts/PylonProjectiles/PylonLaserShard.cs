@@ -81,7 +81,7 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
             // Destroy(gameObject);
             gameObject.SetActive(false);
         }
-        else if (col.gameObject.tag != "EnemyProjectile" && col.gameObject.tag != "Boss" && col.gameObject.tag != "CameraTrigger")
+        else if (col.gameObject.tag != "EnemyProjectile" && col.gameObject.tag != "Boss" && col.gameObject.tag != "CameraTrigger" && col.gameObject.tag != "Vortex" )
         {
             //Destroy(gameObject);
             gameObject.SetActive(false);

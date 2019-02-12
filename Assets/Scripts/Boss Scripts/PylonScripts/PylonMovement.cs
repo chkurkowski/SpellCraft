@@ -35,16 +35,7 @@ public class PylonMovement : MonoBehaviour {
         Invoke("StopLaserAttackMovement", durationTime);
     }
 
-    public void LaserAttackMovement(float durationTime, float rotationSpeedIncrease)
-    {
-        Vector3 dir = bossInfo.GetPlayerLocation().transform.position - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle - 180, transform.forward);
-
-        rotationSpeed -= rotationSpeedIncrease;
-        InvokeRepeating("PylonRotate", 0, rotationSpeed);
-        Invoke("StopLaserAttackMovement", durationTime);
-    }
+   
 
 
     public void IncreaseLaserAttackSpinSpeed(float speedIncrease)

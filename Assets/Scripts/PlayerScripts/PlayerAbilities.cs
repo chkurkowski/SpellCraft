@@ -136,7 +136,7 @@ public class PlayerAbilities : MonoBehaviour {
     public void Idle()
     {
         movement.slowed = false;
-
+      
         gameObject.GetComponent<ParticleSystem>().Stop();
 
         BasicHandlers();
@@ -201,9 +201,9 @@ public class PlayerAbilities : MonoBehaviour {
 
     public void ResetPhysicsLayer()
     {
-        if (gameObject.layer != 0)
+        if (gameObject.layer != 13)
         {
-            gameObject.layer = 0;//reset's the player's physics layer.
+            gameObject.layer = 13;//reset's the player's physics layer.
         }
     }
 

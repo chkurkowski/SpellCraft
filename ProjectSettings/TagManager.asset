@@ -15,6 +15,7 @@ TagManager:
   - PlayerSim
   - Simulacrum
   - Reflect
+  - Vortex
   layers:
   - Default
   - TransparentFX
