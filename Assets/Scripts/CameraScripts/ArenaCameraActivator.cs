@@ -17,6 +17,7 @@ public class ArenaCameraActivator : MonoBehaviour
     public GameObject lichBoss;
     public GameObject reflectorBoss;
     public GameObject charmerBoss;
+    private BossInfo bossInfo;
 
 
     private void Start()
@@ -38,27 +39,39 @@ public class ArenaCameraActivator : MonoBehaviour
             {
                 case "Lich":
                     mainCamera.GetComponent<DynamicCamera>().Boss = lichBoss;
+                    bossInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossInfo>();
+                    bossInfo.isActivated = true;
                     break;
 
                 case "Pylon":
                     mainCamera.GetComponent<DynamicCamera>().Boss = pylonBoss;
+                    bossInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossInfo>();
+                    bossInfo.isActivated = true;
                     break;
 
                 case "Charmer":
                     mainCamera.GetComponent<DynamicCamera>().Boss = charmerBoss;
+                    bossInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossInfo>();
+                    bossInfo.isActivated = true;
                     break;
 
                 case "Reflector":
                     mainCamera.GetComponent<DynamicCamera>().Boss = reflectorBoss;
+                    bossInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossInfo>();
+                    bossInfo.isActivated = true;
                     break;
 
                 case "Alchemist":
                     mainCamera.GetComponent<DynamicCamera>().Boss = alchemistBoss;
+                    bossInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossInfo>();
+                    bossInfo.isActivated = true;
                     break;
 
                 case "PrototypeBoss":
                     Debug.Log("prototypeBoss was found!");
                     mainCamera.GetComponent<DynamicCamera>().Boss = prototypeBoss;
+                    bossInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossInfo>();
+                    bossInfo.isActivated = true;
                     break;
 
             }
@@ -73,7 +86,8 @@ public class ArenaCameraActivator : MonoBehaviour
         if (trig.gameObject.tag == "Player")
        {
            GameObject.Find("Main Camera").GetComponent<CameraScriptActivator>().DisableDynamicCamera();
-           // mainCamera.GetComponent<DynamicCamera>().Boss = null;
-       }
+            bossInfo.isActivated = false;
+            // mainCamera.GetComponent<DynamicCamera>().Boss = null;
+        }
    }
 }

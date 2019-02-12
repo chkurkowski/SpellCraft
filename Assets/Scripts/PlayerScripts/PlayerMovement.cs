@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
         if(handler.GetTimer("evade") >= handler.GetCooldown("evade") && abilities.health.isAlive && canMove)
         {

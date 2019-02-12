@@ -35,23 +35,17 @@ public class BossHealth : MonoBehaviour
     {
         if(col.gameObject.tag == "Projectile") 
         {
-            float projectileDamage = 0;
-            MagicBall magicBallInfo = col.gameObject.GetComponent<MagicBall>();
-            if(magicBallInfo!= null)
+            ProjectileDamage projectileInfo = col.gameObject.GetComponent<ProjectileDamage>();
+            if(projectileInfo!= null)
             {
-                 projectileDamage = magicBallInfo.magicBallDamage;
+                
+                bossHealth -= (projectileInfo.projectileDamage/2);
+                healthBar.fillAmount = healthBar.fillAmount - (projectileInfo.projectileDamage / 200f);
             }
             else
             {
-                projectileDamage = col.gameObject.GetComponent<Fireball>().fireBallDamage/3;
+                Debug.Log("The projectile damage script wasn't found on object: " + col.gameObject.name);
             }
-            
-            bossHealth -= projectileDamage;
-            //TODO Check why later
-            if(healthBar != null)
-        		healthBar.fillAmount = healthBar.fillAmount - (projectileDamage / 100f);
-            
-            
         }
         
      }

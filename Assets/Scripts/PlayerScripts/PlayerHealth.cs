@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public Image playerHealthBar;
     public bool isAlive = true;
     public float maxPlayerHealth = 100f;
-    private float playerHealth = 100f;
+    public float playerHealth = 100f;
     private RespawnManager respawnManagerInfo;
 
 
@@ -67,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(.07f);
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
         yield return new WaitForSeconds(.10f);
-        gameObject.layer = 0;
+        gameObject.layer = 13;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
