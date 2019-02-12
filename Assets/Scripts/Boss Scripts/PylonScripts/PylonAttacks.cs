@@ -20,9 +20,17 @@ public class PylonAttacks : BossAttacks
     public GameObject laserMuzzleFive;
     public GameObject laserMuzzleSix;
     [Space(30)]
+    private GameObject spawnedVortex;
+    public GameObject vortex;
+    private Vector3 vortexSize;
+    public float vortexDamage = 25f;
     public float vortexGrowthRate = .001f;
     public float vortexGrowthAmount = .1f;
-    public float vortexDamage = 25f;
+    public float vortexRotateAmount = 1f;
+    public float vortexAttackDuration = 3f;
+    public float vortexGrowthLimit = 20f;
+   
+
     //[Space(30)]
 
 
@@ -40,14 +48,18 @@ public class PylonAttacks : BossAttacks
         pylonMovementInfo = gameObject.GetComponent<PylonMovement>();
         bossAttacksInfo = gameObject.GetComponent<BossAttacks>();
         pylonAnimatorInfo = gameObject.GetComponent<Animator>();
+        spawnedVortex = Instantiate(vortex, transform.position, transform.rotation);
+        vortexSize = vortex.transform.localScale;
+        spawnedVortex.SetActive(false);
+      
     }
 	
 
 
     public void Attack(int attackNumber)
     {
-        attackNumber = 1;//for laser testing
-        //attackNumber = 2; // for vortex testing
+        //attackNumber = 1;//for laser testing
+        attackNumber = 2; // for vortex testing
         //attackNumber = 3; // for third attack testing
         switch (attackNumber)
         {
@@ -107,7 +119,9 @@ public class PylonAttacks : BossAttacks
     {
         if (!bossInfoInfo.isMad && !bossInfoInfo.isEnraged)
         {
-
+            spawnedVortex.SetActive(true);
+            InvokeRepeating("GrowVortex", 0, vortexGrowthRate);
+            Invoke("StopAttack", vortexAttackDuration);
         }
         else if (bossInfoInfo.isMad)
         {
@@ -146,6 +160,21 @@ public class PylonAttacks : BossAttacks
         laserMuzzleSix.SetActive(false);
         bossAttacksInfo.EndAttack();
         bossAttacksInfo.isAttacking = false;
+        spawnedVortex.transform.localScale = vortexSize;
+        spawnedVortex.SetActive(false);
         CancelInvoke();
+    }
+
+    void GrowVortex()
+    {
+        if(spawnedVortex.transform.localScale.x <= vortexGrowthLimit)
+        {
+            spawnedVortex.transform.localScale += new Vector3(vortexGrowthAmount, vortexGrowthAmount, 0);
+        }
+        Vector3 dir = bossInfoInfo.GetPlayerLocation().transform.position - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
+
+        spawnedVortex.transform.Rotate(0, 0, vortexRotateAmount);
     }
 }
