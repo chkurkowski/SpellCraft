@@ -10,7 +10,7 @@ public class PylonMovement : MonoBehaviour {
     private BossInfo bossInfo;
     public float rotationDirection = 1f;
     public float rotationSpeed = 0.002f;
-    public float rotationAmount = 0.1f;
+    public float rotationAmount = 0.5f;
 
     void Start ()
     {
@@ -28,7 +28,7 @@ public class PylonMovement : MonoBehaviour {
     {
         Vector3 dir = bossInfo.GetPlayerLocation().transform.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
+        transform.rotation = Quaternion.AngleAxis(angle - 180, transform.forward);
 
 
         InvokeRepeating("PylonRotate", 0, rotationSpeed);
@@ -39,7 +39,7 @@ public class PylonMovement : MonoBehaviour {
     {
         Vector3 dir = bossInfo.GetPlayerLocation().transform.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
+        transform.rotation = Quaternion.AngleAxis(angle - 180, transform.forward);
 
         rotationSpeed -= rotationSpeedIncrease;
         InvokeRepeating("PylonRotate", 0, rotationSpeed);
@@ -60,7 +60,10 @@ public class PylonMovement : MonoBehaviour {
 
     public void PylonRotate()
     {
-        gameObject.transform.Rotate(0, 0, rotationAmount);
+        ///Vector3 dir = bossInfo.GetPlayerLocation().transform.position - transform.position;
+        ///float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        ///transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
+        gameObject.transform.Rotate(0, 0, rotationAmount);// * rotationDirection);
     }
 
 }

@@ -18,6 +18,7 @@ public class PylonAttacks : BossAttacks
     public GameObject laserMuzzleThree;
     public GameObject laserMuzzleFour;
     public GameObject laserMuzzleFive;
+    public GameObject laserMuzzleSix;
     [Space(30)]
     public float vortexGrowthRate = .001f;
     public float vortexGrowthAmount = .1f;
@@ -34,6 +35,7 @@ public class PylonAttacks : BossAttacks
         laserMuzzleThree.SetActive(false);
         laserMuzzleFour.SetActive(false);
         laserMuzzleFive.SetActive(false);
+        laserMuzzleSix.SetActive(false);
         bossInfoInfo = gameObject.GetComponent<BossInfo>();
         pylonMovementInfo = gameObject.GetComponent<PylonMovement>();
         bossAttacksInfo = gameObject.GetComponent<BossAttacks>();
@@ -75,15 +77,17 @@ public class PylonAttacks : BossAttacks
         if(!bossInfoInfo.isMad && !bossInfoInfo.isEnraged)
         {
             laserMuzzleOne.SetActive(true);
-            laserAttackDuration = laserAttackDurationCONST;
+            laserMuzzleFour.SetActive(true);
+           //laserAttackDuration = laserAttackDurationCONST;
             pylonMovementInfo.LaserAttackMovement(laserAttackDuration);
         }
        else if (bossInfoInfo.isMad)
         {
             laserMuzzleOne.SetActive(true);
+            laserMuzzleTwo.SetActive(true);
             laserMuzzleFour.SetActive(true);
-            laserMuzzleFive.SetActive(true);
-            pylonMovementInfo.LaserAttackMovement(laserAttackDuration, .0005f); // the number subtracted from the frequency of turns
+            laserMuzzleSix.SetActive(true);
+            pylonMovementInfo.LaserAttackMovement(laserAttackDuration); // the number subtracted from the frequency of turns
         }
         else if (bossInfoInfo.isEnraged)
         {
@@ -92,7 +96,8 @@ public class PylonAttacks : BossAttacks
             laserMuzzleThree.SetActive(true);
             laserMuzzleFour.SetActive(true);
             laserMuzzleFive.SetActive(true);
-            pylonMovementInfo.LaserAttackMovement(laserAttackDuration, .001f); // the number subtracted from the frequency of turns
+            laserMuzzleSix.SetActive(true);
+            pylonMovementInfo.LaserAttackMovement(laserAttackDuration); // the number subtracted from the frequency of turns
 
         }
         Invoke("StopAttack", laserAttackDuration);
@@ -138,6 +143,7 @@ public class PylonAttacks : BossAttacks
         laserMuzzleThree.SetActive(false);
         laserMuzzleFour.SetActive(false);
         laserMuzzleFive.SetActive(false);
+        laserMuzzleSix.SetActive(false);
         bossAttacksInfo.EndAttack();
         bossAttacksInfo.isAttacking = false;
         CancelInvoke();
