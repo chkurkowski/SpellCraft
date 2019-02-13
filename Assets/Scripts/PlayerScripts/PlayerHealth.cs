@@ -11,10 +11,6 @@ public class PlayerHealth : MonoBehaviour
     public float playerHealth = 100f;
     private RespawnManager respawnManagerInfo;
 
-    public AudioSource playerHealthSource;
-    public AudioClip healPlayerSound;
-    public AudioClip damagePlayerSound;
-
 
 	// Use this for initialization
 	void Start () 
@@ -46,18 +42,12 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamagePlayer(float dmg)
     {
-        //TODO add player damage sound here
-        playerHealthSource.clip = damagePlayerSound;
-        playerHealthSource.PlayOneShot(damagePlayerSound);
         playerHealth -= dmg;
         StartCoroutine(InvincibilityFrames());
     }
 
     public void HealPlayer(float healAmount)
     {
-        //TODO add player heal sound here
-        playerHealthSource.clip = healPlayerSound;
-        playerHealthSource.PlayOneShot(healPlayerSound);
         playerHealth += healAmount;
     }
 

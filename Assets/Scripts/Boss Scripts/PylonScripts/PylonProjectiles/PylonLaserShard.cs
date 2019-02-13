@@ -5,8 +5,6 @@ using UnityEngine;
 public class PylonLaserShard : MonoBehaviour, IPooledObject
 {
     ProjectileDamage projectileDamageInfo;
-    public AudioSource reflectSource;
-    public AudioClip reflectSound;
     public float laserShardDamage = 1;
     public float laserShardSpeed = 50;
     public float minLaserSpread = -.5f;
@@ -15,7 +13,6 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
     private bool reflected = false;
     private Color32 originalColor;
     private float randNum;
-
 
     public void Start()
     {
@@ -58,8 +55,6 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
 
         if (col.gameObject.tag == "Reflect")
         {
-            reflectSource.clip = reflectSound;
-            reflectSource.PlayOneShot(reflectSound);
             // Debug.Log("Reflect happened");
             reflected = true;
             gameObject.tag = "Projectile";
