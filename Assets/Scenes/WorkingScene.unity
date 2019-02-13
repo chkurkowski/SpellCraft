@@ -10600,6 +10600,7 @@ MonoBehaviour:
   reflect: {fileID: 1288023010}
   absorb: {fileID: 927977457}
   simulacrum: {fileID: 1756307218520016, guid: 24e563f41ef354c129fbea10a5e2a649, type: 2}
+  healStun: {fileID: 1902451079875536, guid: 7b4304263ceff4eb2a7c97a96a1776df, type: 2}
   cursorInWorldPos: {x: 0, y: 0}
   abilityHandlerSource: {fileID: 721968423}
   reflectAudio: {fileID: 721968426}
@@ -12257,7 +12258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &896786363
 Transform:
   m_ObjectHideFlags: 0
