@@ -10,6 +10,8 @@ public class AbilityHandler : MonoBehaviour {
     public GameObject absorb;
     public GameObject simulacrum;
     public Vector2 cursorInWorldPos;
+    public AudioSource abilityHandlerSource;
+    public AudioClip magicMissileSound;
 
     //Attack Variables
     private float atkSpeed = 135f;
@@ -101,6 +103,9 @@ public class AbilityHandler : MonoBehaviour {
             GameObject fb = Instantiate(magicMissile, transform.position, Quaternion.identity);
             fb.GetComponent<Rigidbody2D>().velocity = (direction + new Vector2(tempX, 0)) * atkSpeed;
             longATKTimer = 0;
+
+            abilityHandlerSource.clip = magicMissileSound;
+            abilityHandlerSource.PlayOneShot(magicMissileSound);
         }
     }
 
@@ -109,7 +114,7 @@ public class AbilityHandler : MonoBehaviour {
         if(reflectTimer >= REFLECTCOOLDOWN)
         {
             //TODO Add Reflect Sound
-
+           
             reflect.SetActive(true);
             reflectTimer = 0;
         }
