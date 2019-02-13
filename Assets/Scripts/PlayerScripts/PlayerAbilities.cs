@@ -19,6 +19,7 @@ public class PlayerAbilities : MonoBehaviour {
     public PlayerHealth health;
     public Vector2 cursorInWorldPos;
     public GameObject simulacrum;
+    public AudioSource evadeSound;
 
 
     //FSM Variables
@@ -69,6 +70,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+ 
         alive = true;
         evadeCalled = false;
         longATKTimer = LONGATKCOOLDOWN;
@@ -85,7 +87,9 @@ public class PlayerAbilities : MonoBehaviour {
         state = State.IDLE;
 
         StartCoroutine("FSM");
-	}
+
+        evadeSound = GetComponent<AudioSource>();
+    }
 
     #region FiniteStateMachine
 
@@ -159,6 +163,8 @@ public class PlayerAbilities : MonoBehaviour {
             evadeTimer = 0f;
             AttackArrayHandler("Zone", lastAttacks);
             state = State.EVADE;
+
+
         }
 
         //Right Click Abilities || Base Reflect
@@ -194,6 +200,7 @@ public class PlayerAbilities : MonoBehaviour {
         Vector2 direction = new Vector2(movement.horizontalMovement, movement.verticalMovement);
         direction.Normalize();
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
+        evadeSound.Play();
         gameObject.layer = 14;// changes physics layers to avoid collision
         Invoke("ResetPhysicsLayer", 1);//basically delays physics layer reset to give player invincibility frames.
         state = State.IDLE;
