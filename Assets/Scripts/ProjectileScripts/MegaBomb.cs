@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class MegaBomb : MonoBehaviour {
 
-    public AudioSource explosionSource;
-    public AudioClip explosionSound;
-
     private ProjectileDamage projectileDamageInfo;
     private float bombDamage;
     public float fireBallSpeed = 50;
@@ -61,8 +58,6 @@ public class MegaBomb : MonoBehaviour {
 
     public void Explode()
     {
-        explosionSource.clip = explosionSound;
-        explosionSource.PlayOneShot(explosionSound);
         GameObject bomb1 = Instantiate(bomb, transform.position, transform.rotation);
         GameObject bomb2 = Instantiate(bomb, transform.position, transform.rotation);
         bomb2.transform.Rotate(0, 0, 180);
