@@ -15,11 +15,14 @@ public class PlayerAbilities : MonoBehaviour {
 	public float dashDistance;
 
     //audio
+    public AudioSource reflectAudio;
     public AudioSource ritualAudio;
     public AudioSource evadeAudio;
+
+    public AudioClip reflectSound;
     public AudioClip evadeSound;
     public AudioClip ritualSound;
-    public AudioClip magicMissileSound;
+
 
 	public enum State
 	{
@@ -108,6 +111,8 @@ public class PlayerAbilities : MonoBehaviour {
 	private void Idle()
 	{
         ritualAudio.Stop();
+        reflectAudio.Stop();
+
 		//Left Click Ability
 		if(Input.GetKey(KeyCode.Mouse0))
 		{
@@ -119,7 +124,9 @@ public class PlayerAbilities : MonoBehaviour {
 		//Right Click Ability
 		if(Input.GetKeyDown(KeyCode.Mouse1))
 		{
-			handlers.AbilityChecker(rightMouseAbility, false, false);
+            ritualAudio.clip = ritualSound;
+            ritualAudio.Play();
+            handlers.AbilityChecker(rightMouseAbility, false, false);
 			AttackArrayHandler("Self", lastAttacks);
 		}
 
