@@ -9,6 +9,7 @@ public class AbilityHandler : MonoBehaviour {
     public GameObject reflect;
     public GameObject absorb;
     public GameObject simulacrum;
+    public GameObject healStun;
     public Vector2 cursorInWorldPos;
 
     //Attack Variables
@@ -16,7 +17,7 @@ public class AbilityHandler : MonoBehaviour {
 
     //Ability timers -- For the Attacks scripts
     private const float LONGATKCOOLDOWN = .2f;
-    private const float HEALSTUNCOOLDOWN = .5f;
+    private const float HEALSTUNCOOLDOWN = 10f;
     private const float REFLECTCOOLDOWN = 3f;
     private const float ATKSIMCOOLDOWN = 2f;
     private const float ABSORBCOOLDOWN = 6f;
@@ -100,6 +101,7 @@ public class AbilityHandler : MonoBehaviour {
             direction.Normalize();
             GameObject fb = Instantiate(magicMissile, transform.position, Quaternion.identity);
             fb.GetComponent<Rigidbody2D>().velocity = (direction + new Vector2(tempX, 0)) * atkSpeed;
+            // fb.transform.LookAt(cursorInWorldPos);
             longATKTimer = 0;
         }
     }
@@ -118,6 +120,12 @@ public class AbilityHandler : MonoBehaviour {
     private void HealStun()
     {
         //TODO Add HealStun Sound
+
+        if(healStunTimer >= HEALSTUNCOOLDOWN)
+        {
+            Instantiate(healStun, cursorInWorldPos, transform.rotation);
+            healStunTimer = 0;
+        }
     }
 
     //NewName - AtkSim
