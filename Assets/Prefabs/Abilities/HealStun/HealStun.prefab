@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4109020199961494}
   - component: {fileID: 212759986061991244}
-  - component: {fileID: 114789338200534850}
+  - component: {fileID: 114266140810838306}
   m_Layer: 0
   m_Name: HealStun
   m_TagString: Untagged
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114789338200534850
+--- !u!114 &114266140810838306
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49,10 +49,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1902451079875536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d1476e06167840a8957bc9d69074458, type: 3}
+  m_Script: {fileID: 11500000, guid: f59342fc14aa646599e85bec67fcabc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  stunPrefab: {fileID: 1340541323973652, guid: 509ec9a019913435299107307b929886, type: 2}
+  healPrefab: {fileID: 1525506275097322, guid: 89e71d49f4aad48e5a6fb021c73cb188, type: 2}
 --- !u!212 &212759986061991244
 SpriteRenderer:
   m_ObjectHideFlags: 1
