@@ -111,7 +111,7 @@ public class PlayerAbilities : MonoBehaviour {
 	private void Idle()
 	{
         ritualAudio.Stop();
-        reflectAudio.Stop();
+        //reflectAudio.Stop();
 
 		//Left Click Ability
 		if(Input.GetKey(KeyCode.Mouse0))
@@ -124,8 +124,9 @@ public class PlayerAbilities : MonoBehaviour {
 		//Right Click Ability
 		if(Input.GetKeyDown(KeyCode.Mouse1))
 		{
-            ritualAudio.clip = ritualSound;
-            ritualAudio.Play();
+            reflectAudio.clip = ritualSound;
+            reflectAudio.Play();
+            Invoke("StopReflectAudioSound", reflectAudio.clip.length);
             handlers.AbilityChecker(rightMouseAbility, false, false);
 			AttackArrayHandler("Self", lastAttacks);
 		}
@@ -169,7 +170,12 @@ public class PlayerAbilities : MonoBehaviour {
         TimerHandlers();
 	}
 
-	private void Evade()
+  private void  StopReflectAudioSound()
+    {
+        reflectAudio.Stop();
+    }
+
+    private void Evade()
 	{
         //(done)TODO add evade sound here 
 
