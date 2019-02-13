@@ -14,6 +14,16 @@ public class PlayerAbilities : MonoBehaviour {
 	public float dashSpeed;
 	public float dashDistance;
 
+    //audio
+    public AudioSource reflectAudio;
+    public AudioSource ritualAudio;
+    public AudioSource evadeAudio;
+
+    public AudioClip reflectSound;
+    public AudioClip evadeSound;
+    public AudioClip ritualSound;
+
+
 	public enum State
 	{
 		IDLE,
@@ -94,17 +104,24 @@ public class PlayerAbilities : MonoBehaviour {
 
 	private void Idle()
 	{
+        ritualAudio.Stop();
+        //reflectAudio.Stop();
+
 		//Left Click Ability
 		if(Input.GetKey(KeyCode.Mouse0))
 		{
 			handlers.AbilityChecker(leftMouseAbility, false, false);
 			AttackArrayHandler("Projectile", lastAttacks);
-		}
+
+        }
 
 		//Right Click Ability
 		if(Input.GetKeyDown(KeyCode.Mouse1))
 		{
-			handlers.AbilityChecker(rightMouseAbility, false, false);
+            reflectAudio.clip = ritualSound;
+            reflectAudio.Play();
+            Invoke("StopReflectAudioSound", reflectAudio.clip.length);
+            handlers.AbilityChecker(rightMouseAbility, false, false);
 			AttackArrayHandler("Self", lastAttacks);
 		}
 
@@ -118,14 +135,23 @@ public class PlayerAbilities : MonoBehaviour {
 		//Evade
 		if(Input.GetKeyDown(KeyCode.Space) && evadeTimer > EVADECOOLDOWN)
 		{
-			state = State.EVADE;
+            evadeAudio = GetComponent<AudioSource>();
+            evadeAudio.PlayOneShot(evadeSound);
+            state = State.EVADE;
 			evadeTimer = 0;
 		}
 
 		//Shift Ritual Cast
 		if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
+            ritualAudio = GetComponent<AudioSource>();
+            ritualAudio.clip = ritualSound;
+            ritualAudio.Play();
             state = State.RITUALCAST;
+        }
+        else //if (!Input.anyKey)
+        {
+           // abilityAudio.loop = false;
         }
 
         //Middle Mouse and Q Burst Cast
@@ -138,11 +164,16 @@ public class PlayerAbilities : MonoBehaviour {
         TimerHandlers();
 	}
 
-	private void Evade()
-	{
-		//TODO add evade sound here
+  private void  StopReflectAudioSound()
+    {
+        reflectAudio.Stop();
+    }
 
-		Vector2 direction = new Vector2(movement.horizontalMovement, movement.verticalMovement);
+    private void Evade()
+	{
+        //(done)TODO add evade sound here 
+
+        Vector2 direction = new Vector2(movement.horizontalMovement, movement.verticalMovement);
         direction.Normalize();
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
         gameObject.layer = 14;// changes physics layers to avoid collision
@@ -151,8 +182,8 @@ public class PlayerAbilities : MonoBehaviour {
 
 	private void RitualCast()
 	{
-		//TODO Play any ritual sounds here, this would be a sound while you hold the ritual cast button before a combo cast.
-		pSystem.Play();
+        //(done) TODO Play any ritual sounds here, this would be a sound while you hold the ritual cast button before a combo cast.
+        pSystem.Play();
 		InputHandler();
 		movement.slowed = true;
 

@@ -11,6 +11,13 @@ public class AbilityHandler : MonoBehaviour {
     public GameObject simulacrum;
     public GameObject healStun;
     public Vector2 cursorInWorldPos;
+   
+    public AudioSource abilityHandlerSource;
+    public AudioSource reflectAudio;
+
+    public AudioClip magicMissileSound;
+    public AudioClip attackSimSound;
+    public AudioClip reflectLoopSound;
 
     //Attack Variables
     private float atkSpeed = 135f;
@@ -103,17 +110,22 @@ public class AbilityHandler : MonoBehaviour {
             fb.GetComponent<Rigidbody2D>().velocity = (direction + new Vector2(tempX, 0)) * atkSpeed;
             // fb.transform.LookAt(cursorInWorldPos);
             longATKTimer = 0;
+
+            abilityHandlerSource.clip = magicMissileSound;
+            abilityHandlerSource.PlayOneShot(magicMissileSound);
         }
     }
 
     private void Reflect()
     {
-        if(reflectTimer >= REFLECTCOOLDOWN)
+        reflectAudio = GetComponent<AudioSource>();
+        reflectAudio.clip = reflectLoopSound;
+        reflectAudio.Play();
+        if (reflectTimer >= REFLECTCOOLDOWN)
         {
-            //TODO Add Reflect Sound
-
             reflect.SetActive(true);
             reflectTimer = 0;
+            reflectAudio.Stop();
         }
     }
 
@@ -131,7 +143,9 @@ public class AbilityHandler : MonoBehaviour {
     //NewName - AtkSim
     private void AttackSim(bool isBurst)
     {
-        if(isBurst)
+        abilityHandlerSource.clip = attackSimSound;
+        abilityHandlerSource.PlayOneShot(attackSimSound);
+        if (isBurst)
         {
             //TODO Add AttackSim Burst Sound
 

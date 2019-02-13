@@ -9,6 +9,8 @@ public class Fireball : MonoBehaviour {
     public float fireBallSpeed = 50;
     private GameObject player;
     private bool reflected = false;
+    public AudioSource reflectSource;
+    public AudioClip reflectSound;
 
     private void Start()
     {
@@ -35,7 +37,9 @@ public class Fireball : MonoBehaviour {
        
         if(col.gameObject.tag == "Reflect")
         {
-           // Debug.Log("Reflect happened");
+            reflectSource.clip = reflectSound;
+            reflectSource.PlayOneShot(reflectSound);
+            // Debug.Log("Reflect happened");
             reflected = true;
             gameObject.tag = "Projectile";
             gameObject.layer = 12; //changes physics layers, do not touch or I stab you
