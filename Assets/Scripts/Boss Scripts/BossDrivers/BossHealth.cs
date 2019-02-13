@@ -7,12 +7,10 @@ public class BossHealth : MonoBehaviour
     //boss health bar
 
     public Image healthBar;
-   
+    public GameObject boss;
     public float bossHealth = 100;
     public float bossMaxHealth = 100;
     public bool isAlive = true;
-
-    private bool isLasered = false;
 
     private void Start()
     {
@@ -41,8 +39,8 @@ public class BossHealth : MonoBehaviour
             if(projectileInfo!= null)
             {
                 
-                bossHealth -= (projectileInfo.projectileDamage);
-                healthBar.fillAmount = healthBar.fillAmount - (projectileInfo.projectileDamage / 100f);
+                bossHealth -= (projectileInfo.projectileDamage/2);
+                healthBar.fillAmount = healthBar.fillAmount - (projectileInfo.projectileDamage / 200f);
             }
             else
             {
@@ -52,16 +50,6 @@ public class BossHealth : MonoBehaviour
         
      }
 
-
-    public void SetLasered(bool tof)
-    {
-        isLasered = tof;
-    }
-
-    public bool GetLasered()
-    {
-        return isLasered;
-    }
 
 
 }

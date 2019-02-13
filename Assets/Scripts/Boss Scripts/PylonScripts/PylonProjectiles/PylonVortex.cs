@@ -6,44 +6,35 @@ public class PylonVortex : MonoBehaviour
 {
     private ProjectileDamage projectileDamageInfo;
     private PylonAttacks pylonAttackInfo;
+    private float originalVortexLimit;
     private float originalDamage;
-    public float vortexDamageNOTFOREDITING;
-
-    public float vortexGrowthRate = .001f;
-    private const float finalVortexLimit = 10f;
-    private const float originalVortexLimit = 7f;
-    public float vortexGrowthLimit = 7f;
     private GameObject player;
-
-    public float vortexGrowthAmount = .1f;
-    public float vortexRotateAmount = 1f;
  
-    public float vortexLimitIncreaseAmount = .1f;
+   
+ 
+   
+
+    public float vortexLimitIncreaseAmount = 2.5f;
 
     private void Start()
     {
         projectileDamageInfo = gameObject.GetComponent<ProjectileDamage>();
         pylonAttackInfo = GameObject.Find("Pylon").GetComponent<PylonAttacks>();
+        originalVortexLimit = pylonAttackInfo.vortexGrowthLimit;
         originalDamage = projectileDamageInfo.projectileDamage;
-
-        vortexDamageNOTFOREDITING = projectileDamageInfo.projectileDamage;
-
-
-    }
-
-    private void FixedUpdate()
-    {
-        if (gameObject.transform.localScale.x <= vortexGrowthLimit && gameObject.transform.localScale.x <= finalVortexLimit)
-        {
-            gameObject.transform.localScale += new Vector3(vortexGrowthAmount, vortexGrowthAmount, 0);
-        }
-        transform.Rotate(0, 0, vortexRotateAmount);
+      
+        
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
      
-       
+        if(collision.tag == "Projectile")
+        {
+            projectileDamageInfo.projectileDamage += collision.gameObject.GetComponent<ProjectileDamage>().projectileDamage;
+            pylonAttackInfo.vortexGrowthLimit += vortexLimitIncreaseAmount;
+        }
         if(collision.tag == "Player")
         {
             player = collision.gameObject;
@@ -62,14 +53,13 @@ public class PylonVortex : MonoBehaviour
 
     public void VortexPlayer()
     {
-        player.GetComponent<PlayerHealth>().DamagePlayer(vortexDamageNOTFOREDITING);
+        player.GetComponent<PlayerHealth>().DamagePlayer(projectileDamageInfo.projectileDamage);
     }
 
     public void FlushVortex()
     {
         CancelInvoke("VortexPlayer");
         projectileDamageInfo.projectileDamage = originalDamage;
-        vortexGrowthLimit = originalVortexLimit;
-        vortexDamageNOTFOREDITING = projectileDamageInfo.projectileDamage;
+        pylonAttackInfo.vortexGrowthLimit = originalVortexLimit;
     }
 }
