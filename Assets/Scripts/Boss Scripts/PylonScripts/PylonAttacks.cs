@@ -19,6 +19,8 @@ public class PylonAttacks : BossAttacks
     public GameObject laserMuzzleFour;
     public GameObject laserMuzzleFive;
     public GameObject laserMuzzleSix;
+    public GameObject laserMuzzleSeven;
+    public GameObject laserMuzzleEight;
     [Space(30)]
   
     public GameObject vortex;
@@ -49,7 +51,8 @@ public class PylonAttacks : BossAttacks
         laserMuzzleFour.SetActive(false);
         laserMuzzleFive.SetActive(false);
         laserMuzzleSix.SetActive(false);
-       
+        laserMuzzleSeven.SetActive(false);
+        laserMuzzleEight.SetActive(false);
 
 
         vortexSize = vortex.transform.localScale;
@@ -65,8 +68,8 @@ public class PylonAttacks : BossAttacks
 
     public void Attack(int attackNumber)
     {
-        attackNumber = 1;//for laser testing
-        //attackNumber = 2; // for vortex testing
+        //attackNumber = 1;//for laser testing
+        attackNumber = 2; // for vortex testing
         //attackNumber = 3; // for third attack testing
         //attackNumber = Random.Range(1, 3);
         //if(attackNumber >= 2)
@@ -150,7 +153,7 @@ public class PylonAttacks : BossAttacks
                 microVortex2.SetActive(true);
                 laserMuzzleOne.SetActive(true);
                 laserMuzzleFour.SetActive(true);
-                // pylonMovementInfo.LaserAttackMovement();
+                 pylonMovementInfo.LaserAttackMovement();
                 InvokeRepeating("GrowVortex", 0, (microVortexSpinRate));
                 Invoke("StopAttack", vortexAttackDuration);
             }
@@ -161,7 +164,9 @@ public class PylonAttacks : BossAttacks
                 microVortex2.SetActive(true);
                 laserMuzzleOne.SetActive(true);
                 laserMuzzleFour.SetActive(true);
-                //pylonMovementInfo.LaserAttackMovement();
+                laserMuzzleSeven.SetActive(true);
+                laserMuzzleEight.SetActive(true);
+                pylonMovementInfo.LaserAttackMovement();
                 InvokeRepeating("GrowVortex", 0, (microVortexSpinRate));
                 Invoke("StopAttack", vortexAttackDuration);
             }
@@ -197,6 +202,9 @@ public class PylonAttacks : BossAttacks
         laserMuzzleFour.SetActive(false);
         laserMuzzleFive.SetActive(false);
         laserMuzzleSix.SetActive(false);
+        laserMuzzleSeven.SetActive(false);
+        laserMuzzleEight.SetActive(false);
+
         pylonMovementInfo.StopLaserAttackMovement();
 
         microVortex1.SetActive(false);

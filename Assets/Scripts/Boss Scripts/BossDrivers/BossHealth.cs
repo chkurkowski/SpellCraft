@@ -7,7 +7,7 @@ public class BossHealth : MonoBehaviour
     //boss health bar
 
     public Image healthBar;
-    public GameObject boss;
+   
     public float bossHealth = 100;
     public float bossMaxHealth = 100;
     public bool isAlive = true;
