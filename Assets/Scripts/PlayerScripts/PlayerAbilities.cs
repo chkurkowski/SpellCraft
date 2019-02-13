@@ -142,7 +142,14 @@ public class PlayerAbilities : MonoBehaviour {
         BasicHandlers();
 
         if (absorb.activeSelf && reflect.activeSelf)
+        {
+            reflect.GetComponent<ReflectLaser>().isLasered = false;
             reflect.SetActive(false);
+        }
+            
+           
+       
+            
 
         // Left click abilities || Base long attack
         if (Input.GetKey(KeyCode.Mouse0) && longATKTimer >= LONGATKCOOLDOWN)
@@ -372,7 +379,12 @@ public class PlayerAbilities : MonoBehaviour {
         if (evadeTimer >= EVADECOOLDOWN)
             gameObject.GetComponent<Collider2D>().isTrigger = false;
         if (reflectTimer >= 2f)
+        {
+           // Debug.Log("not lasered called");
+            reflect.GetComponent<ReflectLaser>().isLasered = false;
             reflect.SetActive(false);
+        }
+          
         if(absorbTimer >= ABSORBEND)
         {
             absorb.SetActive(false);

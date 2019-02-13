@@ -16,6 +16,7 @@ TagManager:
   - Simulacrum
   - Reflect
   - Vortex
+  - LaserEndPoint
   layers:
   - Default
   - TransparentFX
