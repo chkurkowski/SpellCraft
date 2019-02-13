@@ -5119,7 +5119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1372879090}
-  laserDamage: 0.05
+  laserDamage: 0.02
 --- !u!120 &306393315
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -5916,7 +5916,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 338485323}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69c31f994ac69ea4eab280f933e4f25b, type: 3}
   m_Name: 
@@ -5975,7 +5975,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 338485323}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d9d5d066c82c374b890b517e6e55328, type: 3}
   m_Name: 
@@ -6978,7 +6978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1285680814}
-  laserDamage: 0.05
+  laserDamage: 0.02
 --- !u!120 &398866849
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -7402,7 +7402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1751753056}
-  laserDamage: 0.05
+  laserDamage: 0.02
 --- !u!120 &436752214
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -11296,7 +11296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserHit: {fileID: 184883368}
-  laserDamage: 0.05
+  laserDamage: 0.02
 --- !u!120 &697898798
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -17949,7 +17949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserHit: {fileID: 195950013}
-  laserDamage: 0.05
+  laserDamage: 0.02
 --- !u!120 &862041081
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -19749,7 +19749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserHit: {fileID: 166349510}
-  laserDamage: 0.05
+  laserDamage: 0.02
 --- !u!120 &998343161
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -23012,7 +23012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1363781386}
-  laserDamage: 0.05
+  laserDamage: 0.02
 --- !u!120 &1151341653
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -30268,7 +30268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1049980200}
-  laserDamage: 0.05
+  laserDamage: 0.02
 --- !u!120 &1525772127
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -31789,7 +31789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserHit: {fileID: 2104284541}
-  laserDamage: 0.05
+  laserDamage: 0.02
 --- !u!120 &1635861562
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -39550,7 +39550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1614299341}
-  laserDamage: 0.05
+  laserDamage: 0.02
 --- !u!120 &2078588549
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -40928,7 +40928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1525437197}
-  laserDamage: 0.05
+  laserDamage: 0.02
 --- !u!120 &2141876826
 LineRenderer:
   m_ObjectHideFlags: 0
