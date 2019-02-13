@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float slowedSpeed;
     public float rotSpeed = 25f;
     public bool slowed = false;
+    public AudioSource runningSound;
 
     private bool canMove = true;
 

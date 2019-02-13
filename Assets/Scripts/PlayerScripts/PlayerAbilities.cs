@@ -20,6 +20,7 @@ public class PlayerAbilities : MonoBehaviour {
     public Vector2 cursorInWorldPos;
     public GameObject simulacrum;
     public AudioSource evadeSound;
+    public AudioSource magicMissileSound;
 
 
     //FSM Variables
@@ -89,6 +90,7 @@ public class PlayerAbilities : MonoBehaviour {
         StartCoroutine("FSM");
 
         evadeSound = GetComponent<AudioSource>();
+        magicMissileSound = GetComponent<AudioSource>();
     }
 
     #region FiniteStateMachine
@@ -190,6 +192,7 @@ public class PlayerAbilities : MonoBehaviour {
     {
         Vector2 direction = cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
         direction.Normalize();
+        magicMissileSound.Play();
         GameObject fb = Instantiate(fireball, transform.position, Quaternion.identity);
         fb.GetComponent<Rigidbody2D>().velocity = direction * atkSpeed;
         state = State.IDLE;
