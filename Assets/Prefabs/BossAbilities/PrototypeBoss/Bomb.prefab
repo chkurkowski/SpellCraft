@@ -91,7 +91,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -186,6 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac2635571f89f24e9c7eb0514264e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bombSource: {fileID: 82180932870231648}
+  explosionSound: {fileID: 8300000, guid: 6650c807685154061baeb2ea225ae0ab, type: 3}
   bombDamage: 10
   fireBallSpeed: 50
   fireBall: {fileID: 1852356439421700, guid: f288824703f634f45b225f671d7c99d3, type: 2}

@@ -198,6 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20693f1953eaad4bba17eceec0f9816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionSource: {fileID: 82636381508457820}
+  explosionSound: {fileID: 8300000, guid: 6650c807685154061baeb2ea225ae0ab, type: 3}
   fireBallSpeed: 50
   bomb: {fileID: 1581581200255988, guid: 5e07e1b1b56f0a54c9510b652207fd50, type: 2}
 --- !u!212 &212476676813542568
