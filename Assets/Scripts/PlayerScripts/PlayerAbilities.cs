@@ -25,10 +25,6 @@ public class PlayerAbilities : MonoBehaviour {
 	}
 	public State state;
 
-	//Booleans
-	private bool isBurst;
-	private bool evadeCalled;
-
 	private List<string> lastAttacks = new List<string>();
 	private List<string> ritualList = new List<string>();
 
@@ -49,8 +45,6 @@ public class PlayerAbilities : MonoBehaviour {
 
 	private void Start()
 	{
-		isBurst = false;
-        evadeCalled = false;
         burstTimer = BURSTCOOLDOWN;
         evadeTimer = EVADECOOLDOWN;
 
