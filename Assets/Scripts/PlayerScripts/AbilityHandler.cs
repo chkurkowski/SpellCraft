@@ -10,6 +10,7 @@ public class AbilityHandler : MonoBehaviour {
     public GameObject absorb;
     public GameObject simulacrum;
     public GameObject healStun;
+    public GameObject healStunCombo;
     public Vector2 cursorInWorldPos;
    
     public AudioSource abilityHandlerSource;
@@ -82,14 +83,17 @@ public class AbilityHandler : MonoBehaviour {
             case true:
                 switch (spell)
                 {
-                    case 7:
+                    case 1:
                         AttackSim(isBurst);
                         break;
-                    case 8:
+                    case 2:
                         Absorb(isBurst);
                         break;
-                    case 9:
+                    case 3:
                         AbsorbSim(isBurst);
+                        break;
+                    case 4:
+                        HealStunCombo(isBurst);
                         break;
                 }
                 break;
@@ -142,8 +146,9 @@ public class AbilityHandler : MonoBehaviour {
     //NewName - AtkSim
     private void AttackSim(bool isBurst)
     {
-         abilityHandlerSource.clip = attackSimSound;
-         abilityHandlerSource.PlayOneShot(attackSimSound);
+        abilityHandlerSource.clip = attackSimSound;
+        abilityHandlerSource.PlayOneShot(attackSimSound);
+
         if (isBurst)
         {
             //TODO Add AttackSim Burst Sound
@@ -156,9 +161,30 @@ public class AbilityHandler : MonoBehaviour {
         {
             //TODO Add AttackSim Ritual Sound
 
-            GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
-            sim.GetComponent<SimulacrumAbilities>().type = "Attack";
-            atkSimTimer = 0f;
+            if(atkSimTimer >= ATKSIMCOOLDOWN)
+            {
+                GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
+                sim.GetComponent<SimulacrumAbilities>().type = "Attack";
+                atkSimTimer = 0f;
+            }
+        }
+    }
+
+    //HealStun Combo 
+    private void HealStunCombo(bool isBurst)
+    {
+        if(isBurst)
+        {
+            Instantiate(healStunCombo, cursorInWorldPos, transform.rotation);
+            healStunTimer = 0;
+        }
+        else
+        {
+            if(healStunTimer >= HEALSTUNCOOLDOWN)
+            {
+                Instantiate(healStunCombo, cursorInWorldPos, transform.rotation);
+                healStunTimer = 0;
+            }
         }
     }
 
@@ -170,14 +196,16 @@ public class AbilityHandler : MonoBehaviour {
             //TODO Add Absorb Burst Sound
 
             absorb.SetActive(true);
-            absorbTimer = 0f;  
+            burstTimer = 0f;  
         }
         else
         {
             //TODO Add Absorb Ritual Sound
-
-            absorb.SetActive(true);
-            absorbTimer = 0f;  
+            if(absorbTimer >= ABSORBCOOLDOWN)
+            {
+                absorb.SetActive(true);
+                absorbTimer = 0f;  
+            }
         }
     }
 
@@ -194,10 +222,12 @@ public class AbilityHandler : MonoBehaviour {
         else
         {
             //TODO Add AbsorbSim Ritual Sound
-
-            GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
-            sim.GetComponent<SimulacrumAbilities>().type = "Absorb";
-            absorbSimTimer = 0f;
+            if(absorbSimTimer >= ABSORBSIMCOOLDOWN)
+            {
+                GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
+                sim.GetComponent<SimulacrumAbilities>().type = "Absorb";
+                absorbSimTimer = 0f;
+            }
         }
     }
 

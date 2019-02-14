@@ -11,6 +11,11 @@ public class HealPickup : MonoBehaviour {
 		return healAmount += amt;
 	}
 
+	public float GetHealAmount()
+	{
+		return healAmount;
+	}
+
 	private void OnTriggerEnter2D(Collider2D col)
 	{
 		if(col.gameObject.tag == "Player")

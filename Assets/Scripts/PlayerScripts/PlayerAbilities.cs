@@ -43,12 +43,12 @@ public class PlayerAbilities : MonoBehaviour {
 	private List<string> ritualList = new List<string>();
 
 	//Ability Variables
-	private int leftMouseAbility = 1;
-	private int rightMouseAbility = 2;
-	private int keyboardAbility = 3;
-	private int comboOne = 7;
-	private int comboTwo = 8;
-	private int comboThree = 9;
+	public int leftMouseAbility = 1;
+	public int rightMouseAbility = 2;
+	public int keyboardAbility = 3;
+	public int comboOne = 1;
+	public int comboTwo = 2;
+	public int comboThree = 3;
 
 	private const float BURSTCOOLDOWN = 2f;
 	private const float EVADECOOLDOWN = .25f;

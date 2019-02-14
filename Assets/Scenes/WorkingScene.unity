@@ -13610,6 +13610,27 @@ Prefab:
       propertyPath: absorb
       value: 
       objectReference: {fileID: 927977457}
+    - target: {fileID: 114585357869244448, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: healStunCombo
+      value: 
+      objectReference: {fileID: 1995505641304810, guid: 7b4304263ceff4eb2a7c97a96a1776df,
+        type: 2}
+    - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: comboTwo
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: comboOne
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: comboThree
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
   m_IsPrefabAsset: 0
