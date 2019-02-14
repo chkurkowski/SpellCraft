@@ -6370,7 +6370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 323766125}
   m_Layer: 0
-  m_Name: AbsorbChild
+  m_Name: AbsorbParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11946,6 +11946,11 @@ Transform:
   m_Father: {fileID: 1190699902}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &669007993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1166791909594820, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+    type: 2}
+  m_PrefabInternal: {fileID: 794441709}
 --- !u!1 &675678701
 GameObject:
   m_ObjectHideFlags: 0
@@ -14187,6 +14192,16 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 114585357869244448, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: reflect
+      value: 
+      objectReference: {fileID: 296423449}
+    - target: {fileID: 114585357869244448, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: absorb
+      value: 
+      objectReference: {fileID: 2098123054}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
   m_IsPrefabAsset: 0
@@ -42201,7 +42216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 635b15d09525c4ab983bbd50593de0fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 669007993}
   Boss: {fileID: 0}
   cam: {fileID: 1960605314}
   zoomTweak: 0
