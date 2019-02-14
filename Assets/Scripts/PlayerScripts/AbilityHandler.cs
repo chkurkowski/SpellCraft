@@ -9,6 +9,7 @@ public class AbilityHandler : MonoBehaviour {
     public GameObject reflect;
     public GameObject absorb;
     public GameObject simulacrum;
+    public GameObject healStun;
     public Vector2 cursorInWorldPos;
    
     public AudioSource abilityHandlerSource;
@@ -23,7 +24,7 @@ public class AbilityHandler : MonoBehaviour {
 
     //Ability timers -- For the Attacks scripts
     private const float LONGATKCOOLDOWN = .2f;
-    private const float HEALSTUNCOOLDOWN = .5f;
+    private const float HEALSTUNCOOLDOWN = 10f;
     private const float REFLECTCOOLDOWN = 3f;
     private const float ATKSIMCOOLDOWN = 2f;
     private const float ABSORBCOOLDOWN = 6f;
@@ -130,6 +131,12 @@ public class AbilityHandler : MonoBehaviour {
     private void HealStun()
     {
         //TODO Add HealStun Sound
+
+        if(healStunTimer >= HEALSTUNCOOLDOWN)
+        {
+            Instantiate(healStun, cursorInWorldPos, transform.rotation);
+            healStunTimer = 0;
+        }
     }
 
     //NewName - AtkSim
@@ -203,7 +210,10 @@ public class AbilityHandler : MonoBehaviour {
         TimerHandler();
 
         if (absorb.activeSelf && reflect.activeSelf)
+        {
+            reflect.GetComponent<ReflectLaser>().isLasered = false;
             reflect.SetActive(false);
+        }
 
         cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
@@ -219,7 +229,10 @@ public class AbilityHandler : MonoBehaviour {
         burstTimer += Time.deltaTime;
 
         if (reflectTimer >= 2f)
+        {
+            reflect.GetComponent<ReflectLaser>().isLasered = false;
             reflect.SetActive(false);
+        }
         if(absorbTimer >= ABSORBEND)
         {
             absorb.SetActive(false);
