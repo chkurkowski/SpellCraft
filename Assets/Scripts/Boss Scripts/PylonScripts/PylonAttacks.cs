@@ -8,6 +8,11 @@ public class PylonAttacks : BossAttacks
     private BossAttacks bossAttacksInfo;
     private Animator pylonAnimatorInfo;
     private PylonMovement pylonMovementInfo;
+    private Vector3 vectorToTarget;
+    private float angle;
+    private GameObject player;
+    private Quaternion rotAngle;
+    public float laserLookAtSpeed;
 
     public float spinRotationAmount = 0.1f;
     public float spinRotationRate = 0.1f;
@@ -17,13 +22,10 @@ public class PylonAttacks : BossAttacks
     public float laserProjectileDamageSetter = 1f;
     [Space(10)]
     public GameObject laserMuzzleOne;
-    public GameObject laserMuzzleTwo;
-    public GameObject laserMuzzleThree;
-    public GameObject laserMuzzleFour;
-    public GameObject laserMuzzleFive;
-    public GameObject laserMuzzleSix;
-    public GameObject laserMuzzleSeven;
-    public GameObject laserMuzzleEight;
+    public GameObject shieldOne;
+    public GameObject shieldTwo;
+    public GameObject reflectShieldOne;
+    public GameObject reflectShieldTwo;
     [Space(30)]
     public GameObject laserShardOne;
     public GameObject laserShardTwo;
@@ -51,19 +53,17 @@ public class PylonAttacks : BossAttacks
     // Use this for initialization
     void Start ()
     {
+        player = GameObject.Find("Player");
         bossInfoInfo = gameObject.GetComponent<BossInfo>();
         pylonMovementInfo = gameObject.GetComponent<PylonMovement>();
         bossAttacksInfo = gameObject.GetComponent<BossAttacks>();
         pylonAnimatorInfo = gameObject.GetComponent<Animator>();
 
         laserMuzzleOne.SetActive(false);
-        laserMuzzleTwo.SetActive(false);
-        laserMuzzleThree.SetActive(false);
-        laserMuzzleFour.SetActive(false);
-        laserMuzzleFive.SetActive(false);
-        laserMuzzleSix.SetActive(false);
-        laserMuzzleSeven.SetActive(false);
-        laserMuzzleEight.SetActive(false);
+        shieldOne.SetActive(false);
+        shieldTwo.SetActive(false);
+        reflectShieldOne.SetActive(false);
+        reflectShieldTwo.SetActive(false);
 
 
         laserShardOne.SetActive(false);
@@ -73,9 +73,9 @@ public class PylonAttacks : BossAttacks
 
 
         microVortex1Rotation = microVortex1.transform.rotation;
-        Debug.Log(microVortex1Rotation);
+       // Debug.Log(microVortex1Rotation);
         microVortex2Rotation = microVortex2.transform.rotation;
-        Debug.Log(microVortex2Rotation);
+      //  Debug.Log(microVortex2Rotation);
         vortexSize = vortex.transform.localScale;
         vortex.SetActive(false);
         microVortex1.SetActive(false);
@@ -89,8 +89,8 @@ public class PylonAttacks : BossAttacks
 
     public void Attack(int attackNumber)
     {
-        //attackNumber = 1;//for laser testing
-        attackNumber = 2; // for vortex testing
+        attackNumber = 1;//for laser testing
+        //attackNumber = 2; // for vortex testing
         //attackNumber = 3; // for third attack testing
         //attackNumber = Random.Range(1, 3);
         //if(attackNumber >= 2)
@@ -127,32 +127,23 @@ public class PylonAttacks : BossAttacks
         if(!bossInfoInfo.isMad && !bossInfoInfo.isEnraged)
         {
             laserMuzzleOne.SetActive(true);
-            laserMuzzleFour.SetActive(true);
-            //laserAttackDuration = laserAttackDurationCONST;
-            //pylonMovementInfo.LaserAttackMovement();
-            InvokeRepeating("PylonRotate", 0, spinRotationRate);
+            InvokeRepeating("SlowRotateToPlayer", 0, spinRotationRate);
         }
        else if (bossInfoInfo.isMad)
         {
             laserMuzzleOne.SetActive(true);
-            laserMuzzleTwo.SetActive(true);
-            // laserMuzzleThree.SetActive(true);
-            laserMuzzleFour.SetActive(true);
-            laserMuzzleSix.SetActive(true);
-            laserMuzzleSix.SetActive(true);
-            // pylonMovementInfo.LaserAttackMovement(); // the number subtracted from the frequency of turns
-            InvokeRepeating("PylonRotate", 0, spinRotationRate);
+
+            shieldOne.SetActive(true);
+            shieldTwo.SetActive(true);
+            InvokeRepeating("SlowRotateToPlayer", 0, spinRotationRate);
         }
         else if (bossInfoInfo.isEnraged)
         {
             laserMuzzleOne.SetActive(true);
-            laserMuzzleTwo.SetActive(true);
-            laserMuzzleThree.SetActive(true);
-            laserMuzzleFour.SetActive(true);
-            laserMuzzleFive.SetActive(true);
-            laserMuzzleSix.SetActive(true);
-            // pylonMovementInfo.LaserAttackMovement(); // the number subtracted from the frequency of turns
-            InvokeRepeating("PylonRotate", 0, spinRotationRate);
+            reflectShieldOne.SetActive(true);
+            reflectShieldTwo.SetActive(true);
+
+            InvokeRepeating("SlowRotateToPlayer", 0, spinRotationRate);
 
         }
         Invoke("StopAttack", laserAttackDuration);
@@ -244,13 +235,12 @@ public class PylonAttacks : BossAttacks
         bossAttacksInfo.isAttacking = false;
 
         laserMuzzleOne.SetActive(false);
-        laserMuzzleTwo.SetActive(false);
-        laserMuzzleThree.SetActive(false);
-        laserMuzzleFour.SetActive(false);
-        laserMuzzleFive.SetActive(false);
-        laserMuzzleSix.SetActive(false);
-        laserMuzzleSeven.SetActive(false);
-        laserMuzzleEight.SetActive(false);
+        shieldOne.SetActive(false);
+        shieldTwo.SetActive(false);
+        reflectShieldOne.GetComponent<PylonReflectShield>().isLasered = false;
+        reflectShieldTwo.GetComponent<PylonReflectShield>().isLasered = false;
+        reflectShieldOne.SetActive(false);
+        reflectShieldTwo.SetActive(false);
 
         laserShardOne.SetActive(false);
         laserShardTwo.SetActive(false);
@@ -300,6 +290,15 @@ public class PylonAttacks : BossAttacks
              //   microVortex1.transform.Rotate(0, 0, microVortexRotateAmount);
             //    microVortex2.transform.Rotate(0, 0, microVortexRotateAmount);
             }  
+    }
+
+    public void SlowRotateToPlayer()
+    {
+       // Debug.Log("Slow rotate was called!");
+        vectorToTarget = player.transform.position - transform.position;
+        angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
+        rotAngle = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotAngle, Time.deltaTime * laserLookAtSpeed);
     }
 
     public void PylonRotate()
