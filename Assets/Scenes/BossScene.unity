@@ -1076,7 +1076,7 @@ MonoBehaviour:
   bossHealthInfo: {fileID: 0}
   isMad: 0
   isEnraged: 0
-  bossRageLevel: 0
+  bossRageLevel: 69
   bossRageThreshold1: 33
   bossRageThreshold2: 66
   bossStunLevel: 0
