@@ -33,9 +33,6 @@ public class PlayerHealth : MonoBehaviour
         if(playerHealth <= 0)
         {
             respawnManagerInfo.KillPlayer();
-           
-          
-
         }
         else if(playerHealth > maxPlayerHealth)
         {
@@ -50,15 +47,17 @@ public class PlayerHealth : MonoBehaviour
         playerHealthSource.clip = damagePlayerSound;
         playerHealthSource.PlayOneShot(damagePlayerSound);
         playerHealth -= dmg;
+        playerHealthBar.fillAmount = playerHealth / 100;
         StartCoroutine(InvincibilityFrames());
     }
 
     public void HealPlayer(float healAmount)
     {
         //TODO add player heal sound here
-         playerHealthSource.clip = healPlayerSound;
-         playerHealthSource.PlayOneShot(healPlayerSound);
+        playerHealthSource.clip = healPlayerSound;
+        playerHealthSource.PlayOneShot(healPlayerSound);
         playerHealth += healAmount;
+        playerHealthBar.fillAmount = playerHealth / 100;
     }
 
     private IEnumerator InvincibilityFrames()

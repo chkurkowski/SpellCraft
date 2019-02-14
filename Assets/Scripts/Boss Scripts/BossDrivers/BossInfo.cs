@@ -63,7 +63,7 @@ public class BossInfo : MonoBehaviour
 
     private void Update()
     {
-        playerLocation = playerLocation = GameObject.Find("Player").GetComponent<Transform>();
+        playerLocation = GameObject.Find("Player").GetComponent<Transform>();
     }
 
     /// ///////////////////////////////////////STUN STUFF/FUNCTIONS

@@ -58,11 +58,19 @@ public class HealStunHandler : MonoBehaviour {
             {
                 // stun = Instantiate(stunPrefab, transform.position + (transform.up * 10f), Quaternion.identity);
                 stun = Instantiate(stunPrefab, transform.position, Quaternion.identity);
+                if(stun.GetComponent<StunProjectile>().AddAmount(10) >= 30)
+                {
+                    Destroy(gameObject);
+                }
             }
             else
             {
                 stun.transform.localScale += new Vector3(12.0f, 12.0f, 0f);
                 gameObject.transform.localScale += new Vector3(5.0f, 5.0f, 0f);
+                if(stun.GetComponent<StunProjectile>().AddAmount(10) >= 30)
+                {
+                    Destroy(gameObject);
+                }
             }
             return true;
         }
@@ -80,13 +88,19 @@ public class HealStunHandler : MonoBehaviour {
             {
                 // heal = Instantiate(healPrefab, transform.position + -(transform.up * 7.5f), Quaternion.identity);
                 heal = Instantiate(healPrefab, transform.position, Quaternion.identity);
-                heal.GetComponent<HealPickup>().AddHealAmount(8);
+                if(heal.GetComponent<HealPickup>().AddHealAmount(8) >= 40)
+                {
+                    Destroy(gameObject);
+                }
             }
             else
             {
                 heal.transform.localScale += new Vector3(12.0f, 12.0f, 0f);
                 gameObject.transform.localScale += new Vector3(5.0f, 5.0f, 0f);
-                heal.GetComponent<HealPickup>().AddHealAmount(8);
+                if(heal.GetComponent<HealPickup>().AddHealAmount(8) >= 40)
+                {
+                    Destroy(gameObject);
+                }
             }
             return true;
         }

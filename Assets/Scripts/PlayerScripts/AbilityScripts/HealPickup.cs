@@ -6,9 +6,9 @@ public class HealPickup : MonoBehaviour {
 
 	private float healAmount = 0;
 
-	public void AddHealAmount(float amt)
+	public float AddHealAmount(float amt)
 	{
-		healAmount += amt;
+		return healAmount += amt;
 	}
 
 	private void OnTriggerEnter2D(Collider2D col)
@@ -16,6 +16,7 @@ public class HealPickup : MonoBehaviour {
 		if(col.gameObject.tag == "Player")
 		{
 			col.gameObject.GetComponent<PlayerHealth>().HealPlayer(healAmount);
+			Destroy(gameObject);
 		}
 	}
 
