@@ -71,7 +71,7 @@ public class Fireball : MonoBehaviour {
             //do nothing
         }
               
-        else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger")
+        else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger" || gameObject.tag != "Projectile")
         {
             Destroy(gameObject);
         }

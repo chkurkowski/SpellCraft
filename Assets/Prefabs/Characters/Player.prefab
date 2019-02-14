@@ -622,14 +622,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad409bb7ce718f4594589d5f82c09d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 0}
-  handler: {fileID: 0}
-  abilities: {fileID: 0}
-  playerRigidbody: {fileID: 0}
+  health: {fileID: 114102766126379484}
+  handler: {fileID: 114585357869244448}
+  abilities: {fileID: 114445191699499252}
+  playerRigidbody: {fileID: 50957321889674100}
   horizontalMovement: 0
   verticalMovement: 0
   movementSpeed: 35
-  slowedSpeed: 0
+  slowedSpeed: 22.75
   rotSpeed: 25
   slowed: 0
 --- !u!114 &114445191699499252
@@ -643,8 +643,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b722eb56d85a745c581792ebfdc2e024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 0}
-  health: {fileID: 0}
+  movement: {fileID: 114261250784768694}
+  health: {fileID: 114102766126379484}
   dashSpeed: 50
   dashDistance: 0
   reflectAudio: {fileID: 82257521513790070}
@@ -670,8 +670,8 @@ MonoBehaviour:
   reflect: {fileID: 0}
   absorb: {fileID: 0}
   simulacrum: {fileID: 1756307218520016, guid: 24e563f41ef354c129fbea10a5e2a649, type: 2}
-  healStun: {fileID: 1995505641304810, guid: 7b4304263ceff4eb2a7c97a96a1776df, type: 2}
-  cursorInWorldPos: {x: 0, y: 0}
+  healStun: {fileID: 1053897319626372, guid: 754ff97d30f5b47049d11038f7ec9ea6, type: 2}
+  cursorInWorldPos: {x: 103.21388, y: 207.23746}
   abilityHandlerSource: {fileID: 82502722618222228}
   reflectAudio: {fileID: 82415138615108900}
   magicMissileSound: {fileID: 8300000, guid: e8ee449744da74f2e9062f0bda568eb7, type: 3}
