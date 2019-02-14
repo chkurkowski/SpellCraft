@@ -6,13 +6,23 @@ using UnityEngine;
 public class MagicBall : MonoBehaviour {
 
     private ProjectileDamage projectileDamageInfo;
-     public float magicBallDamage;
+    private float stunDamage;
+    public bool firedFromPlayer = true;
+    public float magicBallDamage;
     public float magicBallSpeed = 75;
 
     private void Start()
     {
         projectileDamageInfo = gameObject.GetComponent<ProjectileDamage>();
         magicBallDamage = projectileDamageInfo.projectileDamage;
+    }
+
+    void Update()
+    {
+        if(!firedFromPlayer)
+        {
+            transform.Translate(Vector2.up * Time.deltaTime * magicBallSpeed);
+        }
     }
 
     // Use this for initialization

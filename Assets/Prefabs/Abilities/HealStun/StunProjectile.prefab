@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4760375281186406}
   - component: {fileID: 212691977068025330}
+  - component: {fileID: 114369296820808734}
   m_Layer: 0
   m_Name: StunProjectile
   m_TagString: Untagged
@@ -40,6 +41,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114369296820808734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1470184331504096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ceebdfe4a40c441da44238b66898a62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1269839615260892, guid: ccf371fb7d5d54c62b0619b9ac65ffdf, type: 2}
+  atkSpeed: 80
+  projectileAmount: 10
 --- !u!212 &212691977068025330
 SpriteRenderer:
   m_ObjectHideFlags: 1

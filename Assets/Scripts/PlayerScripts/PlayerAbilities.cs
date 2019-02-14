@@ -109,7 +109,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 	private void Idle()
 	{
-         ritualAudio.Stop();
+        ritualAudio.Stop();
         reflectAudio.Stop();
 
 		//Left Click Ability
@@ -165,6 +165,7 @@ public class PlayerAbilities : MonoBehaviour {
             state = State.BURSTCAST;
         }
 
+        movement.slowed = false;
         pSystem.Stop();
         TimerHandlers();
 	}

@@ -62,7 +62,7 @@ public class Fireball : MonoBehaviour {
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .025f;
             Destroy(gameObject);
         }
-        else if(col.gameObject.tag == "Boss" && col.gameObject.tag == "EnemyProjectile")
+        else if(col.gameObject.tag == "Boss" || col.gameObject.tag == "Projectile")
         {
             //do nothing
         }
