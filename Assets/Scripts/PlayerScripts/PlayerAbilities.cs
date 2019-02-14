@@ -117,15 +117,14 @@ public class PlayerAbilities : MonoBehaviour {
 		{
 			handlers.AbilityChecker(leftMouseAbility, false, false);
 			AttackArrayHandler("Projectile", lastAttacks);
-
         }
 
 		//Right Click Ability
 		if(Input.GetKeyDown(KeyCode.Mouse1))
 		{
-            reflectAudio.clip = ritualSound;
-             reflectAudio.Play();
-             Invoke("StopReflectAudioSound", reflectAudio.clip.length);
+            // reflectAudio.clip = ritualSound;
+            // reflectAudio.Play();
+            // Invoke("StopReflectAudioSound", reflectAudio.clip.length);
             handlers.AbilityChecker(rightMouseAbility, false, false);
 			AttackArrayHandler("Self", lastAttacks);
 		}
@@ -149,14 +148,10 @@ public class PlayerAbilities : MonoBehaviour {
 		//Shift Ritual Cast
 		if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
-             ritualAudio = GetComponent<AudioSource>();
-             ritualAudio.clip = ritualSound;
-             ritualAudio.Play();
+            ritualAudio = GetComponent<AudioSource>();
+            ritualAudio.clip = ritualSound;
+            ritualAudio.Play();
             state = State.RITUALCAST;
-        }
-        else //if (!Input.anyKey)
-        {
-           // abilityAudio.loop = false;
         }
 
         //Middle Mouse and Q Burst Cast
@@ -170,15 +165,13 @@ public class PlayerAbilities : MonoBehaviour {
         TimerHandlers();
 	}
 
-  private void StopReflectAudioSound()
-    {
-         reflectAudio.Stop();
-    }
+    // private void StopReflectAudioSound()
+    // {
+    //      reflectAudio.Stop();
+    // }
 
     private void Evade()
 	{
-        //(done)TODO add evade sound here 
-
         Vector2 direction = new Vector2(movement.horizontalMovement, movement.verticalMovement);
         direction.Normalize();
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
@@ -197,19 +190,16 @@ public class PlayerAbilities : MonoBehaviour {
         {
             if (ritualList.Contains("Projectile") && ritualList.Contains("Zone"))
             {
-            	print("hitone");
             	handlers.AbilityChecker(comboOne, true, false);
                 ritualList.Clear();
             }
             else if (ritualList.Contains("Projectile") && ritualList.Contains("Self"))
             {
-            	print("hittwo");
             	handlers.AbilityChecker(comboThree, true, false);
                 ritualList.Clear();
             }
             else if (ritualList.Contains("Self") && ritualList.Contains("Zone"))
             {
-	        	print("hitthree");
 	        	handlers.AbilityChecker(comboTwo, true, false);
                 ritualList.Clear();
             }

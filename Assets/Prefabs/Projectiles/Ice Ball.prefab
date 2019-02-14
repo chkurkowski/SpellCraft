@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e4d9215e937e8c439dbc980efc8c5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firedFromPlayer: 1
   magicBallDamage: 0.5
   magicBallSpeed: 75
 --- !u!114 &114905551842964012
