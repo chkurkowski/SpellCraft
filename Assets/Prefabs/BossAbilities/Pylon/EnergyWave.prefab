@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212674699162900304}
   - component: {fileID: 60474983477326782}
   - component: {fileID: 114215634534510374}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnergyWave
   m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}

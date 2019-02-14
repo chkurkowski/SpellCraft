@@ -1076,7 +1076,7 @@ MonoBehaviour:
   bossHealthInfo: {fileID: 0}
   isMad: 0
   isEnraged: 0
-  bossRageLevel: 34
+  bossRageLevel: 0
   bossRageThreshold1: 33
   bossRageThreshold2: 66
   bossStunLevel: 0
@@ -10241,15 +10241,15 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 741161581}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.002, y: 0.086, z: 114.57778}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.002, y: -0.092, z: 114.57778}
   m_LocalScale: {x: 0.67999995, y: 0.033476993, z: 3.3476999}
   m_Children:
   - {fileID: 919078244}
   - {fileID: 1626660626}
   m_Father: {fileID: 844442959}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &744924182
 GameObject:
   m_ObjectHideFlags: 0
@@ -11716,15 +11716,15 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 814657853}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.003, y: 0.084, z: 114.57778}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.003, y: -0.086, z: 114.57778}
   m_LocalScale: {x: 0.67999995, y: 0.033476993, z: 3.3476999}
   m_Children:
   - {fileID: 1894137649}
   - {fileID: 825786793}
   m_Father: {fileID: 1290127422}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &820063714
 GameObject:
   m_ObjectHideFlags: 0
@@ -13621,15 +13621,15 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 920449698}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.084, z: 114.57778}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -0, y: -0.094, z: 114.57778}
   m_LocalScale: {x: 0.68, y: 0.033477016, z: 3.3476999}
   m_Children:
   - {fileID: 1585505660}
   - {fileID: 1313320776}
   m_Father: {fileID: 1945343709}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1001 &920777369
 Prefab:
   m_ObjectHideFlags: 0
@@ -17412,15 +17412,15 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1285100728}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.001, y: 0.083, z: 114.57778}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.001, y: -0.087, z: 114.57778}
   m_LocalScale: {x: 0.67999995, y: 0.033476993, z: 3.3476999}
   m_Children:
   - {fileID: 330907578}
   - {fileID: 779051765}
   m_Father: {fileID: 305594336}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &1290127421
 GameObject:
   m_ObjectHideFlags: 0
