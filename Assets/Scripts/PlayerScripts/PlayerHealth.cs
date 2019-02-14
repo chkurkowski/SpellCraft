@@ -47,8 +47,8 @@ public class PlayerHealth : MonoBehaviour
     public void DamagePlayer(float dmg)
     {
         //TODO add player damage sound here
-        // playerHealthSource.clip = damagePlayerSound;
-        // playerHealthSource.PlayOneShot(damagePlayerSound);
+        playerHealthSource.clip = damagePlayerSound;
+        playerHealthSource.PlayOneShot(damagePlayerSound);
         playerHealth -= dmg;
         StartCoroutine(InvincibilityFrames());
     }
@@ -56,8 +56,8 @@ public class PlayerHealth : MonoBehaviour
     public void HealPlayer(float healAmount)
     {
         //TODO add player heal sound here
-        // playerHealthSource.clip = healPlayerSound;
-        // playerHealthSource.PlayOneShot(healPlayerSound);
+         playerHealthSource.clip = healPlayerSound;
+         playerHealthSource.PlayOneShot(healPlayerSound);
         playerHealth += healAmount;
     }
 
