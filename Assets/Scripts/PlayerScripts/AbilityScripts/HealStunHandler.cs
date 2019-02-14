@@ -15,15 +15,13 @@ public class HealStunHandler : MonoBehaviour {
     public GameObject stunPrefab;
     public GameObject healPrefab;
 
-    private GameObject stun;
-    private GameObject heal;
+    protected GameObject stun;
+    protected GameObject heal;
     
-    private const float STUNCAP = 25f;
-    private const float HEALCAP = 25f;
+    protected const float STUNCAP = 25f;
+    protected const float HEALCAP = 25f;
 
-    private float stunAmount = 0f;
-    private float healAmount = 0f;
-    private float lifetime = 8f;
+    private float lifetime = 5f;
 
 	// Use this for initialization
 	void Start () 
@@ -47,7 +45,7 @@ public class HealStunHandler : MonoBehaviour {
     }
     */
 
-    private bool StunAbsorb()
+    protected virtual bool StunAbsorb()
     {
     	if(state == State.NULL)
     		state = State.STUNABSORB;
@@ -77,7 +75,7 @@ public class HealStunHandler : MonoBehaviour {
         return false;
     }
 
-    private bool HealAbsorb()
+    protected virtual bool HealAbsorb()
     {
     	if(state == State.NULL)
     		state = State.HEALABSORB;

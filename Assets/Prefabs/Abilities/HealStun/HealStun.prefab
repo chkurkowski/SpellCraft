@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4316855940897910}
   - component: {fileID: 212691169338886368}
-  - component: {fileID: 114972611459084882}
   - component: {fileID: 61692923299297564}
+  - component: {fileID: 114415142413678788}
   m_Layer: 0
   m_Name: HealStun
   m_TagString: HealStun
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8375959, y: 0.22854555}
   m_EdgeRadius: 0
---- !u!114 &114972611459084882
+--- !u!114 &114415142413678788
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1995505641304810}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f59342fc14aa646599e85bec67fcabc8, type: 3}
+  m_Script: {fileID: 11500000, guid: b45b1f672cc90466ba2e30c7065ff7dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
