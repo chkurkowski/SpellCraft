@@ -34,12 +34,14 @@ public class PylonAttacks : BossAttacks
     [Space(30)]
     public GameObject vortex;
     public GameObject microVortex1;
+    private Quaternion microVortex1Rotation;
     public GameObject microVortex2;
+    private Quaternion microVortex2Rotation;
     private Vector3 vortexSize;
     public float vortexDamage = 25f;
     public float vortexAttackDuration = 3f;
-    public  float microVortexSpinRate = 1;
-    public  float microVortexRotateAmount = 1;
+   // public  float microVortexSpinRate = 1;
+  //  public  float microVortexRotateAmount = 1;
 
 
     //[Space(30)]
@@ -68,9 +70,12 @@ public class PylonAttacks : BossAttacks
         laserShardTwo.SetActive(false);
         laserShardThree.SetActive(false);
         laserShardFour.SetActive(false);
-    
 
 
+        microVortex1Rotation = microVortex1.transform.rotation;
+        Debug.Log(microVortex1Rotation);
+        microVortex2Rotation = microVortex2.transform.rotation;
+        Debug.Log(microVortex2Rotation);
         vortexSize = vortex.transform.localScale;
         vortex.SetActive(false);
         microVortex1.SetActive(false);
@@ -169,6 +174,9 @@ public class PylonAttacks : BossAttacks
                // InvokeRepeating("GrowVortex", 0, microVortexSpinRate);
                 InvokeRepeating("PylonRotate", 0, spinRotationRate);
                 Invoke("StopAttack", vortexAttackDuration);
+
+               // microVortex1.transform.rotation = microVortex1Rotation;
+              //  microVortex2.transform.rotation = microVortex2Rotation;
             }
             else if (bossInfoInfo.isMad)
             {
@@ -176,9 +184,12 @@ public class PylonAttacks : BossAttacks
                 microVortex1.SetActive(true);
                 microVortex2.SetActive(true);
                 laserShardOne.SetActive(true);
-                laserShardFour.SetActive(true);
+                laserShardThree.SetActive(true);
                 // pylonMovementInfo.LaserAttackMovement();
-               // InvokeRepeating("SpinMicroVortex", 0, (microVortexSpinRate));
+                // InvokeRepeating("SpinMicroVortex", 0, (microVortexSpinRate));
+
+              //  microVortex1.transform.rotation = microVortex1Rotation;
+              //  microVortex2.transform.rotation = microVortex2Rotation;
                 InvokeRepeating("PylonRotate", 0, spinRotationRate);
                 Invoke("StopAttack", vortexAttackDuration);
             }
@@ -191,7 +202,10 @@ public class PylonAttacks : BossAttacks
                 laserShardTwo.SetActive(true);
                 laserShardThree.SetActive(true);
                 laserShardFour.SetActive(true);
-            
+
+               // microVortex1.transform.rotation = microVortex1Rotation;
+               // microVortex2.transform.rotation = microVortex2Rotation;
+
                 //pylonMovementInfo.LaserAttackMovement();
                 // InvokeRepeating("SpinMicroVortex", 0, (microVortexSpinRate));
                 InvokeRepeating("PylonRotate", 0, spinRotationRate);
@@ -244,11 +258,12 @@ public class PylonAttacks : BossAttacks
         laserShardFour.SetActive(false);
 
         pylonMovementInfo.StopLaserAttackMovement();
-
+       // microVortex1.transform.rotation = microVortex1Rotation;
+      //  microVortex2.transform.rotation = microVortex2Rotation;
         microVortex1.SetActive(false);
-        microVortex1.transform.rotation = Quaternion.identity;//resets any rotations
+      //  microVortex1.transform.rotation = Quaternion.identity;//resets any rotations
         microVortex2.SetActive(false);
-        microVortex2.transform.rotation = Quaternion.identity;//resets any rotations
+      //  microVortex2.transform.rotation = Quaternion.identity;//resets any rotations
         vortex.transform.localScale = vortexSize;
         if(vortex.activeSelf)
         {
@@ -270,20 +285,20 @@ public class PylonAttacks : BossAttacks
             //Vector3 dir = bossInfoInfo.GetPlayerLocation().transform.position - transform.position;
             //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             //transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
-            microVortex2.transform.Rotate(0, 0, microVortexRotateAmount);
+           // microVortex2.transform.Rotate(0, 0, microVortexRotateAmount);
 
 
             vortex.SetActive(true);
             }
             else if (bossInfoInfo.isMad)
             {
-                microVortex1.transform.Rotate(0, 0, microVortexRotateAmount);
-            microVortex2.transform.Rotate(0, 0, microVortexRotateAmount);
+          //      microVortex1.transform.Rotate(0, 0, microVortexRotateAmount);
+          //  microVortex2.transform.Rotate(0, 0, microVortexRotateAmount);
         }
             else if (bossInfoInfo.isEnraged)
             {
-                microVortex1.transform.Rotate(0, 0, microVortexRotateAmount);
-                microVortex2.transform.Rotate(0, 0, microVortexRotateAmount);
+             //   microVortex1.transform.Rotate(0, 0, microVortexRotateAmount);
+            //    microVortex2.transform.Rotate(0, 0, microVortexRotateAmount);
             }  
     }
 
