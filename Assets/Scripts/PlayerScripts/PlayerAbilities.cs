@@ -110,7 +110,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 	private void Idle()
 	{
-        ritualAudio.Stop();
+        //ritualAudio.Stop();
         //reflectAudio.Stop();
 
 		//Left Click Ability
@@ -119,12 +119,6 @@ public class PlayerAbilities : MonoBehaviour {
 			handlers.AbilityChecker(leftMouseAbility, false, false);
 			AttackArrayHandler("Projectile", lastAttacks);
 
-        }
-        
-        if (absorb.activeSelf && reflect.activeSelf)
-        {
-            reflect.GetComponent<ReflectLaser>().isLasered = false;
-            reflect.SetActive(false);
         }
 
 		//Right Click Ability
