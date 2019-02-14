@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour {
+
+    public AudioSource bombSource;
+    public AudioClip explosionSound;
+
+
     private ProjectileDamage projectileDamageInfo;
     public float bombDamage = 25f;
     public float fireBallSpeed = 50;
@@ -58,7 +63,9 @@ public class Bomb : MonoBehaviour {
 
     public void Explode()
     {
-        for(int i = 0; i < fireBallSpawnAmount; i++)
+        bombSource.clip = explosionSound;
+        bombSource.PlayOneShot(explosionSound);
+        for (int i = 0; i < fireBallSpawnAmount; i++)
         {
             transform.Rotate(0, 0, 25);
             Instantiate(fireBall, transform.position, transform.rotation);

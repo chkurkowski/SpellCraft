@@ -25,10 +25,12 @@ public class SimulacrumAbilities : MonoBehaviour
     public bool alive = true;
     public int rotSpeed = 25;
     public string type = "Attack";
-
+    
     private const float ATTACKCOOLDOWN = .7f;
     private float attackTimer;
+    private float lifetime = 8f;
     private float damageTaken = 0;
+    private float damageCap = 10;
     private Transform boss;
     private Vector2 cursorInWorldPos;
 
@@ -36,7 +38,7 @@ public class SimulacrumAbilities : MonoBehaviour
     void Start()
     {
         boss = GameObject.Find("PrototypeBoss").transform;
-        Invoke("Destroy", 8f);
+        Invoke("Destroy", lifetime);
         StartCoroutine("FSM");
     }
 
@@ -98,6 +100,8 @@ public class SimulacrumAbilities : MonoBehaviour
         if(type == "Absorb")
         {
             damageTaken += amt;
+            if(damageTaken >= damageCap)
+                Destroy();
         }
     }
 
@@ -137,6 +141,11 @@ public class SimulacrumAbilities : MonoBehaviour
     public void TimerHandler()
     {
         attackTimer += Time.deltaTime;
+    }
+
+    public void SetLifetime(float f)
+    {
+        lifetime = f;
     }
 
     private void Destroy()
