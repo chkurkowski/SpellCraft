@@ -7320,6 +7320,8 @@ MonoBehaviour:
   isAttacking: 0
   attackRate: 3
   attackState: 0
+  spinRotationAmount: 0.1
+  spinRotationRate: 0.1
   laserAttackDuration: 5
   laserProjectileDamageSetter: 1
   laserMuzzleOne: {fileID: 709079850}
@@ -7330,6 +7332,10 @@ MonoBehaviour:
   laserMuzzleSix: {fileID: 13284028}
   laserMuzzleSeven: {fileID: 1670886962}
   laserMuzzleEight: {fileID: 1505426764}
+  laserShardOne: {fileID: 0}
+  laserShardTwo: {fileID: 0}
+  laserShardThree: {fileID: 0}
+  laserShardFour: {fileID: 0}
   vortex: {fileID: 2086264201}
   microVortex1: {fileID: 2142188914}
   microVortex2: {fileID: 87126908}
@@ -14005,6 +14011,7 @@ GameObject:
   - component: {fileID: 721968414}
   - component: {fileID: 721968412}
   - component: {fileID: 721968417}
+  - component: {fileID: 721968421}
   - component: {fileID: 721968418}
   - component: {fileID: 721968413}
   - component: {fileID: 721968420}
@@ -14029,6 +14036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 0}
+  handler: {fileID: 0}
   abilities: {fileID: 0}
   playerRigidbody: {fileID: 0}
   horizontalMovement: 0
@@ -14146,18 +14154,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b722eb56d85a745c581792ebfdc2e024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireball: {fileID: 1269839615260892, guid: ccf371fb7d5d54c62b0619b9ac65ffdf, type: 2}
-  reflect: {fileID: 1288023010}
-  absorb: {fileID: 927977457}
-  dashCollider: {fileID: 0}
   movement: {fileID: 0}
   health: {fileID: 0}
-  cursorInWorldPos: {x: 0, y: 0}
-  simulacrum: {fileID: 1756307218520016, guid: 24e563f41ef354c129fbea10a5e2a649, type: 2}
-  state: 0
-  atkSpeed: 125
   dashSpeed: 50
   dashDistance: 0
+  reflectAudio: {fileID: 0}
+  ritualAudio: {fileID: 0}
+  evadeAudio: {fileID: 0}
+  reflectSound: {fileID: 0}
+  evadeSound: {fileID: 0}
+  ritualSound: {fileID: 0}
+  state: 0
 --- !u!114 &721968418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14173,6 +14180,9 @@ MonoBehaviour:
   isAlive: 1
   maxPlayerHealth: 100
   playerHealth: 100
+  playerHealthSource: {fileID: 0}
+  healPlayerSound: {fileID: 0}
+  damagePlayerSound: {fileID: 0}
 --- !u!199 &721968419
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -18763,6 +18773,28 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &721968421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721968411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b07ba273abcf47d7b70598024eb0a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magicMissile: {fileID: 1269839615260892, guid: ccf371fb7d5d54c62b0619b9ac65ffdf,
+    type: 2}
+  reflect: {fileID: 1288023010}
+  absorb: {fileID: 927977457}
+  simulacrum: {fileID: 1756307218520016, guid: 24e563f41ef354c129fbea10a5e2a649, type: 2}
+  cursorInWorldPos: {x: 0, y: 0}
+  abilityHandlerSource: {fileID: 0}
+  reflectAudio: {fileID: 0}
+  magicMissileSound: {fileID: 0}
+  attackSimSound: {fileID: 0}
+  reflectLoopSound: {fileID: 0}
 --- !u!1 &730521856
 GameObject:
   m_ObjectHideFlags: 0
