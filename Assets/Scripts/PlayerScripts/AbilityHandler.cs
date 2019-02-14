@@ -123,14 +123,15 @@ public class AbilityHandler : MonoBehaviour {
 
     private void Reflect()
     {
-         reflectAudio = GetComponent<AudioSource>();
-         reflectAudio.clip = reflectLoopSound;
-         reflectAudio.Play();
         if (reflectTimer >= REFLECTCOOLDOWN)
         {
+            reflectAudio = GetComponent<AudioSource>();
+            reflectAudio.clip = reflectLoopSound;
+            reflectAudio.Play();
+            
             reflect.SetActive(true);
             reflectTimer = 0;
-            reflectAudio.Stop();
+           // reflectAudio.Stop();
         }
     }
 
@@ -148,12 +149,11 @@ public class AbilityHandler : MonoBehaviour {
     //NewName - AtkSim
     private void AttackSim(bool isBurst)
     {
-        abilityHandlerSource.clip = attackSimSound;
-        abilityHandlerSource.PlayOneShot(attackSimSound);
-
         if (isBurst)
         {
             //TODO Add AttackSim Burst Sound
+            abilityHandlerSource.clip = attackSimSound;
+            abilityHandlerSource.PlayOneShot(attackSimSound);
 
             GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
             sim.GetComponent<SimulacrumAbilities>().type = "Attack";
@@ -165,6 +165,8 @@ public class AbilityHandler : MonoBehaviour {
 
             if(atkSimTimer >= ATKSIMCOOLDOWN)
             {
+                abilityHandlerSource.clip = attackSimSound;
+                abilityHandlerSource.PlayOneShot(attackSimSound);
                 GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
                 sim.GetComponent<SimulacrumAbilities>().type = "Attack";
                 atkSimTimer = 0f;

@@ -51,7 +51,7 @@ public class PylonMovement : MonoBehaviour {
     public void StopLaserAttackMovement()
     {
         isSpinning = false;
-        Debug.Log("LaserMove was stopped");
+       // Debug.Log("LaserMove was stopped");
         CancelInvoke();
     }
 

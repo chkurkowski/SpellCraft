@@ -104,7 +104,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0a6332238d8265a4a8afa3374f4df306, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.01
   m_Pitch: 1
@@ -203,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reflectSource: {fileID: 82753413196796302}
   reflectSound: {fileID: 8300000, guid: cb49ede1c9d0e46b3bfdd6b3c0065320, type: 3}
+  shardSound: {fileID: 8300000, guid: 0a6332238d8265a4a8afa3374f4df306, type: 3}
   laserShardDamage: 1
   laserShardSpeed: 200
   minLaserSpread: -4
