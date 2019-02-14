@@ -80,11 +80,13 @@ public class HealStunHandler : MonoBehaviour {
             {
                 // heal = Instantiate(healPrefab, transform.position + -(transform.up * 7.5f), Quaternion.identity);
                 heal = Instantiate(healPrefab, transform.position, Quaternion.identity);
+                heal.GetComponent<HealPickup>().AddHealAmount(8);
             }
             else
             {
                 heal.transform.localScale += new Vector3(12.0f, 12.0f, 0f);
                 gameObject.transform.localScale += new Vector3(5.0f, 5.0f, 0f);
+                heal.GetComponent<HealPickup>().AddHealAmount(8);
             }
             return true;
         }
@@ -93,8 +95,7 @@ public class HealStunHandler : MonoBehaviour {
 
     private void Destroy()
     {
-        if(state == State.STUNABSORB)
-    	   Destroy(gameObject);
+	   Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D col)

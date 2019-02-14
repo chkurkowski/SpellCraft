@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212924279469635286}
   - component: {fileID: 50262681656410172}
   - component: {fileID: 61978791731321088}
-  - component: {fileID: 114885621135801818}
+  - component: {fileID: 114906136623906218}
   m_Layer: 0
   m_Name: Simulacrum
   m_TagString: Simulacrum
@@ -69,7 +69,7 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1756307218520016}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12}
   m_EdgeRadius: 0
---- !u!114 &114885621135801818
+--- !u!114 &114906136623906218
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1756307218520016}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 326431878a700482dba18b93ae0909eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 6bd1dfe7f57b1405e8cee0211fc71c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fireball: {fileID: 1269839615260892, guid: ccf371fb7d5d54c62b0619b9ac65ffdf, type: 2}
