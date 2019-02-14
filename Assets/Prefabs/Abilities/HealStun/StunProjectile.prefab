@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4760375281186406}
   - component: {fileID: 212691977068025330}
   m_Layer: 0
-  m_Name: Stun
+  m_Name: StunProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

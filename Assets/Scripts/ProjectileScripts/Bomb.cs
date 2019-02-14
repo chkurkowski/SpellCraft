@@ -50,7 +50,7 @@ public class Bomb : MonoBehaviour {
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .025f;
             Destroy(gameObject);
         }
-        else if (col.gameObject.tag == "CameraTrigger")
+        else if (col.gameObject.tag == "CameraTrigger" || col.gameObject.tag != "HealStun")
         {
             //do nothing
         }

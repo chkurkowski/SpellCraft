@@ -49,11 +49,11 @@ public class MegaBomb : MonoBehaviour {
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .025f;
             Destroy(gameObject);
         }
-        else if (col.gameObject.tag == "CameraTrigger")
+        else if (col.gameObject.tag == "CameraTrigger" || gameObject.tag == "HealStun")
         {
             //do nothing
         }
-        else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger" || col.gameObject.tag == "Player")
+        else if (col.gameObject.tag != "Boss" || col.gameObject.tag != "CameraTrigger" || col.gameObject.tag == "Player")
         {
             Explode();
         }

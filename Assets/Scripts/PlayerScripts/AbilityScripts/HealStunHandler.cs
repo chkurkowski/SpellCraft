@@ -56,11 +56,13 @@ public class HealStunHandler : MonoBehaviour {
         {
             if(stun == null)
             {
-                stun = Instantiate(stunPrefab, transform.position + (transform.up * 10f), Quaternion.identity);
+                // stun = Instantiate(stunPrefab, transform.position + (transform.up * 10f), Quaternion.identity);
+                stun = Instantiate(stunPrefab, transform.position, Quaternion.identity);
             }
             else
             {
-                stun.transform.localScale += new Vector3(1.0f, 1.0f, 0f);
+                stun.transform.localScale += new Vector3(12.0f, 12.0f, 0f);
+                gameObject.transform.localScale += new Vector3(5.0f, 5.0f, 0f);
             }
             return true;
         }
@@ -76,11 +78,13 @@ public class HealStunHandler : MonoBehaviour {
         {
             if(heal == null)
             {
-                heal = Instantiate(healPrefab, transform.position + -(transform.up * 7.5f), Quaternion.identity);
+                // heal = Instantiate(healPrefab, transform.position + -(transform.up * 7.5f), Quaternion.identity);
+                heal = Instantiate(healPrefab, transform.position, Quaternion.identity);
             }
             else
             {
-                heal.transform.localScale += new Vector3(1.0f, 1.0f, 0f);
+                heal.transform.localScale += new Vector3(12.0f, 12.0f, 0f);
+                gameObject.transform.localScale += new Vector3(5.0f, 5.0f, 0f);
             }
             return true;
         }
@@ -89,12 +93,13 @@ public class HealStunHandler : MonoBehaviour {
 
     private void Destroy()
     {
-    	Destroy(gameObject);
+        if(state == State.STUNABSORB)
+    	   Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "PlayerProjectile")
+        if(col.gameObject.tag == "Projectile")
         {
             if(StunAbsorb())
                 Destroy(col.gameObject);
@@ -106,5 +111,4 @@ public class HealStunHandler : MonoBehaviour {
                 Destroy(col.gameObject);
         }
     }
-
 }
