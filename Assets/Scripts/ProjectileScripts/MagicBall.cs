@@ -17,7 +17,7 @@ public class MagicBall : MonoBehaviour {
     // Use this for initialization
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Boss")
+        if (col.GetComponent<Collider2D>().transform.tag == "Boss")
         {
             //Do damage
             // print("Hit: 5 damage");
@@ -25,11 +25,12 @@ public class MagicBall : MonoBehaviour {
         }
         else if (col.gameObject.tag == "Vortex" || col.gameObject.tag == "EnemyProjectile")
         {
+           
             //do nothing
         }
         else if (col.gameObject.tag != "Player" && gameObject.tag != "Reflect" && col.gameObject.tag != "Simulacrum")
         {
-            if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger")
+            if (col.GetComponent<Collider2D>().transform.tag != "Boss" || gameObject.tag != "CameraTrigger")
             {
                 Destroy(gameObject);
             }

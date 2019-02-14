@@ -49,7 +49,7 @@ public class LaserTutorialScript : MonoBehaviour
             //lineRender.positionCount = 2;
       //  }
 
-        if (hit.transform.tag == "Absorb")
+        if (hit.collider.transform.tag == "Absorb")
         {
             Debug.Log("Laser Detected Absorb");
             if (hit.transform.gameObject.activeSelf)
@@ -64,7 +64,7 @@ public class LaserTutorialScript : MonoBehaviour
             hit.transform.gameObject.GetComponent<PlayerHealth>().DamagePlayer(laserDamage);
         }
 
-        if(hit.transform.tag == "Boss")
+        if(hit.collider.transform.tag == "Boss")
         {
             if(gameObject.tag == "Projectile")
             {

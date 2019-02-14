@@ -35,7 +35,7 @@ public class BossHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Projectile") 
+        if(col.GetComponent<Collider2D>().transform.tag == "Projectile") 
         {
             ProjectileDamage projectileInfo = col.gameObject.GetComponent<ProjectileDamage>();
             if(projectileInfo!= null)
