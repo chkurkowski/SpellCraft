@@ -7,7 +7,7 @@ public class HealStunComboHandler : HealStunHandler {
 	public bool isBurst = false;
 
 	private bool passThrough = false;
-	new private float lifetime = 7f;
+	private float lifetime = 7f;
 
 	protected override bool StunAbsorb()
     {
