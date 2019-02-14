@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class HealStunComboHandler : HealStunHandler {
 
+	public bool isBurst = false;
+
 	private bool passThrough = false;
+	new private float lifetime = 7f;
 
 	protected override bool StunAbsorb()
     {
@@ -19,10 +22,15 @@ public class HealStunComboHandler : HealStunHandler {
             }
             else
             {
-                stun.transform.localScale += new Vector3(12.0f, 12.0f, 0f);
+                
                 if(stun.GetComponent<StunProjectile>().AddAmount(10) >= 40)
                 {
-                	PassThrough();
+                	if(isBurst)
+                		PassThrough();
+            		if(stun.transform.localScale.x <= 80)
+            		{
+            			stun.transform.localScale += new Vector3(12.0f, 12.0f, 0f);
+            		}
                 	stun.GetComponent<StunProjectile>().fired = true;
                     stun.GetComponent<StunProjectile>().DestroySoon();
 
@@ -52,7 +60,7 @@ public class HealStunComboHandler : HealStunHandler {
                 	heal.GetComponent<HealPickup>().AddHealAmount(8);
                 	heal.transform.localScale += new Vector3(12.0f, 12.0f, 0f);
                 }
-                else
+                else if(isBurst)
                 {
                 	PassThrough();
                 }

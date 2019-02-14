@@ -32,7 +32,11 @@ public class Bomb : MonoBehaviour {
     // Use this for initialization
     private void OnTriggerEnter2D(Collider2D col)
     {
-
+        if(col.gameObject.tag == "Reflect")
+        {
+            Explode();
+        }
+        
         if (col.gameObject.tag == "Player")
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(bombDamage);

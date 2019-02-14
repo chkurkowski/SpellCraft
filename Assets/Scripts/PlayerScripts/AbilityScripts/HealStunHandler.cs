@@ -21,7 +21,7 @@ public class HealStunHandler : MonoBehaviour {
     protected const float STUNCAP = 25f;
     protected const float HEALCAP = 25f;
 
-    private float lifetime = 8f;
+    private float lifetime = 5f;
 
 	// Use this for initialization
 	void Start () 

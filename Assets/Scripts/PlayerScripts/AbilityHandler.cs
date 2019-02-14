@@ -25,7 +25,8 @@ public class AbilityHandler : MonoBehaviour {
 
     //Ability timers -- For the Attacks scripts
     private const float LONGATKCOOLDOWN = .2f;
-    private const float HEALSTUNCOOLDOWN = 10f;
+    private const float HEALSTUNCOOLDOWN = 6f;
+    private const float HEALSTUNCOMBOCOOLDOWN = 6f;
     private const float REFLECTCOOLDOWN = 3f;
     private const float ATKSIMCOOLDOWN = 2f;
     private const float ABSORBCOOLDOWN = 6f;
@@ -34,7 +35,7 @@ public class AbilityHandler : MonoBehaviour {
 
     private const float ABSORBEND = 3f;
 
-    private float longATKTimer, healStunTimer, reflectTimer, 
+    private float longATKTimer, healStunTimer, healStunComboTimer, reflectTimer, 
     atkSimTimer, absorbTimer, absorbSimTimer, burstTimer;
 
 
@@ -42,6 +43,7 @@ public class AbilityHandler : MonoBehaviour {
     void Start () {
         longATKTimer = LONGATKCOOLDOWN;
         healStunTimer = HEALSTUNCOOLDOWN;
+        healStunComboTimer = HEALSTUNCOMBOCOOLDOWN;
         reflectTimer = REFLECTCOOLDOWN;
         atkSimTimer = ATKSIMCOOLDOWN;
         absorbTimer = ABSORBCOOLDOWN;
@@ -175,15 +177,16 @@ public class AbilityHandler : MonoBehaviour {
     {
         if(isBurst)
         {
-            Instantiate(healStunCombo, cursorInWorldPos, transform.rotation);
-            healStunTimer = 0;
+            GameObject gm = Instantiate(healStunCombo, cursorInWorldPos, transform.rotation);
+            gm.GetComponent<HealStunComboHandler>().isBurst = true;
+            burstTimer = 0;
         }
         else
         {
             if(healStunTimer >= HEALSTUNCOOLDOWN)
             {
                 Instantiate(healStunCombo, cursorInWorldPos, transform.rotation);
-                healStunTimer = 0;
+                healStunComboTimer = 0;
             }
         }
     }
@@ -252,6 +255,7 @@ public class AbilityHandler : MonoBehaviour {
     {
         longATKTimer += Time.deltaTime;
         healStunTimer += Time.deltaTime;
+        healStunComboTimer += HEALSTUNCOMBOCOOLDOWN;
         reflectTimer += Time.deltaTime;
         atkSimTimer += Time.deltaTime;
         absorbTimer += Time.deltaTime;
@@ -275,6 +279,8 @@ public class AbilityHandler : MonoBehaviour {
             return longATKTimer;
         else if (str == "healstun")
             return healStunTimer;
+        else if (str == "healstuncombo")
+            return healStunComboTimer;
         else if (str == "reflect")
             return reflectTimer;
         else if (str == "atkdash")
@@ -291,6 +297,8 @@ public class AbilityHandler : MonoBehaviour {
             return LONGATKCOOLDOWN;
         else if (str == "healstun")
             return HEALSTUNCOOLDOWN;
+        else if (str == "healstuncombo")
+            return HEALSTUNCOMBOCOOLDOWN;
         else if (str == "reflect")
             return REFLECTCOOLDOWN;
         else if (str == "atkdash")
