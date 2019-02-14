@@ -110,21 +110,21 @@ public class AbilityHandler : MonoBehaviour {
             fb.GetComponent<Rigidbody2D>().velocity = (direction + new Vector2(tempX, 0)) * atkSpeed;
             longATKTimer = 0;
 
-            // abilityHandlerSource.clip = magicMissileSound;
-            // abilityHandlerSource.PlayOneShot(magicMissileSound);
+             abilityHandlerSource.clip = magicMissileSound;
+             abilityHandlerSource.PlayOneShot(magicMissileSound);
         }
     }
 
     private void Reflect()
     {
-        // reflectAudio = GetComponent<AudioSource>();
-        // reflectAudio.clip = reflectLoopSound;
-        // reflectAudio.Play();
+         reflectAudio = GetComponent<AudioSource>();
+         reflectAudio.clip = reflectLoopSound;
+         reflectAudio.Play();
         if (reflectTimer >= REFLECTCOOLDOWN)
         {
             reflect.SetActive(true);
             reflectTimer = 0;
-            // reflectAudio.Stop();
+            reflectAudio.Stop();
         }
     }
 
@@ -142,8 +142,8 @@ public class AbilityHandler : MonoBehaviour {
     //NewName - AtkSim
     private void AttackSim(bool isBurst)
     {
-        // abilityHandlerSource.clip = attackSimSound;
-        // abilityHandlerSource.PlayOneShot(attackSimSound);
+         abilityHandlerSource.clip = attackSimSound;
+         abilityHandlerSource.PlayOneShot(attackSimSound);
         if (isBurst)
         {
             //TODO Add AttackSim Burst Sound
