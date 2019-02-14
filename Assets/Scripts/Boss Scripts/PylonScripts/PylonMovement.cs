@@ -10,7 +10,7 @@ public class PylonMovement : MonoBehaviour {
     private BossInfo bossInfo;
     private BossAttacks bossAttacksInfo;
     public float rotationDirection = 1f;
-    private float rotationSpeed = 0.002f;
+    private float rotationSpeed = 0.01f;
    private float rotationAmount = 0.5f;
     private bool isSpinning = false;
 
