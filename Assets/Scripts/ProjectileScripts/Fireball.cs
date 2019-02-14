@@ -62,16 +62,16 @@ public class Fireball : MonoBehaviour {
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .025f;
             Destroy(gameObject);
         }
-        else if(col.gameObject.tag == "Boss" || col.gameObject.tag == "Projectile")
+        else if(col.gameObject.tag == "Boss" && gameObject.tag == "EnemyProjectile")
         {
             //do nothing
         }
-        else if(col.gameObject.tag == "CameraTrigger" && col.gameObject.tag == "HealStun")
+        else if(col.gameObject.tag == "CameraTrigger")
         {
             //do nothing
         }
               
-        else if (col.gameObject.tag != "Boss" || col.gameObject.tag != "CameraTrigger")
+        else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger" || gameObject.tag != "Projectile")
         {
             Destroy(gameObject);
         }
