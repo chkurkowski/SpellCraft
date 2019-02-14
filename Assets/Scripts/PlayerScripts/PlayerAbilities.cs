@@ -81,7 +81,6 @@ public class PlayerAbilities : MonoBehaviour {
 		while(health.isAlive)
 		{
 			print(state);
-			print(lastAttacks.Count);
 			switch (state)
 			{
 				case State.IDLE:

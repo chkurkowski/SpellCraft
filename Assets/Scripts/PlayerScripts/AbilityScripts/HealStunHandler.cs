@@ -32,6 +32,7 @@ public class HealStunHandler : MonoBehaviour {
 		state = State.NULL;
 	}
 
+    /* Testing
     void Update()
     {
         if(Input.GetKey(KeyCode.T))
@@ -44,8 +45,9 @@ public class HealStunHandler : MonoBehaviour {
             HealAbsorb();
         }
     }
+    */
 
-    private void StunAbsorb()
+    private bool StunAbsorb()
     {
     	if(state == State.NULL)
     		state = State.STUNABSORB;
@@ -54,16 +56,18 @@ public class HealStunHandler : MonoBehaviour {
         {
             if(stun == null)
             {
-                stun = Instantiate(stunPrefab, transform.position + (transform.up * 7.5f), Quaternion.identity);
+                stun = Instantiate(stunPrefab, transform.position + (transform.up * 10f), Quaternion.identity);
             }
             else
             {
                 stun.transform.localScale += new Vector3(1.0f, 1.0f, 0f);
             }
+            return true;
         }
+        return false;
     }
 
-    private void HealAbsorb()
+    private bool HealAbsorb()
     {
     	if(state == State.NULL)
     		state = State.HEALABSORB;
@@ -78,12 +82,29 @@ public class HealStunHandler : MonoBehaviour {
             {
                 heal.transform.localScale += new Vector3(1.0f, 1.0f, 0f);
             }
+            return true;
         }
+        return false;
     }
 
     private void Destroy()
     {
     	Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag == "PlayerProjectile")
+        {
+            if(StunAbsorb())
+                Destroy(col.gameObject);
+        }
+
+        if(col.gameObject.tag == "EnemyProjectile")
+        {
+            if(HealAbsorb())
+                Destroy(col.gameObject);
+        }
     }
 
 }
