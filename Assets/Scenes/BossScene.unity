@@ -1430,7 +1430,7 @@ MonoBehaviour:
   bossHealthInfo: {fileID: 0}
   isMad: 0
   isEnraged: 0
-  bossRageLevel: 34
+  bossRageLevel: 0
   bossRageThreshold1: 33
   bossRageThreshold2: 66
   bossStunLevel: 0
