@@ -130,9 +130,9 @@ public class PylonAttacks : BossAttacks
 
     public void Attack(int attackNumber)
     {
-       // attackNumber = 1;//for laser testing
+        attackNumber = 1;//for laser testing
        // attackNumber = 2; // for vortex testing
-       attackNumber = 3; // for third attack testing
+       //attackNumber = 3; // for third attack testing
         //attackNumber = Random.Range(1, 3);
         //if(attackNumber >= 2)
         //{
