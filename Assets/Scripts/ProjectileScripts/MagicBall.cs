@@ -17,6 +17,12 @@ public class MagicBall : MonoBehaviour {
     // Use this for initialization
     private void OnTriggerEnter2D(Collider2D col)
     {
+      //  Debug.Log("PLAYER PROJECTILE HIT: " + col.transform.name + "with tag: " + col.transform.tag);
+        if(col.GetComponent<Collider2D>().transform.tag == null)
+        {
+          //  Debug.Log("PLAYER PROJECTILE HIT UNTAGGED OBJECT ");
+            Destroy(gameObject);
+        }
         if (col.GetComponent<Collider2D>().transform.tag == "Boss")
         {
             //Do damage

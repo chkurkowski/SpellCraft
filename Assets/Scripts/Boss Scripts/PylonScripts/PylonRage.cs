@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PylonRage : BossHealth
 {
-
     private BossInfo bossInfo;
     // Use this for initialization
     void Start()
@@ -15,7 +14,7 @@ public class PylonRage : BossHealth
     // Update is called once per frame
     void Update()
     {
-        if (bossHealth <= (bossMaxHealth / (1.5f)))
+        if (bossHealth <= (bossMaxHealth * 0.6f))
         {
             bossInfo.SetRageAmount(50);
         }

@@ -73,9 +73,9 @@ public class PylonAttacks : BossAttacks
 
 
         microVortex1Rotation = microVortex1.transform.rotation;
-        Debug.Log(microVortex1Rotation);
+       // Debug.Log(microVortex1Rotation);
         microVortex2Rotation = microVortex2.transform.rotation;
-        Debug.Log(microVortex2Rotation);
+      //  Debug.Log(microVortex2Rotation);
         vortexSize = vortex.transform.localScale;
         vortex.SetActive(false);
         microVortex1.SetActive(false);
@@ -127,22 +127,22 @@ public class PylonAttacks : BossAttacks
         if(!bossInfoInfo.isMad && !bossInfoInfo.isEnraged)
         {
             laserMuzzleOne.SetActive(true);
-           
-
             InvokeRepeating("SlowRotateToPlayer", 0, spinRotationRate);
         }
        else if (bossInfoInfo.isMad)
         {
             laserMuzzleOne.SetActive(true);
-       
 
+            shieldOne.SetActive(true);
+            shieldTwo.SetActive(true);
             InvokeRepeating("SlowRotateToPlayer", 0, spinRotationRate);
         }
         else if (bossInfoInfo.isEnraged)
         {
             laserMuzzleOne.SetActive(true);
-        
-       
+            reflectShieldOne.SetActive(true);
+            reflectShieldTwo.SetActive(true);
+
             InvokeRepeating("SlowRotateToPlayer", 0, spinRotationRate);
 
         }
@@ -237,6 +237,8 @@ public class PylonAttacks : BossAttacks
         laserMuzzleOne.SetActive(false);
         shieldOne.SetActive(false);
         shieldTwo.SetActive(false);
+        reflectShieldOne.GetComponent<PylonReflectShield>().isLasered = false;
+        reflectShieldTwo.GetComponent<PylonReflectShield>().isLasered = false;
         reflectShieldOne.SetActive(false);
         reflectShieldTwo.SetActive(false);
 
@@ -292,7 +294,7 @@ public class PylonAttacks : BossAttacks
 
     public void SlowRotateToPlayer()
     {
-        Debug.Log("Slow rotate was called!");
+       // Debug.Log("Slow rotate was called!");
         vectorToTarget = player.transform.position - transform.position;
         angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
         rotAngle = Quaternion.AngleAxis(angle - 90, Vector3.forward);

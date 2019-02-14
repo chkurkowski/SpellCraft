@@ -5,11 +5,11 @@ using UnityEngine;
 public class ReflectLaser : MonoBehaviour
 {
     public bool isLasered = false;
-    public GameObject playerLaser;
+    public GameObject laser;
 	// Use this for initialization
 	void Start ()
     {
-        playerLaser.SetActive(false);
+        laser.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -17,12 +17,12 @@ public class ReflectLaser : MonoBehaviour
     {
 		if(isLasered)
         {
-            playerLaser.SetActive(true);
+            laser.SetActive(true);
         }
         else if(!isLasered)
         {
-           // Debug.Log("not lasered");
-            playerLaser.SetActive(false);
+            // Debug.Log("not lasered");
+            laser.SetActive(false);
         }
 	}
 
@@ -30,7 +30,7 @@ public class ReflectLaser : MonoBehaviour
     {
         if(collision.tag == "LaserEndPoint")
         {
-            Debug.Log("laserTriggerDetected");
+           // Debug.Log("laserTriggerDetected");
             isLasered = true;
         }
     }
@@ -39,7 +39,7 @@ public class ReflectLaser : MonoBehaviour
     {
         if (collision.tag == "LaserEndPoint")
         {
-            Debug.Log("laserTriggerDetected 2");
+           /// Debug.Log("laserTriggerDetected 2");
             isLasered = false;
         }
     }
