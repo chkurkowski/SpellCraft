@@ -21,19 +21,20 @@ public class PylonAttacks : BossAttacks
     public float laserAttackDuration = 5f;
     public float laserProjectileDamageSetter = 1f;
     [Space(10)]
+    [Header("Attack One Info")]
     public GameObject laserMuzzleOne;
     public GameObject shieldOne;
     public GameObject shieldTwo;
     public GameObject reflectShieldOne;
     public GameObject reflectShieldTwo;
-    [Space(30)]
-    public GameObject laserShardOne;
-    public GameObject laserShardTwo;
-    public GameObject laserShardThree;
-    public GameObject laserShardFour;
+
 
 
     [Space(30)]
+    [Header("Attack Two Info")]
+
+    [Space(10)]
+    [Header("Vortex Variables")]
     public GameObject vortex;
     public GameObject microVortex1;
     private Quaternion microVortex1Rotation;
@@ -42,8 +43,28 @@ public class PylonAttacks : BossAttacks
     private Vector3 vortexSize;
     public float vortexDamage = 25f;
     public float vortexAttackDuration = 3f;
-   // public  float microVortexSpinRate = 1;
-  //  public  float microVortexRotateAmount = 1;
+
+    [Space(30)]
+    [Header("LaserShard Variables")]
+    public GameObject laserShardOne;
+    public GameObject laserShardTwo;
+    public GameObject laserShardThree;
+    public GameObject laserShardFour;
+
+    [Space(30)]
+    [Header("Attack 3 Info")]
+    public GameObject attackThreeExplosion;
+    public GameObject explodingPylonOne;
+    public GameObject explodingPylonTwo;
+    public GameObject explodingPylonThree;
+    public GameObject explodingPylonFour;
+    public Transform explodingPylonSpawnOne;
+    public Transform explodingPylonSpawnTwo;
+    public Transform explodingPylonSpawnThree;
+    public Transform explodingPylonSpawnFour;
+    public int activeExplodingPylons = 0;
+    // public  float microVortexSpinRate = 1;
+    //  public  float microVortexRotateAmount = 1;
 
 
     //[Space(30)]
@@ -58,6 +79,9 @@ public class PylonAttacks : BossAttacks
         pylonMovementInfo = gameObject.GetComponent<PylonMovement>();
         bossAttacksInfo = gameObject.GetComponent<BossAttacks>();
         pylonAnimatorInfo = gameObject.GetComponent<Animator>();
+
+
+
 
         laserMuzzleOne.SetActive(false);
         shieldOne.SetActive(false);
@@ -80,18 +104,31 @@ public class PylonAttacks : BossAttacks
         vortex.SetActive(false);
         microVortex1.SetActive(false);
         microVortex2.SetActive(false);
-        
 
- 
+
+
+
+        explodingPylonOne.transform.position = explodingPylonSpawnOne.position;
+        explodingPylonOne.SetActive(false);
+
+        explodingPylonTwo.transform.position = explodingPylonSpawnTwo.position;
+        explodingPylonTwo.SetActive(false);
+
+        explodingPylonThree.transform.position = explodingPylonSpawnThree.position;
+        explodingPylonThree.SetActive(false);
+
+        explodingPylonFour.transform.position = explodingPylonSpawnFour.position;
+        explodingPylonFour.SetActive(false);
+
     }
 
     #region Attack
 
     public void Attack(int attackNumber)
     {
-        attackNumber = 1;//for laser testing
+        //attackNumber = 1;//for laser testing
         //attackNumber = 2; // for vortex testing
-        //attackNumber = 3; // for third attack testing
+        attackNumber = 3; // for third attack testing
         //attackNumber = Random.Range(1, 3);
         //if(attackNumber >= 2)
         //{
@@ -213,17 +250,98 @@ public class PylonAttacks : BossAttacks
     {
         if (!bossInfoInfo.isMad && !bossInfoInfo.isEnraged)
         {
-            Invoke("StopAttack", 0);
+            Debug.Log("Calm Attack 3 happened!");
+            explodingPylonOne.SetActive(true);
+            explodingPylonOne.transform.position = explodingPylonSpawnOne.position;
+            explodingPylonOne.transform.rotation = explodingPylonSpawnOne.rotation;
+            explodingPylonOne.GetComponent<explodingPylonScript>().SetId(1);
+            explodingPylonOne.GetComponent<explodingPylonScript>().pylonHealth = explodingPylonOne.GetComponent<explodingPylonScript>().pylonMaxHealth;
+
+            explodingPylonTwo.SetActive(true);
+            explodingPylonTwo.transform.position = explodingPylonSpawnTwo.position;
+            explodingPylonTwo.transform.rotation = explodingPylonSpawnTwo.rotation;
+            explodingPylonTwo.GetComponent<explodingPylonScript>().SetId(2);
+            explodingPylonTwo.GetComponent<explodingPylonScript>().pylonHealth = explodingPylonTwo.GetComponent<explodingPylonScript>().pylonMaxHealth;
+
+            explodingPylonThree.SetActive(true);
+            explodingPylonThree.transform.position = explodingPylonSpawnThree.position;
+            explodingPylonThree.transform.rotation = explodingPylonSpawnThree.rotation;
+            explodingPylonThree.GetComponent<explodingPylonScript>().SetId(3);
+            explodingPylonThree.GetComponent<explodingPylonScript>().pylonHealth = explodingPylonThree.GetComponent<explodingPylonScript>().pylonMaxHealth;
+
+            explodingPylonFour.SetActive(true);
+            explodingPylonFour.transform.position = explodingPylonSpawnFour.position;
+            explodingPylonFour.transform.rotation = explodingPylonSpawnFour.rotation;
+            explodingPylonFour.GetComponent<explodingPylonScript>().SetId(4);
+            explodingPylonFour.GetComponent<explodingPylonScript>().pylonHealth = explodingPylonFour.GetComponent<explodingPylonScript>().pylonMaxHealth;
+
+            activeExplodingPylons = 4;
+            //Invoke("StopAttack", 0);
+            //stop attack is called from inside the exploding pylons IF there are no pylons left
         }
         else if (bossInfoInfo.isMad)
         {
-            Invoke("StopAttack", 0);
+            Debug.Log("Mad Attack 3 happened!");
+            explodingPylonOne.SetActive(true);
+            explodingPylonOne.transform.position = explodingPylonSpawnOne.position;
+            explodingPylonOne.transform.rotation = explodingPylonSpawnOne.rotation;
+            explodingPylonOne.GetComponent<explodingPylonScript>().SetId(1);
+            explodingPylonOne.GetComponent<explodingPylonScript>().pylonHealth = explodingPylonOne.GetComponent<explodingPylonScript>().pylonMaxHealth;
+
+            explodingPylonTwo.SetActive(true);
+            explodingPylonTwo.transform.position = explodingPylonSpawnTwo.position;
+            explodingPylonTwo.transform.rotation = explodingPylonSpawnTwo.rotation;
+            explodingPylonTwo.GetComponent<explodingPylonScript>().SetId(2);
+            explodingPylonTwo.GetComponent<explodingPylonScript>().pylonHealth = explodingPylonTwo.GetComponent<explodingPylonScript>().pylonMaxHealth;
+
+            explodingPylonThree.SetActive(true);
+            explodingPylonThree.transform.position = explodingPylonSpawnThree.position;
+            explodingPylonThree.transform.rotation = explodingPylonSpawnThree.rotation;
+            explodingPylonThree.GetComponent<explodingPylonScript>().SetId(3);
+            explodingPylonThree.GetComponent<explodingPylonScript>().pylonHealth = explodingPylonThree.GetComponent<explodingPylonScript>().pylonMaxHealth;
+
+            explodingPylonFour.SetActive(true);
+            explodingPylonFour.transform.position = explodingPylonSpawnFour.position;
+            explodingPylonFour.transform.rotation = explodingPylonSpawnFour.rotation;
+            explodingPylonFour.GetComponent<explodingPylonScript>().SetId(4);
+            explodingPylonFour.GetComponent<explodingPylonScript>().pylonHealth = explodingPylonFour.GetComponent<explodingPylonScript>().pylonMaxHealth;
+
+
+            activeExplodingPylons = 4;
+            // Invoke("StopAttack", 0);
+            //stop attack is called from inside the exploding pylons IF there are no pylons left
         }
-        else if (bossInfoInfo.isEnraged)
+        else if(bossInfoInfo.isEnraged)
         {
-            Invoke("StopAttack", 0);
+            Debug.Log("Mad Attack 3 happened!");
+            explodingPylonOne.SetActive(true);
+            explodingPylonOne.transform.position = explodingPylonSpawnOne.position;
+            explodingPylonOne.transform.rotation = explodingPylonSpawnOne.rotation;
+            explodingPylonOne.GetComponent<explodingPylonScript>().SetId(1);
+            explodingPylonOne.GetComponent<explodingPylonScript>().pylonHealth = explodingPylonOne.GetComponent<explodingPylonScript>().pylonMaxHealth;
+
+            explodingPylonTwo.SetActive(true);
+            explodingPylonTwo.transform.position = explodingPylonSpawnTwo.position;
+            explodingPylonTwo.transform.rotation = explodingPylonSpawnTwo.rotation;
+            explodingPylonTwo.GetComponent<explodingPylonScript>().SetId(2);
+            explodingPylonTwo.GetComponent<explodingPylonScript>().pylonHealth = explodingPylonTwo.GetComponent<explodingPylonScript>().pylonMaxHealth;
+
+            explodingPylonThree.SetActive(true);
+            explodingPylonThree.transform.position = explodingPylonSpawnThree.position;
+            explodingPylonThree.transform.rotation = explodingPylonSpawnThree.rotation;
+            explodingPylonThree.GetComponent<explodingPylonScript>().SetId(3);
+            explodingPylonThree.GetComponent<explodingPylonScript>().pylonHealth = explodingPylonThree.GetComponent<explodingPylonScript>().pylonMaxHealth;
+
+            explodingPylonFour.SetActive(true);
+            explodingPylonFour.transform.position = explodingPylonSpawnFour.position;
+            explodingPylonFour.transform.rotation = explodingPylonSpawnFour.rotation;
+            explodingPylonFour.GetComponent<explodingPylonScript>().SetId(4);
+            explodingPylonFour.GetComponent<explodingPylonScript>().pylonHealth = explodingPylonFour.GetComponent<explodingPylonScript>().pylonMaxHealth;
+
+
+            activeExplodingPylons = 4;
         }
-        Invoke("StopAttack", 0);
+       // Invoke("StopAttack", 0);
     }
 
     #endregion
@@ -260,8 +378,20 @@ public class PylonAttacks : BossAttacks
             vortex.GetComponent<PylonVortex>().FlushVortex();
             vortex.SetActive(false);
         }
-        
-       
+
+        explodingPylonOne.transform.position = explodingPylonSpawnOne.position;
+        explodingPylonOne.SetActive(false);
+
+        explodingPylonTwo.transform.position = explodingPylonSpawnTwo.position;
+        explodingPylonTwo.SetActive(false);
+
+        explodingPylonThree.transform.position = explodingPylonSpawnThree.position;
+        explodingPylonThree.SetActive(false);
+
+        explodingPylonFour.transform.position = explodingPylonSpawnFour.position;
+        explodingPylonFour.SetActive(false);
+
+
         CancelInvoke();
     }
 
@@ -304,6 +434,39 @@ public class PylonAttacks : BossAttacks
     public void PylonRotate()
     { 
             gameObject.transform.Rotate(0, 0, spinRotationAmount);
+    }
+
+    public void AttackThreeExplosionOne()
+    {
+        Debug.Log("Attack 3 Explode 1 happened!");
+        GameObject exp1 = Instantiate(attackThreeExplosion, transform.position, transform.rotation); 
+        exp1.transform.Rotate(0, 0, 0);
+      //  exp1.GetComponent<explodingPylonScript>().SetId(1);
+        //stop attack is called from inside the exploding pylons IF there are no pylons left
+    }
+    public void AttackThreeExplosionTwo()
+    {
+        Debug.Log("Attack 3 Explode 2 happened!");
+        GameObject exp2 = Instantiate(attackThreeExplosion, transform.position, transform.rotation);    
+        exp2.transform.Rotate(0, 0, 180);
+       // exp2.GetComponent<explodingPylonScript>().SetId(2);
+        //stop attack is called from inside the exploding pylons IF there are no pylons left
+    }
+    public void AttackThreeExplosionThree()
+    {
+        Debug.Log("Attack 3 Explode 3 happened!");
+        GameObject exp3 = Instantiate(attackThreeExplosion, transform.position, transform.rotation); 
+        exp3.transform.Rotate(0, 0, -90);
+        //exp3.GetComponent<explodingPylonScript>().SetId(3);
+        //stop attack is called from inside the exploding pylons IF there are no pylons left
+    }
+    public void AttackThreeExplosionFour()
+    {
+        Debug.Log("Attack 3 Explode 4 happened!");
+        GameObject exp4 = Instantiate(attackThreeExplosion, transform.position, transform.rotation);
+        exp4.transform.Rotate(0, 0, 90);
+       // exp4.GetComponent<explodingPylonScript>().SetId(4);
+        //stop attack is called from inside the exploding pylons IF there are no pylons left
     }
 
 
