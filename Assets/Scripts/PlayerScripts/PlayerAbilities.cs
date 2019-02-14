@@ -110,7 +110,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 	private void Idle()
 	{
-        ritualAudio.Stop();
+        // ritualAudio.Stop();
         //reflectAudio.Stop();
 
 		//Left Click Ability
@@ -124,9 +124,9 @@ public class PlayerAbilities : MonoBehaviour {
 		//Right Click Ability
 		if(Input.GetKeyDown(KeyCode.Mouse1))
 		{
-            reflectAudio.clip = ritualSound;
-            reflectAudio.Play();
-            Invoke("StopReflectAudioSound", reflectAudio.clip.length);
+            // reflectAudio.clip = ritualSound;
+            // reflectAudio.Play();
+            // Invoke("StopReflectAudioSound", reflectAudio.clip.length);
             handlers.AbilityChecker(rightMouseAbility, false, false);
 			AttackArrayHandler("Self", lastAttacks);
 		}
@@ -141,8 +141,8 @@ public class PlayerAbilities : MonoBehaviour {
 		//Evade
 		if(Input.GetKeyDown(KeyCode.Space) && evadeTimer > EVADECOOLDOWN)
 		{
-            evadeAudio = GetComponent<AudioSource>();
-            evadeAudio.PlayOneShot(evadeSound);
+            // evadeAudio = GetComponent<AudioSource>();
+            // evadeAudio.PlayOneShot(evadeSound);
             state = State.EVADE;
 			evadeTimer = 0;
 		}
@@ -150,9 +150,9 @@ public class PlayerAbilities : MonoBehaviour {
 		//Shift Ritual Cast
 		if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
-            ritualAudio = GetComponent<AudioSource>();
-            ritualAudio.clip = ritualSound;
-            ritualAudio.Play();
+            // ritualAudio = GetComponent<AudioSource>();
+            // ritualAudio.clip = ritualSound;
+            // ritualAudio.Play();
             state = State.RITUALCAST;
         }
         else //if (!Input.anyKey)
@@ -170,9 +170,9 @@ public class PlayerAbilities : MonoBehaviour {
         TimerHandlers();
 	}
 
-  private void  StopReflectAudioSound()
+  private void StopReflectAudioSound()
     {
-        reflectAudio.Stop();
+        // reflectAudio.Stop();
     }
 
     private void Evade()

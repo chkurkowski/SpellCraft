@@ -8,53 +8,62 @@ public class PylonMovement : MonoBehaviour {
     //also write a function that can be called to increase the rate at which the boss spins.
     // Use this for initialization
     private BossInfo bossInfo;
+    private BossAttacks bossAttacksInfo;
     public float rotationDirection = 1f;
-    public float rotationSpeed = 0.002f;
-    public float rotationAmount = 0.5f;
+    private float rotationSpeed = 0.01f;
+   private float rotationAmount = 0.5f;
+    private bool isSpinning = false;
 
     void Start ()
     {
         bossInfo = gameObject.GetComponent<BossInfo>();
-        //InvokeRepeating("PylonRotate", 0, rotationSpeed);//for testing
+        bossAttacksInfo = gameObject.GetComponent<BossAttacks>();
+       
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    public void LaserAttackMovement()
     {
-		
-	}
 
-    public void LaserAttackMovement(float durationTime)
-    {
-        Vector3 dir = bossInfo.GetPlayerLocation().transform.position - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle - 180, transform.forward);
+        if (!isSpinning)
+        {
+            isSpinning = true;
+            Vector3 dir = bossInfo.GetPlayerLocation().transform.position - transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle - 180, transform.forward);
+
+            Debug.Log("LaserMove was called");
+            InvokeRepeating("PylonRotate", 0, rotationSpeed);
+        }
+        else
+        {
+            Debug.Log("LaserMove was attempted to be called twice");
+        }
 
 
-        InvokeRepeating("PylonRotate", 0, rotationSpeed);
-        Invoke("StopLaserAttackMovement", durationTime);
     }
 
    
 
 
-    public void IncreaseLaserAttackSpinSpeed(float speedIncrease)
-    {
-        rotationSpeed += speedIncrease;
-    }
+
 
 
     public void StopLaserAttackMovement()
     {
-        CancelInvoke("PylonRotate");
+        isSpinning = false;
+        Debug.Log("LaserMove was stopped");
+        CancelInvoke();
     }
 
     public void PylonRotate()
-    {
-        ///Vector3 dir = bossInfo.GetPlayerLocation().transform.position - transform.position;
-        ///float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        ///transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
-        gameObject.transform.Rotate(0, 0, rotationAmount);// * rotationDirection);
+{
+   
+            ///Vector3 dir = bossInfo.GetPlayerLocation().transform.position - transform.position;
+            ///float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            ///transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
+            gameObject.transform.Rotate(0, 0, rotationAmount);// * rotationDirection);
+       
     }
+
 
 }
