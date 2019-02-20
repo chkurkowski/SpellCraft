@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Golem1 : MonoBehaviour {
+public class CorpsePillarParent : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
