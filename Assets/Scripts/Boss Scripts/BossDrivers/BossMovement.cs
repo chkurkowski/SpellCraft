@@ -34,7 +34,7 @@ public class BossMovement : MonoBehaviour
     public MoveState moveState;
 
 
-    void Start ()
+    void Start()
     {
         bossInfo = gameObject.GetComponent<BossInfo>();
         bossAttackInfo = gameObject.GetComponent<BossAttacks>();
@@ -44,16 +44,18 @@ public class BossMovement : MonoBehaviour
 
     private void Update()
     {
+
         if(bossAttackInfo.isAttacking)
         {
             SHOULDMOVE = false;
             moveState = MoveState.IDLE;
         }
+
         else if(bossAttackInfo.isAttacking == false)
         {
             SHOULDMOVE = true;
         }
-        if(facesPlayer)
+        if (facesPlayer)
         {
             Vector3 dir = bossInfo.GetPlayerLocation().transform.position - transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
@@ -63,8 +65,8 @@ public class BossMovement : MonoBehaviour
 
     IEnumerator Movement()
     {
-        while(bossHealthInfo.GetAlive())
-        { 
+        while (bossHealthInfo.GetAlive())
+        {
             if (bossInfo.isActivated)
             {
                 switch (moveState)
@@ -74,7 +76,7 @@ public class BossMovement : MonoBehaviour
                         break;
 
                     case MoveState.MOVE:
-                        if(!isMoving)
+                        if (!isMoving)
                         {
                             Move();
                         }
@@ -129,7 +131,7 @@ public class BossMovement : MonoBehaviour
         isMoving = true;
         if (movesRandomly)
         {
-           InvokeRepeating("RandomMovement",0, randomMoveFrequency);
+            InvokeRepeating("RandomMovement", 0, randomMoveFrequency);
         }
     }
 
@@ -147,19 +149,19 @@ public class BossMovement : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
 
         int randDirection = Random.Range(0, 4);
-        if(randDirection == 0)
+        if (randDirection == 0)
         {
             //Debug.Log("Boss moves towards player.");
             gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * moveSpeed, ForceMode2D.Impulse);
         }
-        else if(randDirection == 1)
+        else if (randDirection == 1)
         {
             //Debug.Log("Boss moves away from player.");
             gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * moveSpeed * -1, ForceMode2D.Impulse);
         }
-        else if(randDirection == 2)
+        else if (randDirection == 2)
         {
-           //Debug.Log("Boss strafes right.");
+            //Debug.Log("Boss strafes right.");
             gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right * moveSpeed, ForceMode2D.Impulse);
         }
         else if (randDirection >= 3)
@@ -171,7 +173,7 @@ public class BossMovement : MonoBehaviour
     }
 
     /// //////////////////////////////////////STUN FUNCTIONS
-    
+
     public void Stun()
     {
         CancelInvoke();
