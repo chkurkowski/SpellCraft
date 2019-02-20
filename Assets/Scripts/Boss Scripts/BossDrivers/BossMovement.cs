@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossMovement : BossInfo
+public class BossMovement : MonoBehaviour
 {
 
     //private BossHealth bossHealthInfo;
 
     private BossInfo bossInfo;
-    private BossAttacks bossAttackInfoInfo;
+    private BossAttacks bossAttackInfo;
+    private BossHealth bossHealthInfo;
     public bool canMove = true;
 
     public bool SHOULDMOVE = true;
@@ -33,25 +34,26 @@ public class BossMovement : BossInfo
     public MoveState moveState;
 
 
-    void Start ()
+    void Start()
     {
         bossInfo = gameObject.GetComponent<BossInfo>();
-        bossAttackInfoInfo = gameObject.GetComponent<BossAttacks>();
+        bossAttackInfo = gameObject.GetComponent<BossAttacks>();
+        bossHealthInfo = gameObject.GetComponent<BossHealth>();
         StartCoroutine("Movement");
     }
 
     private void Update()
     {
-        if(bossAttackInfoInfo.isAttacking)
+        if (bossAttackInfo.isAttacking)
         {
             SHOULDMOVE = false;
             moveState = MoveState.IDLE;
         }
-        else if(bossAttackInfoInfo.isAttacking == false)
+        else if (bossAttackInfo.isAttacking == false)
         {
             SHOULDMOVE = true;
         }
-        if(facesPlayer)
+        if (facesPlayer)
         {
             Vector3 dir = bossInfo.GetPlayerLocation().transform.position - transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
@@ -61,8 +63,8 @@ public class BossMovement : BossInfo
 
     IEnumerator Movement()
     {
-        while(bossHealthInfo.GetAlive())
-        { 
+        while (bossHealthInfo.GetAlive())
+        {
             if (bossInfo.isActivated)
             {
                 switch (moveState)
@@ -72,7 +74,7 @@ public class BossMovement : BossInfo
                         break;
 
                     case MoveState.MOVE:
-                        if(!isMoving)
+                        if (!isMoving)
                         {
                             Move();
                         }
@@ -127,7 +129,7 @@ public class BossMovement : BossInfo
         isMoving = true;
         if (movesRandomly)
         {
-           InvokeRepeating("RandomMovement",0, randomMoveFrequency);
+            InvokeRepeating("RandomMovement", 0, randomMoveFrequency);
         }
     }
 
@@ -145,19 +147,19 @@ public class BossMovement : BossInfo
         transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
 
         int randDirection = Random.Range(0, 4);
-        if(randDirection == 0)
+        if (randDirection == 0)
         {
             //Debug.Log("Boss moves towards player.");
             gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * moveSpeed, ForceMode2D.Impulse);
         }
-        else if(randDirection == 1)
+        else if (randDirection == 1)
         {
             //Debug.Log("Boss moves away from player.");
             gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * moveSpeed * -1, ForceMode2D.Impulse);
         }
-        else if(randDirection == 2)
+        else if (randDirection == 2)
         {
-           //Debug.Log("Boss strafes right.");
+            //Debug.Log("Boss strafes right.");
             gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right * moveSpeed, ForceMode2D.Impulse);
         }
         else if (randDirection >= 3)
@@ -169,7 +171,7 @@ public class BossMovement : BossInfo
     }
 
     /// //////////////////////////////////////STUN FUNCTIONS
-    
+
     public void Stun()
     {
         CancelInvoke();
