@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossMovement : BossInfo
+public class BossMovement : MonoBehaviour
 {
 
     //private BossHealth bossHealthInfo;
 
     private BossInfo bossInfo;
-    private BossAttacks bossAttackInfoInfo;
+    private BossAttacks bossAttackInfo;
+    private BossHealth bossHealthInfo;
     public bool canMove = true;
 
     public bool SHOULDMOVE = true;
@@ -36,18 +37,19 @@ public class BossMovement : BossInfo
     void Start ()
     {
         bossInfo = gameObject.GetComponent<BossInfo>();
-        bossAttackInfoInfo = gameObject.GetComponent<BossAttacks>();
+        bossAttackInfo = gameObject.GetComponent<BossAttacks>();
+        bossHealthInfo = gameObject.GetComponent<BossHealth>();
         StartCoroutine("Movement");
     }
 
     private void Update()
     {
-        if(bossAttackInfoInfo.isAttacking)
+        if(bossAttackInfo.isAttacking)
         {
             SHOULDMOVE = false;
             moveState = MoveState.IDLE;
         }
-        else if(bossAttackInfoInfo.isAttacking == false)
+        else if(bossAttackInfo.isAttacking == false)
         {
             SHOULDMOVE = true;
         }
