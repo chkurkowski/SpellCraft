@@ -8,9 +8,12 @@ public class ArenaCameraActivator : MonoBehaviour
     /// <summary>
     /// type the name of the boss that the arena belongs to
     /// </summary>
+    public bool useDynamicCamera = true;
+    [Space(40)]
     public string associatedBossName = "";
     //private Transform playerLocation;
-   // public float detectionDistance = 150f;
+    // public float detectionDistance = 150f;
+ 
     public GameObject prototypeBoss;
     public GameObject pylonBoss;
     public GameObject alchemistBoss;
@@ -23,9 +26,6 @@ public class ArenaCameraActivator : MonoBehaviour
     private void Start()
     {
         mainCamera = GameObject.Find("Main Camera");
-      
-
-       
 
     }
 
@@ -75,8 +75,11 @@ public class ArenaCameraActivator : MonoBehaviour
                     break;
 
             }
-        
-            GameObject.Find("Main Camera").GetComponent<CameraScriptActivator>().ActivateDynamicCamera();
+            if(useDynamicCamera)
+            {
+                GameObject.Find("Main Camera").GetComponent<CameraScriptActivator>().ActivateDynamicCamera();
+            }
+            
           
         }
     }
@@ -85,7 +88,13 @@ public class ArenaCameraActivator : MonoBehaviour
    {
         if (trig.gameObject.tag == "Player")
        {
-           GameObject.Find("Main Camera").GetComponent<CameraScriptActivator>().DisableDynamicCamera();
+
+
+            if (useDynamicCamera)
+            {
+                GameObject.Find("Main Camera").GetComponent<CameraScriptActivator>().DisableDynamicCamera();
+            }
+          
             bossInfo.isActivated = false;
             // mainCamera.GetComponent<DynamicCamera>().Boss = null;
         }
