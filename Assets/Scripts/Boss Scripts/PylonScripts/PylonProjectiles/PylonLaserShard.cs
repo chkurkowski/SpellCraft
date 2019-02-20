@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class PylonLaserShard : MonoBehaviour, IPooledObject
 {
-    ProjectileDamage projectileDamageInfo;
-    public AudioSource reflectSource;
-    public AudioClip reflectSound;
-    public AudioClip shardSound;
-    public float laserShardDamage = 1;
+    private ProjectileDamage projectileDamageInfo;
+  
+    private float laserShardDamage;
+
+    [Tooltip("How fast the laser shards fly through the air")]
     public float laserShardSpeed = 50;
-    public float minLaserSpread = -.5f;
-    public float maxLaserSpread = .5f;
+   
+    [Tooltip("The range of the /shotgun spread/ effect. Bigger numbers means more spread on the crystals.")]
+    public float laserSpread = .5f;
     private GameObject player;
     private bool reflected = false;
     private Color32 originalColor;
     private float randNum;
 
+    [Space(20)]
+    [Header("Sound Variables")]
+    public AudioSource reflectSource;
+    public AudioClip reflectSound;
+    public AudioClip shardSound;
 
     public void Start()
     {
@@ -27,7 +33,7 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
     public void OnObjectSpawn()
     {
        // reflectSource.PlayOneShot(shardSound);
-        randNum = Random.Range(minLaserSpread, maxLaserSpread);
+        randNum = Random.Range(-laserSpread, laserSpread);
         //transform.Rotate(new Vector3(0, 0, 90));
         //gotta undo any potential reflects!
         if(reflected)
@@ -47,7 +53,6 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
     
         if (!reflected)
         {
-           
             transform.Translate(Vector3.up * Time.deltaTime * laserShardSpeed);
         }
         else if (reflected)
