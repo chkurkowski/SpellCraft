@@ -830,6 +830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4e60857e1198a47b2b35a89f739ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useDynamicCamera: 0
   associatedBossName: Lich
   prototypeBoss: {fileID: 0}
   pylonBoss: {fileID: 0}
@@ -11297,7 +11298,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 503
+      value: 424
       objectReference: {fileID: 0}
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -12239,6 +12240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4e60857e1198a47b2b35a89f739ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useDynamicCamera: 1
   associatedBossName: PrototypeBoss
   prototypeBoss: {fileID: 2039642878}
   pylonBoss: {fileID: 0}
@@ -12344,6 +12346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4e60857e1198a47b2b35a89f739ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useDynamicCamera: 1
   associatedBossName: Pylon
   prototypeBoss: {fileID: 0}
   pylonBoss: {fileID: 56298202}
@@ -21970,6 +21973,21 @@ MonoBehaviour:
   isAttacking: 0
   attackRate: 3
   attackState: 0
+  golemOne: {fileID: 0}
+  golemTwo: {fileID: 0}
+  golemThree: {fileID: 0}
+  golemOneSpawn: {fileID: 0}
+  golemTwoSpawn: {fileID: 0}
+  golemThreeSpawn: {fileID: 0}
+  corpsePillarParent: {fileID: 0}
+  corpsePillarOne: {fileID: 0}
+  corpsePillarTwo: {fileID: 0}
+  corpsePillarThree: {fileID: 0}
+  corpseOneSpawn: {fileID: 0}
+  corpseTwoSpawn: {fileID: 0}
+  corpseThreeSpawn: {fileID: 0}
+  portal: {fileID: 0}
+  portalSpawn: {fileID: 0}
 --- !u!82 &1603725065
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22261,14 +22279,14 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1603725062}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d9d5d066c82c374b890b517e6e55328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   previousAttack: 0
   isAttacking: 0
-  attackRate: 3
+  attackRate: 6
   attackState: 0
 --- !u!114 &1603725070
 MonoBehaviour:
@@ -32466,7 +32484,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 70
+  orthographic size: 120
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
