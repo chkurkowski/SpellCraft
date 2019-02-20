@@ -61,7 +61,7 @@ public class BossMovement : BossInfo
 
     IEnumerator Movement()
     {
-        while(bossHealthInfo.isAlive)
+        while(bossHealthInfo.GetAlive())
         { 
             if (bossInfo.isActivated)
             {
@@ -94,7 +94,7 @@ public class BossMovement : BossInfo
 
     public void Idle()
     {
-        if (bossHealthInfo.isAlive)
+        if (bossHealthInfo.GetAlive())
         {
             isMoving = false;
             CancelInvoke();

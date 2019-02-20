@@ -8,11 +8,18 @@ public class BossHealth : MonoBehaviour
 
     public Image healthBar;
    
+    /// <summary>
+    /// The current health of the boss.
+    /// </summary>
     public float bossHealth = 100;
+    /// <summary>
+    /// The max health of the boss.
+    /// </summary>
     public float bossMaxHealth = 100;
-    public bool isAlive = true;
 
-    private bool isLasered = false;
+    private bool isAlive = true;
+
+    private bool isLasered = false;//forgot if this is even used tbh....
 
     private void Start()
     {
@@ -61,6 +68,20 @@ public class BossHealth : MonoBehaviour
     public bool GetLasered()
     {
         return isLasered;
+    }
+
+
+    /// ///////////////////////////////////////// Alive Functions
+    
+
+    public bool GetAlive()
+    {
+        return isAlive;
+    }
+
+    public void SetAlive(bool aliveValue)
+    {
+        isAlive = aliveValue;
     }
 
 

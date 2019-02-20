@@ -9,7 +9,7 @@ public class BossInfo : MonoBehaviour
     [HideInInspector]
     public BossHealth bossHealthInfo;
 
-    
+    [SerializeField]
     public bool isMad = false;
     public bool isEnraged = false;
     private Transform playerLocation;
@@ -70,7 +70,7 @@ public class BossInfo : MonoBehaviour
 
     IEnumerator StunTracker()
     {
-        while (bossHealthInfo.isAlive)
+        while (bossHealthInfo.GetAlive())
         {
             if (bossStunLevel >= bossStunThreshold)
             {
@@ -116,7 +116,7 @@ public class BossInfo : MonoBehaviour
 
     IEnumerator RageTracker()
     {
-        while (bossHealthInfo.isAlive)
+        while (bossHealthInfo.GetAlive())
         {
             if (bossRageLevel <= bossRageThreshold1)
             {
@@ -173,7 +173,7 @@ public class BossInfo : MonoBehaviour
 
     IEnumerator AgroTracker()
     {
-        while (bossHealthInfo.isAlive)
+        while (bossHealthInfo.GetAlive())
         {
             if (Vector2.Distance(transform.position, playerLocation.position) <= agroDistance)
             {

@@ -2,32 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PylonAttacks : BossAttacks
+public class PylonAttacks : MonoBehaviour
 {
     private BossInfo bossInfoInfo;
     private BossAttacks bossAttacksInfo;
     private Animator pylonAnimatorInfo;
     private PylonMovement pylonMovementInfo;
+
+
+    ////// ////////variables used to lookat stuff
     private Vector3 vectorToTarget;
     private float angle;
     private GameObject player;
     private Quaternion rotAngle;
-    public float laserLookAtSpeed;
 
+
+
+    [Tooltip("How much the Pylon rotates their body.")]
     public float spinRotationAmount = 0.1f;
+
+    [Tooltip("How often per second the Pylon rotates their body by the spinRotationAmount increment.")]
     public float spinRotationRate = 0.1f;
 
-    public const float laserAttackDurationCONST = 5f;
-    public float laserAttackDuration = 5f;
-    public float laserProjectileDamageSetter = 1f;
+
+    // public float laserProjectileDamageSetter = 1f;
     [Space(10)]
     [Header("Attack One Info")]
+
+    [Tooltip("How fast the laser rotates to the player.")]
+    public float laserLookAtSpeed;
+    [Tooltip("How long the laser is active for. After those seconds are up, the attack is stopped.")]
+    public float laserAttackDuration = 5f;
     public GameObject laserMuzzleOne;
     public GameObject shieldOne;
     public GameObject shieldTwo;
     public GameObject reflectShieldOne;
     public GameObject reflectShieldTwo;
-
 
 
     [Space(30)]

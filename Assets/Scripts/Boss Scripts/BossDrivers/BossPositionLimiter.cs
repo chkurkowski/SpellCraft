@@ -17,7 +17,7 @@ public class BossPositionLimiter : MonoBehaviour {
 
     void Update()
     {
-        if(bossHealthInfo.isAlive)
+        if(bossHealthInfo.GetAlive())
         {
             if (gameObject.transform.position.x > rightLimit.transform.position.x)
             {
