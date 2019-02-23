@@ -20,7 +20,7 @@ public class BossAttacks : MonoBehaviour
     /// </summary>
     public bool isAttacking = false;
 
-    private bool canAttack = true;
+    public bool canAttack = true;
 
     private float attackTimer = 0f;
     /// <summary>
@@ -92,8 +92,9 @@ public class BossAttacks : MonoBehaviour
                     {
                         AttackDecider();
                         AttackDriver(bossName, previousAttack);
+                        canAttack = false;
                     }
-                    canAttack = false;
+                  
                     break;
             }
             yield return null;
@@ -143,6 +144,7 @@ public class BossAttacks : MonoBehaviour
         {
             if(bossInfo.isActivated)
             {
+                canAttack = true;
                 attackTimer += Time.deltaTime;
                 if (attackTimer >= attackRate)
                 {
@@ -219,6 +221,7 @@ public class BossAttacks : MonoBehaviour
 
     public void CancelAttack()
     {
+        attackState = AttackState.IDLE;
         canAttack = false;
         isAttacking = false;
 

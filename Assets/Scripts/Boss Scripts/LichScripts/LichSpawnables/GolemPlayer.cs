@@ -2,15 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GolemPlayer : MonoBehaviour {
+public class GolemPlayer : MonoBehaviour
+{
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Projectile")
+        {
+            collision.gameObject.GetComponent<ProjectileDamage>();
+        }
+    }
 }

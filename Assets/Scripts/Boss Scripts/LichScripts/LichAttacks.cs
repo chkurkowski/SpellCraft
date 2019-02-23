@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LichAttacks : BossAttacks
+public class LichAttacks : MonoBehaviour
 {
     private BossInfo bossInfoInfo;
     private BossAttacks bossAttacksInfo;
@@ -11,26 +11,26 @@ public class LichAttacks : BossAttacks
 
     [Space(10)]
     [Header("Attack One Info")]
+    
     public GameObject golemOne;
     public GameObject golemTwo;
     public GameObject golemThree;
     [Space(20)]
+    public GameObject golemHex;
     public Transform golemOneSpawn;
     public Transform golemTwoSpawn;
     public Transform golemThreeSpawn;
 
     [Space(40)]
     [Header("Attack Two Info")]
+    public GameObject corpseHex;
+
     public GameObject corpsePillarParent;
-    public GameObject corpsePillarOne;
-    public GameObject corpsePillarTwo;
-    public GameObject corpsePillarThree;
-    public Transform corpseOneSpawn;
-    public Transform corpseTwoSpawn;
-    public Transform corpseThreeSpawn;
+    public Transform corpseParentSpawn;
 
     [Space(40)]
     [Header("Attack Three Info")]
+    public GameObject portalHex;
     public GameObject portal;
     public Transform portalSpawn;
 
@@ -51,7 +51,10 @@ public class LichAttacks : BossAttacks
 
     public void Attack(int attackNumber)
     {
-        if(attackNumber == 1)
+        bossAttacksInfo.EndAttack();
+
+
+        if (attackNumber == 1)
         {
             if(golemOne.activeSelf || golemTwo.activeSelf || golemThree.activeSelf)
             {
@@ -100,6 +103,7 @@ public class LichAttacks : BossAttacks
         switch (attackNumber)
         {
             case 0:
+              
 
                 Debug.Log("An incorrect attackNumber was passed as 0");
                 break;
@@ -107,6 +111,7 @@ public class LichAttacks : BossAttacks
             case 1:
                 if (!golemOne.activeSelf && !golemTwo.activeSelf && !golemThree.activeSelf)
                 {
+              
                     AttackOne();
                 }
                
@@ -142,6 +147,7 @@ public class LichAttacks : BossAttacks
             golemThree.SetActive(true);
         }
         golemOne.SetActive(true);
+        golemHex.SetActive(true);
     }
 
 
@@ -151,6 +157,7 @@ public class LichAttacks : BossAttacks
     public void AttackTwo()
     {
         corpsePillarParent.SetActive(true);
+        corpseHex.SetActive(true);
     }
 
     #endregion
@@ -159,6 +166,7 @@ public class LichAttacks : BossAttacks
     public void AttackThree()
     {
         portal.SetActive(true);
+        portalHex.SetActive(true);
     }
     #endregion 
 
@@ -171,11 +179,16 @@ public class LichAttacks : BossAttacks
         golemThree.transform.position = golemThreeSpawn.position;
         golemThree.SetActive(false);
 
+        corpsePillarParent.transform.position = corpseParentSpawn.position;
         corpsePillarParent.SetActive(false);
 
         portal.transform.position = portalSpawn.position;
         portal.SetActive(false);
 
+
+        golemHex.SetActive(false);
+        corpseHex.SetActive(false);
+        portalHex.SetActive(false);
     }
 
     public void StopAttack()
