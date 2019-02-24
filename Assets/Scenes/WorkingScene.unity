@@ -6969,6 +6969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4e60857e1198a47b2b35a89f739ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useDynamicCamera: 1
   associatedBossName: PrototypeBoss
   prototypeBoss: {fileID: 1125146705}
   pylonBoss: {fileID: 0}
@@ -7132,6 +7133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previousAttack: 0
   isAttacking: 0
+  canAttack: 1
   attackRate: 3
   attackState: 0
   fireball: {fileID: 1852356439421700, guid: f288824703f634f45b225f671d7c99d3, type: 2}
@@ -7179,8 +7181,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 353344364}
+  HealthBarParent: {fileID: 929883152}
   bossHealth: 100
   bossMaxHealth: 100
+  canBeDamaged: 1
 --- !u!61 &1125146709
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7303,8 +7307,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
+  HealthBarParent: {fileID: 0}
   bossHealth: 100
   bossMaxHealth: 100
+  canBeDamaged: 1
 --- !u!114 &1125146714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7318,6 +7324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previousAttack: 0
   isAttacking: 0
+  canAttack: 1
   attackRate: 3
   attackState: 0
 --- !u!114 &1125146715
@@ -8803,6 +8810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4e60857e1198a47b2b35a89f739ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useDynamicCamera: 1
   associatedBossName: Pylon
   prototypeBoss: {fileID: 0}
   pylonBoss: {fileID: 0}
@@ -10948,6 +10956,11 @@ Prefab:
         type: 2}
       propertyPath: leftMouseAbility
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114585357869244448, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: ENERGYGOLEMCOOLDOWN
+      value: 1.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}

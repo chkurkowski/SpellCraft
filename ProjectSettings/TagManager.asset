@@ -19,6 +19,7 @@ TagManager:
   - LaserEndPoint
   - HealStun
   - EnemyReflect
+  - PlayerGolem
   layers:
   - Default
   - TransparentFX

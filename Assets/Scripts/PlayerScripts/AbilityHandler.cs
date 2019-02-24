@@ -38,7 +38,7 @@ public class AbilityHandler : MonoBehaviour {
     public float LONGATKCOOLDOWN = .2f;
     public float HEALSTUNCOOLDOWN = 6f;
     public float REFLECTCOOLDOWN = 3f;
-    public float ENERGYGOLEMCOOLDOWN = 3f;
+    public float ENERGYGOLEMCOOLDOWN = 2f;
     public float HEALSTUNCOMBOCOOLDOWN = 6f;
     public float ATKSIMCOOLDOWN = 2f;
     public float ABSORBCOOLDOWN = 6f;

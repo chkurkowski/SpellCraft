@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114882484897652174}
   m_Layer: 0
   m_Name: PlayerGolem
-  m_TagString: Golem
+  m_TagString: PlayerGolem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,11 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6636ba186b5d4c6cba6375ed594b281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 2
+  golemHealth: 15
   timeTillCharge: 0.5
   startingChargeSpeed: 100
-  chargeSlowRate: 2
-  growthRate: 0.025
+  chargeSlowRate: 0.75
+  damageAmount: 3
+  growthRate: 0.04
 --- !u!212 &212924279469635286
 SpriteRenderer:
   m_ObjectHideFlags: 1
