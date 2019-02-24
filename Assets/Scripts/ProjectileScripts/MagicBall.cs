@@ -51,7 +51,7 @@ public class MagicBall : MonoBehaviour {
         }
         if (col.GetComponent<Collider2D>().transform.tag == "Boss")
         {
-            Debug.Log(gameObject.name + " was destroyed by Boss:" + col.gameObject.name);
+           // Debug.Log(gameObject.name + " was destroyed by Boss:" + col.gameObject.name);
             Destroy(gameObject);
         }
         else if (col.gameObject.tag == "Vortex" || col.gameObject.tag == "EnemyProjectile")
@@ -63,7 +63,7 @@ public class MagicBall : MonoBehaviour {
         {
             if (col.gameObject.tag != "Boss" || col.gameObject.tag != "CameraTrigger" || col.gameObject.tag != "HealStun" )
             {
-                Debug.Log(gameObject.name + " was destroyed by " + col.gameObject.name + "with tag :" + col.gameObject.tag );
+                //Debug.Log(gameObject.name + " was destroyed by " + col.gameObject.name + "with tag :" + col.gameObject.tag );
                 Destroy(gameObject);
             }
 

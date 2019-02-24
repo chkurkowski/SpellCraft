@@ -26,7 +26,7 @@ public class Fireball : MonoBehaviour {
         }
         else if(reflected)
         {
-            transform.Rotate(0, 0, 180);
+            //transform.Rotate(0, 0, 180);
             transform.Translate(Vector3.left * Time.deltaTime * fireBallSpeed);
         }
        

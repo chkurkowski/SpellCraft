@@ -24,6 +24,7 @@ public class GolemPlayer : MonoBehaviour
     public bool isMoving = false;
     public float randomMoveFrequency = 1f;
     public float moveSpeed = 10f;
+    public float moveDuration = 3f;
 
     #region FacePlayer Variables
     private GameObject player;
@@ -39,6 +40,7 @@ public class GolemPlayer : MonoBehaviour
         golemReflect.SetActive(false);
         lichBossHealth = GameObject.Find("Lich").GetComponent<BossHealth>();
         player = GameObject.Find("Player");
+       // StartCoroutine("EndMovement");
     }
 	
 	// Update is called once per frame
@@ -53,6 +55,7 @@ public class GolemPlayer : MonoBehaviour
             golemReflect.SetActive(false);
             canAttack = true;
             canReflect = true;
+            isMoving = false;
             gameObject.SetActive(false);
 
         }
@@ -68,7 +71,7 @@ public class GolemPlayer : MonoBehaviour
             }
             if(!isMoving)
             {
-
+                Move();
             }
         }
 
@@ -123,8 +126,15 @@ public class GolemPlayer : MonoBehaviour
     {
         isMoving = true;
        
-            InvokeRepeating("RandomMovement", 0, randomMoveFrequency);
+            InvokeRepeating("Movement", 0, randomMoveFrequency);
+        InvokeRepeating("EndMovement", 0, moveDuration);
         
+    }
+
+    public void Movement()
+    {
+        transform.Translate(Vector3.up * Time.deltaTime * moveSpeed);
+        //gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * -moveSpeed , ForceMode2D.Impulse);
     }
 
     public void RandomMovement()
@@ -136,23 +146,27 @@ public class GolemPlayer : MonoBehaviour
         int randDirection = Random.Range(0, 4);
         if (randDirection == 0)
         {
-            //Debug.Log("Boss moves towards player.");
-            gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * moveSpeed, ForceMode2D.Impulse);
+            Debug.Log("Boss moves towards player.");
+              gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * moveSpeed, ForceMode2D.Impulse);
+            //transform.Translate(Vector3.up * Time.deltaTime * moveSpeed);
         }
         else if (randDirection == 1)
         {
-            //Debug.Log("Boss moves away from player.");
-            gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * moveSpeed * -1, ForceMode2D.Impulse);
+            Debug.Log("Boss moves away from player.");
+            gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * moveSpeed * -1 , ForceMode2D.Impulse);
+            //transform.Translate(Vector3.down * Time.deltaTime * moveSpeed);
         }
         else if (randDirection == 2)
         {
-            //Debug.Log("Boss strafes right.");
-            gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right * moveSpeed, ForceMode2D.Impulse);
+            Debug.Log("Boss strafes right.");
+             gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right * moveSpeed , ForceMode2D.Impulse);
+            //transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
         }
         else if (randDirection >= 3)
         {
-            //Debug.Log("Boss strafes left.");
-            gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right * moveSpeed * -1, ForceMode2D.Impulse);
+            Debug.Log("Boss strafes left.");
+             gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right * moveSpeed * -1 , ForceMode2D.Impulse);
+            //transform.Translate(Vector3.left * Time.deltaTime * moveSpeed);
         }
 
     }
@@ -165,9 +179,14 @@ public class GolemPlayer : MonoBehaviour
             if(canReflect)
             {
                 Reflect();
-
             }
         }
+    }
+
+    IEnumerator EndMovement()
+    {
+        yield return new WaitForSeconds(moveDuration);
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0); 
     }
 
 }
