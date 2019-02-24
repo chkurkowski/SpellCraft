@@ -7,7 +7,14 @@ public class HealStunComboHandler : HealStunHandler {
 	public bool isBurst = false;
 
 	private bool passThrough = false;
-	private float lifetime = 7f;
+
+    public float newLifetime = 7f;
+
+    public override void Start()
+    {
+        Invoke("Destroy", newLifetime);
+        state = State.NULL;
+    }
 
 	protected override bool StunAbsorb()
     {

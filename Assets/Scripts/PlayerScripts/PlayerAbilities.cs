@@ -5,16 +5,37 @@ using UnityEngine;
 public class PlayerAbilities : MonoBehaviour {
 
 	//Public Editor Variables
+    [Header("Editor Variables - Don't Touch")]
 	public PlayerMovement movement;
 	public PlayerHealth health;
 	private AbilityHandler handlers;
 	private ParticleSystem pSystem;
 
+    [Space(10)]
+
 	//Dash Variable
+    [Header("Dash Variables")]
 	public float dashSpeed;
 	public float dashDistance;
 
+    //States
+    public enum State
+    {
+        IDLE,
+        ABILITY,
+        EVADE,
+        RITUALCAST,
+        BURSTCAST,
+        STUN
+    }
+    [Space(10)]
+    [Header("Player State")]
+    public State state;
+
+    [Space(10)]
+
     //audio
+    [Header("Audio Sources")]
     public AudioSource reflectAudio;
     public AudioSource ritualAudio;
     public AudioSource evadeAudio;
@@ -23,26 +44,27 @@ public class PlayerAbilities : MonoBehaviour {
     public AudioClip evadeSound;
     public AudioClip ritualSound;
 
-
-	public enum State
-	{
-		IDLE,
-		ABILITY,
-		EVADE,
-		RITUALCAST,
-		BURSTCAST,
-		STUN
-	}
-	public State state;
-
 	//Booleans
-	private bool isBurst;
-	private bool evadeCalled;
+	// private bool isBurst;
+	// private bool evadeCalled;
 
 	private List<string> lastAttacks = new List<string>();
 	private List<string> ritualList = new List<string>();
 
+    [Space(10)]
+
+    [Header("Cooldowns and Timers")]
+    public float BURSTCOOLDOWN = 2f;
+    public float EVADECOOLDOWN = .25f;
+
+    public  float evadeEnd = .35f;
+
+    private float burstTimer, evadeTimer;
+
+    [Space(10)]
+
 	//Ability Variables
+    [Header("Ability Variables")]
 	public int leftMouseAbility = 1;
 	public int rightMouseAbility = 2;
 	public int keyboardAbility = 3;
@@ -50,17 +72,8 @@ public class PlayerAbilities : MonoBehaviour {
 	public int comboTwo = 2;
 	public int comboThree = 3;
 
-	private const float BURSTCOOLDOWN = 2f;
-	private const float EVADECOOLDOWN = .25f;
-
-	private  float evadeEnd = .35f;
-
-	private float burstTimer, evadeTimer;
-
 	private void Start()
 	{
-		isBurst = false;
-        evadeCalled = false;
         burstTimer = BURSTCOOLDOWN;
         evadeTimer = EVADECOOLDOWN;
 

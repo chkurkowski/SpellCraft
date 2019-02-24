@@ -49,6 +49,7 @@ public class BossHealth : MonoBehaviour
             {
                 
                 bossHealth -= (projectileInfo.projectileDamage);
+                if(healthBar != null)
                 healthBar.fillAmount = healthBar.fillAmount - (projectileInfo.projectileDamage / 100f);
             }
             else

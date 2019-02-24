@@ -18,6 +18,7 @@ TagManager:
   - Vortex
   - LaserEndPoint
   - HealStun
+  - Golem
   layers:
   - Default
   - TransparentFX

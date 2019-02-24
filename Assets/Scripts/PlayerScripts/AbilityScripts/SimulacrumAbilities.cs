@@ -30,7 +30,7 @@ public class SimulacrumAbilities : MonoBehaviour
     private float attackTimer;
     private float lifetime = 8f;
     private float damageTaken = 0;
-    private float damageCap = 10;
+    public float damageCap {private get; set;}
     private Transform boss;
     private Vector2 cursorInWorldPos;
 

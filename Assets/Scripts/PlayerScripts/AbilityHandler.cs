@@ -5,14 +5,19 @@ using UnityEngine;
 public class AbilityHandler : MonoBehaviour {
 
     //Public Editor Variables
+    [Header("Editor Variables - Don't Touch")]
     public GameObject magicMissile;
     public GameObject reflect;
     public GameObject absorb;
     public GameObject simulacrum;
+    public GameObject golem;
     public GameObject healStun;
     public GameObject healStunCombo;
     public Vector2 cursorInWorldPos;
+
+    [Space(10)]
    
+   [Header("Audio Variables")]
     public AudioSource abilityHandlerSource;
     public AudioSource reflectAudio;
 
@@ -20,24 +25,30 @@ public class AbilityHandler : MonoBehaviour {
     public AudioClip attackSimSound;
     public AudioClip reflectLoopSound;
 
+    [Space(10)]
+
     //Attack Variables
-    private float atkSpeed = 135f;
+    [Header("Projectile Speed - For First Projectile")]
+    public float atkSpeed = 135f;
 
+    [Space(10)]
+
+    [Header("Cooldowns and Timers")]
     //Ability timers -- For the Attacks scripts
-    private const float LONGATKCOOLDOWN = .2f;
-    private const float HEALSTUNCOOLDOWN = 6f;
-    private const float HEALSTUNCOMBOCOOLDOWN = 6f;
-    private const float REFLECTCOOLDOWN = 3f;
-    private const float ATKSIMCOOLDOWN = 2f;
-    private const float ABSORBCOOLDOWN = 6f;
-    private const float ABSORBSIMCOOLDOWN = 12f;
-    private const float BURSTCOOLDOWN = 2f;
+    public float LONGATKCOOLDOWN = .2f;
+    public float HEALSTUNCOOLDOWN = 6f;
+    public float REFLECTCOOLDOWN = 3f;
+    public float ENERGYGOLEMCOOLDOWN = 3f;
+    public float HEALSTUNCOMBOCOOLDOWN = 6f;
+    public float ATKSIMCOOLDOWN = 2f;
+    public float ABSORBCOOLDOWN = 6f;
+    public float ABSORBSIMCOOLDOWN = 12f;
+    public float BURSTCOOLDOWN = 2f;
 
-    private const float ABSORBEND = 3f;
+    public float ABSORBEND = 3f;
 
-    private float longATKTimer, healStunTimer, healStunComboTimer, reflectTimer, 
+    private float longATKTimer, energyGolemTimer, healStunTimer, healStunComboTimer, reflectTimer, 
     atkSimTimer, absorbTimer, absorbSimTimer, burstTimer;
-
 
     // Use this for initialization
     void Start () {
@@ -49,6 +60,7 @@ public class AbilityHandler : MonoBehaviour {
         absorbTimer = ABSORBCOOLDOWN;
         absorbSimTimer = ABSORBSIMCOOLDOWN;
         burstTimer = BURSTCOOLDOWN;
+        energyGolemTimer = ENERGYGOLEMCOOLDOWN;
 
         StartCoroutine(LightUpdate());
     }
@@ -61,8 +73,6 @@ public class AbilityHandler : MonoBehaviour {
             yield return null;
         }
     }
-
-    #region SpellFunctions
 
     public void AbilityChecker(int spell, bool isCombo, bool isBurst)
     {
@@ -79,6 +89,9 @@ public class AbilityHandler : MonoBehaviour {
                         break;
                     case 3:
                         HealStun();
+                        break;
+                    case 4:
+                        EnergyGolem();
                         break;
                 }
                 break;
@@ -102,6 +115,8 @@ public class AbilityHandler : MonoBehaviour {
         }
     }
 
+    #region BaseSpells
+
     private void MagicMissile()
     {
         if(longATKTimer >= LONGATKCOOLDOWN)
@@ -116,8 +131,18 @@ public class AbilityHandler : MonoBehaviour {
             fb.GetComponent<Rigidbody2D>().velocity = (direction + new Vector2(tempX, 0)) * atkSpeed;
             longATKTimer = 0;
 
-             abilityHandlerSource.clip = magicMissileSound;
-             abilityHandlerSource.PlayOneShot(magicMissileSound);
+            abilityHandlerSource.clip = magicMissileSound;
+            abilityHandlerSource.PlayOneShot(magicMissileSound);
+        }
+    }
+
+    //Energy Golem/Simulacrum
+    private void EnergyGolem()
+    {
+        if(energyGolemTimer >= ENERGYGOLEMCOOLDOWN)
+        {
+            GameObject sim = Instantiate(golem, transform.position + (transform.up * 8), transform.rotation);
+            energyGolemTimer = 0f;
         }
     }
 
@@ -146,6 +171,10 @@ public class AbilityHandler : MonoBehaviour {
         }
     }
 
+    #endregion
+
+    #region ComboSpells
+
     //NewName - AtkSim
     private void AttackSim(bool isBurst)
     {
@@ -155,7 +184,7 @@ public class AbilityHandler : MonoBehaviour {
             abilityHandlerSource.clip = attackSimSound;
             abilityHandlerSource.PlayOneShot(attackSimSound);
 
-            GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
+            GameObject sim = Instantiate(simulacrum, transform.position + (transform.up * -8), Quaternion.identity);
             sim.GetComponent<SimulacrumAbilities>().type = "Attack";
             sim.GetComponent<SimulacrumAbilities>().SetLifetime(4f);
         }
@@ -167,7 +196,7 @@ public class AbilityHandler : MonoBehaviour {
             {
                 abilityHandlerSource.clip = attackSimSound;
                 abilityHandlerSource.PlayOneShot(attackSimSound);
-                GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
+                GameObject sim = Instantiate(simulacrum, transform.position + (transform.up * -8), Quaternion.identity);
                 sim.GetComponent<SimulacrumAbilities>().type = "Attack";
                 atkSimTimer = 0f;
             }
@@ -221,16 +250,18 @@ public class AbilityHandler : MonoBehaviour {
         {
             //TODO Add AbsorbSim Burst Sound
 
-            GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
+            GameObject sim = Instantiate(simulacrum, transform.position + (transform.up * 8), Quaternion.identity);
             sim.GetComponent<SimulacrumAbilities>().type = "Absorb";
+            sim.GetComponent<SimulacrumAbilities>().damageCap = 20;
         }
         else
         {
             //TODO Add AbsorbSim Ritual Sound
             if(absorbSimTimer >= ABSORBSIMCOOLDOWN)
             {
-                GameObject sim = Instantiate(simulacrum, transform.position, Quaternion.identity);
+                GameObject sim = Instantiate(simulacrum, transform.position + (transform.up * 8), Quaternion.identity);
                 sim.GetComponent<SimulacrumAbilities>().type = "Absorb";
+                sim.GetComponent<SimulacrumAbilities>().damageCap = 50;
                 absorbSimTimer = 0f;
             }
         }
@@ -263,6 +294,7 @@ public class AbilityHandler : MonoBehaviour {
         absorbTimer += Time.deltaTime;
         absorbSimTimer += Time.deltaTime;
         burstTimer += Time.deltaTime;
+        energyGolemTimer += Time.deltaTime;
 
         if (reflectTimer >= 2f)
         {
@@ -277,38 +309,44 @@ public class AbilityHandler : MonoBehaviour {
 
     public float GetTimer(string str)
     {
-        if (str == "attack")
-            return longATKTimer;
-        else if (str == "healstun")
-            return healStunTimer;
-        else if (str == "healstuncombo")
-            return healStunComboTimer;
-        else if (str == "reflect")
-            return reflectTimer;
-        else if (str == "atkdash")
-            return atkSimTimer;
-        else if (str == "absorb")
-            return absorbTimer;
-        else
-            return absorbSimTimer;
+        switch(str)
+        {
+            case "attack":
+                return longATKTimer;
+            case "healstun":
+                return healStunTimer;
+            case "healstuncombo":
+                return healStunComboTimer;
+            case "reflect":
+                return reflectTimer;
+            case "atksim":
+                return atkSimTimer;
+            case "absorb":
+                return absorbTimer;
+            default:
+                return absorbSimTimer;
+        }
     }
 
     public float GetCooldown(string str)
     {
-        if (str == "attack")
-            return LONGATKCOOLDOWN;
-        else if (str == "healstun")
-            return HEALSTUNCOOLDOWN;
-        else if (str == "healstuncombo")
-            return HEALSTUNCOMBOCOOLDOWN;
-        else if (str == "reflect")
-            return REFLECTCOOLDOWN;
-        else if (str == "atkdash")
-            return ATKSIMCOOLDOWN;
-        else if (str == "absorb")
-            return ABSORBCOOLDOWN;
-        else
-            return ABSORBSIMCOOLDOWN;
+        switch(str)
+        {
+            case "attack":
+                return LONGATKCOOLDOWN;
+            case "healstun":
+                return HEALSTUNCOOLDOWN;
+            case "healstuncombo":
+                return HEALSTUNCOMBOCOOLDOWN;
+            case "reflect":
+                return REFLECTCOOLDOWN;
+            case "atksim":
+                return ATKSIMCOOLDOWN;
+            case "absorb":
+                return ABSORBCOOLDOWN;
+            default:
+                return ABSORBSIMCOOLDOWN;
+        }
     }
 
     #endregion

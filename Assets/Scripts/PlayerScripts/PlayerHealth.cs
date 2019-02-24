@@ -5,12 +5,18 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [Header("Editor Variables")]
     public Image playerHealthBar;
+    
+    [Header("If the Player is Alive")]
     public bool isAlive = true;
+
+    [Header("Public Health Variables")]
     public float maxPlayerHealth = 100f;
     public float playerHealth = 100f;
     private RespawnManager respawnManagerInfo;
 
+    [Header("Audio Source")]
     public AudioSource playerHealthSource;
     public AudioClip healPlayerSound;
     public AudioClip damagePlayerSound;
