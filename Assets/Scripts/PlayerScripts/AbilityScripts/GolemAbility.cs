@@ -5,6 +5,7 @@ using UnityEngine;
 public class GolemAbility : MonoBehaviour {
 
 	public float golemHealth = 15f;
+	public bool canTakeDamage = true;
 	public float timeTillCharge = .65f;
 
 	[Space(10)]
@@ -47,15 +48,12 @@ public class GolemAbility : MonoBehaviour {
 		charging = true;
 		while(charging)
 		{
+			print(chargeSlowRate);
 			transform.Translate(Vector3.up * Time.deltaTime * startingChargeSpeed);
 			startingChargeSpeed -= chargeSlowRate;
 
-			if(startingChargeSpeed <= startingChargeSpeed * .75f)
+			if(startingChargeSpeed <= 75)
 				chargeSlowRate *= 3;
-			else if(startingChargeSpeed <= startingChargeSpeed * .5f)
-				chargeSlowRate *= 4;
-			else if(startingChargeSpeed <= startingChargeSpeed * .25f)
-				chargeSlowRate *= 6;
 
 			if(startingChargeSpeed <= 0)
 			{
@@ -79,7 +77,7 @@ public class GolemAbility : MonoBehaviour {
 		{
 			col.GetComponent<BossHealth>().DealDamage(damageAmount);
 		}
-		else if(col.gameObject.GetComponent<ProjectileDamage>() != null)
+		else if(col.gameObject.GetComponent<ProjectileDamage>() != null && canTakeDamage)
 		{
 			golemHealth -= col.gameObject.GetComponent<ProjectileDamage>().projectileDamage;
 			if(golemHealth <= 0)

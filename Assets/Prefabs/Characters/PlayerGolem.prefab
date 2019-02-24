@@ -100,9 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   golemHealth: 15
+  canTakeDamage: 1
   timeTillCharge: 0.5
   startingChargeSpeed: 100
-  chargeSlowRate: 1
+  chargeSlowRate: 0.35
   damageAmount: 3
   growthRate: 0.04
 --- !u!212 &212924279469635286

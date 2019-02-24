@@ -48,7 +48,7 @@ public class PlayerAbilities : MonoBehaviour {
 	// private bool isBurst;
 	// private bool evadeCalled;
 
-	private List<string> lastAttacks = new List<string>();
+	public List<string> lastAttacks = new List<string>();
 	private List<string> ritualList = new List<string>();
 
     [Space(10)]
@@ -68,9 +68,12 @@ public class PlayerAbilities : MonoBehaviour {
 	public int leftMouseAbility = 1;
 	public int rightMouseAbility = 2;
 	public int keyboardAbility = 3;
-	public int comboOne = 1;
-	public int comboTwo = 2;
-	public int comboThree = 3;
+
+    //Constant combo variables
+	private const int ATTACKSIM = 1;
+	private const int ABSORB = 2;
+	private const int ABSORBSIM = 3;
+    private const int HEALSTUNCOMBO = 4;
 
 	private void Start()
 	{
@@ -129,7 +132,6 @@ public class PlayerAbilities : MonoBehaviour {
 		if(Input.GetKey(KeyCode.Mouse0))
 		{
 			handlers.AbilityChecker(leftMouseAbility, false, false);
-			AttackArrayHandler("Projectile", lastAttacks);
         }
 
 		//Right Click Ability
@@ -139,14 +141,12 @@ public class PlayerAbilities : MonoBehaviour {
             // reflectAudio.Play();
             // Invoke("StopReflectAudioSound", reflectAudio.clip.length);
             handlers.AbilityChecker(rightMouseAbility, false, false);
-			AttackArrayHandler("Self", lastAttacks);
 		}
 
 		//E or F Ability
 		if(Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.E))
 		{
 			handlers.AbilityChecker(keyboardAbility, false, false);
-			AttackArrayHandler("Zone", lastAttacks);
 		}
 
 		//Evade
@@ -201,19 +201,19 @@ public class PlayerAbilities : MonoBehaviour {
 
 		if (ritualList.Count == 2)
         {
-            if (ritualList.Contains("Projectile") && ritualList.Contains("Zone"))
+            if (ritualList.Contains("MagicMissile") && ritualList.Contains("HealStun"))
             {
-            	handlers.AbilityChecker(comboOne, true, false);
+            	handlers.AbilityChecker(ATTACKSIM, true, false);
                 ritualList.Clear();
             }
-            else if (ritualList.Contains("Projectile") && ritualList.Contains("Self"))
+            else if (ritualList.Contains("MagicMissile") && ritualList.Contains("Reflect"))
             {
-            	handlers.AbilityChecker(comboThree, true, false);
+            	handlers.AbilityChecker(ABSORBSIM, true, false);
                 ritualList.Clear();
             }
-            else if (ritualList.Contains("Self") && ritualList.Contains("Zone"))
+            else if (ritualList.Contains("HealStun") && ritualList.Contains("Reflect"))
             {
-	        	handlers.AbilityChecker(comboTwo, true, false);
+	        	handlers.AbilityChecker(ABSORB, true, false);
                 ritualList.Clear();
             }
             else
@@ -229,19 +229,19 @@ public class PlayerAbilities : MonoBehaviour {
 
 	private void BurstCast()
 	{
-		if (lastAttacks.Contains("Projectile") && lastAttacks.Contains("Zone") && burstTimer >= BURSTCOOLDOWN)
+		if (lastAttacks.Contains("MagicMissile") && lastAttacks.Contains("HealStun") && burstTimer >= BURSTCOOLDOWN)
         {
-            handlers.AbilityChecker(comboOne, true, true);
+            handlers.AbilityChecker(ATTACKSIM, true, true);
             burstTimer = 0;
         }
-        else if(lastAttacks.Contains("Projectile") && lastAttacks.Contains("Self") && burstTimer >= BURSTCOOLDOWN)
+        else if(lastAttacks.Contains("MagicMissile") && lastAttacks.Contains("Reflect") && burstTimer >= BURSTCOOLDOWN)
         {
-            handlers.AbilityChecker(comboThree, true, true);
+            handlers.AbilityChecker(ABSORBSIM, true, true);
             burstTimer = 0;
         }
-        else if(lastAttacks.Contains("Self") && lastAttacks.Contains("Zone") && burstTimer >= BURSTCOOLDOWN)
+        else if(lastAttacks.Contains("Reflect") && lastAttacks.Contains("HealStun") && burstTimer >= BURSTCOOLDOWN)
         {
-            handlers.AbilityChecker(comboTwo, true, true);
+            handlers.AbilityChecker(ABSORB, true, true);
             burstTimer = 0;
         }
         else
@@ -259,7 +259,7 @@ public class PlayerAbilities : MonoBehaviour {
 	#region Handlers
 	
 	//Handles the Attack Array for the Burst Casting
-	private void AttackArrayHandler(string newAttack, List<string> list)
+	public void AttackArrayHandler(string newAttack, List<string> list)
     {
         if(!list.Contains(newAttack))
         {
@@ -271,6 +271,44 @@ public class PlayerAbilities : MonoBehaviour {
         }
     }
 
+    //Handles the Inputs for the RitualCasting System
+    private void InputHandler()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if(leftMouseAbility == 1)
+            {
+                AttackArrayHandler("MagicMissile", ritualList);
+            }
+            else
+            {
+                AttackArrayHandler("Golem", ritualList);
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if(rightMouseAbility == 2)
+            {
+                AttackArrayHandler("Reflect", ritualList);
+            }
+            else
+            {
+                AttackArrayHandler("AbsorbExplode", ritualList);
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.F))
+        {
+            if(keyboardAbility == 3)
+            {
+                AttackArrayHandler("HealStun", ritualList);
+            }
+            else
+            {
+                AttackArrayHandler("ProjectileSplit", ritualList);
+            }
+        }
+    }
+
     //TODO: Maybe change to 13 - player layer
     public void ResetPhysicsLayer()
     {
@@ -279,23 +317,6 @@ public class PlayerAbilities : MonoBehaviour {
             gameObject.layer = 13;//reset's the player's physics layer.
         }
         state = State.IDLE;
-    }
-
-    //Handles the Inputs for the RitualCasting System
-	private void InputHandler()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            AttackArrayHandler("Projectile", ritualList);
-        }
-        else if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            AttackArrayHandler("Self", ritualList);
-        }
-        else if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.F))
-        {
-            AttackArrayHandler("Zone", ritualList);
-        }
     }
 
     private void TimerHandlers()
