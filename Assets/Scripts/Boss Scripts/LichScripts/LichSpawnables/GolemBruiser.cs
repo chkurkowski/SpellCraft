@@ -5,11 +5,11 @@ using UnityEngine;
 public class GolemBruiser : MonoBehaviour
 {
     private BossHealth lichBossHealth;
+    private LichAttacks lichBossAttacks;
 
-
-    public float golemHealth = 50f;
-    public float golemHealthMaximum = 50f;
-    public float golemDeathDamage = 15f;
+    public float golemHealth = 10f;
+    public float golemHealthMaximum = 10f;
+    public float golemDeathDamage = 10f;
     private bool canFacePlayer = true;
 
 
@@ -31,6 +31,7 @@ public class GolemBruiser : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        lichBossAttacks = GameObject.Find("Lich").GetComponent<LichAttacks>();
         lichBossHealth = GameObject.Find("Lich").GetComponent<BossHealth>();
         player = GameObject.Find("Player");
         criticalSpot.SetActive(false);
@@ -48,7 +49,7 @@ public class GolemBruiser : MonoBehaviour
         if (golemHealth <= 0)
         {
             golemHealth = golemHealthMaximum;
-
+            transform.position = lichBossAttacks.golemOneSpawn.position;
             lichBossHealth.DealDamage(golemDeathDamage);
             Debug.Log("Lich should be damaged");
             gameObject.SetActive(false);
