@@ -44,12 +44,14 @@ public class BossMovement : MonoBehaviour
 
     private void Update()
     {
-        if (bossAttackInfo.isAttacking)
+
+        if(bossAttackInfo.isAttacking)
         {
             SHOULDMOVE = false;
             moveState = MoveState.IDLE;
         }
-        else if (bossAttackInfo.isAttacking == false)
+
+        else if(bossAttackInfo.isAttacking == false)
         {
             SHOULDMOVE = true;
         }

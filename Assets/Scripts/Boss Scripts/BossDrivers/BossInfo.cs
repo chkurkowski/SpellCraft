@@ -45,6 +45,10 @@ public class BossInfo : MonoBehaviour
     private void Awake()
     {
         bossHealthInfo = gameObject.GetComponent<BossHealth>();
+        //if(!isActivated)
+       // {
+           //bossHealthInfo.HealthBarParent.SetActive(false);
+       // }
     }
 
     void Start ()
@@ -64,6 +68,10 @@ public class BossInfo : MonoBehaviour
     private void Update()
     {
         playerLocation = GameObject.Find("Player").GetComponent<Transform>();
+       if (isActivated)
+       {
+            bossHealthInfo.HealthBarParent.SetActive(true);
+       }
     }
 
     /// ///////////////////////////////////////STUN STUFF/FUNCTIONS
