@@ -140,13 +140,17 @@ public class LichAttacks : MonoBehaviour
         if (bossInfoInfo.isMad)
         {
             golemTwo.SetActive(true);
+            golemTwo.transform.position = golemTwoSpawn.position;
         }
         else if (bossInfoInfo.isEnraged)
         {
             golemTwo.SetActive(true);
+            golemTwo.transform.position = golemTwoSpawn.position;
             golemThree.SetActive(true);
+            golemThree.transform.position = golemThreeSpawn.position;
         }
         golemOne.SetActive(true);
+        golemOne.transform.position = golemOneSpawn.position;
         golemHex.SetActive(true);
     }
 

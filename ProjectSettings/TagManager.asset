@@ -18,6 +18,7 @@ TagManager:
   - Vortex
   - LaserEndPoint
   - HealStun
+  - EnemyReflect
   layers:
   - Default
   - TransparentFX

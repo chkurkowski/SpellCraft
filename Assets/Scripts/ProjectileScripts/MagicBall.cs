@@ -10,6 +10,7 @@ public class MagicBall : MonoBehaviour {
     public bool firedFromPlayer = true;
     public float magicBallDamage;
     public float magicBallSpeed = 75;
+    private bool reflected = false;
 
     private void Start()
     {
@@ -23,6 +24,11 @@ public class MagicBall : MonoBehaviour {
         {
             transform.Translate(Vector2.up * Time.deltaTime * magicBallSpeed);
         }
+
+        if(reflected)
+        {
+            transform.Translate(Vector2.up * Time.deltaTime * magicBallSpeed * -1);
+        }
     }
 
     // Use this for initialization
@@ -34,10 +40,17 @@ public class MagicBall : MonoBehaviour {
           //  Debug.Log("PLAYER PROJECTILE HIT UNTAGGED OBJECT ");
             Destroy(gameObject);
         }
+        else if (col.gameObject.tag == "EnemyReflect")
+        {
+            Debug.Log("enemy reflect should occur");
+            reflected = true;
+            gameObject.tag = "EnemyProjectile";
+            gameObject.layer = 9; //changes physics layers, do not touch or I stab you
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0);
+        }
         if (col.GetComponent<Collider2D>().transform.tag == "Boss")
         {
-            //Do damage
-            // print("Hit: 5 damage");
+       
             Destroy(gameObject);
         }
         else if (col.gameObject.tag == "Vortex" || col.gameObject.tag == "EnemyProjectile")
@@ -53,5 +66,6 @@ public class MagicBall : MonoBehaviour {
             }
 
         }
+       
     }
 }
