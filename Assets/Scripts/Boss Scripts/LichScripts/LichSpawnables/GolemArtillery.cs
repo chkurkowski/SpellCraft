@@ -10,6 +10,8 @@ public class GolemArtillery : MonoBehaviour {
     public float golemDeathDamage = 15f;
     public bool canFacePlayer = true;
 
+
+    private GameObject player;
     private Vector3 vectorToTarget;
     private float angle;
     private Quaternion rotAngle;
@@ -18,8 +20,8 @@ public class GolemArtillery : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        player = GameObject.Find("Player");
+    }
 	
 	// Update is called once per frame
 	void Update () {
