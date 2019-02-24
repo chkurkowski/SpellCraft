@@ -2160,8 +2160,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114772795986711278, guid: bfb3d6c89800ff94797627a25094e934,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: laser
       value: 
       objectReference: {fileID: 0}
@@ -2199,10 +2198,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1305148279378340, guid: bfb3d6c89800ff94797627a25094e934, type: 2}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 114772795986711278, guid: bfb3d6c89800ff94797627a25094e934, type: 2}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: bfb3d6c89800ff94797627a25094e934, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &96802309 stripped
