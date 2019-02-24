@@ -162,6 +162,16 @@ public class LichAttacks : MonoBehaviour
     {
         corpsePillarParent.SetActive(true);
         corpseHex.SetActive(true);
+
+        if (bossInfoInfo.isMad)
+        {
+            
+        }
+        else if (bossInfoInfo.isEnraged)
+        {
+        
+        }
+       
     }
 
     #endregion
