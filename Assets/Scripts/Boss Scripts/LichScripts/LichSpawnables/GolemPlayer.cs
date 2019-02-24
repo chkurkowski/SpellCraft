@@ -21,6 +21,9 @@ public class GolemPlayer : MonoBehaviour
 
     public bool canAttack = true;
     public bool canReflect = true;
+    public bool isMoving = false;
+    public float randomMoveFrequency = 1f;
+    public float moveSpeed = 10f;
 
     #region FacePlayer Variables
     private GameObject player;
@@ -62,6 +65,10 @@ public class GolemPlayer : MonoBehaviour
                 FireProjectile();
                 attackTimer = 0;
                 
+            }
+            if(!isMoving)
+            {
+
             }
         }
 
@@ -110,6 +117,44 @@ public class GolemPlayer : MonoBehaviour
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
         }
+    }
+
+    public void Move()
+    {
+        isMoving = true;
+       
+            InvokeRepeating("RandomMovement", 0, randomMoveFrequency);
+        
+    }
+
+    public void RandomMovement()
+    {
+        Vector3 dir = player.transform.position - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
+
+        int randDirection = Random.Range(0, 4);
+        if (randDirection == 0)
+        {
+            //Debug.Log("Boss moves towards player.");
+            gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * moveSpeed, ForceMode2D.Impulse);
+        }
+        else if (randDirection == 1)
+        {
+            //Debug.Log("Boss moves away from player.");
+            gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * moveSpeed * -1, ForceMode2D.Impulse);
+        }
+        else if (randDirection == 2)
+        {
+            //Debug.Log("Boss strafes right.");
+            gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right * moveSpeed, ForceMode2D.Impulse);
+        }
+        else if (randDirection >= 3)
+        {
+            //Debug.Log("Boss strafes left.");
+            gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right * moveSpeed * -1, ForceMode2D.Impulse);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -11,6 +11,7 @@ public class MagicBall : MonoBehaviour {
     public float magicBallDamage;
     public float magicBallSpeed = 75;
     private bool reflected = false;
+    private bool canReflect = true;
 
     private void Start()
     {
@@ -24,9 +25,10 @@ public class MagicBall : MonoBehaviour {
         {
             transform.Translate(Vector2.up * Time.deltaTime * magicBallSpeed);
         }
-        else if(reflected)
+        else if(reflected && canReflect)
         {
-            transform.Translate(Vector2.down * Time.deltaTime * magicBallSpeed);
+            canReflect = false;
+            gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity * -1;
         }
     }
 
