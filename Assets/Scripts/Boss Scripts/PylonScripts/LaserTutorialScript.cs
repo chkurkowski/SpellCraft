@@ -15,7 +15,7 @@ public class LaserTutorialScript : MonoBehaviour
     {
         lineRender = GetComponent<LineRenderer>();
         lineRender.useWorldSpace = true;
-        reflectHit = GameObject.Find("Reflect").GetComponent<Transform>();
+        // reflectHit = GameObject.Find("Reflect").GetComponent<Transform>();
     }
 	
 	// Update is called once per frame

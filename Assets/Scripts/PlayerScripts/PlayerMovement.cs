@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public PlayerHealth health;
-    public AbilityHandler handler;
-    public PlayerAbilities abilities;
-    public Rigidbody2D playerRigidbody;
+    private PlayerHealth health;
+    private AbilityHandler handler;
+    private PlayerAbilities abilities;
+    private Rigidbody2D playerRigidbody;
     public float horizontalMovement;
     public float verticalMovement;
+
+    [Header("Movement Variables")]
     public float movementSpeed = 5;
     public float slowedSpeed;
     public float rotSpeed = 25f;

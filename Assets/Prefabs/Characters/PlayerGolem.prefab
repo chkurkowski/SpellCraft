@@ -22,10 +22,10 @@ GameObject:
   - component: {fileID: 212924279469635286}
   - component: {fileID: 50262681656410172}
   - component: {fileID: 61978791731321088}
-  - component: {fileID: 114906136623906218}
+  - component: {fileID: 114882484897652174}
   m_Layer: 0
-  m_Name: Simulacrum
-  m_TagString: Simulacrum
+  m_Name: PlayerGolem
+  m_TagString: Golem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1756307218520016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 347.01892, y: -231.74913, z: -5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12}
   m_EdgeRadius: 0
---- !u!114 &114906136623906218
+--- !u!114 &114882484897652174
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,15 +96,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1756307218520016}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bd1dfe7f57b1405e8cee0211fc71c51, type: 3}
+  m_Script: {fileID: 11500000, guid: f6636ba186b5d4c6cba6375ed594b281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireball: {fileID: 1269839615260892, guid: ccf371fb7d5d54c62b0619b9ac65ffdf, type: 2}
-  state: 0
-  atkSpeed: 80
-  alive: 1
-  rotSpeed: 25
-  type: Attack
+  lifetime: 2
+  timeTillCharge: 0.5
+  startingChargeSpeed: 100
+  chargeSlowRate: 2
+  growthRate: 0.025
 --- !u!212 &212924279469635286
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -141,7 +140,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 77164b88dd40f3f4d8961a33ae98ddfc, type: 3}
-  m_Color: {r: 0.36320752, g: 0.40496224, b: 1, a: 1}
+  m_Color: {r: 0.36470592, g: 0.9508355, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
