@@ -51,16 +51,16 @@ public class GolemAbility : MonoBehaviour {
 			startingChargeSpeed -= chargeSlowRate;
 
 			if(startingChargeSpeed <= startingChargeSpeed * .75f)
-				chargeSlowRate *= 2;
+				chargeSlowRate *= 3;
 			else if(startingChargeSpeed <= startingChargeSpeed * .5f)
 				chargeSlowRate *= 4;
 			else if(startingChargeSpeed <= startingChargeSpeed * .25f)
-				chargeSlowRate *= 4;
+				chargeSlowRate *= 6;
 
 			if(startingChargeSpeed <= 0)
 			{
 				charging = false;
-				Invoke("Destroy", 1f);
+				Invoke("Destroy", .5f);
 			}
 			yield return null;
 		}

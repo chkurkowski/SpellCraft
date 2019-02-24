@@ -102,7 +102,7 @@ MonoBehaviour:
   golemHealth: 15
   timeTillCharge: 0.5
   startingChargeSpeed: 100
-  chargeSlowRate: 0.75
+  chargeSlowRate: 1
   damageAmount: 3
   growthRate: 0.04
 --- !u!212 &212924279469635286
