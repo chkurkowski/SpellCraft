@@ -113,7 +113,7 @@ public class HealStunHandler : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Projectile")
+        if(col.gameObject.tag == "Projectile" || col.gameObject.tag == "PlayerGolem")
         {
             if(StunAbsorb())
                 Destroy(col.gameObject);

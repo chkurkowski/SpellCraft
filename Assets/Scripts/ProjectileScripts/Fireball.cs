@@ -74,11 +74,18 @@ public class Fireball : MonoBehaviour {
         {
             //do nothing
         }
-              
+        else if(col.gameObject.GetComponent<GolemAbility>() != null)
+        {
+            if(col.gameObject.GetComponent<GolemAbility>().canTakeDamage)
+            {
+                Destroy(gameObject);
+            }
+        }  
         else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger" || gameObject.tag != "Projectile")
         {
             Debug.Log(gameObject.name + " was destroyed by " + col.gameObject.name);
             Destroy(gameObject);
         }
+
     }
 }

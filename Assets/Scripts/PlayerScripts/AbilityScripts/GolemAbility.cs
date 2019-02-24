@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class GolemAbility : MonoBehaviour {
 
-	public float lifetime = 2f;
-	public float timeTillCharge = .5f;
+	public float golemHealth = 15f;
+	public bool canTakeDamage = true;
+	public float timeTillCharge = .65f;
 
 	[Space(10)]
 
 	public float startingChargeSpeed = 100f;
 	public float chargeSlowRate = 1f;
+
+	[Space(10)]
+
+	public float damageAmount = 10f;
 
 	public float growthRate = .02f;
 
@@ -43,19 +48,17 @@ public class GolemAbility : MonoBehaviour {
 		charging = true;
 		while(charging)
 		{
+			print(chargeSlowRate);
 			transform.Translate(Vector3.up * Time.deltaTime * startingChargeSpeed);
 			startingChargeSpeed -= chargeSlowRate;
 
-			if(startingChargeSpeed <= startingChargeSpeed * .75f)
-				chargeSlowRate *= 2;
-			else if(startingChargeSpeed <= startingChargeSpeed * .5f)
-				chargeSlowRate *= 2;
-			else if(startingChargeSpeed <= startingChargeSpeed * .25f)
-				chargeSlowRate *= 2;
+			if(startingChargeSpeed <= 75)
+				chargeSlowRate *= 3;
 
 			if(startingChargeSpeed <= 0)
 			{
 				charging = false;
+				Invoke("Destroy", .5f);
 			}
 			yield return null;
 		}
@@ -63,11 +66,22 @@ public class GolemAbility : MonoBehaviour {
 		yield return null;
 	}
 
+	private void Destroy()
+	{
+		Destroy(gameObject);
+	}
+
 	private void OnTriggerEnter2D(Collider2D col)
 	{
-		if(col.gameObject.tag == "Boss")
+		if(col.gameObject.tag == "Boss" && charging)
 		{
-			//Do Damage
+			col.GetComponent<BossHealth>().DealDamage(damageAmount);
+		}
+		else if(col.gameObject.GetComponent<ProjectileDamage>() != null && canTakeDamage)
+		{
+			golemHealth -= col.gameObject.GetComponent<ProjectileDamage>().projectileDamage;
+			if(golemHealth <= 0)
+				Destroy(gameObject);
 		}
 	}
 }

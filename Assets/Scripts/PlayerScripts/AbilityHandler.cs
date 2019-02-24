@@ -38,8 +38,9 @@ public class AbilityHandler : MonoBehaviour {
     public float LONGATKCOOLDOWN = .2f;
     public float HEALSTUNCOOLDOWN = 6f;
     public float REFLECTCOOLDOWN = 3f;
-    public float ENERGYGOLEMCOOLDOWN = 3f;
+    public float ENERGYGOLEMCOOLDOWN = 2f;
     public float HEALSTUNCOMBOCOOLDOWN = 6f;
+    public float PROJECTILESPLITCOOLDOWN = 6f;
     public float ATKSIMCOOLDOWN = 2f;
     public float ABSORBCOOLDOWN = 6f;
     public float ABSORBSIMCOOLDOWN = 12f;
@@ -47,8 +48,10 @@ public class AbilityHandler : MonoBehaviour {
 
     public float ABSORBEND = 3f;
 
-    private float longATKTimer, energyGolemTimer, healStunTimer, healStunComboTimer, reflectTimer, 
-    atkSimTimer, absorbTimer, absorbSimTimer, burstTimer;
+    private float longATKTimer, energyGolemTimer, healStunTimer, projectileSplitTimer, healStunComboTimer,
+    reflectTimer, atkSimTimer, absorbTimer, absorbSimTimer, burstTimer;
+
+    private PlayerAbilities abilities;
 
     // Use this for initialization
     void Start () {
@@ -61,6 +64,9 @@ public class AbilityHandler : MonoBehaviour {
         absorbSimTimer = ABSORBSIMCOOLDOWN;
         burstTimer = BURSTCOOLDOWN;
         energyGolemTimer = ENERGYGOLEMCOOLDOWN;
+        projectileSplitTimer = PROJECTILESPLITCOOLDOWN;
+
+        abilities = GetComponent<PlayerAbilities>();
 
         StartCoroutine(LightUpdate());
     }
@@ -92,6 +98,11 @@ public class AbilityHandler : MonoBehaviour {
                         break;
                     case 4:
                         EnergyGolem();
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        ProjectileSplit();
                         break;
                 }
                 break;
@@ -129,6 +140,7 @@ public class AbilityHandler : MonoBehaviour {
             direction.Normalize();
             GameObject fb = Instantiate(magicMissile, transform.position, Quaternion.identity);
             fb.GetComponent<Rigidbody2D>().velocity = (direction + new Vector2(tempX, 0)) * atkSpeed;
+            abilities.AttackArrayHandler("MagicMissile", abilities.lastAttacks);
             longATKTimer = 0;
 
             abilityHandlerSource.clip = magicMissileSound;
@@ -142,6 +154,7 @@ public class AbilityHandler : MonoBehaviour {
         if(energyGolemTimer >= ENERGYGOLEMCOOLDOWN)
         {
             GameObject sim = Instantiate(golem, transform.position + (transform.up * 8), transform.rotation);
+            abilities.AttackArrayHandler("Golem", abilities.lastAttacks);
             energyGolemTimer = 0f;
         }
     }
@@ -155,6 +168,7 @@ public class AbilityHandler : MonoBehaviour {
             reflectAudio.Play();
             
             reflect.SetActive(true);
+            abilities.AttackArrayHandler("Reflect", abilities.lastAttacks);
             reflectTimer = 0;
            // reflectAudio.Stop();
         }
@@ -167,7 +181,17 @@ public class AbilityHandler : MonoBehaviour {
         if(healStunTimer >= HEALSTUNCOOLDOWN)
         {
             Instantiate(healStun, cursorInWorldPos, transform.rotation);
+            abilities.AttackArrayHandler("HealStun", abilities.lastAttacks);
             healStunTimer = 0;
+        }
+    }
+
+    private void ProjectileSplit()
+    {
+        if(projectileSplitTimer >= PROJECTILESPLITCOOLDOWN)
+        {
+            abilities.AttackArrayHandler("HealStun", abilities.lastAttacks);
+            projectileSplitTimer = 0;
         }
     }
 
@@ -295,6 +319,7 @@ public class AbilityHandler : MonoBehaviour {
         absorbSimTimer += Time.deltaTime;
         burstTimer += Time.deltaTime;
         energyGolemTimer += Time.deltaTime;
+        projectileSplitTimer += Time.deltaTime;
 
         if (reflectTimer >= 2f)
         {
