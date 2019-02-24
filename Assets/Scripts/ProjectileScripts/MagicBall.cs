@@ -11,6 +11,7 @@ public class MagicBall : MonoBehaviour {
     public float magicBallDamage;
     public float magicBallSpeed = 75;
     private bool reflected = false;
+    private bool canReflect = true;
 
     private void Start()
     {
@@ -20,14 +21,14 @@ public class MagicBall : MonoBehaviour {
 
     void Update()
     {
-        if(!firedFromPlayer)
+        if(!firedFromPlayer && !reflected)
         {
             transform.Translate(Vector2.up * Time.deltaTime * magicBallSpeed);
         }
-
-        if(reflected)
+        else if(reflected && canReflect)
         {
-            transform.Translate(Vector2.up * Time.deltaTime * magicBallSpeed * -1);
+            canReflect = false;
+            gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity * -1;
         }
     }
 
@@ -50,7 +51,7 @@ public class MagicBall : MonoBehaviour {
         }
         if (col.GetComponent<Collider2D>().transform.tag == "Boss")
         {
-       
+           // Debug.Log(gameObject.name + " was destroyed by Boss:" + col.gameObject.name);
             Destroy(gameObject);
         }
         else if (col.gameObject.tag == "Vortex" || col.gameObject.tag == "EnemyProjectile")
@@ -58,10 +59,11 @@ public class MagicBall : MonoBehaviour {
            
             //do nothing
         }
-        else if (col.gameObject.tag != "Player" && col.gameObject.tag != "Reflect" && col.gameObject.tag != "Simulacrum")
+        else if (col.gameObject.tag != "Player" && col.gameObject.tag != "Reflect" && col.gameObject.tag != "Simulacrum" && col.gameObject.tag != "EnemyReflect" && col.gameObject.tag != "CameraTrigger")
         {
-            if (col.gameObject.tag != "Boss" || col.gameObject.tag != "CameraTrigger" || col.gameObject.tag != "HealStun")
+            if (col.gameObject.tag != "Boss" || col.gameObject.tag != "CameraTrigger" || col.gameObject.tag != "HealStun" )
             {
+                //Debug.Log(gameObject.name + " was destroyed by " + col.gameObject.name + "with tag :" + col.gameObject.tag );
                 Destroy(gameObject);
             }
 

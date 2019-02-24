@@ -2160,8 +2160,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114772795986711278, guid: bfb3d6c89800ff94797627a25094e934,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: laser
       value: 
       objectReference: {fileID: 0}
@@ -2199,10 +2198,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1305148279378340, guid: bfb3d6c89800ff94797627a25094e934, type: 2}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 114772795986711278, guid: bfb3d6c89800ff94797627a25094e934, type: 2}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: bfb3d6c89800ff94797627a25094e934, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &96802309 stripped
@@ -33672,6 +33671,7 @@ GameObject:
   - component: {fileID: 2064697480}
   - component: {fileID: 2064697482}
   - component: {fileID: 2064697483}
+  - component: {fileID: 2064697485}
   m_Layer: 0
   m_Name: golemPlayer
   m_TagString: Boss
@@ -33703,7 +33703,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -33879,6 +33879,10 @@ MonoBehaviour:
   golemReflectRecharge: 6
   canAttack: 1
   canReflect: 1
+  isMoving: 0
+  randomMoveFrequency: 0.01
+  moveSpeed: 5
+  moveDuration: 3
 --- !u!114 &2064697483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33894,6 +33898,26 @@ MonoBehaviour:
   topLimit: {fileID: 874124128}
   rightLimit: {fileID: 29913014}
   leftLimit: {fileID: 343009983}
+--- !u!50 &2064697485
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2064697478}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &2068571509
 GameObject:
   m_ObjectHideFlags: 0

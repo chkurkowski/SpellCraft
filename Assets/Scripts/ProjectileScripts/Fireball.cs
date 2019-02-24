@@ -26,6 +26,7 @@ public class Fireball : MonoBehaviour {
         }
         else if(reflected)
         {
+            //transform.Rotate(0, 0, 180);
             transform.Translate(Vector3.left * Time.deltaTime * fireBallSpeed);
         }
        
@@ -50,7 +51,7 @@ public class Fireball : MonoBehaviour {
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(fireBallDamage);
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= .05f;
-            Debug.Log(gameObject.name + " was destroyed by " + col.gameObject.name);
+        
             Destroy(gameObject);
         }
         else if (col.gameObject.tag == "Simulacrum")
@@ -63,7 +64,7 @@ public class Fireball : MonoBehaviour {
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().HealPlayer(fireBallDamage/2);
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .025f;
-            Debug.Log(gameObject.name + " was destroyed by " + col.gameObject.name);
+       
             Destroy(gameObject);
         }
         else if(col.gameObject.tag == "Boss" && gameObject.tag == "EnemyProjectile")
@@ -83,7 +84,7 @@ public class Fireball : MonoBehaviour {
         }  
         else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger" || gameObject.tag != "Projectile")
         {
-            Debug.Log(gameObject.name + " was destroyed by " + col.gameObject.name);
+       
             Destroy(gameObject);
         }
 
