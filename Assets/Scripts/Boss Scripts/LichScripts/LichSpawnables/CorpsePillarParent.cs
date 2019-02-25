@@ -83,11 +83,10 @@ public class CorpsePillarParent : MonoBehaviour
         pillarThree.SetActive(true);
        if(isEnraged)
         {
-         //   Debug.Log("Parent enraged function happened");
+            //Debug.Log("Parent enraged function happened");
             pillarOne.GetComponent<CorpsePillar>().SetEnraged(true);
             pillarTwo.GetComponent<CorpsePillar>().SetEnraged(true);
             pillarThree.GetComponent<CorpsePillar>().SetEnraged(true);
-
         }
     }
 
