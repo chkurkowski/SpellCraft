@@ -43,6 +43,11 @@ public class BossHealth : MonoBehaviour
             print("you win woohoo!");
         }
         healthBar.fillAmount = (bossHealth / 100f);
+
+        if(bossHealth > bossMaxHealth)
+        {
+            bossHealth = bossMaxHealth;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -93,6 +98,11 @@ public class BossHealth : MonoBehaviour
     public void DealDamage(float damageAmount)
     {
         bossHealth -= damageAmount;
+    }
+
+    public void HealBoss(float healAmount)
+    {
+        bossHealth += healAmount;
     }
 
 

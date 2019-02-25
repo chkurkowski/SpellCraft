@@ -7,6 +7,7 @@ public class Fireball : MonoBehaviour {
     private ProjectileDamage projectileDamageInfo;
     public float fireBallDamage;
     public float fireBallSpeed = 50;
+    public float lifeTime = 5f;
     private GameObject player;
     private bool reflected = false;
     public AudioSource reflectSource;
@@ -17,6 +18,7 @@ public class Fireball : MonoBehaviour {
         projectileDamageInfo = gameObject.GetComponent<ProjectileDamage>();
         fireBallDamage = projectileDamageInfo.projectileDamage;
         transform.Rotate(new Vector3(0, 0, 90));
+        Destroy(gameObject, lifeTime);
     }
     private void Update()
     {
