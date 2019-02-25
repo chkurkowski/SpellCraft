@@ -32,6 +32,7 @@ public class GolemBruiser : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+     
         colorInfo = gameObject.GetComponent<SpriteRenderer>();
         lichBossAttacks = GameObject.Find("Lich").GetComponent<LichAttacks>();
         lichBossHealth = GameObject.Find("Lich").GetComponent<BossHealth>();

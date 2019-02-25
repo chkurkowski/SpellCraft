@@ -37,6 +37,8 @@ public class CorpsePillar : MonoBehaviour
         {
             lichBossHealth.DealDamage(pillarDeathDamage);
             pillarHealth = pillarMaxHealth;
+            bloodSprayer.GetComponent<BloodSprayScript>().canSprayBlood = false;
+            bloodSprayer.SetActive(false);
             gameObject.SetActive(false);
             isEnraged = false;
 

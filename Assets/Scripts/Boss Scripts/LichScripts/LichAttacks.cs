@@ -192,8 +192,6 @@ public class LichAttacks : MonoBehaviour
     #region AttackTwo
     public void AttackTwo()
     {
-       
-
         if (bossInfoInfo.isMad)
         {
             corpsePillarParent.GetComponent<CorpsePillarParent>().isSpinning = true;
@@ -206,7 +204,6 @@ public class LichAttacks : MonoBehaviour
         corpsePillarParent.SetActive(true);
         corpseHex.SetActive(true);
         corpsePillarArt.SetActive(true);
-
     }
 
     #endregion
