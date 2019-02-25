@@ -5,6 +5,8 @@ using UnityEngine;
 public class GolemPlayer : MonoBehaviour
 {
     private BossHealth lichBossHealth;
+    private SpriteRenderer colorInfo;
+
     public float golemHealth = 10f;
     public float golemHealthMaximum = 10f;
     public float golemDeathDamage = 10f;
@@ -37,6 +39,7 @@ public class GolemPlayer : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        colorInfo = gameObject.GetComponent<SpriteRenderer>();
         golemReflect.SetActive(false);
         lichBossHealth = GameObject.Find("Lich").GetComponent<BossHealth>();
         player = GameObject.Find("Player");
@@ -51,7 +54,7 @@ public class GolemPlayer : MonoBehaviour
             golemHealth = golemHealthMaximum;
 
             lichBossHealth.DealDamage(golemDeathDamage);
-            Debug.Log("Lich should be damaged");
+          //  Debug.Log("Lich should be damaged");
             golemReflect.SetActive(false);
             canAttack = true;
             canReflect = true;
@@ -80,9 +83,7 @@ public class GolemPlayer : MonoBehaviour
 
     public void FireProjectile()
     {
-        GameObject spawnedFireBall = Instantiate(golemProjectile, golemMuzzle.position, golemMuzzle.rotation);
-
-        
+        GameObject spawnedFireBall = Instantiate(golemProjectile, golemMuzzle.position, golemMuzzle.rotation);        
     }
 
 
@@ -176,6 +177,8 @@ public class GolemPlayer : MonoBehaviour
         if (collision.tag == "Projectile")
         {
             golemHealth -= collision.gameObject.GetComponent<ProjectileDamage>().projectileDamage;
+            colorInfo.color = Color.red;
+            Invoke("ResetColor", 0.50f);
             if(canReflect)
             {
                 Reflect();
@@ -187,6 +190,13 @@ public class GolemPlayer : MonoBehaviour
     {
         yield return new WaitForSeconds(moveDuration);
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0); 
+    }
+
+
+
+    private void ResetColor()
+    {
+        colorInfo.color = Color.white;
     }
 
 }

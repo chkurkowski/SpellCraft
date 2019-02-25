@@ -5,6 +5,7 @@ using UnityEngine;
 public class LichAttacks : MonoBehaviour
 {
     private BossInfo bossInfoInfo;
+    private BossHealth bossHealthInfo;
     private BossAttacks bossAttacksInfo;
     private Animator lichAnimatorInfo;
     // Use this for initialization
@@ -27,6 +28,7 @@ public class LichAttacks : MonoBehaviour
 
     public GameObject corpsePillarParent;
     public Transform corpseParentSpawn;
+    public GameObject corpsePillarArt;
 
     [Space(40)]
     [Header("Attack Three Info")]
@@ -34,8 +36,15 @@ public class LichAttacks : MonoBehaviour
     public GameObject portal;
     public Transform portalSpawn;
 
+    [Space(40)]
+
+    public bool canCastGolem = true;
+    public bool canCastPillars = true;
+    public bool canCastPortal = true; //resets once all attacks are taken down
+
     void Start ()
     {
+        bossHealthInfo = gameObject.GetComponent<BossHealth>();
         bossInfoInfo = gameObject.GetComponent<BossInfo>();
         bossAttacksInfo = gameObject.GetComponent<BossAttacks>();
         lichAnimatorInfo = gameObject.GetComponent<Animator>();
@@ -46,17 +55,26 @@ public class LichAttacks : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		
+        if(!bossHealthInfo.GetAlive())
+        {
+            DisableObjects();
+            bossAttacksInfo.canAttack = false;
+        }
+		else if(!golemOne.activeSelf && !golemTwo.activeSelf && !golemThree.activeSelf && !corpsePillarParent.activeSelf && !portal.activeSelf)
+        {
+            canCastGolem = true;
+            canCastPillars = true;
+            canCastPortal = true;
+        }
+        
 	}
 
     public void Attack(int attackNumber)
     {
         bossAttacksInfo.EndAttack();
-
-
         if (attackNumber == 1)
         {
-            if(golemOne.activeSelf || golemTwo.activeSelf || golemThree.activeSelf)
+            if(golemOne.activeSelf || golemTwo.activeSelf || golemThree.activeSelf || !canCastGolem)
             {
                 if (!corpsePillarParent.activeSelf)
                 {
@@ -71,7 +89,7 @@ public class LichAttacks : MonoBehaviour
 
         if(attackNumber == 2)
         {
-            if(corpsePillarParent.activeSelf)
+            if(corpsePillarParent.activeSelf || !canCastPillars)
             {
                 if (!golemOne.activeSelf && !golemTwo.activeSelf && !golemThree.activeSelf)
                 {
@@ -87,7 +105,7 @@ public class LichAttacks : MonoBehaviour
 
         if(attackNumber == 3)
         {
-            if(portal.activeSelf)
+            if(portal.activeSelf || !canCastPortal)
             {
                 if (!golemOne.activeSelf && !golemTwo.activeSelf && !golemThree.activeSelf)
                 {
@@ -111,8 +129,12 @@ public class LichAttacks : MonoBehaviour
             case 1:
                 if (!golemOne.activeSelf && !golemTwo.activeSelf && !golemThree.activeSelf)
                 {
-              
-                    AttackOne();
+                    if(canCastGolem)
+                    {
+                        canCastGolem = false;
+                        AttackOne();
+                    }
+                    
                 }
                
                 break;
@@ -120,14 +142,24 @@ public class LichAttacks : MonoBehaviour
             case 2:
                 if(!corpsePillarParent.activeSelf)
                 {
-                    AttackTwo();
+                    if(canCastPillars)
+                    {
+                        canCastPillars = false;
+                        AttackTwo();
+                    }
+                   
                 }
                 break;
 
             case 3:
                 if(!portal.activeSelf)
                 {
-                    AttackThree();
+                    if(canCastPortal)
+                    {
+                        canCastPortal = false;
+                        AttackThree();
+                    }
+                   
                 }
                 break;
         }
@@ -142,7 +174,7 @@ public class LichAttacks : MonoBehaviour
             golemTwo.SetActive(true);
             golemTwo.transform.position = golemTwoSpawn.position;
         }
-        else if (bossInfoInfo.isEnraged)
+        if (bossInfoInfo.isEnraged)
         {
             golemTwo.SetActive(true);
             golemTwo.transform.position = golemTwoSpawn.position;
@@ -160,18 +192,21 @@ public class LichAttacks : MonoBehaviour
     #region AttackTwo
     public void AttackTwo()
     {
-        corpsePillarParent.SetActive(true);
-        corpseHex.SetActive(true);
+       
 
         if (bossInfoInfo.isMad)
         {
-            
+            corpsePillarParent.GetComponent<CorpsePillarParent>().isSpinning = true;
         }
-        else if (bossInfoInfo.isEnraged)
+        if (bossInfoInfo.isEnraged)
         {
-        
+            corpsePillarParent.GetComponent<CorpsePillarParent>().isSpinning = true;
+            corpsePillarParent.GetComponent<CorpsePillarParent>().isEnraged = true;
         }
-       
+        corpsePillarParent.SetActive(true);
+        corpseHex.SetActive(true);
+        corpsePillarArt.SetActive(true);
+
     }
 
     #endregion
@@ -195,6 +230,7 @@ public class LichAttacks : MonoBehaviour
 
         corpsePillarParent.transform.position = corpseParentSpawn.position;
         corpsePillarParent.SetActive(false);
+        corpsePillarArt.SetActive(false);
 
         portal.transform.position = portalSpawn.position;
         portal.SetActive(false);

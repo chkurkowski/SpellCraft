@@ -5,6 +5,7 @@ using UnityEngine;
 public class GolemArtillery : MonoBehaviour {
 
     private BossHealth lichBossHealth;
+    private SpriteRenderer colorInfo;
     public float golemHealth = 10f;
     public float golemHealthMaximum = 10f;
     public float golemDeathDamage = 10f;
@@ -31,6 +32,7 @@ public class GolemArtillery : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        colorInfo = gameObject.GetComponent<SpriteRenderer>();
         lichBossHealth = GameObject.Find("Lich").GetComponent<BossHealth>();
         player = GameObject.Find("Player");
     }
@@ -80,8 +82,16 @@ public class GolemArtillery : MonoBehaviour {
     {
         if (collision.tag == "Projectile")
         {
+            colorInfo.color = Color.red;
+            Invoke("ResetColor", 0.50f);
             golemHealth -= collision.gameObject.GetComponent<ProjectileDamage>().projectileDamage;
         }
         
+    }
+
+
+    private void ResetColor()
+    {
+        colorInfo.color = Color.white;
     }
 }
