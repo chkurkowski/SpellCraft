@@ -214,6 +214,15 @@ public class LichAttacks : MonoBehaviour
     #region AttackThree
     public void AttackThree()
     {
+        if (bossInfoInfo.isMad)
+        {
+           portal.GetComponent<Portal>().isMad = true;
+        }
+        if (bossInfoInfo.isEnraged)
+        {
+            portal.GetComponent<Portal>().isMad = true;
+            portal.GetComponent<Portal>().isEnraged = true;
+        }
         portal.SetActive(true);
         portalHex.SetActive(true);
     }
