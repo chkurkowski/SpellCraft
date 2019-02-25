@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionDamage: 15
   explosionTime: 0.3
-  explosionRate: 0.03
+  explosionRate: 0.06
 --- !u!212 &212108880975291662
 SpriteRenderer:
   m_ObjectHideFlags: 1
