@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class BloodSprayScript : MonoBehaviour
 {
-    public GameObject bloodDrop;
+    private ObjectPoolerScript objectPooler;
+    //public GameObject bloodDrop;
     public float sprayRate = .1f;
     public float spraySpread = 3f;
     public float sprayRotationRate = .01f;
     public float sprayRotationAmount = 1f;
     public float bloodSprayDuration = 2f;
     public bool canSprayBlood = false;
-    // Use this for initialization
 
+
+    // Use this for initialization
+    private void Start()
+    {
+        objectPooler = ObjectPoolerScript.Instance;
+       
+    }
     private void OnEnable()
     {
         canSprayBlood = true;
@@ -25,18 +32,18 @@ public class BloodSprayScript : MonoBehaviour
     {
         if (canSprayBlood)
         {
-            GameObject bloodOne = Instantiate(bloodDrop, transform.position, transform.rotation);
+            GameObject bloodOne = objectPooler.SpawnFromPool("BloodDrop", transform.position, transform.rotation);
             bloodOne.transform.Rotate(0, 0, Random.Range(-spraySpread, spraySpread));
 
-            GameObject bloodTwo = Instantiate(bloodDrop, transform.position, transform.rotation);
+            GameObject bloodTwo = objectPooler.SpawnFromPool("BloodDrop", transform.position, transform.rotation);
             bloodTwo.transform.Rotate(0, 0, 180);
             bloodTwo.transform.Rotate(0, 0, Random.Range(-spraySpread, spraySpread));
 
-            GameObject bloodThree = Instantiate(bloodDrop, transform.position, transform.rotation);
+            GameObject bloodThree = objectPooler.SpawnFromPool("BloodDrop", transform.position, transform.rotation);
             bloodThree.transform.Rotate(0, 0, 90);
             bloodThree.transform.Rotate(0, 0, Random.Range(-spraySpread, spraySpread));
 
-            GameObject bloodFour = Instantiate(bloodDrop, transform.position, transform.rotation);
+            GameObject bloodFour = objectPooler.SpawnFromPool("BloodDrop", transform.position, transform.rotation);
             bloodFour.transform.Rotate(0, 0, -90);
             bloodFour.transform.Rotate(0, 0, Random.Range(-spraySpread, spraySpread));
         }

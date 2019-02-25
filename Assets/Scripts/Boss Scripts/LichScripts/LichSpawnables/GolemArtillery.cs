@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GolemArtillery : MonoBehaviour {
-
+    private ObjectPoolerScript objectPooler;
     private BossHealth lichBossHealth;
     private SpriteRenderer colorInfo;
     public float golemHealth = 10f;
@@ -12,7 +12,7 @@ public class GolemArtillery : MonoBehaviour {
     public bool canFacePlayer = true;
 
 
-    public GameObject golemArtilleryProjectile;
+   // public GameObject golemArtilleryProjectile;
     public Transform artilleryMuzzle;
 
 
@@ -32,6 +32,7 @@ public class GolemArtillery : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        objectPooler = ObjectPoolerScript.Instance;
         colorInfo = gameObject.GetComponent<SpriteRenderer>();
         lichBossHealth = GameObject.Find("Lich").GetComponent<BossHealth>();
         player = GameObject.Find("Player");
@@ -45,7 +46,7 @@ public class GolemArtillery : MonoBehaviour {
             golemHealth = golemHealthMaximum;
 
             lichBossHealth.DealDamage(golemDeathDamage);
-            Debug.Log("Lich should be damaged");
+            //Debug.Log("Lich should be damaged");
             gameObject.SetActive(false);
 
         }
@@ -74,7 +75,8 @@ public class GolemArtillery : MonoBehaviour {
 
     public void FireArtillery()
     {
-        Instantiate(golemArtilleryProjectile, artilleryMuzzle.position, artilleryMuzzle.rotation);
+        objectPooler.SpawnFromPool("Bomb", artilleryMuzzle.position, artilleryMuzzle.rotation);
+       // Instantiate(golemArtilleryProjectile, artilleryMuzzle.position, artilleryMuzzle.rotation);
     }
 
 

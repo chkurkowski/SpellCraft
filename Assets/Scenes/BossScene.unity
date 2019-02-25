@@ -403,7 +403,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 136177454}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &22007359
 GameObject:
@@ -2743,7 +2743,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 136177454}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &136177453
 GameObject:
@@ -2776,7 +2776,6 @@ Transform:
   - {fileID: 148534117}
   - {fileID: 56298203}
   - {fileID: 1097288692}
-  - {fileID: 2072423993}
   - {fileID: 1945343709}
   - {fileID: 844442959}
   - {fileID: 305594336}
@@ -3067,7 +3066,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed348899e7f5774b9ee4c0f05c724ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodDrop: {fileID: 1842472863361416, guid: 15318a4ea838c0e4d97da04634bb929b, type: 2}
   sprayRate: 0.01
   spraySpread: 10
   sprayRotationRate: 0.01
@@ -4795,6 +4793,7 @@ Transform:
   - {fileID: 1544091731}
   - {fileID: 1524196452}
   - {fileID: 53616959}
+  - {fileID: 2072423993}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4986,7 +4985,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed348899e7f5774b9ee4c0f05c724ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodDrop: {fileID: 1842472863361416, guid: 15318a4ea838c0e4d97da04634bb929b, type: 2}
   sprayRate: 0.01
   spraySpread: 10
   sprayRotationRate: 0.01
@@ -5115,7 +5113,7 @@ Transform:
   m_Children:
   - {fileID: 1285100729}
   m_Father: {fileID: 136177454}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &305594337
 MonoBehaviour:
@@ -6856,7 +6854,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 136177454}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &501333899
 GameObject:
@@ -8720,7 +8718,7 @@ MonoBehaviour:
   isEnraged: 0
   pillarSpinRate: 0.01
   pillarRotateAmount: 0.3
-  healPerPillar: 3
+  healPerPillar: 2
   healTime: 15
   pillarOne: {fileID: 553270064}
   pillarTwo: {fileID: 459968873}
@@ -8748,7 +8746,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 618297447}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.036494408, y: 3.5349994, z: 143.83}
+  m_LocalPosition: {x: 0.036494408, y: 3.5349994, z: 0}
   m_LocalScale: {x: 25, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1271257347}
@@ -9123,7 +9121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed348899e7f5774b9ee4c0f05c724ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodDrop: {fileID: 1842472863361416, guid: 15318a4ea838c0e4d97da04634bb929b, type: 2}
   sprayRate: 0.01
   spraySpread: 10
   sprayRotationRate: 0.01
@@ -11445,6 +11442,14 @@ Prefab:
       propertyPath: playerHealthBar
       value: 
       objectReference: {fileID: 591008405}
+    - target: {fileID: 4322028659232838, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4912163684400386, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
   m_IsPrefabAsset: 0
@@ -12141,7 +12146,7 @@ Transform:
   m_Children:
   - {fileID: 741161582}
   m_Father: {fileID: 136177454}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &844442960
 MonoBehaviour:
@@ -12755,7 +12760,7 @@ GameObject:
   - component: {fileID: 879788906}
   m_Layer: 0
   m_Name: Portal
-  m_TagString: Boss
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12807,7 +12812,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 33
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 914030e514f1e2741b255dcc04adc8db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12832,10 +12837,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portalHealth: 15
   portalMaxHealth: 15
-  portalDeathDamage: 15
-  skeletonSpawnRate: 0
-  hellKnightSpawnRate: 0
-  infernalSoulSpawnRate: 0
+  portalDeathDamage: 20
+  skeleton: {fileID: 1060872418159752, guid: ccd12a5884c467047bef890de319f8e1, type: 2}
+  hellKnight: {fileID: 1990836263467770, guid: 60a1fa50a61458142a1905857c12f714, type: 2}
+  infernalSoul: {fileID: 1121915266437174, guid: 4c2ce0a437778c947a1d9cf0ce24e8f3,
+    type: 2}
+  skeletonSpawnRate: 1
+  hellKnightSpawnRate: 15
+  infernalSoulSpawnRate: 2
   isMad: 0
   isEnraged: 0
 --- !u!58 &879788907
@@ -14145,7 +14154,7 @@ GameObject:
   - component: {fileID: 937639890}
   m_Layer: 0
   m_Name: golemArtillery
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14361,8 +14370,6 @@ MonoBehaviour:
   golemHealthMaximum: 10
   golemDeathDamage: 10
   canFacePlayer: 1
-  golemArtilleryProjectile: {fileID: 1581581200255988, guid: 5e07e1b1b56f0a54c9510b652207fd50,
-    type: 2}
   artilleryMuzzle: {fileID: 1011986273}
   golemFireRate: 4
 --- !u!212 &937639891
@@ -16747,7 +16754,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ce4709b8087bd374e9d241fa3ee70a54, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.4}
   m_FlipX: 0
@@ -18733,7 +18740,7 @@ Transform:
   m_Children:
   - {fileID: 814657854}
   m_Father: {fileID: 136177454}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1290127423
 MonoBehaviour:
@@ -23383,6 +23390,7 @@ GameObject:
   - component: {fileID: 1603725070}
   - component: {fileID: 1603725069}
   - component: {fileID: 1603725064}
+  - component: {fileID: 1603725068}
   - component: {fileID: 1603725067}
   - component: {fileID: 1603725066}
   - component: {fileID: 1603725065}
@@ -23400,14 +23408,14 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1603725062}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.009999998, y: 4.6, z: 95.46242}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.05, y: 4.673, z: 95.46242}
   m_LocalScale: {x: 0.033476993, y: 0.033476993, z: 3.3476999}
   m_Children:
   - {fileID: 1443952141}
   m_Father: {fileID: 2073202189}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &1603725064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23721,6 +23729,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1603725068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1603725062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c02da72c0b84243b9c34bc43b9d2c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1603725069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25761,7 +25780,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1723002079}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 279.4, y: 470.11615, z: 0}
+  m_LocalPosition: {x: 242.9, y: 470.11615, z: 0}
   m_LocalScale: {x: 63.21, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2021499695}
@@ -26023,7 +26042,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 78ffb30cbcf79004abe478d65ab57a90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.4}
   m_FlipX: 0
@@ -33471,7 +33490,7 @@ Transform:
   m_Children:
   - {fileID: 920449699}
   m_Father: {fileID: 136177454}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1945343710
 MonoBehaviour:
@@ -35494,7 +35513,7 @@ GameObject:
   - component: {fileID: 2048724634}
   m_Layer: 0
   m_Name: golemBruiser
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35585,8 +35604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b829a1c7fd98e1f46964fbb272e233cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  golemHealth: 10
-  golemHealthMaximum: 10
+  golemHealth: 5
+  golemHealthMaximum: 5
   golemDeathDamage: 15
   criticalSpot: {fileID: 1066415550}
   attackRate: 5
@@ -35852,8 +35871,6 @@ MonoBehaviour:
   golemHealthMaximum: 10
   golemDeathDamage: 10
   canFacePlayer: 1
-  golemProjectile: {fileID: 1852356439421700, guid: f288824703f634f45b225f671d7c99d3,
-    type: 2}
   golemMuzzle: {fileID: 422738638}
   golemReflect: {fileID: 96802310}
   golemFireRate: 0.5
@@ -36021,11 +36038,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2072423992}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.449436, y: -120.285034, z: -19.522697}
+  m_LocalPosition: {x: 51.637028, y: -394.42285, z: -59.782463}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 136177454}
-  m_RootOrder: 6
+  m_Father: {fileID: 283578778}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2072423994
 MonoBehaviour:
@@ -36042,6 +36059,27 @@ MonoBehaviour:
   - tag: PylonLaser
     prefab: {fileID: 1937842173355384, guid: 4d0ed8c0c6e4f154d932067960ad155f, type: 2}
     size: 2500
+  - tag: Fireball
+    prefab: {fileID: 1852356439421700, guid: f288824703f634f45b225f671d7c99d3, type: 2}
+    size: 1500
+  - tag: Bomb
+    prefab: {fileID: 1581581200255988, guid: 5e07e1b1b56f0a54c9510b652207fd50, type: 2}
+    size: 40
+  - tag: MagicMissle
+    prefab: {fileID: 1269839615260892, guid: ccf371fb7d5d54c62b0619b9ac65ffdf, type: 2}
+    size: 50
+  - tag: BloodDrop
+    prefab: {fileID: 1842472863361416, guid: 15318a4ea838c0e4d97da04634bb929b, type: 2}
+    size: 1000
+  - tag: Skeleton
+    prefab: {fileID: 1060872418159752, guid: ccd12a5884c467047bef890de319f8e1, type: 2}
+    size: 100
+  - tag: HellKnight
+    prefab: {fileID: 1990836263467770, guid: 60a1fa50a61458142a1905857c12f714, type: 2}
+    size: 20
+  - tag: InfernalSoul
+    prefab: {fileID: 1121915266437174, guid: 4c2ce0a437778c947a1d9cf0ce24e8f3, type: 2}
+    size: 100
 --- !u!1 &2073202188
 GameObject:
   m_ObjectHideFlags: 0
@@ -36168,7 +36206,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 136177454}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &2087188686
 GameObject:

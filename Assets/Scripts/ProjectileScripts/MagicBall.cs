@@ -7,6 +7,7 @@ public class MagicBall : MonoBehaviour {
 
     private ProjectileDamage projectileDamageInfo;
     private float stunDamage;
+   
     public bool firedFromPlayer = true;
     public float magicBallDamage;
     public float magicBallSpeed = 75;
@@ -30,6 +31,7 @@ public class MagicBall : MonoBehaviour {
             canReflect = false;
             gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity * -1;
         }
+      
     }
 
     // Use this for initialization
@@ -43,7 +45,7 @@ public class MagicBall : MonoBehaviour {
         }
         else if (col.gameObject.tag == "EnemyReflect")
         {
-            Debug.Log("enemy reflect should occur");
+           // Debug.Log("enemy reflect should occur");
             reflected = true;
             gameObject.tag = "EnemyProjectile";
             gameObject.layer = 9; //changes physics layers, do not touch or I stab you

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GolemPlayer : MonoBehaviour
 {
+    private ObjectPoolerScript objectPooler;
     private BossHealth lichBossHealth;
     private SpriteRenderer colorInfo;
 
@@ -12,7 +13,7 @@ public class GolemPlayer : MonoBehaviour
     public float golemDeathDamage = 10f;
     public bool canFacePlayer = true;
 
-    public GameObject golemProjectile;
+    //public GameObject golemProjectile;
     public Transform golemMuzzle;
     public GameObject golemReflect;
 
@@ -39,6 +40,7 @@ public class GolemPlayer : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        objectPooler = ObjectPoolerScript.Instance;
         colorInfo = gameObject.GetComponent<SpriteRenderer>();
         golemReflect.SetActive(false);
         lichBossHealth = GameObject.Find("Lich").GetComponent<BossHealth>();
@@ -83,7 +85,7 @@ public class GolemPlayer : MonoBehaviour
 
     public void FireProjectile()
     {
-        GameObject spawnedFireBall = Instantiate(golemProjectile, golemMuzzle.position, golemMuzzle.rotation);        
+        GameObject spawnedFireBall = objectPooler.SpawnFromPool("Fireball", transform.position, transform.rotation);
     }
 
 
