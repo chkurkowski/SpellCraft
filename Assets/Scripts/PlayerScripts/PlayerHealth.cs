@@ -54,13 +54,6 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos()
-    {
-        // Display the explosion radius when selected
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, 48f);
-    }
-
     public void DamagePlayer(float dmg)
     {
         if(!absorbDamage)
