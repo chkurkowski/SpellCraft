@@ -1228,7 +1228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a94c92dc8bb89a947a7fea83333c19db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 11.5
   pylonMaxHealth: 6
   pylonHealth: 8
 --- !u!61 &86973962
@@ -16822,7 +16822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a94c92dc8bb89a947a7fea83333c19db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 11.5
   pylonMaxHealth: 6
   pylonHealth: 8
 --- !u!61 &1002612446
@@ -18711,7 +18711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a94c92dc8bb89a947a7fea83333c19db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 11.5
   pylonMaxHealth: 6
   pylonHealth: 8
 --- !u!61 &1108576786
@@ -27465,7 +27465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a94c92dc8bb89a947a7fea83333c19db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 11.5
   pylonMaxHealth: 6
   pylonHealth: 8
 --- !u!61 &1507699928
@@ -36678,7 +36678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testingAttacks: 1
-  currentlyTestingAttack: 2
+  currentlyTestingAttack: 3
   previousAttack: 0
   isAttacking: 0
   canAttack: 1
@@ -36735,7 +36735,7 @@ MonoBehaviour:
   bossHealthInfo: {fileID: 0}
   isMad: 0
   isEnraged: 0
-  bossRageLevel: 50
+  bossRageLevel: 69
   bossRageThreshold1: 33
   bossRageThreshold2: 66
   bossStunLevel: 0
