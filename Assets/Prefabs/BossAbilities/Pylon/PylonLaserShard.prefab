@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dd93c51fdf494488f51323a138cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserShardDamage: 1
+  laserShardDamage: 0.15
   laserShardDamageToBoss: 0.05
   laserShardSpeed: 200
   laserSpread: 0.5
