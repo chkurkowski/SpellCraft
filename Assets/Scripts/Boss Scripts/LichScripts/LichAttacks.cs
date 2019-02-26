@@ -10,21 +10,13 @@ public class LichAttacks : MonoBehaviour
     private Animator lichAnimatorInfo;
 
     //audio sources
-    public AudioSource attackOneAudio;
     public AudioSource fleshPillarAudio;
     public AudioSource floatingPillarAudio;
     public AudioSource hellPortalAudio;
     public AudioSource skeleSpawnAudio;
-
-    //audio clips
-    //golems
-    public AudioClip golem1Clip;
-    public AudioClip artilarygolemClip;
-    public AudioClip cloneGolemClip;
-
-    //flesh pillars
-    public AudioClip fleshPillarClip;
-    public AudioClip floatingPillarClip;
+    public AudioSource golemAudio;
+    public AudioSource artilarygolemAudio;
+    public AudioSource cloneGolemAudio;
 
 
 
@@ -198,18 +190,17 @@ public class LichAttacks : MonoBehaviour
         {
             golemTwo.SetActive(true);
             golemTwo.transform.position = golemTwoSpawn.position;
-            attackOneAudio.clip = artilarygolemClip;
-            attackOneAudio.Play();
+            artilarygolemAudio.Play();
+
 
             golemThree.SetActive(true);
             golemThree.transform.position = golemThreeSpawn.position;
-            attackOneAudio.clip = cloneGolemClip;
-            attackOneAudio.Play();
+            cloneGolemAudio.Play();
+
         }
         golemOne.SetActive(true);
         golemOne.transform.position = golemOneSpawn.position;
-        attackOneAudio.clip = golem1Clip;
-        attackOneAudio.Play();
+        golemAudio.Play();
         golemHex.SetActive(true);
     }
 
@@ -222,15 +213,18 @@ public class LichAttacks : MonoBehaviour
         if (bossInfoInfo.isMad)
         {
             corpsePillarParent.GetComponent<CorpsePillarParent>().isSpinning = true;
+            floatingPillarAudio.Play();
         }
         if (bossInfoInfo.isEnraged)
         {
             corpsePillarParent.GetComponent<CorpsePillarParent>().isSpinning = true;
             corpsePillarParent.GetComponent<CorpsePillarParent>().isEnraged = true;
+            floatingPillarAudio.Play();
         }
         corpsePillarParent.SetActive(true);
         corpseHex.SetActive(true);
         corpsePillarArt.SetActive(true);
+        fleshPillarAudio.Play();
     }
 
     #endregion
@@ -264,6 +258,7 @@ public class LichAttacks : MonoBehaviour
         corpsePillarParent.transform.position = corpseParentSpawn.position;
         corpsePillarParent.SetActive(false);
         corpsePillarArt.SetActive(false);
+
 
         portal.transform.position = portalSpawn.position;
         portal.SetActive(false);

@@ -7432,7 +7432,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 263
+      value: 438
       objectReference: {fileID: 0}
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -25387,11 +25387,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 609d3df0531f87448bfbfa68310b14f9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 02ea87ff6fda14b8eaf60cef95d81e88, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -25482,11 +25482,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3ad0cbd9b60ceec44a2a8fb311e0e61f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2bf4be87da70a434ba8bcfe8d8218cce, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.15
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -25577,11 +25577,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a8ee5345a0f7a574e86f782a8597ad01, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0340979aafe4a49c0b8f0eeb3df95f92, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -25685,6 +25685,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134a0203a8e371441877b002cf479dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fleshPillarAudio: {fileID: 0}
+  floatingPillarAudio: {fileID: 0}
+  hellPortalAudio: {fileID: 0}
+  skeleSpawnAudio: {fileID: 0}
+  golemAudio: {fileID: 1371762420}
+  artilarygolemAudio: {fileID: 1371762419}
+  cloneGolemAudio: {fileID: 1371762418}
   golemOne: {fileID: 300193024}
   golemTwo: {fileID: 234478183}
   golemThree: {fileID: 588043580}
@@ -36752,7 +36759,7 @@ MonoBehaviour:
   HealthBarParent: {fileID: 172864381}
   bossHealth: 100
   bossMaxHealth: 100
-  pylonAudioSource: {fileID: 2115400062}
+  pylonAudioSource: {fileID: 0}
   canBeDamaged: 1
 --- !u!114 &2115400058
 MonoBehaviour:
