@@ -96,7 +96,7 @@ public class PlayerAbilities : MonoBehaviour {
 	{
 		while(health.isAlive)
 		{
-			print(state);
+			//print(state);
 			switch (state)
 			{
 				case State.IDLE:

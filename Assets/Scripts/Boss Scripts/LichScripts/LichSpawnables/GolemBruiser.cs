@@ -6,6 +6,7 @@ public class GolemBruiser : MonoBehaviour
 {
     private BossHealth lichBossHealth;
     private LichAttacks lichBossAttacks;
+    private SpriteRenderer colorInfo;
 
     public float golemHealth = 10f;
     public float golemHealthMaximum = 10f;
@@ -31,6 +32,8 @@ public class GolemBruiser : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+     
+        colorInfo = gameObject.GetComponent<SpriteRenderer>();
         lichBossAttacks = GameObject.Find("Lich").GetComponent<LichAttacks>();
         lichBossHealth = GameObject.Find("Lich").GetComponent<BossHealth>();
         player = GameObject.Find("Player");
@@ -100,5 +103,22 @@ public class GolemBruiser : MonoBehaviour
         criticalSpot.SetActive(false);
         canFacePlayer = true;
         isAttacking = false;
+    }
+
+
+
+    public SpriteRenderer GetColorInfo()
+    {
+        return colorInfo;
+    }
+
+    public void ChildResetColor()
+    {
+        Invoke("ResetColor", .50f);
+    }
+
+    private void ResetColor()
+    {
+        colorInfo.color = Color.white;
     }
 }

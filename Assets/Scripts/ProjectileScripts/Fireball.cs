@@ -7,17 +7,40 @@ public class Fireball : MonoBehaviour {
     private ProjectileDamage projectileDamageInfo;
     public float fireBallDamage;
     public float fireBallSpeed = 50;
+    public float lifeTime = 5f;
     private GameObject player;
     private bool reflected = false;
     public AudioSource reflectSource;
     public AudioClip reflectSound;
+    private Color32 originalColor;
 
     private void Start()
     {
         projectileDamageInfo = gameObject.GetComponent<ProjectileDamage>();
         fireBallDamage = projectileDamageInfo.projectileDamage;
         transform.Rotate(new Vector3(0, 0, 90));
+       // Destroy(gameObject, lifeTime);
+        originalColor = gameObject.GetComponent<SpriteRenderer>().color;
+        //Invoke("Disable", lifeTime);
     }
+
+    public void OnObjectSpawn()
+    {
+     
+    }
+
+    public void OnEnable()
+    {
+        Invoke("Disable", lifeTime);
+        if (reflected)
+        {
+            gameObject.tag = "EnemyProjectile";
+            reflected = false;
+            gameObject.GetComponent<SpriteRenderer>().color = originalColor;
+            gameObject.layer = 9;
+        }
+    }
+
     private void Update()
     {
         if(!reflected)
@@ -26,6 +49,7 @@ public class Fireball : MonoBehaviour {
         }
         else if(reflected)
         {
+            //transform.Rotate(0, 0, 180);
             transform.Translate(Vector3.left * Time.deltaTime * fireBallSpeed);
         }
        
@@ -50,21 +74,21 @@ public class Fireball : MonoBehaviour {
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(fireBallDamage);
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= .05f;
-            Debug.Log(gameObject.name + " was destroyed by " + col.gameObject.name);
-            Destroy(gameObject);
+
+            gameObject.SetActive(false);
         }
         else if (col.gameObject.tag == "Simulacrum")
         {
             col.gameObject.GetComponent<SimulacrumAbilities>().AbsorbDamage(fireBallDamage);
             Debug.Log(gameObject.name + " was destroyed by " + col.gameObject.name);
-            Destroy(gameObject);
+            Disable();
         }
         else if(col.gameObject.tag == "Absorb")
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().HealPlayer(fireBallDamage/2);
             GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .025f;
-            Debug.Log(gameObject.name + " was destroyed by " + col.gameObject.name);
-            Destroy(gameObject);
+
+            Disable();
         }
         else if(col.gameObject.tag == "Boss" && gameObject.tag == "EnemyProjectile")
         {
@@ -78,14 +102,17 @@ public class Fireball : MonoBehaviour {
         {
             if(col.gameObject.GetComponent<GolemAbility>().canTakeDamage)
             {
-                Destroy(gameObject);
+                Disable();
             }
         }  
         else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger" || gameObject.tag != "Projectile")
         {
-            Debug.Log(gameObject.name + " was destroyed by " + col.gameObject.name);
-            Destroy(gameObject);
+            Disable();
         }
+    }
 
+    private void Disable()
+    {
+        gameObject.SetActive(false);
     }
 }

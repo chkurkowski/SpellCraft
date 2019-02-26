@@ -20,7 +20,8 @@ TagManager:
   - HealStun
   - EnemyReflect
   - PlayerGolem
-  - Split
+  - Portal
+  - Skeleton
   layers:
   - Default
   - TransparentFX

@@ -17,6 +17,8 @@ public class GolemBruiserCriticalSpot : MonoBehaviour {
         if (collision.tag == "Projectile")
         {
            parentGolem.golemHealth -= collision.gameObject.GetComponent<ProjectileDamage>().projectileDamage;
+            parentGolem.GetColorInfo().color = Color.red;
+            parentGolem.ChildResetColor();
         }
         if(collision.tag == "Player")
         {
