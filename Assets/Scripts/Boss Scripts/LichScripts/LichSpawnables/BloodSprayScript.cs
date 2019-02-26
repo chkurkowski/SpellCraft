@@ -13,6 +13,9 @@ public class BloodSprayScript : MonoBehaviour
     public float bloodSprayDuration = 2f;
     public bool canSprayBlood = false;
 
+    //audio stuff
+    public AudioSource bloodSprayAudio;
+
 
     // Use this for initialization
     private void Start()
@@ -34,18 +37,22 @@ public class BloodSprayScript : MonoBehaviour
         {
             GameObject bloodOne = objectPooler.SpawnFromPool("BloodDrop", transform.position, transform.rotation);
             bloodOne.transform.Rotate(0, 0, Random.Range(-spraySpread, spraySpread));
+            bloodSprayAudio.Play();
 
             GameObject bloodTwo = objectPooler.SpawnFromPool("BloodDrop", transform.position, transform.rotation);
             bloodTwo.transform.Rotate(0, 0, 180);
             bloodTwo.transform.Rotate(0, 0, Random.Range(-spraySpread, spraySpread));
+            bloodSprayAudio.Play();
 
             GameObject bloodThree = objectPooler.SpawnFromPool("BloodDrop", transform.position, transform.rotation);
             bloodThree.transform.Rotate(0, 0, 90);
             bloodThree.transform.Rotate(0, 0, Random.Range(-spraySpread, spraySpread));
+            bloodSprayAudio.Play();
 
             GameObject bloodFour = objectPooler.SpawnFromPool("BloodDrop", transform.position, transform.rotation);
             bloodFour.transform.Rotate(0, 0, -90);
             bloodFour.transform.Rotate(0, 0, Random.Range(-spraySpread, spraySpread));
+            bloodSprayAudio.Play();
         }
     }
 
@@ -58,5 +65,6 @@ public class BloodSprayScript : MonoBehaviour
     {
         canSprayBlood = false;
         gameObject.SetActive(false);
+        bloodSprayAudio.Stop();
     }
 }

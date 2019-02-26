@@ -18,7 +18,7 @@ public class GolemArtillery : MonoBehaviour {
 
     private float attackTimer = 0;
     public float golemFireRate = 4f;
-
+    public AudioSource artilaryAudio;
 
 
     #region FacePlayer Variables
@@ -76,7 +76,8 @@ public class GolemArtillery : MonoBehaviour {
     public void FireArtillery()
     {
         objectPooler.SpawnFromPool("Bomb", artilleryMuzzle.position, artilleryMuzzle.rotation);
-       // Instantiate(golemArtilleryProjectile, artilleryMuzzle.position, artilleryMuzzle.rotation);
+        // Instantiate(golemArtilleryProjectile, artilleryMuzzle.position, artilleryMuzzle.rotation);
+        artilaryAudio.Play();
     }
 
 
