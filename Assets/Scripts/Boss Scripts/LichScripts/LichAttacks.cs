@@ -8,6 +8,26 @@ public class LichAttacks : MonoBehaviour
     private BossHealth bossHealthInfo;
     private BossAttacks bossAttacksInfo;
     private Animator lichAnimatorInfo;
+
+    //audio sources
+    public AudioSource attackOneAudio;
+    public AudioSource fleshPillarAudio;
+    public AudioSource floatingPillarAudio;
+    public AudioSource hellPortalAudio;
+    public AudioSource skeleSpawnAudio;
+
+    //audio clips
+    //golems
+    public AudioClip golem1Clip;
+    public AudioClip artilarygolemClip;
+    public AudioClip cloneGolemClip;
+
+    //flesh pillars
+    public AudioClip fleshPillarClip;
+    public AudioClip floatingPillarClip;
+
+
+
     // Use this for initialization
 
     [Space(10)]
@@ -178,11 +198,18 @@ public class LichAttacks : MonoBehaviour
         {
             golemTwo.SetActive(true);
             golemTwo.transform.position = golemTwoSpawn.position;
+            attackOneAudio.clip = artilarygolemClip;
+            attackOneAudio.Play();
+
             golemThree.SetActive(true);
             golemThree.transform.position = golemThreeSpawn.position;
+            attackOneAudio.clip = cloneGolemClip;
+            attackOneAudio.Play();
         }
         golemOne.SetActive(true);
         golemOne.transform.position = golemOneSpawn.position;
+        attackOneAudio.clip = golem1Clip;
+        attackOneAudio.Play();
         golemHex.SetActive(true);
     }
 
