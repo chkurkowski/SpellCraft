@@ -18,6 +18,8 @@ public class BossHealth : MonoBehaviour
     /// </summary>
     public float bossMaxHealth = 100;
 
+    public AudioSource pylonAudioSource;
+
     public bool canBeDamaged = true;
 
     private bool isAlive = true;
@@ -26,6 +28,7 @@ public class BossHealth : MonoBehaviour
 
     private void Start()
     {
+        pylonAudioSource.Play();
         //healthBar = GameObject.Find("BossHealthBar").GetComponent<Image>();
        // HealthBarParent.SetActive(false);
     }
@@ -35,12 +38,14 @@ public class BossHealth : MonoBehaviour
        //destroy boss if health = 0
         if (bossHealth <= 0)
         {
+
             //Destroy(boss);
             isAlive = false;
             Color c = gameObject.GetComponent<SpriteRenderer>().color;
             c.a = .6f;
             gameObject.GetComponent<SpriteRenderer>().color = c;
             print("you win woohoo!");
+            pylonAudioSource.Stop();
         }
         healthBar.fillAmount = (bossHealth / 100f);
 
