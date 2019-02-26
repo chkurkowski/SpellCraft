@@ -15,6 +15,12 @@ public class BossAttacks : MonoBehaviour
     /// </summary>
     public int previousAttack = 0;
 
+    [Tooltip("Check this is you're testing attacks!")]
+    public bool testingAttacks = false;
+    [Range(1, 3)]
+    public int currentlyTestingAttack = 1;
+
+
     /// <summary>
     /// Pretty obvious, shows the if the boss is attacking
     /// </summary>
@@ -180,7 +186,11 @@ public class BossAttacks : MonoBehaviour
     public void AttackDriver(string bossName, int attackNumber)
     {
         //Debug.Log(bossName + " is the name that was passed");
-       // Debug.Log(isAttacking + " is the value of isAttacking");
+        // Debug.Log(isAttacking + " is the value of isAttacking");
+        if (testingAttacks)
+        {
+            attackNumber = currentlyTestingAttack;
+        }
         switch (bossName)
         {
             case "Lich":

@@ -28,7 +28,10 @@ public class DoorManager : MonoBehaviour
                 doorToClose.SetActive(true);
             }
 
-            if(relatedBoss.GetComponent<BossHealth)
+            if(relatedBoss.GetComponent<BossHealth>().GetAlive())
+            {
+
+            }
         }
 		
 	}
