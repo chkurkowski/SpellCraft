@@ -9,6 +9,7 @@ public class LaserTutorialScript : MonoBehaviour
     public Transform laserHit;
     private Transform reflectHit;
     public float laserDamage = .1f;
+    public float laserDamageToBoss = .05f;
 
     // Use this for initialization
     void Awake ()
@@ -72,8 +73,8 @@ public class LaserTutorialScript : MonoBehaviour
         {
             if(gameObject.tag == "Projectile")
             {
-                hit.transform.gameObject.GetComponent<BossHealth>().bossHealth -= laserDamage;
-                hit.transform.gameObject.GetComponent<BossHealth>().healthBar.fillAmount -= (laserDamage / 100);
+                hit.transform.gameObject.GetComponent<BossHealth>().bossHealth -= laserDamageToBoss;
+                hit.transform.gameObject.GetComponent<BossHealth>().healthBar.fillAmount -= (laserDamageToBoss / 100);
             } 
         }
     }
