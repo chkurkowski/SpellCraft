@@ -20,7 +20,7 @@ public class RespawnManager : MonoBehaviour{
     }
     public void KillPlayer()
     {
-        playerHealthInfo.transform.position = currentCheckPoint.transform.position;
+        playerHealthInfo.transform.position =  new Vector3(currentCheckPoint.transform.position.x, currentCheckPoint.transform.position.y, playerHealthInfo.transform.position.z);
         playerHealthInfo.HealPlayer(playerHealthInfo.maxPlayerHealth);
         playerHealthInfo.playerHealthBar.fillAmount += 1;
        
