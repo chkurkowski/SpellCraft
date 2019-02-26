@@ -10,6 +10,10 @@ public class BossAttacks : MonoBehaviour
     private string bossName = "";
     private BossInfo bossInfo;
     private BossHealth bossHealthInfo;
+    [Tooltip("Check this is you're testing attacks!")]
+    public bool testingAttacks = false;
+    [Range(1,3)]
+    public int currentlyTestingAttack = 1;
     /// <summary>
     /// Shows the previous attack. 0 means invalid attack, 1 is the first attack, 2 is the second attack, 3 is the 3rd
     /// </summary>
@@ -165,6 +169,11 @@ public class BossAttacks : MonoBehaviour
     public void AttackDecider()
     {
         int randAttack = Random.Range(1, 4);
+
+        if(testingAttacks)
+        {
+            randAttack = currentlyTestingAttack;
+        }
         if (randAttack == previousAttack)
         {
             AttackDecider();
