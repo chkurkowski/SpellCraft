@@ -18,6 +18,10 @@ TagManager:
   - Vortex
   - LaserEndPoint
   - HealStun
+  - EnemyReflect
+  - PlayerGolem
+  - Portal
+  - Skeleton
   layers:
   - Default
   - TransparentFX

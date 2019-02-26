@@ -9,13 +9,14 @@ public class LaserTutorialScript : MonoBehaviour
     public Transform laserHit;
     private Transform reflectHit;
     public float laserDamage = .1f;
+    public float laserDamageToBoss = .05f;
 
     // Use this for initialization
     void Awake ()
     {
         lineRender = GetComponent<LineRenderer>();
         lineRender.useWorldSpace = true;
-        reflectHit = GameObject.Find("Reflect").GetComponent<Transform>();
+        // reflectHit = GameObject.Find("Reflect").GetComponent<Transform>();
     }
 	
 	// Update is called once per frame
@@ -60,16 +61,19 @@ public class LaserTutorialScript : MonoBehaviour
         }
         if (hit.transform.tag == "Player")
         {
+            if(hit.collider.gameObject.layer != 14)
+            {
+                hit.transform.gameObject.GetComponent<PlayerHealth>().DamagePlayer(laserDamage);
+            }
            //Debug.Log("Player detected!");
-            hit.transform.gameObject.GetComponent<PlayerHealth>().DamagePlayer(laserDamage);
         }
 
         if(hit.collider.transform.tag == "Boss")
         {
             if(gameObject.tag == "Projectile")
             {
-                hit.transform.gameObject.GetComponent<BossHealth>().bossHealth -= laserDamage;
-                hit.transform.gameObject.GetComponent<BossHealth>().healthBar.fillAmount -= (laserDamage / 100);
+                hit.transform.gameObject.GetComponent<BossHealth>().bossHealth -= laserDamageToBoss;
+                hit.transform.gameObject.GetComponent<BossHealth>().healthBar.fillAmount -= (laserDamageToBoss / 100);
             } 
         }
     }

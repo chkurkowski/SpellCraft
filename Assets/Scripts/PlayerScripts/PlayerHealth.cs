@@ -5,12 +5,21 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [Header("Editor Variables")]
     public Image playerHealthBar;
+    
+    [Header("If the Player is Alive")]
     public bool isAlive = true;
+
+    [Header("Public Health Variables")]
     public float maxPlayerHealth = 100f;
     public float playerHealth = 100f;
     private RespawnManager respawnManagerInfo;
 
+    public bool absorbDamage = false;
+    public float damageAbsorbed{get; private set;}
+
+    [Header("Audio Source")]
     public AudioSource playerHealthSource;
     public AudioClip healPlayerSound;
     public AudioClip damagePlayerSound;
@@ -39,16 +48,26 @@ public class PlayerHealth : MonoBehaviour
             playerHealth = maxPlayerHealth;
         }
 
+        if(!absorbDamage && damageAbsorbed > 0)
+        {
+            damageAbsorbed = 0;
+        }
     }
 
     public void DamagePlayer(float dmg)
     {
-        //TODO add player damage sound here
-        playerHealthSource.clip = damagePlayerSound;
-        playerHealthSource.PlayOneShot(damagePlayerSound);
-        playerHealth -= dmg;
-        playerHealthBar.fillAmount = playerHealth / 100;
-        StartCoroutine(InvincibilityFrames());
+        if(!absorbDamage)
+        {
+            playerHealthSource.clip = damagePlayerSound;
+            playerHealthSource.PlayOneShot(damagePlayerSound);
+            playerHealth -= dmg;
+            playerHealthBar.fillAmount = playerHealth / 100;
+            StartCoroutine(InvincibilityFrames());
+        }
+        else
+        {
+            damageAbsorbed += dmg;
+        }
     }
 
     public void HealPlayer(float healAmount)

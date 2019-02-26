@@ -8,9 +8,12 @@ public class ArenaCameraActivator : MonoBehaviour
     /// <summary>
     /// type the name of the boss that the arena belongs to
     /// </summary>
+    public bool useDynamicCamera = true;
+    [Space(40)]
     public string associatedBossName = "";
     //private Transform playerLocation;
-   // public float detectionDistance = 150f;
+    // public float detectionDistance = 150f;
+ 
     public GameObject prototypeBoss;
     public GameObject pylonBoss;
     public GameObject alchemistBoss;
@@ -18,14 +21,12 @@ public class ArenaCameraActivator : MonoBehaviour
     public GameObject reflectorBoss;
     public GameObject charmerBoss;
     private BossInfo bossInfo;
+    private BossHealth bossHealthInfo;
 
 
     private void Start()
     {
         mainCamera = GameObject.Find("Main Camera");
-      
-
-       
 
     }
 
@@ -40,13 +41,20 @@ public class ArenaCameraActivator : MonoBehaviour
                 case "Lich":
                     mainCamera.GetComponent<DynamicCamera>().Boss = lichBoss;
                     bossInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossInfo>();
+                    bossHealthInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossHealth>();
+                  
                     bossInfo.isActivated = true;
+                    bossHealthInfo.HealthBarParent.SetActive(true);
+
                     break;
 
                 case "Pylon":
                     mainCamera.GetComponent<DynamicCamera>().Boss = pylonBoss;
                     bossInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossInfo>();
+                    bossHealthInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossHealth>();
+                 
                     bossInfo.isActivated = true;
+                    bossHealthInfo.HealthBarParent.SetActive(true);
                     break;
 
                 case "Charmer":
@@ -58,12 +66,16 @@ public class ArenaCameraActivator : MonoBehaviour
                 case "Reflector":
                     mainCamera.GetComponent<DynamicCamera>().Boss = reflectorBoss;
                     bossInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossInfo>();
+                    bossHealthInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossHealth>();
+                    bossHealthInfo.HealthBarParent.SetActive(true);
                     bossInfo.isActivated = true;
                     break;
 
                 case "Alchemist":
                     mainCamera.GetComponent<DynamicCamera>().Boss = alchemistBoss;
                     bossInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossInfo>();
+                    bossHealthInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossHealth>();
+                    bossHealthInfo.HealthBarParent.SetActive(true);
                     bossInfo.isActivated = true;
                     break;
 
@@ -71,12 +83,17 @@ public class ArenaCameraActivator : MonoBehaviour
                     Debug.Log("prototypeBoss was found!");
                     mainCamera.GetComponent<DynamicCamera>().Boss = prototypeBoss;
                     bossInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossInfo>();
+                    bossHealthInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossHealth>();
+                    bossHealthInfo.HealthBarParent.SetActive(true);
                     bossInfo.isActivated = true;
                     break;
 
             }
-        
-            GameObject.Find("Main Camera").GetComponent<CameraScriptActivator>().ActivateDynamicCamera();
+            if(useDynamicCamera)
+            {
+                GameObject.Find("Main Camera").GetComponent<CameraScriptActivator>().ActivateDynamicCamera();
+            }
+            
           
         }
     }
@@ -85,7 +102,13 @@ public class ArenaCameraActivator : MonoBehaviour
    {
         if (trig.gameObject.tag == "Player")
        {
-           GameObject.Find("Main Camera").GetComponent<CameraScriptActivator>().DisableDynamicCamera();
+
+
+            if (useDynamicCamera)
+            {
+                GameObject.Find("Main Camera").GetComponent<CameraScriptActivator>().DisableDynamicCamera();
+            }
+          
             bossInfo.isActivated = false;
             // mainCamera.GetComponent<DynamicCamera>().Boss = null;
         }

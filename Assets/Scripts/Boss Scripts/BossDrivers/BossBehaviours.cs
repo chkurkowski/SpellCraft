@@ -70,7 +70,7 @@ public class BossBehaviours : MonoBehaviour
     IEnumerator FSM()
     {
 
-        while (bossHealthInfo.isAlive)
+        while (bossHealthInfo.GetAlive())
         {
 
                 //Debug.Log("The Boss's current state is: " + state);
@@ -98,7 +98,7 @@ public class BossBehaviours : MonoBehaviour
 
     private void Idle()
     {
-        if (bossHealthInfo.isAlive)
+        if (bossHealthInfo.GetAlive())
         {
 
             spriteInfo.sprite = idleSprite;

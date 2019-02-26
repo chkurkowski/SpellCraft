@@ -1,22 +1,41 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossAttacks : BossInfo
+public class BossAttacks : MonoBehaviour
 {
     /// <summary>
     /// Lich , Pylon, Alchemist, Charmer, or Reflector
     /// </summary>
-    public string bossName = "";
+    private string bossName = "";
     private BossInfo bossInfo;
+    private BossHealth bossHealthInfo;
+    [Tooltip("Check this is you're testing attacks!")]
+    public bool testingAttacks = false;
+    [Range(1,3)]
+    public int currentlyTestingAttack = 1;
+    /// <summary>
+    /// Shows the previous attack. 0 means invalid attack, 1 is the first attack, 2 is the second attack, 3 is the 3rd
+    /// </summary>
     public int previousAttack = 0;
 
+    [Tooltip("Check this is you're testing attacks!")]
+    public bool testingAttacks = false;
+    [Range(1, 3)]
+    public int currentlyTestingAttack = 1;
 
+
+    /// <summary>
+    /// Pretty obvious, shows the if the boss is attacking
+    /// </summary>
     public bool isAttacking = false;
 
-    private bool canAttack = true;
+    public bool canAttack = true;
 
     private float attackTimer = 0f;
+    /// <summary>
+    /// The time between attacks. Essentially the attack cooldown.
+    /// </summary>
     public float attackRate = 3f;
 
     ///////////////////////////////////Lich Info
@@ -60,6 +79,7 @@ public class BossAttacks : BossInfo
     {
         bossName = gameObject.name;
         bossInfo = gameObject.GetComponent<BossInfo>();
+        bossHealthInfo = gameObject.GetComponent<BossHealth>();
         BossInitializer(bossName);
         attackState = AttackState.IDLE;
         StartCoroutine("FSM");
@@ -69,7 +89,7 @@ public class BossAttacks : BossInfo
 
     IEnumerator FSM()
     {
-        while (bossHealthInfo.isAlive)
+        while (bossHealthInfo.GetAlive())
         {
             switch (attackState)
             {
@@ -82,16 +102,15 @@ public class BossAttacks : BossInfo
                     {
                         AttackDecider();
                         AttackDriver(bossName, previousAttack);
+                        canAttack = false;
                     }
-                    canAttack = false;
+                  
                     break;
-
             }
             yield return null;
         }
         
     }
-
 
     /// /////////////////////////////////////////////////// BossName stuff!
     public void BossInitializer(string bossName)
@@ -131,10 +150,11 @@ public class BossAttacks : BossInfo
 
     public void Idle()
     {
-        if (bossHealthInfo.isAlive)
+        if (bossHealthInfo.GetAlive())
         {
             if(bossInfo.isActivated)
             {
+                canAttack = true;
                 attackTimer += Time.deltaTime;
                 if (attackTimer >= attackRate)
                 {
@@ -143,7 +163,6 @@ public class BossAttacks : BossInfo
                     if (!isAttacking && canAttack)
                     {
                         attackState = AttackState.ATTACK;
-                       
                     }
                 }
             }
@@ -171,7 +190,11 @@ public class BossAttacks : BossInfo
     public void AttackDriver(string bossName, int attackNumber)
     {
         //Debug.Log(bossName + " is the name that was passed");
-       // Debug.Log(isAttacking + " is the value of isAttacking");
+        // Debug.Log(isAttacking + " is the value of isAttacking");
+        if (testingAttacks)
+        {
+           attackNumber = currentlyTestingAttack;
+        }
         switch (bossName)
         {
             case "Lich":
@@ -212,6 +235,7 @@ public class BossAttacks : BossInfo
 
     public void CancelAttack()
     {
+        attackState = AttackState.IDLE;
         canAttack = false;
         isAttacking = false;
 

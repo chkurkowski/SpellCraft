@@ -64,7 +64,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &58219465129791378
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -188,6 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireBallDamage: 5
   fireBallSpeed: 50
+  lifeTime: 10
   reflectSource: {fileID: 82083856757280554}
   reflectSound: {fileID: 8300000, guid: cb49ede1c9d0e46b3bfdd6b3c0065320, type: 3}
 --- !u!114 &114445259072142418
@@ -202,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileDamage: 5
+  projectileHealth: 5
 --- !u!212 &212464123186647816
 SpriteRenderer:
   m_ObjectHideFlags: 1

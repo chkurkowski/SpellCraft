@@ -9,7 +9,7 @@ public class BossInfo : MonoBehaviour
     [HideInInspector]
     public BossHealth bossHealthInfo;
 
-    
+    [SerializeField]
     public bool isMad = false;
     public bool isEnraged = false;
     private Transform playerLocation;
@@ -45,6 +45,10 @@ public class BossInfo : MonoBehaviour
     private void Awake()
     {
         bossHealthInfo = gameObject.GetComponent<BossHealth>();
+        //if(!isActivated)
+       // {
+           //bossHealthInfo.HealthBarParent.SetActive(false);
+       // }
     }
 
     void Start ()
@@ -64,13 +68,17 @@ public class BossInfo : MonoBehaviour
     private void Update()
     {
         playerLocation = GameObject.Find("Player").GetComponent<Transform>();
+       if (isActivated)
+       {
+            bossHealthInfo.HealthBarParent.SetActive(true);
+       }
     }
 
     /// ///////////////////////////////////////STUN STUFF/FUNCTIONS
 
     IEnumerator StunTracker()
     {
-        while (bossHealthInfo.isAlive)
+        while (bossHealthInfo.GetAlive())
         {
             if (bossStunLevel >= bossStunThreshold)
             {
@@ -116,7 +124,7 @@ public class BossInfo : MonoBehaviour
 
     IEnumerator RageTracker()
     {
-        while (bossHealthInfo.isAlive)
+        while (bossHealthInfo.GetAlive())
         {
             if (bossRageLevel <= bossRageThreshold1)
             {
@@ -173,7 +181,7 @@ public class BossInfo : MonoBehaviour
 
     IEnumerator AgroTracker()
     {
-        while (bossHealthInfo.isAlive)
+        while (bossHealthInfo.GetAlive())
         {
             if (Vector2.Distance(transform.position, playerLocation.position) <= agroDistance)
             {

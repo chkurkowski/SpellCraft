@@ -6,21 +6,38 @@ public class Bomb : MonoBehaviour {
 
     public AudioSource bombSource;
     public AudioClip explosionSound;
+    private ObjectPoolerScript objectPooler;
 
 
     private ProjectileDamage projectileDamageInfo;
     public float bombDamage = 25f;
     public float fireBallSpeed = 50;
 
-    public GameObject fireBall;
+    //public GameObject fireBall;
     public float fireBallSpawnAmount;
 
     private void Start()
     {
+        objectPooler = ObjectPoolerScript.Instance;
         projectileDamageInfo = gameObject.GetComponent<ProjectileDamage>();
         bombDamage = projectileDamageInfo.projectileDamage;
         transform.Rotate(new Vector3(0, 0, 90));
         Invoke("Explode", 2);
+    }
+
+    public void OnObjectSpawn()
+    {
+        
+    }
+
+    public void OnEnable()
+    {
+        Invoke("Explode", 2);
+    }
+
+    public void OnDisable()
+    {
+        CancelInvoke();
     }
     private void Update()
     {
@@ -40,7 +57,7 @@ public class Bomb : MonoBehaviour {
         if (col.gameObject.tag == "Player")
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(bombDamage);
-            GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= .25f;
+            // GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= .25f;
 
         }
         else if(col.gameObject.tag == "Simulacrum")
@@ -51,14 +68,17 @@ public class Bomb : MonoBehaviour {
         else if (col.gameObject.tag == "Absorb")
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().HealPlayer(bombDamage / 2);
-            GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .025f;
-            Destroy(gameObject);
+            // GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .025f;
+            gameObject.SetActive(false);
+        }
+        else if(col.gameObject.tag == "Environment")
+        {
+            Explode();
         }
         else if (col.gameObject.tag == "CameraTrigger" || col.gameObject.tag != "HealStun")
         {
             //do nothing
         }
-
         else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger")
         {
             Explode();
@@ -72,8 +92,8 @@ public class Bomb : MonoBehaviour {
         for (int i = 0; i < fireBallSpawnAmount; i++)
         {
             transform.Rotate(0, 0, 25);
-            Instantiate(fireBall, transform.position, transform.rotation);
+            objectPooler.SpawnFromPool("Fireball", transform.position, transform.rotation);
         }
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

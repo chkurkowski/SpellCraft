@@ -23,7 +23,9 @@ public class CameraScriptActivator : MonoBehaviour {
         if(dynamicCameraInfo.enabled == false)
         {
             transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -5);
-            gameObject.GetComponent<Camera>().orthographicSize = 70;
+           // gameObject.GetComponent<Camera>().orthographicSize = 70;
+           //Chase, i commented this out because i wanted the lich arena to be zoomed out, but this was forcing the camera
+           //to be zoomed tf in. we can add it back if we need it
         }
     }
 
