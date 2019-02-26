@@ -6,7 +6,8 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
 {
     private ProjectileDamage projectileDamageInfo;
   
-    private float laserShardDamage;
+    public float laserShardDamage;
+    public float laserShardDamageToBoss;
 
     [Tooltip("How fast the laser shards fly through the air")]
     public float laserShardSpeed = 50;
@@ -38,7 +39,8 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
         //gotta undo any potential reflects!
         if(reflected)
         {
-            gameObject.tag = "EnemyProjectile";
+            projectileDamageInfo.projectileDamage = laserShardDamage;
+           gameObject.tag = "EnemyProjectile";
             reflected = false;
             gameObject.GetComponent<SpriteRenderer>().color = originalColor;
             gameObject.layer = 9;
@@ -46,6 +48,24 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
 
         transform.Rotate(0,0,randNum);
         
+    }
+
+    public void OnEnable()
+    {
+        // reflectSource.PlayOneShot(shardSound);
+        randNum = Random.Range(-laserSpread, laserSpread);
+        //transform.Rotate(new Vector3(0, 0, 90));
+        //gotta undo any potential reflects!
+        if (reflected)
+        {
+            gameObject.tag = "EnemyProjectile";
+            reflected = false;
+            gameObject.GetComponent<SpriteRenderer>().color = originalColor;
+            gameObject.layer = 9;
+        }
+
+        transform.Rotate(0, 0, randNum);
+
     }
 
     public void Update()
@@ -67,6 +87,7 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
        
         if (col.gameObject.tag == "Reflect")
         {
+            projectileDamageInfo.projectileDamage = laserShardDamageToBoss;
             reflectSource.clip = reflectSound;
             reflectSource.PlayOneShot(reflectSound);
             // Debug.Log("Reflect happened");

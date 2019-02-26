@@ -61,10 +61,11 @@ public class LaserTutorialScript : MonoBehaviour
         }
         if (hit.transform.tag == "Player")
         {
-            if (hit.collider.gameObject.layer != 14)
+            if(hit.collider.gameObject.layer != 14)
             {
                 hit.transform.gameObject.GetComponent<PlayerHealth>().DamagePlayer(laserDamage);
             }
+           //Debug.Log("Player detected!");
         }
 
         if(hit.collider.transform.tag == "Boss")

@@ -16,6 +16,9 @@ public class PlayerHealth : MonoBehaviour
     public float playerHealth = 100f;
     private RespawnManager respawnManagerInfo;
 
+    public bool absorbDamage = false;
+    public float damageAbsorbed{get; private set;}
+
     [Header("Audio Source")]
     public AudioSource playerHealthSource;
     public AudioClip healPlayerSound;
@@ -45,16 +48,26 @@ public class PlayerHealth : MonoBehaviour
             playerHealth = maxPlayerHealth;
         }
 
+        if(!absorbDamage && damageAbsorbed > 0)
+        {
+            damageAbsorbed = 0;
+        }
     }
 
     public void DamagePlayer(float dmg)
     {
-        //TODO add player damage sound here
-        playerHealthSource.clip = damagePlayerSound;
-        playerHealthSource.PlayOneShot(damagePlayerSound);
-        playerHealth -= dmg;
-        playerHealthBar.fillAmount = playerHealth / 100;
-        StartCoroutine(InvincibilityFrames());
+        if(!absorbDamage)
+        {
+            playerHealthSource.clip = damagePlayerSound;
+            playerHealthSource.PlayOneShot(damagePlayerSound);
+            playerHealth -= dmg;
+            playerHealthBar.fillAmount = playerHealth / 100;
+            StartCoroutine(InvincibilityFrames());
+        }
+        else
+        {
+            damageAbsorbed += dmg;
+        }
     }
 
     public void HealPlayer(float healAmount)
