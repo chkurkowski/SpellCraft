@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114450843869389314}
   - component: {fileID: 114905551842964012}
   m_Layer: 12
-  m_Name: Ice Ball
+  m_Name: MagicMissle
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileDamage: 0.5
+  projectileHealth: 3
 --- !u!212 &212668578725154326
 SpriteRenderer:
   m_ObjectHideFlags: 1

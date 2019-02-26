@@ -21,10 +21,11 @@ public class HealStunHandler : MonoBehaviour {
     protected const float STUNCAP = 25f;
     protected const float HEALCAP = 25f;
 
-    private float lifetime = 5f;
+    [SerializeField]
+    protected float lifetime = 5f;
 
 	// Use this for initialization
-	void Start () 
+	public virtual void Start () 
 	{
 		Invoke("Destroy", lifetime);
 		state = State.NULL;
@@ -112,7 +113,7 @@ public class HealStunHandler : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Projectile")
+        if(col.gameObject.tag == "Projectile" || col.gameObject.tag == "PlayerGolem")
         {
             if(StunAbsorb())
                 Destroy(col.gameObject);

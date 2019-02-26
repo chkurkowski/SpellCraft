@@ -48,7 +48,6 @@ public class PylonMicroVortex : MonoBehaviour
     public void StopWaveParticle()
     {
         vortexParticle.Stop();
-
     }
 
 }
