@@ -36678,7 +36678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testingAttacks: 1
-  currentlyTestingAttack: 1
+  currentlyTestingAttack: 2
   previousAttack: 0
   isAttacking: 0
   canAttack: 1
