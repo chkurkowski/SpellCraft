@@ -1229,8 +1229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 11.5
-  pylonMaxHealth: 6
-  pylonHealth: 8
+  pylonMaxHealth: 5.75
+  pylonHealth: 7.75
 --- !u!61 &86973962
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16823,8 +16823,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 11.5
-  pylonMaxHealth: 6
-  pylonHealth: 8
+  pylonMaxHealth: 5.75
+  pylonHealth: 7.75
 --- !u!61 &1002612446
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18712,8 +18712,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 11.5
-  pylonMaxHealth: 6
-  pylonHealth: 8
+  pylonMaxHealth: 5.75
+  pylonHealth: 7.75
 --- !u!61 &1108576786
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27466,8 +27466,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 11.5
-  pylonMaxHealth: 6
-  pylonHealth: 8
+  pylonMaxHealth: 5.75
+  pylonHealth: 7.75
 --- !u!61 &1507699928
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36621,7 +36621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spinRotationAmount: 0.1
   spinRotationRate: 0.005
-  laserLookAtSpeed: 0.8
+  laserLookAtSpeed: 1.1
   laserAttackDuration: 5
   laserMuzzleOne: {fileID: 1912461148}
   shieldOne: {fileID: 1163408297}
@@ -36678,7 +36678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testingAttacks: 1
-  currentlyTestingAttack: 3
+  currentlyTestingAttack: 1
   previousAttack: 0
   isAttacking: 0
   canAttack: 1
@@ -36735,7 +36735,7 @@ MonoBehaviour:
   bossHealthInfo: {fileID: 0}
   isMad: 0
   isEnraged: 0
-  bossRageLevel: 69
+  bossRageLevel: 0
   bossRageThreshold1: 33
   bossRageThreshold2: 66
   bossStunLevel: 0
