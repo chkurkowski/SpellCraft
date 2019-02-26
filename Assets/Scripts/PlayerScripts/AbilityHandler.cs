@@ -13,6 +13,7 @@ public class AbilityHandler : MonoBehaviour {
     public GameObject golem;
     public GameObject healStun;
     public GameObject healStunCombo;
+    public GameObject projectileSplit;
     public Vector2 cursorInWorldPos;
 
     [Space(10)]
@@ -38,6 +39,7 @@ public class AbilityHandler : MonoBehaviour {
     public float LONGATKCOOLDOWN = .2f;
     public float HEALSTUNCOOLDOWN = 6f;
     public float REFLECTCOOLDOWN = 3f;
+    public float ABSORBEXPLODECOOLDOWN = 8f;
     public float ENERGYGOLEMCOOLDOWN = 2f;
     public float HEALSTUNCOMBOCOOLDOWN = 6f;
     public float PROJECTILESPLITCOOLDOWN = 6f;
@@ -47,11 +49,13 @@ public class AbilityHandler : MonoBehaviour {
     public float BURSTCOOLDOWN = 2f;
 
     public float ABSORBEND = 3f;
+    public float ABSORBEXPLODEEND = 5f;
 
     private float longATKTimer, energyGolemTimer, healStunTimer, projectileSplitTimer, healStunComboTimer,
-    reflectTimer, atkSimTimer, absorbTimer, absorbSimTimer, burstTimer;
+    reflectTimer, absorbExplodeTimer, atkSimTimer, absorbTimer, absorbSimTimer, burstTimer;
 
     private PlayerAbilities abilities;
+    private PlayerHealth health;
 
     // Use this for initialization
     void Start () {
@@ -65,8 +69,10 @@ public class AbilityHandler : MonoBehaviour {
         burstTimer = BURSTCOOLDOWN;
         energyGolemTimer = ENERGYGOLEMCOOLDOWN;
         projectileSplitTimer = PROJECTILESPLITCOOLDOWN;
+        absorbExplodeTimer = ABSORBEXPLODECOOLDOWN;
 
         abilities = GetComponent<PlayerAbilities>();
+        health = GetComponent<PlayerHealth>();
 
         StartCoroutine(LightUpdate());
     }
@@ -100,6 +106,7 @@ public class AbilityHandler : MonoBehaviour {
                         EnergyGolem();
                         break;
                     case 5:
+                    	AbsorbExplode();
                         break;
                     case 6:
                         ProjectileSplit();
@@ -174,6 +181,14 @@ public class AbilityHandler : MonoBehaviour {
         }
     }
 
+    private void AbsorbExplode()
+    {
+    	if(absorbExplodeTimer >= ABSORBEXPLODECOOLDOWN)
+    	{
+    		health.absorbDamage = true;
+    	}
+    }
+
     private void HealStun()
     {
         //TODO Add HealStun Sound
@@ -190,6 +205,7 @@ public class AbilityHandler : MonoBehaviour {
     {
         if(projectileSplitTimer >= PROJECTILESPLITCOOLDOWN)
         {
+        	Instantiate(projectileSplit, cursorInWorldPos,transform.rotation);
             abilities.AttackArrayHandler("HealStun", abilities.lastAttacks);
             projectileSplitTimer = 0;
         }
@@ -320,15 +336,29 @@ public class AbilityHandler : MonoBehaviour {
         burstTimer += Time.deltaTime;
         energyGolemTimer += Time.deltaTime;
         projectileSplitTimer += Time.deltaTime;
+        absorbExplodeTimer += Time.deltaTime;
 
         if (reflectTimer >= 2f)
         {
             reflect.GetComponent<ReflectLaser>().isLasered = false;
             reflect.SetActive(false);
         }
+
         if(absorbTimer >= ABSORBEND)
         {
             absorb.SetActive(false);
+            Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, 5f);
+
+            foreach(Collider2D collider in col)
+            {
+            	
+            }
+        }
+
+        if(absorbExplodeTimer >= ABSORBEXPLODEEND)
+        {
+        	health.absorbDamage = false;
+
         }
     }
 
@@ -348,6 +378,10 @@ public class AbilityHandler : MonoBehaviour {
                 return atkSimTimer;
             case "absorb":
                 return absorbTimer;
+            case "projectilesplit":
+            	return projectileSplitTimer;
+        	case "absorbexplode":
+        		return absorbExplodeTimer;
             default:
                 return absorbSimTimer;
         }
@@ -369,6 +403,10 @@ public class AbilityHandler : MonoBehaviour {
                 return ATKSIMCOOLDOWN;
             case "absorb":
                 return ABSORBCOOLDOWN;
+        	case "projectilesplit":
+            	return PROJECTILESPLITCOOLDOWN;
+        	case "absorbexplode":
+        		return ABSORBEXPLODECOOLDOWN;
             default:
                 return ABSORBSIMCOOLDOWN;
         }

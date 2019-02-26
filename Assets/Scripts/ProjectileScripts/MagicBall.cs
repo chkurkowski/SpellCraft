@@ -24,7 +24,7 @@ public class MagicBall : MonoBehaviour {
     {
         if(!firedFromPlayer && !reflected)
         {
-            transform.Translate(Vector2.up * Time.deltaTime * magicBallSpeed);
+            transform.Translate(transform.forward * Time.deltaTime * magicBallSpeed);
         }
         else if(reflected && canReflect)
         {
@@ -56,7 +56,8 @@ public class MagicBall : MonoBehaviour {
            // Debug.Log(gameObject.name + " was destroyed by Boss:" + col.gameObject.name);
             Destroy(gameObject);
         }
-        else if (col.gameObject.tag == "Vortex" || col.gameObject.tag == "EnemyProjectile")
+        else if (col.gameObject.tag == "Vortex" || col.gameObject.tag == "EnemyProjectile" 
+            || col.gameObject.tag == "Projectile" || col.gameObject.tag == "Split")
         {
            
             //do nothing

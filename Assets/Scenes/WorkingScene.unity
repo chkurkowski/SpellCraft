@@ -10955,12 +10955,28 @@ Prefab:
     - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
         type: 2}
       propertyPath: leftMouseAbility
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114585357869244448, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
         type: 2}
       propertyPath: ENERGYGOLEMCOOLDOWN
       value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 212843443956057452, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114585357869244448, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: projectileSplit
+      value: 
+      objectReference: {fileID: 1510757535994298, guid: b721f1db226dc4e22857974131ac6d9c,
+        type: 2}
+    - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: keyboardAbility
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
