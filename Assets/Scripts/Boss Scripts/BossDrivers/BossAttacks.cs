@@ -169,11 +169,6 @@ public class BossAttacks : MonoBehaviour
     public void AttackDecider()
     {
         int randAttack = Random.Range(1, 4);
-
-        if(testingAttacks)
-        {
-            randAttack = currentlyTestingAttack;
-        }
         if (randAttack == previousAttack)
         {
             AttackDecider();
@@ -189,7 +184,11 @@ public class BossAttacks : MonoBehaviour
     public void AttackDriver(string bossName, int attackNumber)
     {
         //Debug.Log(bossName + " is the name that was passed");
-       // Debug.Log(isAttacking + " is the value of isAttacking");
+        // Debug.Log(isAttacking + " is the value of isAttacking");
+        if (testingAttacks)
+        {
+           attackNumber = currentlyTestingAttack;
+        }
         switch (bossName)
         {
             case "Lich":
