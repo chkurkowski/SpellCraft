@@ -22,7 +22,7 @@ public class MagicBall : MonoBehaviour {
     {
         if(!firedFromPlayer)
         {
-            transform.Translate(Vector2.up * Time.deltaTime * magicBallSpeed);
+            transform.Translate(transform.forward * Time.deltaTime * magicBallSpeed);
         }
 
         if(reflected)
@@ -53,7 +53,8 @@ public class MagicBall : MonoBehaviour {
        
             Destroy(gameObject);
         }
-        else if (col.gameObject.tag == "Vortex" || col.gameObject.tag == "EnemyProjectile")
+        else if (col.gameObject.tag == "Vortex" || col.gameObject.tag == "EnemyProjectile" 
+            || col.gameObject.tag == "Projectile" || col.gameObject.tag == "Split")
         {
            
             //do nothing
