@@ -203,4 +203,12 @@ public class BossInfo : MonoBehaviour
         return playerLocation;
     }
 
+    public void ResetBoss()
+    {
+        isActivated = false;
+        rageState = RageState.CALM;
+        bossRageLevel = 0;
+        bossHealthInfo.bossHealth = bossHealthInfo.bossMaxHealth;
+    }
+
 }
