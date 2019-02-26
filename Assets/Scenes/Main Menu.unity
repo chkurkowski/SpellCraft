@@ -670,7 +670,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2022161391}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -1573,7 +1573,7 @@ RectTransform:
   m_Children:
   - {fileID: 1188301539}
   m_Father: {fileID: 1045099884}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2144,7 +2144,6 @@ GameObject:
   - component: {fileID: 798434595}
   - component: {fileID: 798434597}
   - component: {fileID: 798434594}
-  - component: {fileID: 798434597}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -2267,9 +2266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ffeeddb60664fd69003733157e2999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
 --- !u!1 &865264369
-
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2413,7 +2410,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2088125276}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -2579,7 +2576,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1710208775}
+      - m_Target: {fileID: 2022161391}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -3073,9 +3070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ffeeddb60664fd69003733157e2999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
 --- !u!1 &1037540547
-
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3342,8 +3337,8 @@ RectTransform:
   m_Children:
   - {fileID: 616453957}
   - {fileID: 74944692}
-  - {fileID: 551498803}
   - {fileID: 1454204011}
+  - {fileID: 551498803}
   - {fileID: 239310071}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -4168,7 +4163,7 @@ RectTransform:
   m_Children:
   - {fileID: 1414465893}
   m_Father: {fileID: 1045099884}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5498,7 +5493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2022161392
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5755,7 +5750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2088125277
 RectTransform:
   m_ObjectHideFlags: 0
