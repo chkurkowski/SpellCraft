@@ -48,7 +48,7 @@ public class ObjectPoolerScript : MonoBehaviour {
 
         if(!poolDictionary.ContainsKey(tag))
         {
-            Debug.LogWarning("Pool with tag: " + tag + "doesn't exist!");
+            Debug.LogWarning("Pool with tag: " + tag + " doesn't exist!");
             return null;
         }
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();//pulls out first element in queue;

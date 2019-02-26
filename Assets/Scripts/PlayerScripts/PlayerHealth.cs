@@ -52,7 +52,6 @@ public class PlayerHealth : MonoBehaviour
         {
             damageAbsorbed = 0;
         }
-
     }
 
     public void DamagePlayer(float dmg)
