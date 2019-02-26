@@ -1824,6 +1824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4857869659710586}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114102766126379484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1856,6 +1857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4270567936850574}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114261250784768694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1886,6 +1888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4467616489149318}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114378254121821062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1899,6 +1902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4048595381416286}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114381595566248884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1912,6 +1916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4993603675910556}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114445191699499252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1954,6 +1959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4926762845402862}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114522996261553732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1967,6 +1973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4363458971015682}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114585357869244448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2034,6 +2041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4373400198325808}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114856124224521288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2047,6 +2055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4172444758808764}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114971240134645132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2060,6 +2069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4282396969557956}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114984861922561022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2073,6 +2083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4457560953359706}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114996641535114590
 MonoBehaviour:
   m_ObjectHideFlags: 1

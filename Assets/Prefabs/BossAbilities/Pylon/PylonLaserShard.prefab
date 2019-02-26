@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dd93c51fdf494488f51323a138cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserShardDamage: 1
+  laserShardDamage: 0.15
   laserShardDamageToBoss: 0.05
   laserShardSpeed: 200
   laserSpread: 0.5
@@ -255,7 +255,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 196
+  m_SortingOrder: 4
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0, g: 1, b: 0.89049053, a: 1}
   m_FlipX: 0

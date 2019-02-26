@@ -98,8 +98,9 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
         }
         else if (col.gameObject.tag == "Player")
         {
-            GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(laserShardDamage);
-            GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= (laserShardDamage/ 100f);
+           // GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(laserShardDamage);
+            col.gameObject.GetComponent<PlayerHealth>().DamagePlayer(laserShardDamage);
+            // GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= (laserShardDamage/ 100f);
             //Destroy(gameObject);
             gameObject.SetActive(false);
         }
@@ -112,7 +113,7 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
         else if (col.gameObject.tag == "Absorb")
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().HealPlayer(laserShardDamage / 2);
-            GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .005f;
+           // GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .005f;
             // Destroy(gameObject);
             gameObject.SetActive(false);
         }

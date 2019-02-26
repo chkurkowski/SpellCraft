@@ -110,6 +110,7 @@ public class ArenaCameraActivator : MonoBehaviour
             }
           
             bossInfo.isActivated = false;
+            bossInfo.ResetBoss();
             // mainCamera.GetComponent<DynamicCamera>().Boss = null;
         }
    }

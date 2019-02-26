@@ -7,8 +7,8 @@ public class GameExit : MonoBehaviour {
 	// Use this for initialization
 	public void QuitGame()
 	{
+        Debug.Log("Gamequit");
+        Application.Quit();
 		
-		Application.Quit();
-		Debug.Log("Gamequit");
 	}
 }

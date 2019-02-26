@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class PylonAttacks : MonoBehaviour
 {
+    private BossHealth bossHealthInfo;
     private BossInfo bossInfoInfo;
     private BossAttacks bossAttacksInfo;
     private Animator pylonAnimatorInfo;
     private PylonMovement pylonMovementInfo;
+    public bool isPlayingMusic = false;
+    public AudioSource bossMusic;
+
+
+    //Animator Variables
+    private bool canStopAttack = true; // set to true at the start of each attack 
+
 
 
     ////// ////////variables used to lookat stuff
@@ -92,7 +100,8 @@ public class PylonAttacks : MonoBehaviour
         bossInfoInfo = gameObject.GetComponent<BossInfo>();
         pylonMovementInfo = gameObject.GetComponent<PylonMovement>();
         bossAttacksInfo = gameObject.GetComponent<BossAttacks>();
-        pylonAnimatorInfo = gameObject.GetComponent<Animator>();
+        pylonAnimatorInfo = GameObject.Find("PylonBossArt").gameObject.GetComponent<Animator>();
+        bossHealthInfo = gameObject.GetComponent<BossHealth>();
 
 
 
@@ -136,18 +145,46 @@ public class PylonAttacks : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if(bossInfoInfo.isActivated && !isPlayingMusic)
+        {
+            isPlayingMusic = true;
+            bossMusic.Play();
+       
+        }
+        else if (bossHealthInfo.bossHealth <= 0)
+        {
+            bossMusic.Stop();
+            isPlayingMusic = true;
+        }
+        else if (!bossInfoInfo.isActivated)
+        {
+            bossMusic.Stop();
+            isPlayingMusic = false;
+        }
+        if(!bossAttacksInfo.isAttacking)
+        {
+            pylonAnimatorInfo.SetBool("attackOneEnd", false);
+            pylonAnimatorInfo.SetBool("attackTwoEnd", false);
+            pylonAnimatorInfo.SetBool("attackThreeEnd", false);
+        }
+    }
+
     #region Attack
 
     public void Attack(int attackNumber)
     {
         //attackNumber = 1;//for laser testing
-       // attackNumber = 2; // for vortex testing
-       //attackNumber = 3; // for third attack testing
+        // attackNumber = 2; // for vortex testing
+        //attackNumber = 3; // for third attack testing
         //attackNumber = Random.Range(1, 3);
         //if(attackNumber >= 2)
         //{
         //    attackNumber = 2;
         //}
+      
+        canStopAttack = true;
         switch (attackNumber)
         {
             case 0:
@@ -156,14 +193,20 @@ public class PylonAttacks : MonoBehaviour
                 break;
 
             case 1:
+                pylonAnimatorInfo.SetBool("attackOneStart", true);
+                pylonAnimatorInfo.SetBool("attackOneEnd", false);
                 AttackOne();
                 break;
 
             case 2:
+                pylonAnimatorInfo.SetBool("attackTwoStart", true);
+                pylonAnimatorInfo.SetBool("attackTwoEnd", false);
                 AttackTwo();
                 break;
 
             case 3:
+                pylonAnimatorInfo.SetBool("attackThreeStart", true);
+                pylonAnimatorInfo.SetBool("attackThreeEnd", false);
                 AttackThree();
                 break;
         }
@@ -308,7 +351,7 @@ public class PylonAttacks : MonoBehaviour
             explodingPylonFour.GetComponent<explodingPylonScript>().pylonHealth = explodingPylonFour.GetComponent<explodingPylonScript>().pylonMaxHealth;
 
             activeExplodingPylons = 4;
-            //Invoke("StopAttack", 0);
+          //  Invoke("StopAttack", 0);
             //stop attack is called from inside the exploding pylons IF there are no pylons left
         }
         else if (bossInfoInfo.isMad)
@@ -349,7 +392,7 @@ public class PylonAttacks : MonoBehaviour
             InvokeRepeating("SlowRotateToPlayer", 0, spinRotationRate);
 
             activeExplodingPylons = 4;
-            // Invoke("StopAttack", 0);
+             //Invoke("StopAttack", 0);
             //stop attack is called from inside the exploding pylons IF there are no pylons left
         }
         else if(bossInfoInfo.isEnraged)
@@ -393,12 +436,12 @@ public class PylonAttacks : MonoBehaviour
 
             activeExplodingPylons = 4;
         }
-       // Invoke("StopAttack", 0);
+        //Invoke("StopAttack", 0);
     }
 
     #endregion
 
- 
+    #region Misc Functions
 
     void SpinMicroVortex()
     {
@@ -438,7 +481,9 @@ public class PylonAttacks : MonoBehaviour
     { 
             gameObject.transform.Rotate(0, 0, spinRotationAmount);
     }
+    #endregion
 
+    #region Attack Three Explosions
     public void AttackThreeExplosionOne()
     {
         Debug.Log("Attack 3 Explode 1 happened!");
@@ -472,60 +517,71 @@ public class PylonAttacks : MonoBehaviour
         //stop attack is called from inside the exploding pylons IF there are no pylons left
     }
 
+    #endregion
 
     #region StopAttack
     public void StopAttack()
     {
+        // if (pylonAnimatorInfo.GetBool("endAttack"))
+        // {
+        pylonAnimatorInfo.SetBool("attackOneStart", false);
+        pylonAnimatorInfo.SetBool("attackTwoStart", false);
+        pylonAnimatorInfo.SetBool("attackThreeStart", false);
+        pylonAnimatorInfo.SetBool("attackOneEnd", true);
+        pylonAnimatorInfo.SetBool("attackTwoEnd", true);
+        pylonAnimatorInfo.SetBool("attackThreeEnd", true);
+
         laserAudioSource.Stop();
-        laserShardsAudioSource.Stop();
-        vortexAudioSource.Stop();
+            laserShardsAudioSource.Stop();
+            vortexAudioSource.Stop();
+
+            bossAttacksInfo.EndAttack();
+            bossAttacksInfo.isAttacking = false;
+
+            laserMuzzleOne.SetActive(false);
+            shieldOne.SetActive(false);
+            shieldTwo.SetActive(false);
+            reflectShieldOne.GetComponent<PylonReflectShield>().isLasered = false;
+            reflectShieldTwo.GetComponent<PylonReflectShield>().isLasered = false;
+            reflectShieldOne.SetActive(false);
+            reflectShieldTwo.SetActive(false);
+
+            laserShardOne.SetActive(false);
+            laserShardTwo.SetActive(false);
+            laserShardThree.SetActive(false);
+            laserShardFour.SetActive(false);
+
+            pylonMovementInfo.StopLaserAttackMovement();
+            // microVortex1.transform.rotation = microVortex1Rotation;
+            //  microVortex2.transform.rotation = microVortex2Rotation;
+            microVortex1.SetActive(false);
+            //  microVortex1.transform.rotation = Quaternion.identity;//resets any rotations
+            microVortex2.SetActive(false);
+            //  microVortex2.transform.rotation = Quaternion.identity;//resets any rotations
+            vortex.transform.localScale = vortexSize;
+            if (vortex.activeSelf)
+            {
+                vortex.GetComponent<PylonVortex>().FlushVortex();
+                vortex.SetActive(false);
+            }
+
+            explodingPylonOne.transform.position = explodingPylonSpawnOne.position;
+            explodingPylonOne.SetActive(false);
+
+            explodingPylonTwo.transform.position = explodingPylonSpawnTwo.position;
+            explodingPylonTwo.SetActive(false);
+
+            explodingPylonThree.transform.position = explodingPylonSpawnThree.position;
+            explodingPylonThree.SetActive(false);
+
+            explodingPylonFour.transform.position = explodingPylonSpawnFour.position;
+            explodingPylonFour.SetActive(false);
 
 
-
-        bossAttacksInfo.EndAttack();
-        bossAttacksInfo.isAttacking = false;
-
-        laserMuzzleOne.SetActive(false);
-        shieldOne.SetActive(false);
-        shieldTwo.SetActive(false);
-        reflectShieldOne.GetComponent<PylonReflectShield>().isLasered = false;
-        reflectShieldTwo.GetComponent<PylonReflectShield>().isLasered = false;
-        reflectShieldOne.SetActive(false);
-        reflectShieldTwo.SetActive(false);
-
-        laserShardOne.SetActive(false);
-        laserShardTwo.SetActive(false);
-        laserShardThree.SetActive(false);
-        laserShardFour.SetActive(false);
-
-        pylonMovementInfo.StopLaserAttackMovement();
-        // microVortex1.transform.rotation = microVortex1Rotation;
-        //  microVortex2.transform.rotation = microVortex2Rotation;
-        microVortex1.SetActive(false);
-        //  microVortex1.transform.rotation = Quaternion.identity;//resets any rotations
-        microVortex2.SetActive(false);
-        //  microVortex2.transform.rotation = Quaternion.identity;//resets any rotations
-        vortex.transform.localScale = vortexSize;
-        if (vortex.activeSelf)
-        {
-            vortex.GetComponent<PylonVortex>().FlushVortex();
-            vortex.SetActive(false);
-        }
-
-        explodingPylonOne.transform.position = explodingPylonSpawnOne.position;
-        explodingPylonOne.SetActive(false);
-
-        explodingPylonTwo.transform.position = explodingPylonSpawnTwo.position;
-        explodingPylonTwo.SetActive(false);
-
-        explodingPylonThree.transform.position = explodingPylonSpawnThree.position;
-        explodingPylonThree.SetActive(false);
-
-        explodingPylonFour.transform.position = explodingPylonSpawnFour.position;
-        explodingPylonFour.SetActive(false);
-
+       
 
         CancelInvoke();
+       // }
     }
 
     #endregion

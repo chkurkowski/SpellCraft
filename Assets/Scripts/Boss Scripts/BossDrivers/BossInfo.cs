@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BossInfo : MonoBehaviour
 {
+
+    
     private BossAttacks bossAttackInfo;
     private BossMovement bossMovementInfo;
     [HideInInspector]
@@ -46,23 +48,23 @@ public class BossInfo : MonoBehaviour
     {
         bossHealthInfo = gameObject.GetComponent<BossHealth>();
         //if(!isActivated)
-       // {
-           //bossHealthInfo.HealthBarParent.SetActive(false);
-       // }
+        // {
+        //bossHealthInfo.HealthBarParent.SetActive(false);
+        // }
     }
 
     void Start ()
     {
-       
+        StartCoroutine("RageTracker");
         bossAttackInfo = gameObject.GetComponent<BossAttacks>();
         bossMovementInfo = gameObject.GetComponent<BossMovement>();
         playerLocation = GameObject.Find("Player").GetComponent<Transform>();
         rageState = RageState.CALM;
-
         StartCoroutine("StunTracker");
-        StartCoroutine("RageTracker");
-       // StartCoroutine("AgroTracker"); // might just do this through camera script!
-            
+        
+        // StartCoroutine("AgroTracker"); // might just do this through camera script!
+
+
     }
 
     private void Update()
@@ -72,6 +74,8 @@ public class BossInfo : MonoBehaviour
        {
             bossHealthInfo.HealthBarParent.SetActive(true);
        }
+
+      
     }
 
     /// ///////////////////////////////////////STUN STUFF/FUNCTIONS
@@ -119,6 +123,8 @@ public class BossInfo : MonoBehaviour
     {
         return bossStunLevel;
     }
+
+
 
     /// ///////////////////////////////////////RAGE STUFF/FUNCTIONS
 
@@ -206,8 +212,8 @@ public class BossInfo : MonoBehaviour
     public void ResetBoss()
     {
         isActivated = false;
-        rageState = RageState.CALM;
-        bossRageLevel = 0;
+       // rageState = RageState.CALM;
+      //  bossRageLevel = 0;
         bossHealthInfo.bossHealth = bossHealthInfo.bossMaxHealth;
     }
 
