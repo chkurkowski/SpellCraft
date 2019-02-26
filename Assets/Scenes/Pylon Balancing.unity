@@ -7918,7 +7918,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 438
+      value: 254
       objectReference: {fileID: 0}
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -37918,6 +37918,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c31f994ac69ea4eab280f933e4f25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayingMusic: 0
+  bossMusic: {fileID: 2115400062}
   spinRotationAmount: 0.1
   spinRotationRate: 0.005
   laserLookAtSpeed: 1.1

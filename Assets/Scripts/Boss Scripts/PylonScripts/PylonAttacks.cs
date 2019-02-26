@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class PylonAttacks : MonoBehaviour
 {
+    private BossHealth bossHealthInfo;
     private BossInfo bossInfoInfo;
     private BossAttacks bossAttacksInfo;
     private Animator pylonAnimatorInfo;
     private PylonMovement pylonMovementInfo;
+    public bool isPlayingMusic = false;
+    public AudioSource bossMusic;
+    
 
 
     ////// ////////variables used to lookat stuff
@@ -93,6 +97,7 @@ public class PylonAttacks : MonoBehaviour
         pylonMovementInfo = gameObject.GetComponent<PylonMovement>();
         bossAttacksInfo = gameObject.GetComponent<BossAttacks>();
         pylonAnimatorInfo = gameObject.GetComponent<Animator>();
+        bossHealthInfo = gameObject.GetComponent<BossHealth>();
 
 
 
@@ -134,6 +139,26 @@ public class PylonAttacks : MonoBehaviour
         explodingPylonFour.transform.position = explodingPylonSpawnFour.position;
         explodingPylonFour.SetActive(false);
 
+    }
+
+    private void Update()
+    {
+        if(bossInfoInfo.isActivated && !isPlayingMusic)
+        {
+            isPlayingMusic = true;
+            bossMusic.Play();
+       
+        }
+        else if (bossHealthInfo.bossHealth <= 0)
+        {
+            bossMusic.Stop();
+            isPlayingMusic = true;
+        }
+        else if (!bossInfoInfo.isActivated)
+        {
+            bossMusic.Stop();
+            isPlayingMusic = false;
+        }
     }
 
     #region Attack
