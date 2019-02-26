@@ -19,6 +19,12 @@ public class BossAttacks : MonoBehaviour
     /// </summary>
     public int previousAttack = 0;
 
+    [Tooltip("Check this is you're testing attacks!")]
+    public bool testingAttacks = false;
+    [Range(1, 3)]
+    public int currentlyTestingAttack = 1;
+
+
     /// <summary>
     /// Pretty obvious, shows the if the boss is attacking
     /// </summary>
