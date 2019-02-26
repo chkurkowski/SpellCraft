@@ -173,8 +173,12 @@ public class PlayerAbilities : MonoBehaviour {
             state = State.BURSTCAST;
         }
 
+        if(pSystem.isPlaying)
+        {
+            pSystem.Stop();
+        }
+
         movement.slowed = false;
-        pSystem.Stop();
         TimerHandlers();
 	}
 
