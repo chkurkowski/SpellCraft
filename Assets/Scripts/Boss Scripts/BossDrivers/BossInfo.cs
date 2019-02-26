@@ -195,7 +195,6 @@ public class BossInfo : MonoBehaviour
                 isActivated = true;
                 //Debug.Log(isActivated + " is the value of isActivated");
                 StopCoroutine(AgroTracker());
-
             }
             yield return null;
         }
@@ -214,8 +213,8 @@ public class BossInfo : MonoBehaviour
     public void ResetBoss()
     {
         isActivated = false;
-        rageState = RageState.CALM;
-        bossRageLevel = 0;
+       // rageState = RageState.CALM;
+      //  bossRageLevel = 0;
         bossHealthInfo.bossHealth = bossHealthInfo.bossMaxHealth;
     }
 

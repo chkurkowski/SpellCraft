@@ -24,14 +24,14 @@ public class DoorManager : MonoBehaviour
         {
             if(relatedBoss.GetComponent<BossInfo>().isActivated )//&& !doorClosed)
             {
-                Debug.Log("If 1 happens");
+               // Debug.Log("If 1 happens");
                 doorClosed = true;
                 doorToOpenAndClose.SetActive(true);
             }
 
             if(!relatedBoss.GetComponent<BossInfo>().isActivated|| !relatedBoss.GetComponent<BossHealth>().GetAlive() || playerHealthInfo.playerHealth <= 0)
             {
-                Debug.Log("If 2 happens");
+               // Debug.Log("If 2 happens");
                 doorClosed = false;
                 doorToOpenAndClose.SetActive(false);
             }
