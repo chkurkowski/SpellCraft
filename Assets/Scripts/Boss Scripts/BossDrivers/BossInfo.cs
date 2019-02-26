@@ -55,13 +55,13 @@ public class BossInfo : MonoBehaviour
 
     void Start ()
     {
-       
+        StartCoroutine("RageTracker");
         bossAttackInfo = gameObject.GetComponent<BossAttacks>();
         bossMovementInfo = gameObject.GetComponent<BossMovement>();
         playerLocation = GameObject.Find("Player").GetComponent<Transform>();
         rageState = RageState.CALM;
         StartCoroutine("StunTracker");
-        StartCoroutine("RageTracker");
+        
         // StartCoroutine("AgroTracker"); // might just do this through camera script!
 
 
