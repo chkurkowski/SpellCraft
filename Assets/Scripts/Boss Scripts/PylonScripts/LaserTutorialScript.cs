@@ -66,7 +66,6 @@ public class LaserTutorialScript : MonoBehaviour
                 hit.transform.gameObject.GetComponent<PlayerHealth>().DamagePlayer(laserDamage);
             }
            //Debug.Log("Player detected!");
-          
         }
 
         if(hit.collider.transform.tag == "Boss")

@@ -15,6 +15,8 @@ public class AbilityHandler : MonoBehaviour {
     public GameObject healStunCombo;
     public GameObject projectileSplit;
     public Vector2 cursorInWorldPos;
+    public ParticleSystem waveSystem;
+    private Color origColor;
 
     [Space(10)]
    
@@ -81,6 +83,7 @@ public class AbilityHandler : MonoBehaviour {
     {
         while(true)
         {
+        	print(waveSystem.isPlaying);
             BasicHandlers();
             yield return null;
         }
@@ -185,7 +188,10 @@ public class AbilityHandler : MonoBehaviour {
     {
     	if(absorbExplodeTimer >= ABSORBEXPLODECOOLDOWN)
     	{
+    		origColor = gameObject.GetComponent<SpriteRenderer>().color;
+            GetComponent<SpriteRenderer>().color = new Color(origColor.r, origColor.g, origColor.b, .5f);
     		health.absorbDamage = true;
+    		absorbExplodeTimer = 0;
     	}
     }
 
@@ -346,19 +352,27 @@ public class AbilityHandler : MonoBehaviour {
 
         if(absorbTimer >= ABSORBEND)
         {
+
             absorb.SetActive(false);
-            Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, 5f);
+        }
+
+        //Maybe instead of when the time ends make it when the ability is next triggered that the player explodes?
+        //Allows for better playmaking
+        if(absorbExplodeTimer >= ABSORBEXPLODEEND && health.absorbDamage)
+        {
+        	GetComponent<SpriteRenderer>().color = origColor;
+        	health.absorbDamage = false;
+        	Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, 48f);
 
             foreach(Collider2D collider in col)
             {
-            	
+            	if(collider.gameObject.tag == "Boss")
+            	{
+            		collider.GetComponent<BossHealth>().DealDamage(health.damageAbsorbed);
+            	}
             }
-        }
 
-        if(absorbExplodeTimer >= ABSORBEXPLODEEND)
-        {
-        	health.absorbDamage = false;
-
+            waveSystem.Play();
         }
     }
 

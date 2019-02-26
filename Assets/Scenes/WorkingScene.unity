@@ -7131,6 +7131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 281229ce8e94a1540bcf5efddc5536b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testingAttacks: 0
+  currentlyTestingAttack: 1
   previousAttack: 0
   isAttacking: 0
   canAttack: 1
@@ -7322,6 +7324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9d5d066c82c374b890b517e6e55328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testingAttacks: 0
+  currentlyTestingAttack: 1
   previousAttack: 0
   isAttacking: 0
   canAttack: 1
@@ -10946,38 +10950,6 @@ Prefab:
       propertyPath: playerHealthBar
       value: 
       objectReference: {fileID: 1516673321}
-    - target: {fileID: 114585357869244448, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: golem
-      value: 
-      objectReference: {fileID: 1756307218520016, guid: 0be48772513084d75901d4fb7b5564e1,
-        type: 2}
-    - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: leftMouseAbility
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114585357869244448, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: ENERGYGOLEMCOOLDOWN
-      value: 1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 212843443956057452, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114585357869244448, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: projectileSplit
-      value: 
-      objectReference: {fileID: 1510757535994298, guid: b721f1db226dc4e22857974131ac6d9c,
-        type: 2}
-    - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: keyboardAbility
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
   m_IsPrefabAsset: 0
