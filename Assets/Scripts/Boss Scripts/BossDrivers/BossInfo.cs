@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossInfo : MonoBehaviour
 {
 
-    public AudioSource pylonMusicSource;
+    
     private BossAttacks bossAttackInfo;
     private BossMovement bossMovementInfo;
     [HideInInspector]
@@ -60,7 +60,7 @@ public class BossInfo : MonoBehaviour
         bossMovementInfo = gameObject.GetComponent<BossMovement>();
         playerLocation = GameObject.Find("Player").GetComponent<Transform>();
         rageState = RageState.CALM;
-        pylonMusicSource.Play();
+       
         StartCoroutine("StunTracker");
         StartCoroutine("RageTracker");
         // StartCoroutine("AgroTracker"); // might just do this through camera script!
