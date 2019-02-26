@@ -4303,6 +4303,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1166791909594820, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
     type: 2}
   m_PrefabInternal: {fileID: 1846089205}
+--- !u!198 &721968418 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198683510319143038, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1846089205}
 --- !u!1 &746026876
 GameObject:
   m_ObjectHideFlags: 0
@@ -10946,37 +10951,45 @@ Prefab:
       propertyPath: playerHealthBar
       value: 
       objectReference: {fileID: 1516673321}
-    - target: {fileID: 114585357869244448, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+    - target: {fileID: 198182118557903328, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
         type: 2}
-      propertyPath: golem
-      value: 
-      objectReference: {fileID: 1756307218520016, guid: 0be48772513084d75901d4fb7b5564e1,
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198182118557903328, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
         type: 2}
-    - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: leftMouseAbility
+      propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114585357869244448, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+    - target: {fileID: 198683510319143038, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
         type: 2}
-      propertyPath: ENERGYGOLEMCOOLDOWN
-      value: 1.8
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 212843443956057452, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+    - target: {fileID: 199599086703648194, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
         type: 2}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 100
       objectReference: {fileID: 0}
-    - target: {fileID: 114585357869244448, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: projectileSplit
-      value: 
-      objectReference: {fileID: 1510757535994298, guid: b721f1db226dc4e22857974131ac6d9c,
-        type: 2}
     - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
         type: 2}
-      propertyPath: keyboardAbility
-      value: 6
+      propertyPath: pSystem
+      value: 
+      objectReference: {fileID: 721968418}
+    - target: {fileID: 198182118557903328, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198182118557903328, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: lengthInSec
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198182118557903328, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}

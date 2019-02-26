@@ -35,7 +35,7 @@ public class MegaBomb : MonoBehaviour {
         if (col.gameObject.tag == "Player")
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(bombDamage);
-            GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= .25f;
+            // GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= .25f;
 
         }
         else if (col.gameObject.tag == "Simulacrum")
@@ -46,7 +46,7 @@ public class MegaBomb : MonoBehaviour {
         else if (col.gameObject.tag == "Absorb")
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().HealPlayer(bombDamage / 2);
-            GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .025f;
+            // GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .025f;
             Destroy(gameObject);
         }
         else if (col.gameObject.tag == "CameraTrigger" || gameObject.tag == "HealStun")
