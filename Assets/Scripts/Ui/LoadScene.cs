@@ -8,4 +8,9 @@ public class LoadScene : MonoBehaviour {
     {
         SceneManager.LoadScene(sceneIndex);
     }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }
