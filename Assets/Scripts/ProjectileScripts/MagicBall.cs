@@ -57,7 +57,7 @@ public class MagicBall : MonoBehaviour {
             Destroy(gameObject);
         }
         else if (col.gameObject.tag == "Vortex" || col.gameObject.tag == "EnemyProjectile" 
-            || col.gameObject.tag == "Projectile" || col.gameObject.tag == "Split")
+            || col.gameObject.tag == "Projectile" || col.gameObject.tag == "Split" || col.gameObject.tag == "CheckPoint")
         {
            
             //do nothing
