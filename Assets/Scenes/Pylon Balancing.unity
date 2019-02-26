@@ -9671,6 +9671,7 @@ MonoBehaviour:
   HealthBarParent: {fileID: 0}
   bossHealth: 100
   bossMaxHealth: 100
+  pylonAudioSource: {fileID: 0}
   canBeDamaged: 1
 --- !u!114 &624647668
 MonoBehaviour:
@@ -9777,6 +9778,7 @@ MonoBehaviour:
   HealthBarParent: {fileID: 1372674675}
   bossHealth: 100
   bossMaxHealth: 100
+  pylonAudioSource: {fileID: 0}
   canBeDamaged: 1
 --- !u!114 &624647673
 MonoBehaviour:
@@ -25754,6 +25756,7 @@ MonoBehaviour:
   HealthBarParent: {fileID: 1929232543}
   bossHealth: 100
   bossMaxHealth: 100
+  pylonAudioSource: {fileID: 0}
   canBeDamaged: 0
 --- !u!114 &1371762426
 MonoBehaviour:
@@ -36343,7 +36346,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 140.7283
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -36438,7 +36441,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 140.7283
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -36533,7 +36536,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 142.24423
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -36623,6 +36626,7 @@ MonoBehaviour:
   HealthBarParent: {fileID: 0}
   bossHealth: 100
   bossMaxHealth: 100
+  pylonAudioSource: {fileID: 0}
   canBeDamaged: 1
 --- !u!114 &2115400052
 MonoBehaviour:
@@ -36748,6 +36752,7 @@ MonoBehaviour:
   HealthBarParent: {fileID: 172864381}
   bossHealth: 100
   bossMaxHealth: 100
+  pylonAudioSource: {fileID: 2115400062}
   canBeDamaged: 1
 --- !u!114 &2115400058
 MonoBehaviour:
@@ -36876,8 +36881,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 141.76237
+  MaxDistance: 143.18
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

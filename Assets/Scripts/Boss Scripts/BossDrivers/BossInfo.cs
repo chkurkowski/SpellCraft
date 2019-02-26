@@ -60,7 +60,7 @@ public class BossInfo : MonoBehaviour
         bossMovementInfo = gameObject.GetComponent<BossMovement>();
         playerLocation = GameObject.Find("Player").GetComponent<Transform>();
         rageState = RageState.CALM;
-        pylonMusicSource.Play();
+        //pylonMusicSource.Play();
         StartCoroutine("StunTracker");
         StartCoroutine("RageTracker");
         // StartCoroutine("AgroTracker"); // might just do this through camera script!
