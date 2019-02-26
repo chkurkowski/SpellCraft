@@ -24,7 +24,6 @@ public class BossAttacks : MonoBehaviour
     [Range(1, 3)]
     // public int currentlyTestingAttack = 1;
 
-
     /// <summary>
     /// Pretty obvious, shows the if the boss is attacking
     /// </summary>

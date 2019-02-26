@@ -6,8 +6,8 @@ public class DoorManager : MonoBehaviour
 {
     private PlayerHealth playerHealthInfo;
     public GameObject relatedBoss;
-    public GameObject doorToOpen;
-    public GameObject doorToClose;
+    public GameObject doorToOpenAndClose;
+   
 
     private bool relevant = true;
     private bool doorClosed = false;
@@ -25,12 +25,13 @@ public class DoorManager : MonoBehaviour
             if(relatedBoss.GetComponent<BossInfo>().isActivated && !doorClosed)
             {
                 doorClosed = true;
-                doorToClose.SetActive(true);
+                doorToOpenAndClose.SetActive(true);
             }
 
-            if(relatedBoss.GetComponent<BossHealth>().GetAlive())
+            if(relatedBoss.GetComponent<BossHealth>().GetAlive() || playerHealthInfo.playerHealth <= 0)
             {
-
+                doorClosed = false;
+                doorToOpenAndClose.SetActive(true);
             }
         }
 		
