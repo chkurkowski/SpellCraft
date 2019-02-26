@@ -10,8 +10,6 @@ public class LichAttacks : MonoBehaviour
     private Animator lichAnimatorInfo;
 
     //audio sources
-    public AudioSource fleshPillarAudio;
-    public AudioSource floatingPillarAudio;
     public AudioSource hellPortalAudio;
     public AudioSource skeleSpawnAudio;
     public AudioSource golemAudio;
@@ -213,18 +211,18 @@ public class LichAttacks : MonoBehaviour
         if (bossInfoInfo.isMad)
         {
             corpsePillarParent.GetComponent<CorpsePillarParent>().isSpinning = true;
-            floatingPillarAudio.Play();
+
         }
         if (bossInfoInfo.isEnraged)
         {
             corpsePillarParent.GetComponent<CorpsePillarParent>().isSpinning = true;
             corpsePillarParent.GetComponent<CorpsePillarParent>().isEnraged = true;
-            floatingPillarAudio.Play();
+
         }
         corpsePillarParent.SetActive(true);
         corpseHex.SetActive(true);
         corpsePillarArt.SetActive(true);
-        fleshPillarAudio.Play();
+
     }
 
     #endregion
