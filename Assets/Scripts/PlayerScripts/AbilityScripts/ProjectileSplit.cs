@@ -42,5 +42,24 @@ public class ProjectileSplit : MonoBehaviour {
             gm2.GetComponent<GolemAbility>().startingChargeSpeed = col.gameObject.GetComponent<GolemAbility>().startingChargeSpeed;
             gm2.GetComponent<GolemAbility>().chargeSlowRate = col.gameObject.GetComponent<GolemAbility>().chargeSlowRate;
         }
+        else if(col.gameObject.tag == "EnemyProjectile")
+        {
+            if(col.GetComponent<Bomb>())
+            {
+                col.GetComponent<Bomb>().fireBallSpeed = col.GetComponent<Bomb>().fireBallSpeed/2;
+            }
+            else if(col.GetComponent<Fireball>())
+            {
+                col.GetComponent<Fireball>().fireBallSpeed = col.GetComponent<Fireball>().fireBallSpeed/2;
+            }
+            else if(col.GetComponent<MegaBomb>())
+            {
+                col.GetComponent<MegaBomb>().fireBallSpeed = col.GetComponent<MegaBomb>().fireBallSpeed/2;
+            }
+            else if(col.GetComponent<PylonLaserShard>())
+            {
+                col.GetComponent<PylonLaserShard>().laserShardSpeed = col.GetComponent<PylonLaserShard>().laserShardSpeed/2;
+            }
+        }
     }
 }
