@@ -10,8 +10,8 @@ public class LichAttacks : MonoBehaviour
     private Animator lichAnimatorInfo;
 
     //audio sources
-    public AudioSource hellPortalAudio;
-    public AudioSource skeleSpawnAudio;
+   // public AudioSource hellPortalAudio;
+   // public AudioSource skeleSpawnAudio;
     public AudioSource golemAudio;
     public AudioSource artilarygolemAudio;
     public AudioSource cloneGolemAudio;
@@ -76,7 +76,6 @@ public class LichAttacks : MonoBehaviour
             canCastPillars = true;
             canCastPortal = true;
         }
-        
 	}
 
     public void Attack(int attackNumber)
@@ -144,7 +143,6 @@ public class LichAttacks : MonoBehaviour
                         canCastGolem = false;
                         AttackOne();
                     }
-                    
                 }
                
                 break;
@@ -157,7 +155,6 @@ public class LichAttacks : MonoBehaviour
                         canCastPillars = false;
                         AttackTwo();
                     }
-                   
                 }
                 break;
 
@@ -169,7 +166,6 @@ public class LichAttacks : MonoBehaviour
                         canCastPortal = false;
                         AttackThree();
                     }
-                   
                 }
                 break;
         }
@@ -208,6 +204,7 @@ public class LichAttacks : MonoBehaviour
     #region AttackTwo
     public void AttackTwo()
     {
+     
         if (bossInfoInfo.isMad)
         {
             corpsePillarParent.GetComponent<CorpsePillarParent>().isSpinning = true;
@@ -222,7 +219,6 @@ public class LichAttacks : MonoBehaviour
         corpsePillarParent.SetActive(true);
         corpseHex.SetActive(true);
         corpsePillarArt.SetActive(true);
-
     }
 
     #endregion
@@ -255,7 +251,7 @@ public class LichAttacks : MonoBehaviour
 
         corpsePillarParent.transform.position = corpseParentSpawn.position;
         corpsePillarParent.SetActive(false);
-        corpsePillarArt.SetActive(false);
+       corpsePillarArt.SetActive(false);
 
 
         portal.transform.position = portalSpawn.position;

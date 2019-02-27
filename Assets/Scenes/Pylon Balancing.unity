@@ -2421,7 +2421,6 @@ MonoBehaviour:
   portalAudio: {fileID: 161550754}
   skeleSpawnAudio: {fileID: 161550755}
   knightSpawnAudio: {fileID: 161550756}
-  soulSpawnAudio: {fileID: 0}
   portalHealth: 15
   portalMaxHealth: 15
   portalDeathDamage: 20
@@ -7914,11 +7913,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -84
+      value: -94
       objectReference: {fileID: 0}
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 254
+      value: 422
       objectReference: {fileID: 0}
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7969,7 +7968,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4912163684400386, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 82502722618222228, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
         type: 2}
@@ -7995,6 +7994,21 @@ Prefab:
         type: 2}
       propertyPath: m_Volume
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: leftMouseAbility
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: rightMouseAbility
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: keyboardAbility
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
@@ -10153,11 +10167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92582862367df18489301af9035ff135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  bossArt: {fileID: 0}
   HealthBarParent: {fileID: 0}
+  healthBar: {fileID: 0}
   bossHealth: 100
   bossMaxHealth: 100
-  pylonAudioSource: {fileID: 0}
   canBeDamaged: 1
 --- !u!114 &624647668
 MonoBehaviour:
@@ -10260,11 +10274,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d93ffaf2e6e14587b6e3fc65103ea80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 990056889}
+  bossArt: {fileID: 0}
   HealthBarParent: {fileID: 1372674675}
+  healthBar: {fileID: 990056889}
   bossHealth: 100
   bossMaxHealth: 100
-  pylonAudioSource: {fileID: 0}
   canBeDamaged: 1
 --- !u!114 &624647673
 MonoBehaviour:
@@ -10277,7 +10291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc8ff5f0b6fbc14ab2a89b6305a82c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pylonMusicSource: {fileID: 0}
   bossHealthInfo: {fileID: 0}
   isMad: 0
   isEnraged: 0
@@ -14886,7 +14899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &854461338
 Transform:
   m_ObjectHideFlags: 0
@@ -18687,6 +18700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290754e14d1eb8640be6b77aa0888965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lichHealth: {fileID: 1371762425}
   isSpinning: 0
   isEnraged: 0
   pillarSpinRate: 0.01
@@ -26365,8 +26379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134a0203a8e371441877b002cf479dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hellPortalAudio: {fileID: 0}
-  skeleSpawnAudio: {fileID: 0}
   golemAudio: {fileID: 1371762420}
   artilarygolemAudio: {fileID: 1371762419}
   cloneGolemAudio: {fileID: 1371762418}
@@ -26437,11 +26449,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d93ffaf2e6e14587b6e3fc65103ea80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 909969449}
+  bossArt: {fileID: 1401138239}
   HealthBarParent: {fileID: 1929232543}
+  healthBar: {fileID: 909969449}
   bossHealth: 100
   bossMaxHealth: 100
-  pylonAudioSource: {fileID: 0}
   canBeDamaged: 0
 --- !u!114 &1371762426
 MonoBehaviour:
@@ -26454,7 +26466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc8ff5f0b6fbc14ab2a89b6305a82c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pylonMusicSource: {fileID: 0}
   bossHealthInfo: {fileID: 0}
   isMad: 0
   isEnraged: 0
@@ -37889,12 +37900,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c30ce3ab8f5bf84eb6fb2b72eb2984d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  HealthBarParent: {fileID: 0}
-  bossHealth: 100
-  bossMaxHealth: 100
-  pylonAudioSource: {fileID: 0}
-  canBeDamaged: 1
 --- !u!114 &2115400052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38017,11 +38022,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d93ffaf2e6e14587b6e3fc65103ea80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 2000488685}
+  bossArt: {fileID: 0}
   HealthBarParent: {fileID: 172864381}
+  healthBar: {fileID: 2000488685}
   bossHealth: 100
   bossMaxHealth: 100
-  pylonAudioSource: {fileID: 0}
   canBeDamaged: 1
 --- !u!114 &2115400058
 MonoBehaviour:
@@ -38034,7 +38039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc8ff5f0b6fbc14ab2a89b6305a82c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pylonMusicSource: {fileID: 2115400062}
   bossHealthInfo: {fileID: 0}
   isMad: 0
   isEnraged: 0

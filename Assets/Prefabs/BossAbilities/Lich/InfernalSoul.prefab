@@ -189,7 +189,7 @@ MonoBehaviour:
   infernalSoulHealth: 1.5
   infernalSoulDamage: 5
   moveSpeed: 40
-  explosionAudio: {fileID: 0}
+  explosionAudio: {fileID: 82614440941829586}
 --- !u!212 &212092408623226284
 SpriteRenderer:
   m_ObjectHideFlags: 1
