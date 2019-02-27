@@ -22,9 +22,9 @@ public class MagicBall : MonoBehaviour {
 
     void Update()
     {
-        if(!firedFromPlayer && !reflected)
+        if(!firedFromPlayer)
         {
-            transform.Translate(transform.forward * Time.deltaTime * magicBallSpeed);
+            transform.Translate(Vector2.up * Time.deltaTime * magicBallSpeed);
         }
         else if(reflected && canReflect)
         {
