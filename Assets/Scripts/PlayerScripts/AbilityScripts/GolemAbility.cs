@@ -83,5 +83,9 @@ public class GolemAbility : MonoBehaviour {
 			if(golemHealth <= 0)
 				Destroy(gameObject);
 		}
+		else if(col.gameObject.tag == "Environment")
+		{
+			Destroy(gameObject);
+		}
 	}
 }
