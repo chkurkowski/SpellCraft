@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CorpsePillarParent : MonoBehaviour
 {
-    private BossHealth lichHealth;
+    public BossHealth lichHealth;
     private bool canSpin = true;
     public bool isSpinning = false;
     public bool isEnraged = false;
@@ -24,20 +24,32 @@ public class CorpsePillarParent : MonoBehaviour
     public GameObject pillarTwo;
     public GameObject pillarThree;
 
+    void Start()
+    {
+      // lichHealth = GameObject.Find("Lich").GetComponent<BossHealth>();
+        //DeactivatePillars();
+    }
     private void OnEnable()
     {
+       // Debug.Log("CORPSE PARENT ON ENABLE HAPPENED");
+        if (isEnraged)
+        {
+            Debug.Log("Parent enraged function happened");
+            pillarOne.GetComponent<CorpsePillar>().SetEnraged(true);
+            pillarTwo.GetComponent<CorpsePillar>().SetEnraged(true);
+            pillarThree.GetComponent<CorpsePillar>().SetEnraged(true);
+        }
         ActivatePillars();
         InvokeRepeating("PillarHeal", 0, healTime);
     }
     // Use this for initialization
-    void Start ()
+
+    private void OnDisable()
     {
-        lichHealth = GameObject.Find("Lich").GetComponent<BossHealth>();
         DeactivatePillars();
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+    // Update is called once per frame
+    void Update ()
     {
 		
         

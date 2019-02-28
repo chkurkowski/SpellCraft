@@ -6,6 +6,9 @@ public class CorpsePillar : MonoBehaviour
 {
     private BossHealth lichBossHealth;
 
+    private CorpsePillarParent corpseParent;
+    public AudioSource fleshPillarAudio;
+    public AudioSource floatingPillarAudio;
 
     public float pillarDeathDamage = 1f;
     public SpriteRenderer colorInfo;
@@ -22,8 +25,20 @@ public class CorpsePillar : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
+        corpseParent = GameObject.Find("CorpseParent").GetComponent<CorpsePillarParent>();
+        fleshPillarAudio.Play();
         lichBossHealth = GameObject.Find("Lich").GetComponent<BossHealth>();
         //bloodSprayer.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        corpseParent = GameObject.Find("CorpseParent").GetComponent<CorpsePillarParent>();
+        if(corpseParent.isEnraged)
+        {
+            Debug.Log("is Enraged blood if is happening!");
+            isEnraged = true;
+        }
     }
 
 
@@ -41,6 +56,9 @@ public class CorpsePillar : MonoBehaviour
             bloodSprayer.SetActive(false);
             gameObject.SetActive(false);
             isEnraged = false;
+            fleshPillarAudio.Stop();
+            floatingPillarAudio.Stop();
+
 
         }
 
@@ -52,6 +70,7 @@ public class CorpsePillar : MonoBehaviour
         {
             if(isEnraged)
             {
+                floatingPillarAudio.Play();
                 bloodSprayer.SetActive(true);
                // Invoke("TurnOffSpray", bloodSprayDuration);
             }

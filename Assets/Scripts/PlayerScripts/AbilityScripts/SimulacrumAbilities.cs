@@ -37,10 +37,14 @@ public class SimulacrumAbilities : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        boss = GameObject.Find("PrototypeBoss").transform;
         Invoke("Destroy", lifetime);
         StartCoroutine("FSM");
     }
+
+    // void FindClosestBoss()
+    // {
+    //     boss = GameObject.Find("PrototypeBoss").transform;
+    // }
 
     IEnumerator FSM()
     {
@@ -79,8 +83,8 @@ public class SimulacrumAbilities : MonoBehaviour
                 state = State.LONGATK;
             }
         }
-        else
-            LookAtBoss();
+        // else
+        //     LookAtBoss();
 
     }
 
@@ -109,7 +113,7 @@ public class SimulacrumAbilities : MonoBehaviour
     {
         int explodeAmount = Mathf.CeilToInt(damageTaken/4);
 
-        LookAtBoss();
+        // LookAtBoss();
 
         for (int i = 0; i < explodeAmount; i++)
         {

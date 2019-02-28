@@ -8,6 +8,16 @@ public class LichAttacks : MonoBehaviour
     private BossHealth bossHealthInfo;
     private BossAttacks bossAttacksInfo;
     private Animator lichAnimatorInfo;
+
+    //audio sources
+   // public AudioSource hellPortalAudio;
+   // public AudioSource skeleSpawnAudio;
+    public AudioSource golemAudio;
+    public AudioSource artilarygolemAudio;
+    public AudioSource cloneGolemAudio;
+
+
+
     // Use this for initialization
 
     [Space(10)]
@@ -66,7 +76,6 @@ public class LichAttacks : MonoBehaviour
             canCastPillars = true;
             canCastPortal = true;
         }
-        
 	}
 
     public void Attack(int attackNumber)
@@ -134,7 +143,6 @@ public class LichAttacks : MonoBehaviour
                         canCastGolem = false;
                         AttackOne();
                     }
-                    
                 }
                
                 break;
@@ -147,7 +155,6 @@ public class LichAttacks : MonoBehaviour
                         canCastPillars = false;
                         AttackTwo();
                     }
-                   
                 }
                 break;
 
@@ -159,7 +166,6 @@ public class LichAttacks : MonoBehaviour
                         canCastPortal = false;
                         AttackThree();
                     }
-                   
                 }
                 break;
         }
@@ -178,11 +184,17 @@ public class LichAttacks : MonoBehaviour
         {
             golemTwo.SetActive(true);
             golemTwo.transform.position = golemTwoSpawn.position;
+            artilarygolemAudio.Play();
+
+
             golemThree.SetActive(true);
             golemThree.transform.position = golemThreeSpawn.position;
+            cloneGolemAudio.Play();
+
         }
         golemOne.SetActive(true);
         golemOne.transform.position = golemOneSpawn.position;
+        golemAudio.Play();
         golemHex.SetActive(true);
     }
 
@@ -192,14 +204,17 @@ public class LichAttacks : MonoBehaviour
     #region AttackTwo
     public void AttackTwo()
     {
+     
         if (bossInfoInfo.isMad)
         {
             corpsePillarParent.GetComponent<CorpsePillarParent>().isSpinning = true;
+
         }
         if (bossInfoInfo.isEnraged)
         {
             corpsePillarParent.GetComponent<CorpsePillarParent>().isSpinning = true;
             corpsePillarParent.GetComponent<CorpsePillarParent>().isEnraged = true;
+
         }
         corpsePillarParent.SetActive(true);
         corpseHex.SetActive(true);
@@ -236,7 +251,8 @@ public class LichAttacks : MonoBehaviour
 
         corpsePillarParent.transform.position = corpseParentSpawn.position;
         corpsePillarParent.SetActive(false);
-        corpsePillarArt.SetActive(false);
+       corpsePillarArt.SetActive(false);
+
 
         portal.transform.position = portalSpawn.position;
         portal.SetActive(false);

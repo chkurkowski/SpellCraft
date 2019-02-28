@@ -97,6 +97,13 @@ public class PlayerAbilities : MonoBehaviour {
 		while(health.isAlive)
 		{
 			//print(state);
+            if(Input.GetKeyDown(KeyCode.Alpha1))
+                ChangeLeftMouse();
+            if(Input.GetKeyDown(KeyCode.Alpha2))
+                ChangeRightMouse();
+            if(Input.GetKeyDown(KeyCode.Alpha3))
+                ChangeKeyboardButton();
+
 			switch (state)
 			{
 				case State.IDLE:
@@ -311,6 +318,30 @@ public class PlayerAbilities : MonoBehaviour {
                 AttackArrayHandler("ProjectileSplit", ritualList);
             }
         }
+    }
+
+    public void ChangeLeftMouse()
+    {
+        if(leftMouseAbility == 1)
+            leftMouseAbility = 4;
+        else
+            leftMouseAbility = 1;
+    }
+
+    public void ChangeRightMouse()
+    {
+        if(rightMouseAbility == 2)
+            rightMouseAbility = 5;
+        else
+            rightMouseAbility = 2;
+    }
+
+    public void ChangeKeyboardButton()
+    {
+        if(keyboardAbility == 3)
+            keyboardAbility = 6;
+        else
+            keyboardAbility = 3;
     }
 
     //TODO: Maybe change to 13 - player layer

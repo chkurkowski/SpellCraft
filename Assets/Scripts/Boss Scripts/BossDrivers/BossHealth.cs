@@ -5,9 +5,11 @@ using UnityEngine.UI;
 public class BossHealth : MonoBehaviour
 {
     //boss health bar
-
-    public Image healthBar;
+    private BossInfo bossInfo;
+    public GameObject bossArt;
     public GameObject HealthBarParent;
+    public Image healthBar;
+    
    
     /// <summary>
     /// The current health of the boss.
@@ -18,6 +20,8 @@ public class BossHealth : MonoBehaviour
     /// </summary>
     public float bossMaxHealth = 100;
 
+    //public AudioSource pylonAudioSource;
+
     public bool canBeDamaged = true;
 
     private bool isAlive = true;
@@ -26,21 +30,40 @@ public class BossHealth : MonoBehaviour
 
     private void Start()
     {
+        bossInfo = gameObject.GetComponent<BossInfo>();
+       // pylonAudioSource.Play();
         //healthBar = GameObject.Find("BossHealthBar").GetComponent<Image>();
-       // HealthBarParent.SetActive(false);
+        HealthBarParent.SetActive(false);
+        healthBar.gameObject.SetActive(false);
     }
     // Update is called once per frame
     void Update () 
     {
+        if(bossInfo.isActivated)
+        {
+            HealthBarParent.SetActive(true);
+            healthBar.gameObject.SetActive(true);
+        }
+        else if(!bossInfo.isActivated)
+        {
+            HealthBarParent.SetActive(false);
+            healthBar.gameObject.SetActive(false);
+        }
        //destroy boss if health = 0
         if (bossHealth <= 0)
         {
+
             //Destroy(boss);
+            bossArt.gameObject.SetActive(false);
+            HealthBarParent.SetActive(false);
+            healthBar.gameObject.SetActive(false);
+
             isAlive = false;
             Color c = gameObject.GetComponent<SpriteRenderer>().color;
             c.a = .6f;
             gameObject.GetComponent<SpriteRenderer>().color = c;
             print("you win woohoo!");
+           // pylonAudioSource.Stop();
         }
         healthBar.fillAmount = (bossHealth / 100f);
 
@@ -60,7 +83,7 @@ public class BossHealth : MonoBehaviour
                 if (projectileInfo != null)
                 {
                     bossHealth -= (projectileInfo.projectileDamage);
-                    healthBar.fillAmount = healthBar.fillAmount - (projectileInfo.projectileDamage / 100f);
+                    //healthBar.fillAmount = healthBar.fillAmount - (projectileInfo.projectileDamage / 100f);
                 }
                 else
                 {

@@ -6,6 +6,11 @@ public class LoadScene : MonoBehaviour {
 
     public void LoadByIndex(int sceneIndex)
     {
-        SceneManager.LoadScene (sceneIndex);
+        SceneManager.LoadScene(sceneIndex);
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 }

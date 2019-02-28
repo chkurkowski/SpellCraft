@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
+    //audio stuff
+    public AudioSource portalAudio;
+    public AudioSource skeleSpawnAudio;
+    public AudioSource knightSpawnAudio;
+    //public AudioSource soulSpawnAudio;
+
     private ObjectPoolerScript objectPooler;
 
     private BossHealth lichBossHealth;
     private SpriteRenderer colorInfo;
-    private bool canSpawn = false;
+    public bool canSpawn = false;
 
     public float portalHealth = 15f;
     public float portalMaxHealth = 15f;
@@ -38,15 +44,15 @@ public class Portal : MonoBehaviour
 	void Start ()
     {
         objectPooler = ObjectPoolerScript.Instance;
-        canSpawn = false;
+       // canSpawn = false;
         colorInfo = gameObject.GetComponent<SpriteRenderer>();
         lichBossHealth = GameObject.Find("Lich").GetComponent<BossHealth>();
     }
 
     private void OnEnable()
     {
-       
-          InvokeRepeating("SpawnSkeletons", 0, skeletonSpawnRate);
+     
+        InvokeRepeating("SpawnSkeletons", 0, skeletonSpawnRate);
         if(isMad)
         {
            InvokeRepeating("SpawnHellKnights", 0, hellKnightSpawnRate);
@@ -55,7 +61,14 @@ public class Portal : MonoBehaviour
         {
             InvokeRepeating("SpawnInfernalSouls", 0, infernalSoulSpawnRate);
         }
-    canSpawn = true;
+        canSpawn = true;
+        portalAudio.Play();
+    }
+
+    private void OnDisable()
+    {
+        canSpawn = false;
+        CancelInvoke();
     }
 
     // Update is called once per frame
@@ -68,10 +81,11 @@ public class Portal : MonoBehaviour
             canSpawn = false;
             CancelInvoke();
             gameObject.SetActive(false);
+
         }
         if(!gameObject.activeSelf)
         {
-            canSpawn = false;
+            //canSpawn = false;
             CancelInvoke();
         }
         
@@ -80,24 +94,30 @@ public class Portal : MonoBehaviour
 
     public void SpawnSkeletons()
     {
-        if(canSpawn)
+        Debug.Log("SpawnSkeletons was called");
+        Debug.Log("canSpawn: " + canSpawn);
+        if (canSpawn)
         {
-
-        GameObject spawnedSkeleton1 = objectPooler.SpawnFromPool("Skeleton", transform.position, transform.rotation);
-            spawnedSkeleton1.transform.Rotate(0, 0, Random.Range(0, 90));
+            Debug.Log("Skeletons should spawn");
+            GameObject spawnedSkeleton1 = objectPooler.SpawnFromPool("Skeleton", transform.position, transform.rotation);
+        spawnedSkeleton1.transform.Rotate(0, 0, Random.Range(0, 90));
         spawnedSkeleton1.transform.Translate(transform.up * -1);
+        skeleSpawnAudio.Play();
 
         GameObject spawnedSkeleton2 = objectPooler.SpawnFromPool("Skeleton", transform.position, transform.rotation);
             spawnedSkeleton2.transform.Rotate(0, 0, Random.Range(90, 180));
         spawnedSkeleton2.transform.Translate(transform.up * -1);
+           skeleSpawnAudio.Play();
 
-        GameObject spawnedSkeleton3 = objectPooler.SpawnFromPool("Skeleton", transform.position, transform.rotation);
+            GameObject spawnedSkeleton3 = objectPooler.SpawnFromPool("Skeleton", transform.position, transform.rotation);
             spawnedSkeleton3.transform.Rotate(0, 0, Random.Range(180, 270));
         spawnedSkeleton3.transform.Translate(transform.up * -1);
+            skeleSpawnAudio.Play();
 
-        GameObject spawnedSkeleton4 = objectPooler.SpawnFromPool("Skeleton", transform.position, transform.rotation);
+            GameObject spawnedSkeleton4 = objectPooler.SpawnFromPool("Skeleton", transform.position, transform.rotation);
             spawnedSkeleton4.transform.Rotate(0, 0, Random.Range(270, 360));
         spawnedSkeleton4.transform.Translate(transform.up * -1);
+            skeleSpawnAudio.Play();
         }
     }
 
@@ -107,7 +127,7 @@ public class Portal : MonoBehaviour
         {
            // Debug.Log("Skeletons should be spawning");
             GameObject hellKnight1 = objectPooler.SpawnFromPool("HellKnight", transform.position, transform.rotation);
-
+            knightSpawnAudio.Play();
             hellKnight1.transform.Translate(0, 0, 0);
 
            // GameObject hellKnight2 = Instantiate(hellKnight, transform.position, transform.rotation);
@@ -123,18 +143,22 @@ public class Portal : MonoBehaviour
             GameObject infernalSoul1 = objectPooler.SpawnFromPool("InfernalSoul", transform.position, transform.rotation);
             infernalSoul1.transform.Rotate(0, 0, Random.Range(0, 90));
             infernalSoul1.transform.Translate(transform.up * -1);
+            //soulSpawnAudio.Play();
 
             GameObject infernalSoul2 = objectPooler.SpawnFromPool("InfernalSoul", transform.position, transform.rotation);
             infernalSoul2.transform.Rotate(0, 0, Random.Range(90, 180));
             infernalSoul2.transform.Translate(transform.up * -1);
+           // soulSpawnAudio.Play();
 
             GameObject infernalSoul3 = objectPooler.SpawnFromPool("InfernalSoul", transform.position, transform.rotation);
             infernalSoul3.transform.Rotate(0, 0, Random.Range(180, 270));
             infernalSoul3.transform.Translate(transform.up * -1);
+           // soulSpawnAudio.Play();
 
             GameObject infernalSoul4 = objectPooler.SpawnFromPool("InfernalSoul", transform.position, transform.rotation);
             infernalSoul4.transform.Rotate(0, 0, Random.Range(270, 360));
             infernalSoul4.transform.Translate(transform.up * -1);
+           //soulSpawnAudio.Play();
         }
     }
 

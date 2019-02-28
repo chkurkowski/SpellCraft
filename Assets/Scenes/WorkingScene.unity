@@ -4303,11 +4303,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1166791909594820, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
     type: 2}
   m_PrefabInternal: {fileID: 1846089205}
---- !u!198 &721968418 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198683510319143038, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-    type: 2}
-  m_PrefabInternal: {fileID: 1846089205}
 --- !u!1 &746026876
 GameObject:
   m_ObjectHideFlags: 0
@@ -7136,6 +7131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 281229ce8e94a1540bcf5efddc5536b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testingAttacks: 0
+  currentlyTestingAttack: 1
   previousAttack: 0
   isAttacking: 0
   canAttack: 1
@@ -7327,6 +7324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9d5d066c82c374b890b517e6e55328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testingAttacks: 0
+  currentlyTestingAttack: 1
   previousAttack: 0
   isAttacking: 0
   canAttack: 1
@@ -10951,51 +10950,6 @@ Prefab:
       propertyPath: playerHealthBar
       value: 
       objectReference: {fileID: 1516673321}
-    - target: {fileID: 198182118557903328, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198182118557903328, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: playOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198683510319143038, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: playOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 199599086703648194, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: pSystem
-      value: 
-      objectReference: {fileID: 721968418}
-    - target: {fileID: 198182118557903328, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: moveWithTransform
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198182118557903328, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: lengthInSec
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 198182118557903328, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: leftMouseAbility
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
   m_IsPrefabAsset: 0

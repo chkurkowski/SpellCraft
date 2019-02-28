@@ -8,6 +8,7 @@ public class InfernalSoul : MonoBehaviour, IPooledObject
     public float infernalSoulHealth = 1.5f;
     public float infernalSoulDamage = 5f;
     public float moveSpeed = 40f;
+    public AudioSource explosionAudio;
 
 
     public void OnObjectSpawn()
@@ -30,6 +31,7 @@ public class InfernalSoul : MonoBehaviour, IPooledObject
     {
         Instantiate(explosion, transform.position, transform.rotation);
         gameObject.SetActive(false);
+        explosionAudio.Play();
     }
 
 

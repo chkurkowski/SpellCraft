@@ -237,6 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 2113439470}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &12022918
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1152,6 +1153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9d5d066c82c374b890b517e6e55328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testingAttacks: 0
+  currentlyTestingAttack: 1
   previousAttack: 0
   isAttacking: 0
   canAttack: 1
@@ -1633,6 +1636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1590711273}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &57007553
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1820,6 +1824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 138750491}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &58898314
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2007,6 +2012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 961545791}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &84326617
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2431,6 +2437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 501333900}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &118823217
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -3119,6 +3126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1669600859}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &155587193
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -3731,6 +3739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 882994358}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &223828773
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -4991,11 +5000,6 @@ MonoBehaviour:
   sprayRotationAmount: 1
   bloodSprayDuration: 2
   canSprayBlood: 0
---- !u!1 &296423449 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1609784237563946, guid: 53708645377c8484db4fa32dea5fb149,
-    type: 2}
-  m_PrefabInternal: {fileID: 1172936068}
 --- !u!4 &296423450 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4395556454534056, guid: 53708645377c8484db4fa32dea5fb149,
@@ -5516,6 +5520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 244550579}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &327481497
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -5703,6 +5708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 779051765}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!120 &330907580
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -6933,6 +6939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 252761240}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &507234144
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -7285,6 +7292,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12}
   m_EdgeRadius: 0
+--- !u!1001 &528697412
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 171
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102766126379484, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: playerHealthBar
+      value: 
+      objectReference: {fileID: 591008405}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &531671645
 GameObject:
   m_ObjectHideFlags: 0
@@ -8106,7 +8160,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &585041361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8179,6 +8233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1255982707}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &585980443
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -9127,16 +9182,6 @@ MonoBehaviour:
   sprayRotationAmount: 1
   bloodSprayDuration: 2
   canSprayBlood: 0
---- !u!1 &669007993 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1166791909594820, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-    type: 2}
-  m_PrefabInternal: {fileID: 794441709}
---- !u!4 &669008008 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-    type: 2}
-  m_PrefabInternal: {fileID: 794441709}
 --- !u!1 &675983118
 GameObject:
   m_ObjectHideFlags: 0
@@ -9289,6 +9334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 785559866}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &691343949
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -9538,6 +9584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 964310126}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &704104753
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -10421,6 +10468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 472959939}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &744924185
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -10705,6 +10753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 246827906}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &755921208
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -11000,6 +11049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 835266775}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &774652413
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -11384,75 +11434,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 32.9, y: 32.6}
   m_EdgeRadius: 0
---- !u!1001 &794441709
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -84
-      objectReference: {fileID: 0}
-    - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 411
-      objectReference: {fileID: 0}
-    - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1166791909594820, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 114585357869244448, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: reflect
-      value: 
-      objectReference: {fileID: 296423449}
-    - target: {fileID: 114585357869244448, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: absorb
-      value: 
-      objectReference: {fileID: 2098123054}
-    - target: {fileID: 114102766126379484, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-        type: 2}
-      propertyPath: playerHealthBar
-      value: 
-      objectReference: {fileID: 591008405}
-    - target: {fileID: 4322028659232838, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4912163684400386, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &794582549
 GameObject:
   m_ObjectHideFlags: 0
@@ -11708,6 +11689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1826010333}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &799234525
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -13522,6 +13504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 983019264}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &908082242
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -13811,6 +13794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1626660626}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!120 &919078246
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -15022,7 +15006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &994139231
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15576,6 +15560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 279920893}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &1013775312
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -17494,6 +17479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 250161741}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &1230016084
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -17758,6 +17744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 850414297}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &1246190531
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -21389,6 +21376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1876043802}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &1451930158
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -21640,6 +21628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1648883186}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &1495784444
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -21979,6 +21968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1054187228}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &1523244591
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -22295,7 +22285,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1534829898}
   - component: {fileID: 1534829899}
-  - component: {fileID: 1534829900}
   m_Layer: 0
   m_Name: Floor (2)
   m_TagString: Untagged
@@ -22362,31 +22351,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1534829900
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1534829897}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.12, y: 5.12}
-  m_EdgeRadius: 0
 --- !u!1 &1536746672
 GameObject:
   m_ObjectHideFlags: 0
@@ -23203,6 +23167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1313320776}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!120 &1585505662
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -23751,6 +23716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9d5d066c82c374b890b517e6e55328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testingAttacks: 0
+  currentlyTestingAttack: 1
   previousAttack: 0
   isAttacking: 0
   canAttack: 1
@@ -23947,6 +23914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1900830542}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &1612604030
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -24222,7 +24190,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1631787071}
   - component: {fileID: 1631787072}
-  - component: {fileID: 1631787073}
   m_Layer: 0
   m_Name: Floor (1)
   m_TagString: Untagged
@@ -24289,31 +24256,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1631787073
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1631787070}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.12, y: 5.12}
-  m_EdgeRadius: 0
 --- !u!1 &1634114951
 GameObject:
   m_ObjectHideFlags: 0
@@ -24782,6 +24724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1029383170}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &1685198629
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -26260,6 +26203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 897878256}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &1771553447
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -26778,6 +26722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1242097992}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &1807491049
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -31953,6 +31898,11 @@ Transform:
   m_Father: {fileID: 1310206524}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1872556092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1166791909594820, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+    type: 2}
+  m_PrefabInternal: {fileID: 528697412}
 --- !u!1 &1874221825
 GameObject:
   m_ObjectHideFlags: 0
@@ -32000,6 +31950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 675983119}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &1874221828
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -32478,6 +32429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 825786793}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!120 &1894137651
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -32796,6 +32748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 2014210134}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &1907601330
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -33315,6 +33268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1618884753}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &1943778792
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -33976,7 +33930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 635b15d09525c4ab983bbd50593de0fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 669007993}
+  Player: {fileID: 1872556092}
   Boss: {fileID: 0}
   cam: {fileID: 1960605314}
   zoomTweak: 0
@@ -34049,6 +34003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 2003174172}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &1988282247
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -34236,6 +34191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1238009871}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &1991348553
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -34817,6 +34773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 1788424259}
   laserDamage: 0.1
+  laserDamageToBoss: 0.05
 --- !u!120 &2026236091
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -35274,6 +35231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 281229ce8e94a1540bcf5efddc5536b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testingAttacks: 0
+  currentlyTestingAttack: 1
   previousAttack: 0
   isAttacking: 0
   canAttack: 1
@@ -35323,6 +35282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9d5d066c82c374b890b517e6e55328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testingAttacks: 0
+  currentlyTestingAttack: 1
   previousAttack: 0
   isAttacking: 0
   canAttack: 1
@@ -36441,68 +36402,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4361513253035776, guid: 29188576af6bfdf4792cd5c0a5e29809,
     type: 2}
   m_PrefabInternal: {fileID: 2088297201}
---- !u!1001 &2098123053
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 669008008}
-    m_Modifications:
-    - target: {fileID: 4558047781334432, guid: 4c476e14dd22a4b68bcb0960b6a64afa, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558047781334432, guid: 4c476e14dd22a4b68bcb0960b6a64afa, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558047781334432, guid: 4c476e14dd22a4b68bcb0960b6a64afa, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558047781334432, guid: 4c476e14dd22a4b68bcb0960b6a64afa, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558047781334432, guid: 4c476e14dd22a4b68bcb0960b6a64afa, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558047781334432, guid: 4c476e14dd22a4b68bcb0960b6a64afa, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558047781334432, guid: 4c476e14dd22a4b68bcb0960b6a64afa, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558047781334432, guid: 4c476e14dd22a4b68bcb0960b6a64afa, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1049907719914592, guid: 4c476e14dd22a4b68bcb0960b6a64afa, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4c476e14dd22a4b68bcb0960b6a64afa, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1 &2098123054 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1049907719914592, guid: 4c476e14dd22a4b68bcb0960b6a64afa,
-    type: 2}
-  m_PrefabInternal: {fileID: 2098123053}
---- !u!114 &2098123056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2098123054}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93ffb02222fdc1f49bf2af76ac271f15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2101512808
 GameObject:
   m_ObjectHideFlags: 0
