@@ -10,7 +10,7 @@ public class PylonVortex : MonoBehaviour
     public float vortexDamageNOTFOREDITING;
 
     public float vortexGrowthRate = .001f;
-    private const float finalVortexLimit = 15f;
+    private const float finalVortexLimit = 13f;
     private const float originalVortexLimit = 7f;
     public float vortexGrowthLimit = 7f;
     private GameObject player;

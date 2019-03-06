@@ -14217,6 +14217,11 @@ Prefab:
       propertyPath: vortexLimitIncreaseAmount
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114870178828714260, guid: e7fe28cab9b65e544851fb55ab1861e4,
+        type: 2}
+      propertyPath: projectileDamage
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7fe28cab9b65e544851fb55ab1861e4, type: 2}
   m_IsPrefabAsset: 0
