@@ -35,9 +35,9 @@ public class PylonMicroVortex : MonoBehaviour
             Invoke("ResetColor", 1f);
             vortexParticle.Play();
             Invoke("StopWaveParticle", 2f);
-            parentVortex.vortexDamageNOTFOREDITING += collision.gameObject.GetComponent<ProjectileDamage>().projectileDamage;
+           // parentVortex.vortexDamageNOTFOREDITING += collision.gameObject.GetComponent<ProjectileDamage>().projectileDamage;
             parentVortex.vortexGrowthLimit += parentVortex.vortexLimitIncreaseAmount;
-            parentVortex.vortexDamageNOTFOREDITING += collision.gameObject.GetComponent<ProjectileDamage>().projectileDamage;
+          
         }
     }
 
