@@ -4,12 +4,30 @@ using UnityEngine;
 
 public class PlayerAbilities : MonoBehaviour {
 
+    public static PlayerAbilities instance;
+
+    private void Awake()
+    {
+        if(instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
+
 	//Public Editor Variables
     [Header("Editor Variables - Don't Touch")]
 	public PlayerMovement movement;
 	public PlayerHealth health;
 	private AbilityHandler handlers;
 	private ParticleSystem pSystem;
+
+    [Space(10)]
+
+    [Header("Combo Resource Amount")]
+    [SerializeField] [Range(0, 3)]
+    private float comboResource = 0f;
+    private float COMBORESOURCEMAX = 3f;
+    private float comboResourceRegenRate = .05f;
 
     [Space(10)]
 
@@ -54,7 +72,7 @@ public class PlayerAbilities : MonoBehaviour {
     [Space(10)]
 
     [Header("Cooldowns and Timers")]
-    public float BURSTCOOLDOWN = 2f;
+    public float BURSTCOOLDOWN = .5f;
     public float EVADECOOLDOWN = .25f;
 
     public  float evadeEnd = .35f;
@@ -97,12 +115,7 @@ public class PlayerAbilities : MonoBehaviour {
 		while(health.isAlive)
 		{
 			//print(state);
-            if(Input.GetKeyDown(KeyCode.Alpha1))
-                ChangeLeftMouse();
-            if(Input.GetKeyDown(KeyCode.Alpha2))
-                ChangeRightMouse();
-            if(Input.GetKeyDown(KeyCode.Alpha3))
-                ChangeKeyboardButton();
+            ResourceRegenHandler();
 
 			switch (state)
 			{
@@ -240,20 +253,26 @@ public class PlayerAbilities : MonoBehaviour {
 
 	private void BurstCast()
 	{
-		if (lastAttacks.Contains("MagicMissile") && lastAttacks.Contains("HealStun") && burstTimer >= BURSTCOOLDOWN)
+		if (lastAttacks.Contains("MagicMissile") && lastAttacks.Contains("HealStun") 
+            && burstTimer >= BURSTCOOLDOWN && comboResource >= COMBORESOURCEMAX / 3)
         {
             handlers.AbilityChecker(ATTACKSIM, true, true);
             burstTimer = 0;
+            comboResource -= 1;
         }
-        else if(lastAttacks.Contains("MagicMissile") && lastAttacks.Contains("Reflect") && burstTimer >= BURSTCOOLDOWN)
+        else if(lastAttacks.Contains("MagicMissile") && lastAttacks.Contains("Reflect") 
+            && burstTimer >= BURSTCOOLDOWN && comboResource >= COMBORESOURCEMAX / 3)
         {
             handlers.AbilityChecker(ABSORBSIM, true, true);
             burstTimer = 0;
+            comboResource -= 1;
         }
-        else if(lastAttacks.Contains("Reflect") && lastAttacks.Contains("HealStun") && burstTimer >= BURSTCOOLDOWN)
+        else if(lastAttacks.Contains("Reflect") && lastAttacks.Contains("HealStun") 
+            && burstTimer >= BURSTCOOLDOWN && comboResource >= COMBORESOURCEMAX / 3)
         {
             handlers.AbilityChecker(ABSORB, true, true);
             burstTimer = 0;
+            comboResource -= 1;
         }
         else
             state = State.IDLE;
@@ -318,6 +337,19 @@ public class PlayerAbilities : MonoBehaviour {
                 AttackArrayHandler("ProjectileSplit", ritualList);
             }
         }
+    }
+
+    private void ResourceRegenHandler()
+    {
+        if(comboResource <= COMBORESOURCEMAX)
+        {
+            comboResource += Time.deltaTime * comboResourceRegenRate;
+        }
+    }
+
+    public void AddToResource(float add)
+    {
+        comboResource += add;
     }
 
     public void ChangeLeftMouse()

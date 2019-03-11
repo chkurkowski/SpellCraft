@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4069713615852516}
   - component: {fileID: 212446415204485490}
   - component: {fileID: 61527243312984784}
-  - component: {fileID: 114075354927922880}
+  - component: {fileID: 114388031468506668}
   m_Layer: 2
-  m_Name: ProjectileSplit
+  m_Name: ProjectileSpeed
   m_TagString: Split
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12}
   m_EdgeRadius: 0
---- !u!114 &114075354927922880
+--- !u!114 &114388031468506668
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,10 +75,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1510757535994298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2177a612e7f346d785f537091b85431, type: 3}
+  m_Script: {fileID: 11500000, guid: 3201beab68dac48bc98fe855d34df955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 6
+  speedMultiplier: 2.5
+  damageMultiplier: 1.5
 --- !u!212 &212446415204485490
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -115,7 +117,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 77164b88dd40f3f4d8961a33ae98ddfc, type: 3}
-  m_Color: {r: 0, g: 0.9056604, b: 0.4616983, a: 0.7058824}
+  m_Color: {r: 0, g: 0.78125155, b: 0.90588236, a: 0.7058824}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

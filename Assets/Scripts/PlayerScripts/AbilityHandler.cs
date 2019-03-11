@@ -14,6 +14,7 @@ public class AbilityHandler : MonoBehaviour {
     public GameObject healStun;
     public GameObject healStunCombo;
     public GameObject projectileSplit;
+    public GameObject projectileSpeed;
     public Vector2 cursorInWorldPos;
     public ParticleSystem waveSystem;
     private Color origColor;
@@ -44,7 +45,7 @@ public class AbilityHandler : MonoBehaviour {
     public float ABSORBEXPLODECOOLDOWN = 8f;
     public float ENERGYGOLEMCOOLDOWN = 2f;
     public float HEALSTUNCOMBOCOOLDOWN = 6f;
-    public float PROJECTILESPLITCOOLDOWN = 6f;
+    public float PROJECTILESPEEDCOOLDOWN = 6f;
     public float ATKSIMCOOLDOWN = 2f;
     public float ABSORBCOOLDOWN = 6f;
     public float ABSORBSIMCOOLDOWN = 12f;
@@ -53,7 +54,7 @@ public class AbilityHandler : MonoBehaviour {
     public float ABSORBEND = 3f;
     public float ABSORBEXPLODEEND = 5f;
 
-    private float longATKTimer, energyGolemTimer, healStunTimer, projectileSplitTimer, healStunComboTimer,
+    private float longATKTimer, energyGolemTimer, healStunTimer, projectileSpeedTimer, healStunComboTimer,
     reflectTimer, absorbExplodeTimer, atkSimTimer, absorbTimer, absorbSimTimer, burstTimer;
 
     private PlayerAbilities abilities;
@@ -70,7 +71,7 @@ public class AbilityHandler : MonoBehaviour {
         absorbSimTimer = ABSORBSIMCOOLDOWN;
         burstTimer = BURSTCOOLDOWN;
         energyGolemTimer = ENERGYGOLEMCOOLDOWN;
-        projectileSplitTimer = PROJECTILESPLITCOOLDOWN;
+        projectileSpeedTimer = PROJECTILESPEEDCOOLDOWN;
         absorbExplodeTimer = ABSORBEXPLODECOOLDOWN;
 
         abilities = GetComponent<PlayerAbilities>();
@@ -103,7 +104,7 @@ public class AbilityHandler : MonoBehaviour {
                         Reflect();
                         break;
                     case 3:
-                        HealStun();
+                    	ProjectileSpeed();
                         break;
                     case 4:
                         EnergyGolem();
@@ -112,7 +113,7 @@ public class AbilityHandler : MonoBehaviour {
                     	AbsorbExplode();
                         break;
                     case 6:
-                        ProjectileSplit();
+                        HealStun();
                         break;
                 }
                 break;
@@ -207,14 +208,14 @@ public class AbilityHandler : MonoBehaviour {
         }
     }
 
-    private void ProjectileSplit()
+    private void ProjectileSpeed()
     {
-        if(projectileSplitTimer >= PROJECTILESPLITCOOLDOWN)
-        {
-        	Instantiate(projectileSplit, cursorInWorldPos,transform.rotation);
-            abilities.AttackArrayHandler("HealStun", abilities.lastAttacks);
-            projectileSplitTimer = 0;
-        }
+    	if(projectileSpeedTimer >= PROJECTILESPEEDCOOLDOWN)
+    	{
+    		Instantiate(projectileSpeed, cursorInWorldPos,transform.rotation);
+	        abilities.AttackArrayHandler("HealStun", abilities.lastAttacks);
+	        projectileSpeedTimer = 0;
+    	}
     }
 
     #endregion
@@ -230,9 +231,17 @@ public class AbilityHandler : MonoBehaviour {
             abilityHandlerSource.clip = attackSimSound;
             abilityHandlerSource.PlayOneShot(attackSimSound);
 
-            GameObject sim = Instantiate(simulacrum, transform.position + (transform.up * -8), Quaternion.identity);
-            sim.GetComponent<SimulacrumAbilities>().type = "Attack";
-            sim.GetComponent<SimulacrumAbilities>().SetLifetime(4f);
+            GameObject[] sims = new GameObject[4];
+            sims[0] = Instantiate(simulacrum, transform.position + (transform.up * -10) + (transform.right * -5), Quaternion.identity);
+            sims[1] = Instantiate(simulacrum, transform.position + (transform.up * -10) + (transform.right * 5), Quaternion.identity);
+            sims[2] = Instantiate(simulacrum, transform.position + (transform.up * -5) + (transform.right * -10), Quaternion.identity);
+            sims[3] = Instantiate(simulacrum, transform.position + (transform.up * -5) + (transform.right * 10), Quaternion.identity);
+
+            foreach(GameObject sim in sims)
+            {
+                sim.GetComponent<SimulacrumAbilities>().type = "Attack";
+                sim.GetComponent<SimulacrumAbilities>().SetLifetime(4f);
+            }
         }
         else
         {
@@ -245,6 +254,40 @@ public class AbilityHandler : MonoBehaviour {
                 GameObject sim = Instantiate(simulacrum, transform.position + (transform.up * -8), Quaternion.identity);
                 sim.GetComponent<SimulacrumAbilities>().type = "Attack";
                 atkSimTimer = 0f;
+            }
+        }
+    }
+
+    private void ProjectileSplitSim(bool isBurst)
+    {
+        if(isBurst)
+        {
+        	Instantiate(projectileSplit, cursorInWorldPos,transform.rotation);
+            abilities.AttackArrayHandler("HealStun", abilities.lastAttacks);
+        }
+    }
+
+    //NewName - AbsorbSim
+    private void AbsorbSim(bool isBurst)
+    {
+        if(isBurst)
+        {
+            //TODO Add AbsorbSim Burst Sound
+
+            GameObject sim = Instantiate(simulacrum, transform.position + (transform.up * 8), Quaternion.identity);
+            sim.transform.parent = transform;
+            sim.GetComponent<SimulacrumAbilities>().type = "Absorb";
+            sim.GetComponent<SimulacrumAbilities>().damageCap = 20;
+        }
+        else
+        {
+            //TODO Add AbsorbSim Ritual Sound
+            if(absorbSimTimer >= ABSORBSIMCOOLDOWN)
+            {
+                GameObject sim = Instantiate(simulacrum, transform.position + (transform.up * 8), Quaternion.identity);
+                sim.GetComponent<SimulacrumAbilities>().type = "Absorb";
+                sim.GetComponent<SimulacrumAbilities>().damageCap = 50;
+                absorbSimTimer = 0f;
             }
         }
     }
@@ -289,30 +332,6 @@ public class AbilityHandler : MonoBehaviour {
         }
     }
 
-    //NewName - AbsorbSim
-    private void AbsorbSim(bool isBurst)
-    {
-        if(isBurst)
-        {
-            //TODO Add AbsorbSim Burst Sound
-
-            GameObject sim = Instantiate(simulacrum, transform.position + (transform.up * 8), Quaternion.identity);
-            sim.GetComponent<SimulacrumAbilities>().type = "Absorb";
-            sim.GetComponent<SimulacrumAbilities>().damageCap = 20;
-        }
-        else
-        {
-            //TODO Add AbsorbSim Ritual Sound
-            if(absorbSimTimer >= ABSORBSIMCOOLDOWN)
-            {
-                GameObject sim = Instantiate(simulacrum, transform.position + (transform.up * 8), Quaternion.identity);
-                sim.GetComponent<SimulacrumAbilities>().type = "Absorb";
-                sim.GetComponent<SimulacrumAbilities>().damageCap = 50;
-                absorbSimTimer = 0f;
-            }
-        }
-    }
-
     #endregion
 
     #region Handlers
@@ -341,7 +360,7 @@ public class AbilityHandler : MonoBehaviour {
         absorbSimTimer += Time.deltaTime;
         burstTimer += Time.deltaTime;
         energyGolemTimer += Time.deltaTime;
-        projectileSplitTimer += Time.deltaTime;
+        projectileSpeedTimer += Time.deltaTime;
         absorbExplodeTimer += Time.deltaTime;
 
         if (reflectTimer >= 2f)
@@ -393,7 +412,7 @@ public class AbilityHandler : MonoBehaviour {
             case "absorb":
                 return absorbTimer;
             case "projectilesplit":
-            	return projectileSplitTimer;
+            	return projectileSpeedTimer;
         	case "absorbexplode":
         		return absorbExplodeTimer;
             default:
@@ -418,7 +437,7 @@ public class AbilityHandler : MonoBehaviour {
             case "absorb":
                 return ABSORBCOOLDOWN;
         	case "projectilesplit":
-            	return PROJECTILESPLITCOOLDOWN;
+            	return PROJECTILESPEEDCOOLDOWN;
         	case "absorbexplode":
         		return ABSORBEXPLODECOOLDOWN;
             default:

@@ -52,7 +52,10 @@ public class SimulacrumAbilities : MonoBehaviour
         {
             cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (type == "Absorb")
+            {
                 gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+                gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            }
             else
                 gameObject.GetComponent<Collider2D>().enabled = false;
             switch (state)
@@ -83,8 +86,6 @@ public class SimulacrumAbilities : MonoBehaviour
                 state = State.LONGATK;
             }
         }
-        // else
-        //     LookAtBoss();
 
     }
 

@@ -15452,6 +15452,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &687180794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1091554754486938, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1045345312}
+--- !u!114 &687180799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 687180794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cc10f3ff10504247a295a7d9cc19f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &692059362
 GameObject:
   m_ObjectHideFlags: 0
@@ -20439,6 +20455,17 @@ Prefab:
         type: 2}
       propertyPath: laserDamageToBoss
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 114585357869244448, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: projectileSpeed
+      value: 
+      objectReference: {fileID: 1510757535994298, guid: df3f6fd27fc7f44bbbf75457854bb58a,
+        type: 2}
+    - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: BURSTCOOLDOWN
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
