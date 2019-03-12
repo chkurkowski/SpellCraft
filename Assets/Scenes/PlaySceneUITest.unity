@@ -21416,17 +21416,16 @@ Prefab:
       propertyPath: resourceBar
       value: 
       objectReference: {fileID: 1765138375}
+    - target: {fileID: 1015099042815006, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1045345313 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1166791909594820, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-    type: 2}
-  m_PrefabInternal: {fileID: 1045345312}
---- !u!4 &1045345314 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
     type: 2}
   m_PrefabInternal: {fileID: 1045345312}
 --- !u!95 &1045345320
@@ -21447,12 +21446,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1045345325 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-    type: 2}
-  m_PrefabInternal: {fileID: 1045345312}
-  m_Script: {fileID: 11500000, guid: b722eb56d85a745c581792ebfdc2e024, type: 3}
 --- !u!1 &1050542243
 GameObject:
   m_ObjectHideFlags: 0
