@@ -44,7 +44,7 @@ public class explodingPylonScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "Projectile")
         {
-            colorInfo.color = Color.blue;
+            colorInfo.color = Color.red;
             Invoke("ResetColor", 1);
             pylonHealth -= collision.gameObject.GetComponent<ProjectileDamage>().projectileDamage;
         }
@@ -64,7 +64,7 @@ public class explodingPylonScript : MonoBehaviour
     }
     private void ResetColor()
     {
-        colorInfo.color = Color.red;
+        colorInfo.color = Color.white;
     }
 
     public void SetId(int Id)
