@@ -64,6 +64,7 @@ public class LaserTutorialScript : MonoBehaviour
             if(hit.collider.gameObject.layer != 14)
             {
                 hit.transform.gameObject.GetComponent<PlayerHealth>().DamagePlayer(laserDamage);
+                // hit.transform.gameObject.GetComponent<PlayerHealth>().StartIFrames();
             }
            //Debug.Log("Player detected!");
         }

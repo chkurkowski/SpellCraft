@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     
     [Header("If the Player is Alive")]
     public bool isAlive = true;
+    private bool isRunning = false;
 
     [Header("Public Health Variables")]
     public float maxPlayerHealth = 100f;
@@ -56,13 +57,14 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamagePlayer(float dmg)
     {
-        if(!absorbDamage)
+        if(!absorbDamage && gameObject.layer == 13 && !isRunning)
         {
             playerHealthSource.clip = damagePlayerSound;
             playerHealthSource.PlayOneShot(damagePlayerSound);
             playerHealth -= dmg;
             playerHealthBar.fillAmount = playerHealth / 100;
-            StartCoroutine(InvincibilityFrames());
+            if(!isRunning)
+                StartCoroutine(InvincibilityFrames());
         }
         else
         {
@@ -81,6 +83,7 @@ public class PlayerHealth : MonoBehaviour
 
     private IEnumerator InvincibilityFrames()
     {
+        isRunning = true;
         gameObject.layer = 14;
         print("Layer: " + gameObject.layer);
         Color firstColor = gameObject.GetComponent<SpriteRenderer>().color;
@@ -97,19 +100,16 @@ public class PlayerHealth : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
         yield return new WaitForSeconds(.10f);
         gameObject.layer = 13;
+        isRunning = false;
+        print("Layer: " + gameObject.layer);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-
-      
-
         if (col.gameObject.tag == "CheckPoint")
         {
             respawnManagerInfo.currentCheckPoint = col.gameObject;
-           
         }
     }
-
    
 }

@@ -26778,7 +26778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9d5d066c82c374b890b517e6e55328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testingAttacks: 0
+  testingAttacks: 1
   currentlyTestingAttack: 1
   previousAttack: 0
   isAttacking: 0
