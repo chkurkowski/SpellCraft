@@ -15411,7 +15411,7 @@ Prefab:
     - target: {fileID: 114768034092005472, guid: e7fe28cab9b65e544851fb55ab1861e4,
         type: 2}
       propertyPath: vortexLimitIncreaseAmount
-      value: 3.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114870178828714260, guid: e7fe28cab9b65e544851fb55ab1861e4,
         type: 2}
