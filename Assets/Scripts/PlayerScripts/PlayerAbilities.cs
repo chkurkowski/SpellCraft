@@ -179,13 +179,13 @@ public class PlayerAbilities : MonoBehaviour {
 		}
 
 		//Shift Ritual Cast
-		if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
-        {
-            ritualAudio = GetComponent<AudioSource>();
-            ritualAudio.clip = ritualSound;
-            ritualAudio.Play();
-            state = State.RITUALCAST;
-        }
+		// if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        // {
+        //     ritualAudio = GetComponent<AudioSource>();
+        //     ritualAudio.clip = ritualSound;
+        //     ritualAudio.Play();
+        //     state = State.RITUALCAST;
+        // }
 
         //Middle Mouse and Q Burst Cast
         if (Input.GetKeyDown(KeyCode.Mouse2) || Input.GetKeyDown(KeyCode.Q))

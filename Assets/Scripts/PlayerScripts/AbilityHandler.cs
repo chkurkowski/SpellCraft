@@ -16,6 +16,7 @@ public class AbilityHandler : MonoBehaviour {
     public GameObject projectileSplit;
     public GameObject projectileSplitSim;
     public GameObject projectileSpeed;
+    public GameObject simulacrumAbsorb;
     public Vector2 cursorInWorldPos;
     public ParticleSystem waveSystem;
     private Color origColor;
@@ -278,10 +279,8 @@ public class AbilityHandler : MonoBehaviour {
         {
             //TODO Add AbsorbSim Burst Sound
 
-            GameObject sim = Instantiate(simulacrum, transform.position + (transform.up * 8), Quaternion.identity);
-            sim.transform.parent = transform;
-            sim.GetComponent<SimulacrumAbilities>().type = "Absorb";
-            sim.GetComponent<SimulacrumAbilities>().damageCap = 20;
+            simulacrumAbsorb.SetActive(true);
+            simulacrumAbsorb.GetComponent<SimulacrumAbsorb>().damageCap = 40f;
         }
         else
         {
