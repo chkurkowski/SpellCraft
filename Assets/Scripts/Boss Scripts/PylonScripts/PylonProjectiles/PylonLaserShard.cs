@@ -106,7 +106,7 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
         }
         else if (col.gameObject.tag == "Simulacrum")
         {
-            col.gameObject.GetComponent<SimulacrumAbilities>().AbsorbDamage(laserShardDamage);
+            col.gameObject.GetComponent<SimulacrumAbsorb>().AbsorbDamage(laserShardDamage);
             //Destroy(gameObject);
             gameObject.SetActive(false);
         }
@@ -117,7 +117,8 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
             // Destroy(gameObject);
             gameObject.SetActive(false);
         }
-        else if (col.gameObject.tag != "EnemyProjectile" && col.gameObject.tag != "Boss" && col.gameObject.tag != "CameraTrigger" && col.gameObject.tag != "Vortex" )
+        else if (col.gameObject.tag != "EnemyProjectile" && col.gameObject.tag != "Boss" 
+            && col.gameObject.tag != "CameraTrigger" && col.gameObject.tag != "Vortex" && col.gameObject.tag != "Split")
         {
             //Destroy(gameObject);
             gameObject.SetActive(false);
