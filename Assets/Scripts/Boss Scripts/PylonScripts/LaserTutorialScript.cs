@@ -59,7 +59,7 @@ public class LaserTutorialScript : MonoBehaviour
                 GameObject.Find("Player").GetComponent<PlayerHealth>().HealPlayer(laserDamage);
             }
         }
-        if (hit.transform.tag == "Player")
+        if (hit.collider.tag == "Player")
         {
             if(hit.collider.gameObject.layer != 14)
             {
