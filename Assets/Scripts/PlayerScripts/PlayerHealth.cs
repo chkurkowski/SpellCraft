@@ -82,6 +82,7 @@ public class PlayerHealth : MonoBehaviour
     private IEnumerator InvincibilityFrames()
     {
         gameObject.layer = 14;
+        print("Layer: " + gameObject.layer);
         Color firstColor = gameObject.GetComponent<SpriteRenderer>().color;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(.07f);

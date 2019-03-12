@@ -86,7 +86,7 @@ public class AbilityHandler : MonoBehaviour {
     {
         while(true)
         {
-        	print(waveSystem.isPlaying);
+        	// print(waveSystem.isPlaying);
             BasicHandlers();
             yield return null;
         }
@@ -267,7 +267,7 @@ public class AbilityHandler : MonoBehaviour {
     {
         if(isBurst)
         {
-            print("Hit");
+            // print("Hit");
         	Instantiate(projectileSplitSim, cursorInWorldPos, transform.rotation);
         }
     }
