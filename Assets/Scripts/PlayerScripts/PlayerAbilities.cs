@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAbilities : MonoBehaviour {
 
@@ -28,6 +29,7 @@ public class PlayerAbilities : MonoBehaviour {
     private float comboResource = 0f;
     private float COMBORESOURCEMAX = 3f;
     private float comboResourceRegenRate = .05f;
+    public Image resourceBar;
 
     [Space(10)]
 
@@ -344,6 +346,7 @@ public class PlayerAbilities : MonoBehaviour {
         if(comboResource <= COMBORESOURCEMAX)
         {
             comboResource += Time.deltaTime * comboResourceRegenRate;
+            resourceBar.fillAmount = comboResource / 3;
         }
     }
 
