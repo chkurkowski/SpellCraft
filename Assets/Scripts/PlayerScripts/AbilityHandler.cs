@@ -14,6 +14,7 @@ public class AbilityHandler : MonoBehaviour {
     public GameObject healStun;
     public GameObject healStunCombo;
     public GameObject projectileSplit;
+    public GameObject projectileSplitSim;
     public GameObject projectileSpeed;
     public Vector2 cursorInWorldPos;
     public ParticleSystem waveSystem;
@@ -124,13 +125,16 @@ public class AbilityHandler : MonoBehaviour {
                         AttackSim(isBurst);
                         break;
                     case 2:
-                        Absorb(isBurst);
+                        AbsorbSim(isBurst);
                         break;
                     case 3:
-                        AbsorbSim(isBurst);
+                        ProjectileSplitSim(isBurst);
                         break;
                     case 4:
                         HealStunCombo(isBurst);
+                        break;
+                    case 5:
+                        Absorb(isBurst);
                         break;
                 }
                 break;
@@ -262,8 +266,8 @@ public class AbilityHandler : MonoBehaviour {
     {
         if(isBurst)
         {
-        	Instantiate(projectileSplit, cursorInWorldPos,transform.rotation);
-            abilities.AttackArrayHandler("HealStun", abilities.lastAttacks);
+            print("Hit");
+        	Instantiate(projectileSplitSim, cursorInWorldPos, transform.rotation);
         }
     }
 
