@@ -212,8 +212,8 @@ public class BossInfo : MonoBehaviour
     public void ResetBoss()
     {
         isActivated = false;
-       // rageState = RageState.CALM;
-      //  bossRageLevel = 0;
+        rageState = RageState.CALM;
+        bossRageLevel = 0;
         bossHealthInfo.bossHealth = bossHealthInfo.bossMaxHealth;
     }
 

@@ -14215,7 +14215,7 @@ Prefab:
     - target: {fileID: 114768034092005472, guid: e7fe28cab9b65e544851fb55ab1861e4,
         type: 2}
       propertyPath: vortexLimitIncreaseAmount
-      value: 3.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114870178828714260, guid: e7fe28cab9b65e544851fb55ab1861e4,
         type: 2}
@@ -20372,7 +20372,7 @@ Prefab:
     - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
         type: 2}
       propertyPath: keyboardAbility
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114819225881543836, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
         type: 2}
@@ -25084,7 +25084,7 @@ MonoBehaviour:
   microVortex1: {fileID: 2135103036}
   microVortex2: {fileID: 1804601052}
   vortexDamage: 25
-  vortexAttackDuration: 12
+  vortexAttackDuration: 10
   laserShardOne: {fileID: 301345526}
   laserShardTwo: {fileID: 199673234}
   laserShardThree: {fileID: 267342990}
