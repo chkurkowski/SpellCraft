@@ -24,7 +24,7 @@ public class ProjectileSplit : MonoBehaviour {
             GameObject gm2 = Instantiate(col.gameObject, col.gameObject.transform.position + (gameObject.transform.right * 8), Quaternion.identity);
 
             gm1.GetComponent<Rigidbody2D>().velocity = col.gameObject.GetComponent<Rigidbody2D>().velocity * ((gameObject.transform.right) + (gameObject.transform.up));
-            gm2.GetComponent<Rigidbody2D>().velocity = col.gameObject.GetComponent<Rigidbody2D>().velocity * ((-gameObject.transform.right) + (gameObject.transform.up));
+            gm2.GetComponent<Rigidbody2D>().velocity = col.gameObject.GetComponent<Rigidbody2D>().velocity * (-(gameObject.transform.right) + (gameObject.transform.up));
         
             //Vector2 direction = cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
             //fb.GetComponent<Rigidbody2D>().velocity = (direction + new Vector2(tempX, 0)) * atkSpeed;
