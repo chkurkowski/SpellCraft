@@ -15,7 +15,8 @@ public class LichAttacks : MonoBehaviour
     public AudioSource golemAudio;
     public AudioSource artilarygolemAudio;
     public AudioSource cloneGolemAudio;
-
+    public AudioSource lichMusic;
+    public bool isPlayingMusic = false;
 
 
     // Use this for initialization
@@ -65,7 +66,23 @@ public class LichAttacks : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if(!bossHealthInfo.GetAlive())
+        if (bossInfoInfo.isActivated && !isPlayingMusic)
+        {
+            isPlayingMusic = true;
+            lichMusic.Play();
+
+        }
+        else if (bossHealthInfo.bossHealth <= 0)
+        {
+            lichMusic.Stop();
+            isPlayingMusic = true;
+        }
+        else if (!bossInfoInfo.isActivated)
+        {
+            lichMusic.Stop();
+            isPlayingMusic = false;
+        }
+        if (!bossHealthInfo.GetAlive())
         {
             DisableObjects();
             bossAttacksInfo.canAttack = false;

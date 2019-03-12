@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealPickup : MonoBehaviour {
 
-	private float healAmount = 0;
+	private float healAmount = 10f;
 
 	public float AddHealAmount(float amt)
 	{

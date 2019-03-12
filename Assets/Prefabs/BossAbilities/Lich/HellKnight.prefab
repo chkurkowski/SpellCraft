@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114140882978844334}
   - component: {fileID: 58122694181799616}
   - component: {fileID: 50759027220320228}
+  - component: {fileID: 95295577650970024}
   m_Layer: 0
   m_Name: HellKnight
   m_TagString: Boss
@@ -78,6 +79,24 @@ CircleCollider2D:
   m_Offset: {x: 0.30943108, y: 0.2750492}
   serializedVersion: 2
   m_Radius: 11.866667
+--- !u!95 &95295577650970024
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1990836263467770}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b905e7fd1c6614fac818b246024a0536, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114140882978844334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,7 +148,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 7aeaf0c0cc6184a41930f8adcec6f8e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ed89f81681a3458aa55166d0bfbd7ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212446415204485490}
   - component: {fileID: 61527243312984784}
   - component: {fileID: 114075354927922880}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ProjectileSplit
   m_TagString: Split
   m_Icon: {fileID: 0}

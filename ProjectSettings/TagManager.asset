@@ -22,6 +22,8 @@ TagManager:
   - PlayerGolem
   - Portal
   - Skeleton
+  - Split
+  - PlayerField
   layers:
   - Default
   - TransparentFX
