@@ -12,11 +12,11 @@ public class SystemsManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-        else if(Input.GetKeyDown(KeyCode.R))
+        // if(Input.GetKeyDown(KeyCode.Escape))
+        // {
+        //     Application.Quit();
+        // }
+        if(Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
