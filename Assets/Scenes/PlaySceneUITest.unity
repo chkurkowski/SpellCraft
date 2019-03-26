@@ -1092,8 +1092,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 44316062}
-  - component: {fileID: 44316064}
   - component: {fileID: 44316063}
+  - component: {fileID: 44316064}
   m_Layer: 13
   m_Name: Overworld audio object
   m_TagString: Untagged
@@ -1122,7 +1122,8 @@ AudioSource:
   m_GameObject: {fileID: 44316061}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243998192180440166, guid: 5d051ddcd05e24e33a0b23f036dd8a19,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 9c73618b30d894dca8e96b26e5a1f946, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
@@ -1220,9 +1221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc5f611798ab409e97635cb2108b749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayingOWMusic: 1
+  isPlayingOWMusic: 0
   owAudio: {fileID: 44316063}
-  player: {fileID: 1045345313}
+  pylon: {fileID: 1443329205}
+  lich: {fileID: 246488186}
 --- !u!1 &54338178
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,18 +19,12 @@ public class overworldAudio : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        if (pylon.GetComponentInChildren<bossInfoInfo>().isActivated && !isPlayingMusic)
+        if (!pylon.GetComponentInChildren<BossInfo>().isActivated && !lich.GetComponentInChildren<BossInfo>().isActivated && !isPlayingOWMusic)
         {
             isPlayingOWMusic = true;
             owAudio.Play();
-
         }
-        else if (bossHealthInfo.bossHealth <= 0)
-        {
-            lichMusic.Stop();
-            isPlayingMusic = true;
-        }
-        else if (!bossInfoInfo.isActivated)
+        else 
         {
             owAudio.Stop();
             isPlayingOWMusic = false;
