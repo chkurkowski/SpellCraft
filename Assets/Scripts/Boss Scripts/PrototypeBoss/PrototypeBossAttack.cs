@@ -226,7 +226,6 @@ public class PrototypeBossAttack : BossAttacks
 
     public void AttackThree()//Bomb
     {
-      
         InvokeRepeating("BombTown", 0, bombFireRate);
         StartCoroutine(StopAttack(bombTimeLength));
     }
