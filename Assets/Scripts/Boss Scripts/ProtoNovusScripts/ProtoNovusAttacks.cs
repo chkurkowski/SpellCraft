@@ -52,6 +52,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     public GameObject bomb;
     public GameObject megaBomb;
     public float bombFireRate = 3f;
+    public float bombFireRateOriginal;
     public float bombTimeLength = 4f;
 
     [Space(30)]
@@ -91,6 +92,8 @@ public class ProtoNovusAttacks : MonoBehaviour
         shieldTwo.SetActive(false);
         reflectShieldOne.SetActive(false);
         reflectShieldTwo.SetActive(false);
+
+        bombFireRateOriginal = bombFireRate;
 
         pylonParent.transform.eulerAngles = new Vector3(0, 0, 0);
 
@@ -211,7 +214,22 @@ public class ProtoNovusAttacks : MonoBehaviour
 
     public void AttackTwo()//Self Explosion
     {
-        InvokeRepeating("BombTown", 0, bombFireRate);
+        if(!bossInfoInfo.isMad && !bossInfoInfo.isEnraged)
+        {
+            bombFireRate = bombFireRateOriginal;
+            InvokeRepeating("BombTown", 0, bombFireRate);//see if this works!
+        }
+        else if(bossInfoInfo.isMad)
+        {
+            InvokeRepeating("BombTown", 0, bombFireRate*2);
+            bombFireRate = bombFireRateOriginal;//see if this works!
+        }
+        else if(bossInfoInfo.isEnraged)
+        {
+            InvokeRepeating("BombTown", 0, bombFireRate*3);
+            bombFireRate = bombFireRateOriginal;//see if this works!
+        }
+       
         Invoke("StopAttack", bombTimeLength);
     }
 

@@ -18265,6 +18265,7 @@ MonoBehaviour:
   bomb: {fileID: 1581581200255988, guid: 5e07e1b1b56f0a54c9510b652207fd50, type: 2}
   megaBomb: {fileID: 1930379783095238, guid: 0b21bc60cbc36694db305ca47d206bf5, type: 2}
   bombFireRate: 1
+  bombFireRateOriginal: 0
   bombTimeLength: 4
   pylonParent: {fileID: 1558151116}
   pPRotateSpeed: 0.02
@@ -18548,7 +18549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testingAttacks: 1
-  currentlyTestingAttack: 3
+  currentlyTestingAttack: 2
   previousAttack: 0
   isAttacking: 0
   canAttack: 1
