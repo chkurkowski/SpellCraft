@@ -12,6 +12,7 @@ public class Bomb : MonoBehaviour {
     private ProjectileDamage projectileDamageInfo;
     public float bombDamage = 25f;
     public float fireBallSpeed = 50;
+    public float bombLifeTime = 3f;
 
     //public GameObject fireBall;
     public float fireBallSpawnAmount;
@@ -22,7 +23,7 @@ public class Bomb : MonoBehaviour {
         projectileDamageInfo = gameObject.GetComponent<ProjectileDamage>();
         bombDamage = projectileDamageInfo.projectileDamage;
         transform.Rotate(new Vector3(0, 0, 90));
-        Invoke("Explode", 2);
+        Invoke("Explode", bombLifeTime);
     }
 
     public void OnObjectSpawn()
