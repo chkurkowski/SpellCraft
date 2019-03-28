@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4461265888356624}
   - component: {fileID: 212811316039307342}
   - component: {fileID: 61698320495849264}
+  - component: {fileID: 114205675652893182}
   m_Layer: 0
   m_Name: targetDummy
   m_TagString: Untagged
@@ -66,6 +67,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9, y: 3.3}
   m_EdgeRadius: 0
+--- !u!114 &114205675652893182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1866898476739376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415b99754c11cca41ad84dd988b3d840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetDummyNumber: 0
+  dummyHealth: 3
 --- !u!212 &212811316039307342
 SpriteRenderer:
   m_ObjectHideFlags: 1

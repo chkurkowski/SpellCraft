@@ -22,6 +22,7 @@ public class TutorialRingScript : MonoBehaviour
         {
             isActivated = true;
             gameObject.GetComponent<Collider2D>().enabled = false;
+            parentRing.GetComponent<SpriteRenderer>().color = Color.magenta;
             parentRing.layer = 9;
             parentRing.GetComponent<Collider2D>().isTrigger = false;
             tutorialManagerInfo.NextTutorialStage();

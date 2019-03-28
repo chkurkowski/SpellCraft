@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialDummy : MonoBehaviour
+public class TargetDummy : MonoBehaviour
 {
-    public int targetDummyCount;
+    public int targetDummyNumber;
     public float dummyHealth;
     private bool isAlive = true;
     private TutorialManager tutorialManagerInfo;
@@ -18,17 +18,17 @@ public class TutorialDummy : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		if(dummyHealth <= 0 && isAlive)
+        if (dummyHealth <= 0 && isAlive)
         {
             isAlive = false;
-            gameObject.GetComponent<SpriteRenderer>().color = Color.black;
+            gameObject.GetComponent<SpriteRenderer>().color = Color.black;//destroyed animation here?
+            tutorialManagerInfo.NextTutorialStage();
         }
 	}
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        switch(targetDummyCount)
+        switch(targetDummyNumber)
         {
             case 1:
                 if(collision.tag == "Projectile")
@@ -36,19 +36,12 @@ public class TutorialDummy : MonoBehaviour
                     dummyHealth--;
                 }
                 break;
-
             case 2:
-
                 break;
-
             case 3:
-
                 break;
-
             case 4:
-
                 break;
         }
     }
-
 }

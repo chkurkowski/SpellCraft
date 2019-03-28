@@ -3402,7 +3402,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 336975153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe483325a5c07e54c9f310ad33510c50, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f2374d29692db3428af549c49b9e1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialStage: 0
@@ -3813,6 +3813,11 @@ Prefab:
     - target: {fileID: 1866898476739376, guid: 1f9577af167141b4d8bf98eec4847070, type: 2}
       propertyPath: m_Name
       value: targetDummy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114205675652893182, guid: 1f9577af167141b4d8bf98eec4847070,
+        type: 2}
+      propertyPath: targetDummyNumber
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f9577af167141b4d8bf98eec4847070, type: 2}
@@ -13428,7 +13433,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1071285586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9d39e22c502a5140b6af09fc154944f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5030054d7ace5e84f9ffb17e03aec7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &1071285590
@@ -15960,6 +15965,11 @@ Prefab:
     - target: {fileID: 1866898476739376, guid: 1f9577af167141b4d8bf98eec4847070, type: 2}
       propertyPath: m_Name
       value: targetDummy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114205675652893182, guid: 1f9577af167141b4d8bf98eec4847070,
+        type: 2}
+      propertyPath: targetDummyNumber
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f9577af167141b4d8bf98eec4847070, type: 2}
@@ -22318,6 +22328,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114205675652893182, guid: 1f9577af167141b4d8bf98eec4847070,
+        type: 2}
+      propertyPath: targetDummyNumber
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f9577af167141b4d8bf98eec4847070, type: 2}
   m_IsPrefabAsset: 0
@@ -22363,6 +22378,11 @@ Prefab:
     - target: {fileID: 1866898476739376, guid: 1f9577af167141b4d8bf98eec4847070, type: 2}
       propertyPath: m_Name
       value: targetDummy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114205675652893182, guid: 1f9577af167141b4d8bf98eec4847070,
+        type: 2}
+      propertyPath: targetDummyNumber
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f9577af167141b4d8bf98eec4847070, type: 2}
