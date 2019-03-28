@@ -33,7 +33,7 @@ public class Bomb : MonoBehaviour {
 
     public void OnEnable()
     {
-        Invoke("Explode", 2);
+        Invoke("Explode", bombLifeTime);
     }
 
     public void OnDisable()

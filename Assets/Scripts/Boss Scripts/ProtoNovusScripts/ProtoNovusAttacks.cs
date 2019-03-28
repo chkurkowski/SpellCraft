@@ -226,7 +226,7 @@ public class ProtoNovusAttacks : MonoBehaviour
         }
         else if(bossInfoInfo.isEnraged)
         {
-            InvokeRepeating("BombTown", 0, bombFireRate*3);
+            InvokeRepeating("BombTown", 0, bombFireRate*4);
             bombFireRate = bombFireRateOriginal;//see if this works!
         }
        
