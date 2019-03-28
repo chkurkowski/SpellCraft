@@ -28,6 +28,15 @@ public class TutorialManager : MonoBehaviour
             case 1:
                 dummyOne.SetActive(true);
                 break;
+            case 2:
+                dummyTwo.SetActive(true);
+                break;
+            case 3:
+                dummyThree.SetActive(true);
+                break;
+            case 4:
+                dummyFour.SetActive(true);
+                break;
         }
     }
 
