@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Rotate()
     {
-        Vector3 vectorToTarget = handler.cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
+        Vector3 vectorToTarget = handler.cursorInWorldPos - new Vector3(transform.position.x, transform.position.y, transform.position.z);
         float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
         angle -= 90;
         Quaternion rotAngle = Quaternion.AngleAxis(angle, Vector3.forward);

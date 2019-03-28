@@ -17,7 +17,7 @@ public class AbilityHandler : MonoBehaviour {
     public GameObject projectileSplitSim;
     public GameObject projectileSpeed;
     public GameObject simulacrumAbsorb;
-    public Vector2 cursorInWorldPos;
+    public Vector3 cursorInWorldPos;
     public ParticleSystem waveSystem;
     private Color origColor;
 
@@ -34,8 +34,12 @@ public class AbilityHandler : MonoBehaviour {
     [Space(10)]
 
     //Attack Variables
-    [Header("Projectile Speed - For First Projectile")]
+    [Header("Projectile Speed - For Magic Missile")]
     public float atkSpeed = 135f;
+
+    //Max Placement Distance
+    [Header("Max Placement Distance - For Abilities that are Placed")]
+    public float placementDistance = 10f;
 
     [Space(10)]
 
@@ -152,10 +156,10 @@ public class AbilityHandler : MonoBehaviour {
 
             float tempX = 0; //Random.Range(-.15f, .15f);
 
-            Vector2 direction = cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
+            Vector3 direction = cursorInWorldPos - new Vector3(transform.position.x, transform.position.y, 0);
             direction.Normalize();
             GameObject fb = Instantiate(magicMissile, transform.position, Quaternion.identity);
-            fb.GetComponent<Rigidbody2D>().velocity = (direction + new Vector2(tempX, 0)) * atkSpeed;
+            fb.GetComponent<Rigidbody2D>().velocity = (direction + new Vector3(tempX, 0, 0)) * atkSpeed;
             abilities.AttackArrayHandler("MagicMissile", abilities.lastAttacks);
             longATKTimer = 0;
 
@@ -217,7 +221,7 @@ public class AbilityHandler : MonoBehaviour {
     {
     	if(projectileSpeedTimer >= PROJECTILESPEEDCOOLDOWN)
     	{
-    		Instantiate(projectileSpeed, cursorInWorldPos,transform.rotation);
+    		Instantiate(projectileSpeed, PlacementCheck(),transform.rotation);
 	        abilities.AttackArrayHandler("HealStun", abilities.lastAttacks);
 	        projectileSpeedTimer = 0;
     	}
@@ -294,7 +298,7 @@ public class AbilityHandler : MonoBehaviour {
             }
         }
     }
-
+ 
     //HealStun Combo 
     private void HealStunCombo(bool isBurst)
     {
@@ -350,6 +354,29 @@ public class AbilityHandler : MonoBehaviour {
         }
 
         cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    private Vector3 PlacementCheck()
+    {
+        print(Vector3.Distance(transform.position, cursorInWorldPos));
+        if(Vector3.Distance(transform.position, cursorInWorldPos) >= placementDistance)
+        {
+            Vector3 vector = cursorInWorldPos - transform.position;
+            Vector3 normalizedVector = DivideVector(vector);
+            return (Vector2)(transform.position + (placementDistance * normalizedVector));
+        }
+        else
+        {
+            return (Vector2)cursorInWorldPos;
+        }
+    }
+
+    private Vector3 DivideVector(Vector3 vector)
+    {
+        float vectorX = vector.x / Mathf.Abs(vector.x);
+        float vectorY = vector.y / Mathf.Abs(vector.y);
+        float vectorZ = vector.z / Mathf.Abs(vector.z);
+        return new Vector3(vectorX, vectorY, vectorZ);
     }
 
     private void TimerHandler()
