@@ -58,6 +58,8 @@ public class BossAttacks : MonoBehaviour
 
     /////////////////////////////////////////////////PrototypeBoss Info
     private PrototypeBossAttack prototypeBossAttackInfo;
+    /// 
+    private ProtoNovusAttacks protoNovusAttacksInfo;
 
 
 
@@ -140,6 +142,9 @@ public class BossAttacks : MonoBehaviour
                 prototypeBossAttackInfo = gameObject.GetComponent<PrototypeBossAttack>();
                 break;
 
+            case "ProtoNovus":
+                protoNovusAttacksInfo = gameObject.GetComponent<ProtoNovusAttacks>();
+                break;
         }
 
     }
@@ -226,8 +231,11 @@ public class BossAttacks : MonoBehaviour
                 {
                     //Debug.Log("The BossAttack script");
                     prototypeBossAttackInfo.Attack(attackNumber);
-                }
-                   
+                }  
+                break;
+            case "ProtoNovus":
+                if (!isAttacking)
+                    protoNovusAttacksInfo.Attack(attackNumber);
                 break;
         }
     }//AttackDriver end
@@ -258,6 +266,10 @@ public class BossAttacks : MonoBehaviour
 
             case "Alchemist":
                 alchemistAttackInfo.StopAttack();
+                break;
+
+            case "ProtoNovus":
+                protoNovusAttacksInfo.StopAttack();
                 break;
         }
     }

@@ -97,6 +97,7 @@ public class SimulacrumAbilities : MonoBehaviour
         GameObject fb = Instantiate(fireball, transform.position, Quaternion.identity);
         fb.GetComponent<Rigidbody2D>().velocity = direction * atkSpeed;
         //print("hit2");
+        fb.GetComponent<MagicBall>().isSimulacrumMissle = true;
         state = State.IDLE;
     }
 

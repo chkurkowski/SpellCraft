@@ -8,13 +8,13 @@ public class PylonShieldFollow : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-     pylonLocation = GameObject.Find("Pylon").transform;
+     pylonLocation = GameObject.Find("ProtoNovus").transform;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        pylonLocation = GameObject.Find("Pylon").transform;
+        pylonLocation = GameObject.Find("ProtoNovus").transform;
         gameObject.transform.position = pylonLocation.transform.position;
         gameObject.transform.rotation = pylonLocation.transform.rotation;
     }
