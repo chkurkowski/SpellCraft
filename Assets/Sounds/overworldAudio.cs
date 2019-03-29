@@ -7,7 +7,8 @@ public class overworldAudio : MonoBehaviour
 
     public bool isPlayingOWMusic = false;
     public AudioSource owAudio;
-    public GameObject player;
+    public GameObject pylon;
+    public GameObject lich;
 
     // Use this for initialization
     void Start () 
@@ -18,24 +19,27 @@ public class overworldAudio : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        if (player.transform.position.y > -121 && player.transform.position.y < -458 && player.transform.position.x > -162 && player.transform.position.x < 115)
-        {
-            isPlayingOWMusic = true;
-        }
-        else if (player.transform.position.y < -121 && player.transform.position.y > -458 && player.transform.position.x < -162 && player.transform.position.x > 115)
+        if (pylon.GetComponentInChildren<BossInfo>().isActivated || lich.GetComponentInChildren<BossInfo>().isActivated || isPlayingOWMusic)
         {
             isPlayingOWMusic = false;
         }
+        else
+        {
+            isPlayingOWMusic = true;
+
+        }
     }
+
     public void MusicPlaying(bool isPlayingMenuMusic)
     {
         if (isPlayingMenuMusic == true)
         {
-                owAudio.Play();
+            owAudio.Play();
         }
         else
         {
-                owAudio.Stop();
+            owAudio.Stop();
         }
     }
+
 }
