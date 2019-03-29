@@ -85,6 +85,14 @@ public class TargetDummy : MonoBehaviour
                 }
                 break;
             case 4:
+                if (collision.tag == "Projectile")
+                {
+                    if (collision.GetComponent<MagicBall>().isSimulacrumMissle)
+                    {
+                        dummyHealth--;
+                    }
+
+                }
                 break;
         }
     }

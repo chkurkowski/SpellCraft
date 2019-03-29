@@ -11,6 +11,7 @@ public class TutorialManager : MonoBehaviour
     public GameObject dummyFour;
 
     public GameObject tutorialRing;
+    public GameObject tutorialRingExit;
     public GameObject tutorialDoor;
 
     private void Start()
@@ -36,6 +37,14 @@ public class TutorialManager : MonoBehaviour
                 break;
             case 4:
                 dummyFour.SetActive(true);
+                break;
+            case 5:
+                tutorialRing.GetComponent<SpriteRenderer>().color = Color.magenta;
+                tutorialRing.layer = 9;
+                tutorialRingExit.SetActive(true);
+                break;
+            case 6:
+                tutorialDoor.SetActive(false);
                 break;
         }
     }
