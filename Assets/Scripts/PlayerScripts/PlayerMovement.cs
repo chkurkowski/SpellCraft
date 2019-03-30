@@ -17,12 +17,16 @@ public class PlayerMovement : MonoBehaviour
     public float rotSpeed = 25f;
     public bool slowed = false;
 
+    private Animator playerAnimator;
+    private int playerDirection = 0;
+
     private bool canMove = true;
 
     // Use this for initialization
     void Start ()
     {
         playerRigidbody = gameObject.GetComponent<Rigidbody2D>();
+        playerAnimator = gameObject.GetComponent<Animator>();
         abilities = GetComponent<PlayerAbilities>();
         handler = GetComponent<AbilityHandler>();
         health = GetComponent<PlayerHealth>();
@@ -36,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         {
            Movement();
         }
-            Rotate();
+            // Rotate();
     }
 
     public void Movement()
@@ -48,15 +52,50 @@ public class PlayerMovement : MonoBehaviour
             playerRigidbody.velocity = new Vector3(horizontalMovement * slowedSpeed * Time.deltaTime * 100, verticalMovement * slowedSpeed * Time.deltaTime * 100);
         else
             playerRigidbody.velocity = new Vector3(horizontalMovement * movementSpeed * Time.deltaTime * 100, verticalMovement * movementSpeed * Time.deltaTime * 100);
+
+        // print("Horizontal " + horizontalMovement + ", Vertical " + verticalMovement);
+        MovementAnims();
     }
 
-    public void Rotate()
+    public void MovementAnims()
     {
-        Vector3 vectorToTarget = handler.cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
+        if(horizontalMovement >= .1)
+        {
+            playerAnimator.SetBool("isWalkingRight", true);
+            playerAnimator.SetBool("isWalkingLeft", false);
+            playerAnimator.SetBool("isWalkingUp", false);
+            playerAnimator.SetBool("isWalkingDown", false);
+        }
+        else if(horizontalMovement <= -.1)
+        {
+            playerAnimator.SetBool("isWalkingLeft", true);
+            playerAnimator.SetBool("isWalkingRight", false);
+            playerAnimator.SetBool("isWalkingUp", false);
+            playerAnimator.SetBool("isWalkingDown", false);
+        }
+        else if(verticalMovement >= .1)
+        {
+            playerAnimator.SetBool("isWalkingUp", true);
+            playerAnimator.SetBool("isWalkingRight", false);
+            playerAnimator.SetBool("isWalkingLeft", false);
+            playerAnimator.SetBool("isWalkingDown", false);
+        }
+        else if(verticalMovement <= -.1)
+        {
+            playerAnimator.SetBool("isWalkingDown", true);
+            playerAnimator.SetBool("isWalkingRight", false);
+            playerAnimator.SetBool("isWalkingLeft", false);
+            playerAnimator.SetBool("isWalkingUp", false);
+        }
+    }
+
+    public void Rotate(Transform pos)
+    {
+        Vector3 vectorToTarget = handler.cursorInWorldPos - new Vector2(pos.position.x, pos.position.y);
         float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
         angle -= 90;
         Quaternion rotAngle = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotAngle, rotSpeed);
+        pos.rotation = Quaternion.Slerp(pos.rotation, rotAngle, rotSpeed);
     }
     
 }
