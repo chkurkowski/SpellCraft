@@ -10,7 +10,7 @@ public class explodingPylonScript : MonoBehaviour
     public float pylonMaxHealth = 6f;
     public float pylonHealth = 6f; // main player attack deals .5 damage
     private int pylonIdNumber;
-    PylonAttacks pylonInfo;
+    ProtoNovusAttacks protoNovusInfo;
     private SpriteRenderer colorInfo;
 	// Use this for initialization
 	void Start ()
@@ -18,7 +18,7 @@ public class explodingPylonScript : MonoBehaviour
       //  lineRender = GetComponent<LineRenderer>();
       //  lineRender.useWorldSpace = true;
         colorInfo = gameObject.GetComponent<SpriteRenderer>();
-        pylonInfo =  GameObject.Find("Pylon").GetComponent<PylonAttacks>();
+        protoNovusInfo = GameObject.Find("ProtoNovus").GetComponent<ProtoNovusAttacks>();
     }
 	
 	// Update is called once per frame
@@ -31,10 +31,10 @@ public class explodingPylonScript : MonoBehaviour
         transform.Translate(Vector2.up * Time.deltaTime * moveSpeed);
         if(pylonHealth <= 0)
         {
-            pylonInfo.activeExplodingPylons -= 1;
-            if (pylonInfo.activeExplodingPylons <= 0)
+            protoNovusInfo.activeExplodingPylons -= 1;
+            if (protoNovusInfo.activeExplodingPylons <= 0)
             {
-                pylonInfo.StopAttack();
+                protoNovusInfo.StopAttack();
             }
             gameObject.SetActive(false);
         }
@@ -52,11 +52,10 @@ public class explodingPylonScript : MonoBehaviour
 
         if(collision.gameObject.tag == "Boss")
         {
-            pylonInfo.activeExplodingPylons -= 1;
-          
-            if (pylonInfo.activeExplodingPylons <= 0)
+            protoNovusInfo.activeExplodingPylons -= 1;
+            if (protoNovusInfo.activeExplodingPylons <= 0)
             {
-                pylonInfo.StopAttack();
+                protoNovusInfo.StopAttack();
             }
             ExplodePylon();
             gameObject.SetActive(false);
@@ -78,22 +77,22 @@ public class explodingPylonScript : MonoBehaviour
         {
             case 1:
                  {
-                    pylonInfo.AttackThreeExplosionOne();
+                    protoNovusInfo.AttackThreeExplosionOne();
                     break;
                  }
             case 2:
                 {
-                    pylonInfo.AttackThreeExplosionTwo();
+                    protoNovusInfo.AttackThreeExplosionTwo();
                     break;
                 }
             case 3:
                 {
-                    pylonInfo.AttackThreeExplosionThree();
+                    protoNovusInfo.AttackThreeExplosionThree();
                     break;
                 }
             case 4:
                 {
-                    pylonInfo.AttackThreeExplosionFour();
+                    protoNovusInfo.AttackThreeExplosionFour();
                     break;
                 }
         }

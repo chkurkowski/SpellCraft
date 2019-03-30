@@ -68,8 +68,8 @@ public class MegaBomb : MonoBehaviour {
         bomb2.transform.Rotate(0, 0, 180);
         GameObject bomb3 = Instantiate(bomb, transform.position, transform.rotation);
         bomb3.transform.Rotate(0, 0, 90);
-        GameObject bomb4 = Instantiate(bomb, transform.position, transform.rotation);
-        bomb4.transform.Rotate(0, 0, -90);
+       // GameObject bomb4 = Instantiate(bomb, transform.position, transform.rotation);
+      //  bomb4.transform.Rotate(0, 0, -90);
 
         Destroy(gameObject);
     }

@@ -9,7 +9,7 @@ public class Fireball : MonoBehaviour {
     public float fireBallSpeed = 50;
     public float lifeTime = 5f;
     private GameObject player;
-    private bool reflected = false;
+    public bool reflected = false;
     public AudioSource reflectSource;
     public AudioClip reflectSound;
     private Color32 originalColor;

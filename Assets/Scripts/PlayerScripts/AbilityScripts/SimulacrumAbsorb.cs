@@ -14,7 +14,7 @@ public class SimulacrumAbsorb : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () 
+	void OnEnable () 
 	{
 		Invoke("Destroy", lifetime);
 	}
