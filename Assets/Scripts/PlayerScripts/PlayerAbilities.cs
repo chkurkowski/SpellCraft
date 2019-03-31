@@ -95,11 +95,14 @@ public class PlayerAbilities : MonoBehaviour {
 	private const int ABSORBSIM = 3;
     private const int HEALSTUNCOMBO = 4;
 
+    private Animator playerAnimator;
+
 	private void Start()
 	{
         burstTimer = BURSTCOOLDOWN;
         evadeTimer = EVADECOOLDOWN;
 
+        playerAnimator = gameObject.GetComponent<Animator>();
         handlers = GetComponent<AbilityHandler>();
         movement = GetComponent<PlayerMovement>();
         health = GetComponent<PlayerHealth>();

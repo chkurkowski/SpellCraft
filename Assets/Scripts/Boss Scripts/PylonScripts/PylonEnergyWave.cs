@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PylonEnergyWave : MonoBehaviour {
-    public float moveSpeed =40f;
+    public float moveSpeed = 40f;
     public float energyDamage = 20f;
     private GameObject player;
     // Use this for initialization
@@ -19,8 +19,10 @@ public class PylonEnergyWave : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D trig)
     {
+        Debug.Log("Energy Blade Detected a collision");
         if(trig.gameObject.tag == "Player")
         {
+            Debug.Log("Energy Blade Detected a player");
             player = trig.gameObject;
             InvokeRepeating("DamagePlayer", 0, 1);
         }

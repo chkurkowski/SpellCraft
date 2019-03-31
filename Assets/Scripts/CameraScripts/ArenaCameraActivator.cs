@@ -20,6 +20,7 @@ public class ArenaCameraActivator : MonoBehaviour
     public GameObject lichBoss;
     public GameObject reflectorBoss;
     public GameObject charmerBoss;
+    public GameObject protoNovusBoss;
     private BossInfo bossInfo;
     private BossHealth bossHealthInfo;
 
@@ -29,8 +30,6 @@ public class ArenaCameraActivator : MonoBehaviour
         mainCamera = GameObject.Find("Main Camera");
 
     }
-
-    
 
     private void OnTriggerEnter2D(Collider2D trig)
     {
@@ -88,13 +87,21 @@ public class ArenaCameraActivator : MonoBehaviour
                     bossInfo.isActivated = true;
                     break;
 
+
+                case "ProtoNovus":
+                    Debug.Log("ProtoNovus was found!");
+                    mainCamera.GetComponent<DynamicCamera>().Boss = protoNovusBoss;
+                    bossInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossInfo>();
+                    bossHealthInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossHealth>();
+                    bossHealthInfo.HealthBarParent.SetActive(true);
+                    bossInfo.isActivated = true;
+                    break;
+
             }
             if(useDynamicCamera)
             {
                 GameObject.Find("Main Camera").GetComponent<CameraScriptActivator>().ActivateDynamicCamera();
             }
-            
-          
         }
     }
    
@@ -102,16 +109,12 @@ public class ArenaCameraActivator : MonoBehaviour
    {
         if (trig.gameObject.tag == "Player")
        {
-
-
             if (useDynamicCamera)
             {
                 GameObject.Find("Main Camera").GetComponent<CameraScriptActivator>().DisableDynamicCamera();
             }
-          
             bossInfo.isActivated = false;
             bossInfo.ResetBoss();
-            // mainCamera.GetComponent<DynamicCamera>().Boss = null;
         }
    }
 }
