@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public bool slowed = false;
 
     private Animator playerAnimator;
+    // 0 - Up, 1 - Right, 2 - Down, 3 - Left
     private int playerDirection = 0;
 
     private bool canMove = true;
@@ -65,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("isWalkingLeft", false);
             playerAnimator.SetBool("isWalkingUp", false);
             playerAnimator.SetBool("isWalkingDown", false);
+            SetPlayerDirection(1);
         }
         else if(horizontalMovement <= -.1)
         {
@@ -72,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("isWalkingRight", false);
             playerAnimator.SetBool("isWalkingUp", false);
             playerAnimator.SetBool("isWalkingDown", false);
+            SetPlayerDirection(3);
         }
         else if(verticalMovement >= .1)
         {
@@ -79,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("isWalkingRight", false);
             playerAnimator.SetBool("isWalkingLeft", false);
             playerAnimator.SetBool("isWalkingDown", false);
+            SetPlayerDirection(0);
         }
         else if(verticalMovement <= -.1)
         {
@@ -86,7 +90,13 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("isWalkingRight", false);
             playerAnimator.SetBool("isWalkingLeft", false);
             playerAnimator.SetBool("isWalkingUp", false);
+            SetPlayerDirection(2);
         }
+    }
+
+    public void SetPlayerDirection(int dir)
+    {
+        playerDirection = dir;
     }
 
     public void Rotate(Transform pos)
