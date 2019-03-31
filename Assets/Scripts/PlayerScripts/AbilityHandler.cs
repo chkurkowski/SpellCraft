@@ -65,6 +65,7 @@ public class AbilityHandler : MonoBehaviour {
 
     private PlayerAbilities abilities;
     private PlayerHealth health;
+    private Animator playerAnimator;
 
     // Use this for initialization
     void Start () {
@@ -80,6 +81,7 @@ public class AbilityHandler : MonoBehaviour {
         projectileSpeedTimer = PROJECTILESPEEDCOOLDOWN;
         absorbExplodeTimer = ABSORBEXPLODECOOLDOWN;
 
+        playerAnimator = GetComponent<Animator>();
         abilities = GetComponent<PlayerAbilities>();
         health = GetComponent<PlayerHealth>();
 
@@ -155,6 +157,8 @@ public class AbilityHandler : MonoBehaviour {
             //TODO Add MagicMissile Sound
 
             float tempX = 0; //Random.Range(-.15f, .15f);
+
+            AttackAnimations();
 
             Vector3 direction = cursorInWorldPos - new Vector3(transform.position.x, transform.position.y, 0);
             direction.Normalize();
@@ -356,6 +360,7 @@ public class AbilityHandler : MonoBehaviour {
         cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
+    //Handles the placement of the zone abilities
     private Vector3 PlacementCheck()
     {
         print(Vector3.Distance(transform.position, cursorInWorldPos));
@@ -371,12 +376,72 @@ public class AbilityHandler : MonoBehaviour {
         }
     }
 
+    //Helper function for PlacementCheck
     private Vector3 DivideVector(Vector3 vector)
     {
         float vectorX = vector.x / Mathf.Abs(vector.x);
         float vectorY = vector.y / Mathf.Abs(vector.y);
         float vectorZ = vector.z / Mathf.Abs(vector.z);
         return new Vector3(vectorX, vectorY, vectorZ);
+    }
+
+    private void AttackAnimations()
+    {
+        switch(CursorDirection())
+        {
+            case 0:
+                playerAnimator.SetTrigger("triggeredPlayerAttackUp");
+                break;
+            case 1:
+                playerAnimator.SetTrigger("triggeredPlayerAttackRight");
+                break;
+            case 2:
+                playerAnimator.SetTrigger("triggeredPlayerAttackDown");
+                break;
+            case 3:
+                playerAnimator.SetTrigger("triggeredPlayerAttackLeft");
+                break;
+        }
+    }
+
+    private int CursorDirection()
+    {
+        int posX = -1;
+        int posY = -1;
+        float distX = cursorInWorldPos.x - transform.position.x;
+        float distY = cursorInWorldPos.y - transform.position.y;
+
+        if(distX > 0)
+        {
+            posX = 1;
+        }
+        if(distY > 0)
+        {
+            posY = 1;
+        }
+
+        if(Mathf.Abs(distX) > Mathf.Abs(distY))
+        {
+            if(posX > 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 3;
+            }
+        }
+        else
+        {
+            if(posX > 0)
+            {
+                return 2;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 
     private void TimerHandler()

@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator playerAnimator;
     // 0 - Up, 1 - Right, 2 - Down, 3 - Left
-    private int playerDirection = 0;
+    public int playerDirection = 0;
 
     private bool canMove = true;
 
@@ -101,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Rotate(Transform pos)
     {
-        Vector3 vectorToTarget = handler.cursorInWorldPos - new Vector2(pos.position.x, pos.position.y);
+        Vector3 vectorToTarget = handler.cursorInWorldPos - new Vector3(pos.position.x, pos.position.y);
         float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
         angle -= 90;
         Quaternion rotAngle = Quaternion.AngleAxis(angle, Vector3.forward);

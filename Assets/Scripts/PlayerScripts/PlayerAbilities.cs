@@ -214,6 +214,8 @@ public class PlayerAbilities : MonoBehaviour {
 
     private void Evade()
 	{
+        EvadeAnimations();
+
         Vector2 direction = new Vector2(movement.horizontalMovement, movement.verticalMovement);
         direction.Normalize();
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
@@ -341,6 +343,25 @@ public class PlayerAbilities : MonoBehaviour {
             {
                 AttackArrayHandler("ProjectileSplit", ritualList);
             }
+        }
+    }
+
+    private void EvadeAnimations()
+    {
+        switch(movement.playerDirection)
+        {
+            case 0:
+                playerAnimator.SetTrigger("triggeredPlayerTeleportOutUp");
+                break;
+            case 1:
+                playerAnimator.SetTrigger("triggeredPlayerTeleportOutRight");
+                break;
+            case 2:
+                playerAnimator.SetTrigger("triggeredPlayerTeleportOutDown");
+                break;
+            case 3:
+                playerAnimator.SetTrigger("triggeredPlayerTeleportOutLeft");
+                break;
         }
     }
 
