@@ -69,8 +69,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Mathf.Abs(playerRigidbody.velocity.x) > .5f && Mathf.Abs(playerRigidbody.velocity.y) > .5f)
         {
-            float tempX = playerRigidbody.velocity.x * .7f;
-            float tempY = playerRigidbody.velocity.y * .7f;
+            float tempX = playerRigidbody.velocity.x * .68f;
+            float tempY = playerRigidbody.velocity.y * .68f;
             playerRigidbody.velocity = new Vector3(tempX, tempY);
         }
     }
