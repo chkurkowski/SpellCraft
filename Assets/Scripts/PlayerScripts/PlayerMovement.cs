@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator playerAnimator;
     // 0 - Up, 1 - Right, 2 - Down, 3 - Left
     public int playerDirection = 0;
+    private float diagonalSpeed = .4f;
 
     private bool canMove = true;
 
@@ -50,12 +51,28 @@ public class PlayerMovement : MonoBehaviour
         horizontalMovement = Input.GetAxis("Horizontal");
         verticalMovement = Input.GetAxis("Vertical");
         if(slowed)
+        {
             playerRigidbody.velocity = new Vector3(horizontalMovement * slowedSpeed * Time.deltaTime * 100, verticalMovement * slowedSpeed * Time.deltaTime * 100);
+            ClampDiagonal();
+        }
         else
+        {
             playerRigidbody.velocity = new Vector3(horizontalMovement * movementSpeed * Time.deltaTime * 100, verticalMovement * movementSpeed * Time.deltaTime * 100);
+            ClampDiagonal();
+        }
 
         // print("Horizontal " + horizontalMovement + ", Vertical " + verticalMovement);
         MovementAnims();
+    }
+
+    private void ClampDiagonal()
+    {
+        if(Mathf.Abs(playerRigidbody.velocity.x) > .5f && Mathf.Abs(playerRigidbody.velocity.y) > .5f)
+        {
+            float tempX = playerRigidbody.velocity.x * .7f;
+            float tempY = playerRigidbody.velocity.y * .7f;
+            playerRigidbody.velocity = new Vector3(tempX, tempY);
+        }
     }
 
     public void MovementAnims()
