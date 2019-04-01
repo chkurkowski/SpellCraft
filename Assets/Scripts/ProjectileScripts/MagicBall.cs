@@ -52,7 +52,7 @@ public class MagicBall : MonoBehaviour {
             gameObject.layer = 9; //changes physics layers, do not touch or I stab you
             gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0);
         }
-        if (col.GetComponent<Collider2D>().transform.tag == "Boss")
+        if (col.gameObject.tag == "Boss")
         {
            // Debug.Log(gameObject.name + " was destroyed by Boss:" + col.gameObject.name);
             Destroy(gameObject);

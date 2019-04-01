@@ -243,7 +243,10 @@ public class ProtoNovusAttacks : MonoBehaviour
     {
         if (isNewBoss)
         {
-            InvokeRepeating("MovePillars", 0, 0.01f);
+            InvokeRepeating("MovePillarOne", 0, 0.01f);
+            InvokeRepeating("MovePillarTwo", 0, 0.01f);
+            InvokeRepeating("MovePillarThree", 0, 0.01f);
+            InvokeRepeating("MovePillarFour", 0, 0.01f);
         }
     }
 
@@ -438,35 +441,68 @@ public class ProtoNovusAttacks : MonoBehaviour
         pylonParent.transform.Rotate(0, 0, pPRotateAmount);
     }
 
-
-    private void MovePillars()
+    private void MovePillarOne()
     {
-        if(pillarSpriteOne.transform.localPosition.y >= .175f)
+        if (pillarSpriteOne.transform.localPosition.y >= .175f)
         {
-            CancelInvoke("MovePillars");
+            CancelInvoke("MovePillarOne");
+
             return;
         }
         else
         {
             pillarSpriteOne.transform.position += new Vector3(0, pillarSpriteOffset, 0);
-            pillarSpriteTwo.transform.position += new Vector3(0, pillarSpriteOffset, 0);
-            pillarSpriteThree.transform.position += new Vector3(0, pillarSpriteOffset, 0);
-            pillarSpriteFour.transform.position += new Vector3(0, pillarSpriteOffset, 0);
-
-
             pillarSpriteOne.transform.parent.GetComponent<Collider2D>().enabled = false;
-            pillarSpriteTwo.transform.parent.GetComponent<Collider2D>().enabled = false;
-            pillarSpriteThree.transform.parent.GetComponent<Collider2D>().enabled = false;
-            pillarSpriteFour.transform.parent.GetComponent<Collider2D>().enabled = false;
-
             pillarOneIsUp = true;
+        }
+    }
+
+    private void MovePillarTwo()
+    {
+        if (pillarSpriteTwo.transform.localPosition.y >= .175f)
+        {
+            CancelInvoke("MovePillarTwo");
+
+            return;
+        }
+        else
+        {
+            pillarSpriteTwo.transform.position += new Vector3(0, pillarSpriteOffset, 0);
+            pillarSpriteTwo.transform.parent.GetComponent<Collider2D>().enabled = false;
             pillarTwoIsUp = true;
+        }
+    }
+
+    private void MovePillarThree()
+    {
+        if (pillarSpriteThree.transform.localPosition.y >= .175f)
+        {
+            CancelInvoke("MovePillarThree");
+
+            return;
+        }
+        else
+        {
+            pillarSpriteThree.transform.position += new Vector3(0, pillarSpriteOffset, 0);
+            pillarSpriteThree.transform.parent.GetComponent<Collider2D>().enabled = false;
             pillarThreeIsUp = true;
+        }
+    }
+
+    private void MovePillarFour()
+    {
+        if (pillarSpriteFour.transform.localPosition.y >= .175f)
+        {
+            CancelInvoke("MovePillarFour");
+
+            return;
+        }
+        else
+        {
+            pillarSpriteFour.transform.position += new Vector3(0, pillarSpriteOffset, 0);
+            pillarSpriteFour.transform.parent.GetComponent<Collider2D>().enabled = false;
             pillarFourIsUp = true;
         }
-
-       
-  
     }
 
     private void ResetPillars()
@@ -512,6 +548,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     public void ResetPillarOneActual()//called by pylonCoverThingies
     {
         InvokeRepeating("ResetPillarOne", 0, 0.005f);
+        CancelInvoke("MovePillarOne");
     }
 
     public void ResetPillarOne()
@@ -532,6 +569,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     public void ResetPillarTwoActual()//called by pylonCoverThingies
     {
         InvokeRepeating("ResetPillarTwo", 0, 0.005f);
+        CancelInvoke("MovePillarTwo");
     }
 
     public void ResetPillarTwo()
@@ -552,6 +590,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     public void ResetPillarThreeActual()//called by pylonCoverThingies
     {
         InvokeRepeating("ResetPillarThree", 0, 0.005f);
+        CancelInvoke("MovePillarThree");
     }
 
     public void ResetPillarThree()
@@ -573,6 +612,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     public void ResetPillarFourActual()//called by pylonCoverThingies
     {
         InvokeRepeating("ResetPillarFour", 0, 0.005f);
+        CancelInvoke("MovePillarFour");
     }
     public void ResetPillarFour()
     {

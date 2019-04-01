@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+
+    public bool godMode = false;
     [Header("Editor Variables")]
     public Image playerHealthBar;
     
@@ -57,7 +59,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamagePlayer(float dmg)
     {
-        if(!absorbDamage && gameObject.layer == 13 && !isRunning)
+        if(!absorbDamage && gameObject.layer == 13 && !isRunning && !godMode)
         {
             playerHealthSource.clip = damagePlayerSound;
             playerHealthSource.PlayOneShot(damagePlayerSound);

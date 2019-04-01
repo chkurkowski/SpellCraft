@@ -1129,6 +1129,9 @@ Transform:
   - {fileID: 401667433}
   - {fileID: 1062518649}
   - {fileID: 1774064689}
+  - {fileID: 1676493935}
+  - {fileID: 1105295746}
+  - {fileID: 585689440}
   m_Father: {fileID: 2065842189}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3930,7 +3933,7 @@ Transform:
   - {fileID: 335623655}
   - {fileID: 226678035}
   m_Father: {fileID: 2065842189}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &377310984
 GameObject:
@@ -7677,11 +7680,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 585689439}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 26.6, y: 16.8, z: 36.29371}
+  m_LocalPosition: {x: 26.599976, y: 34.69999, z: 36.29371}
   m_LocalScale: {x: 1.05, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2065842189}
-  m_RootOrder: 4
+  m_Father: {fileID: 69818560}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &585689441
 CircleCollider2D:
@@ -8405,6 +8408,11 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 10.8
       objectReference: {fileID: 0}
+    - target: {fileID: 114102766126379484, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: godMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
   m_IsPrefabAsset: 0
@@ -8560,8 +8568,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 681488666}
-  - component: {fileID: 681488667}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
   m_Icon: {fileID: 0}
@@ -8582,22 +8589,6 @@ Transform:
   m_Father: {fileID: 124898550}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &681488667
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 58330721763633294, guid: 2878ab00cfa651645ae7e83c54e9700a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 681488665}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &682437929
 GameObject:
   m_ObjectHideFlags: 0
@@ -12655,7 +12646,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 974419220}
-  m_Layer: 2
+  - component: {fileID: 974419221}
+  m_Layer: 9
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
   m_Icon: {fileID: 0}
@@ -12676,6 +12668,21 @@ Transform:
   m_Father: {fileID: 1617069919}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &974419221
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 974419219}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!1 &984158230
 GameObject:
   m_ObjectHideFlags: 0
@@ -13566,7 +13573,7 @@ Transform:
   - {fileID: 1541321623}
   - {fileID: 771592969}
   m_Father: {fileID: 2065842189}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1031966992
 MonoBehaviour:
@@ -15725,12 +15732,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1105295745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -132.20001, y: -110.98505, z: 15}
+  m_LocalPosition: {x: -132.20001, y: -93.085045, z: 15}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 702097962}
-  m_Father: {fileID: 2065842189}
-  m_RootOrder: 9
+  m_Father: {fileID: 69818560}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1105295747
 CircleCollider2D:
@@ -16740,7 +16747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1142058192}
   - component: {fileID: 1142058193}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
   m_Icon: {fileID: 0}
@@ -16764,14 +16771,13 @@ Transform:
 --- !u!58 &1142058193
 CircleCollider2D:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 58908782370809320, guid: 2878ab00cfa651645ae7e83c54e9700a,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1142058191}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -20348,7 +20354,7 @@ Transform:
   - {fileID: 1833730719}
   - {fileID: 801656047}
   m_Father: {fileID: 2065842189}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1560395241
 GameObject:
@@ -20359,7 +20365,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1560395242}
-  m_Layer: 2
+  - component: {fileID: 1560395243}
+  m_Layer: 9
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
   m_Icon: {fileID: 0}
@@ -20380,6 +20387,21 @@ Transform:
   m_Father: {fileID: 973183642}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1560395243
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1560395241}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!1 &1567288202
 GameObject:
   m_ObjectHideFlags: 0
@@ -21492,16 +21514,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1676493934}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 17.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 467479163}
   - {fileID: 1884861699}
   - {fileID: 1869678782}
   - {fileID: 501775156}
-  m_Father: {fileID: 2065842189}
-  m_RootOrder: 5
+  m_Father: {fileID: 69818560}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1688659755
 GameObject:
@@ -27043,12 +27065,9 @@ Transform:
   - {fileID: 2116634665}
   - {fileID: 69818560}
   - {fileID: 441255048}
-  - {fileID: 585689440}
-  - {fileID: 1676493935}
   - {fileID: 1031966991}
   - {fileID: 1558151117}
   - {fileID: 374367700}
-  - {fileID: 1105295746}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
