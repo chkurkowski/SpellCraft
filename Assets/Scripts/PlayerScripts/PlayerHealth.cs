@@ -85,7 +85,7 @@ public class PlayerHealth : MonoBehaviour
     {
         isRunning = true;
         gameObject.layer = 14;
-        print("Layer: " + gameObject.layer);
+       // print("Layer: " + gameObject.layer);
         Color firstColor = gameObject.GetComponent<SpriteRenderer>().color;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(.07f);
@@ -101,7 +101,7 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(.10f);
         gameObject.layer = 13;
         isRunning = false;
-        print("Layer: " + gameObject.layer);
+       // print("Layer: " + gameObject.layer);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
