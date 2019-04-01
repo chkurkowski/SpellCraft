@@ -17,6 +17,7 @@ public class AbilityHandler : MonoBehaviour {
     public GameObject projectileSplitSim;
     public GameObject projectileSpeed;
     public GameObject simulacrumAbsorb;
+    public GameObject rotator;
     public Vector3 cursorInWorldPos;
     public ParticleSystem waveSystem;
     private Color origColor;
@@ -81,6 +82,7 @@ public class AbilityHandler : MonoBehaviour {
         projectileSpeedTimer = PROJECTILESPEEDCOOLDOWN;
         absorbExplodeTimer = ABSORBEXPLODECOOLDOWN;
 
+        rotator = GameObject.Find("Rotator");
         playerAnimator = GetComponent<Animator>();
         abilities = GetComponent<PlayerAbilities>();
         health = GetComponent<PlayerHealth>();
@@ -225,7 +227,7 @@ public class AbilityHandler : MonoBehaviour {
     {
     	if(projectileSpeedTimer >= PROJECTILESPEEDCOOLDOWN)
     	{
-    		Instantiate(projectileSpeed, PlacementCheck(),transform.rotation);
+    		Instantiate(projectileSpeed, PlacementCheck(), rotator.transform.rotation);
 	        abilities.AttackArrayHandler("HealStun", abilities.lastAttacks);
 	        projectileSpeedTimer = 0;
     	}
@@ -245,10 +247,10 @@ public class AbilityHandler : MonoBehaviour {
             abilityHandlerSource.PlayOneShot(attackSimSound);
 
             GameObject[] sims = new GameObject[4];
-            sims[0] = Instantiate(simulacrum, transform.position + (transform.up * -10) + (transform.right * -5), Quaternion.identity);
-            sims[1] = Instantiate(simulacrum, transform.position + (transform.up * -10) + (transform.right * 5), Quaternion.identity);
-            sims[2] = Instantiate(simulacrum, transform.position + (transform.up * -5) + (transform.right * -10), Quaternion.identity);
-            sims[3] = Instantiate(simulacrum, transform.position + (transform.up * -5) + (transform.right * 10), Quaternion.identity);
+            sims[0] = Instantiate(simulacrum, transform.position + (rotator.transform.up * -10) + (rotator.transform.right * -5), Quaternion.identity);
+            sims[1] = Instantiate(simulacrum, transform.position + (rotator.transform.up * -10) + (rotator.transform.right * 5), Quaternion.identity);
+            sims[2] = Instantiate(simulacrum, transform.position + (rotator.transform.up * -5) + (rotator.transform.right * -10), Quaternion.identity);
+            sims[3] = Instantiate(simulacrum, transform.position + (rotator.transform.up * -5) + (rotator.transform.right * 10), Quaternion.identity);
 
             foreach(GameObject sim in sims)
             {
@@ -276,7 +278,7 @@ public class AbilityHandler : MonoBehaviour {
         if(isBurst)
         {
             // print("Hit");
-        	Instantiate(projectileSplitSim, cursorInWorldPos, transform.rotation);
+        	Instantiate(projectileSplitSim, cursorInWorldPos, rotator.transform.rotation);
         }
     }
 
