@@ -223,15 +223,15 @@ public class PlayerAbilities : MonoBehaviour {
 
     private IEnumerator EvadeFunctionality(Vector3 point)
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.3f);
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        health.isAlive = false;
+        // health.isAlive = false;
         yield return new WaitForSeconds(.30f);
-        if(gameObject.layer != 13)
-            gameObject.layer = 13;
         transform.position = (Vector2)point;
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        health.isAlive = true;
+        // health.isAlive = true;
+        if(gameObject.layer != 13)
+            gameObject.layer = 13;
         state = State.IDLE;
     }
 
