@@ -41,7 +41,7 @@ public class MagicBall : MonoBehaviour {
       //  Debug.Log("PLAYER PROJECTILE HIT: " + col.transform.name + "with tag: " + col.transform.tag);
         if(col.GetComponent<Collider2D>().transform.tag == null)
         {
-          //  Debug.Log("PLAYER PROJECTILE HIT UNTAGGED OBJECT ");
+           Debug.Log("PLAYER PROJECTILE HIT UNTAGGED OBJECT ");
             Destroy(gameObject);
         }
         else if (col.gameObject.tag == "EnemyReflect")
@@ -52,13 +52,13 @@ public class MagicBall : MonoBehaviour {
             gameObject.layer = 9; //changes physics layers, do not touch or I stab you
             gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0);
         }
-        if (col.GetComponent<Collider2D>().transform.tag == "Boss")
+        if (col.gameObject.tag == "Boss")
         {
            // Debug.Log(gameObject.name + " was destroyed by Boss:" + col.gameObject.name);
             Destroy(gameObject);
         }
         else if (col.gameObject.tag == "Vortex" || col.gameObject.tag == "EnemyProjectile" 
-            || col.gameObject.tag == "Projectile" || col.gameObject.tag == "Split" || col.gameObject.tag == "CheckPoint")
+            || col.gameObject.tag == "Projectile" || col.gameObject.tag == "Split" || col.gameObject.tag == "CheckPoint" || col.gameObject.tag == "LaserEndPoint")
         {
            
             //do nothing
@@ -67,7 +67,7 @@ public class MagicBall : MonoBehaviour {
         {
             if (col.gameObject.tag != "Boss" || col.gameObject.tag != "CameraTrigger" || col.gameObject.tag != "HealStun" )
             {
-                //Debug.Log(gameObject.name + " was destroyed by " + col.gameObject.name + "with tag :" + col.gameObject.tag );
+               // Debug.Log(gameObject.name + " was destroyed by " + col.gameObject.name + "with tag :" + col.gameObject.tag );
                 Destroy(gameObject);
             }
 

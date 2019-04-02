@@ -9,8 +9,12 @@ public class ProtoNovusAttacks : MonoBehaviour
     private BossAttacks bossAttacksInfo;
     private Animator pylonAnimatorInfo;
     private ProtoNovusMovement protoNovusMovementInfo;
+
+    public bool isNewBoss = false;
+
     public bool isPlayingMusic = false;
     public AudioSource bossMusic;
+
 
     //Animator Variables
     private bool canStopAttack = true; // set to true at the start of each attack 
@@ -41,6 +45,32 @@ public class ProtoNovusAttacks : MonoBehaviour
     public GameObject shieldTwo;
     public GameObject reflectShieldOne;
     public GameObject reflectShieldTwo;
+
+    public float pillarSpriteOffset = .1f;
+    public GameObject pillarSpriteOne;
+    public GameObject pillarSpriteTwo;
+    public GameObject pillarSpriteThree;
+    public GameObject pillarSpriteFour;
+    public GameObject pillarPylonOne;
+    public GameObject pillarPylonTwo;
+    public GameObject pillarPylonThree;
+    public GameObject pillarPylonFour;
+
+    private Transform ogPillarSpriteOne;
+    private Transform ogPillarSpriteTwo;
+    private Transform ogPillarSpriteThree;
+    private Transform ogPillarSpriteFour;
+
+    [HideInInspector]
+    public bool pillarOneIsUp = false;
+    [HideInInspector]
+    public bool pillarTwoIsUp = false;
+    [HideInInspector]
+    public bool pillarThreeIsUp = false;
+    [HideInInspector]
+    public bool pillarFourIsUp = false;
+    
+   
 
 
     [Space(30)]
@@ -80,6 +110,7 @@ public class ProtoNovusAttacks : MonoBehaviour
 
     void Start()
     {
+   
         player = GameObject.Find("Player");
         bossInfoInfo = gameObject.GetComponent<BossInfo>();
         protoNovusMovementInfo = gameObject.GetComponent<ProtoNovusMovement>();
@@ -109,6 +140,7 @@ public class ProtoNovusAttacks : MonoBehaviour
         explodingPylonFour.transform.position = explodingPylonSpawnFour.position;
         explodingPylonFour.SetActive(false);
 
+
     }
 
     private void Update()
@@ -134,6 +166,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             pylonAnimatorInfo.SetBool("attackTwoEnd", false);
             pylonAnimatorInfo.SetBool("attackThreeEnd", false);
         }
+
     }
 
     #region Attack
@@ -151,19 +184,19 @@ public class ProtoNovusAttacks : MonoBehaviour
             case 1:
                 pylonAnimatorInfo.SetBool("attackOneStart", true);
                 pylonAnimatorInfo.SetBool("attackOneEnd", false);
-              //  AttackOne();
+                //  AttackOne();
                 break;
 
             case 2:
                 pylonAnimatorInfo.SetBool("attackTwoStart", true);
                 pylonAnimatorInfo.SetBool("attackTwoEnd", false);
-             //   AttackTwo();
+                //   AttackTwo();
                 break;
 
             case 3:
                 pylonAnimatorInfo.SetBool("attackThreeStart", true);
                 pylonAnimatorInfo.SetBool("attackThreeEnd", false);
-               // AttackThree();
+                // AttackThree();
                 break;
         }
     }
@@ -174,38 +207,47 @@ public class ProtoNovusAttacks : MonoBehaviour
 
     public void AttackOne()//Laser Beam
     {
-        
-            if (!bossInfoInfo.isMad && !bossInfoInfo.isEnraged)
-            {
-                laserMuzzleOne.SetActive(true);
 
-                laserAudioSource.Play();
+        if (!bossInfoInfo.isMad && !bossInfoInfo.isEnraged)
+        {
+            laserMuzzleOne.SetActive(true);
 
-                InvokeRepeating("SlowRotateToPlayer", 0, spinRotationRate);
-            }
-            else if (bossInfoInfo.isMad)
-            {
-                laserMuzzleOne.SetActive(true);
+            laserAudioSource.Play();
 
-                laserAudioSource.Play();
+            InvokeRepeating("SlowRotateToPlayer", 0, spinRotationRate);
+        }
+        else if (bossInfoInfo.isMad)
+        {
+            laserMuzzleOne.SetActive(true);
+            laserAudioSource.Play();
 
-                shieldOne.SetActive(true);
-                shieldTwo.SetActive(true);
-                InvokeRepeating("SlowRotateToPlayer", 0, spinRotationRate);
-            }
-            else if (bossInfoInfo.isEnraged)
-            {
-                laserAudioSource.Play();
+            shieldOne.SetActive(true);
+            shieldTwo.SetActive(true);
+            InvokeRepeating("SlowRotateToPlayer", 0, spinRotationRate);
+        }
+        else if (bossInfoInfo.isEnraged)
+        {
+            laserAudioSource.Play();
+            laserMuzzleOne.SetActive(true);
+            reflectShieldOne.SetActive(true);
+            reflectShieldTwo.SetActive(true);
 
-                laserMuzzleOne.SetActive(true);
-                reflectShieldOne.SetActive(true);
-                reflectShieldTwo.SetActive(true);
+            InvokeRepeating("SlowRotateToPlayer", 0, spinRotationRate);
+        }
+        Invoke("StopAttack", laserAttackDuration);
 
-                InvokeRepeating("SlowRotateToPlayer", 0, spinRotationRate);
-            }
-            Invoke("StopAttack", laserAttackDuration);
-        
-       
+
+    }
+
+    public void AttackOneExtra()
+    {
+        if (isNewBoss)
+        {
+            InvokeRepeating("MovePillarOne", 0, 0.01f);
+            InvokeRepeating("MovePillarTwo", 0, 0.01f);
+            InvokeRepeating("MovePillarThree", 0, 0.01f);
+            InvokeRepeating("MovePillarFour", 0, 0.01f);
+        }
     }
 
     #endregion
@@ -214,28 +256,28 @@ public class ProtoNovusAttacks : MonoBehaviour
 
     public void AttackTwo()//Self Explosion
     {
-        if(!bossInfoInfo.isMad && !bossInfoInfo.isEnraged)
+        if (!bossInfoInfo.isMad && !bossInfoInfo.isEnraged)
         {
             bombFireRate = bombFireRateOriginal;
             InvokeRepeating("BombTown", 0, bombFireRate);//see if this works!
         }
-        else if(bossInfoInfo.isMad)
+        else if (bossInfoInfo.isMad)
         {
-            InvokeRepeating("BombTown", 0, bombFireRate*2);
+            InvokeRepeating("BombTown", 0, bombFireRate * 2);
             bombFireRate = bombFireRateOriginal;//see if this works!
         }
-        else if(bossInfoInfo.isEnraged)
+        else if (bossInfoInfo.isEnraged)
         {
-            InvokeRepeating("BombTown", 0, bombFireRate*4);
+            InvokeRepeating("BombTown", 0, bombFireRate * 4);
             bombFireRate = bombFireRateOriginal;//see if this works!
         }
-       
+
         Invoke("StopAttack", bombTimeLength);
     }
 
     private void BombTown()
     {
-     
+
         Vector3 dir = player.transform.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle - 90, transform.forward);
@@ -336,7 +378,7 @@ public class ProtoNovusAttacks : MonoBehaviour
         else if (bossInfoInfo.isEnraged)
         {
             laserAudioSource.Play();
-          //  laserShardsAudioSource.Play();
+            //  laserShardsAudioSource.Play();
 
             Debug.Log("Enraged Attack 3 happened!");
             explodingPylonOne.SetActive(true);
@@ -372,7 +414,7 @@ public class ProtoNovusAttacks : MonoBehaviour
 
             activeExplodingPylons = 4;
         }
-        
+
     }
 
     #endregion
@@ -389,14 +431,202 @@ public class ProtoNovusAttacks : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, rotAngle, Time.deltaTime * laserLookAtSpeed);
     }
 
-   // public void PylonRotate()
-   // {
-   //     gameObject.transform.Rotate(0, 0, spinRotationAmount);
-   // }
+    // public void PylonRotate()
+    // {
+    //     gameObject.transform.Rotate(0, 0, spinRotationAmount);
+    // }
 
     public void RotatePylonParent()
     {
         pylonParent.transform.Rotate(0, 0, pPRotateAmount);
+    }
+
+    private void MovePillarOne()
+    {
+        if (pillarSpriteOne.transform.localPosition.y >= .175f)
+        {
+            CancelInvoke("MovePillarOne");
+
+            return;
+        }
+        else
+        {
+            pillarSpriteOne.transform.position += new Vector3(0, pillarSpriteOffset, 0);
+            pillarSpriteOne.transform.parent.GetComponent<Collider2D>().enabled = false;
+            pillarOneIsUp = true;
+        }
+    }
+
+    private void MovePillarTwo()
+    {
+        if (pillarSpriteTwo.transform.localPosition.y >= .175f)
+        {
+            CancelInvoke("MovePillarTwo");
+
+            return;
+        }
+        else
+        {
+            pillarSpriteTwo.transform.position += new Vector3(0, pillarSpriteOffset, 0);
+            pillarSpriteTwo.transform.parent.GetComponent<Collider2D>().enabled = false;
+            pillarTwoIsUp = true;
+        }
+    }
+
+    private void MovePillarThree()
+    {
+        if (pillarSpriteThree.transform.localPosition.y >= .175f)
+        {
+            CancelInvoke("MovePillarThree");
+
+            return;
+        }
+        else
+        {
+            pillarSpriteThree.transform.position += new Vector3(0, pillarSpriteOffset, 0);
+            pillarSpriteThree.transform.parent.GetComponent<Collider2D>().enabled = false;
+            pillarThreeIsUp = true;
+        }
+    }
+
+    private void MovePillarFour()
+    {
+        if (pillarSpriteFour.transform.localPosition.y >= .175f)
+        {
+            CancelInvoke("MovePillarFour");
+
+            return;
+        }
+        else
+        {
+            pillarSpriteFour.transform.position += new Vector3(0, pillarSpriteOffset, 0);
+            pillarSpriteFour.transform.parent.GetComponent<Collider2D>().enabled = false;
+            pillarFourIsUp = true;
+        }
+    }
+
+    private void ResetPillars()
+    {
+        if (pillarSpriteOne.transform.localPosition.y <= .035f && pillarSpriteTwo.transform.localPosition.y <= .035f && pillarSpriteThree.transform.localPosition.y <= .035f && pillarSpriteFour.transform.localPosition.y <= .035f)
+        {
+            pillarSpriteOne.transform.parent.GetComponent<Collider2D>().enabled = true;
+            pillarSpriteTwo.transform.parent.GetComponent<Collider2D>().enabled = true;
+            pillarSpriteThree.transform.parent.GetComponent<Collider2D>().enabled = true;
+            pillarSpriteFour.transform.parent.GetComponent<Collider2D>().enabled = true;
+            pillarOneIsUp = false;
+            pillarTwoIsUp = false;
+            pillarThreeIsUp = false;
+            pillarFourIsUp = false;
+            CancelInvoke("ResetPillars");
+            return;
+        }
+        else
+        {
+            if(pillarOneIsUp)
+            {
+                pillarSpriteOne.transform.position -= new Vector3(0, pillarSpriteOffset, 0);
+            }
+
+            if(pillarTwoIsUp)
+            {
+                pillarSpriteTwo.transform.position -= new Vector3(0, pillarSpriteOffset, 0);
+            }
+           
+            if(pillarThreeIsUp)
+            {
+                pillarSpriteThree.transform.position -= new Vector3(0, pillarSpriteOffset, 0);
+            }
+          
+            if(pillarFourIsUp)
+            {
+                pillarSpriteFour.transform.position -= new Vector3(0, pillarSpriteOffset, 0);
+            }
+            
+        }
+    }
+
+    public void ResetPillarOneActual()//called by pylonCoverThingies
+    {
+        InvokeRepeating("ResetPillarOne", 0, 0.005f);
+        CancelInvoke("MovePillarOne");
+    }
+
+    public void ResetPillarOne()
+    {
+        if (pillarSpriteOne.transform.localPosition.y <= .035f)
+        {
+            pillarSpriteOne.transform.parent.GetComponent<Collider2D>().enabled = true;
+            pillarOneIsUp = false;
+            CancelInvoke("ResetPillarOne");
+            return;
+        }
+        else
+        {
+            pillarSpriteOne.transform.position -= new Vector3(0, pillarSpriteOffset, 0);
+        }
+    }
+
+    public void ResetPillarTwoActual()//called by pylonCoverThingies
+    {
+        InvokeRepeating("ResetPillarTwo", 0, 0.005f);
+        CancelInvoke("MovePillarTwo");
+    }
+
+    public void ResetPillarTwo()
+    {
+        if (pillarSpriteTwo.transform.localPosition.y <= .035f)
+        {
+            pillarSpriteTwo.transform.parent.GetComponent<Collider2D>().enabled = true;
+            pillarTwoIsUp = false;
+            CancelInvoke("ResetPillarTwo");
+            return;
+        }
+        else
+        {
+            pillarSpriteTwo.transform.position -= new Vector3(0, pillarSpriteOffset, 0);
+        }
+    }
+
+    public void ResetPillarThreeActual()//called by pylonCoverThingies
+    {
+        InvokeRepeating("ResetPillarThree", 0, 0.005f);
+        CancelInvoke("MovePillarThree");
+    }
+
+    public void ResetPillarThree()
+    {
+        if (pillarSpriteThree.transform.localPosition.y <= .035f)
+        {
+            pillarSpriteThree.transform.parent.GetComponent<Collider2D>().enabled = true;
+            pillarThreeIsUp = false;
+            CancelInvoke("ResetPillarThree");
+            return;
+        }
+        else
+        {
+            pillarSpriteThree.transform.position -= new Vector3(0, pillarSpriteOffset, 0);
+        }
+    }
+
+
+    public void ResetPillarFourActual()//called by pylonCoverThingies
+    {
+        InvokeRepeating("ResetPillarFour", 0, 0.005f);
+        CancelInvoke("MovePillarFour");
+    }
+    public void ResetPillarFour()
+    {
+        if (pillarSpriteFour.transform.localPosition.y <= .035f)
+        {
+            pillarSpriteFour.transform.parent.GetComponent<Collider2D>().enabled = true;
+            pillarFourIsUp = false;
+            CancelInvoke("ResetPillarFour");
+            return;
+        }
+        else
+        {
+            pillarSpriteFour.transform.position -= new Vector3(0, pillarSpriteOffset, 0);
+        }
     }
     #endregion
 
@@ -478,13 +708,13 @@ public class ProtoNovusAttacks : MonoBehaviour
         Debug.Log("Attack 3 Explode 4 happened!");
         GameObject exp4 = Instantiate(attackThreeExplosion, transform.position, Quaternion.identity);
         exp4.transform.Rotate(0, 0, 90);
-        if(bossInfoInfo.isMad)
+        if (bossInfoInfo.isMad)
         {
             GameObject exp4Mad = Instantiate(attackThreeExplosion, transform.position, Quaternion.identity);
             exp4Mad.transform.Rotate(0, 0, 90);
             exp4Mad.GetComponent<PylonEnergyWave>().moveSpeed = 60;
         }
-        if(bossInfoInfo.isEnraged)
+        if (bossInfoInfo.isEnraged)
         {
             GameObject exp4Enraged = Instantiate(attackThreeExplosion, transform.position, Quaternion.identity);
             exp4Enraged.transform.Rotate(0, 0, 90);
@@ -504,6 +734,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     #region StopAttack
     public void StopAttack()
     {
+      
         pylonAnimatorInfo.SetBool("attackOneStart", false);
         pylonAnimatorInfo.SetBool("attackTwoStart", false);
         pylonAnimatorInfo.SetBool("attackThreeStart", false);
@@ -525,9 +756,11 @@ public class ProtoNovusAttacks : MonoBehaviour
         reflectShieldTwo.GetComponent<PylonReflectShield>().isLasered = false;
         reflectShieldOne.SetActive(false);
         reflectShieldTwo.SetActive(false);
+       
+      
 
         protoNovusMovementInfo.StopLaserAttackMovement();
-      
+
 
         explodingPylonOne.transform.position = explodingPylonSpawnOne.position;
         explodingPylonOne.SetActive(false);
@@ -542,6 +775,10 @@ public class ProtoNovusAttacks : MonoBehaviour
         explodingPylonFour.SetActive(false);
 
         CancelInvoke();
+        if (isNewBoss)
+        {
+            InvokeRepeating("ResetPillars", 0, 0.005f);
+        }
     }
 
     #endregion
