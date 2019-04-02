@@ -10,13 +10,19 @@ public class ProjectileSpeed : MonoBehaviour {
 
 	void Start()
 	{
-		Invoke("Destroy", lifetime);
+		Invoke("EndAnimation", lifetime - 1);
+        Destroy(gameObject, lifetime);
 	}
 
 	private void Destroy()
 	{
 		Destroy(gameObject);
 	}
+
+    public void EndAnimation()
+    {
+        gameObject.GetComponent<Animator>().SetBool("isDead", true);
+    }
 
 	private void OnTriggerEnter2D(Collider2D col)
     {
