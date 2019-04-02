@@ -571,8 +571,10 @@ public class ProtoNovusAttacks : MonoBehaviour
     {
         if (pillarSpriteOne.transform.localPosition.y <= .035f)
         {
-          //  GameObject healOrbSpawned = Instantiate(healOrb, pillarSpriteOne.transform.position, pillarSpriteOne.transform.rotation);
+            GameObject healOrbSpawned = Instantiate(healOrb, pillarSpriteOne.transform.position, pillarSpriteOne.transform.rotation);
+            healOrbSpawned.transform.Translate(-20, 20, 0);
             pillarSpriteOne.transform.parent.GetComponent<Collider2D>().enabled = true;
+            pillarSpriteOne.transform.localPosition = new Vector3(pillarSpriteOne.transform.localPosition.x, .035f, 0);
             pillarOneIsUp = false;
             CancelInvoke("ResetPillarOne");
             return;
@@ -593,8 +595,11 @@ public class ProtoNovusAttacks : MonoBehaviour
     {
         if (pillarSpriteTwo.transform.localPosition.y <= .035f)
         {
+            GameObject healOrbSpawned = Instantiate(healOrb, pillarSpriteTwo.transform.position, pillarSpriteTwo.transform.rotation);
+            healOrbSpawned.transform.Translate(20, 20, 0);
             pillarSpriteTwo.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarTwoIsUp = false;
+            pillarSpriteTwo.transform.localPosition = new Vector3(pillarSpriteTwo.transform.localPosition.x, .035f, 0);
             CancelInvoke("ResetPillarTwo");
             return;
         }
@@ -614,8 +619,11 @@ public class ProtoNovusAttacks : MonoBehaviour
     {
         if (pillarSpriteThree.transform.localPosition.y <= .035f)
         {
+            GameObject healOrbSpawned = Instantiate(healOrb, pillarSpriteThree.transform.position, pillarSpriteThree.transform.rotation);
+            healOrbSpawned.transform.Translate(-20, -20, 0);
             pillarSpriteThree.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarThreeIsUp = false;
+            pillarSpriteThree.transform.localPosition = new Vector3(pillarSpriteThree.transform.localPosition.x, .035f, 0);
             CancelInvoke("ResetPillarThree");
             return;
         }
@@ -635,8 +643,11 @@ public class ProtoNovusAttacks : MonoBehaviour
     {
         if (pillarSpriteFour.transform.localPosition.y <= .035f)
         {
+            GameObject healOrbSpawned = Instantiate(healOrb, pillarSpriteFour.transform.position, pillarSpriteFour.transform.rotation);
+            healOrbSpawned.transform.Translate(20, -20, 0);
             pillarSpriteFour.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarFourIsUp = false;
+            pillarSpriteFour.transform.localPosition = new Vector3(pillarSpriteFour.transform.localPosition.x, .035f, 0);
             CancelInvoke("ResetPillarFour");
             return;
         }

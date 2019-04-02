@@ -9,6 +9,7 @@ public class BossHealth : MonoBehaviour
     public GameObject bossArt;
     public GameObject HealthBarParent;
     public Image healthBar;
+    private ProtoNovusAttacks bossAttackInfo;
     
    
     /// <summary>
@@ -31,7 +32,8 @@ public class BossHealth : MonoBehaviour
     private void Start()
     {
         bossInfo = gameObject.GetComponent<BossInfo>();
-       // pylonAudioSource.Play();
+        // pylonAudioSource.Play();
+        bossAttackInfo = gameObject.GetComponent<ProtoNovusAttacks>();
         //healthBar = GameObject.Find("BossHealthBar").GetComponent<Image>();
         HealthBarParent.SetActive(false);
         healthBar.gameObject.SetActive(false);
@@ -54,6 +56,7 @@ public class BossHealth : MonoBehaviour
         {
 
             //Destroy(boss);
+            bossAttackInfo.StopAttack();
             bossArt.gameObject.SetActive(false);
             HealthBarParent.SetActive(false);
             healthBar.gameObject.SetActive(false);
