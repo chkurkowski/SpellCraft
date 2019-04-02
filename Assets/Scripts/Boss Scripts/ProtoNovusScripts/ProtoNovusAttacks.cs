@@ -41,6 +41,9 @@ public class ProtoNovusAttacks : MonoBehaviour
     [Tooltip("How long the laser is active for. After those seconds are up, the attack is stopped.")]
     public float laserAttackDuration = 5f;
     public GameObject laserMuzzleOne;
+   
+   
+    public GameObject laserShardOne;
     public GameObject shieldOne;
     public GameObject shieldTwo;
     public GameObject reflectShieldOne;
@@ -219,7 +222,7 @@ public class ProtoNovusAttacks : MonoBehaviour
         }
         else if (bossInfoInfo.isMad)
         {
-            laserMuzzleOne.SetActive(true);
+           laserMuzzleOne.SetActive(true);
             laserAudioSource.Play();
 
             shieldOne.SetActive(true);
@@ -422,6 +425,10 @@ public class ProtoNovusAttacks : MonoBehaviour
 
     #region Misc Functions
 
+    public void FireLaserShards()
+    {
+        
+    }
 
     public void SlowRotateToPlayer()
     {
