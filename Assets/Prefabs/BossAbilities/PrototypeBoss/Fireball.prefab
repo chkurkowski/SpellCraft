@@ -188,7 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireBallDamage: 5
   fireBallSpeed: 50
-  lifeTime: 10
+  lifeTime: 100
   reflectSource: {fileID: 82083856757280554}
   reflectSound: {fileID: 8300000, guid: cb49ede1c9d0e46b3bfdd6b3c0065320, type: 3}
 --- !u!114 &114445259072142418

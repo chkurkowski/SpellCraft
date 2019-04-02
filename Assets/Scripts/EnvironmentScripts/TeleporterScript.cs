@@ -6,6 +6,7 @@ public class TeleporterScript : MonoBehaviour
 {
     public Transform destination;
     public bool canTeleport = true;
+    public bool isTutorialTeleport = false;
 
     private void OnTriggerEnter2D(Collider2D trig)
     {
@@ -13,6 +14,11 @@ public class TeleporterScript : MonoBehaviour
         {
             if(canTeleport)
             {
+                if(isTutorialTeleport)
+                {
+                    GameObject.Find("TutorialManager").GetComponent<TutorialManager>().NextTutorialStage();
+                    isTutorialTeleport = false;
+                }
                 trig.gameObject.transform.position = destination.position + new Vector3(0, 15, 0); //if u want tele to tele link
                 destination.gameObject.GetComponent<TeleporterScript>().canTeleport = false;
                 destination.gameObject.GetComponent<TeleporterScript>().CanTeleport();

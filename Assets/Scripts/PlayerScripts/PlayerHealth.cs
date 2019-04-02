@@ -10,11 +10,14 @@ public class PlayerHealth : MonoBehaviour
     
     [Header("If the Player is Alive")]
     public bool isAlive = true;
+    private bool isRunning = false;
 
     [Header("Public Health Variables")]
     public float maxPlayerHealth = 100f;
     public float playerHealth = 100f;
     private RespawnManager respawnManagerInfo;
+    private PlayerMovement movement;
+    private Animator playerAnimator;
 
     public bool absorbDamage = false;
     public float damageAbsorbed{get; private set;}
@@ -29,6 +32,8 @@ public class PlayerHealth : MonoBehaviour
 	void Start () 
     {
         respawnManagerInfo = GameObject.Find("RespawnManager").GetComponent<RespawnManager>();
+        movement = GetComponent<PlayerMovement>();
+        playerAnimator = GetComponent<Animator>();
 	}
 
     private void Awake()
@@ -56,13 +61,15 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamagePlayer(float dmg)
     {
-        if(!absorbDamage)
+        if(!absorbDamage && gameObject.layer == 13 && !isRunning)
         {
             playerHealthSource.clip = damagePlayerSound;
             playerHealthSource.PlayOneShot(damagePlayerSound);
             playerHealth -= dmg;
             playerHealthBar.fillAmount = playerHealth / 100;
-            StartCoroutine(InvincibilityFrames());
+            // DamageAnimations();
+            if(!isRunning)
+                StartCoroutine(InvincibilityFrames());
         }
         else
         {
@@ -81,7 +88,9 @@ public class PlayerHealth : MonoBehaviour
 
     private IEnumerator InvincibilityFrames()
     {
+        isRunning = true;
         gameObject.layer = 14;
+        print("Layer: " + gameObject.layer);
         Color firstColor = gameObject.GetComponent<SpriteRenderer>().color;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(.07f);
@@ -96,19 +105,35 @@ public class PlayerHealth : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
         yield return new WaitForSeconds(.10f);
         gameObject.layer = 13;
+        isRunning = false;
+        print("Layer: " + gameObject.layer);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-
-      
-
         if (col.gameObject.tag == "CheckPoint")
         {
             respawnManagerInfo.currentCheckPoint = col.gameObject;
-           
         }
     }
 
+    private void DamageAnimations()
+    {
+        switch(movement.playerDirection)
+        {
+            case 0:
+                playerAnimator.SetTrigger("triggerPlayerDamageUp");
+                break;
+            case 1:
+                playerAnimator.SetTrigger("triggerPlayerDamageRight");
+                break;
+            case 2:
+                playerAnimator.SetTrigger("triggerPlayerDamageDown");
+                break;
+            case 3:
+                playerAnimator.SetTrigger("triggerPlayerDamageLeft");
+                break;
+        }
+    }
    
 }

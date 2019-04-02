@@ -59,11 +59,12 @@ public class LaserTutorialScript : MonoBehaviour
                 GameObject.Find("Player").GetComponent<PlayerHealth>().HealPlayer(laserDamage);
             }
         }
-        if (hit.transform.tag == "Player")
+        if (hit.collider.tag == "Player")
         {
             if(hit.collider.gameObject.layer != 14)
             {
                 hit.transform.gameObject.GetComponent<PlayerHealth>().DamagePlayer(laserDamage);
+                // hit.transform.gameObject.GetComponent<PlayerHealth>().StartIFrames();
             }
            //Debug.Log("Player detected!");
         }
