@@ -1517,10 +1517,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc5f611798ab409e97635cb2108b749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayingOWMusic: 0
-  owAudio: {fileID: 44316063}
-  pylon: {fileID: 1443329205}
-  lich: {fileID: 246488186}
 --- !u!1 &54338178
 GameObject:
   m_ObjectHideFlags: 0
@@ -15383,6 +15379,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &284039438 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4069713615852516, guid: df3f6fd27fc7f44bbbf75457854bb58a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1804714112}
 --- !u!1 &297888096
 GameObject:
   m_ObjectHideFlags: 0
@@ -17669,10 +17670,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a90c00987ac4a878b8a83d2eac823e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayingOwMusic: 0
-  overworldMusic: {fileID: 430603181}
-  pylonHealthBar: {fileID: 0}
-  lichHealthBar: {fileID: 0}
 --- !u!82 &430603181
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19630,10 +19627,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a90c00987ac4a878b8a83d2eac823e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayingOwMusic: 0
-  overworldMusic: {fileID: 0}
-  pylonHealthBar: {fileID: 0}
-  lichHealthBar: {fileID: 0}
 --- !u!1 &583316929
 GameObject:
   m_ObjectHideFlags: 0
@@ -23933,7 +23926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 635b15d09525c4ab983bbd50593de0fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1045345313}
+  Player: {fileID: 1550450066}
   Boss: {fileID: 0}
   cam: {fileID: 792680274}
   zoomTweak: 0
@@ -24681,6 +24674,54 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c48484657b3d649e1b3308796da626a2, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &844935497
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4301764688246828, guid: 37d96cd0231c049e79dd86e556dde8aa, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4301764688246828, guid: 37d96cd0231c049e79dd86e556dde8aa, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -264
+      objectReference: {fileID: 0}
+    - target: {fileID: 4301764688246828, guid: 37d96cd0231c049e79dd86e556dde8aa, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4301764688246828, guid: 37d96cd0231c049e79dd86e556dde8aa, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4301764688246828, guid: 37d96cd0231c049e79dd86e556dde8aa, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4301764688246828, guid: 37d96cd0231c049e79dd86e556dde8aa, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4301764688246828, guid: 37d96cd0231c049e79dd86e556dde8aa, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4301764688246828, guid: 37d96cd0231c049e79dd86e556dde8aa, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065813273882122, guid: 37d96cd0231c049e79dd86e556dde8aa, type: 2}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 199800059564446116, guid: 37d96cd0231c049e79dd86e556dde8aa, type: 2}
+    - {fileID: 198362205421363908, guid: 37d96cd0231c049e79dd86e556dde8aa, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: 37d96cd0231c049e79dd86e556dde8aa, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &852182873
 GameObject:
@@ -27098,7 +27139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1045345314
 Transform:
   m_ObjectHideFlags: 0
@@ -27118,6 +27159,7 @@ Transform:
   - {fileID: 547673641}
   - {fileID: 1944995669}
   - {fileID: 44316062}
+  - {fileID: 284039438}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27228,10 +27270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a90c00987ac4a878b8a83d2eac823e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayingOwMusic: 0
-  overworldMusic: {fileID: 1045345315}
-  pylonHealthBar: {fileID: 362493560}
-  lichHealthBar: {fileID: 1557822522}
 --- !u!82 &1045345317
 AudioSource:
   m_ObjectHideFlags: 0
@@ -32143,6 +32181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef71c5874b1324fa0be84aa73b22c496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  godMode: 0
   playerHealthBar: {fileID: 1605465861}
   isAlive: 1
   maxPlayerHealth: 100
@@ -32179,7 +32218,8 @@ MonoBehaviour:
   projectileSpeed: {fileID: 1510757535994298, guid: df3f6fd27fc7f44bbbf75457854bb58a,
     type: 2}
   simulacrumAbsorb: {fileID: 1944995665}
-  cursorInWorldPos: {x: 103.21388, y: 207.23746}
+  rotator: {fileID: 0}
+  cursorInWorldPos: {x: 103.21388, y: 207.23746, z: 0}
   waveSystem: {fileID: 221137831}
   abilityHandlerSource: {fileID: 1045345319}
   reflectAudio: {fileID: 1045345318}
@@ -32187,6 +32227,7 @@ MonoBehaviour:
   attackSimSound: {fileID: 8300000, guid: 08453e0f37899456b98632421ab3e60f, type: 3}
   reflectLoopSound: {fileID: 8300000, guid: 16f9092411c8e49de97944a98233bc9e, type: 3}
   atkSpeed: 135
+  placementDistance: 10
   LONGATKCOOLDOWN: 0.2
   HEALSTUNCOOLDOWN: 6
   REFLECTCOOLDOWN: 3
@@ -32250,6 +32291,7 @@ MonoBehaviour:
   slowedSpeed: 22.75
   rotSpeed: 25
   slowed: 0
+  playerDirection: 0
 --- !u!50 &1045345327
 Rigidbody2D:
   serializedVersion: 4
@@ -40267,6 +40309,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1550450066 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1065813273882122, guid: 37d96cd0231c049e79dd86e556dde8aa,
+    type: 2}
+  m_PrefabInternal: {fileID: 844935497}
 --- !u!1 &1552473961
 GameObject:
   m_ObjectHideFlags: 0
