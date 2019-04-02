@@ -95,11 +95,14 @@ public class PlayerAbilities : MonoBehaviour {
 	private const int ABSORBSIM = 3;
     private const int HEALSTUNCOMBO = 4;
 
+    private Animator playerAnimator;
+
 	private void Start()
 	{
         burstTimer = BURSTCOOLDOWN;
         evadeTimer = EVADECOOLDOWN;
 
+        playerAnimator = gameObject.GetComponent<Animator>();
         handlers = GetComponent<AbilityHandler>();
         movement = GetComponent<PlayerMovement>();
         health = GetComponent<PlayerHealth>();
@@ -174,8 +177,8 @@ public class PlayerAbilities : MonoBehaviour {
 		//Evade
 		if(Input.GetKeyDown(KeyCode.Space) && evadeTimer > EVADECOOLDOWN)
 		{
-             evadeAudio = GetComponent<AudioSource>();
-             evadeAudio.PlayOneShot(evadeSound);
+            evadeAudio = GetComponent<AudioSource>();
+            evadeAudio.PlayOneShot(evadeSound);
             state = State.EVADE;
 			evadeTimer = 0;
 		}
@@ -204,19 +207,33 @@ public class PlayerAbilities : MonoBehaviour {
         TimerHandlers();
 	}
 
-    // private void StopReflectAudioSound()
-    // {
-    //      reflectAudio.Stop();
-    // }
-
     private void Evade()
 	{
-        Vector2 direction = new Vector2(movement.horizontalMovement, movement.verticalMovement);
-        direction.Normalize();
-        gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
+        EvadeAnimations();
+
+        // Vector3 direction = new Vector3(movement.horizontalMovement, movement.verticalMovement);
+        // direction.Normalize();
+        // gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
+
+        Vector3 point = handlers.cursorInWorldPos;
         gameObject.layer = 14;// changes physics layers to avoid collision
-        Invoke("ResetPhysicsLayer", evadeEnd);//basically delays physics layer reset to give player invincibility frames.
+        StartCoroutine(EvadeFunctionality(point));
+        // Invoke("ResetPhysicsLayer", evadeEnd);//basically delays physics layer reset to give player invincibility frames.
 	}
+
+    private IEnumerator EvadeFunctionality(Vector3 point)
+    {
+        yield return new WaitForSeconds(.5f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        health.isAlive = false;
+        yield return new WaitForSeconds(.30f);
+        if(gameObject.layer != 13)
+            gameObject.layer = 13;
+        transform.position = (Vector2)point;
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        health.isAlive = true;
+        state = State.IDLE;
+    }
 
 	private void RitualCast()
 	{
@@ -338,6 +355,25 @@ public class PlayerAbilities : MonoBehaviour {
             {
                 AttackArrayHandler("ProjectileSplit", ritualList);
             }
+        }
+    }
+
+    private void EvadeAnimations()
+    {
+        switch(movement.playerDirection)
+        {
+            case 0:
+                playerAnimator.SetTrigger("triggeredPlayerTeleportOutUp");
+                break;
+            case 1:
+                playerAnimator.SetTrigger("triggeredPlayerTeleportOutRight");
+                break;
+            case 2:
+                playerAnimator.SetTrigger("triggeredPlayerTeleportOutDown");
+                break;
+            case 3:
+                playerAnimator.SetTrigger("triggeredPlayerTeleportOutLeft");
+                break;
         }
     }
 

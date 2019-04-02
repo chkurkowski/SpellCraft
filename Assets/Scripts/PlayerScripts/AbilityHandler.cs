@@ -17,7 +17,8 @@ public class AbilityHandler : MonoBehaviour {
     public GameObject projectileSplitSim;
     public GameObject projectileSpeed;
     public GameObject simulacrumAbsorb;
-    public Vector2 cursorInWorldPos;
+    public GameObject rotator;
+    public Vector3 cursorInWorldPos;
     public ParticleSystem waveSystem;
     private Color origColor;
 
@@ -34,8 +35,12 @@ public class AbilityHandler : MonoBehaviour {
     [Space(10)]
 
     //Attack Variables
-    [Header("Projectile Speed - For First Projectile")]
+    [Header("Projectile Speed - For Magic Missile")]
     public float atkSpeed = 135f;
+
+    //Max Placement Distance
+    [Header("Max Placement Distance - For Abilities that are Placed")]
+    public float placementDistance = 10f;
 
     [Space(10)]
 
@@ -61,6 +66,7 @@ public class AbilityHandler : MonoBehaviour {
 
     private PlayerAbilities abilities;
     private PlayerHealth health;
+    private Animator playerAnimator;
 
     // Use this for initialization
     void Start () {
@@ -76,6 +82,8 @@ public class AbilityHandler : MonoBehaviour {
         projectileSpeedTimer = PROJECTILESPEEDCOOLDOWN;
         absorbExplodeTimer = ABSORBEXPLODECOOLDOWN;
 
+        rotator = GameObject.Find("Rotator");
+        playerAnimator = GetComponent<Animator>();
         abilities = GetComponent<PlayerAbilities>();
         health = GetComponent<PlayerHealth>();
 
@@ -152,10 +160,12 @@ public class AbilityHandler : MonoBehaviour {
 
             float tempX = 0; //Random.Range(-.15f, .15f);
 
-            Vector2 direction = cursorInWorldPos - new Vector2(transform.position.x, transform.position.y);
+            AttackAnimations();
+
+            Vector3 direction = cursorInWorldPos - new Vector3(transform.position.x, transform.position.y, 0);
             direction.Normalize();
-            GameObject fb = Instantiate(magicMissile, transform.position, Quaternion.identity);
-            fb.GetComponent<Rigidbody2D>().velocity = (direction + new Vector2(tempX, 0)) * atkSpeed;
+            GameObject fb = Instantiate(magicMissile, transform.position, rotator.transform.rotation);
+            fb.GetComponent<Rigidbody2D>().velocity = (direction + new Vector3(tempX, 0, 0)) * atkSpeed;
             abilities.AttackArrayHandler("MagicMissile", abilities.lastAttacks);
             longATKTimer = 0;
 
@@ -217,7 +227,7 @@ public class AbilityHandler : MonoBehaviour {
     {
     	if(projectileSpeedTimer >= PROJECTILESPEEDCOOLDOWN)
     	{
-    		Instantiate(projectileSpeed, cursorInWorldPos,transform.rotation);
+    		Instantiate(projectileSpeed, PlacementCheck(), rotator.transform.rotation);
 	        abilities.AttackArrayHandler("HealStun", abilities.lastAttacks);
 	        projectileSpeedTimer = 0;
     	}
@@ -237,10 +247,10 @@ public class AbilityHandler : MonoBehaviour {
             abilityHandlerSource.PlayOneShot(attackSimSound);
 
             GameObject[] sims = new GameObject[4];
-            sims[0] = Instantiate(simulacrum, transform.position + (transform.up * -10) + (transform.right * -5), Quaternion.identity);
-            sims[1] = Instantiate(simulacrum, transform.position + (transform.up * -10) + (transform.right * 5), Quaternion.identity);
-            sims[2] = Instantiate(simulacrum, transform.position + (transform.up * -5) + (transform.right * -10), Quaternion.identity);
-            sims[3] = Instantiate(simulacrum, transform.position + (transform.up * -5) + (transform.right * 10), Quaternion.identity);
+            sims[0] = Instantiate(simulacrum, transform.position + (rotator.transform.up * -10) + (rotator.transform.right * -5), Quaternion.identity);
+            sims[1] = Instantiate(simulacrum, transform.position + (rotator.transform.up * -10) + (rotator.transform.right * 5), Quaternion.identity);
+            sims[2] = Instantiate(simulacrum, transform.position + (rotator.transform.up * -5) + (rotator.transform.right * -10), Quaternion.identity);
+            sims[3] = Instantiate(simulacrum, transform.position + (rotator.transform.up * -5) + (rotator.transform.right * 10), Quaternion.identity);
 
             foreach(GameObject sim in sims)
             {
@@ -268,7 +278,7 @@ public class AbilityHandler : MonoBehaviour {
         if(isBurst)
         {
             // print("Hit");
-        	Instantiate(projectileSplitSim, cursorInWorldPos, transform.rotation);
+        	Instantiate(projectileSplitSim, cursorInWorldPos, rotator.transform.rotation);
         }
     }
 
@@ -294,7 +304,7 @@ public class AbilityHandler : MonoBehaviour {
             }
         }
     }
-
+ 
     //HealStun Combo 
     private void HealStunCombo(bool isBurst)
     {
@@ -350,6 +360,90 @@ public class AbilityHandler : MonoBehaviour {
         }
 
         cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    //Handles the placement of the zone abilities
+    private Vector3 PlacementCheck()
+    {
+        if(Vector3.Distance(transform.position, cursorInWorldPos) >= placementDistance)
+        {
+            print("hit");
+            Vector3 vector = cursorInWorldPos - transform.position;
+            Vector3 normalizedVector = DivideVector(vector);
+            return (Vector2)(transform.position + (placementDistance * normalizedVector));
+        }
+        else
+        {
+            return (Vector2)cursorInWorldPos;
+        }
+    }
+
+    //Helper function for PlacementCheck
+    private Vector3 DivideVector(Vector3 vector)
+    {
+        float vectorX = vector.x / Mathf.Abs(vector.x);
+        float vectorY = vector.y / Mathf.Abs(vector.y);
+        float vectorZ = vector.z / Mathf.Abs(vector.z);
+        return new Vector3(vectorX, vectorY);
+    }
+
+    private void AttackAnimations()
+    {
+        switch(CursorDirection())
+        {
+            case 0:
+                playerAnimator.SetTrigger("triggeredPlayerAttackUp");
+                break;
+            case 1:
+                playerAnimator.SetTrigger("triggeredPlayerAttackRight");
+                break;
+            case 2:
+                playerAnimator.SetTrigger("triggeredPlayerAttackDown");
+                break;
+            case 3:
+                playerAnimator.SetTrigger("triggeredPlayerAttackLeft");
+                break;
+        }
+    }
+
+    private int CursorDirection()
+    {
+        int posX = -1;
+        int posY = -1;
+        float distX = cursorInWorldPos.x - transform.position.x;
+        float distY = cursorInWorldPos.y - transform.position.y;
+
+        if(distX > 0)
+        {
+            posX = 1;
+        }
+        if(distY > 0)
+        {
+            posY = 1;
+        }
+
+        if(Mathf.Abs(distX) > Mathf.Abs(distY))
+        {
+            if(posX > 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 3;
+            }
+        }
+        else
+        {
+            if(posX > 0)
+            {
+                return 2;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 
     private void TimerHandler()
