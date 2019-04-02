@@ -10094,6 +10094,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a90c00987ac4a878b8a83d2eac823e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayingOwMusic: 0
+  overworldMusic: {fileID: 750913918}
+  pylonHealthBar: {fileID: 682437930}
 --- !u!1 &755426984
 GameObject:
   m_ObjectHideFlags: 0
