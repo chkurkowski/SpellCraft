@@ -278,7 +278,7 @@ public class AbilityHandler : MonoBehaviour {
         if(isBurst)
         {
             // print("Hit");
-        	Instantiate(projectileSplitSim, cursorInWorldPos, rotator.transform.rotation);
+        	Instantiate(projectileSplitSim, PlacementCheck(), rotator.transform.rotation);
         }
     }
 
@@ -362,29 +362,25 @@ public class AbilityHandler : MonoBehaviour {
         cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
+    //X = transform.position.x + (placementDistance * Mathf.Cos(angle));
+    //Y = transform.position.y + (placementDistance * Mathf.Cos(angle));
     //Handles the placement of the zone abilities
     private Vector3 PlacementCheck()
     {
         if(Vector3.Distance(transform.position, cursorInWorldPos) >= placementDistance)
         {
-            print("hit");
-            Vector3 vector = cursorInWorldPos - transform.position;
-            Vector3 normalizedVector = DivideVector(vector);
-            return (Vector2)(transform.position + (placementDistance * normalizedVector));
+            float angle = Mathf.Atan2(cursorInWorldPos.y - transform.position.y, cursorInWorldPos.x - transform.position.x);
+
+            float X = transform.position.x + (placementDistance * Mathf.Cos(angle));
+            float Y = transform.position.y + (placementDistance * Mathf.Sin(angle));
+
+            return new Vector2(X, Y);
         }
         else
         {
             return (Vector2)cursorInWorldPos;
         }
-    }
 
-    //Helper function for PlacementCheck
-    private Vector3 DivideVector(Vector3 vector)
-    {
-        float vectorX = vector.x / Mathf.Abs(vector.x);
-        float vectorY = vector.y / Mathf.Abs(vector.y);
-        float vectorZ = vector.z / Mathf.Abs(vector.z);
-        return new Vector3(vectorX, vectorY);
     }
 
     private void AttackAnimations()

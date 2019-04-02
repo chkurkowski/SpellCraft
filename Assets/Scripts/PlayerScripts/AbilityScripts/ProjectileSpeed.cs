@@ -28,7 +28,6 @@ public class ProjectileSpeed : MonoBehaviour {
     {
         if(col.gameObject.name == "MagicMissile(Clone)")
         {
-            print("hit speed");
             col.GetComponent<Rigidbody2D>().velocity *= speedMultiplier;
             col.GetComponent<MagicBall>().magicBallDamage *= damageMultiplier;
             PlayerAbilities.instance.AddToResource(.025f);
