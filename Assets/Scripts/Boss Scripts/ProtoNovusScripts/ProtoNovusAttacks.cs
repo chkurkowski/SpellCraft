@@ -40,6 +40,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     public float laserLookAtSpeed;
     [Tooltip("How long the laser is active for. After those seconds are up, the attack is stopped.")]
     public float laserAttackDuration = 5f;
+    private int laserShutDown = 3;
     public GameObject laserMuzzleOne;
     public GameObject laserMuzzleTwo;
     public GameObject laserMuzzleThree;
@@ -174,6 +175,11 @@ public class ProtoNovusAttacks : MonoBehaviour
             pylonAnimatorInfo.SetBool("attackTwoEnd", false);
             pylonAnimatorInfo.SetBool("attackThreeEnd", false);
         }
+        if(laserShutDown <= 0)
+        {
+            Debug.Log("ATTACK SHOULD HAVE BEEN STOPPED WITH LASERS");
+            StopAttack();
+        }
 
     }
 
@@ -218,6 +224,7 @@ public class ProtoNovusAttacks : MonoBehaviour
 
         if (!bossInfoInfo.isMad && !bossInfoInfo.isEnraged)
         {
+            laserShutDown = 4;
             laserMuzzleOne.SetActive(true);
 
             laserAudioSource.Play();
@@ -226,7 +233,8 @@ public class ProtoNovusAttacks : MonoBehaviour
         }
         else if (bossInfoInfo.isMad)
         {
-           laserMuzzleOne.SetActive(true);
+            laserShutDown = 4;
+            laserMuzzleOne.SetActive(true);
             laserMuzzleTwo.SetActive(true);
             laserMuzzleThree.SetActive(true);
             laserAudioSource.Play();
@@ -237,6 +245,7 @@ public class ProtoNovusAttacks : MonoBehaviour
         }
         else if (bossInfoInfo.isEnraged)
         {
+            laserShutDown = 4;
             laserAudioSource.Play();
             laserMuzzleOne.SetActive(true);
             laserMuzzleTwo.SetActive(true);
@@ -433,11 +442,6 @@ public class ProtoNovusAttacks : MonoBehaviour
 
     #region Misc Functions
 
-    public void FireLaserShards()
-    {
-        
-    }
-
     public void SlowRotateToPlayer()
     {
         // Debug.Log("Slow rotate was called!");
@@ -576,6 +580,9 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarSpriteOne.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarSpriteOne.transform.localPosition = new Vector3(pillarSpriteOne.transform.localPosition.x, .035f, 0);
             pillarOneIsUp = false;
+            Debug.Log("Laser shutdown was : " + laserShutDown);
+            laserShutDown--;
+            Debug.Log("Laser shutdown is : " + laserShutDown);
             CancelInvoke("ResetPillarOne");
             return;
         }
@@ -600,6 +607,9 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarSpriteTwo.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarTwoIsUp = false;
             pillarSpriteTwo.transform.localPosition = new Vector3(pillarSpriteTwo.transform.localPosition.x, .035f, 0);
+            Debug.Log("Laser shutdown was : " + laserShutDown);
+            laserShutDown--;
+            Debug.Log("Laser shutdown is : " + laserShutDown);
             CancelInvoke("ResetPillarTwo");
             return;
         }
@@ -624,6 +634,9 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarSpriteThree.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarThreeIsUp = false;
             pillarSpriteThree.transform.localPosition = new Vector3(pillarSpriteThree.transform.localPosition.x, .035f, 0);
+            Debug.Log("Laser shutdown was : " + laserShutDown);
+            laserShutDown--;
+            Debug.Log("Laser shutdown is : " + laserShutDown);
             CancelInvoke("ResetPillarThree");
             return;
         }
@@ -648,6 +661,9 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarSpriteFour.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarFourIsUp = false;
             pillarSpriteFour.transform.localPosition = new Vector3(pillarSpriteFour.transform.localPosition.x, .035f, 0);
+            Debug.Log("Laser shutdown was : " + laserShutDown);
+            laserShutDown--;
+            Debug.Log("Laser shutdown is : " + laserShutDown);
             CancelInvoke("ResetPillarFour");
             return;
         }
@@ -762,6 +778,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     #region StopAttack
     public void StopAttack()
     {
+        laserShutDown = 3;
       
         pylonAnimatorInfo.SetBool("attackOneStart", false);
         pylonAnimatorInfo.SetBool("attackTwoStart", false);
