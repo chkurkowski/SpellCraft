@@ -1077,11 +1077,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -748
+      value: -744
       objectReference: {fileID: 0}
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -405
+      value: -410
       objectReference: {fileID: 0}
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -9381,6 +9381,11 @@ Prefab:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 682437930}
+    - target: {fileID: 114522629121816732, guid: 6b603fd05167a4b4eb74fbb54dcd930c,
+        type: 2}
+      propertyPath: testingAttacks
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b603fd05167a4b4eb74fbb54dcd930c, type: 2}
   m_IsPrefabAsset: 0

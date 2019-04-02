@@ -69,7 +69,7 @@ public class PylonCoverScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D trig)
     {
         Debug.Log(gameObject.name + " detected a collision from: " + trig.gameObject.name);
-        if(trig.gameObject.tag == "Projectile" || trig.gameObject.tag == "LaserEndPoint" || trig.gameObject.tag == "EnemyProjectile")
+        if(trig.gameObject.tag == "Projectile")// || trig.gameObject.tag == "LaserEndPoint" || trig.gameObject.tag == "EnemyProjectile")
         {
             TurnCoverLaserOff();
             switch (pylonNumber)
