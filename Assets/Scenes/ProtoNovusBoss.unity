@@ -9386,6 +9386,16 @@ Prefab:
       propertyPath: testingAttacks
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82012007036262856, guid: 6b603fd05167a4b4eb74fbb54dcd930c,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 82137362531532556, guid: 6b603fd05167a4b4eb74fbb54dcd930c,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b603fd05167a4b4eb74fbb54dcd930c, type: 2}
   m_IsPrefabAsset: 0
