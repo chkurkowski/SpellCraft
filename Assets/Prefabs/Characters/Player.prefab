@@ -2140,7 +2140,7 @@ MonoBehaviour:
   health: {fileID: 114102766126379484}
   comboResource: 0
   resourceBar: {fileID: 0}
-  dashSpeed: 50
+  dashSpeed: 100
   dashDistance: 0
   state: 0
   reflectAudio: {fileID: 82257521513790070}
@@ -2220,7 +2220,7 @@ MonoBehaviour:
   attackSimSound: {fileID: 8300000, guid: 08453e0f37899456b98632421ab3e60f, type: 3}
   reflectLoopSound: {fileID: 8300000, guid: 16f9092411c8e49de97944a98233bc9e, type: 3}
   atkSpeed: 135
-  placementDistance: 10
+  placementDistance: 30
   LONGATKCOOLDOWN: 0.2
   HEALSTUNCOOLDOWN: 6
   REFLECTCOOLDOWN: 3
