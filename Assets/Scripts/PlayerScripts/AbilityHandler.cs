@@ -278,7 +278,7 @@ public class AbilityHandler : MonoBehaviour {
         if(isBurst)
         {
             // print("Hit");
-        	Instantiate(projectileSplitSim, cursorInWorldPos, rotator.transform.rotation);
+        	Instantiate(projectileSplitSim, PlacementCheck(), rotator.transform.rotation);
         }
     }
 
