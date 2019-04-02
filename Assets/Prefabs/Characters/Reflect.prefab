@@ -40,7 +40,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -139,7 +139,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -154,7 +154,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -169,7 +169,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -235,7 +235,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -265,7 +265,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -298,7 +298,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -346,7 +346,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -380,7 +380,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -447,7 +447,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -462,7 +462,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1168,6 +1168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4633123704333458}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114181595031759282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1181,6 +1182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4733678184025148}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114277534237776834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1194,6 +1196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4266373945170864}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114372471949135818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1207,6 +1210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4604437820209494}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114394428398576388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1220,6 +1224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4911183358323498}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114473655028444310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1246,6 +1251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4625880255213614}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114795513366690984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1259,6 +1265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4642385758004510}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114877452603780384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1272,6 +1279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4031969631756594}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114947841406583392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1285,6 +1293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4636067964934608}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114984313852830794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1298,6 +1307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4435311053960888}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!114 &114990833256385828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1311,6 +1321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4603436643133796}
   laserDamage: 0.02
+  laserDamageToBoss: 0.05
 --- !u!120 &120046186840781306
 LineRenderer:
   m_ObjectHideFlags: 1
