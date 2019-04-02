@@ -47,6 +47,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     public GameObject reflectShieldTwo;
 
     public float pillarSpriteOffset = .1f;
+    public GameObject healOrb;
     public GameObject pillarSpriteOne;
     public GameObject pillarSpriteTwo;
     public GameObject pillarSpriteThree;
@@ -555,6 +556,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     {
         if (pillarSpriteOne.transform.localPosition.y <= .035f)
         {
+          //  GameObject healOrbSpawned = Instantiate(healOrb, pillarSpriteOne.transform.position, pillarSpriteOne.transform.rotation);
             pillarSpriteOne.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarOneIsUp = false;
             CancelInvoke("ResetPillarOne");
