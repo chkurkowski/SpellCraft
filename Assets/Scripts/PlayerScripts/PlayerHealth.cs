@@ -18,6 +18,8 @@ public class PlayerHealth : MonoBehaviour
     public float maxPlayerHealth = 100f;
     public float playerHealth = 100f;
     private RespawnManager respawnManagerInfo;
+    private PlayerMovement movement;
+    private Animator playerAnimator;
 
     public bool absorbDamage = false;
     public float damageAbsorbed{get; private set;}
@@ -32,6 +34,8 @@ public class PlayerHealth : MonoBehaviour
 	void Start () 
     {
         respawnManagerInfo = GameObject.Find("RespawnManager").GetComponent<RespawnManager>();
+        movement = GetComponent<PlayerMovement>();
+        playerAnimator = GetComponent<Animator>();
 	}
 
     private void Awake()
@@ -65,6 +69,7 @@ public class PlayerHealth : MonoBehaviour
             playerHealthSource.PlayOneShot(damagePlayerSound);
             playerHealth -= dmg;
             playerHealthBar.fillAmount = playerHealth / 100;
+            // DamageAnimations();
             if(!isRunning)
                 StartCoroutine(InvincibilityFrames());
         }
@@ -111,6 +116,25 @@ public class PlayerHealth : MonoBehaviour
         if (col.gameObject.tag == "CheckPoint")
         {
             respawnManagerInfo.currentCheckPoint = col.gameObject;
+        }
+    }
+
+    private void DamageAnimations()
+    {
+        switch(movement.playerDirection)
+        {
+            case 0:
+                playerAnimator.SetTrigger("triggerPlayerDamageUp");
+                break;
+            case 1:
+                playerAnimator.SetTrigger("triggerPlayerDamageRight");
+                break;
+            case 2:
+                playerAnimator.SetTrigger("triggerPlayerDamageDown");
+                break;
+            case 3:
+                playerAnimator.SetTrigger("triggerPlayerDamageLeft");
+                break;
         }
     }
    
