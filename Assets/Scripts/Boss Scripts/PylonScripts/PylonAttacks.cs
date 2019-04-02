@@ -9,8 +9,10 @@ public class PylonAttacks : MonoBehaviour
     private BossAttacks bossAttacksInfo;
     private Animator pylonAnimatorInfo;
     private PylonMovement pylonMovementInfo;
-    public bool isPlayingMusic = false;
+    public bool isPlayingBossMusic = false;
     public AudioSource bossMusic;
+ //   public bool isPlayingOWMuic = false;
+ //  public AudioSource owMusic;
 
 
     //Animator Variables
@@ -147,22 +149,32 @@ public class PylonAttacks : MonoBehaviour
 
     private void Update()
     {
-        if(bossInfoInfo.isActivated && !isPlayingMusic)
+        if(bossInfoInfo.isActivated && !isPlayingBossMusic)
         {
-            isPlayingMusic = true;
+            isPlayingBossMusic = true;
             bossMusic.Play();
-       
+
+    //        owMusic.Stop();
+    //        isPlayingOWMuic = false;
+
         }
         else if (bossHealthInfo.bossHealth <= 0)
         {
             bossMusic.Stop();
-            isPlayingMusic = true;
+            isPlayingBossMusic = true;
+
+   //         owMusic.Play();
+   //         isPlayingOWMuic = false;
         }
         else if (!bossInfoInfo.isActivated)
         {
             bossMusic.Stop();
-            isPlayingMusic = false;
+            isPlayingBossMusic = false;
+
+  //          owMusic.Play();
+  //          isPlayingOWMuic = true;
         }
+
         if(!bossAttacksInfo.isAttacking)
         {
             pylonAnimatorInfo.SetBool("attackOneEnd", false);
