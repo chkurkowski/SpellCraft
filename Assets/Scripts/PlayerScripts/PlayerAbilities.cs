@@ -211,14 +211,14 @@ public class PlayerAbilities : MonoBehaviour {
 	{
         EvadeAnimations();
 
-        // Vector3 direction = new Vector3(movement.horizontalMovement, movement.verticalMovement);
-        // direction.Normalize();
-        // gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
+        Vector3 direction = new Vector3(movement.horizontalMovement, movement.verticalMovement);
+        direction.Normalize();
+        gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
 
         Vector3 point = handlers.cursorInWorldPos;
         gameObject.layer = 14;// changes physics layers to avoid collision
-        StartCoroutine(EvadeFunctionality(point));
-        // Invoke("ResetPhysicsLayer", evadeEnd);//basically delays physics layer reset to give player invincibility frames.
+        // StartCoroutine(EvadeFunctionality(point));
+        Invoke("ResetPhysicsLayer", evadeEnd);//basically delays physics layer reset to give player invincibility frames.
 	}
 
     private IEnumerator EvadeFunctionality(Vector3 point)

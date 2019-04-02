@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 212477990389165660}
   - component: {fileID: 60752119446340942}
   - component: {fileID: 114996641535114590}
+  - component: {fileID: 95920738266203174}
   m_Layer: 13
   m_Name: Reflect
   m_TagString: Reflect
@@ -892,7 +893,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1091554754486938}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2999878, y: 10.799988, z: 0}
+  m_LocalPosition: {x: -0.2999878, y: 10.8, z: 0}
   m_LocalScale: {x: 4.69, y: 8.54, z: 1}
   m_Children:
   - {fileID: 4720286899731104}
@@ -1135,7 +1136,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1166791909594820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -773, y: -388, z: 0}
+  m_LocalPosition: {x: 7, y: -295, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4078850439690298}
@@ -1994,6 +1995,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95920738266203174
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1091554754486938}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8e6a9d6ffa6545fab602fff88ab678b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114025409681704494
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2019,6 +2038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef71c5874b1324fa0be84aa73b22c496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  godMode: 1
   playerHealthBar: {fileID: 0}
   isAlive: 1
   maxPlayerHealth: 100
@@ -2140,7 +2160,7 @@ MonoBehaviour:
   health: {fileID: 114102766126379484}
   comboResource: 0
   resourceBar: {fileID: 0}
-  dashSpeed: 50
+  dashSpeed: 100
   dashDistance: 0
   state: 0
   reflectAudio: {fileID: 82257521513790070}
@@ -2220,7 +2240,7 @@ MonoBehaviour:
   attackSimSound: {fileID: 8300000, guid: 08453e0f37899456b98632421ab3e60f, type: 3}
   reflectLoopSound: {fileID: 8300000, guid: 16f9092411c8e49de97944a98233bc9e, type: 3}
   atkSpeed: 135
-  placementDistance: 10
+  placementDistance: 30
   LONGATKCOOLDOWN: 0.2
   HEALSTUNCOOLDOWN: 6
   REFLECTCOOLDOWN: 3

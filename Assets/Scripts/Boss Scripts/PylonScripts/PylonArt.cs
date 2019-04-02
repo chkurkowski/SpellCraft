@@ -18,6 +18,10 @@ public class PylonArt : MonoBehaviour
     {
         protoNovusBoss.AttackOne();
     }
+    public void AttackOneStartExtra()
+    {
+        protoNovusBoss.AttackOneExtra();
+    }
 
 
     public void AttackTwoStart()

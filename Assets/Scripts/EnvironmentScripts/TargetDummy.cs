@@ -25,7 +25,7 @@ public class TargetDummy : MonoBehaviour
             dummyMuzzle = gameObject.transform.GetChild(0).transform;
             if (dummyMuzzle != null)
             {
-                Debug.Log("Muzzle found!");
+              //  Debug.Log("Muzzle found!");
                 InvokeRepeating("FireBullet", 0, 1);
             }
         }

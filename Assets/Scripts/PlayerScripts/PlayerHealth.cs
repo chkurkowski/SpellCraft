@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+
+    public bool godMode = false;
     [Header("Editor Variables")]
     public Image playerHealthBar;
     
@@ -61,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamagePlayer(float dmg)
     {
-        if(!absorbDamage && gameObject.layer == 13 && !isRunning)
+        if(!absorbDamage && gameObject.layer == 13 && !isRunning && !godMode)
         {
             playerHealthSource.clip = damagePlayerSound;
             playerHealthSource.PlayOneShot(damagePlayerSound);
@@ -90,7 +92,7 @@ public class PlayerHealth : MonoBehaviour
     {
         isRunning = true;
         gameObject.layer = 14;
-        print("Layer: " + gameObject.layer);
+       // print("Layer: " + gameObject.layer);
         Color firstColor = gameObject.GetComponent<SpriteRenderer>().color;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(.07f);
@@ -106,7 +108,7 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(.10f);
         gameObject.layer = 13;
         isRunning = false;
-        print("Layer: " + gameObject.layer);
+       // print("Layer: " + gameObject.layer);
     }
 
     private void OnTriggerEnter2D(Collider2D col)

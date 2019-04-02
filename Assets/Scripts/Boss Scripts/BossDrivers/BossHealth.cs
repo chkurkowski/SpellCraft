@@ -82,7 +82,11 @@ public class BossHealth : MonoBehaviour
                 ProjectileDamage projectileInfo = col.gameObject.GetComponent<ProjectileDamage>();
                 if (projectileInfo != null)
                 {
-                    bossHealth -= (projectileInfo.projectileDamage);
+                    if(gameObject.name == "ProtoNovus")
+                    {
+                        bossHealth -= (projectileInfo.projectileDamage);
+                    }
+                  
                     //healthBar.fillAmount = healthBar.fillAmount - (projectileInfo.projectileDamage / 100f);
                 }
                 else

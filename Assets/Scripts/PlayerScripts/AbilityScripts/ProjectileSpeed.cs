@@ -10,7 +10,8 @@ public class ProjectileSpeed : MonoBehaviour {
 
 	void Start()
 	{
-		Invoke("Destroy", lifetime);
+		Invoke("EndAnimation", lifetime - 1);
+        Destroy(gameObject, lifetime);
 	}
 
 	private void Destroy()
@@ -18,10 +19,16 @@ public class ProjectileSpeed : MonoBehaviour {
 		Destroy(gameObject);
 	}
 
+    public void EndAnimation()
+    {
+        gameObject.GetComponent<Animator>().SetBool("isDead", true);
+    }
+
 	private void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.name == "MagicMissile(Clone)")
         {
+            print("hit speed");
             col.GetComponent<Rigidbody2D>().velocity *= speedMultiplier;
             col.GetComponent<MagicBall>().magicBallDamage *= damageMultiplier;
             PlayerAbilities.instance.AddToResource(.025f);

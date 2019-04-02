@@ -89,7 +89,7 @@ public class ArenaCameraActivator : MonoBehaviour
 
 
                 case "ProtoNovus":
-                    Debug.Log("ProtoNovus was found!");
+                   // Debug.Log("ProtoNovus was found!");
                     mainCamera.GetComponent<DynamicCamera>().Boss = protoNovusBoss;
                     bossInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossInfo>();
                     bossHealthInfo = mainCamera.GetComponent<DynamicCamera>().Boss.GetComponent<BossHealth>();
