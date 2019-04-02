@@ -20,8 +20,8 @@ public class ProjectileSplit : MonoBehaviour {
     {
         if(col.gameObject.name == "MagicMissile(Clone)")
         {
-            GameObject gm1 = Instantiate(col.gameObject, col.gameObject.transform.position + (gameObject.transform.right * -8), Quaternion.identity);
-            GameObject gm2 = Instantiate(col.gameObject, col.gameObject.transform.position + (gameObject.transform.right * 8), Quaternion.identity);
+            GameObject gm1 = Instantiate(col.gameObject, col.gameObject.transform.position + (gameObject.transform.right * -8), col.gameObject.transform.rotation);
+            GameObject gm2 = Instantiate(col.gameObject, col.gameObject.transform.position + (gameObject.transform.right * 8), col.gameObject.transform.rotation);
 
             gm1.GetComponent<Rigidbody2D>().velocity = col.gameObject.GetComponent<Rigidbody2D>().velocity; //* ((gameObject.transform.right) + (gameObject.transform.up));
             gm2.GetComponent<Rigidbody2D>().velocity = col.gameObject.GetComponent<Rigidbody2D>().velocity; //* (-(gameObject.transform.right) + (gameObject.transform.up));
