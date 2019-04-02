@@ -177,8 +177,8 @@ public class PlayerAbilities : MonoBehaviour {
 		//Evade
 		if(Input.GetKeyDown(KeyCode.Space) && evadeTimer > EVADECOOLDOWN)
 		{
-             evadeAudio = GetComponent<AudioSource>();
-             evadeAudio.PlayOneShot(evadeSound);
+            evadeAudio = GetComponent<AudioSource>();
+            evadeAudio.PlayOneShot(evadeSound);
             state = State.EVADE;
 			evadeTimer = 0;
 		}
@@ -207,21 +207,33 @@ public class PlayerAbilities : MonoBehaviour {
         TimerHandlers();
 	}
 
-    // private void StopReflectAudioSound()
-    // {
-    //      reflectAudio.Stop();
-    // }
-
     private void Evade()
 	{
         EvadeAnimations();
 
-        Vector2 direction = new Vector2(movement.horizontalMovement, movement.verticalMovement);
-        direction.Normalize();
-        gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
+        // Vector3 direction = new Vector3(movement.horizontalMovement, movement.verticalMovement);
+        // direction.Normalize();
+        // gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
+
+        Vector3 point = handlers.cursorInWorldPos;
         gameObject.layer = 14;// changes physics layers to avoid collision
-        Invoke("ResetPhysicsLayer", evadeEnd);//basically delays physics layer reset to give player invincibility frames.
+        StartCoroutine(EvadeFunctionality(point));
+        // Invoke("ResetPhysicsLayer", evadeEnd);//basically delays physics layer reset to give player invincibility frames.
 	}
+
+    private IEnumerator EvadeFunctionality(Vector3 point)
+    {
+        yield return new WaitForSeconds(.5f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        health.isAlive = false;
+        yield return new WaitForSeconds(.30f);
+        if(gameObject.layer != 13)
+            gameObject.layer = 13;
+        transform.position = (Vector2)point;
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        health.isAlive = true;
+        state = State.IDLE;
+    }
 
 	private void RitualCast()
 	{

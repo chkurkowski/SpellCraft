@@ -164,7 +164,7 @@ public class AbilityHandler : MonoBehaviour {
 
             Vector3 direction = cursorInWorldPos - new Vector3(transform.position.x, transform.position.y, 0);
             direction.Normalize();
-            GameObject fb = Instantiate(magicMissile, transform.position, Quaternion.identity);
+            GameObject fb = Instantiate(magicMissile, transform.position, rotator.transform.rotation);
             fb.GetComponent<Rigidbody2D>().velocity = (direction + new Vector3(tempX, 0, 0)) * atkSpeed;
             abilities.AttackArrayHandler("MagicMissile", abilities.lastAttacks);
             longATKTimer = 0;
@@ -365,9 +365,9 @@ public class AbilityHandler : MonoBehaviour {
     //Handles the placement of the zone abilities
     private Vector3 PlacementCheck()
     {
-        print(Vector3.Distance(transform.position, cursorInWorldPos));
         if(Vector3.Distance(transform.position, cursorInWorldPos) >= placementDistance)
         {
+            print("hit");
             Vector3 vector = cursorInWorldPos - transform.position;
             Vector3 normalizedVector = DivideVector(vector);
             return (Vector2)(transform.position + (placementDistance * normalizedVector));
@@ -384,7 +384,7 @@ public class AbilityHandler : MonoBehaviour {
         float vectorX = vector.x / Mathf.Abs(vector.x);
         float vectorY = vector.y / Mathf.Abs(vector.y);
         float vectorZ = vector.z / Mathf.Abs(vector.z);
-        return new Vector3(vectorX, vectorY, vectorZ);
+        return new Vector3(vectorX, vectorY);
     }
 
     private void AttackAnimations()

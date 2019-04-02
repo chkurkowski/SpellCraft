@@ -68,8 +68,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4152259990603938}
+  - component: {fileID: 114811311815256404}
   m_Layer: 13
-  m_Name: Reflect
+  m_Name: Rotator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -260,7 +261,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1301426667652596
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
@@ -604,7 +605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1825108507473894
 GameObject:
   m_ObjectHideFlags: 1
@@ -772,8 +773,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4322028659232838}
+  - {fileID: 4718555979174070}
   m_Father: {fileID: 4705545203308976}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4162689717696862
 Transform:
@@ -1141,7 +1143,6 @@ Transform:
   - {fileID: 4305853519556204}
   - {fileID: 4912163684400386}
   - {fileID: 4195732065360020}
-  - {fileID: 4718555979174070}
   - {fileID: 4152259990603938}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1152,12 +1153,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301426667652596}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.01, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 10.01001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4705545203308976}
-  m_RootOrder: 5
+  m_Father: {fileID: 4152259990603938}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4720286899731104
 Transform:
@@ -2068,6 +2069,7 @@ MonoBehaviour:
   slowedSpeed: 22.75
   rotSpeed: 25
   slowed: 0
+  playerDirection: 0
 --- !u!114 &114299695574099080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2209,7 +2211,8 @@ MonoBehaviour:
   projectileSpeed: {fileID: 1510757535994298, guid: df3f6fd27fc7f44bbbf75457854bb58a,
     type: 2}
   simulacrumAbsorb: {fileID: 1301426667652596}
-  cursorInWorldPos: {x: 103.21388, y: 207.23746}
+  rotator: {fileID: 0}
+  cursorInWorldPos: {x: 103.21388, y: 207.23746, z: 0}
   waveSystem: {fileID: 198182118557903328}
   abilityHandlerSource: {fileID: 82502722618222228}
   reflectAudio: {fileID: 82415138615108900}
@@ -2217,6 +2220,7 @@ MonoBehaviour:
   attackSimSound: {fileID: 8300000, guid: 08453e0f37899456b98632421ab3e60f, type: 3}
   reflectLoopSound: {fileID: 8300000, guid: 16f9092411c8e49de97944a98233bc9e, type: 3}
   atkSpeed: 135
+  placementDistance: 10
   LONGATKCOOLDOWN: 0.2
   HEALSTUNCOOLDOWN: 6
   REFLECTCOOLDOWN: 3
@@ -2239,6 +2243,17 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93ffb02222fdc1f49bf2af76ac271f15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114811311815256404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1107102853588228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba564252e6904181ac51fab640abcca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114819225881543836
