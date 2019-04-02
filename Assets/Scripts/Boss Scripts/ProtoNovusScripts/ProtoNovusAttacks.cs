@@ -41,9 +41,11 @@ public class ProtoNovusAttacks : MonoBehaviour
     [Tooltip("How long the laser is active for. After those seconds are up, the attack is stopped.")]
     public float laserAttackDuration = 5f;
     public GameObject laserMuzzleOne;
+    public GameObject laserMuzzleTwo;
+    public GameObject laserMuzzleThree;
    
    
-    public GameObject laserShardOne;
+   
     public GameObject shieldOne;
     public GameObject shieldTwo;
     public GameObject reflectShieldOne;
@@ -123,6 +125,8 @@ public class ProtoNovusAttacks : MonoBehaviour
         bossHealthInfo = gameObject.GetComponent<BossHealth>();
 
         laserMuzzleOne.SetActive(false);
+        laserMuzzleTwo.SetActive(false);
+        laserMuzzleThree.SetActive(false);
         shieldOne.SetActive(false);
         shieldTwo.SetActive(false);
         reflectShieldOne.SetActive(false);
@@ -223,6 +227,8 @@ public class ProtoNovusAttacks : MonoBehaviour
         else if (bossInfoInfo.isMad)
         {
            laserMuzzleOne.SetActive(true);
+            laserMuzzleTwo.SetActive(true);
+            laserMuzzleThree.SetActive(true);
             laserAudioSource.Play();
 
             shieldOne.SetActive(true);
@@ -233,6 +239,8 @@ public class ProtoNovusAttacks : MonoBehaviour
         {
             laserAudioSource.Play();
             laserMuzzleOne.SetActive(true);
+            laserMuzzleTwo.SetActive(true);
+            laserMuzzleThree.SetActive(true);
             reflectShieldOne.SetActive(true);
             reflectShieldTwo.SetActive(true);
 
@@ -759,6 +767,8 @@ public class ProtoNovusAttacks : MonoBehaviour
         bossAttacksInfo.isAttacking = false;
 
         laserMuzzleOne.SetActive(false);
+        laserMuzzleTwo.SetActive(false);
+        laserMuzzleThree.SetActive(false);
         shieldOne.SetActive(false);
         shieldTwo.SetActive(false);
         reflectShieldOne.GetComponent<PylonReflectShield>().isLasered = false;

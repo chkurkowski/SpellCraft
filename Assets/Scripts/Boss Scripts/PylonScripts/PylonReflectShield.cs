@@ -6,11 +6,12 @@ public class PylonReflectShield : MonoBehaviour {
     public bool lookAtPlayer = false;
     private Transform playerLocation;
     public bool isLasered = false;
-    public GameObject laser;
+    public GameObject bomb;
+   // public GameObject laser;
     // Use this for initialization
     void Start ()
     {
-        laser.SetActive(false);
+       // laser.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -26,22 +27,23 @@ public class PylonReflectShield : MonoBehaviour {
 
         if (isLasered)
         {
-            laser.SetActive(true);
+            //laser.SetActive(true);
         }
         else if (!isLasered)
         {
             // Debug.Log("not lasered");
-            laser.SetActive(false);
+           // laser.SetActive(false);
         }
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "LaserEndPoint" || collision.tag == "Projectile")
+        if (collision.tag == "Projectile" && collision.name != "PylonLaserShard(Clone)")
         {
-           // Debug.Log("laserTriggerDetected");
-            isLasered = true;
+            // Debug.Log("laserTriggerDetected");
+            // isLasered = true;
+            Instantiate(bomb, gameObject.transform.position, gameObject.transform.rotation);
         }
     }
 

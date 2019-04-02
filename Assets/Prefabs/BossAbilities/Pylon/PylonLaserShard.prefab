@@ -25,9 +25,10 @@ GameObject:
   - component: {fileID: 114091617228071574}
   - component: {fileID: 114648068684630190}
   - component: {fileID: 82753413196796302}
+  - component: {fileID: 95691276874776102}
   m_Layer: 9
   m_Name: PylonLaserShard
-  m_TagString: EnemyProjectile
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,8 +40,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1937842173355384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.7, y: 223.9, z: 0}
-  m_LocalScale: {x: 6, y: 30, z: 1}
+  m_LocalPosition: {x: -463, y: 257.5, z: 0}
+  m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -190,6 +191,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &95691276874776102
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1937842173355384}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c591365179b91f745ac7fe7e0b5552b9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114091617228071574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -201,10 +220,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78dd93c51fdf494488f51323a138cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserShardDamage: 0.15
-  laserShardDamageToBoss: 0.05
-  laserShardSpeed: 200
-  laserSpread: 0.5
+  laserShardDamage: 5
+  laserShardDamageToBoss: 0.01
+  laserShardSpeed: 250
+  laserSpread: 3.5
   reflectSource: {fileID: 82753413196796302}
   reflectSound: {fileID: 8300000, guid: cb49ede1c9d0e46b3bfdd6b3c0065320, type: 3}
   shardSound: {fileID: 8300000, guid: 0a6332238d8265a4a8afa3374f4df306, type: 3}
@@ -219,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8cfa863dadb4bc4397a9a84dd7babfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileDamage: 1
+  projectileDamage: 10
   projectileHealth: 5
 --- !u!212 &212768252463440004
 SpriteRenderer:
@@ -255,9 +274,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 1, b: 0.89049053, a: 1}
+  m_Color: {r: 1, g: 0.8632076, b: 0.8821604, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
