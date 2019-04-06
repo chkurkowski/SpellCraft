@@ -4064,9 +4064,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 1328588496675438, guid: 8ae98033d4003bc488aaf3e852f3b7f0, type: 2}
-      propertyPath: m_Name
-      value: Bomb
+    - target: {fileID: 1266288094667476, guid: 8ae98033d4003bc488aaf3e852f3b7f0, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ae98033d4003bc488aaf3e852f3b7f0, type: 2}
