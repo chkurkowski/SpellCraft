@@ -10,7 +10,7 @@ public class Bomb : MonoBehaviour {
 
 
     private ProjectileDamage projectileDamageInfo;
-    public float bombDamage = 25f;
+    public float bombDamage = 10f;
     public float fireBallSpeed = 50;
     public float bombLifeTime = 3f;
 
@@ -23,7 +23,7 @@ public class Bomb : MonoBehaviour {
         projectileDamageInfo = gameObject.GetComponent<ProjectileDamage>();
         bombDamage = projectileDamageInfo.projectileDamage;
         transform.Rotate(new Vector3(0, 0, 90));
-        Invoke("Explode", bombLifeTime);
+        //Invoke("Explode", bombLifeTime);
     }
 
     public void OnObjectSpawn()
@@ -33,7 +33,7 @@ public class Bomb : MonoBehaviour {
 
     public void OnEnable()
     {
-        Invoke("Explode", bombLifeTime);
+        //Invoke("Explode", bombLifeTime);
     }
 
     public void OnDisable()
@@ -42,7 +42,7 @@ public class Bomb : MonoBehaviour {
     }
     private void Update()
     {
-        transform.Translate(Vector3.right * Time.deltaTime * fireBallSpeed);
+       // transform.Translate(Vector3.right * Time.deltaTime * fireBallSpeed);
     }
 
         // transform.localScale += new Vector3(1,0);
@@ -50,21 +50,22 @@ public class Bomb : MonoBehaviour {
     // Use this for initialization
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Reflect")
+        if(col.gameObject.tag == "Projectile")
         {
-            Explode();
+            Destroy(col.gameObject);
         }
         
         if (col.gameObject.tag == "Player")
         {
-            GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(bombDamage);
+            // GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(bombDamage);
+            InvokeRepeating("DamagePlayer", 0, 1);
             // GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= .25f;
 
         }
         else if(col.gameObject.tag == "Simulacrum")
         {
             col.gameObject.GetComponent<SimulacrumAbilities>().AbsorbDamage(bombDamage);
-            Explode();
+           // Explode();
         }
         else if (col.gameObject.tag == "Absorb")
         {
@@ -82,12 +83,13 @@ public class Bomb : MonoBehaviour {
         }
         else if (col.gameObject.tag != "Boss" || gameObject.tag != "CameraTrigger")
         {
-            Explode();
+           // Explode();
         }
     }
 
     public void Explode()
     {
+        gameObject.transform.parent.parent.GetComponent<NovusBombScript>().bombExploded = true;
         bombSource.clip = explosionSound;
         bombSource.PlayOneShot(explosionSound);
         for (int i = 0; i < fireBallSpawnAmount; i++)
@@ -96,5 +98,10 @@ public class Bomb : MonoBehaviour {
             objectPooler.SpawnFromPool("Fireball", transform.position, transform.rotation);
         }
         gameObject.SetActive(false);
+    }
+
+    public void DamagePlayer()
+    {
+        GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(bombDamage);
     }
 }

@@ -190,7 +190,7 @@ MonoBehaviour:
   explosionSound: {fileID: 8300000, guid: 6650c807685154061baeb2ea225ae0ab, type: 3}
   bombDamage: 10
   fireBallSpeed: 50
-  fireBall: {fileID: 1852356439421700, guid: f288824703f634f45b225f671d7c99d3, type: 2}
+  bombLifeTime: 3
   fireBallSpawnAmount: 20
 --- !u!114 &114756518671468274
 MonoBehaviour:
@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileDamage: 10
+  projectileHealth: 5
 --- !u!212 &212641488806885046
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -240,7 +241,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.11792451, b: 0.11792451, a: 1}
+  m_Color: {r: 0.6784314, g: 0, b: 0.49019608, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
