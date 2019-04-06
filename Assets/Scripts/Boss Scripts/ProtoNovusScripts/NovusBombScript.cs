@@ -7,6 +7,7 @@ public class NovusBombScript : MonoBehaviour
     public float moveSpeed = 50;
 
     public bool bombExploded = false;
+    public bool energyLinkDestroyed = false;
     public Bomb bomb1;
     public Bomb bomb2;
     public GameObject energyLink;
@@ -21,7 +22,12 @@ public class NovusBombScript : MonoBehaviour
         transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
         if(bombExploded && genericBoolSwitch)
         {
-            Destroy(energyLink);
+            energyLink.GetComponent<EnergyLinkScript>().Cancel();
+           // if(energyLinkDestroyed)
+          //  {
+                Destroy(energyLink);
+           // }
+      
             genericBoolSwitch = false;
             if(bomb1 != null)
             {

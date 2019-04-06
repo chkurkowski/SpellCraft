@@ -4025,52 +4025,6 @@ Transform:
   m_Father: {fileID: 2065842189}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &400810414
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4410383773865488, guid: 8ae98033d4003bc488aaf3e852f3b7f0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -561.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410383773865488, guid: 8ae98033d4003bc488aaf3e852f3b7f0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 269.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410383773865488, guid: 8ae98033d4003bc488aaf3e852f3b7f0, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 3.9947393
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410383773865488, guid: 8ae98033d4003bc488aaf3e852f3b7f0, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410383773865488, guid: 8ae98033d4003bc488aaf3e852f3b7f0, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410383773865488, guid: 8ae98033d4003bc488aaf3e852f3b7f0, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410383773865488, guid: 8ae98033d4003bc488aaf3e852f3b7f0, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410383773865488, guid: 8ae98033d4003bc488aaf3e852f3b7f0, type: 2}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1266288094667476, guid: 8ae98033d4003bc488aaf3e852f3b7f0, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8ae98033d4003bc488aaf3e852f3b7f0, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &401667432
 GameObject:
   m_ObjectHideFlags: 0
@@ -9400,7 +9354,7 @@ Prefab:
     - target: {fileID: 114522629121816732, guid: 6b603fd05167a4b4eb74fbb54dcd930c,
         type: 2}
       propertyPath: currentlyTestingAttack
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114378408688189132, guid: 6b603fd05167a4b4eb74fbb54dcd930c,
         type: 2}

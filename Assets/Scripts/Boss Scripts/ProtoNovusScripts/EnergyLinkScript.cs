@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnergyLinkScript : MonoBehaviour
 {
     public float linkDamage = 10f;
+    public float speedMultiplier = 2.5f;
+    public float damageMultiplier = 1.5f;
     // Use this for initialization
     void Start ()
     {
@@ -25,9 +27,25 @@ public class EnergyLinkScript : MonoBehaviour
         }
         if(col.gameObject.tag == "Projectile")
         {
-           // Debug.Log("ENTIRE BOMB ATTACK SHOULD HAVE BEEN DESTROYED!");
-            Destroy(gameObject.transform.parent.parent.gameObject);
+            // Debug.Log("ENTIRE BOMB ATTACK SHOULD HAVE BEEN DESTROYED!");
+            col.GetComponent<Rigidbody2D>().velocity *= speedMultiplier;
+            col.GetComponent<MagicBall>().magicBallDamage *= damageMultiplier;
+            PlayerAbilities.instance.AddToResource(.025f);
+           // Destroy(gameObject.transform.parent.parent.gameObject);
         }
+    }
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            CancelInvoke();
+        }
+    }
+
+    public void Cancel()
+    {
+        CancelInvoke();
+        
     }
 
     public void DamagePlayer()

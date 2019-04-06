@@ -52,7 +52,8 @@ public class Bomb : MonoBehaviour {
     {
         if(col.gameObject.tag == "Projectile")
         {
-            Destroy(col.gameObject);
+            // Destroy(col.gameObject);
+            Explode();
         }
         
         if (col.gameObject.tag == "Player")
