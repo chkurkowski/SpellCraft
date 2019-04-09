@@ -191,11 +191,11 @@ public class AbilityHandler : MonoBehaviour {
         {
             reflectAudio = GetComponent<AudioSource>();
             reflectAudio.clip = reflectLoopSound;
-            reflectAudio.Play();
+            // reflectAudio.Play();
             
             reflect.SetActive(true);
             abilities.AttackArrayHandler("Reflect", abilities.lastAttacks);
-            reflectTimer = 0;
+            // reflectTimer = 0;
            // reflectAudio.Stop();
         }
     }
@@ -458,8 +458,8 @@ public class AbilityHandler : MonoBehaviour {
 
         if (reflectTimer >= 2f)
         {
-            reflect.GetComponent<ReflectLaser>().isLasered = false;
-            reflect.SetActive(false);
+            // reflect.GetComponent<ReflectLaser>().isLasered = false;
+            // reflect.SetActive(false);
         }
 
         if(absorbTimer >= ABSORBEND)
@@ -536,6 +536,11 @@ public class AbilityHandler : MonoBehaviour {
             default:
                 return ABSORBSIMCOOLDOWN;
         }
+    }
+
+    public void CancelReflect()
+    {
+        reflect.SetActive(false);
     }
 
     #endregion

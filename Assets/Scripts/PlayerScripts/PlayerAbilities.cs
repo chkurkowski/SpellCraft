@@ -19,7 +19,7 @@ public class PlayerAbilities : MonoBehaviour {
     [Header("Editor Variables - Don't Touch")]
 	public PlayerMovement movement;
 	public PlayerHealth health;
-	private AbilityHandler handlers;
+	public AbilityHandler handlers;
 	private ParticleSystem pSystem;
 
     [Space(10)]
@@ -160,13 +160,17 @@ public class PlayerAbilities : MonoBehaviour {
         }
 
 		//Right Click Ability
-		if(Input.GetKeyDown(KeyCode.Mouse1))
+		if(Input.GetKey(KeyCode.Mouse1))
 		{
             // reflectAudio.clip = ritualSound;
             // reflectAudio.Play();
             // Invoke("StopReflectAudioSound", reflectAudio.clip.length);
             handlers.AbilityChecker(rightMouseAbility, false, false);
 		}
+        else if(Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            handlers.CancelReflect();
+        }
 
 		//E or F Ability
 		if(Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.E))
