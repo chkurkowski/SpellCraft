@@ -15,7 +15,7 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
     [Tooltip("The range of the /shotgun spread/ effect. Bigger numbers means more spread on the crystals.")]
     public float laserSpread = .5f;
     private GameObject player;
-    private bool reflected = false;
+    public bool reflected = false;
     private Color32 originalColor;
     private float randNum;
 

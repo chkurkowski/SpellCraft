@@ -7,6 +7,7 @@ public class PylonEnergyBlade : MonoBehaviour
     public float growthRate;
     public float growthAmount;
     private Vector3 ogLocalScale;
+    public bool canGrow = true;
 
     private void Start()
     {
@@ -16,7 +17,11 @@ public class PylonEnergyBlade : MonoBehaviour
     void OnEnable ()
     {
         //gameObject.transform.localScale = ogLocalScale;
-        InvokeRepeating("GrowBlade", 0, growthRate);      
+        if(canGrow)
+        {
+            InvokeRepeating("GrowBlade", 0, growthRate);
+        }
+              
 	}
 
     public void GrowBlade()
