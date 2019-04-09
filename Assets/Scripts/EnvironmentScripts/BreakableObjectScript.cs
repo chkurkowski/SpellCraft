@@ -46,7 +46,11 @@ public class BreakableObjectScript : MonoBehaviour
             CancelInvoke();
             if(isSwitch)
             {
-                Destroy(switchObject.gameObject);//play destroy or door open anim here;
+                if(switchObject != null)
+                {
+                    Destroy(switchObject.gameObject);//play destroy or door open anim here;
+                }
+               
             }
             Destroy(gameObject);//play shatter anim here
         }
@@ -108,7 +112,7 @@ public class BreakableObjectScript : MonoBehaviour
             }
             else if(isReflectable)
             {
-                if (trig.GetComponent<PylonLaserShard>().reflected)
+                if (trig.GetComponent<Fireball>().reflected)
                 {
                     objectHealth--;
                 }
