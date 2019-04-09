@@ -44,6 +44,10 @@ public class MagicBall : MonoBehaviour {
            Debug.Log("PLAYER PROJECTILE HIT UNTAGGED OBJECT ");
             Destroy(gameObject);
         }
+        else if(col.gameObject.name == "Bomb")
+        {
+            Destroy(gameObject);
+        }
         else if (col.gameObject.tag == "EnemyReflect")
         {
            // Debug.Log("enemy reflect should occur");
