@@ -504,7 +504,7 @@ public class AbilityHandler : MonoBehaviour {
                 return atkSimTimer;
             case "absorb":
                 return absorbTimer;
-            case "projectilespeed":
+            case "projectilesplit":
             	return projectileSpeedTimer;
         	case "absorbexplode":
         		return absorbExplodeTimer;
@@ -529,7 +529,7 @@ public class AbilityHandler : MonoBehaviour {
                 return ATKSIMCOOLDOWN;
             case "absorb":
                 return ABSORBCOOLDOWN;
-        	case "projectilespeed":
+        	case "projectilesplit":
             	return PROJECTILESPEEDCOOLDOWN;
         	case "absorbexplode":
         		return ABSORBEXPLODECOOLDOWN;
