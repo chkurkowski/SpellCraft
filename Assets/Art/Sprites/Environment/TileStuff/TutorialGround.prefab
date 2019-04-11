@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4964852801288864}
   - component: {fileID: 2569400266114410192}
   m_Layer: 31
-  m_Name: New Palette
+  m_Name: TutorialGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
