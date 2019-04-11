@@ -552,6 +552,18 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarTwoIsUp = false;
             pillarThreeIsUp = false;
             pillarFourIsUp = false;
+
+
+            GameObject smoke1 = Instantiate(pillarSmoke, pillarPylonOne.transform.position, pillarPylonOne.transform.rotation);
+            smoke1.GetComponent<Animator>().SetBool("hasFallen", true);
+            GameObject smoke2 = Instantiate(pillarSmoke, pillarPylonTwo.transform.position, pillarPylonTwo.transform.rotation);
+            smoke2.GetComponent<Animator>().SetBool("hasFallen", true);
+            GameObject smoke3 = Instantiate(pillarSmoke, pillarPylonThree.transform.position, pillarPylonThree.transform.rotation);
+            smoke3.GetComponent<Animator>().SetBool("hasFallen", true);
+            GameObject smoke4 = Instantiate(pillarSmoke, pillarPylonFour.transform.position, pillarPylonFour.transform.rotation);
+            smoke4.GetComponent<Animator>().SetBool("hasFallen", true);
+
+
             CancelInvoke("ResetPillars");
             return;
         }
