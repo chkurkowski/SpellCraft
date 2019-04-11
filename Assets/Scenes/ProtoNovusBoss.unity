@@ -6693,18 +6693,34 @@ MonoBehaviour:
   - {fileID: 1131909858}
   - {fileID: 428220796}
   instructions:
-  - Text 1
-  - Text 2
-  - Text 3
-  - Text 4
-  - Text 5
-  - Text 6
-  - Text 7
-  - Text 8
-  - Text 9
-  - Text 10
-  - Text 11
-  - Text 12
+  - Welcome to the Training Hall, Proto Novus. Use WASD to move.
+  - Your body can Phase Shift (Spacebar) to move through harmful energy. Purple energy
+    must be Phase Shifted through.
+  - Some attacks will be Purple as well. Phase Shift (Spacebar) to move through them
+    safely.
+  - You also have the ability to summon Magic Missile (Left Mouse Button).
+  - Not all targets are stationary.
+  - You have the ability to place a Speed Field (E). Magic Missiles fired through
+    it are faster and do more damage.
+  - Use the Speed Field (E) to attack the reinforced target.
+  - You have the ability to Reflect (Right Mouse Button) some attacks. Red energy
+    CAN be reflected, purple cannot. Reflect the projectiles back at the targets to
+    proceed.
+  - Don't forget, use your Phase Shift (Spacebar) ability to safely move through Purple
+    energy.
+  - You can combine the last two abilities you used into a Burst Spell (Q). Combine
+    the Magic Missile (Left Mouse Button) and the Speed Field (E) to create the Attack
+    Simulacrums. This Burst Spell attacks when you do, in the direction you are aiming
+    in.
+  - Combine the Reflect (Right Mouse Button) and Speed Field (E) abilities to create
+    the Absorb Simulacrum. This Burst Spell absorbs damage and spits it back out after
+    a time.
+  - Combine the Magic Missile (Left Mouse Button) and Reflect (Right Mouse Button)
+    abilities to create the Split Simulacrums. This Burst Spell empowers your attacks
+    and multiplies them, slows enemy attacks, and spawns healing orbs if enemy projectiles
+    hit the three nodes.
+  - Your training is complete Proto, proceed to the Hub by stepping into the teleporter,
+    we have much to discuss.
 --- !u!212 &394167455
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19366,7 +19382,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 750913917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 751, y: -557, z: 0}
+  m_LocalPosition: {x: -6, y: -307, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 889697179}
