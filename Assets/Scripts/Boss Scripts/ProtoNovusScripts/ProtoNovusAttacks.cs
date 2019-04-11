@@ -112,6 +112,10 @@ public class ProtoNovusAttacks : MonoBehaviour
     [Space(30)]
     [Header("Audio Info")]
     public AudioSource laserAudioSource;
+
+    [Space(30)]
+    [Header("VFX")]
+    public GameObject pillarSmoke;
     //public AudioSource laserShardsAudioSource;
     //public AudioSource vortexAudioSource;
 
@@ -265,9 +269,20 @@ public class ProtoNovusAttacks : MonoBehaviour
         if (isNewBoss)
         {
             InvokeRepeating("MovePillarOne", 0, 0.01f);
+            GameObject smoke1 = Instantiate(pillarSmoke, pillarPylonOne.transform.position, pillarPylonOne.transform.rotation);
+            smoke1.GetComponent<Animator>().SetBool("hasFallen", false);
+
             InvokeRepeating("MovePillarTwo", 0, 0.01f);
+            GameObject smoke2 = Instantiate(pillarSmoke, pillarPylonTwo.transform.position, pillarPylonTwo.transform.rotation);
+            smoke2.GetComponent<Animator>().SetBool("hasFallen", false);
+
             InvokeRepeating("MovePillarThree", 0, 0.01f);
+            GameObject smoke3 = Instantiate(pillarSmoke, pillarPylonThree.transform.position, pillarPylonThree.transform.rotation);
+            smoke3.GetComponent<Animator>().SetBool("hasFallen", false);
+
             InvokeRepeating("MovePillarFour", 0, 0.01f);
+            GameObject smoke4 = Instantiate(pillarSmoke, pillarPylonFour.transform.position, pillarPylonFour.transform.rotation);
+            smoke4.GetComponent<Animator>().SetBool("hasFallen", false);
         }
     }
 
@@ -580,6 +595,10 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarSpriteOne.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarSpriteOne.transform.localPosition = new Vector3(pillarSpriteOne.transform.localPosition.x, .035f, 0);
             pillarOneIsUp = false;
+
+            GameObject smoke1 = Instantiate(pillarSmoke, pillarPylonOne.transform.position, pillarPylonOne.transform.rotation);
+            smoke1.GetComponent<Animator>().SetBool("hasFallen", true);
+
             Debug.Log("Laser shutdown was : " + laserShutDown);
             laserShutDown--;
             Debug.Log("Laser shutdown is : " + laserShutDown);
@@ -606,6 +625,10 @@ public class ProtoNovusAttacks : MonoBehaviour
             healOrbSpawned.transform.Translate(20, 20, 0);
             pillarSpriteTwo.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarTwoIsUp = false;
+
+            GameObject smoke2 = Instantiate(pillarSmoke, pillarPylonTwo.transform.position, pillarPylonTwo.transform.rotation);
+            smoke2.GetComponent<Animator>().SetBool("hasFallen", true);
+
             pillarSpriteTwo.transform.localPosition = new Vector3(pillarSpriteTwo.transform.localPosition.x, .035f, 0);
             Debug.Log("Laser shutdown was : " + laserShutDown);
             laserShutDown--;
@@ -633,6 +656,10 @@ public class ProtoNovusAttacks : MonoBehaviour
             healOrbSpawned.transform.Translate(-20, -20, 0);
             pillarSpriteThree.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarThreeIsUp = false;
+
+            GameObject smoke3 = Instantiate(pillarSmoke, pillarPylonThree.transform.position, pillarPylonThree.transform.rotation);
+            smoke3.GetComponent<Animator>().SetBool("hasFallen", true);
+
             pillarSpriteThree.transform.localPosition = new Vector3(pillarSpriteThree.transform.localPosition.x, .035f, 0);
             Debug.Log("Laser shutdown was : " + laserShutDown);
             laserShutDown--;
@@ -660,6 +687,10 @@ public class ProtoNovusAttacks : MonoBehaviour
             healOrbSpawned.transform.Translate(20, -20, 0);
             pillarSpriteFour.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarFourIsUp = false;
+
+            GameObject smoke4 = Instantiate(pillarSmoke, pillarPylonFour.transform.position, pillarPylonFour.transform.rotation);
+            smoke4.GetComponent<Animator>().SetBool("hasFallen", true);
+
             pillarSpriteFour.transform.localPosition = new Vector3(pillarSpriteFour.transform.localPosition.x, .035f, 0);
             Debug.Log("Laser shutdown was : " + laserShutDown);
             laserShutDown--;
