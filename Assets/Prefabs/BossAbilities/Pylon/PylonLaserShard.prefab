@@ -224,6 +224,7 @@ MonoBehaviour:
   laserShardDamageToBoss: 0.01
   laserShardSpeed: 150
   laserSpread: 3.5
+  vfxObject: {fileID: 1557388221523896, guid: dd1bd250e437e004abe28ae2fcf255bf, type: 2}
   reflectSource: {fileID: 82753413196796302}
   reflectSound: {fileID: 8300000, guid: cb49ede1c9d0e46b3bfdd6b3c0065320, type: 3}
   shardSound: {fileID: 8300000, guid: 0a6332238d8265a4a8afa3374f4df306, type: 3}

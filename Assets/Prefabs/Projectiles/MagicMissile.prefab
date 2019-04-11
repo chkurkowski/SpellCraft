@@ -110,9 +110,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firedFromPlayer: 1
-  isSimulacrumMissle: 0
+  isAttackSimMissile: 0
+  isSplitSimMissile: 0
+  isAbsorbSimMissile: 0
   magicBallDamage: 0.5
   magicBallSpeed: 75
+  vfxObject: {fileID: 1222007834400612, guid: 1fc3063393f3f95498265732e65df884, type: 2}
 --- !u!114 &114905551842964012
 MonoBehaviour:
   m_ObjectHideFlags: 1
