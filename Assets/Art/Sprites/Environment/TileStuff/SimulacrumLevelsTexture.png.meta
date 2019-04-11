@@ -1,0 +1,6925 @@
+fileFormatVersion: 2
+guid: a17bcaac0fb8eeb4ebb00a41bc16f845
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SimulacrumLevelsTexture_0
+    21300002: SimulacrumLevelsTexture_1
+    21300004: SimulacrumLevelsTexture_2
+    21300006: SimulacrumLevelsTexture_3
+    21300008: SimulacrumLevelsTexture_4
+    21300010: SimulacrumLevelsTexture_5
+    21300012: SimulacrumLevelsTexture_6
+    21300014: SimulacrumLevelsTexture_7
+    21300016: SimulacrumLevelsTexture_8
+    21300018: SimulacrumLevelsTexture_9
+    21300020: SimulacrumLevelsTexture_10
+    21300022: SimulacrumLevelsTexture_11
+    21300024: SimulacrumLevelsTexture_12
+    21300026: SimulacrumLevelsTexture_13
+    21300028: SimulacrumLevelsTexture_14
+    21300030: SimulacrumLevelsTexture_15
+    21300032: SimulacrumLevelsTexture_16
+    21300034: SimulacrumLevelsTexture_17
+    21300036: SimulacrumLevelsTexture_18
+    21300038: SimulacrumLevelsTexture_19
+    21300040: SimulacrumLevelsTexture_20
+    21300042: SimulacrumLevelsTexture_21
+    21300044: SimulacrumLevelsTexture_22
+    21300046: SimulacrumLevelsTexture_23
+    21300048: SimulacrumLevelsTexture_24
+    21300050: SimulacrumLevelsTexture_25
+    21300052: SimulacrumLevelsTexture_26
+    21300054: SimulacrumLevelsTexture_27
+    21300056: SimulacrumLevelsTexture_28
+    21300058: SimulacrumLevelsTexture_29
+    21300060: SimulacrumLevelsTexture_30
+    21300062: SimulacrumLevelsTexture_31
+    21300064: SimulacrumLevelsTexture_32
+    21300066: SimulacrumLevelsTexture_33
+    21300068: SimulacrumLevelsTexture_34
+    21300070: SimulacrumLevelsTexture_35
+    21300072: SimulacrumLevelsTexture_36
+    21300074: SimulacrumLevelsTexture_37
+    21300076: SimulacrumLevelsTexture_38
+    21300078: SimulacrumLevelsTexture_39
+    21300080: SimulacrumLevelsTexture_40
+    21300082: SimulacrumLevelsTexture_41
+    21300084: SimulacrumLevelsTexture_42
+    21300086: SimulacrumLevelsTexture_43
+    21300088: SimulacrumLevelsTexture_44
+    21300090: SimulacrumLevelsTexture_45
+    21300092: SimulacrumLevelsTexture_46
+    21300094: SimulacrumLevelsTexture_47
+    21300096: SimulacrumLevelsTexture_48
+    21300098: SimulacrumLevelsTexture_49
+    21300100: SimulacrumLevelsTexture_50
+    21300102: SimulacrumLevelsTexture_51
+    21300104: SimulacrumLevelsTexture_52
+    21300106: SimulacrumLevelsTexture_53
+    21300108: SimulacrumLevelsTexture_54
+    21300110: SimulacrumLevelsTexture_55
+    21300112: SimulacrumLevelsTexture_56
+    21300114: SimulacrumLevelsTexture_57
+    21300116: SimulacrumLevelsTexture_58
+    21300118: SimulacrumLevelsTexture_59
+    21300120: SimulacrumLevelsTexture_60
+    21300122: SimulacrumLevelsTexture_61
+    21300124: SimulacrumLevelsTexture_62
+    21300126: SimulacrumLevelsTexture_63
+    21300128: SimulacrumLevelsTexture_64
+    21300130: SimulacrumLevelsTexture_65
+    21300132: SimulacrumLevelsTexture_66
+    21300134: SimulacrumLevelsTexture_67
+    21300136: SimulacrumLevelsTexture_68
+    21300138: SimulacrumLevelsTexture_69
+    21300140: SimulacrumLevelsTexture_70
+    21300142: SimulacrumLevelsTexture_71
+    21300144: SimulacrumLevelsTexture_72
+    21300146: SimulacrumLevelsTexture_73
+    21300148: SimulacrumLevelsTexture_74
+    21300150: SimulacrumLevelsTexture_75
+    21300152: SimulacrumLevelsTexture_76
+    21300154: SimulacrumLevelsTexture_77
+    21300156: SimulacrumLevelsTexture_78
+    21300158: SimulacrumLevelsTexture_79
+    21300160: SimulacrumLevelsTexture_80
+    21300162: SimulacrumLevelsTexture_81
+    21300164: SimulacrumLevelsTexture_82
+    21300166: SimulacrumLevelsTexture_83
+    21300168: SimulacrumLevelsTexture_84
+    21300170: SimulacrumLevelsTexture_85
+    21300172: SimulacrumLevelsTexture_86
+    21300174: SimulacrumLevelsTexture_87
+    21300176: SimulacrumLevelsTexture_88
+    21300178: SimulacrumLevelsTexture_89
+    21300180: SimulacrumLevelsTexture_90
+    21300182: SimulacrumLevelsTexture_91
+    21300184: SimulacrumLevelsTexture_92
+    21300186: SimulacrumLevelsTexture_93
+    21300188: SimulacrumLevelsTexture_94
+    21300190: SimulacrumLevelsTexture_95
+    21300192: SimulacrumLevelsTexture_96
+    21300194: SimulacrumLevelsTexture_97
+    21300196: SimulacrumLevelsTexture_98
+    21300198: SimulacrumLevelsTexture_99
+    21300200: SimulacrumLevelsTexture_100
+    21300202: SimulacrumLevelsTexture_101
+    21300204: SimulacrumLevelsTexture_102
+    21300206: SimulacrumLevelsTexture_103
+    21300208: SimulacrumLevelsTexture_104
+    21300210: SimulacrumLevelsTexture_105
+    21300212: SimulacrumLevelsTexture_106
+    21300214: SimulacrumLevelsTexture_107
+    21300216: SimulacrumLevelsTexture_108
+    21300218: SimulacrumLevelsTexture_109
+    21300220: SimulacrumLevelsTexture_110
+    21300222: SimulacrumLevelsTexture_111
+    21300224: SimulacrumLevelsTexture_112
+    21300226: SimulacrumLevelsTexture_113
+    21300228: SimulacrumLevelsTexture_114
+    21300230: SimulacrumLevelsTexture_115
+    21300232: SimulacrumLevelsTexture_116
+    21300234: SimulacrumLevelsTexture_117
+    21300236: SimulacrumLevelsTexture_118
+    21300238: SimulacrumLevelsTexture_119
+    21300240: SimulacrumLevelsTexture_120
+    21300242: SimulacrumLevelsTexture_121
+    21300244: SimulacrumLevelsTexture_122
+    21300246: SimulacrumLevelsTexture_123
+    21300248: SimulacrumLevelsTexture_124
+    21300250: SimulacrumLevelsTexture_125
+    21300252: SimulacrumLevelsTexture_126
+    21300254: SimulacrumLevelsTexture_127
+    21300256: SimulacrumLevelsTexture_128
+    21300258: SimulacrumLevelsTexture_129
+    21300260: SimulacrumLevelsTexture_130
+    21300262: SimulacrumLevelsTexture_131
+    21300264: SimulacrumLevelsTexture_132
+    21300266: SimulacrumLevelsTexture_133
+    21300268: SimulacrumLevelsTexture_134
+    21300270: SimulacrumLevelsTexture_135
+    21300272: SimulacrumLevelsTexture_136
+    21300274: SimulacrumLevelsTexture_137
+    21300276: SimulacrumLevelsTexture_138
+    21300278: SimulacrumLevelsTexture_139
+    21300280: SimulacrumLevelsTexture_140
+    21300282: SimulacrumLevelsTexture_141
+    21300284: SimulacrumLevelsTexture_142
+    21300286: SimulacrumLevelsTexture_143
+    21300288: SimulacrumLevelsTexture_144
+    21300290: SimulacrumLevelsTexture_145
+    21300292: SimulacrumLevelsTexture_146
+    21300294: SimulacrumLevelsTexture_147
+    21300296: SimulacrumLevelsTexture_148
+    21300298: SimulacrumLevelsTexture_149
+    21300300: SimulacrumLevelsTexture_150
+    21300302: SimulacrumLevelsTexture_151
+    21300304: SimulacrumLevelsTexture_152
+    21300306: SimulacrumLevelsTexture_153
+    21300308: SimulacrumLevelsTexture_154
+    21300310: SimulacrumLevelsTexture_155
+    21300312: SimulacrumLevelsTexture_156
+    21300314: SimulacrumLevelsTexture_157
+    21300316: SimulacrumLevelsTexture_158
+    21300318: SimulacrumLevelsTexture_159
+    21300320: SimulacrumLevelsTexture_160
+    21300322: SimulacrumLevelsTexture_161
+    21300324: SimulacrumLevelsTexture_162
+    21300326: SimulacrumLevelsTexture_163
+    21300328: SimulacrumLevelsTexture_164
+    21300330: SimulacrumLevelsTexture_165
+    21300332: SimulacrumLevelsTexture_166
+    21300334: SimulacrumLevelsTexture_167
+    21300336: SimulacrumLevelsTexture_168
+    21300338: SimulacrumLevelsTexture_169
+    21300340: SimulacrumLevelsTexture_170
+    21300342: SimulacrumLevelsTexture_171
+    21300344: SimulacrumLevelsTexture_172
+    21300346: SimulacrumLevelsTexture_173
+    21300348: SimulacrumLevelsTexture_174
+    21300350: SimulacrumLevelsTexture_175
+    21300352: SimulacrumLevelsTexture_176
+    21300354: SimulacrumLevelsTexture_177
+    21300356: SimulacrumLevelsTexture_178
+    21300358: SimulacrumLevelsTexture_179
+    21300360: SimulacrumLevelsTexture_180
+    21300362: SimulacrumLevelsTexture_181
+    21300364: SimulacrumLevelsTexture_182
+    21300366: SimulacrumLevelsTexture_183
+    21300368: SimulacrumLevelsTexture_184
+    21300370: SimulacrumLevelsTexture_185
+    21300372: SimulacrumLevelsTexture_186
+    21300374: SimulacrumLevelsTexture_187
+    21300376: SimulacrumLevelsTexture_188
+    21300378: SimulacrumLevelsTexture_189
+    21300380: SimulacrumLevelsTexture_190
+    21300382: SimulacrumLevelsTexture_191
+    21300384: SimulacrumLevelsTexture_192
+    21300386: SimulacrumLevelsTexture_193
+    21300388: SimulacrumLevelsTexture_194
+    21300390: SimulacrumLevelsTexture_195
+    21300392: SimulacrumLevelsTexture_196
+    21300394: SimulacrumLevelsTexture_197
+    21300396: SimulacrumLevelsTexture_198
+    21300398: SimulacrumLevelsTexture_199
+    21300400: SimulacrumLevelsTexture_200
+    21300402: SimulacrumLevelsTexture_201
+    21300404: SimulacrumLevelsTexture_202
+    21300406: SimulacrumLevelsTexture_203
+    21300408: SimulacrumLevelsTexture_204
+    21300410: SimulacrumLevelsTexture_205
+    21300412: SimulacrumLevelsTexture_206
+    21300414: SimulacrumLevelsTexture_207
+    21300416: SimulacrumLevelsTexture_208
+    21300418: SimulacrumLevelsTexture_209
+    21300420: SimulacrumLevelsTexture_210
+    21300422: SimulacrumLevelsTexture_211
+    21300424: SimulacrumLevelsTexture_212
+    21300426: SimulacrumLevelsTexture_213
+    21300428: SimulacrumLevelsTexture_214
+    21300430: SimulacrumLevelsTexture_215
+    21300432: SimulacrumLevelsTexture_216
+    21300434: SimulacrumLevelsTexture_217
+    21300436: SimulacrumLevelsTexture_218
+    21300438: SimulacrumLevelsTexture_219
+    21300440: SimulacrumLevelsTexture_220
+    21300442: SimulacrumLevelsTexture_221
+    21300444: SimulacrumLevelsTexture_222
+    21300446: SimulacrumLevelsTexture_223
+    21300448: SimulacrumLevelsTexture_224
+    21300450: SimulacrumLevelsTexture_225
+    21300452: SimulacrumLevelsTexture_226
+    21300454: SimulacrumLevelsTexture_227
+    21300456: SimulacrumLevelsTexture_228
+    21300458: SimulacrumLevelsTexture_229
+    21300460: SimulacrumLevelsTexture_230
+    21300462: SimulacrumLevelsTexture_231
+    21300464: SimulacrumLevelsTexture_232
+    21300466: SimulacrumLevelsTexture_233
+    21300468: SimulacrumLevelsTexture_234
+    21300470: SimulacrumLevelsTexture_235
+    21300472: SimulacrumLevelsTexture_236
+    21300474: SimulacrumLevelsTexture_237
+    21300476: SimulacrumLevelsTexture_238
+    21300478: SimulacrumLevelsTexture_239
+    21300480: SimulacrumLevelsTexture_240
+    21300482: SimulacrumLevelsTexture_241
+    21300484: SimulacrumLevelsTexture_242
+    21300486: SimulacrumLevelsTexture_243
+    21300488: SimulacrumLevelsTexture_244
+    21300490: SimulacrumLevelsTexture_245
+    21300492: SimulacrumLevelsTexture_246
+    21300494: SimulacrumLevelsTexture_247
+    21300496: SimulacrumLevelsTexture_248
+    21300498: SimulacrumLevelsTexture_249
+    21300500: SimulacrumLevelsTexture_250
+    21300502: SimulacrumLevelsTexture_251
+    21300504: SimulacrumLevelsTexture_252
+    21300506: SimulacrumLevelsTexture_253
+    21300508: SimulacrumLevelsTexture_254
+    21300510: SimulacrumLevelsTexture_255
+    21300512: SimulacrumLevelsTexture_256
+    21300514: SimulacrumLevelsTexture_257
+    21300516: SimulacrumLevelsTexture_258
+    21300518: SimulacrumLevelsTexture_259
+    21300520: SimulacrumLevelsTexture_260
+    21300522: SimulacrumLevelsTexture_261
+    21300524: SimulacrumLevelsTexture_262
+    21300526: SimulacrumLevelsTexture_263
+    21300528: SimulacrumLevelsTexture_264
+    21300530: SimulacrumLevelsTexture_265
+    21300532: SimulacrumLevelsTexture_266
+    21300534: SimulacrumLevelsTexture_267
+    21300536: SimulacrumLevelsTexture_268
+    21300538: SimulacrumLevelsTexture_269
+    21300540: SimulacrumLevelsTexture_270
+    21300542: SimulacrumLevelsTexture_271
+    21300544: SimulacrumLevelsTexture_272
+    21300546: SimulacrumLevelsTexture_273
+    21300548: SimulacrumLevelsTexture_274
+    21300550: SimulacrumLevelsTexture_275
+    21300552: SimulacrumLevelsTexture_276
+    21300554: SimulacrumLevelsTexture_277
+    21300556: SimulacrumLevelsTexture_278
+    21300558: SimulacrumLevelsTexture_279
+    21300560: SimulacrumLevelsTexture_280
+    21300562: SimulacrumLevelsTexture_281
+    21300564: SimulacrumLevelsTexture_282
+    21300566: SimulacrumLevelsTexture_283
+    21300568: SimulacrumLevelsTexture_284
+    21300570: SimulacrumLevelsTexture_285
+    21300572: SimulacrumLevelsTexture_286
+    21300574: SimulacrumLevelsTexture_287
+    21300576: SimulacrumLevelsTexture_288
+    21300578: SimulacrumLevelsTexture_289
+    21300580: SimulacrumLevelsTexture_290
+    21300582: SimulacrumLevelsTexture_291
+    21300584: SimulacrumLevelsTexture_292
+    21300586: SimulacrumLevelsTexture_293
+    21300588: SimulacrumLevelsTexture_294
+    21300590: SimulacrumLevelsTexture_295
+    21300592: SimulacrumLevelsTexture_296
+    21300594: SimulacrumLevelsTexture_297
+    21300596: SimulacrumLevelsTexture_298
+    21300598: SimulacrumLevelsTexture_299
+    21300600: SimulacrumLevelsTexture_300
+    21300602: SimulacrumLevelsTexture_301
+    21300604: SimulacrumLevelsTexture_302
+    21300606: SimulacrumLevelsTexture_303
+    21300608: SimulacrumLevelsTexture_304
+    21300610: SimulacrumLevelsTexture_305
+    21300612: SimulacrumLevelsTexture_306
+    21300614: SimulacrumLevelsTexture_307
+    21300616: SimulacrumLevelsTexture_308
+    21300618: SimulacrumLevelsTexture_309
+    21300620: SimulacrumLevelsTexture_310
+    21300622: SimulacrumLevelsTexture_311
+    21300624: SimulacrumLevelsTexture_312
+    21300626: SimulacrumLevelsTexture_313
+    21300628: SimulacrumLevelsTexture_314
+    21300630: SimulacrumLevelsTexture_315
+    21300632: SimulacrumLevelsTexture_316
+    21300634: SimulacrumLevelsTexture_317
+    21300636: SimulacrumLevelsTexture_318
+    21300638: SimulacrumLevelsTexture_319
+    21300640: SimulacrumLevelsTexture_320
+    21300642: SimulacrumLevelsTexture_321
+    21300644: SimulacrumLevelsTexture_322
+    21300646: SimulacrumLevelsTexture_323
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 2
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f561f6750fa8974ebf5a36d706aaa8e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d4cf3203552fe4c818cad33ae29548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6042eaef5c3dd384f85838e50ae078bc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_3
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b146a334dc0464f85ab3a9eda540b3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81ab11489c03f1b4498a5c6e06195803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_5
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed1d6e93f7ca88641a1ce4452ebb3ecb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_6
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666718e173adbd344a3921dbaabdd326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_7
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 356fc9883b4ef3145bc701fe74581e86
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_8
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52fd42f647bb6df48b9c7df730c488c8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_9
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c06053b7ffb8f24aaf282068b100b6d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_10
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d0ae775878d2446a2f89e4ac0f29fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_11
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce91426c9b834eb4499ec92165a93bd7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_12
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bf0274b81c43444fbf0341fb2c4c9d3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_13
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599c74517f825ed4d9888ab8219f8341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_14
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25fd9c5270526d34c8f177f4820f069b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_15
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1c41b9b52ccb84099ad8a3e45c80ff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_16
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd567dc14df294d43af7ea5038012e32
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_17
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 355
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfcd0decd38b15e4295ee84681527546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1791d8a63b7af9748a1cc34a081e2ed8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_19
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 802da7585394f8246bc6e9fe82faa891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_20
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8c02cc803810546b0359aba174b2f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_21
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 638c304c2a5c68840a76a0425a283a50
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_22
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60a1e8f56c4f84d4cbe4b2b470630bc9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_23
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48094dfb26c46cf44b37bbd2955755eb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_24
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ac828a9b788e1c4ba08c9f0147dee28
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_25
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1c9ab7c3052b0e42a6536a3a2bef689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_26
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 317720a8b2128714787f9aa1057da968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_27
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b69c01b44e43a43a600be7a77faefe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_28
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3267a8db7a9de004088796f0c1a35631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_29
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad64e9bd31c6b848b28e7df074bd900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_30
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5081ef670aadc549bac084c5bcfef54
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_31
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd96a5e4fc1fb445b94649a35451ba9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_32
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8fc8b55cf7544441a9f7ea9964af5b8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_33
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd82bcdda1e49748990d3a7919c5f7f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_34
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c552e145580cd34698056ee0758ed53
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_35
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 335
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25d5f4b8e51c104fa4c3baaff9469d5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0fd065babc015c42bc9423c9e53c869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_37
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62cb37c74e05cad47875a71aad19054f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_38
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae52f740664487440bfaa2535d718b10
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_39
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0b75bc48413ccb46b0c10520bd43c71
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_40
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9354bcf92f2fd07469f28fbdf7f1fbc7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_41
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5907f4d32bcefe046b6cc266f1e361f5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_42
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5627e95ea1ced9b43a7ca2cfcf58797e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_43
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae00ff8244b5928428e1389c0e9eff44
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_44
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55501ab528c6f54408788427489e51ab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_45
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46929759de7e78d45b011f735656ea34
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_46
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddfdccc505c7d7a438849338759264b6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_47
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04d2827c749a87c49b13e94f585f8a9a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_48
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f700bb728ecec04bb3d42993260bbfb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_49
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3880022a225f614ea40a2f18cee3815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_50
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49abba3a4fa2efe4a9630010ddbb34e7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_51
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4acc408c0fc392f46ab6f27a7e15d2b3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_52
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f4b11e52611ba947ac3bdcfeaf22dce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_53
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 315
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380c71d045601914d9f8ef138313e700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce52f11db029a60428363040e0791bc6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_55
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd97f3085639b95408d3c196ff1ae614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_56
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2727558833d2cc942ba3e139d41c3fb4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_57
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce09a7ebdf4176468802ed2336e5b32
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_58
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ebd6e933ac37242abb888548846a51
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_59
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b540515cd24f941a9eb0866f8555a8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_60
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0219feea04aceb44382bd11a54335231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_61
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e938171e988ae5f45a5cec7c5b55c9a2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_62
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca2deb76dfa66e4a9e158d59dc46f89
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_63
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2685130df582a7b4187cac4016a430e3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_64
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dbc981e42741b54d978f598b0eb1cec
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_65
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e64a9040d8ba94e42b753c37e83a359e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_66
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d33c574fae4fc8845a90a86d4ef7760d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_67
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ea2fe4011c5934286ae25367064980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_68
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 339c8fbe09c8b654d8bdbda4a00bcbc5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_69
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae97600df4c8cf348834e35da6e4b62f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_70
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10df8622a99254745aad8732cd7e70d5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_71
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 295
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a015ab2b5a3c104491cce5d56e2cef9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c647f15230be74b894cbf10f3a0285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_73
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4225173491febbe4a9736fc2cf880970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_74
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15cbfa1573791c440b65ecb236fb221e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_75
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5233e729043dde4b91f2a96bac135ad
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_76
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d842e12a20e73b4a8639f623a9d0970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_77
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02cc8271bcd33244ab0652b7d6f0f62b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_78
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4338c2ba9ccfdc148bccaeed749bce1e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_79
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49d1905513c0c5f4a962f6f2a388ce5d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_80
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c8fa5f80f422341ad3606fae640255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_81
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 074ae400ede3a9846af3d760acf957e7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_82
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4da4c51837633043a2ded7fe1c2b631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_83
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de5405953cfacb34789eb14d5d989aa4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_84
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fd2114a11f6e4141a41c11ccb71cb33
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_85
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d4ca0f75cdf3948850e4fad787fb8f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_86
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65da84c60eb8e2b4a9a53e97181c5b12
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_87
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97237d1dec9616242a1153df2aeacc9a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_88
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d224a3c73c71d4daf36e1bd060fcff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_89
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 275
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 453341ef22a61ff46bd7b6563d2ff0c5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35f484df27e1474ebda8a2019a8c8fb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_91
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c5171b5a30f3de4d81c9079ce0325f3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_92
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07140a578410994ead1b4ebc8371814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_93
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2609a7e20e6bcfc4a989452e19ac5582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_94
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b817ed71462b501479feed5014fb297b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_95
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fe454fdb8fceac46b265cc5a0c505ed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_96
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efe0acaf924c8954a85b11c4ef75bbae
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_97
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd5f37fd203dc57449f5db18f7211707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_98
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3927ef1e7a68dd741876297004dd655a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_99
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7db5608a65bddc64995d1301ec23f004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_100
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c7d45ac9eddbf429c2e9771e2446e6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_101
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2cbbfa50d7ebcd4aa2f281c5dfec5f2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_102
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74e7f261d2d69c24982c2233bccecba1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_103
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2afd10052bc3134498a1296a65977461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_104
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: babedd5ef323f624c86c4552adac655f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_105
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70f649ec4b7f4c644b8da7658ab1696a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_106
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ce3d1f4f5c60204cbc2d026c696e686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_107
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 255
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42cf8145276288f4b8ee772e6f55e544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26fe8c3bdbbeea148ae19ee224ddf08a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_109
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c42d0c635e805e408ded71626109908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_110
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b86d6d29c1933f24eb3e760620f8f6a3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_111
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40585285b5bbea439405b2c195421f8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_112
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d784564a5fbbd86478c6548d0b7bf754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_113
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875750f3561757440ae1eec3c94cd1eb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_114
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5711f1af6264d91469a399c359f93422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_115
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5735943413413d649af5fc907d52a655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_116
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa66d37033779c84dbb19e3e1e25fe84
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_117
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0fb932587de8fd43adcd0923a153a74
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_118
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f13cc61924ae0042bd73e222cc93dfc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_119
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1e2f3fec22e3d4c9c010e0494400e8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_120
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579d8ed22f96b3f44a7f245af662d544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_121
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7415c4f5d9589194395bb921d39a1aef
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_122
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3013a8210461147418005d26c1b90c35
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_123
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15bd578dba6cda4595e5a4d73de149b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_124
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e11ea2eaafbd424fbf14442828eb00a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_125
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 235
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f20b298cf12dda40b7a6ce09847ad22
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_126
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fcc7be4c8f82324786cdf91ab6d08d2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_127
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3debc3d4647056d429e412a378dd6b5d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_128
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e8a72ea48d43346be2e437a9a07d9f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_129
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcea8c9f34398d049ae6c55eb0b343ea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_130
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e74ce0bc45264a459077d545ea29d13
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_131
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 452ab43f6f693d64a9e6be411fcc9885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_132
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ac6be17f2c910f47b465957c517d0fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_133
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 574c6f33218e89b479dcb28ad048dc26
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_134
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b0f1c1d709cb71429e9e442babad260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_135
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acea1180c12410346aced5e3dd5acb7e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_136
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6128c6c7ccb52c245bdb5ae8cd7c8264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_137
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cecc46a1ed1bcac4c90cd6e3bf35807b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_138
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f72ab0ea641434dae6ddbfe05289e8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_139
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b380464eaddf574583d473e5b0673f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_140
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2813a4142acfa8a45a9a0b59a2cf48a6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_141
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93a68e03ad3de9a4681f151fad0b6bd2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_142
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12d3ae1084103ba4db3abbad7f730610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_143
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 215
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f386725d069726442afaf18cfe4039a1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_144
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ebc8be70ffd29c4f9950174330f60b2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_145
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a388834e5e2ae9409ba4276e471db26
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_146
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e092ae5c5adfb0409e92e399d96fd69
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_147
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c6f5066b4dae5645b1fd9f5389e8d18
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_148
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7e05db9a5835b48875159c58d3f281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_149
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e16d9023933ffe2479ed0eb055b639be
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_150
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fad2492bb1eb0543bb8c9d771ea1ddf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_151
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b37d8af27b9d4e45ae3e157599d0e77
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_152
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2904d35ee77d794b9cb50158c594a83
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_153
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48ab4b24607eac0419b52066c451d7a6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_154
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75b2187e02894464c95aa4b1dcfb54bf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_155
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e5805d9f1d0744ba27a8a14f95bb65
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_156
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8324a17680f7adb4cb1bb7876801cd2b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_157
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 673188eb73d92a74d93082e77d930993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_158
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb32dbb5f2065346b2dfff8b0347c4e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_159
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 100f7028befaffd4ba6aedf6ee8e4344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_160
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01c648fbf8d563749a3812911073d2f3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_161
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 195
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e4ba3d282eac54aaedef1a675e470d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_162
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04635b96b8c3327458cd1519530f003d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_163
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 303004ebbce49ba45af0053f5b00c2a4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_164
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1b904e2e8f6d2b4fa463efc0c734d35
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_165
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83fd1f1d574aeb64cb9600ee69925104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_166
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6154ca1c772a5f64f90099440fbe0261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_167
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef5b6a570bcb9942ac728b87c778a75
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_168
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e1e19ae91e78a468bd127080873506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_169
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e8a4813f4d3744d842a529c6048755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_170
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd74302da5cc75744a316f703fc7b8b4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_171
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b43a07ee5b16eca48b6ce17702b4989a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_172
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235c8a72a6cd39448a2ae366d930e8ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_173
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f8128cd086237d44925e4626d5ad1ef
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_174
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9231c199f701d94796ce8566fd6ff65
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_175
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f7fb6d296f0014cacfefe85709a061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_176
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cd9c9bce598d9440b55d4ad7f3c5042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_177
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e22543c404a91d34e9d1e779d02e1a4e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_178
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23c26de989025524fa44101208f207a8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_179
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 175
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b57fd0ec25f8534bb76e8686a7a7acb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_180
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c638e044856afd84495c126b0125dcce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_181
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9a7cd322b324343856db46864b534b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_182
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70cc6e916a0b3784bab096570c808246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_183
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c0a02f9a614db5489ad42d6e69484dc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_184
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ccd9b171e28d144b5f7b23d885f218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_185
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e6c4820df5bd374782475ffc1688465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_186
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8494274c00f931d48a1dabf32b794bc8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_187
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c38b23036e9e7d24da83a089d3b0a6b8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_188
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02df46cfec3232d49853552c9b8ddfbf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_189
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75669668e88db644a9d41b21fc96e53f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_190
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee7c9e28fe3c8c4a893ffeff88086d6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_191
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52fd953ac18a3ac44b1e241b78ab4ebf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_192
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e95a256016247c841a4c8318df22d01c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_193
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f91908d870846a4383806031a7d7908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_194
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c7f5da8a2540ed4294160f444ffef35
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_195
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a0d063ae75d154c8260ab1f4ba99a7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_196
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91178cc966c2e624f8f3add786e3b757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_197
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 155
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c482d93614614f049966766096cff422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_198
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232f95e8284f16a469810dbc8e734d37
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_199
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c718b15ad1e207041a0b7294426f7395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_200
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63dec69e0c7f0494a93ce5ce196c62b1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_201
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed56f517b7310d468aca8bb45442449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_202
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d475330c15edb4aa38872f28e5cbed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_203
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de55c371ec0d54e4391c0d1dd5ad4b87
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_204
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2375e0a7ae6b5514a969572a6d28fd2d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_205
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a897e6dffc00f84e87fedfca8eabe1a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_206
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2cc15682a342394e8c3487e8b27b88f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_207
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80a03b8004aafb74f9290376ba47bc50
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_208
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ce8094c02db6b4282e03f37d429b4e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_209
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c696ede4146e44795987738f0007bf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_210
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3458d869e50d54aadbb0531cf2db86
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_211
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb7de38628ff01a4bbe71ed1b4472042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_212
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ab4ef29c8f6bd4cb3777b3008a61a5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_213
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa18858e9a953c4f988add5310843c9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_214
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ce0ed54dad5864ba16a78b35aab72b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_215
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 135
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 819e7b75c1781b54c842283f2601ccdb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_216
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84aedc2f945e4d94590ece2120b5e18a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_217
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f94423c77093d40a0077107b6a36ed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_218
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4a9437ccba218b4c9f60966b4ecb82e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_219
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 365efa588b6963646906a0fe486c4aba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_220
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6903e7f37686d2349b74e3ff31836e63
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_221
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a394d8de6532ba49a27fc65d87e637d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_222
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e09716cff7612042907eaab0643528c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_223
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a14c12bb109b5543bc49dd13886849a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_224
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bae819d05d767b4ca8bb2e9ab630845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_225
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03103a78e3e2c044dba8b9da7b53c6a1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_226
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86e30e992e1a30d43a37cac3ee7231c6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_227
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a855827128cbd8d4d8fc9a75502b31f1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_228
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e50bf8b3bf2dc4540ae620bb51274656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_229
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 723df1113efe50c46b012394de6fbcee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_230
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ca8b01302eeda4daef95812af42530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_231
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e87705945bea86241beb6e9d6e3d0ef5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_232
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5df174aa7a8f8140a9e6d428531aac1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_233
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 115
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216a261efa837c1438afdc263ee77d5c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_234
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c4a858c362a1846bb8920c71f76ee6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_235
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541772e0069893f4f9255193b380bdc5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_236
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 220cac53c52cdb042979a5b8176ee1ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_237
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a5ddc748bd26e140b99e7597be055c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_238
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b616e797ccbd9458a49a536e1d8f70
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_239
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a208a1cd26875fb48adb0f19557a6cf6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_240
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9556f83baa1fda745b64b34a55db9ef7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_241
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c5508634e75a642a734de2689f0dd0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_242
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9d63379ff6e284d87824c110a21eda
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_243
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff8def4e78774841ab37198af316400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_244
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea44b75071a846b459dd1bfdc6a75eac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_245
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135e3c41febaf5d4f82b87894e95a674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_246
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7abc91864401c1e47a7c89cd045ad42a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_247
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c30ee522a7dfbc48be8a495f0829e39
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_248
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b95e87eab73e74086d7268ca1818da
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_249
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dae1c887a53467141b100130a4e061c3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_250
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ac9aa247d4f164e8e7b31fb2d314fc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_251
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 95
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9aa7bd7cd863264a9847adeee7f92e5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_252
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c8e4984e1cd88479a825237279bae8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_253
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5349f097a4eb7f64ba8e34162d29c4a7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_254
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76455c2964bdf6243b7607a7c957d1cc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_255
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3122274ec0cd2045aae1ac73f2a29e5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_256
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8576096a62672c74eae866d6fbad8e1d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_257
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ebcda3c4d08bef4596d7827a9ca51db
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_258
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c938f8ca94a70d14984472806d41bab1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_259
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a4e228540c99e84cbad64aac17cbdd6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_260
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7893c77666aa554bbd64d0016823789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_261
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db2757fc4225f4d438a0c72f2bf186db
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_262
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f2cf4f8d4d1086408970127150ef125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_263
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3a395a96471c0c4282840c0fd90db73
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_264
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03ebd6cf7b365e04aabe295bb77f4231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_265
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e01b84ceed667f45a8998a1be7c653c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_266
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad40e60a8a51ac4387ca7a703246452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_267
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc13b2b3949a8042a3bc8fd5780bf62
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_268
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2128a7e66242a464395d26031d3778b2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_269
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 75
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e3bf15f82678940a4b460b9f65bbb2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_270
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e850c486788c12d4bb89ad885ef9c5a9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_271
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09e1528527fa78141b6ee3acc8c5d12e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_272
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b6afac8d4439824099a20910483e01e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_273
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 072cfbd026935704fb84a24b9385f833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_274
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f47fb293f9586c647b15a22b15f921f9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_275
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c28dec9642ff8847bf11c19aea7db6d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_276
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e09b17b035b7548bd712633d9efe7f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_277
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8124b9cfa68814149bf4c69a0bb37b0e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_278
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35a8201af868d7a40a4a3e12d5f12381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_279
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27faab007de577647b0b235d0bebf1eb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_280
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c41bfeaa08e2d4438b9e1ad79ed3065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_281
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f5a1aab10e9dc14a887ab6fce802c55
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_282
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4cd2d1ec42488442a28dafc46a35120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_283
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0a690c40b78b8f43a3246db5ae59fda
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_284
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb1486dddc76ba4ea761a3307a25bf7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_285
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7e3e8ca60aac44dba1bbe4044ca265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_286
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f683eea1406a2141b94245a5770b097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_287
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 55
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103b440e4dfda0146be988cad43d5480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_288
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6592539a3d198a34a9a7b779c69b6227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_289
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e50da0eed227cd4bb9489682c452a60
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_290
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25ca2a5621048744f8db9144fc726c12
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_291
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aebe6be18e7abe4aa28c72ebede4acd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_292
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff1b80a326fb4774ab11816e1a7cea13
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_293
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d566e67a5427b21409ce4136a08a9b6b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_294
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d51a0b6408c7147aed1f138c0c870a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_295
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b040c7dac221a949b562d3785bc94a0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_296
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f40b00028e3bf674f872922ccb6e81ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_297
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11bed859e2a442479dd3b69583a2128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_298
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0643b441168dcf409085b6ecc5c0ea5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_299
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52fbd88ac29dbef4e80e2e8f1a38cc0f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_300
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba0449525b2792438e83942be816092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_301
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1347a2f6548735f43b50878902e149cc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_302
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9102947acc084ba4e9b812bbf009d624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_303
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0807ea63f121a6848aae870ae5e77018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_304
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41bf8095a3c04ee4ab8bc7eeb1a22cce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_305
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 35
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4094af3e3c6f71540adaad2b5238289c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_306
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d79a32859b80394e9b8e61fec06b78e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_307
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ddf7cfe0fcace4da8bf46b5cd9ebb3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_308
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 561946dd040af274480ac6ac2c14ce13
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_309
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4adcbb57ead556940bcbabaf4d0cbd31
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_310
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4efd10f87f8e04e45a8d1720e225154d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_311
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f5b843931c93374f8c2e1f42e4673ad
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_312
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f649963793fab4d48b68e32c5664b614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_313
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6faf118dd68e3e94da5708af122b8f27
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_314
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5219c208c065d43863ded102244c2c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_315
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07ff3b81513012f4d957f7edc504bbe3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_316
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6082b7aecc14f4197851ce8443674d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_317
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4120720ad5c35ef48b07c9261c997fe0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_318
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6b89998163b23b4c96da88ad4ffc355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_319
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a529245c1b2c8584182d075ab73ca6b5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_320
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f278809f883f9d841b9874b0a25ac83d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_321
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b24f4256fb6534b4cae95804286c8a3d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_322
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c507a15bd427aa47a2d483c59f60f36
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimulacrumLevelsTexture_323
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 15
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c8ac3020e28894f87f5d8aa73bc688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b3f849f21b6af544cace3cc48e420e75
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

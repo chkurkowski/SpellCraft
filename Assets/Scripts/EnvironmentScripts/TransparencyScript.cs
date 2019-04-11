@@ -9,7 +9,9 @@ public class TransparencyScript : MonoBehaviour {
     {
         if(collision.tag == "Player")
         {
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(gameObject.GetComponent<SpriteRenderer>().color.r, gameObject.GetComponent<SpriteRenderer>().color.g, gameObject.GetComponent<SpriteRenderer>().color.b, .4f);
+            CancelInvoke("IncreaseOpacity");
+            InvokeRepeating("DecreaseOpacity", 0, .02f);
+            //gameObject.GetComponent<SpriteRenderer>().color = new Color(gameObject.GetComponent<SpriteRenderer>().color.r, gameObject.GetComponent<SpriteRenderer>().color.g, gameObject.GetComponent<SpriteRenderer>().color.b, .4f);
         }
     }
 
@@ -17,7 +19,40 @@ public class TransparencyScript : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(gameObject.GetComponent<SpriteRenderer>().color.r, gameObject.GetComponent<SpriteRenderer>().color.g, gameObject.GetComponent<SpriteRenderer>().color.b, 1f);
+            CancelInvoke("DecreaseOpacity");
+            InvokeRepeating("IncreaseOpacity", 0, .02f);
+           // gameObject.GetComponent<SpriteRenderer>().color = new Color(gameObject.GetComponent<SpriteRenderer>().color.r, gameObject.GetComponent<SpriteRenderer>().color.g, gameObject.GetComponent<SpriteRenderer>().color.b, 1f);
         }
+    }
+
+
+    private void IncreaseOpacity()
+    {
+        if (gameObject.GetComponent<SpriteRenderer>().color.a < 1)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, .1f);
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(gameObject.GetComponent<SpriteRenderer>().color.r, gameObject.GetComponent<SpriteRenderer>().color.g, gameObject.GetComponent<SpriteRenderer>().color.b, 1f);
+            CancelInvoke("IncreaseOpacity");
+        }
+       
+    }
+
+    private void DecreaseOpacity()
+    {
+        if (gameObject.GetComponent<SpriteRenderer>().color.a > .4)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color -= new Color(0, 0, 0, .1f);
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(gameObject.GetComponent<SpriteRenderer>().color.r, gameObject.GetComponent<SpriteRenderer>().color.g, gameObject.GetComponent<SpriteRenderer>().color.b, .4f);
+            CancelInvoke("DecreaseOpacity");
+
+        }
+
+           
     }
 }

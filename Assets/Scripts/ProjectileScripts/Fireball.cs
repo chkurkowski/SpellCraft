@@ -79,7 +79,8 @@ public class Fireball : MonoBehaviour {
         }
         else if (col.gameObject.tag == "Simulacrum")
         {
-            col.gameObject.GetComponent<SimulacrumAbilities>().AbsorbDamage(fireBallDamage);
+            // col.gameObject.GetComponent<SimulacrumAbilities>().AbsorbDamage(fireBallDamage);
+            col.gameObject.GetComponent<SimulacrumAbsorb>().AbsorbDamage(fireBallDamage);
             Debug.Log(gameObject.name + " was destroyed by " + col.gameObject.name);
             Disable();
         }
