@@ -18,6 +18,7 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
     public bool reflected = false;
     private Color32 originalColor;
     private float randNum;
+    public GameObject vfxObject;
 
     [Space(20)]
     [Header("Sound Variables")]
@@ -102,25 +103,29 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
             col.gameObject.GetComponent<PlayerHealth>().DamagePlayer(laserShardDamage);
             // GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= (laserShardDamage/ 100f);
             //Destroy(gameObject);
+            Instantiate(vfxObject, transform.position, transform.rotation);
             gameObject.SetActive(false);
         }
         else if (col.gameObject.tag == "Simulacrum")
         {
             col.gameObject.GetComponent<SimulacrumAbsorb>().AbsorbDamage(laserShardDamage);
             //Destroy(gameObject);
+            Instantiate(vfxObject, transform.position, transform.rotation);
             gameObject.SetActive(false);
         }
         else if (col.gameObject.tag == "Absorb")
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().HealPlayer(laserShardDamage / 2);
-           // GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .005f;
+            // GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .005f;
             // Destroy(gameObject);
+            Instantiate(vfxObject, transform.position, transform.rotation);
             gameObject.SetActive(false);
         }
         else if (col.gameObject.tag != "EnemyProjectile" && col.gameObject.tag != "Boss" 
             && col.gameObject.tag != "CameraTrigger" && col.gameObject.tag != "Vortex" && col.gameObject.tag != "Split")
         {
             //Destroy(gameObject);
+            Instantiate(vfxObject, transform.position, transform.rotation);
             gameObject.SetActive(false);
         }
     }
