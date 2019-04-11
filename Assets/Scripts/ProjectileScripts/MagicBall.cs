@@ -17,6 +17,8 @@ public class MagicBall : MonoBehaviour {
     private bool reflected = false;
     private bool canReflect = true;
 
+    public GameObject vfxObject;
+
 
     private void Start()
     {
@@ -45,10 +47,12 @@ public class MagicBall : MonoBehaviour {
         if(col.GetComponent<Collider2D>().transform.tag == null)
         {
            Debug.Log("PLAYER PROJECTILE HIT UNTAGGED OBJECT ");
+            Instantiate(vfxObject, transform.position, transform.rotation);
             Destroy(gameObject);
         }
         else if(col.gameObject.name == "Bomb")
         {
+            Instantiate(vfxObject, transform.position, transform.rotation);
             Destroy(gameObject);
         }
         else if (col.gameObject.tag == "EnemyReflect")
@@ -61,7 +65,8 @@ public class MagicBall : MonoBehaviour {
         }
         if (col.gameObject.tag == "Boss")
         {
-           // Debug.Log(gameObject.name + " was destroyed by Boss:" + col.gameObject.name);
+            // Debug.Log(gameObject.name + " was destroyed by Boss:" + col.gameObject.name);
+            Instantiate(vfxObject, transform.position, transform.rotation);
             Destroy(gameObject);
         }
         else if (col.gameObject.tag == "Vortex" || col.gameObject.tag == "EnemyProjectile" 
@@ -74,7 +79,8 @@ public class MagicBall : MonoBehaviour {
         {
             if (col.gameObject.tag != "Boss" || col.gameObject.tag != "CameraTrigger" || col.gameObject.tag != "HealStun" )
             {
-               // Debug.Log(gameObject.name + " was destroyed by " + col.gameObject.name + "with tag :" + col.gameObject.tag );
+                // Debug.Log(gameObject.name + " was destroyed by " + col.gameObject.name + "with tag :" + col.gameObject.tag );
+                Instantiate(vfxObject, transform.position, transform.rotation);
                 Destroy(gameObject);
             }
 
