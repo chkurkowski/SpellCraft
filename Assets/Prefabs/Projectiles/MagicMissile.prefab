@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1269839615260892}
   m_LocalRotation: {x: -0, y: -0, z: 0.71115094, w: 0.70303935}
-  m_LocalPosition: {x: 0.8, y: 21.7, z: -2.0463526}
+  m_LocalPosition: {x: -627.81226, y: 264.9484, z: -2.0463526}
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,6 +113,7 @@ MonoBehaviour:
   isSimulacrumMissle: 0
   magicBallDamage: 0.5
   magicBallSpeed: 75
+  impactVFX: {fileID: 1222007834400612, guid: 1fc3063393f3f95498265732e65df884, type: 2}
 --- !u!114 &114905551842964012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -161,12 +162,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 16
-  m_Sprite: {fileID: 21300000, guid: a0c544812214c46d3aa24f85ea5af26b, type: 3}
-  m_Color: {r: 0.4764151, g: 0.7338769, b: 1, a: 0.84705883}
+  m_Sprite: {fileID: 21300000, guid: 660ae772675804edb95cf1df60a2e07b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.84705883}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
