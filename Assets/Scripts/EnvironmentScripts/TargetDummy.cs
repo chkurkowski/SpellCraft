@@ -87,7 +87,7 @@ public class TargetDummy : MonoBehaviour
             case 4:
                 if (collision.tag == "Projectile")
                 {
-                    if (collision.GetComponent<MagicBall>().isSimulacrumMissle)
+                    if (collision.GetComponent<MagicBall>().isAttackSimMissile)
                     {
                         dummyHealth--;
                     }

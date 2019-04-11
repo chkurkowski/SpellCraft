@@ -6,6 +6,10 @@ public class BreakableObjectScript : MonoBehaviour
 {
     public float objectHealth = 6f;
     public bool isReinforced = false;
+    public bool isTutorialIncrementor = false;
+    public bool isAttackSimDummy = false;
+    public bool isSplitSimDummy = false;
+    public bool isAbsorbSimDummy = false;
     private SpriteRenderer colorInfo;
     public bool canMoveUpDown = false;
     public bool canMoveLeftRight = false;
@@ -21,49 +25,56 @@ public class BreakableObjectScript : MonoBehaviour
 
     public GameObject switchObject;
 
+    private TutorialManager tutorialInfo;
+
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
+        tutorialInfo = GameObject.Find("TutorialManager").GetComponent<TutorialManager>();
         colorInfo = gameObject.GetComponent<SpriteRenderer>();
-        if(canMoveUpDown)
+        if (canMoveUpDown)
         {
             canMoveLeftRight = false;
             InvokeRepeating("MoveUpDown", 0, moveRate);
         }
-        if(canMoveLeftRight)
+        if (canMoveLeftRight)
         {
             canMoveUpDown = false;
             InvokeRepeating("MoveLeftRight", 0, moveRate);
         }
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-		if(objectHealth <= 0)
+        if (objectHealth <= 0)
         {
             CancelInvoke();
-            if(isSwitch)
+            if (isSwitch)
             {
-                if(switchObject != null)
+                if (switchObject != null)
                 {
                     Destroy(switchObject.gameObject);//play destroy or door open anim here;
                 }
-               
+
+            }
+            if (isTutorialIncrementor)
+            {
+                tutorialInfo.NextTutorialStage();
             }
             Destroy(gameObject);//play shatter anim here
         }
-	}
+    }
 
     private void MoveUpDown()
     {
-        if(gameObject.transform.position.y > topLimit.position.y)
+        if (gameObject.transform.position.y > topLimit.position.y)
         {
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, topLimit.position.y, gameObject.transform.position.z);
             moveDirection *= -1;
         }
-        if(gameObject.transform.position.y < bottomLimit.position.y)
+        if (gameObject.transform.position.y < bottomLimit.position.y)
         {
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, bottomLimit.position.y, gameObject.transform.position.z);
             moveDirection *= -1;
@@ -73,12 +84,12 @@ public class BreakableObjectScript : MonoBehaviour
 
     private void MoveLeftRight()
     {
-        if(gameObject.transform.position.x > rightLimit.position.x)
+        if (gameObject.transform.position.x > rightLimit.position.x)
         {
             gameObject.transform.position = new Vector3(rightLimit.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
             moveDirection *= -1;
         }
-        if(gameObject.transform.position.x < leftLimit.position.x)
+        if (gameObject.transform.position.x < leftLimit.position.x)
         {
             gameObject.transform.position = new Vector3(leftLimit.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
             moveDirection *= -1;
@@ -90,34 +101,85 @@ public class BreakableObjectScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D trig)
     {
-        if(trig.gameObject.tag == "Projectile")
+        if (trig.gameObject.tag == "Projectile")
         {
-            if(!isReflectable)
+            //if(!isReflectable)
+            //{
+            //    if (!isReinforced)
+            //    {
+            //        objectHealth--;
+            //        colorInfo.color = Color.red;
+            //        Invoke("ResetColor", 0.50f);
+            //    }
+            //    else if (isReinforced)
+            //    {
+            //        if (trig.GetComponent<MagicBall>().magicBallDamage > .5)
+            //        {
+            //            objectHealth--;
+            //            colorInfo.color = Color.red;
+            //            Invoke("ResetColor", 0.50f);
+            //        }
+            //    }
+            //}
+            //else if(isReflectable)
+            //{
+            //    if (trig.GetComponent<Fireball>().reflected)
+            //    {
+            //        objectHealth--;
+            //    }
+            //}
+            if (isReflectable)
             {
-                if (!isReinforced)
+                if (trig.GetComponent<Fireball>().reflected)
                 {
                     objectHealth--;
                     colorInfo.color = Color.red;
                     Invoke("ResetColor", 0.50f);
                 }
-                else if (isReinforced)
-                {
-                    if (trig.GetComponent<MagicBall>().magicBallDamage > .5)
-                    {
-                        objectHealth--;
-                        colorInfo.color = Color.red;
-                        Invoke("ResetColor", 0.50f);
-                    }
-                }
             }
-            else if(isReflectable)
+            else if (isAttackSimDummy)
             {
-                if (trig.GetComponent<Fireball>().reflected)
+                if (trig.GetComponent<MagicBall>().isAttackSimMissile)
                 {
                     objectHealth--;
+                    colorInfo.color = Color.red;
+                    Invoke("ResetColor", 0.50f);
                 }
             }
-        
+            else if (isAbsorbSimDummy)
+            {
+                if (trig.GetComponent<MagicBall>().isAbsorbSimMissile)
+                {
+                    objectHealth--;
+                    colorInfo.color = Color.red;
+                    Invoke("ResetColor", 0.50f);
+                }
+            }
+            else if (isSplitSimDummy)
+            {
+                if (trig.GetComponent<MagicBall>().isSplitSimMissile)
+                {
+                    objectHealth--;
+                    colorInfo.color = Color.red;
+                    Invoke("ResetColor", 0.50f);
+                }
+            }
+            else if (isReinforced)
+            {
+                if (trig.GetComponent<MagicBall>().magicBallDamage > .5f)
+                {
+                    objectHealth--;
+                    colorInfo.color = Color.red;
+                    Invoke("ResetColor", 0.50f);
+                }
+            }
+            else
+            {
+                objectHealth--;
+                colorInfo.color = Color.red;
+                Invoke("ResetColor", 0.50f);
+            }
+
         }
     }
 

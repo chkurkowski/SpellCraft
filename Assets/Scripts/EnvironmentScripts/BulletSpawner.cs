@@ -18,21 +18,33 @@ public class BulletSpawner : MonoBehaviour
 	
     public void SpawnBullet()
     {
-        if(!flipBullets)
+        if (!flipBullets)
         {
-            Instantiate(bullet1, transform.position, transform.rotation);
+            if (gameObject.activeSelf)
+            {
+                Instantiate(bullet1, transform.position, transform.rotation);
+            }
+           
         }
         else if(flipBullets)
         {
             if(bulletFlipper == 0)
             {
-                Instantiate(bullet1, transform.position, transform.rotation);
-                bulletFlipper++;
+                if (gameObject.activeSelf)
+                {
+                    Instantiate(bullet1, transform.position, transform.rotation);
+                    bulletFlipper++;
+                }
+
             }
             else if(bulletFlipper == 1)
             {
-                Instantiate(bullet2, transform.position, transform.rotation);
-                bulletFlipper--;
+                if(gameObject.activeSelf)
+                {
+                    Instantiate(bullet2, transform.position, transform.rotation);
+                    bulletFlipper--;
+                }
+                
             }
         }
         

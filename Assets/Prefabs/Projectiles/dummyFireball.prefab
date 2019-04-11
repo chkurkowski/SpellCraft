@@ -189,6 +189,7 @@ MonoBehaviour:
   fireBallDamage: 0
   fireBallSpeed: 50
   lifeTime: 100
+  reflected: 0
   reflectSource: {fileID: 82532922538391272}
   reflectSound: {fileID: 8300000, guid: cb49ede1c9d0e46b3bfdd6b3c0065320, type: 3}
 --- !u!114 &114827134530963036

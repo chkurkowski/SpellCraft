@@ -9,11 +9,14 @@ public class MagicBall : MonoBehaviour {
     private float stunDamage;
    
     public bool firedFromPlayer = true;
-    public bool isSimulacrumMissle = false;
+    public bool isAttackSimMissile = false;
+    public bool isSplitSimMissile = false;
+    public bool isAbsorbSimMissile = false;
     public float magicBallDamage;
     public float magicBallSpeed = 75;
     private bool reflected = false;
     private bool canReflect = true;
+
 
     private void Start()
     {
