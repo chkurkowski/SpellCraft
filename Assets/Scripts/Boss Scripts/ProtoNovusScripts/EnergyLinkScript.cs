@@ -28,10 +28,11 @@ public class EnergyLinkScript : MonoBehaviour
         if(col.gameObject.tag == "Projectile")
         {
             // Debug.Log("ENTIRE BOMB ATTACK SHOULD HAVE BEEN DESTROYED!");
-            col.GetComponent<Rigidbody2D>().velocity *= speedMultiplier;
-            col.GetComponent<MagicBall>().magicBallDamage *= damageMultiplier;
-            PlayerAbilities.instance.AddToResource(.025f);
-           // Destroy(gameObject.transform.parent.parent.gameObject);
+            //  col.GetComponent<Rigidbody2D>().velocity *= speedMultiplier;
+            // col.GetComponent<MagicBall>().magicBallDamage *= damageMultiplier;
+            // PlayerAbilities.instance.AddToResource(.025f);
+            // Destroy(gameObject.transform.parent.parent.gameObject);
+            gameObject.transform.parent.parent.gameObject.GetComponent<NovusBombScript>().bombExploded = true; ;
         }
     }
     private void OnTriggerExit2D(Collider2D col)
