@@ -27728,7 +27728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   godMode: 0
-  playerHealthBar: {fileID: 0}
+  playerHealthBar: {fileID: 582103604}
   isAlive: 1
   maxPlayerHealth: 100
   playerHealth: 100
@@ -27802,7 +27802,7 @@ MonoBehaviour:
   movement: {fileID: 750913932}
   health: {fileID: 750913929}
   comboResource: 0
-  resourceBar: {fileID: 0}
+  resourceBar: {fileID: 167647002}
   dashSpeed: 100
   dashDistance: 0
   state: 0
