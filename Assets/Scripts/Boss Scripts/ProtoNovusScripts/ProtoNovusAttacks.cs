@@ -301,13 +301,13 @@ public class ProtoNovusAttacks : MonoBehaviour
         }
         else if (bossInfoInfo.isMad)
         {
-            InvokeRepeating("BombTown", 0, bombFireRate * 2);
-            bombFireRate = bombFireRateOriginal;//see if this works!
+            InvokeRepeating("BombTown", 0, bombFireRate);// * 2);
+            //bombFireRate = bombFireRateOriginal;//see if this works!
         }
         else if (bossInfoInfo.isEnraged)
         {
-            InvokeRepeating("BombTown", 0, bombFireRate * 4);
-            bombFireRate = bombFireRateOriginal;//see if this works!
+            InvokeRepeating("BombTown", 0, bombFireRate);// * 4);
+           // bombFireRate = bombFireRateOriginal;//see if this works!
         }
 
         Invoke("StopAttack", bombTimeLength);
@@ -324,17 +324,20 @@ public class ProtoNovusAttacks : MonoBehaviour
         {
             GameObject bomb1 = Instantiate(bomb, transform.position, transform.rotation);
             GameObject bomb2 = Instantiate(bomb, transform.position, transform.rotation);
-            bomb2.transform.Rotate(0, 0, 90);
-            GameObject bomb3 = Instantiate(bomb, transform.position, transform.rotation);
-            bomb3.transform.Rotate(0, 0, -90);
+            bomb2.transform.Rotate(0, 0, 180);
+           // GameObject bomb3 = Instantiate(bomb, transform.position, transform.rotation);
+           //bomb3.transform.Rotate(0, 0, -90);
         }
         if (bossInfoInfo.isEnraged)
         {
             GameObject bomb1 = Instantiate(megaBomb, transform.position, transform.rotation);
-            GameObject bomb2 = Instantiate(megaBomb, transform.position, transform.rotation);
+            GameObject bomb2 = Instantiate(bomb, transform.position, transform.rotation);
+           // GameObject bomb2 = Instantiate(megaBomb, transform.position, transform.rotation);
             GameObject bomb3 = Instantiate(megaBomb, transform.position, transform.rotation);
-            bomb2.transform.Rotate(0, 0, 120);
-            bomb3.transform.Rotate(0, 0, 240);
+            GameObject bomb4 = Instantiate(megaBomb, transform.position, transform.rotation);
+            bomb2.transform.Rotate(0, 0, 180);
+            bomb3.transform.Rotate(0, 0, 90);
+            bomb4.transform.Rotate(0, 0, -90);
         }
     }
 

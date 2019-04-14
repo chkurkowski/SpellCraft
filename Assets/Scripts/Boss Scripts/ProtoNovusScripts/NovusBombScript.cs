@@ -11,6 +11,7 @@ public class NovusBombScript : MonoBehaviour
     public Bomb bomb1;
     public Bomb bomb2;
     public GameObject energyLink;
+    //public GameObject healOrbSpawnable;
     private bool genericBoolSwitch = true;
 
     private void Start()
@@ -22,21 +23,29 @@ public class NovusBombScript : MonoBehaviour
         transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
         if(bombExploded && genericBoolSwitch)
         {
-            energyLink.GetComponent<EnergyLinkScript>().Cancel();
-           // if(energyLinkDestroyed)
-          //  {
-                Destroy(energyLink);
-           // }
-      
+       
             genericBoolSwitch = false;
             if(bomb1 != null)
             {
+                Debug.Log("Bomb1 should have exploded");
                 bomb1.Explode();
             }
             if(bomb2 != null)
             {
+                Debug.Log("Bomb2 should have exploded");
                 bomb2.Explode();
             }
+
+            energyLink.GetComponent<EnergyLinkScript>().Cancel();
+            // if(energyLinkDestroyed)
+            //  {
+            Destroy(energyLink);
+            // }
+           // if (bomb1 == null && bomb2 == null)
+           // {
+            //    Debug.Log("both bombs are destroyed!");
+               Destroy(gameObject);
+           // }
         }
     }
 
