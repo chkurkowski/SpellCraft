@@ -28,18 +28,6 @@ public class DynamicCamera : MonoBehaviour
         zoomSize = distance + zoomTweak;
         if(Vector3.Distance(Player.transform.position, PlayerAbilities.instance.handlers.cursorInWorldPos) >= 12)
             gameObject.transform.position = new Vector3(((Player.transform.position.x + DistanceLimiter().x) / 2), ((Player.transform.position.y + DistanceLimiter().y) / 2), -5f);
-        // if (distance <= minZoom)
-        // {
-        //     cam.orthographicSize = minZoom;
-        // }
-        // else if (distance >= maxZoom)
-        // {
-        //     cam.orthographicSize = maxZoom;
-        // }
-        // else
-        // {
-        //     cam.orthographicSize = zoomSize;
-        // }
     }
 
     public Vector3 DistanceLimiter()
