@@ -23650,6 +23650,11 @@ Prefab:
       propertyPath: testingAttacks
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114918025363425396, guid: 6b603fd05167a4b4eb74fbb54dcd930c,
+        type: 2}
+      propertyPath: bossRageLevel
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b603fd05167a4b4eb74fbb54dcd930c, type: 2}
   m_IsPrefabAsset: 0
@@ -24057,6 +24062,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a90c00987ac4a878b8a83d2eac823e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayingOwMusic: 0
+  overworldMusic: {fileID: 750913919}
+  pylonHealthBar: {fileID: 682437930}
 --- !u!82 &750913919
 AudioSource:
   m_ObjectHideFlags: 0
@@ -29338,6 +29346,8 @@ MonoBehaviour:
   BURSTCOOLDOWN: 2
   ABSORBEND: 3
   ABSORBEXPLODEEND: 5
+  reflectHealth: 100
+  REFLECTRECHARGEDELAY: 1
 --- !u!114 &750913931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29352,6 +29362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 750913932}
   health: {fileID: 750913929}
+  handlers: {fileID: 0}
   comboResource: 0
   resourceBar: {fileID: 167647002}
   dashSpeed: 100
@@ -29465,7 +29476,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 750913917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 748, y: -565, z: 0}
+  m_LocalPosition: {x: 19, y: -264, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 889697179}
@@ -52895,6 +52906,7 @@ GameObject:
   - component: {fileID: 1773298466}
   - component: {fileID: 1773298470}
   - component: {fileID: 1773298469}
+  - component: {fileID: 1773298471}
   - component: {fileID: 1773298468}
   - component: {fileID: 1773298467}
   m_Layer: 13
@@ -53057,6 +53069,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1773298471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1773298465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cc10f3ff10504247a295a7d9cc19f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1774064688
 GameObject:
   m_ObjectHideFlags: 0
