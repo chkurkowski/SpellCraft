@@ -9,6 +9,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     private BossAttacks bossAttacksInfo;
     private Animator pylonAnimatorInfo;
     private ProtoNovusMovement protoNovusMovementInfo;
+    private SpriteRenderer colorInfo;
 
     public bool isNewBoss = false;
 
@@ -86,6 +87,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     [Space(10)]
     [Header("Bomb Variables")]
     public GameObject fireball;
+    public GameObject originalBomb;
     public GameObject bomb;
     public GameObject megaBomb;
     public float bombFireRate = 3f;
@@ -130,6 +132,8 @@ public class ProtoNovusAttacks : MonoBehaviour
         bossAttacksInfo = gameObject.GetComponent<BossAttacks>();
         pylonAnimatorInfo = GameObject.Find("PylonBossArt").gameObject.GetComponent<Animator>();
         bossHealthInfo = gameObject.GetComponent<BossHealth>();
+
+        colorInfo = GameObject.Find("PylonBossArt").gameObject.GetComponent<SpriteRenderer>();
 
         laserMuzzleOne.SetActive(false);
         laserMuzzleTwo.SetActive(false);
@@ -878,6 +882,20 @@ public class ProtoNovusAttacks : MonoBehaviour
 
     #endregion
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Projectile")
+        {
+            colorInfo.color = Color.red;
+            Invoke("ResetColor", 0.50f);
+        }
 
+    }
+
+
+    private void ResetColor()
+    {
+        colorInfo.color = Color.white;
+    }
 
 }
