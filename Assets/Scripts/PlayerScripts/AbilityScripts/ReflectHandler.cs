@@ -23,7 +23,7 @@ public class ReflectHandler : MonoBehaviour {
     	if(PlayerAbilities.instance.handlers.reflectHealth < 0)
         {
         	PlayerAbilities.instance.handlers.ReflectBroken();
-        	PlayerAbilities.instance.handlers.reflectHealth = 100;
+        	// PlayerAbilities.instance.handlers.reflectHealth = 100;
         }
 
         // print(PlayerAbilities.instance.handlers.reflectHealth);

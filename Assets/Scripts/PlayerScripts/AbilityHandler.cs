@@ -567,6 +567,7 @@ public class AbilityHandler : MonoBehaviour {
     {
         reflect.SetActive(false);
         reflectTimer = 0;
+        reflectRechargeTimer = 0;
     }
 
     #endregion
