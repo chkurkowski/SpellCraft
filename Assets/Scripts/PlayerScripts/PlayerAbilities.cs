@@ -84,6 +84,9 @@ public class PlayerAbilities : MonoBehaviour {
 
     [Space(10)]
 
+    [Range(1, 3)]
+    public int dashType = 1;
+
 	//Ability Variables
     [Header("Ability Variables")]
 	public int leftMouseAbility = 1;
@@ -130,7 +133,12 @@ public class PlayerAbilities : MonoBehaviour {
 					Idle();
 					break;
 				case State.EVADE:
-					DashOptionThree();
+					if(dashType == 1)
+                        Evade();
+                    else if(dashType == 2)
+                        DashOptionTwo();
+                    else
+                        DashOptionThree();
 					break;
 				case State.STUN:
 					Stun();
