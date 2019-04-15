@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212096833299641056}
   - component: {fileID: 61857017238235234}
   - component: {fileID: 114325773794001038}
+  - component: {fileID: 95238203086525670}
   m_Layer: 0
   m_Name: Energy Link
   m_TagString: EnemyProjectile
@@ -79,6 +80,7 @@ GameObject:
   - component: {fileID: 114599739268926480}
   - component: {fileID: 114574934225113524}
   - component: {fileID: 82939563384227250}
+  - component: {fileID: 95674753176188440}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: EnemyProjectile
@@ -100,6 +102,7 @@ GameObject:
   - component: {fileID: 114964788191479338}
   - component: {fileID: 114218140627287502}
   - component: {fileID: 82582970413311878}
+  - component: {fileID: 95965240388229572}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: EnemyProjectile
@@ -131,7 +134,7 @@ Transform:
   m_GameObject: {fileID: 1328588496675438}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15, y: 0, z: 0}
-  m_LocalScale: {x: 60.00003, y: 60.00003, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 4325483075044158}
   m_RootOrder: 1
@@ -144,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 1646904283557480}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 15, y: -0, z: 0}
-  m_LocalScale: {x: 60.00003, y: 60.00003, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 4325483075044158}
   m_RootOrder: 0
@@ -172,7 +175,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1266288094667476}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -551.6852, y: 191.55826, z: 3.9947393}
+  m_LocalPosition: {x: -489.39395, y: 273.87854, z: 3.9947393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4325483075044158}
@@ -188,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 1199904176927784}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 0.40000024, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4325483075044158}
   m_RootOrder: 2
@@ -516,6 +519,60 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f4b6f45be4f1cf041a6eeed12efa233b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95238203086525670
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1199904176927784}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f02d3b2b9fd584e2b81316a3c6b40721, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95674753176188440
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1328588496675438}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ddb2e516c31474522aa50d9ef0270722, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95965240388229572
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1646904283557480}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ddb2e516c31474522aa50d9ef0270722, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

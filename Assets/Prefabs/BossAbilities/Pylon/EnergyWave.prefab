@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114215634534510374}
   - component: {fileID: 114814360999798194}
   - component: {fileID: 50786774662711304}
+  - component: {fileID: 95894900334228396}
   m_Layer: 9
   m_Name: EnergyWave
   m_TagString: EnemyProjectile
@@ -56,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1715413957688428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -547.3, y: 341.8, z: 0}
+  m_LocalPosition: {x: -492.49072, y: 282.03052, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children:
   - {fileID: 4532613654851182}
@@ -178,6 +179,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2895386, y: 0.27798307}
   m_EdgeRadius: 0
+--- !u!95 &95894900334228396
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715413957688428}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8d8561a517a5d4afa86cfd3acd2f7f9b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114215634534510374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -215,6 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   growthRate: 0.02
   growthAmount: 0.5
+  canGrow: 1
 --- !u!212 &212454354950666124
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -297,7 +317,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a992c6692fd7ea040876cc0495abd39f, type: 3}
-  m_Color: {r: 0.7555547, g: 0, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
