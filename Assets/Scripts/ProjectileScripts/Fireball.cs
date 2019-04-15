@@ -64,6 +64,7 @@ public class Fireball : MonoBehaviour {
             reflectSource.clip = reflectSound;
             reflectSource.PlayOneShot(reflectSound);
             // Debug.Log("Reflect happened");
+            col.gameObject.GetComponent<ReflectHandler>().SubtractHealth(5);
             reflected = true;
             gameObject.tag = "Projectile";
             gameObject.layer = 12; //changes physics layers, do not touch or I stab you
