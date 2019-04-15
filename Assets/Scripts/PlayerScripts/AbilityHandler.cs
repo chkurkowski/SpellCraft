@@ -64,6 +64,10 @@ public class AbilityHandler : MonoBehaviour {
     private float longATKTimer, energyGolemTimer, healStunTimer, projectileSpeedTimer, healStunComboTimer,
     reflectTimer, absorbExplodeTimer, atkSimTimer, absorbTimer, absorbSimTimer, burstTimer;
 
+    public float reflectHealth = 100f;
+    public float REFLECTRECHARGEDELAY = 1f;
+    private float reflectRechargeTimer;
+
     private PlayerAbilities abilities;
     private PlayerHealth health;
     private Animator playerAnimator;
@@ -81,6 +85,7 @@ public class AbilityHandler : MonoBehaviour {
         energyGolemTimer = ENERGYGOLEMCOOLDOWN;
         projectileSpeedTimer = PROJECTILESPEEDCOOLDOWN;
         absorbExplodeTimer = ABSORBEXPLODECOOLDOWN;
+        reflectRechargeTimer = 0;
 
         rotator = GameObject.Find("Rotator");
         playerAnimator = GetComponent<Animator>();
@@ -96,6 +101,7 @@ public class AbilityHandler : MonoBehaviour {
         {
         	// print(waveSystem.isPlaying);
             BasicHandlers();
+            ReflectRecharge();
             yield return null;
         }
     }
@@ -191,11 +197,13 @@ public class AbilityHandler : MonoBehaviour {
         {
             reflectAudio = GetComponent<AudioSource>();
             reflectAudio.clip = reflectLoopSound;
-            reflectAudio.Play();
+            // reflectAudio.Play();
             
-            reflect.SetActive(true);
+            if(!reflect.activeSelf)
+                reflect.SetActive(true);
             abilities.AttackArrayHandler("Reflect", abilities.lastAttacks);
-            reflectTimer = 0;
+            reflectRechargeTimer = 0;
+            // reflectTimer = 0;
            // reflectAudio.Stop();
         }
     }
@@ -455,6 +463,8 @@ public class AbilityHandler : MonoBehaviour {
         energyGolemTimer += Time.deltaTime;
         projectileSpeedTimer += Time.deltaTime;
         absorbExplodeTimer += Time.deltaTime;
+        if(!reflect.activeSelf)
+            reflectRechargeTimer += Time.deltaTime;
 
         if (reflectTimer >= 2f)
         {
@@ -536,6 +546,27 @@ public class AbilityHandler : MonoBehaviour {
             default:
                 return ABSORBSIMCOOLDOWN;
         }
+    }
+
+    private void ReflectRecharge()
+    {
+        if(reflectRechargeTimer >= REFLECTRECHARGEDELAY && reflectHealth < 100 && !reflect.activeSelf)
+        {
+            // print("Recharge " + reflectHealth);
+            reflectHealth += 35 * Time.deltaTime;
+        }
+    }
+
+    public void CancelReflect()
+    {
+        reflect.SetActive(false);
+        reflectRechargeTimer = 0;
+    }
+
+    public void ReflectBroken()
+    {
+        reflect.SetActive(false);
+        reflectTimer = 0;
     }
 
     #endregion
