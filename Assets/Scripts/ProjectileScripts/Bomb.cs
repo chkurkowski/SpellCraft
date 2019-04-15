@@ -7,7 +7,7 @@ public class Bomb : MonoBehaviour {
     public AudioSource bombSource;
     public AudioClip explosionSound;
     private ObjectPoolerScript objectPooler;
-
+    public bool isOriginalBomb = false;
 
     private ProjectileDamage projectileDamageInfo;
     public float bombDamage = 10f;
@@ -42,7 +42,11 @@ public class Bomb : MonoBehaviour {
     }
     private void Update()
     {
-       // transform.Translate(Vector3.right * Time.deltaTime * fireBallSpeed);
+        if(isOriginalBomb)
+        {
+            transform.Translate(Vector3.right * Time.deltaTime * fireBallSpeed);
+        }
+       
     }
 
         // transform.localScale += new Vector3(1,0);
@@ -90,7 +94,11 @@ public class Bomb : MonoBehaviour {
 
     public void Explode()
     {
-        gameObject.transform.parent.parent.GetComponent<NovusBombScript>().bombExploded = true;
+        if(!isOriginalBomb)
+        {
+            gameObject.transform.parent.parent.GetComponent<NovusBombScript>().bombExploded = true;
+        }
+ 
         bombSource.clip = explosionSound;
         bombSource.PlayOneShot(explosionSound);
         for (int i = 0; i < fireBallSpawnAmount; i++)
