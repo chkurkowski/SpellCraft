@@ -13,7 +13,7 @@ public class CameraScriptActivator : MonoBehaviour {
     {
         dynamicCameraInfo = gameObject.GetComponent<DynamicCamera>();
 
-        dynamicCameraInfo.enabled = false;
+        dynamicCameraInfo.enabled = true;
 
         player = GameObject.Find("Player");
 	}

@@ -95,6 +95,13 @@ public class AbilityHandler : MonoBehaviour {
         StartCoroutine(LightUpdate());
     }
 
+    // void OnDrawGizmos()
+    // {
+    //     // Display the explosion radius when selected
+    //     Gizmos.color = Color.white;
+    //     Gizmos.DrawWireSphere(transform.position, 100);
+    // }
+
     private IEnumerator LightUpdate()
     {
         while(true)
@@ -373,7 +380,7 @@ public class AbilityHandler : MonoBehaviour {
     //X = transform.position.x + (placementDistance * Mathf.Cos(angle));
     //Y = transform.position.y + (placementDistance * Mathf.Cos(angle));
     //Handles the placement of the zone abilities
-    private Vector3 PlacementCheck()
+    public Vector3 PlacementCheck()
     {
         if(Vector3.Distance(transform.position, cursorInWorldPos) >= placementDistance)
         {
