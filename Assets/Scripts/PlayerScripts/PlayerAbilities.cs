@@ -255,11 +255,13 @@ public class PlayerAbilities : MonoBehaviour {
 
         Vector3 direction = new Vector3(Mathf.Ceil(movement.horizontalMovement), Mathf.Ceil(movement.verticalMovement));
         direction.Normalize();
+        movement.canMove = false;
         gameObject.layer = 14;// changes physics layers to avoid collision
 
         if(evadeLengthTimer <= 0)
         {
             evadeLengthTimer = EVADELENGTHTIME;
+            movement.canMove = true;
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             ResetPhysicsLayer();
         }
