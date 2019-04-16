@@ -65,6 +65,7 @@ public class AbilityHandler : MonoBehaviour {
     reflectTimer, absorbExplodeTimer, atkSimTimer, absorbTimer, absorbSimTimer, burstTimer;
 
     public float reflectHealth = 100f;
+    public float REFLECTHEALTHMAX = 200f;
     public float REFLECTRECHARGEDELAY = 1f;
     private float reflectRechargeTimer;
 
@@ -87,7 +88,7 @@ public class AbilityHandler : MonoBehaviour {
         absorbExplodeTimer = ABSORBEXPLODECOOLDOWN;
         reflectRechargeTimer = 0;
 
-        rotator = GameObject.Find("Rotator");
+        rotator = GameObject.Find("PlayerRotator");
         playerAnimator = GetComponent<Animator>();
         abilities = GetComponent<PlayerAbilities>();
         health = GetComponent<PlayerHealth>();
@@ -200,7 +201,10 @@ public class AbilityHandler : MonoBehaviour {
             // reflectAudio.Play();
             
             if(!reflect.activeSelf)
+            {
                 reflect.SetActive(true);
+            }
+                
             abilities.AttackArrayHandler("Reflect", abilities.lastAttacks);
             reflectRechargeTimer = 0;
             // reflectTimer = 0;
@@ -236,7 +240,7 @@ public class AbilityHandler : MonoBehaviour {
     	if(projectileSpeedTimer >= PROJECTILESPEEDCOOLDOWN)
     	{
     		Instantiate(projectileSpeed, PlacementCheck(), rotator.transform.rotation);
-	        abilities.AttackArrayHandler("HealStun", abilities.lastAttacks);
+	        abilities.AttackArrayHandler("ProjectileSpeed", abilities.lastAttacks);
 	        projectileSpeedTimer = 0;
     	}
     }
@@ -410,7 +414,7 @@ public class AbilityHandler : MonoBehaviour {
         }
     }
 
-    private int CursorDirection()
+    public int CursorDirection()
     {
         int posX = -1;
         int posY = -1;
@@ -439,7 +443,7 @@ public class AbilityHandler : MonoBehaviour {
         }
         else
         {
-            if(posX > 0)
+            if(posY > 0)
             {
                 return 2;
             }
@@ -550,10 +554,10 @@ public class AbilityHandler : MonoBehaviour {
 
     private void ReflectRecharge()
     {
-        if(reflectRechargeTimer >= REFLECTRECHARGEDELAY && reflectHealth < 100 && !reflect.activeSelf)
+        if(reflectRechargeTimer >= REFLECTRECHARGEDELAY && reflectHealth < REFLECTHEALTHMAX && !reflect.activeSelf)
         {
             // print("Recharge " + reflectHealth);
-            reflectHealth += 35 * Time.deltaTime;
+            reflectHealth += 75 * Time.deltaTime;
         }
     }
 

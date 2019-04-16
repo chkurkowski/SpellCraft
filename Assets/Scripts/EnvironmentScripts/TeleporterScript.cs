@@ -19,6 +19,7 @@ public class TeleporterScript : MonoBehaviour
                     GameObject.Find("TutorialManager").GetComponent<TutorialManager>().NextTutorialStage();
                     isTutorialTeleport = false;
                 }
+                trig.GetComponent<PlayerHealth>().ResetPlayerHealth();
                 trig.gameObject.transform.position = destination.position + new Vector3(0, 15, 0); //if u want tele to tele link
                 destination.gameObject.GetComponent<TeleporterScript>().canTeleport = false;
                 destination.gameObject.GetComponent<TeleporterScript>().CanTeleport();

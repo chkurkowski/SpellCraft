@@ -21,6 +21,7 @@ public class PlayerAbilities : MonoBehaviour {
 	public PlayerHealth health;
 	public AbilityHandler handlers;
 	private ParticleSystem pSystem;
+    public GameObject dashAnim;
 
     [Space(10)]
 
@@ -76,12 +77,16 @@ public class PlayerAbilities : MonoBehaviour {
     [Header("Cooldowns and Timers")]
     public float BURSTCOOLDOWN = .5f;
     public float EVADECOOLDOWN = .25f;
+    public float EVADELENGTHTIME = .1f;
 
     public  float evadeEnd = .35f;
 
-    private float burstTimer, evadeTimer;
+    private float burstTimer, evadeTimer, evadeLengthTimer;
 
     [Space(10)]
+
+    [Range(1, 3)]
+    public int dashType = 1;
 
 	//Ability Variables
     [Header("Ability Variables")]
@@ -101,6 +106,7 @@ public class PlayerAbilities : MonoBehaviour {
 	{
         burstTimer = BURSTCOOLDOWN;
         evadeTimer = EVADECOOLDOWN;
+        evadeLengthTimer = EVADELENGTHTIME;
 
         playerAnimator = gameObject.GetComponent<Animator>();
         handlers = GetComponent<AbilityHandler>();
@@ -128,7 +134,12 @@ public class PlayerAbilities : MonoBehaviour {
 					Idle();
 					break;
 				case State.EVADE:
-					Evade();
+					if(dashType == 1)
+                        Evade();
+                    else if(dashType == 2)
+                        DashOptionTwo();
+                    else
+                        DashOptionThree();
 					break;
 				case State.STUN:
 					Stun();
@@ -202,10 +213,10 @@ public class PlayerAbilities : MonoBehaviour {
             state = State.BURSTCAST;
         }
 
-        if(pSystem.isPlaying)
-        {
-            pSystem.Stop();
-        }
+        // if(pSystem.isPlaying)
+        // {
+        //     pSystem.Stop();
+        // }
 
         movement.slowed = false;
         TimerHandlers();
@@ -219,11 +230,59 @@ public class PlayerAbilities : MonoBehaviour {
         direction.Normalize();
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
 
-        Vector3 point = handlers.cursorInWorldPos;
+
         gameObject.layer = 14;// changes physics layers to avoid collision
-        // StartCoroutine(EvadeFunctionality(point));
         Invoke("ResetPhysicsLayer", evadeEnd);//basically delays physics layer reset to give player invincibility frames.
 	}
+
+    private bool CanMove(Vector3 dir, float dist)
+    {
+        print(Physics2D.Raycast(transform.position, dir, dist).collider.name);
+        return Physics2D.Raycast(transform.position, dir, dist).collider == null;
+    }
+
+
+    private void DashOptionTwo()
+    { 
+        Vector3 direction = new Vector3(Mathf.Ceil(movement.horizontalMovement), Mathf.Ceil(movement.verticalMovement));
+        direction.Normalize();
+        // if(CanMove(direction, dashDistance))
+            transform.position += direction * dashDistance;
+        state = State.IDLE;
+    }
+
+    private void DashOptionThree()
+    {
+        Vector3 direction = new Vector3(Mathf.Ceil(movement.horizontalMovement), Mathf.Ceil(movement.verticalMovement));
+        direction.Normalize();
+        if (direction != Vector3.zero)
+        {
+            //EvadeAnimations();
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            GameObject dashAnimObj = Instantiate(dashAnim, transform.position, transform.rotation);
+            dashAnimObj.transform.eulerAngles = new Vector3(0, 0, angle - 90);
+
+            movement.canMove = false;
+            gameObject.layer = 14;// changes physics layers to avoid collision
+
+            if (evadeLengthTimer <= 0)
+            {
+                evadeLengthTimer = EVADELENGTHTIME;
+                movement.canMove = true;
+                gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                ResetPhysicsLayer();
+            }
+            else
+            {
+                evadeLengthTimer -= Time.deltaTime;
+                gameObject.GetComponent<Rigidbody2D>().velocity = direction * dashSpeed;
+            }
+        }
+
+        if(direction == Vector3.zero)
+            state = State.IDLE;
+    }
 
     private IEnumerator EvadeFunctionality(Vector3 point)
     {
@@ -276,7 +335,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 	private void BurstCast()
 	{
-		if (lastAttacks.Contains("MagicMissile") && lastAttacks.Contains("HealStun") 
+		if (lastAttacks.Contains("MagicMissile") && lastAttacks.Contains("ProjectileSpeed") 
             && burstTimer >= BURSTCOOLDOWN && comboResource >= COMBORESOURCEMAX / 3)
         {
             handlers.AbilityChecker(ATTACKSIM, true, true);
@@ -290,7 +349,7 @@ public class PlayerAbilities : MonoBehaviour {
             burstTimer = 0;
             comboResource -= 1;
         }
-        else if(lastAttacks.Contains("Reflect") && lastAttacks.Contains("HealStun") 
+        else if(lastAttacks.Contains("Reflect") && lastAttacks.Contains("ProjectileSpeed") 
             && burstTimer >= BURSTCOOLDOWN && comboResource >= COMBORESOURCEMAX / 3)
         {
             handlers.AbilityChecker(ABSORB, true, true);
@@ -327,38 +386,17 @@ public class PlayerAbilities : MonoBehaviour {
     //Handles the Inputs for the RitualCasting System
     private void InputHandler()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
-            if(leftMouseAbility == 1)
-            {
-                AttackArrayHandler("MagicMissile", ritualList);
-            }
-            else
-            {
-                AttackArrayHandler("Golem", ritualList);
-            }
+            AttackArrayHandler("MagicMissile", ritualList);
         }
         else if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            if(rightMouseAbility == 2)
-            {
-                AttackArrayHandler("Reflect", ritualList);
-            }
-            else
-            {
-                AttackArrayHandler("AbsorbExplode", ritualList);
-            }
+            AttackArrayHandler("Reflect", ritualList);
         }
         else if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.F))
         {
-            if(keyboardAbility == 3)
-            {
-                AttackArrayHandler("HealStun", ritualList);
-            }
-            else
-            {
-                AttackArrayHandler("ProjectileSplit", ritualList);
-            }
+            AttackArrayHandler("ProjectileSplit", ritualList);
         }
     }
 
@@ -457,6 +495,7 @@ public class PlayerAbilities : MonoBehaviour {
         {
             //print("Hit wall");
             evadeTimer += EVADECOOLDOWN;
+            evadeLengthTimer += EVADELENGTHTIME;
         }
     }
 
