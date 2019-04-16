@@ -15066,8 +15066,8 @@ MonoBehaviour:
   isReinforced: 0
   isTutorialIncrementor: 1
   isAttackSimDummy: 0
-  isSplitSimDummy: 1
-  isAbsorbSimDummy: 0
+  isSplitSimDummy: 0
+  isAbsorbSimDummy: 1
   canMoveUpDown: 0
   canMoveLeftRight: 0
   isReflectable: 0
@@ -15180,8 +15180,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnFrequency: 1
   flipBullets: 0
-  bullet1: {fileID: 1496639721434290, guid: a13c9c834d0dc2149890a2fc9e623f00, type: 2}
-  bullet2: {fileID: 1496639721434290, guid: a13c9c834d0dc2149890a2fc9e623f00, type: 2}
+  bullet1: {fileID: 1852356439421700, guid: f288824703f634f45b225f671d7c99d3, type: 2}
+  bullet2: {fileID: 1852356439421700, guid: f288824703f634f45b225f671d7c99d3, type: 2}
 --- !u!1 &398808511
 GameObject:
   m_ObjectHideFlags: 0
@@ -22483,6 +22483,11 @@ Transform:
 --- !u!1 &750913917 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1166791909594820, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+    type: 2}
+  m_PrefabInternal: {fileID: 532356744}
+--- !u!82 &750913919 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82306777478044250, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
     type: 2}
   m_PrefabInternal: {fileID: 532356744}
 --- !u!4 &751140454 stripped
@@ -37778,7 +37783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnFrequency: 0.3
   flipBullets: 0
-  bullet1: {fileID: 1496639721434290, guid: a13c9c834d0dc2149890a2fc9e623f00, type: 2}
+  bullet1: {fileID: 1852356439421700, guid: f288824703f634f45b225f671d7c99d3, type: 2}
   bullet2: {fileID: 1937842173355384, guid: 4d0ed8c0c6e4f154d932067960ad155f, type: 2}
 --- !u!114 &1365972491
 MonoBehaviour:
@@ -42038,7 +42043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnFrequency: 0.3
   flipBullets: 0
-  bullet1: {fileID: 1496639721434290, guid: a13c9c834d0dc2149890a2fc9e623f00, type: 2}
+  bullet1: {fileID: 1852356439421700, guid: f288824703f634f45b225f671d7c99d3, type: 2}
   bullet2: {fileID: 1937842173355384, guid: 4d0ed8c0c6e4f154d932067960ad155f, type: 2}
 --- !u!114 &1594070530
 MonoBehaviour:
@@ -44319,7 +44324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnFrequency: 0.3
   flipBullets: 0
-  bullet1: {fileID: 1496639721434290, guid: a13c9c834d0dc2149890a2fc9e623f00, type: 2}
+  bullet1: {fileID: 1852356439421700, guid: f288824703f634f45b225f671d7c99d3, type: 2}
   bullet2: {fileID: 1774994510334574, guid: 36ead4f74acf3d446bd72ced78f60bb4, type: 2}
 --- !u!114 &1713352996
 MonoBehaviour:
@@ -71346,7 +71351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnFrequency: 0.3
   flipBullets: 0
-  bullet1: {fileID: 1496639721434290, guid: a13c9c834d0dc2149890a2fc9e623f00, type: 2}
+  bullet1: {fileID: 1852356439421700, guid: f288824703f634f45b225f671d7c99d3, type: 2}
   bullet2: {fileID: 1937842173355384, guid: 4d0ed8c0c6e4f154d932067960ad155f, type: 2}
 --- !u!114 &2069358553
 MonoBehaviour:

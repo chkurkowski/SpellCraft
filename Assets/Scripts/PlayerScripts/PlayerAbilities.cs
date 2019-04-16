@@ -323,7 +323,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 	private void BurstCast()
 	{
-		if (lastAttacks.Contains("MagicMissile") && lastAttacks.Contains("HealStun") 
+		if (lastAttacks.Contains("MagicMissile") && lastAttacks.Contains("ProjectileSpeed") 
             && burstTimer >= BURSTCOOLDOWN && comboResource >= COMBORESOURCEMAX / 3)
         {
             handlers.AbilityChecker(ATTACKSIM, true, true);
@@ -337,7 +337,7 @@ public class PlayerAbilities : MonoBehaviour {
             burstTimer = 0;
             comboResource -= 1;
         }
-        else if(lastAttacks.Contains("Reflect") && lastAttacks.Contains("HealStun") 
+        else if(lastAttacks.Contains("Reflect") && lastAttacks.Contains("ProjectileSpeed") 
             && burstTimer >= BURSTCOOLDOWN && comboResource >= COMBORESOURCEMAX / 3)
         {
             handlers.AbilityChecker(ABSORB, true, true);
@@ -376,36 +376,15 @@ public class PlayerAbilities : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            if(leftMouseAbility == 1)
-            {
-                AttackArrayHandler("MagicMissile", ritualList);
-            }
-            else
-            {
-                AttackArrayHandler("Golem", ritualList);
-            }
+            AttackArrayHandler("MagicMissile", ritualList);
         }
         else if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            if(rightMouseAbility == 2)
-            {
-                AttackArrayHandler("Reflect", ritualList);
-            }
-            else
-            {
-                AttackArrayHandler("AbsorbExplode", ritualList);
-            }
+            AttackArrayHandler("Reflect", ritualList);
         }
         else if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.F))
         {
-            if(keyboardAbility == 3)
-            {
-                AttackArrayHandler("HealStun", ritualList);
-            }
-            else
-            {
-                AttackArrayHandler("ProjectileSplit", ritualList);
-            }
+            AttackArrayHandler("ProjectileSplit", ritualList);
         }
     }
 
