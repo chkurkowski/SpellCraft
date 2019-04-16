@@ -257,7 +257,7 @@ public class PlayerAbilities : MonoBehaviour {
         direction.Normalize();
         if (direction != Vector3.zero)
         {
-            EvadeAnimations();
+            //EvadeAnimations();
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             GameObject dashAnimObj = Instantiate(dashAnim, transform.position, transform.rotation);
