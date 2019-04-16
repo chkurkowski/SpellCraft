@@ -410,7 +410,7 @@ public class AbilityHandler : MonoBehaviour {
         }
     }
 
-    private int CursorDirection()
+    public int CursorDirection()
     {
         int posX = -1;
         int posY = -1;
@@ -439,7 +439,7 @@ public class AbilityHandler : MonoBehaviour {
         }
         else
         {
-            if(posX > 0)
+            if(posY > 0)
             {
                 return 2;
             }
