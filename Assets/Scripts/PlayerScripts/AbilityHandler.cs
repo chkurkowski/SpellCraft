@@ -236,7 +236,7 @@ public class AbilityHandler : MonoBehaviour {
     	if(projectileSpeedTimer >= PROJECTILESPEEDCOOLDOWN)
     	{
     		Instantiate(projectileSpeed, PlacementCheck(), rotator.transform.rotation);
-	        abilities.AttackArrayHandler("HealStun", abilities.lastAttacks);
+	        abilities.AttackArrayHandler("ProjectileSpeed", abilities.lastAttacks);
 	        projectileSpeedTimer = 0;
     	}
     }
