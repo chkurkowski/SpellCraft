@@ -17995,6 +17995,22 @@ Prefab:
       propertyPath: m_Name
       value: PlayerRotator
       objectReference: {fileID: 0}
+    - target: {fileID: 1301426667652596, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718555979174070, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.8623437
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718555979174070, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.73625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718555979174070, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 9.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
   m_IsPrefabAsset: 0
@@ -22483,11 +22499,6 @@ Transform:
 --- !u!1 &750913917 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1166791909594820, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
-    type: 2}
-  m_PrefabInternal: {fileID: 532356744}
---- !u!82 &750913919 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 82306777478044250, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
     type: 2}
   m_PrefabInternal: {fileID: 532356744}
 --- !u!4 &751140454 stripped
