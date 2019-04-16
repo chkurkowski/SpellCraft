@@ -30,6 +30,7 @@ public class ProjectileSpeed : MonoBehaviour {
         {
             col.GetComponent<Rigidbody2D>().velocity *= speedMultiplier;
             col.GetComponent<MagicBall>().magicBallDamage *= damageMultiplier;
+            col.GetComponent<SpriteRenderer>().color = Color.yellow;
             PlayerAbilities.instance.AddToResource(.025f);
         }
         else if(col.gameObject.tag == "EnemyProjectile")

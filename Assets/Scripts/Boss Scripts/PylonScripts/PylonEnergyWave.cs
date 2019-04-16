@@ -19,10 +19,10 @@ public class PylonEnergyWave : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D trig)
     {
-        Debug.Log("Energy Blade Detected a collision");
+       // Debug.Log("Energy Blade Detected a collision");
         if(trig.gameObject.tag == "Player")
         {
-            Debug.Log("Energy Blade Detected a player");
+          //  Debug.Log("Energy Blade Detected a player");
             player = trig.gameObject;
             InvokeRepeating("DamagePlayer", 0, 1);
         }

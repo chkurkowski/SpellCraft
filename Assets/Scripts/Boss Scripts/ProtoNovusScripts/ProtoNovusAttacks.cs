@@ -9,6 +9,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     private BossAttacks bossAttacksInfo;
     private Animator pylonAnimatorInfo;
     private ProtoNovusMovement protoNovusMovementInfo;
+    private SpriteRenderer colorInfo;
 
     public bool isNewBoss = false;
 
@@ -86,6 +87,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     [Space(10)]
     [Header("Bomb Variables")]
     public GameObject fireball;
+    public GameObject originalBomb;
     public GameObject bomb;
     public GameObject megaBomb;
     public float bombFireRate = 3f;
@@ -115,6 +117,12 @@ public class ProtoNovusAttacks : MonoBehaviour
     //public AudioSource laserShardsAudioSource;
     //public AudioSource vortexAudioSource;
 
+    [Space(30)]
+    [Header("VFX")]
+    public GameObject pillarSmoke;
+    //public AudioSource laserShardsAudioSource;
+    //public AudioSource vortexAudioSource;
+
     void Start()
     {
    
@@ -124,6 +132,8 @@ public class ProtoNovusAttacks : MonoBehaviour
         bossAttacksInfo = gameObject.GetComponent<BossAttacks>();
         pylonAnimatorInfo = GameObject.Find("PylonBossArt").gameObject.GetComponent<Animator>();
         bossHealthInfo = gameObject.GetComponent<BossHealth>();
+
+        colorInfo = GameObject.Find("PylonBossArt").gameObject.GetComponent<SpriteRenderer>();
 
         laserMuzzleOne.SetActive(false);
         laserMuzzleTwo.SetActive(false);
@@ -265,9 +275,20 @@ public class ProtoNovusAttacks : MonoBehaviour
         if (isNewBoss)
         {
             InvokeRepeating("MovePillarOne", 0, 0.01f);
+            GameObject smoke1 = Instantiate(pillarSmoke, pillarPylonOne.transform.position, pillarPylonOne.transform.rotation);
+            smoke1.GetComponent<Animator>().SetBool("hasFallen", false);
+
             InvokeRepeating("MovePillarTwo", 0, 0.01f);
+            GameObject smoke2 = Instantiate(pillarSmoke, pillarPylonTwo.transform.position, pillarPylonTwo.transform.rotation);
+            smoke2.GetComponent<Animator>().SetBool("hasFallen", false);
+
             InvokeRepeating("MovePillarThree", 0, 0.01f);
+            GameObject smoke3 = Instantiate(pillarSmoke, pillarPylonThree.transform.position, pillarPylonThree.transform.rotation);
+            smoke3.GetComponent<Animator>().SetBool("hasFallen", false);
+
             InvokeRepeating("MovePillarFour", 0, 0.01f);
+            GameObject smoke4 = Instantiate(pillarSmoke, pillarPylonFour.transform.position, pillarPylonFour.transform.rotation);
+            smoke4.GetComponent<Animator>().SetBool("hasFallen", false);
         }
     }
 
@@ -284,13 +305,13 @@ public class ProtoNovusAttacks : MonoBehaviour
         }
         else if (bossInfoInfo.isMad)
         {
-            InvokeRepeating("BombTown", 0, bombFireRate * 2);
-            bombFireRate = bombFireRateOriginal;//see if this works!
+            InvokeRepeating("BombTown", 0, bombFireRate);// * 2);
+            //bombFireRate = bombFireRateOriginal;//see if this works!
         }
         else if (bossInfoInfo.isEnraged)
         {
-            InvokeRepeating("BombTown", 0, bombFireRate * 4);
-            bombFireRate = bombFireRateOriginal;//see if this works!
+            InvokeRepeating("BombTown", 0, bombFireRate);// * 4);
+           // bombFireRate = bombFireRateOriginal;//see if this works!
         }
 
         Invoke("StopAttack", bombTimeLength);
@@ -307,17 +328,20 @@ public class ProtoNovusAttacks : MonoBehaviour
         {
             GameObject bomb1 = Instantiate(bomb, transform.position, transform.rotation);
             GameObject bomb2 = Instantiate(bomb, transform.position, transform.rotation);
-            bomb2.transform.Rotate(0, 0, 90);
-            GameObject bomb3 = Instantiate(bomb, transform.position, transform.rotation);
-            bomb3.transform.Rotate(0, 0, -90);
+            bomb2.transform.Rotate(0, 0, 180);
+           // GameObject bomb3 = Instantiate(bomb, transform.position, transform.rotation);
+           //bomb3.transform.Rotate(0, 0, -90);
         }
         if (bossInfoInfo.isEnraged)
         {
             GameObject bomb1 = Instantiate(megaBomb, transform.position, transform.rotation);
-            GameObject bomb2 = Instantiate(megaBomb, transform.position, transform.rotation);
+            GameObject bomb2 = Instantiate(bomb, transform.position, transform.rotation);
+           // GameObject bomb2 = Instantiate(megaBomb, transform.position, transform.rotation);
             GameObject bomb3 = Instantiate(megaBomb, transform.position, transform.rotation);
-            bomb2.transform.Rotate(0, 0, 120);
-            bomb3.transform.Rotate(0, 0, 240);
+            GameObject bomb4 = Instantiate(megaBomb, transform.position, transform.rotation);
+            bomb2.transform.Rotate(0, 0, 180);
+            bomb3.transform.Rotate(0, 0, 90);
+            bomb4.transform.Rotate(0, 0, -90);
         }
     }
 
@@ -537,6 +561,18 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarTwoIsUp = false;
             pillarThreeIsUp = false;
             pillarFourIsUp = false;
+
+
+            GameObject smoke1 = Instantiate(pillarSmoke, pillarPylonOne.transform.position, pillarPylonOne.transform.rotation);
+            smoke1.GetComponent<Animator>().SetBool("hasFallen", true);
+            GameObject smoke2 = Instantiate(pillarSmoke, pillarPylonTwo.transform.position, pillarPylonTwo.transform.rotation);
+            smoke2.GetComponent<Animator>().SetBool("hasFallen", true);
+            GameObject smoke3 = Instantiate(pillarSmoke, pillarPylonThree.transform.position, pillarPylonThree.transform.rotation);
+            smoke3.GetComponent<Animator>().SetBool("hasFallen", true);
+            GameObject smoke4 = Instantiate(pillarSmoke, pillarPylonFour.transform.position, pillarPylonFour.transform.rotation);
+            smoke4.GetComponent<Animator>().SetBool("hasFallen", true);
+
+
             CancelInvoke("ResetPillars");
             return;
         }
@@ -580,6 +616,10 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarSpriteOne.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarSpriteOne.transform.localPosition = new Vector3(pillarSpriteOne.transform.localPosition.x, .035f, 0);
             pillarOneIsUp = false;
+
+            GameObject smoke1 = Instantiate(pillarSmoke, pillarPylonOne.transform.position, pillarPylonOne.transform.rotation);
+            smoke1.GetComponent<Animator>().SetBool("hasFallen", true);
+
             Debug.Log("Laser shutdown was : " + laserShutDown);
             laserShutDown--;
             Debug.Log("Laser shutdown is : " + laserShutDown);
@@ -606,6 +646,10 @@ public class ProtoNovusAttacks : MonoBehaviour
             healOrbSpawned.transform.Translate(20, 20, 0);
             pillarSpriteTwo.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarTwoIsUp = false;
+
+            GameObject smoke2 = Instantiate(pillarSmoke, pillarPylonTwo.transform.position, pillarPylonTwo.transform.rotation);
+            smoke2.GetComponent<Animator>().SetBool("hasFallen", true);
+
             pillarSpriteTwo.transform.localPosition = new Vector3(pillarSpriteTwo.transform.localPosition.x, .035f, 0);
             Debug.Log("Laser shutdown was : " + laserShutDown);
             laserShutDown--;
@@ -633,6 +677,10 @@ public class ProtoNovusAttacks : MonoBehaviour
             healOrbSpawned.transform.Translate(-20, -20, 0);
             pillarSpriteThree.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarThreeIsUp = false;
+
+            GameObject smoke3 = Instantiate(pillarSmoke, pillarPylonThree.transform.position, pillarPylonThree.transform.rotation);
+            smoke3.GetComponent<Animator>().SetBool("hasFallen", true);
+
             pillarSpriteThree.transform.localPosition = new Vector3(pillarSpriteThree.transform.localPosition.x, .035f, 0);
             Debug.Log("Laser shutdown was : " + laserShutDown);
             laserShutDown--;
@@ -660,6 +708,10 @@ public class ProtoNovusAttacks : MonoBehaviour
             healOrbSpawned.transform.Translate(20, -20, 0);
             pillarSpriteFour.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarFourIsUp = false;
+
+            GameObject smoke4 = Instantiate(pillarSmoke, pillarPylonFour.transform.position, pillarPylonFour.transform.rotation);
+            smoke4.GetComponent<Animator>().SetBool("hasFallen", true);
+
             pillarSpriteFour.transform.localPosition = new Vector3(pillarSpriteFour.transform.localPosition.x, .035f, 0);
             Debug.Log("Laser shutdown was : " + laserShutDown);
             laserShutDown--;
@@ -830,6 +882,20 @@ public class ProtoNovusAttacks : MonoBehaviour
 
     #endregion
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Projectile")
+        {
+            colorInfo.color = Color.red;
+            Invoke("ResetColor", 0.50f);
+        }
 
+    }
+
+
+    private void ResetColor()
+    {
+        colorInfo.color = Color.white;
+    }
 
 }

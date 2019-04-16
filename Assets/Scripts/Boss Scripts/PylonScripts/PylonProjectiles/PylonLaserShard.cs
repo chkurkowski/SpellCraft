@@ -5,19 +5,20 @@ using UnityEngine;
 public class PylonLaserShard : MonoBehaviour, IPooledObject
 {
     private ProjectileDamage projectileDamageInfo;
-  
+
     public float laserShardDamage;
     public float laserShardDamageToBoss;
 
     [Tooltip("How fast the laser shards fly through the air")]
     public float laserShardSpeed = 50;
-   
+
     [Tooltip("The range of the /shotgun spread/ effect. Bigger numbers means more spread on the crystals.")]
     public float laserSpread = .5f;
     private GameObject player;
     private bool reflected = false;
     private Color32 originalColor;
     private float randNum;
+    public GameObject vfxObject;
 
     [Space(20)]
     [Header("Sound Variables")]
@@ -33,21 +34,21 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
     }
     public void OnObjectSpawn()
     {
-       // reflectSource.PlayOneShot(shardSound);
+        // reflectSource.PlayOneShot(shardSound);
         randNum = Random.Range(-laserSpread, laserSpread);
         //transform.Rotate(new Vector3(0, 0, 90));
         //gotta undo any potential reflects!
-        if(reflected)
+        if (reflected)
         {
             projectileDamageInfo.projectileDamage = laserShardDamage;
-           gameObject.tag = "EnemyProjectile";
+            gameObject.tag = "EnemyProjectile";
             reflected = false;
             gameObject.GetComponent<SpriteRenderer>().color = originalColor;
             gameObject.layer = 9;
         }
 
-        transform.Rotate(0,0,randNum);
-        
+        transform.Rotate(0, 0, randNum);
+
     }
 
     public void OnEnable()
@@ -70,27 +71,28 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
 
     public void Update()
     {
-    
+
         if (!reflected)
         {
             transform.Translate(Vector3.up * Time.deltaTime * laserShardSpeed);
         }
         else if (reflected)
         {
-            transform.Translate(Vector3.up *-1 * Time.deltaTime * laserShardSpeed);
+            transform.Translate(Vector3.up * -1 * Time.deltaTime * laserShardSpeed);
         }
     }
 
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-       
+
         if (col.gameObject.tag == "Reflect")
         {
             projectileDamageInfo.projectileDamage = laserShardDamageToBoss;
             reflectSource.clip = reflectSound;
             reflectSource.PlayOneShot(reflectSound);
             // Debug.Log("Reflect happened");
+            col.gameObject.GetComponent<ReflectHandler>().SubtractHealth(1);
             reflected = true;
             gameObject.tag = "Projectile";
             gameObject.layer = 12; //changes physics layers, do not touch or I stab you
@@ -98,32 +100,35 @@ public class PylonLaserShard : MonoBehaviour, IPooledObject
         }
         else if (col.gameObject.tag == "Player")
         {
-           // GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(laserShardDamage);
+            // GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(laserShardDamage);
             col.gameObject.GetComponent<PlayerHealth>().DamagePlayer(laserShardDamage);
             // GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount -= (laserShardDamage/ 100f);
             //Destroy(gameObject);
+            Instantiate(vfxObject, transform.position, transform.rotation);
             gameObject.SetActive(false);
         }
         else if (col.gameObject.tag == "Simulacrum")
         {
             col.gameObject.GetComponent<SimulacrumAbsorb>().AbsorbDamage(laserShardDamage);
             //Destroy(gameObject);
+            Instantiate(vfxObject, transform.position, transform.rotation);
             gameObject.SetActive(false);
         }
         else if (col.gameObject.tag == "Absorb")
         {
             GameObject.Find("Player").GetComponent<PlayerHealth>().HealPlayer(laserShardDamage / 2);
-           // GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .005f;
+            // GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealthBar.fillAmount += .005f;
             // Destroy(gameObject);
+            Instantiate(vfxObject, transform.position, transform.rotation);
             gameObject.SetActive(false);
         }
-        else if (col.gameObject.tag != "EnemyProjectile" && col.gameObject.tag != "Boss" 
+        else if (col.gameObject.tag != "EnemyProjectile" && col.gameObject.tag != "Boss"
             && col.gameObject.tag != "CameraTrigger" && col.gameObject.tag != "Vortex" && col.gameObject.tag != "Split")
         {
             //Destroy(gameObject);
+            Instantiate(vfxObject, transform.position, transform.rotation);
             gameObject.SetActive(false);
         }
     }
-
 
 }

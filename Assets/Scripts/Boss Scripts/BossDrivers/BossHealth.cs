@@ -68,7 +68,7 @@ public class BossHealth : MonoBehaviour
             print("you win woohoo!");
            // pylonAudioSource.Stop();
         }
-        healthBar.fillAmount = (bossHealth / 100f);
+        healthBar.fillAmount = (bossHealth / bossMaxHealth);
 
         if(bossHealth > bossMaxHealth)
         {
