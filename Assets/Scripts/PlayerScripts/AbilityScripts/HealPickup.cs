@@ -25,8 +25,9 @@ public class HealPickup : MonoBehaviour {
     		float index = (radius - magnetField.magnitude) / radius;
     		GetComponent<Rigidbody2D>().AddForce(-(force * magnetField * index));
 
-    		if(Vector3.Distance(player.transform.position, transform.position) <= 8f)
+    		if(Vector2.Distance(player.transform.position, transform.position) <= 10f)
 			{
+                Debug.Log("Heal Should Happen");
 				player.GetComponent<PlayerHealth>().HealPlayer(healAmount);
 				Destroy(gameObject);
 			}

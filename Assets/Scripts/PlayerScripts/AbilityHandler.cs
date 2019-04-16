@@ -87,7 +87,7 @@ public class AbilityHandler : MonoBehaviour {
         absorbExplodeTimer = ABSORBEXPLODECOOLDOWN;
         reflectRechargeTimer = 0;
 
-        rotator = GameObject.Find("Rotator");
+        rotator = GameObject.Find("PlayerRotator");
         playerAnimator = GetComponent<Animator>();
         abilities = GetComponent<PlayerAbilities>();
         health = GetComponent<PlayerHealth>();
@@ -200,7 +200,10 @@ public class AbilityHandler : MonoBehaviour {
             // reflectAudio.Play();
             
             if(!reflect.activeSelf)
+            {
                 reflect.SetActive(true);
+            }
+                
             abilities.AttackArrayHandler("Reflect", abilities.lastAttacks);
             reflectRechargeTimer = 0;
             // reflectTimer = 0;

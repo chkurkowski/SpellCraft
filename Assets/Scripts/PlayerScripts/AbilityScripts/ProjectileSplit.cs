@@ -13,7 +13,7 @@ public class ProjectileSplit : MonoBehaviour {
 
 	private void Destroy()
 	{
-		Destroy(gameObject);
+		Destroy(gameObject.transform.parent.gameObject);
 	}
 
 	private void OnTriggerEnter2D(Collider2D col)
