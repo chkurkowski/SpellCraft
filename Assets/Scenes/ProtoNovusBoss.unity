@@ -18045,6 +18045,16 @@ Prefab:
       value: 
       objectReference: {fileID: 1637841319600802, guid: 7c5105576d7cc7d49b1732b0e0714205,
         type: 2}
+    - target: {fileID: 114154648853233226, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: overworldMusic
+      value: 
+      objectReference: {fileID: 750913919}
+    - target: {fileID: 114154648853233226, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: pylonHealthBar
+      value: 
+      objectReference: {fileID: 682437930}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
   m_IsPrefabAsset: 0
@@ -22533,6 +22543,11 @@ Transform:
 --- !u!1 &750913917 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1166791909594820, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+    type: 2}
+  m_PrefabInternal: {fileID: 532356744}
+--- !u!82 &750913919 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82306777478044250, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
     type: 2}
   m_PrefabInternal: {fileID: 532356744}
 --- !u!4 &751140454 stripped
