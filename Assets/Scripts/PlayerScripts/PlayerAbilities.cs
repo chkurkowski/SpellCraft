@@ -21,6 +21,7 @@ public class PlayerAbilities : MonoBehaviour {
 	public PlayerHealth health;
 	public AbilityHandler handlers;
 	private ParticleSystem pSystem;
+    public GameObject dashAnim;
 
     [Space(10)]
 
@@ -229,6 +230,7 @@ public class PlayerAbilities : MonoBehaviour {
         direction.Normalize();
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
 
+
         gameObject.layer = 14;// changes physics layers to avoid collision
         Invoke("ResetPhysicsLayer", evadeEnd);//basically delays physics layer reset to give player invincibility frames.
 	}
@@ -251,25 +253,40 @@ public class PlayerAbilities : MonoBehaviour {
 
     private void DashOptionThree()
     {
-        EvadeAnimations();
-
         Vector3 direction = new Vector3(Mathf.Ceil(movement.horizontalMovement), Mathf.Ceil(movement.verticalMovement));
         direction.Normalize();
-        movement.canMove = false;
-        gameObject.layer = 14;// changes physics layers to avoid collision
+        if (direction != Vector3.zero)
+        {
+            EvadeAnimations();
 
-        if(evadeLengthTimer <= 0)
+
+
+            
+
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            GameObject dashAnimObj = Instantiate(dashAnim, transform.position, transform.rotation);
+            dashAnimObj.transform.eulerAngles = new Vector3(0, 0, angle - 90);
+
+
+
+            movement.canMove = false;
+            gameObject.layer = 14;// changes physics layers to avoid collision
+        
+
+        if (evadeLengthTimer <= 0)
         {
             evadeLengthTimer = EVADELENGTHTIME;
             movement.canMove = true;
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             ResetPhysicsLayer();
         }
-        else 
+        else
         {
             evadeLengthTimer -= Time.deltaTime;
             gameObject.GetComponent<Rigidbody2D>().velocity = direction * dashSpeed;
         }
+    }
     }
 
     private IEnumerator EvadeFunctionality(Vector3 point)
