@@ -24,6 +24,16 @@ public class HealPickup : MonoBehaviour {
     		Vector3 magnetField = player.position - transform.position;
     		float index = (radius - magnetField.magnitude) / radius;
     		GetComponent<Rigidbody2D>().AddForce(-(force * magnetField * index));
+
+    		if(Vector3.Distance(player.transform.position, transform.position) <= 8f)
+			{
+				player.GetComponent<PlayerHealth>().HealPlayer(healAmount);
+				Destroy(gameObject);
+			}
+    	}
+    	else if(GetComponent<Rigidbody2D>().velocity != Vector2.zero)
+    	{
+    		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     	}
 	}
 
@@ -42,16 +52,6 @@ public class HealPickup : MonoBehaviour {
 		if(col.gameObject.tag == "Player")
 		{
 			insideField = true;
-		}
-	}
-
-	private void OnTriggerStay2D(Collider2D col)
-	{
-		print(Vector3.Distance(col.transform.position, transform.position));
-		if(Vector3.Distance(col.transform.position, transform.position) <= 8f)
-		{
-			col.GetComponent<PlayerHealth>().HealPlayer(healAmount);
-			Destroy(gameObject);
 		}
 	}
 
