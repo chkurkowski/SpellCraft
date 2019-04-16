@@ -259,34 +259,29 @@ public class PlayerAbilities : MonoBehaviour {
         {
             EvadeAnimations();
 
-
-
-            
-
-
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             GameObject dashAnimObj = Instantiate(dashAnim, transform.position, transform.rotation);
             dashAnimObj.transform.eulerAngles = new Vector3(0, 0, angle - 90);
 
-
-
             movement.canMove = false;
             gameObject.layer = 14;// changes physics layers to avoid collision
-        
 
-        if (evadeLengthTimer <= 0)
-        {
-            evadeLengthTimer = EVADELENGTHTIME;
-            movement.canMove = true;
-            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            ResetPhysicsLayer();
+            if (evadeLengthTimer <= 0)
+            {
+                evadeLengthTimer = EVADELENGTHTIME;
+                movement.canMove = true;
+                gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                ResetPhysicsLayer();
+            }
+            else
+            {
+                evadeLengthTimer -= Time.deltaTime;
+                gameObject.GetComponent<Rigidbody2D>().velocity = direction * dashSpeed;
+            }
         }
-        else
-        {
-            evadeLengthTimer -= Time.deltaTime;
-            gameObject.GetComponent<Rigidbody2D>().velocity = direction * dashSpeed;
-        }
-    }
+
+        if(direction == Vector3.zero)
+            state = State.IDLE;
     }
 
     private IEnumerator EvadeFunctionality(Vector3 point)
