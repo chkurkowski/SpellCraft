@@ -27,34 +27,15 @@ public class AbilityUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            if (!isCooldown)
-            {
-                isCooldown = true;
-                imageReflect.fillAmount = 0f;
-            }
+            imageReflect.fillAmount = playerAbilities.reflectHealth / playerAbilities.REFLECTHEALTHMAX;
 
 
-        }
         if (Input.GetKeyDown("e"))
         {
             if (!isPCooldown)
             {
                 isPCooldown = true;
                 imageSpeedField.fillAmount = 0f;
-            }
-
-
-        }
-        if (isCooldown)
-        {
-            imageReflect.fillAmount += 1f / REFLECTCOOLDOWN * Time.deltaTime;
-
-            if (imageReflect.fillAmount >= 1f)
-            {
-                imageReflect.fillAmount = 1f;
-                isCooldown = false;
             }
         }
         if (isPCooldown)

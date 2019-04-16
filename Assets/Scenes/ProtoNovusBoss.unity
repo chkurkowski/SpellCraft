@@ -17994,6 +17994,27 @@ Prefab:
       propertyPath: m_Name
       value: PlayerRotator
       objectReference: {fileID: 0}
+    - target: {fileID: 1301426667652596, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718555979174070, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.8623437
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718555979174070, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.73625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718555979174070, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 9.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114585357869244448, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: reflectHealth
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
   m_IsPrefabAsset: 0
@@ -26131,7 +26152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -26.000008, y: 34}
+  m_AnchoredPosition: {x: -26.000008, y: 50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &867980255

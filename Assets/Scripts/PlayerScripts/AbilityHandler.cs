@@ -65,6 +65,7 @@ public class AbilityHandler : MonoBehaviour {
     reflectTimer, absorbExplodeTimer, atkSimTimer, absorbTimer, absorbSimTimer, burstTimer;
 
     public float reflectHealth = 100f;
+    public float REFLECTHEALTHMAX = 200f;
     public float REFLECTRECHARGEDELAY = 1f;
     private float reflectRechargeTimer;
 
@@ -553,10 +554,10 @@ public class AbilityHandler : MonoBehaviour {
 
     private void ReflectRecharge()
     {
-        if(reflectRechargeTimer >= REFLECTRECHARGEDELAY && reflectHealth < 100 && !reflect.activeSelf)
+        if(reflectRechargeTimer >= REFLECTRECHARGEDELAY && reflectHealth < REFLECTHEALTHMAX && !reflect.activeSelf)
         {
             // print("Recharge " + reflectHealth);
-            reflectHealth += 35 * Time.deltaTime;
+            reflectHealth += 75 * Time.deltaTime;
         }
     }
 
