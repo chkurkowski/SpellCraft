@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public int playerDirection = 0;
     private float diagonalSpeed = .4f;
 
-    private bool canMove = true;
+    public bool canMove = true;
 
     // Use this for initialization
     void Start ()

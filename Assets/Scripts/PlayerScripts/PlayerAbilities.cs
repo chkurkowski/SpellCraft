@@ -76,12 +76,16 @@ public class PlayerAbilities : MonoBehaviour {
     [Header("Cooldowns and Timers")]
     public float BURSTCOOLDOWN = .5f;
     public float EVADECOOLDOWN = .25f;
+    public float EVADELENGTHTIME = .1f;
 
     public  float evadeEnd = .35f;
 
-    private float burstTimer, evadeTimer;
+    private float burstTimer, evadeTimer, evadeLengthTimer;
 
     [Space(10)]
+
+    [Range(1, 3)]
+    public int dashType = 1;
 
 	//Ability Variables
     [Header("Ability Variables")]
@@ -101,6 +105,7 @@ public class PlayerAbilities : MonoBehaviour {
 	{
         burstTimer = BURSTCOOLDOWN;
         evadeTimer = EVADECOOLDOWN;
+        evadeLengthTimer = EVADELENGTHTIME;
 
         playerAnimator = gameObject.GetComponent<Animator>();
         handlers = GetComponent<AbilityHandler>();
@@ -128,7 +133,12 @@ public class PlayerAbilities : MonoBehaviour {
 					Idle();
 					break;
 				case State.EVADE:
-					Evade();
+					if(dashType == 1)
+                        Evade();
+                    else if(dashType == 2)
+                        DashOptionTwo();
+                    else
+                        DashOptionThree();
 					break;
 				case State.STUN:
 					Stun();
@@ -202,10 +212,10 @@ public class PlayerAbilities : MonoBehaviour {
             state = State.BURSTCAST;
         }
 
-        if(pSystem.isPlaying)
-        {
-            pSystem.Stop();
-        }
+        // if(pSystem.isPlaying)
+        // {
+        //     pSystem.Stop();
+        // }
 
         movement.slowed = false;
         TimerHandlers();
@@ -219,11 +229,48 @@ public class PlayerAbilities : MonoBehaviour {
         direction.Normalize();
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
 
-        Vector3 point = handlers.cursorInWorldPos;
         gameObject.layer = 14;// changes physics layers to avoid collision
-        // StartCoroutine(EvadeFunctionality(point));
         Invoke("ResetPhysicsLayer", evadeEnd);//basically delays physics layer reset to give player invincibility frames.
 	}
+
+    private bool CanMove(Vector3 dir, float dist)
+    {
+        print(Physics2D.Raycast(transform.position, dir, dist).collider.name);
+        return Physics2D.Raycast(transform.position, dir, dist).collider == null;
+    }
+
+
+    private void DashOptionTwo()
+    { 
+        Vector3 direction = new Vector3(Mathf.Ceil(movement.horizontalMovement), Mathf.Ceil(movement.verticalMovement));
+        direction.Normalize();
+        // if(CanMove(direction, dashDistance))
+            transform.position += direction * dashDistance;
+        state = State.IDLE;
+    }
+
+    private void DashOptionThree()
+    {
+        EvadeAnimations();
+
+        Vector3 direction = new Vector3(Mathf.Ceil(movement.horizontalMovement), Mathf.Ceil(movement.verticalMovement));
+        direction.Normalize();
+        movement.canMove = false;
+        gameObject.layer = 14;// changes physics layers to avoid collision
+
+        if(evadeLengthTimer <= 0)
+        {
+            evadeLengthTimer = EVADELENGTHTIME;
+            movement.canMove = true;
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            ResetPhysicsLayer();
+        }
+        else 
+        {
+            evadeLengthTimer -= Time.deltaTime;
+            gameObject.GetComponent<Rigidbody2D>().velocity = direction * dashSpeed;
+        }
+    }
 
     private IEnumerator EvadeFunctionality(Vector3 point)
     {
@@ -327,7 +374,7 @@ public class PlayerAbilities : MonoBehaviour {
     //Handles the Inputs for the RitualCasting System
     private void InputHandler()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             if(leftMouseAbility == 1)
             {
@@ -457,6 +504,7 @@ public class PlayerAbilities : MonoBehaviour {
         {
             //print("Hit wall");
             evadeTimer += EVADECOOLDOWN;
+            evadeLengthTimer += EVADELENGTHTIME;
         }
     }
 
