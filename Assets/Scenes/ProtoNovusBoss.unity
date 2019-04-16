@@ -22156,12 +22156,12 @@ Prefab:
     - target: {fileID: 114522629121816732, guid: 6b603fd05167a4b4eb74fbb54dcd930c,
         type: 2}
       propertyPath: currentlyTestingAttack
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114522629121816732, guid: 6b603fd05167a4b4eb74fbb54dcd930c,
         type: 2}
       propertyPath: testingAttacks
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114918025363425396, guid: 6b603fd05167a4b4eb74fbb54dcd930c,
         type: 2}
@@ -43498,8 +43498,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 62.5, y: 15.75}
-  m_SizeDelta: {x: 110.5, y: 41.1}
+  m_AnchoredPosition: {x: 62.5, y: 13.27}
+  m_SizeDelta: {x: 110.5, y: 46.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1652089527
 MonoBehaviour:
