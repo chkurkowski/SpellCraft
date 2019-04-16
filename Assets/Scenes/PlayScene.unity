@@ -1182,7 +1182,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1470,7 +1470,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2500,7 +2500,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2570,7 +2570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lookAtPlayer: 0
   isLasered: 0
-  laser: {fileID: 1297345919}
+  bomb: {fileID: 0}
 --- !u!61 &248554462
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2884,7 +2884,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2990,7 +2990,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3943,7 +3943,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3973,7 +3973,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4448,7 +4448,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4632,7 +4632,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120334e2727ead94c9f621c04ca16d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pylonBoss: {fileID: 1189761548}
 --- !u!95 &429293311
 Animator:
   serializedVersion: 3
@@ -4709,7 +4708,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4910,7 +4909,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5663,7 +5662,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5887,7 +5886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lookAtPlayer: 0
   isLasered: 0
-  laser: {fileID: 2081272099}
+  bomb: {fileID: 0}
 --- !u!61 &536142295
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6228,6 +6227,7 @@ MonoBehaviour:
   lichBoss: {fileID: 0}
   reflectorBoss: {fileID: 0}
   charmerBoss: {fileID: 0}
+  protoNovusBoss: {fileID: 0}
 --- !u!1 &565931238
 GameObject:
   m_ObjectHideFlags: 0
@@ -8378,7 +8378,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9168,7 +9168,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9246,7 +9246,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9464,7 +9464,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10287,6 +10287,11 @@ Prefab:
       propertyPath: laserDamageToBoss
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 114445191699499252, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: evadeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c75da3ad6b7e64b1db43c2f44f9f4357, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
   m_IsPrefabAsset: 0
@@ -11128,7 +11133,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11158,7 +11163,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11481,7 +11486,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11916,6 +11921,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 288418416}
+  canTeleport: 1
+  isTutorialTeleport: 0
 --- !u!212 &1038519144
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12043,7 +12050,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13879,7 +13886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c31f994ac69ea4eab280f933e4f25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayingMusic: 0
+  isPlayingBossMusic: 0
   bossMusic: {fileID: 1189761552}
   spinRotationAmount: 0.1
   spinRotationRate: 0.005
@@ -14713,7 +14720,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -15326,7 +15333,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -15712,7 +15719,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -15831,7 +15838,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -17013,7 +17020,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -17152,7 +17159,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -17223,7 +17230,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -17643,7 +17650,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -17673,7 +17680,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -18085,7 +18092,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -18466,7 +18473,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -18674,7 +18681,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -18736,7 +18743,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -18841,7 +18848,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -19059,7 +19066,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -19089,7 +19096,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -27981,7 +27988,7 @@ Transform:
   m_LocalScale: {x: 177.9, y: 181.6, z: 1}
   m_Children: []
   m_Father: {fileID: 845365932}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!331 &2007836181
 SpriteMask:
@@ -28176,7 +28183,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -29260,7 +29267,7 @@ GameObject:
   m_Layer: 2
   m_Name: LaserHitpoint
   m_TagString: LaserEndPoint
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
