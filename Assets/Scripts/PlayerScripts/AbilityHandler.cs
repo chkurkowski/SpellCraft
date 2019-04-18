@@ -61,7 +61,9 @@ public class AbilityHandler : MonoBehaviour {
     public float ABSORBEND = 3f;
     public float ABSORBEXPLODEEND = 5f;
 
-    private float longATKTimer, energyGolemTimer, healStunTimer, projectileSpeedTimer, healStunComboTimer,
+    public float projectileSpeedTimer;
+
+    private float longATKTimer, energyGolemTimer, healStunTimer, healStunComboTimer,
     reflectTimer, absorbExplodeTimer, atkSimTimer, absorbTimer, absorbSimTimer, burstTimer;
 
     public float reflectHealth = 100f;
