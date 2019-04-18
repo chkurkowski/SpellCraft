@@ -50,6 +50,8 @@ public class SimulacrumAbsorb : MonoBehaviour {
     private void Destroy()
     {
         Explode();
+        damageTaken = 0;
+        damageCap = 0;
         gameObject.SetActive(false);
     }
 }

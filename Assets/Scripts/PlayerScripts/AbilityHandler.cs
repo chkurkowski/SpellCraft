@@ -302,7 +302,7 @@ public class AbilityHandler : MonoBehaviour {
             //TODO Add AbsorbSim Burst Sound
 
             simulacrumAbsorb.SetActive(true);
-            simulacrumAbsorb.GetComponent<SimulacrumAbsorb>().damageCap = 40f;
+            simulacrumAbsorb.GetComponent<SimulacrumAbsorb>().damageCap = 80f;
         }
         else
         {
