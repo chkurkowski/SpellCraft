@@ -17750,9 +17750,9 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 0
-  m_FillOrigin: 0
+  m_FillOrigin: 1
 --- !u!222 &496591787
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23420,7 +23420,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 0
   m_FillOrigin: 0
 --- !u!222 &756351792
@@ -26757,10 +26757,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4930f636dae24052b7db89f1d23eab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageReflect: {fileID: 33643459}
+  imageReflect: {fileID: 496591786}
   imageSpeedField: {fileID: 756351791}
-  PROJECTILESPEEDCOOLDOWN: 6
-  REFLECTCOOLDOWN: 3
 --- !u!1 &868032268
 GameObject:
   m_ObjectHideFlags: 0
