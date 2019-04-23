@@ -100,7 +100,7 @@ public class Bomb : MonoBehaviour {
         }
  
         bombSource.clip = explosionSound;
-        bombSource.PlayOneShot(explosionSound);
+       // bombSource.PlayOneShot(explosionSound);
         for (int i = 0; i < fireBallSpawnAmount; i++)
         {
             transform.Rotate(0, 0, 25);

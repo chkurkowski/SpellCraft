@@ -10,6 +10,7 @@ public class BreakableObjectScript : MonoBehaviour
     public bool isAttackSimDummy = false;
     public bool isSplitSimDummy = false;
     public bool isAbsorbSimDummy = false;
+    public bool isMultiDestroyDummy = false;
     private SpriteRenderer colorInfo;
     public bool canMoveUpDown = false;
     public bool canMoveLeftRight = false;
@@ -27,6 +28,11 @@ public class BreakableObjectScript : MonoBehaviour
 
     private TutorialManager tutorialInfo;
 
+    private bool isFirstDummy = false;
+
+    public GameObject multiDestroyDummy1;
+    public GameObject multiDestroyDummy2;
+
 
     // Use this for initialization
     void Start()
@@ -43,6 +49,10 @@ public class BreakableObjectScript : MonoBehaviour
             canMoveUpDown = false;
             InvokeRepeating("MoveLeftRight", 0, moveRate);
         }
+        if(gameObject.name == "DestroyableDoorFirst")
+        {
+            isFirstDummy = true;
+        }
     }
 
     // Update is called once per frame
@@ -50,6 +60,24 @@ public class BreakableObjectScript : MonoBehaviour
     {
         if (objectHealth <= 0)
         {
+            if(isFirstDummy)
+            {
+                tutorialInfo.tutorialStage = 3;
+            }
+
+            if(isMultiDestroyDummy)
+            {
+                if(multiDestroyDummy1 != null)
+                {
+                    Destroy(multiDestroyDummy1.gameObject);
+                }
+
+                if(multiDestroyDummy2 != null)
+                {
+                    Destroy(multiDestroyDummy2.gameObject);
+                }
+            }
+                 
             CancelInvoke();
             if (isSwitch)
             {
