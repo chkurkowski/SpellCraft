@@ -15,7 +15,6 @@ public class ProtoNovusAttacks : MonoBehaviour
 
     public bool isPlayingMusic = false;
     public AudioSource bossMusic;
-    public AudioSource attack2sound;
 
 
     //Animator Variables
@@ -330,7 +329,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             GameObject bomb1 = Instantiate(bomb, transform.position, transform.rotation);
             GameObject bomb2 = Instantiate(bomb, transform.position, transform.rotation);
             bomb2.transform.Rotate(0, 0, 180);
-            attack2sound.Play();
+
            // GameObject bomb3 = Instantiate(bomb, transform.position, transform.rotation);
            //bomb3.transform.Rotate(0, 0, -90);
         }
@@ -344,7 +343,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             bomb2.transform.Rotate(0, 0, 180);
             bomb3.transform.Rotate(0, 0, 90);
             bomb4.transform.Rotate(0, 0, -90);
-            attack2sound.Play();
+           
         }
     }
 
