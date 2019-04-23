@@ -167,12 +167,16 @@ public class BreakableObjectScript : MonoBehaviour
             }
             else if (isAttackSimDummy)
             {
-                if (trig.GetComponent<MagicBall>().isAttackSimMissile)
+                if(trig.GetComponent<MagicBall>() != null)
                 {
-                    objectHealth--;
-                    colorInfo.color = Color.red;
-                    Invoke("ResetColor", 0.50f);
+                    if (trig.GetComponent<MagicBall>().isAttackSimMissile)
+                    {
+                        objectHealth--;
+                        colorInfo.color = Color.red;
+                        Invoke("ResetColor", 0.50f);
+                    }
                 }
+              
             }
             else if (isAbsorbSimDummy)
             {
