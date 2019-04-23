@@ -11,11 +11,13 @@ public class NovusBombScript : MonoBehaviour
     public Bomb bomb1;
     public Bomb bomb2;
     public GameObject energyLink;
+    public AudioSource spinAudio;
     //public GameObject healOrbSpawnable;
     private bool genericBoolSwitch = true;
 
     private void Start()
     {
+        spinAudio.Play();
         transform.Rotate(new Vector3(0, 0, 90));
     }
     void FixedUpdate ()
@@ -45,6 +47,7 @@ public class NovusBombScript : MonoBehaviour
            // {
             //    Debug.Log("both bombs are destroyed!");
                Destroy(gameObject);
+            spinAudio.Stop();
            // }
         }
     }
