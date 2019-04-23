@@ -57766,7 +57766,7 @@ MonoBehaviour:
   isAttackSimDummy: 0
   isSplitSimDummy: 0
   isAbsorbSimDummy: 0
-  isMultiDestroyDummy: 0
+  isMultiDestroyDummy: 1
   canMoveUpDown: 0
   canMoveLeftRight: 0
   isReflectable: 1
@@ -57778,8 +57778,8 @@ MonoBehaviour:
   leftLimit: {fileID: 1079488680}
   rightLimit: {fileID: 975184618}
   switchObject: {fileID: 1573960356}
-  multiDestroyDummy1: {fileID: 0}
-  multiDestroyDummy2: {fileID: 0}
+  multiDestroyDummy1: {fileID: 1172082321}
+  multiDestroyDummy2: {fileID: 1710070474}
 --- !u!61 &1713352997
 BoxCollider2D:
   m_ObjectHideFlags: 0
