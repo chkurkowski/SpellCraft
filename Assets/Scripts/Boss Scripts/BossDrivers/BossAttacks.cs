@@ -18,6 +18,9 @@ public class BossAttacks : MonoBehaviour
     /// Shows the previous attack. 0 means invalid attack, 1 is the first attack, 2 is the second attack, 3 is the 3rd
     /// </summary>
     public int previousAttack = 0;
+    public int attackOneWeight = 5;
+    public int attackTwoWeight = 5;
+    public int attackThreeWeight = 5;
 
     [Tooltip("Check this is you're testing attacks!")]
     // public bool testingAttacks = false;
@@ -185,7 +188,67 @@ public class BossAttacks : MonoBehaviour
         }
         else
         {
+            if(previousAttack == 1)
+            {
+                if(randAttack == 2 || randAttack == 3)
+                {
+                    if(attackTwoWeight <= attackThreeWeight)
+                    {
+                        randAttack = 3;
+                        --attackThreeWeight;
+                    }
+                    else if (attackTwoWeight > attackThreeWeight)
+                    {
+                        randAttack = 2;
+                        --attackTwoWeight;
+                    }
+                }
+            }
+            else if(previousAttack == 2)
+            {
+                if (randAttack == 1 || randAttack == 3)
+                {
+                    if (attackOneWeight <= attackThreeWeight)
+                    {
+                        randAttack = 3;
+                        --attackThreeWeight;
+                    }
+                    else if (attackOneWeight > attackThreeWeight)
+                    {
+                        randAttack = 1;
+                        --attackOneWeight;
+                    }
+                }
+            }
+            else if(previousAttack == 3)
+            {
+                if (randAttack == 1 || randAttack == 2)
+                {
+                    if (attackOneWeight <= attackTwoWeight)
+                    {
+                        randAttack = 2;
+                        --attackTwoWeight;
+                    }
+                    else if (attackOneWeight > attackTwoWeight)
+                    {
+                        randAttack = 1;
+                        --attackOneWeight;
+                    }
+                }
+            }
             previousAttack = randAttack;
+            ////if(attackOneWeight <= 0)
+            ////{
+            ////    attackOneWeight = 5;
+            ////}
+            ////if(attackTwoWeight <= 0)
+            ////{
+            ////    attackTwoWeight = 5;
+            ////}
+            ////if(attackThreeWeight <= 0)
+            ////{
+            ////    attackThreeWeight = 5;
+            ////}
         }
     }
 

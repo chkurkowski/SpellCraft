@@ -10,8 +10,8 @@ public class Fireball : MonoBehaviour {
     public float lifeTime = 5f;
     private GameObject player;
     public bool reflected = false;
-    public AudioSource reflectSource;
-    public AudioClip reflectSound;
+ //   public AudioSource reflectSource;
+ //   public AudioClip reflectSound;
     private Color32 originalColor;
 
     private void Start()
@@ -61,9 +61,9 @@ public class Fireball : MonoBehaviour {
        
         if(col.gameObject.tag == "Reflect")
         {
-            reflectSource.clip = reflectSound;
-            reflectSource.PlayOneShot(reflectSound);
-            // Debug.Log("Reflect happened");
+ //          reflectSource.clip = reflectSound;
+ //           reflectSource.PlayOneShot(reflectSound);
+           // Debug.Log("Reflect happened");
             col.gameObject.GetComponent<ReflectHandler>().SubtractHealth(5);
             reflected = true;
             gameObject.tag = "Projectile";

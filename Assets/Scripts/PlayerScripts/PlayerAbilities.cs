@@ -21,6 +21,7 @@ public class PlayerAbilities : MonoBehaviour {
 	public PlayerHealth health;
 	public AbilityHandler handlers;
 	private ParticleSystem pSystem;
+    public GameObject dashAnim;
 
     [Space(10)]
 
@@ -57,10 +58,12 @@ public class PlayerAbilities : MonoBehaviour {
     //audio
     [Header("Audio Sources")]
     public AudioSource reflectAudio;
+    public AudioClip reflectloop;
     public AudioSource ritualAudio;
     public AudioSource evadeAudio;
+    public GameObject reflectShield;
 
-    public AudioClip reflectSound;
+
     public AudioClip evadeSound;
     public AudioClip ritualSound;
 
@@ -161,7 +164,7 @@ public class PlayerAbilities : MonoBehaviour {
 	private void Idle()
 	{
         ritualAudio.Stop();
-        reflectAudio.Stop();
+
 
 		//Left Click Ability
 		if(Input.GetKey(KeyCode.Mouse0))
@@ -172,14 +175,15 @@ public class PlayerAbilities : MonoBehaviour {
 		//Right Click Ability
 		if(Input.GetKey(KeyCode.Mouse1))
         {
-            // reflectAudio.clip = ritualSound;
-            // reflectAudio.Play();
+ 
             // Invoke("StopReflectAudioSound", reflectAudio.clip.length);
             handlers.AbilityChecker(rightMouseAbility, false, false);
+            reflectAudio.PlayOneShot(reflectloop);
         }
         else if(Input.GetKeyUp(KeyCode.Mouse1))
         {
             handlers.CancelReflect();
+            reflectAudio.Stop();
         }
 
 		//E or F Ability
@@ -229,6 +233,7 @@ public class PlayerAbilities : MonoBehaviour {
         direction.Normalize();
         gameObject.GetComponent<Rigidbody2D>().AddForce(direction * dashSpeed, ForceMode2D.Impulse);
 
+
         gameObject.layer = 14;// changes physics layers to avoid collision
         Invoke("ResetPhysicsLayer", evadeEnd);//basically delays physics layer reset to give player invincibility frames.
 	}
@@ -251,25 +256,35 @@ public class PlayerAbilities : MonoBehaviour {
 
     private void DashOptionThree()
     {
-        EvadeAnimations();
-
         Vector3 direction = new Vector3(Mathf.Ceil(movement.horizontalMovement), Mathf.Ceil(movement.verticalMovement));
         direction.Normalize();
-        movement.canMove = false;
-        gameObject.layer = 14;// changes physics layers to avoid collision
+        if (direction != Vector3.zero)
+        {
+            //EvadeAnimations();
 
-        if(evadeLengthTimer <= 0)
-        {
-            evadeLengthTimer = EVADELENGTHTIME;
-            movement.canMove = true;
-            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            ResetPhysicsLayer();
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            GameObject dashAnimObj = Instantiate(dashAnim, transform.position, transform.rotation);
+            dashAnimObj.transform.eulerAngles = new Vector3(0, 0, angle - 90);
+
+            movement.canMove = false;
+            gameObject.layer = 14;// changes physics layers to avoid collision
+
+            if (evadeLengthTimer <= 0)
+            {
+                evadeLengthTimer = EVADELENGTHTIME;
+                movement.canMove = true;
+                gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                ResetPhysicsLayer();
+            }
+            else
+            {
+                evadeLengthTimer -= Time.deltaTime;
+                gameObject.GetComponent<Rigidbody2D>().velocity = direction * dashSpeed;
+            }
         }
-        else 
-        {
-            evadeLengthTimer -= Time.deltaTime;
-            gameObject.GetComponent<Rigidbody2D>().velocity = direction * dashSpeed;
-        }
+
+        if(direction == Vector3.zero)
+            state = State.IDLE;
     }
 
     private IEnumerator EvadeFunctionality(Vector3 point)
@@ -323,7 +338,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 	private void BurstCast()
 	{
-		if (lastAttacks.Contains("MagicMissile") && lastAttacks.Contains("HealStun") 
+		if (lastAttacks.Contains("MagicMissile") && lastAttacks.Contains("ProjectileSpeed") 
             && burstTimer >= BURSTCOOLDOWN && comboResource >= COMBORESOURCEMAX / 3)
         {
             handlers.AbilityChecker(ATTACKSIM, true, true);
@@ -337,7 +352,7 @@ public class PlayerAbilities : MonoBehaviour {
             burstTimer = 0;
             comboResource -= 1;
         }
-        else if(lastAttacks.Contains("Reflect") && lastAttacks.Contains("HealStun") 
+        else if(lastAttacks.Contains("Reflect") && lastAttacks.Contains("ProjectileSpeed") 
             && burstTimer >= BURSTCOOLDOWN && comboResource >= COMBORESOURCEMAX / 3)
         {
             handlers.AbilityChecker(ABSORB, true, true);
@@ -376,36 +391,15 @@ public class PlayerAbilities : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            if(leftMouseAbility == 1)
-            {
-                AttackArrayHandler("MagicMissile", ritualList);
-            }
-            else
-            {
-                AttackArrayHandler("Golem", ritualList);
-            }
+            AttackArrayHandler("MagicMissile", ritualList);
         }
         else if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            if(rightMouseAbility == 2)
-            {
-                AttackArrayHandler("Reflect", ritualList);
-            }
-            else
-            {
-                AttackArrayHandler("AbsorbExplode", ritualList);
-            }
+            AttackArrayHandler("Reflect", ritualList);
         }
         else if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.F))
         {
-            if(keyboardAbility == 3)
-            {
-                AttackArrayHandler("HealStun", ritualList);
-            }
-            else
-            {
-                AttackArrayHandler("ProjectileSplit", ritualList);
-            }
+            AttackArrayHandler("ProjectileSplit", ritualList);
         }
     }
 
@@ -507,6 +501,14 @@ public class PlayerAbilities : MonoBehaviour {
             evadeLengthTimer += EVADELENGTHTIME;
         }
     }
+    #endregion
 
-	#endregion
+    private void Update()
+    {
+        if (reflectShield.activeInHierarchy == false)
+        {
+            reflectAudio.Stop();
+        }
+
+    }
 }

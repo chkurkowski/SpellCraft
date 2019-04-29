@@ -41,7 +41,7 @@ public class SimulacrumAbsorb : MonoBehaviour {
             Vector2 direction = new Vector3(Random.Range(cursorInWorldPos.x - 20, cursorInWorldPos.x + 20), 
             	Random.Range(cursorInWorldPos.y - 10, cursorInWorldPos.y + 10), cursorInWorldPos.x) - transform.position;
             direction.Normalize();
-            GameObject fb = Instantiate(fireball, transform.position, Quaternion.identity);
+            GameObject fb = Instantiate(fireball, transform.position, PlayerAbilities.instance.handlers.rotator.transform.rotation);
             fb.GetComponent<MagicBall>().isAbsorbSimMissile = true;
             fb.GetComponent<Rigidbody2D>().velocity = direction * Random.Range(atkSpeed - 20, atkSpeed + 20);
         }
@@ -50,6 +50,8 @@ public class SimulacrumAbsorb : MonoBehaviour {
     private void Destroy()
     {
         Explode();
+        damageTaken = 0;
+        damageCap = 0;
         gameObject.SetActive(false);
     }
 }

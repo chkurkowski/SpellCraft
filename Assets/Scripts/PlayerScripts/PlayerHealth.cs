@@ -137,5 +137,11 @@ public class PlayerHealth : MonoBehaviour
                 break;
         }
     }
+
+    public void ResetPlayerHealth()
+    {
+        playerHealth = maxPlayerHealth;
+        playerHealthBar.fillAmount = playerHealth / 100;
+    }
    
 }

@@ -26,11 +26,9 @@ public class AbilityHandler : MonoBehaviour {
    
    [Header("Audio Variables")]
     public AudioSource abilityHandlerSource;
-    public AudioSource reflectAudio;
-
     public AudioClip magicMissileSound;
     public AudioClip attackSimSound;
-    public AudioClip reflectLoopSound;
+
 
     [Space(10)]
 
@@ -61,10 +59,13 @@ public class AbilityHandler : MonoBehaviour {
     public float ABSORBEND = 3f;
     public float ABSORBEXPLODEEND = 5f;
 
-    private float longATKTimer, energyGolemTimer, healStunTimer, projectileSpeedTimer, healStunComboTimer,
+    public float projectileSpeedTimer;
+
+    private float longATKTimer, energyGolemTimer, healStunTimer, healStunComboTimer,
     reflectTimer, absorbExplodeTimer, atkSimTimer, absorbTimer, absorbSimTimer, burstTimer;
 
     public float reflectHealth = 100f;
+    public float REFLECTHEALTHMAX = 200f;
     public float REFLECTRECHARGEDELAY = 1f;
     private float reflectRechargeTimer;
 
@@ -87,7 +88,7 @@ public class AbilityHandler : MonoBehaviour {
         absorbExplodeTimer = ABSORBEXPLODECOOLDOWN;
         reflectRechargeTimer = 0;
 
-        rotator = GameObject.Find("Rotator");
+        rotator = GameObject.Find("PlayerRotator");
         playerAnimator = GetComponent<Animator>();
         abilities = GetComponent<PlayerAbilities>();
         health = GetComponent<PlayerHealth>();
@@ -195,16 +196,15 @@ public class AbilityHandler : MonoBehaviour {
     {
         if (reflectTimer >= REFLECTCOOLDOWN)
         {
-            reflectAudio = GetComponent<AudioSource>();
-            reflectAudio.clip = reflectLoopSound;
-            // reflectAudio.Play();
-            
             if(!reflect.activeSelf)
+            {
                 reflect.SetActive(true);
+
+            }
+                
             abilities.AttackArrayHandler("Reflect", abilities.lastAttacks);
             reflectRechargeTimer = 0;
             // reflectTimer = 0;
-           // reflectAudio.Stop();
         }
     }
 
@@ -236,7 +236,7 @@ public class AbilityHandler : MonoBehaviour {
     	if(projectileSpeedTimer >= PROJECTILESPEEDCOOLDOWN)
     	{
     		Instantiate(projectileSpeed, PlacementCheck(), rotator.transform.rotation);
-	        abilities.AttackArrayHandler("HealStun", abilities.lastAttacks);
+	        abilities.AttackArrayHandler("ProjectileSpeed", abilities.lastAttacks);
 	        projectileSpeedTimer = 0;
     	}
     }
@@ -298,7 +298,7 @@ public class AbilityHandler : MonoBehaviour {
             //TODO Add AbsorbSim Burst Sound
 
             simulacrumAbsorb.SetActive(true);
-            simulacrumAbsorb.GetComponent<SimulacrumAbsorb>().damageCap = 40f;
+            simulacrumAbsorb.GetComponent<SimulacrumAbsorb>().damageCap = 80f;
         }
         else
         {
@@ -365,6 +365,7 @@ public class AbilityHandler : MonoBehaviour {
         {
             reflect.GetComponent<ReflectLaser>().isLasered = false;
             reflect.SetActive(false);
+
         }
 
         cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -470,6 +471,7 @@ public class AbilityHandler : MonoBehaviour {
         {
             reflect.GetComponent<ReflectLaser>().isLasered = false;
             reflect.SetActive(false);
+
         }
 
         if(absorbTimer >= ABSORBEND)
@@ -550,22 +552,24 @@ public class AbilityHandler : MonoBehaviour {
 
     private void ReflectRecharge()
     {
-        if(reflectRechargeTimer >= REFLECTRECHARGEDELAY && reflectHealth < 100 && !reflect.activeSelf)
+        if(reflectRechargeTimer >= REFLECTRECHARGEDELAY && reflectHealth < REFLECTHEALTHMAX && !reflect.activeSelf)
         {
             // print("Recharge " + reflectHealth);
-            reflectHealth += 35 * Time.deltaTime;
+            reflectHealth += 75 * Time.deltaTime;
         }
     }
 
     public void CancelReflect()
     {
         reflect.SetActive(false);
+
         reflectRechargeTimer = 0;
     }
 
     public void ReflectBroken()
     {
         reflect.SetActive(false);
+
         reflectTimer = 0;
         reflectRechargeTimer = 0;
     }

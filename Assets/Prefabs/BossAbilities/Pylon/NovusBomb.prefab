@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212096833299641056}
   - component: {fileID: 61857017238235234}
   - component: {fileID: 114325773794001038}
+  - component: {fileID: 95225618142610744}
   m_Layer: 0
   m_Name: Energy Link
   m_TagString: EnemyProjectile
@@ -58,6 +59,8 @@ GameObject:
   - component: {fileID: 4410383773865488}
   - component: {fileID: 212966581902259478}
   - component: {fileID: 114548385102773076}
+  - component: {fileID: 95485892376245254}
+  - component: {fileID: 82996098326064236}
   m_Layer: 0
   m_Name: NovusBomb
   m_TagString: Untagged
@@ -79,6 +82,7 @@ GameObject:
   - component: {fileID: 114599739268926480}
   - component: {fileID: 114574934225113524}
   - component: {fileID: 82939563384227250}
+  - component: {fileID: 95254735479253560}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: EnemyProjectile
@@ -100,6 +104,7 @@ GameObject:
   - component: {fileID: 114964788191479338}
   - component: {fileID: 114218140627287502}
   - component: {fileID: 82582970413311878}
+  - component: {fileID: 95365215228323736}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: EnemyProjectile
@@ -172,7 +177,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1266288094667476}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -551.6852, y: 191.55826, z: 3.9947393}
+  m_LocalPosition: {x: 748.7, y: -519.8, z: 3.9947393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4325483075044158}
@@ -188,7 +193,7 @@ Transform:
   m_GameObject: {fileID: 1199904176927784}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 0.40000024, z: 1}
+  m_LocalScale: {x: 5, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 4325483075044158}
   m_RootOrder: 2
@@ -303,18 +308,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.033897635}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 7.5333333, y: 3.7333333}
     newSize: {x: 8, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 5.12, y: 0.2342987}
   m_EdgeRadius: 0
 --- !u!82 &82582970413311878
 AudioSource:
@@ -506,6 +511,101 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &82996098326064236
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266288094667476}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6d1c17e57133241898c4e2d6b005ccbd, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95124687805023674
 Animator:
   serializedVersion: 3
@@ -516,6 +616,78 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f4b6f45be4f1cf041a6eeed12efa233b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95225618142610744
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1199904176927784}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 115ad23893d9e0b44ae99fb50aaecc35, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95254735479253560
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1328588496675438}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7443423776e7a9242bb08a1168f25a73, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95365215228323736
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1646904283557480}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7443423776e7a9242bb08a1168f25a73, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95485892376245254
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266288094667476}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -581,6 +753,7 @@ MonoBehaviour:
   bomb1: {fileID: 114964788191479338}
   bomb2: {fileID: 114599739268926480}
   energyLink: {fileID: 1199904176927784}
+  bombtownSFX: {fileID: 82996098326064236}
 --- !u!114 &114574934225113524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -607,6 +780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bombSource: {fileID: 82939563384227250}
   explosionSound: {fileID: 8300000, guid: 6650c807685154061baeb2ea225ae0ab, type: 3}
+  isOriginalBomb: 0
   bombDamage: 10
   fireBallSpeed: 50
   bombLifeTime: 3
@@ -637,6 +811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bombSource: {fileID: 82582970413311878}
   explosionSound: {fileID: 8300000, guid: 6650c807685154061baeb2ea225ae0ab, type: 3}
+  isOriginalBomb: 0
   bombDamage: 10
   fireBallSpeed: 50
   bombLifeTime: 3
@@ -676,8 +851,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 77164b88dd40f3f4d8961a33ae98ddfc, type: 3}
-  m_Color: {r: 0.6792453, g: 0, b: 0.48895767, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 96309f3438ff57a4dae247d51d2b295e, type: 3}
+  m_Color: {r: 0.754717, g: 0.23139909, b: 0.7061428, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -722,7 +897,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: a924d95949c9eec4791d7a1309ddd76c, type: 3}
   m_Color: {r: 0.6784314, g: 0, b: 0.49019608, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -768,7 +943,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: a924d95949c9eec4791d7a1309ddd76c, type: 3}
   m_Color: {r: 0.6784314, g: 0, b: 0.49019608, a: 1}
   m_FlipX: 0
   m_FlipY: 0
