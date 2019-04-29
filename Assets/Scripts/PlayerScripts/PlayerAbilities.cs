@@ -61,6 +61,7 @@ public class PlayerAbilities : MonoBehaviour {
     public AudioClip reflectloop;
     public AudioSource ritualAudio;
     public AudioSource evadeAudio;
+    public GameObject reflectShield;
 
 
     public AudioClip evadeSound;
@@ -500,6 +501,14 @@ public class PlayerAbilities : MonoBehaviour {
             evadeLengthTimer += EVADELENGTHTIME;
         }
     }
+    #endregion
 
-	#endregion
+    private void Update()
+    {
+        if (reflectShield.activeInHierarchy == false)
+        {
+            reflectAudio.Stop();
+        }
+
+    }
 }

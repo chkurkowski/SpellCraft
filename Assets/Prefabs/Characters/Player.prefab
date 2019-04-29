@@ -1853,9 +1853,9 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.15
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1943,15 +1943,15 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1166791909594820}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243233227199866826, guid: 5d051ddcd05e24e33a0b23f036dd8a19,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 16f9092411c8e49de97944a98233bc9e, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.15
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2347,6 +2347,7 @@ MonoBehaviour:
   reflectloop: {fileID: 8300000, guid: 16f9092411c8e49de97944a98233bc9e, type: 3}
   ritualAudio: {fileID: 82415138615108900}
   evadeAudio: {fileID: 82975175978285720}
+  reflectShield: {fileID: 0}
   evadeSound: {fileID: 8300000, guid: c75da3ad6b7e64b1db43c2f44f9f4357, type: 3}
   ritualSound: {fileID: 8300000, guid: 85236dc49a65f42b9875a7a6c187d79b, type: 3}
   lastAttacks: []

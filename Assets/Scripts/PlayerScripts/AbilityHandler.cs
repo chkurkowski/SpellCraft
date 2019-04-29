@@ -28,7 +28,7 @@ public class AbilityHandler : MonoBehaviour {
     public AudioSource abilityHandlerSource;
     public AudioClip magicMissileSound;
     public AudioClip attackSimSound;
-    public AudioSource reflectaudio;
+
 
     [Space(10)]
 
@@ -199,7 +199,7 @@ public class AbilityHandler : MonoBehaviour {
             if(!reflect.activeSelf)
             {
                 reflect.SetActive(true);
-                reflectaudio.PlayOneShot(reflectLoop);
+
             }
                 
             abilities.AttackArrayHandler("Reflect", abilities.lastAttacks);
@@ -365,7 +365,7 @@ public class AbilityHandler : MonoBehaviour {
         {
             reflect.GetComponent<ReflectLaser>().isLasered = false;
             reflect.SetActive(false);
-            reflectaudio.Stop();
+
         }
 
         cursorInWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -471,7 +471,7 @@ public class AbilityHandler : MonoBehaviour {
         {
             reflect.GetComponent<ReflectLaser>().isLasered = false;
             reflect.SetActive(false);
-            reflectaudio.Stop();
+
         }
 
         if(absorbTimer >= ABSORBEND)
@@ -562,14 +562,14 @@ public class AbilityHandler : MonoBehaviour {
     public void CancelReflect()
     {
         reflect.SetActive(false);
-        reflectaudio.Stop();
+
         reflectRechargeTimer = 0;
     }
 
     public void ReflectBroken()
     {
         reflect.SetActive(false);
-        reflectaudio.Stop();
+
         reflectTimer = 0;
         reflectRechargeTimer = 0;
     }
