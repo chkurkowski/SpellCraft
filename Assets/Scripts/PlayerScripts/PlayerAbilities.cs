@@ -58,10 +58,12 @@ public class PlayerAbilities : MonoBehaviour {
     //audio
     [Header("Audio Sources")]
     public AudioSource reflectAudio;
+    public AudioClip reflectloop;
     public AudioSource ritualAudio;
     public AudioSource evadeAudio;
+    public GameObject reflectShield;
 
-    public AudioClip reflectSound;
+
     public AudioClip evadeSound;
     public AudioClip ritualSound;
 
@@ -162,7 +164,7 @@ public class PlayerAbilities : MonoBehaviour {
 	private void Idle()
 	{
         ritualAudio.Stop();
-        reflectAudio.Stop();
+
 
 		//Left Click Ability
 		if(Input.GetKey(KeyCode.Mouse0))
@@ -173,14 +175,15 @@ public class PlayerAbilities : MonoBehaviour {
 		//Right Click Ability
 		if(Input.GetKey(KeyCode.Mouse1))
         {
-            // reflectAudio.clip = ritualSound;
-            // reflectAudio.Play();
+ 
             // Invoke("StopReflectAudioSound", reflectAudio.clip.length);
             handlers.AbilityChecker(rightMouseAbility, false, false);
+            reflectAudio.PlayOneShot(reflectloop);
         }
         else if(Input.GetKeyUp(KeyCode.Mouse1))
         {
             handlers.CancelReflect();
+            reflectAudio.Stop();
         }
 
 		//E or F Ability
@@ -498,6 +501,14 @@ public class PlayerAbilities : MonoBehaviour {
             evadeLengthTimer += EVADELENGTHTIME;
         }
     }
+    #endregion
 
-	#endregion
+    private void Update()
+    {
+        if (reflectShield.activeInHierarchy == false)
+        {
+            reflectAudio.Stop();
+        }
+
+    }
 }

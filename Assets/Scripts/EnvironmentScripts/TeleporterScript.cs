@@ -8,6 +8,7 @@ public class TeleporterScript : MonoBehaviour
     public bool canTeleport = true;
     public bool isTutorialTeleport = false;
 
+
     private void OnTriggerEnter2D(Collider2D trig)
     {
         if(trig.gameObject.tag == "Player")
@@ -16,6 +17,7 @@ public class TeleporterScript : MonoBehaviour
             {
                 if(isTutorialTeleport)
                 {
+
                     GameObject.Find("TutorialManager").GetComponent<TutorialManager>().NextTutorialStage();
                     isTutorialTeleport = false;
                 }
