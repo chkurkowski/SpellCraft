@@ -1853,7 +1853,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.75
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1943,13 +1943,13 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1166791909594820}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243233227199866826, guid: 5d051ddcd05e24e33a0b23f036dd8a19,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: cb49ede1c9d0e46b3bfdd6b3c0065320, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 16f9092411c8e49de97944a98233bc9e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.75
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2343,6 +2343,8 @@ MonoBehaviour:
   dashSpeed: 500
   dashDistance: 50
   state: 0
+  reflectAudio: {fileID: 82502722618222228}
+  reflectloop: {fileID: 8300000, guid: 16f9092411c8e49de97944a98233bc9e, type: 3}
   ritualAudio: {fileID: 82415138615108900}
   evadeAudio: {fileID: 82975175978285720}
   evadeSound: {fileID: 8300000, guid: c75da3ad6b7e64b1db43c2f44f9f4357, type: 3}
@@ -2415,7 +2417,6 @@ MonoBehaviour:
   cursorInWorldPos: {x: 103.21388, y: 207.23746, z: 0}
   waveSystem: {fileID: 198182118557903328}
   abilityHandlerSource: {fileID: 82502722618222228}
-  reflectAudio: {fileID: 82415138615108900}
   magicMissileSound: {fileID: 8300000, guid: 0596e264115f2407eaed44e87a37c346, type: 3}
   attackSimSound: {fileID: 8300000, guid: 08453e0f37899456b98632421ab3e60f, type: 3}
   atkSpeed: 135
