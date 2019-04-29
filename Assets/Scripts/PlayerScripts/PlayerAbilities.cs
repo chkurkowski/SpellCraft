@@ -141,9 +141,6 @@ public class PlayerAbilities : MonoBehaviour {
                     else
                         DashOptionThree();
 					break;
-				case State.STUN:
-					Stun();
-					break;
 				case State.RITUALCAST:
 					RitualCast();
 					break;
@@ -360,11 +357,32 @@ public class PlayerAbilities : MonoBehaviour {
             state = State.IDLE;
 	}
 
-	//TODO: Decide if we really want this for the player
-	private void Stun()
-	{
+    private string NextBurst()
+    {
+        if (lastAttacks.Contains("MagicMissile") && lastAttacks.Contains("ProjectileSpeed"))
+        {
+            return "Attack Simulacrum";
+        }
+        else if(lastAttacks.Contains("MagicMissile") && lastAttacks.Contains("Reflect"))
+        {
+            return "Split Field";
+        }
+        else if(lastAttacks.Contains("Reflect") && lastAttacks.Contains("ProjectileSpeed"))
+        {
+            return "Absorb Simulacrum";
+        }
 
-	}
+        return "";
+    }
+
+    public string[] CurrentBurst()
+    {
+        if(lastAttacks.Count == 1)
+            return new string[] {lastAttacks[0]};
+        if(lastAttacks.Count == 2)
+            return new string[] {lastAttacks[0], lastAttacks[1], NextBurst()};
+        return new string[] {""};
+    }
 
 	#endregion
 
