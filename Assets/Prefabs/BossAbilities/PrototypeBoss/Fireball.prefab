@@ -191,7 +191,7 @@ MonoBehaviour:
   lifeTime: 100
   reflected: 0
   reflectSource: {fileID: 82083856757280554}
-  reflectSound: {fileID: 8300000, guid: cb49ede1c9d0e46b3bfdd6b3c0065320, type: 3}
+  reflectSound: {fileID: 0}
 --- !u!114 &114445259072142418
 MonoBehaviour:
   m_ObjectHideFlags: 1

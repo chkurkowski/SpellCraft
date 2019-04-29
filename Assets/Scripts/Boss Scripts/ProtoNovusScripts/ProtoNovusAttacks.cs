@@ -15,6 +15,7 @@ public class ProtoNovusAttacks : MonoBehaviour
 
     public bool isPlayingMusic = false;
     public AudioSource bossMusic;
+    public AudioSource pillarSFX;
 
 
     //Animator Variables
@@ -114,6 +115,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     [Space(30)]
     [Header("Audio Info")]
     public AudioSource laserAudioSource;
+
     //public AudioSource laserShardsAudioSource;
     //public AudioSource vortexAudioSource;
 
@@ -329,6 +331,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             GameObject bomb1 = Instantiate(bomb, transform.position, transform.rotation);
             GameObject bomb2 = Instantiate(bomb, transform.position, transform.rotation);
             bomb2.transform.Rotate(0, 0, 180);
+
            // GameObject bomb3 = Instantiate(bomb, transform.position, transform.rotation);
            //bomb3.transform.Rotate(0, 0, -90);
         }
@@ -342,6 +345,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             bomb2.transform.Rotate(0, 0, 180);
             bomb3.transform.Rotate(0, 0, 90);
             bomb4.transform.Rotate(0, 0, -90);
+
         }
     }
 
@@ -498,6 +502,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarSpriteOne.transform.position += new Vector3(0, pillarSpriteOffset, 0);
             pillarSpriteOne.transform.parent.GetComponent<Collider2D>().enabled = false;
             pillarOneIsUp = true;
+            pillarSFX.Play();
         }
     }
 
@@ -514,6 +519,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarSpriteTwo.transform.position += new Vector3(0, pillarSpriteOffset, 0);
             pillarSpriteTwo.transform.parent.GetComponent<Collider2D>().enabled = false;
             pillarTwoIsUp = true;
+            pillarSFX.Play();
         }
     }
 
@@ -530,6 +536,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarSpriteThree.transform.position += new Vector3(0, pillarSpriteOffset, 0);
             pillarSpriteThree.transform.parent.GetComponent<Collider2D>().enabled = false;
             pillarThreeIsUp = true;
+            pillarSFX.Play();
         }
     }
 
@@ -546,6 +553,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarSpriteFour.transform.position += new Vector3(0, pillarSpriteOffset, 0);
             pillarSpriteFour.transform.parent.GetComponent<Collider2D>().enabled = false;
             pillarFourIsUp = true;
+            pillarSFX.Play();
         }
     }
 
@@ -605,6 +613,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     {
         InvokeRepeating("ResetPillarOne", 0, 0.005f);
         CancelInvoke("MovePillarOne");
+        pillarSFX.Play();
     }
 
     public void ResetPillarOne()
@@ -616,6 +625,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarSpriteOne.transform.parent.GetComponent<Collider2D>().enabled = true;
             pillarSpriteOne.transform.localPosition = new Vector3(pillarSpriteOne.transform.localPosition.x, .035f, 0);
             pillarOneIsUp = false;
+
 
             GameObject smoke1 = Instantiate(pillarSmoke, pillarPylonOne.transform.position, pillarPylonOne.transform.rotation);
             smoke1.GetComponent<Animator>().SetBool("hasFallen", true);
@@ -636,6 +646,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     {
         InvokeRepeating("ResetPillarTwo", 0, 0.005f);
         CancelInvoke("MovePillarTwo");
+        pillarSFX.Play();
     }
 
     public void ResetPillarTwo()
@@ -667,6 +678,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     {
         InvokeRepeating("ResetPillarThree", 0, 0.005f);
         CancelInvoke("MovePillarThree");
+        pillarSFX.Play();
     }
 
     public void ResetPillarThree()
@@ -699,6 +711,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     {
         InvokeRepeating("ResetPillarFour", 0, 0.005f);
         CancelInvoke("MovePillarFour");
+        pillarSFX.Play();
     }
     public void ResetPillarFour()
     {
