@@ -61,7 +61,7 @@ public class PlayerAbilities : MonoBehaviour {
     public AudioSource ritualAudio;
     public AudioSource evadeAudio;
 
-  //  public AudioClip reflectSound;
+
     public AudioClip evadeSound;
     public AudioClip ritualSound;
 
@@ -176,7 +176,7 @@ public class PlayerAbilities : MonoBehaviour {
  
             // Invoke("StopReflectAudioSound", reflectAudio.clip.length);
             handlers.AbilityChecker(rightMouseAbility, false, false);
-            reflectAudio.Play();
+           reflectAudio.Play();
         }
         else if(Input.GetKeyUp(KeyCode.Mouse1))
         {
