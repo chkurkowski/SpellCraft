@@ -115,7 +115,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     [Space(30)]
     [Header("Audio Info")]
     public AudioSource laserAudioSource;
-    public AudioSource bombtownSFX;
+
     //public AudioSource laserShardsAudioSource;
     //public AudioSource vortexAudioSource;
 
@@ -331,7 +331,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             GameObject bomb1 = Instantiate(bomb, transform.position, transform.rotation);
             GameObject bomb2 = Instantiate(bomb, transform.position, transform.rotation);
             bomb2.transform.Rotate(0, 0, 180);
-            bombtownSFX.Play();
+
            // GameObject bomb3 = Instantiate(bomb, transform.position, transform.rotation);
            //bomb3.transform.Rotate(0, 0, -90);
         }
@@ -345,7 +345,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             bomb2.transform.Rotate(0, 0, 180);
             bomb3.transform.Rotate(0, 0, 90);
             bomb4.transform.Rotate(0, 0, -90);
-            bombtownSFX.Play();
+
         }
     }
 

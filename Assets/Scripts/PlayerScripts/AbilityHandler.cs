@@ -198,9 +198,7 @@ public class AbilityHandler : MonoBehaviour {
     {
         if (reflectTimer >= REFLECTCOOLDOWN)
         {
-            reflectAudio = GetComponent<AudioSource>();
-            reflectAudio.clip = reflectLoopSound;
-            // reflectAudio.Play();
+            reflectAudio.Play();
             
             if(!reflect.activeSelf)
             {
@@ -210,7 +208,7 @@ public class AbilityHandler : MonoBehaviour {
             abilities.AttackArrayHandler("Reflect", abilities.lastAttacks);
             reflectRechargeTimer = 0;
             // reflectTimer = 0;
-           // reflectAudio.Stop();
+            reflectAudio.Stop();
         }
     }
 
