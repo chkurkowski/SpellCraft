@@ -14,6 +14,8 @@ public class StoryScrawl : MonoBehaviour {
 
 	public Image circle;
 
+	public GameObject skipText;
+
 	private bool buttonPrompt = false;
 
 	private float holdTimer = 0f;
@@ -32,7 +34,8 @@ public class StoryScrawl : MonoBehaviour {
 	{
 		transform.Translate(Vector2.up * (scrawlSpeed * Time.deltaTime));
 
-		SkipScene();
+		if(!buttonPrompt)
+			SkipScene();
 
 		DoneScrawling();
 	}
@@ -44,6 +47,7 @@ public class StoryScrawl : MonoBehaviour {
 		if(scrawlTimer > SCRAWLTIME && !buttonPrompt)
 		{
 			buttonPrompt = true;
+			skipText.SetActive(false);
 			InvokeRepeating("ButtonPromptFlicker", 0f, 1f);
 		}
 
