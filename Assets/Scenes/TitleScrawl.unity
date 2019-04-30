@@ -145,7 +145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.024993896}
+  m_AnchoredPosition: {x: 0, y: 0.025024414}
   m_SizeDelta: {x: 0, y: 0.050018}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &154539771
@@ -319,58 +319,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This is the temporary story text for the game. Lorem ipsum dolor sit amet,
-    consectetur adipiscing elit. Pellentesque suscipit, dolor ac ultrices mattis,
-    dui massa accumsan massa, sed porta libero orci sed felis. Praesent quam diam,
-    sollicitudin sit amet laoreet at, viverra non arcu. Integer aliquet sodales eros
-    id vulputate. Etiam nec quam et ex sodales euismod et scelerisque massa. Morbi
-    lacus ex, pellentesque sed ipsum sed, gravida luctus neque. Sed porttitor justo
-    ornare arcu faucibus vestibulum. Fusce consectetur nulla in elit tincidunt placerat.
-    Nulla condimentum mattis faucibus.
-
-
-    Donec feugiat libero sed accumsan consectetur. Quisque consectetur leo lacus.
-    Vestibulum nec nibh felis. Pellentesque facilisis ipsum at consequat tempor. Integer
-    eu ante vitae purus rutrum ullamcorper et at velit. Suspendisse vitae justo volutpat,
-    bibendum nulla suscipit, vehicula tellus. Donec a laoreet odio. Morbi dolor metus,
-    condimentum sed sollicitudin eget, ornare volutpat purus. Donec id tristique lacus,
-    non pellentesque elit. Donec at aliquet quam, sed mollis ligula. Aenean ullamcorper
-    tristique condimentum. Maecenas tristique tortor metus, elementum varius erat
-    volutpat in.
-
-
-    Donec eget nisi eu metus finibus egestas. Vivamus mattis semper est, et molestie
-    eros pretium lacinia. In euismod purus eget ex rutrum mollis. Ut nec egestas lacus,
-    ac ultrices nisi. Fusce tristique suscipit volutpat. Cras consequat nunc eu blandit
-    vehicula. Integer scelerisque orci at imperdiet blandit. In ultricies pellentesque
-    nulla et aliquet. Ut ac bibendum dui. In venenatis dui non orci lacinia maximus.
-    Fusce sagittis dui tristique sapien varius, vel ultricies orci venenatis. Aliquam
-    sit amet mauris iaculis, pellentesque nulla vel, pulvinar tellus. Fusce magna
-    tellus, volutpat vel massa eu, dictum ultrices leo. Ut gravida congue nisl sit
-    amet porttitor.
-
-
-    Curabitur eu purus ut sem vehicula efficitur. Donec blandit, augue in pulvinar
-    volutpat, ligula lorem vehicula massa, at gravida tortor sapien eu mi. Quisque
-    dolor est, mollis ac sapien eu, lacinia sodales massa. Mauris dapibus finibus
-    tortor quis porta. In sit amet diam mi. Cras id eros dignissim, dignissim nibh
-    at, tristique elit. Suspendisse potenti. Vivamus elementum, neque sit amet gravida
-    fermentum, velit velit pulvinar velit, at ullamcorper lorem ipsum eget tortor.
-    Cras ultricies pellentesque turpis consequat vehicula. Ut in magna luctus, ullamcorper
-    velit a, hendrerit nibh. Donec eu erat quis massa tincidunt sollicitudin. Nulla
-    sodales justo non magna dignissim iaculis. Quisque quis bibendum dolor. Nullam
-    ut est ac ante ultrices blandit. Pellentesque consectetur nec quam et iaculis.
-
-
-    Nullam tincidunt neque lorem. Phasellus et fringilla dui. Praesent at nisl convallis,
-    suscipit ex non, venenatis velit. Quisque in neque eu metus viverra lacinia. Suspendisse
-    gravida porttitor justo a pellentesque. Vestibulum ante ipsum primis in faucibus
-    orci luctus et ultrices posuere cubilia Curae; Morbi suscipit convallis lacus,
-    in efficitur nisi sollicitudin lacinia. Proin auctor odio in turpis sollicitudin,
-    at egestas urna ornare. Nam malesuada ultrices cursus. Nullam at ultrices turpis.
-    Vivamus tincidunt eros suscipit, interdum quam non, ultrices mauris. Class aptent
-    taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-    Duis vulputate est at tellus blandit pharetra. Suspendisse varius venenatis commodo.'
+  m_Text: A barren lab greets your newly constructed eyes. A figure, floating feet
+    above the ground, picks you up with a magical energy and fills you with a blue
+    light. You feel your body strengthen and rise as you also begin to levitate. The
+    figure speaks with an echoing voice that seems to seep through the walls. "Welcome
+    to our world, Proto Novus. I am your creator, and you are my savior. We have much
+    to discuss, but first, let's get you accustomed to your new body".
 --- !u!222 &928459094
 CanvasRenderer:
   m_ObjectHideFlags: 0
