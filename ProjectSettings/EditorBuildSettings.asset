@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ProtoNovusBoss.unity
     guid: 78b629566ff54be49bd4b35f5558cbf4
+  - enabled: 1
+    path: Assets/TitleScrawl.unity
+    guid: 8ed83a004903f4033aa8c9f5eca21ef2
   m_configObjects: {}

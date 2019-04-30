@@ -13,10 +13,12 @@ public class NovusBombScript : MonoBehaviour
     public GameObject energyLink;
     //public GameObject healOrbSpawnable;
     private bool genericBoolSwitch = true;
+    public AudioSource bombtownSFX;
 
     private void Start()
     {
         transform.Rotate(new Vector3(0, 0, 90));
+        bombtownSFX.Play();
     }
     void FixedUpdate ()
     {
