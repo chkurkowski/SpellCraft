@@ -33867,7 +33867,7 @@ MonoBehaviour:
   destination: {fileID: 898573792}
   canTeleport: 1
   isTutorialTeleport: 0
-  teleAnim: {fileID: 1411487984849676, guid: 580f0818e2ed1d7438bc3bf8f8712a87, type: 2}
+  teleAnim: {fileID: 1764254261053548, guid: 5ac7d78cd02d61b4e8fa83376c7a0878, type: 2}
 --- !u!212 &462038483
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36533,11 +36533,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -91
+      value: 566
       objectReference: {fileID: 0}
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -172
+      value: -485
       objectReference: {fileID: 0}
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.z
