@@ -26,12 +26,17 @@ public class StoryScrawl : MonoBehaviour {
 
 	void Start()
 	{
+		holdTimer = 0f;
+		scrawlTimer = 0f;
+		buttonPrompt = false;
+		Time.timeScale = 1f;
 		storyScrawl = GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		print("Hit");
 		transform.Translate(Vector2.up * (scrawlSpeed * Time.deltaTime));
 
 		if(!buttonPrompt)
@@ -43,9 +48,10 @@ public class StoryScrawl : MonoBehaviour {
 	private void DoneScrawling()
 	{
 		scrawlTimer += Time.deltaTime;
-
+		print(scrawlTimer);
 		if(scrawlTimer > SCRAWLTIME && !buttonPrompt)
 		{
+			print("Hit prompt");
 			buttonPrompt = true;
 			skipText.SetActive(false);
 			InvokeRepeating("ButtonPromptFlicker", 0f, 1f);
@@ -53,6 +59,7 @@ public class StoryScrawl : MonoBehaviour {
 
 		if(pressAnyButton.activeSelf && Input.anyKeyDown)
 		{
+			CancelInvoke();
 			SceneManager.LoadScene("ProtoNovusBoss");
 		}
 
@@ -67,12 +74,14 @@ public class StoryScrawl : MonoBehaviour {
 	{
 		if(Input.GetKey(KeyCode.Space))
 		{
+			print("Hit space");
 			holdTimer += Time.deltaTime;
 
 			circle.fillAmount = holdTimer / 2;
 
 			if(holdTimer >= HOLDMAXTIME)
 			{
+				CancelInvoke();
 				SceneManager.LoadScene("ProtoNovusBoss");
 			}
 		}
