@@ -32,6 +32,8 @@ public class PlayerAbilities : MonoBehaviour {
     private float comboResourceRegenRate = .05f;
     public Image resourceBar;
 
+    private bool wallHit = false;
+
     [Space(10)]
 
 	//Dash Variable
@@ -102,6 +104,8 @@ public class PlayerAbilities : MonoBehaviour {
 	private const int ABSORBSIM = 3;
     private const int HEALSTUNCOMBO = 4;
 
+    private Vector3 dashDirection;
+
     private Animator playerAnimator;
 
 	private void Start()
@@ -129,6 +133,7 @@ public class PlayerAbilities : MonoBehaviour {
 		{
 			//print(state);
             ResourceRegenHandler();
+            DirectionHandler();
 
 			switch (state)
 			{
@@ -253,20 +258,21 @@ public class PlayerAbilities : MonoBehaviour {
 
     private void DashOptionThree()
     {
-        Vector3 direction = new Vector3(Mathf.Ceil(movement.horizontalMovement), Mathf.Ceil(movement.verticalMovement));
-        direction.Normalize();
-        if (direction != Vector3.zero)
+        if (dashDirection != Vector3.zero)
         {
             //EvadeAnimations();
 
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            GameObject dashAnimObj = Instantiate(dashAnim, transform.position, transform.rotation);
-            dashAnimObj.transform.eulerAngles = new Vector3(0, 0, angle - 90);
+            if(!wallHit)
+            {
+                float angle = Mathf.Atan2(dashDirection.y, dashDirection.x) * Mathf.Rad2Deg;
+                GameObject dashAnimObj = Instantiate(dashAnim, transform.position, transform.rotation);
+                dashAnimObj.transform.eulerAngles = new Vector3(0, 0, angle - 90);
+            }
 
             movement.canMove = false;
             gameObject.layer = 14;// changes physics layers to avoid collision
 
-            if (evadeLengthTimer <= 0)
+            if (evadeLengthTimer <= 0 || wallHit)
             {
                 evadeLengthTimer = EVADELENGTHTIME;
                 movement.canMove = true;
@@ -276,11 +282,11 @@ public class PlayerAbilities : MonoBehaviour {
             else
             {
                 evadeLengthTimer -= Time.deltaTime;
-                gameObject.GetComponent<Rigidbody2D>().velocity = direction * dashSpeed;
+                gameObject.GetComponent<Rigidbody2D>().velocity = dashDirection * dashSpeed;
             }
         }
 
-        if(direction == Vector3.zero)
+        if(dashDirection == Vector3.zero)
             state = State.IDLE;
     }
 
@@ -440,6 +446,30 @@ public class PlayerAbilities : MonoBehaviour {
         }
     }
 
+    private void DirectionHandler()
+    {
+        if(movement.horizontalMovement != 0 || movement.verticalMovement != 0)
+        {
+            float vert = Mathf.Ceil(movement.horizontalMovement);
+            float hori = Mathf.Ceil(movement.horizontalMovement);
+
+            if(movement.horizontalMovement <= 0)
+                hori = Mathf.Floor(movement.horizontalMovement);
+
+            if(movement.verticalMovement <= 0)
+                vert = Mathf.Floor(movement.verticalMovement);
+
+            if(movement.horizontalMovement >= 0)
+                hori = Mathf.Ceil(movement.horizontalMovement);
+
+            if(movement.verticalMovement >= 0)
+                vert = Mathf.Ceil(movement.verticalMovement);
+
+            dashDirection = new Vector3(hori, vert);
+            dashDirection.Normalize();
+        }
+    }
+
     private void ResourceRegenHandler()
     {
         if(comboResource <= COMBORESOURCEMAX)
@@ -512,13 +542,25 @@ public class PlayerAbilities : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag == "Environment" && evadeTimer <= EVADECOOLDOWN)
+        if(col.gameObject.tag == "Environment")
         {
-            //print("Hit wall");
-            evadeTimer += EVADECOOLDOWN;
-            evadeLengthTimer += EVADELENGTHTIME;
+            wallHit = true;
+            if(evadeTimer <= EVADECOOLDOWN)
+            {
+                evadeTimer += EVADECOOLDOWN;
+                // evadeLengthTimer += EVADELENGTHTIME;
+            }
         }
     }
+
+    private void OnCollisionExit2D(Collision2D col)
+    {
+        if(col.gameObject.tag == "Environment")
+        {
+            wallHit = false;
+        }
+    }
+
     #endregion
 
     private void Update()

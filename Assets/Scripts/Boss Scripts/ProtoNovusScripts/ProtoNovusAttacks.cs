@@ -100,6 +100,8 @@ public class ProtoNovusAttacks : MonoBehaviour
     public GameObject pylonParent;
     public float pPRotateSpeed;
     public float pPRotateAmount;
+
+    public GameObject attack3VFX;
     [Space(15)]
     public GameObject attackThreeExplosion;
     public GameObject explodingPylonOne;
@@ -276,6 +278,7 @@ public class ProtoNovusAttacks : MonoBehaviour
     {
         if (isNewBoss)
         {
+            pillarSFX.Play();
             InvokeRepeating("MovePillarOne", 0, 0.01f);
             GameObject smoke1 = Instantiate(pillarSmoke, pillarPylonOne.transform.position, pillarPylonOne.transform.rotation);
             smoke1.GetComponent<Animator>().SetBool("hasFallen", false);
@@ -358,6 +361,7 @@ public class ProtoNovusAttacks : MonoBehaviour
         if (!bossInfoInfo.isMad && !bossInfoInfo.isEnraged)
         {
             laserAudioSource.Play();
+            Instantiate(attack3VFX, transform.position, transform.rotation);
             Debug.Log("Calm Attack 3 happened!");
             explodingPylonOne.SetActive(true);
             explodingPylonOne.transform.position = explodingPylonSpawnOne.position;
@@ -391,7 +395,7 @@ public class ProtoNovusAttacks : MonoBehaviour
         {
             laserAudioSource.Play();
             //laserShardsAudioSource.Play();
-
+            Instantiate(attack3VFX, transform.position, transform.rotation);
             Debug.Log("Mad Attack 3 happened!");
             explodingPylonOne.SetActive(true);
             explodingPylonOne.transform.position = explodingPylonSpawnOne.position;
@@ -428,7 +432,7 @@ public class ProtoNovusAttacks : MonoBehaviour
         {
             laserAudioSource.Play();
             //  laserShardsAudioSource.Play();
-
+            Instantiate(attack3VFX, transform.position, transform.rotation);
             Debug.Log("Enraged Attack 3 happened!");
             explodingPylonOne.SetActive(true);
             explodingPylonOne.transform.position = explodingPylonSpawnOne.position;
@@ -502,7 +506,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarSpriteOne.transform.position += new Vector3(0, pillarSpriteOffset, 0);
             pillarSpriteOne.transform.parent.GetComponent<Collider2D>().enabled = false;
             pillarOneIsUp = true;
-            pillarSFX.Play();
+            //pillarSFX.Play();
         }
     }
 
@@ -519,7 +523,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarSpriteTwo.transform.position += new Vector3(0, pillarSpriteOffset, 0);
             pillarSpriteTwo.transform.parent.GetComponent<Collider2D>().enabled = false;
             pillarTwoIsUp = true;
-            pillarSFX.Play();
+         //   pillarSFX.Play();
         }
     }
 
@@ -536,7 +540,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarSpriteThree.transform.position += new Vector3(0, pillarSpriteOffset, 0);
             pillarSpriteThree.transform.parent.GetComponent<Collider2D>().enabled = false;
             pillarThreeIsUp = true;
-            pillarSFX.Play();
+         //   pillarSFX.Play();
         }
     }
 
@@ -553,7 +557,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             pillarSpriteFour.transform.position += new Vector3(0, pillarSpriteOffset, 0);
             pillarSpriteFour.transform.parent.GetComponent<Collider2D>().enabled = false;
             pillarFourIsUp = true;
-            pillarSFX.Play();
+          //  pillarSFX.Play();
         }
     }
 
@@ -580,6 +584,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             GameObject smoke4 = Instantiate(pillarSmoke, pillarPylonFour.transform.position, pillarPylonFour.transform.rotation);
             smoke4.GetComponent<Animator>().SetBool("hasFallen", true);
 
+            pillarSFX.Play();
 
             CancelInvoke("ResetPillars");
             return;
@@ -634,6 +639,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             laserShutDown--;
             Debug.Log("Laser shutdown is : " + laserShutDown);
             CancelInvoke("ResetPillarOne");
+           // pillarSFX.Play();
             return;
         }
         else
@@ -666,6 +672,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             laserShutDown--;
             Debug.Log("Laser shutdown is : " + laserShutDown);
             CancelInvoke("ResetPillarTwo");
+          //  pillarSFX.Play();
             return;
         }
         else
@@ -698,6 +705,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             laserShutDown--;
             Debug.Log("Laser shutdown is : " + laserShutDown);
             CancelInvoke("ResetPillarThree");
+           // pillarSFX.Play();
             return;
         }
         else
@@ -730,6 +738,7 @@ public class ProtoNovusAttacks : MonoBehaviour
             laserShutDown--;
             Debug.Log("Laser shutdown is : " + laserShutDown);
             CancelInvoke("ResetPillarFour");
+           // pillarSFX.Play();
             return;
         }
         else
@@ -843,6 +852,10 @@ public class ProtoNovusAttacks : MonoBehaviour
     #region StopAttack
     public void StopAttack()
     {
+        if (GameObject.Find("PylonAttack3Art(Clone)") != null)
+        {
+            Destroy(GameObject.Find("PylonAttack3Art(Clone)"));
+        }
         laserShutDown = 3;
       
         pylonAnimatorInfo.SetBool("attackOneStart", false);

@@ -26,7 +26,7 @@ public class AbilityHandler : MonoBehaviour {
    
    [Header("Audio Variables")]
     public AudioSource abilityHandlerSource;
-    public AudioClip magicMissileSound;
+    public AudioSource magicMissileSound;
     public AudioClip attackSimSound;
 
 
@@ -176,8 +176,8 @@ public class AbilityHandler : MonoBehaviour {
             abilities.AttackArrayHandler("MagicMissile", abilities.lastAttacks);
             longATKTimer = 0;
 
-            abilityHandlerSource.clip = magicMissileSound;
-            abilityHandlerSource.PlayOneShot(magicMissileSound);
+            //           abilityHandlerSource.clip = magicMissileSound;
+            magicMissileSound.Play();
         }
     }
 

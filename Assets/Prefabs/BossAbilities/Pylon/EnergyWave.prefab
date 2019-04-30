@@ -211,6 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46f99ef01ccea1499ea53fb2f77254f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  energyBladeImpactVFX: {fileID: 1723289482842502, guid: 942d866a976cc134a8c4e2c9b343a906,
+    type: 2}
 --- !u!114 &114814360999798194
 MonoBehaviour:
   m_ObjectHideFlags: 1

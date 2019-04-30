@@ -498,6 +498,11 @@ Prefab:
       propertyPath: m_Name
       value: Canvas 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114967125546263092, guid: 410868276d7cd4e3e9ec01608b9d786d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 410868276d7cd4e3e9ec01608b9d786d, type: 2}
   m_IsPrefabAsset: 0

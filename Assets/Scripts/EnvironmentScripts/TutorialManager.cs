@@ -6,19 +6,31 @@ public class TutorialManager : MonoBehaviour
 {
     public int tutorialStage = 0;
     public QuartermasterScript Quartermaster;
-    public GameObject dummyOne;
-    public GameObject dummyTwo;
-    public GameObject dummyThree;
+    public GameObject attackDummyOne;
+    public GameObject attackDummyTwo;
+    public GameObject attackDummyThree;
+    public GameObject absorbDummyOne;
+    public GameObject absorbDummyTwo;
+    public GameObject absorbDummyThree;
+    public GameObject splitDummyOne;
+    public GameObject splitDummyTwo;
+    public GameObject splitDummyThree;
 
-    public GameObject tutorialRing;
-    public GameObject tutorialRingExit;
-    public GameObject tutorialDoor;
+   // public GameObject tutorialRing;
+   // public GameObject tutorialRingExit;
+   // public GameObject tutorialDoor;
 
     private void Start()
     {
-        dummyOne.SetActive(false);
-        dummyTwo.SetActive(false);
-        dummyThree.SetActive(false);
+        attackDummyOne.SetActive(false);
+        attackDummyTwo.SetActive(false);
+        attackDummyThree.SetActive(false);
+        absorbDummyOne.SetActive(false);
+        absorbDummyTwo.SetActive(false);
+        absorbDummyThree.SetActive(false);
+        splitDummyOne.SetActive(false);
+        splitDummyTwo.SetActive(false);
+        splitDummyThree.SetActive(false);
     }
 
     private void Update()
@@ -68,22 +80,56 @@ public class TutorialManager : MonoBehaviour
                 Quartermaster.UpdatePosition(tutorialStage);
                 break;
             case 9:
-                dummyOne.SetActive(true);
+             //   dummyOne.SetActive(true);
                 Quartermaster.UpdateText(tutorialStage);
                 Quartermaster.UpdatePosition(tutorialStage);
                 break;
             case 10:
-                dummyTwo.SetActive(true);
+                //     dummyTwo.SetActive(true);
+                attackDummyOne.SetActive(true);
                 Quartermaster.UpdateText(tutorialStage);
                 Quartermaster.UpdatePosition(tutorialStage);
                 break;
             case 11:
-                dummyThree.SetActive(true);
+                //    dummyThree.SetActive(true);
+                attackDummyTwo.SetActive(true);
                 Quartermaster.UpdateText(tutorialStage);
                 Quartermaster.UpdatePosition(tutorialStage);
                 break;
             case 12:
-                tutorialDoor.SetActive(false);
+                //  tutorialDoor.SetActive(false);
+                attackDummyThree.SetActive(true);
+                Quartermaster.UpdateText(tutorialStage);
+                Quartermaster.UpdatePosition(tutorialStage);
+                break;
+            case 13:
+                absorbDummyOne.SetActive(true);
+                Quartermaster.UpdateText(tutorialStage);
+                Quartermaster.UpdatePosition(tutorialStage);
+                break;
+
+            case 14:
+                absorbDummyTwo.SetActive(true);
+                Quartermaster.UpdateText(tutorialStage);
+                Quartermaster.UpdatePosition(tutorialStage);
+                break;
+            case 15:
+                absorbDummyThree.SetActive(true);
+                Quartermaster.UpdateText(tutorialStage);
+                Quartermaster.UpdatePosition(tutorialStage);
+                break;
+            case 16:
+                splitDummyOne.SetActive(true);
+                Quartermaster.UpdateText(tutorialStage);
+                Quartermaster.UpdatePosition(tutorialStage);
+                break;
+            case 17:
+                splitDummyTwo.SetActive(true);
+                Quartermaster.UpdateText(tutorialStage);
+                Quartermaster.UpdatePosition(tutorialStage);
+                break;
+            case 18:
+                splitDummyThree.SetActive(true);
                 Quartermaster.UpdateText(tutorialStage);
                 Quartermaster.UpdatePosition(tutorialStage);
                 break;
