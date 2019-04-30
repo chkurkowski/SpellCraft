@@ -6,10 +6,9 @@ public class PylonEnergyWave : MonoBehaviour {
     public float moveSpeed = 40f;
     public float energyDamage = 20f;
     private GameObject player;
+ 
     // Use this for initialization
-    void Start () {
-		
-	}
+
 	
 	// Update is called once per frame
 	void FixedUpdate ()

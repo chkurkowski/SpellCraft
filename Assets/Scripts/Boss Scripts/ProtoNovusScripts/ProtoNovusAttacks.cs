@@ -100,6 +100,8 @@ public class ProtoNovusAttacks : MonoBehaviour
     public GameObject pylonParent;
     public float pPRotateSpeed;
     public float pPRotateAmount;
+
+    public GameObject attack3VFX;
     [Space(15)]
     public GameObject attackThreeExplosion;
     public GameObject explodingPylonOne;
@@ -359,6 +361,7 @@ public class ProtoNovusAttacks : MonoBehaviour
         if (!bossInfoInfo.isMad && !bossInfoInfo.isEnraged)
         {
             laserAudioSource.Play();
+            Instantiate(attack3VFX, transform.position, transform.rotation);
             Debug.Log("Calm Attack 3 happened!");
             explodingPylonOne.SetActive(true);
             explodingPylonOne.transform.position = explodingPylonSpawnOne.position;
@@ -392,7 +395,7 @@ public class ProtoNovusAttacks : MonoBehaviour
         {
             laserAudioSource.Play();
             //laserShardsAudioSource.Play();
-
+            Instantiate(attack3VFX, transform.position, transform.rotation);
             Debug.Log("Mad Attack 3 happened!");
             explodingPylonOne.SetActive(true);
             explodingPylonOne.transform.position = explodingPylonSpawnOne.position;
@@ -429,7 +432,7 @@ public class ProtoNovusAttacks : MonoBehaviour
         {
             laserAudioSource.Play();
             //  laserShardsAudioSource.Play();
-
+            Instantiate(attack3VFX, transform.position, transform.rotation);
             Debug.Log("Enraged Attack 3 happened!");
             explodingPylonOne.SetActive(true);
             explodingPylonOne.transform.position = explodingPylonSpawnOne.position;
@@ -849,6 +852,10 @@ public class ProtoNovusAttacks : MonoBehaviour
     #region StopAttack
     public void StopAttack()
     {
+        if (GameObject.Find("PylonAttack3Art(Clone)") != null)
+        {
+            Destroy(GameObject.Find("PylonAttack3Art(Clone)"));
+        }
         laserShutDown = 3;
       
         pylonAnimatorInfo.SetBool("attackOneStart", false);

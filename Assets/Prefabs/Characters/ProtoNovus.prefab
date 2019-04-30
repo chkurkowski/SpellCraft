@@ -449,6 +449,7 @@ GameObject:
   - component: {fileID: 114043151031279628}
   - component: {fileID: 82012007036262856}
   - component: {fileID: 82137362531532556}
+  - component: {fileID: 82169418700171518}
   m_Layer: 11
   m_Name: ProtoNovus
   m_TagString: Boss
@@ -1913,9 +1914,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243233227199866826, guid: 5d051ddcd05e24e33a0b23f036dd8a19,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: a8ee5345a0f7a574e86f782a8597ad01, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ed7514600f5174ef8855986c5ba6b06c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2005,13 +2006,13 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1478182474349016}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243998192180440166, guid: 5d051ddcd05e24e33a0b23f036dd8a19,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0caa7a555aa374e2db4eccbd7ca72afd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 677a3009d511840b9b02a4432c18d3d2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2021,6 +2022,101 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 141.76237
   MaxDistance: 143.18
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &82169418700171518
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1478182474349016}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d005f6e51aaa04289ae0544f6ced548d, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -2321,6 +2417,7 @@ MonoBehaviour:
   isNewBoss: 1
   isPlayingMusic: 0
   bossMusic: {fileID: 82137362531532556}
+  pillarSFX: {fileID: 82169418700171518}
   spinRotationAmount: 0.1
   spinRotationRate: 0.02
   laserLookAtSpeed: 8
@@ -2356,6 +2453,7 @@ MonoBehaviour:
   pylonParent: {fileID: 0}
   pPRotateSpeed: 0.02
   pPRotateAmount: 0.5
+  attack3VFX: {fileID: 1012486663237024, guid: 72b124c43e20fa04d873802228df0dd1, type: 2}
   attackThreeExplosion: {fileID: 1715413957688428, guid: 59026f44120659e43b543fda8aa7f135,
     type: 2}
   explodingPylonOne: {fileID: 0}
@@ -2443,8 +2541,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testingAttacks: 1
-  currentlyTestingAttack: 1
+  currentlyTestingAttack: 2
   previousAttack: 0
+  attackOneWeight: 5
+  attackTwoWeight: 5
+  attackThreeWeight: 5
   isAttacking: 0
   canAttack: 1
   attackRate: 0
@@ -2618,7 +2719,7 @@ MonoBehaviour:
   bossHealthInfo: {fileID: 0}
   isMad: 0
   isEnraged: 0
-  bossRageLevel: 67
+  bossRageLevel: 0
   bossRageThreshold1: 33
   bossRageThreshold2: 66
   bossStunLevel: 0
