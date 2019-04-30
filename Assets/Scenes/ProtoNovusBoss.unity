@@ -36586,6 +36586,18 @@ Prefab:
       propertyPath: magicMissileSound
       value: 
       objectReference: {fileID: 750913918}
+    - target: {fileID: 4718555979174070, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718555979174070, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301426667652596, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
   m_IsPrefabAsset: 0
@@ -76936,6 +76948,29 @@ Transform:
   m_Father: {fileID: 925293412}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1960522687 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1301426667652596, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+    type: 2}
+  m_PrefabInternal: {fileID: 532356744}
+--- !u!95 &1960522688
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1960522687}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c91d2064071c54644bb4022e4e467bea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1964547844
 GameObject:
   m_ObjectHideFlags: 0
