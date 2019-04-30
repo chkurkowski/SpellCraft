@@ -68,22 +68,22 @@ public class TutorialManager : MonoBehaviour
                 Quartermaster.UpdatePosition(tutorialStage);
                 break;
             case 9:
-                dummyOne.SetActive(true);
+             //   dummyOne.SetActive(true);
                 Quartermaster.UpdateText(tutorialStage);
                 Quartermaster.UpdatePosition(tutorialStage);
                 break;
             case 10:
-                dummyTwo.SetActive(true);
+           //     dummyTwo.SetActive(true);
                 Quartermaster.UpdateText(tutorialStage);
                 Quartermaster.UpdatePosition(tutorialStage);
                 break;
             case 11:
-                dummyThree.SetActive(true);
+            //    dummyThree.SetActive(true);
                 Quartermaster.UpdateText(tutorialStage);
                 Quartermaster.UpdatePosition(tutorialStage);
                 break;
             case 12:
-                tutorialDoor.SetActive(false);
+              //  tutorialDoor.SetActive(false);
                 Quartermaster.UpdateText(tutorialStage);
                 Quartermaster.UpdatePosition(tutorialStage);
                 break;
