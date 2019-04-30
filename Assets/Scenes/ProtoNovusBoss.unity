@@ -32729,35 +32729,57 @@ MonoBehaviour:
   - {fileID: 890900975}
   - {fileID: 1131909858}
   - {fileID: 428220796}
+  - {fileID: 148062223}
+  - {fileID: 1965961911}
+  - {fileID: 1965961911}
+  - {fileID: 1824776167}
+  - {fileID: 112858902}
+  - {fileID: 839069744}
   instructions:
-  - Welcome to the Training Hall, Proto Novus. Use WASD to move.
-  - Your body can Phase Shift (Spacebar) to move through harmful energy. Purple energy
-    must be Phase Shifted through.
-  - Some attacks will be Purple as well. Phase Shift (Spacebar) to move through them
-    safely.
-  - You also have the ability to summon Magic Missile (Left Mouse Button).
-  - Not all targets are stationary.
+  - You're finally awake, Proto Novus. We haven't much time. Use WASD to move. I'll
+    see you up ahead
+  - Your newly formed body can Phase Shift (Spacebar) to move through harmful energy.
+    Purple energy must be Phase Shifted through.
+  - Our mortal enemy, Pylon, will force you to use this ability to dodge their Purple
+    Magic energy attacks. Dodge them with Phase Shift (Spacebar). We will speak more
+    of the vile Pylon soon.
+  - You also have the ability to summon Magic Missiles (Left Mouse Button). You can
+    use these Missiles to destroy our enemies and ensure our safety.
+  - While our enemy, Pylon, has long since lost the ability to move from their Dried
+    Basin, not all targets will be stationary. Be prepared.
   - You have the ability to place a Speed Field (E). Magic Missiles fired through
-    it are faster and do more damage.
-  - Use the Speed Field (E) to attack the reinforced target.
-  - You have the ability to Reflect (Right Mouse Button) some attacks. Red energy
-    CAN be reflected, purple cannot. Reflect the projectiles back at the targets to
-    proceed.
+    it are faster and do more damage. Destroy the construct up ahead to continue.
+  - Use the Speed Field (E) to attack the reinforced target. While Pylon's unbreakable
+    shell has long since rotted off, this ability will be useful to you nonetheless
+    to grind them into the dust.
+  - You have the ability to Reflect (Right Mouse Button) Red Magic. Pylon's vile Purple
+    Magic cannot be reflected. Reflect the projectiles back at the constructs to proceed.
   - Don't forget, use your Phase Shift (Spacebar) ability to safely move through Purple
-    energy.
-  - You can combine the last two abilities you used into a Burst Spell (Q). Combine
-    the Magic Missile (Left Mouse Button) and the Speed Field (E) to create the Attack
-    Simulacrums. This Burst Spell attacks when you do, in the direction you are aiming
-    in.
-  - Combine the Reflect (Right Mouse Button) and Speed Field (E) abilities to create
-    the Absorb Simulacrum. This Burst Spell absorbs damage and spits it back out after
-    a time.
-  - Combine the Magic Missile (Left Mouse Button) and Reflect (Right Mouse Button)
-    abilities to create the Split Simulacrums. This Burst Spell empowers your attacks
-    and multiplies them, slows enemy attacks, and spawns healing orbs if enemy projectiles
-    hit the three nodes.
-  - Your training is complete Proto, proceed to the Hub by stepping into the teleporter,
-    we have much to discuss.
+    Magic energy.
+  - You must master the Burst Spell technique to pass through the teleporter. You're
+    almost ready to face Pylon, Proto. Head to the green node on your left to proceed.
+  - Use your Burst Spell (Q) to combine the last two abilities you used. Make the
+    Attack Similacrum by combining Magic Missile (LMB) and the Speed Field (E). Use
+    this Burst Spell to destroy the construct!
+  - Once more, use your Burst Spell (Q) Attack Simulacrum (LMB + E), Proto! Pylon
+    will not show you the same patience I have when you face them.
+  - Pylon sits in their Dried Basin, waiting to strike. We will destroy them before
+    they can strike!
+  - Use your Burst Spell (Q) to combine the Speed Field (E) and Reflect (RMB) to make
+    the Absorb Simulacrum. This absorbs Red Energy and spits it back out.
+  - 'Remember, only Red Magic energy can be absorbed. The foul Purple Magic energy
+    that Pylon is so fond of can only be Phase Shifted (Space) through. '
+  - This is why you were created Proto. With your power of Burst Spells, we can finally
+    crush the evil Pylon once and for all!
+  - Use your Burst Spell (Q) to form the Split Simulacrum by combining Magic Missile(LMB)
+    and Reflect(RMB). Firing through this simulacrum supercharges your projectiles,
+    while the nodes absorb enemy projectiles and turn them into health!
+  - The Split Simulacrum can be used both offensively and defensively. Your ability
+    to combine spells into stronger Bursts is why Pylon fears you and seeks to destroy
+    you. We must show Pylon no mercy.
+  - 'After destroying this construct with the Split Simulacrum, return to the center
+    and enter the teleporter to Pylon''s tower. I''ve trapped him in the Northwest
+    wing of his tower. '
 --- !u!212 &394167455
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -41904,6 +41926,11 @@ Prefab:
       propertyPath: currentlyTestingAttack
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114522629121816732, guid: 6b603fd05167a4b4eb74fbb54dcd930c,
+        type: 2}
+      propertyPath: testingAttacks
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b603fd05167a4b4eb74fbb54dcd930c, type: 2}
   m_IsPrefabAsset: 0
@@ -46056,7 +46083,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 839069743}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 263.80005, y: 206, z: 0}
+  m_LocalPosition: {x: 189, y: 144, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1132020518}
@@ -49371,7 +49398,7 @@ Prefab:
     - target: {fileID: 212661694958958502, guid: df6859cb2034a5345a89d4491d911a2b,
         type: 2}
       propertyPath: m_SortingOrder
-      value: -4
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4514745052609928, guid: df6859cb2034a5345a89d4491d911a2b, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
