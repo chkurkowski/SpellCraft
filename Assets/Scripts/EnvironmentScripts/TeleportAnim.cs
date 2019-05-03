@@ -30,6 +30,11 @@ public class TeleportAnim : MonoBehaviour
         teleScript.TeleportPlayer();
     }
 
+    public void UnteleportPlayer()
+    {
+        teleScript.UnteleportPlayer();
+    }
+
     public void DestroySelf()
     {
 
