@@ -21,6 +21,9 @@ public class PlayerHealth : MonoBehaviour
     private PlayerMovement movement;
     private Animator playerAnimator;
 
+    public GameObject deathTeleportAnim;
+    public GameObject spawnTeleportAnim;
+
     public bool absorbDamage = false;
     public float damageAbsorbed{get; private set;}
 
