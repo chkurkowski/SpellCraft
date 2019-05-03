@@ -876,6 +876,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 677231180}
+  - {fileID: 1265497101}
   m_Father: {fileID: 755426985}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -909,6 +910,9 @@ MonoBehaviour:
   canTeleport: 1
   isTutorialTeleport: 0
   teleAnim: {fileID: 1764254261053548, guid: 5ac7d78cd02d61b4e8fa83376c7a0878, type: 2}
+  teleAnimReserved: {fileID: 1447861940667000, guid: fce32b50d0a343e47bfe25b4b6b8e0f6,
+    type: 2}
+  teleportDestination: {fileID: 1265497101}
 --- !u!212 &25094911
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31701,6 +31705,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &327020393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 327020394}
+  m_Layer: 0
+  m_Name: receiveLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &327020394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 327020393}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.97, y: 3.38, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1105295746}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &328795556
 Prefab:
   m_ObjectHideFlags: 0
@@ -34639,6 +34671,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 1777258096}
+  - {fileID: 1058416917}
   m_Father: {fileID: 755426985}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34672,6 +34705,9 @@ MonoBehaviour:
   canTeleport: 1
   isTutorialTeleport: 0
   teleAnim: {fileID: 1764254261053548, guid: 5ac7d78cd02d61b4e8fa83376c7a0878, type: 2}
+  teleAnimReserved: {fileID: 1447861940667000, guid: fce32b50d0a343e47bfe25b4b6b8e0f6,
+    type: 2}
+  teleportDestination: {fileID: 1058416917}
 --- !u!212 &462038483
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -47490,7 +47526,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 15.150024, y: 4.899994}
+  m_AnchoredPosition: {x: 15.150024, y: 4.9000244}
   m_SizeDelta: {x: 51.58, y: 95.5}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &868032270
@@ -48106,6 +48142,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 456094254}
+  - {fileID: 1649487194}
   m_Father: {fileID: 2018125303}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48139,6 +48176,9 @@ MonoBehaviour:
   canTeleport: 1
   isTutorialTeleport: 1
   teleAnim: {fileID: 1764254261053548, guid: 5ac7d78cd02d61b4e8fa83376c7a0878, type: 2}
+  teleAnimReserved: {fileID: 1447861940667000, guid: fce32b50d0a343e47bfe25b4b6b8e0f6,
+    type: 2}
+  teleportDestination: {fileID: 1649487194}
 --- !u!212 &898573795
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -52054,6 +52094,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1058416916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1058416917}
+  m_Layer: 0
+  m_Name: receiveLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1058416917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1058416916}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 462038480}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1058464207
 Prefab:
   m_ObjectHideFlags: 0
@@ -54538,6 +54606,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 702097962}
+  - {fileID: 327020394}
   m_Father: {fileID: 69818560}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54571,6 +54640,9 @@ MonoBehaviour:
   canTeleport: 1
   isTutorialTeleport: 0
   teleAnim: {fileID: 1764254261053548, guid: 5ac7d78cd02d61b4e8fa83376c7a0878, type: 2}
+  teleAnimReserved: {fileID: 1447861940667000, guid: fce32b50d0a343e47bfe25b4b6b8e0f6,
+    type: 2}
+  teleportDestination: {fileID: 327020394}
 --- !u!212 &1105295749
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -59893,6 +59965,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4467149285085434, guid: d2b885c9db3a8744288d68a662777433,
     type: 2}
   m_PrefabInternal: {fileID: 884687466}
+--- !u!1 &1265497100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1265497101}
+  m_Layer: 0
+  m_Name: receiveLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1265497101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1265497100}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.42, y: -2.42, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 25094908}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1265932329
 GameObject:
   m_ObjectHideFlags: 0
@@ -63806,7 +63906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.70124996, y: 0.028888892}
   m_AnchorMax: {x: 0.7437501, y: 0.09333335}
-  m_AnchoredPosition: {x: 0, y: -0.2999878}
+  m_AnchoredPosition: {x: 0, y: -0.30004883}
   m_SizeDelta: {x: -4.48999, y: -1.5800018}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1391170419
@@ -70501,6 +70601,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1649487193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1649487194}
+  m_Layer: 0
+  m_Name: receiveLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1649487194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1649487193}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.76, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 898573792}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1652089525
 GameObject:
   m_ObjectHideFlags: 0
@@ -71260,6 +71388,8 @@ MonoBehaviour:
   canTeleport: 1
   isTutorialTeleport: 1
   teleAnim: {fileID: 0}
+  teleAnimReserved: {fileID: 0}
+  teleportDestination: {fileID: 0}
 --- !u!212 &1688659759
 SpriteRenderer:
   m_ObjectHideFlags: 0
