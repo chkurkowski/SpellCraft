@@ -10,6 +10,7 @@ public class TeleporterScript : MonoBehaviour
     public GameObject teleAnim;
     public GameObject teleAnimReserved;
     public Transform teleportDestination;
+    public AudioSource teleportSound;
 
 
     private void OnTriggerEnter2D(Collider2D trig)
@@ -39,7 +40,9 @@ public class TeleporterScript : MonoBehaviour
             spawnedReverseAnim.GetComponent<TeleportAnim>().SetTeleReference(gameObject);
            
             destination.gameObject.GetComponent<TeleporterScript>().canTeleport = false;
-            destination.gameObject.GetComponent<TeleporterScript>().CanTeleport();    
+            destination.gameObject.GetComponent<TeleporterScript>().CanTeleport();
+
+            teleportSound.Play();
         }
     }
 
