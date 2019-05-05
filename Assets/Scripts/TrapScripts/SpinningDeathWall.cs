@@ -8,7 +8,7 @@ public class SpinningDeathWall : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        respawnManagerInfo = GameObject.Find("RespawnManager").GetComponent<RespawnManager>();
+      //  respawnManagerInfo = GameObject.Find("RespawnManager").GetComponent<RespawnManager>();
     }
 	
 	// Update is called once per frame
@@ -23,7 +23,8 @@ public class SpinningDeathWall : MonoBehaviour {
         if (col.gameObject.tag == "Player")
         {
             Debug.Log("Fire Wall Collision Happened!");
-            respawnManagerInfo.KillPlayer();
+            //  respawnManagerInfo.KillPlayer();
+            GameObject.Find("Player").GetComponent<PlayerHealth>().DamagePlayer(GameObject.Find("Player").GetComponent<PlayerHealth>().playerHealth);
         }
 
     }

@@ -23,6 +23,7 @@ public class RespawnManager : MonoBehaviour{
         playerHealthInfo.transform.position =  new Vector3(currentCheckPoint.transform.position.x, currentCheckPoint.transform.position.y, playerHealthInfo.transform.position.z);
         playerHealthInfo.ResetPlayerHealth();
         playerHealthInfo.playerHealthBar.fillAmount += 1;
+        playerHealthInfo.SpawnReviveAnim();
        
     }
 }

@@ -46,7 +46,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1098342540083824
 GameObject:
   m_ObjectHideFlags: 1
@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 82306777478044250}
   - component: {fileID: 114154648853233226}
   - component: {fileID: 82268443199365312}
+  - component: {fileID: 82035606222326584}
   m_Layer: 13
   m_Name: Player
   m_TagString: Player
@@ -273,6 +274,7 @@ GameObject:
   - component: {fileID: 212009710263959370}
   - component: {fileID: 61098922881680906}
   - component: {fileID: 114299695574099080}
+  - component: {fileID: 95284365200748290}
   m_Layer: 0
   m_Name: SimulacrumAbsorb
   m_TagString: Simulacrum
@@ -1120,7 +1122,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1166791909594820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -729, y: 134, z: 0}
+  m_LocalPosition: {x: 593, y: -484, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4078850439690298}
@@ -1139,7 +1141,7 @@ Transform:
   m_GameObject: {fileID: 1301426667652596}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 9.3, z: 0}
-  m_LocalScale: {x: 1.8623437, y: 0.73625, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4152259990603938}
   m_RootOrder: 1
@@ -1457,6 +1459,101 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12}
   m_EdgeRadius: 0
+--- !u!82 &82035606222326584
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1166791909594820}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0596e264115f2407eaed44e87a37c346, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!82 &82181646269445014
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2129,6 +2226,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &95284365200748290
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1301426667652596}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c91d2064071c54644bb4022e4e467bea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &95289742152962244
 Animator:
   serializedVersion: 3
@@ -2156,7 +2271,7 @@ Animator:
   m_GameObject: {fileID: 1091554754486938}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d8e6a9d6ffa6545fab602fff88ab678b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2c9165c91a8a266498a8a0bb5ac1c50b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2195,6 +2310,10 @@ MonoBehaviour:
   isAlive: 1
   maxPlayerHealth: 100
   playerHealth: 100
+  deathTeleportAnim: {fileID: 1073888687576664, guid: 18ee09e1d8a7258478b40deed6360bde,
+    type: 2}
+  spawnTeleportAnim: {fileID: 1259625490665284, guid: 115d895c528024d4e96d955b0cc3fc94,
+    type: 2}
   absorbDamage: 0
   playerHealthSource: {fileID: 82181646269445014}
   healPlayerSound: {fileID: 8300000, guid: 432e73390e70d48beb91a8fa05e17277, type: 3}
@@ -2347,7 +2466,7 @@ MonoBehaviour:
   reflectloop: {fileID: 8300000, guid: 16f9092411c8e49de97944a98233bc9e, type: 3}
   ritualAudio: {fileID: 82415138615108900}
   evadeAudio: {fileID: 82975175978285720}
-  reflectShield: {fileID: 0}
+  reflectShield: {fileID: 1091554754486938}
   evadeSound: {fileID: 8300000, guid: c75da3ad6b7e64b1db43c2f44f9f4357, type: 3}
   ritualSound: {fileID: 8300000, guid: 85236dc49a65f42b9875a7a6c187d79b, type: 3}
   lastAttacks: []
@@ -2418,7 +2537,7 @@ MonoBehaviour:
   cursorInWorldPos: {x: 103.21388, y: 207.23746, z: 0}
   waveSystem: {fileID: 198182118557903328}
   abilityHandlerSource: {fileID: 82502722618222228}
-  magicMissileSound: {fileID: 8300000, guid: 0596e264115f2407eaed44e87a37c346, type: 3}
+  magicMissileSound: {fileID: 82035606222326584}
   attackSimSound: {fileID: 8300000, guid: 08453e0f37899456b98632421ab3e60f, type: 3}
   atkSpeed: 135
   placementDistance: 30
