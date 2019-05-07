@@ -57,14 +57,16 @@ public class BossHealth : MonoBehaviour
 
             //Destroy(boss);
             bossAttackInfo.StopAttack();
-            bossArt.gameObject.SetActive(false);
+            //bossArt.gameObject.SetActive(false);
+            bossArt.gameObject.GetComponent<Animator>().SetBool("isDead",true);
             HealthBarParent.SetActive(false);
             healthBar.gameObject.SetActive(false);
+            bossArt.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
 
             isAlive = false;
-            Color c = gameObject.GetComponent<SpriteRenderer>().color;
-            c.a = .6f;
-            gameObject.GetComponent<SpriteRenderer>().color = c;
+      
+
+          
             print("you win woohoo!");
            // pylonAudioSource.Stop();
         }
