@@ -27,7 +27,9 @@ public class AbilityHandler : MonoBehaviour {
    [Header("Audio Variables")]
     public AudioSource abilityHandlerSource;
     public AudioSource magicMissileSound;
-    public AudioClip attackSimSound;
+    public AudioSource attackSimSound;
+    public AudioSource absorbBuildSound;
+    public AudioSource absorbExplodeSound;
 
 
     [Space(10)]
@@ -215,6 +217,7 @@ public class AbilityHandler : MonoBehaviour {
     		origColor = gameObject.GetComponent<SpriteRenderer>().color;
             GetComponent<SpriteRenderer>().color = new Color(origColor.r, origColor.g, origColor.b, .5f);
     		health.absorbDamage = true;
+            absorbExplodeSound.Play();
     		absorbExplodeTimer = 0;
     	}
     }
@@ -251,8 +254,7 @@ public class AbilityHandler : MonoBehaviour {
         if (isBurst)
         {
             //TODO Add AttackSim Burst Sound
-            abilityHandlerSource.clip = attackSimSound;
-            abilityHandlerSource.PlayOneShot(attackSimSound);
+            attackSimSound.Play();
 
             GameObject[] sims = new GameObject[4];
             sims[0] = Instantiate(simulacrum, transform.position + (rotator.transform.up * -10) + (rotator.transform.right * -5), Quaternion.identity);
@@ -272,8 +274,7 @@ public class AbilityHandler : MonoBehaviour {
 
             if(atkSimTimer >= ATKSIMCOOLDOWN)
             {
-                abilityHandlerSource.clip = attackSimSound;
-                abilityHandlerSource.PlayOneShot(attackSimSound);
+                attackSimSound.Play();
                 GameObject sim = Instantiate(simulacrum, transform.position + (transform.up * -8), Quaternion.identity);
                 sim.GetComponent<SimulacrumAbilities>().type = "Attack";
                 atkSimTimer = 0f;
@@ -296,7 +297,7 @@ public class AbilityHandler : MonoBehaviour {
         if(isBurst)
         {
             //TODO Add AbsorbSim Burst Sound
-
+            absorbBuildSound.Play();
             simulacrumAbsorb.SetActive(true);
             simulacrumAbsorb.GetComponent<SimulacrumAbsorb>().damageCap = 80f;
         }
@@ -305,6 +306,7 @@ public class AbilityHandler : MonoBehaviour {
             //TODO Add AbsorbSim Ritual Sound
             if(absorbSimTimer >= ABSORBSIMCOOLDOWN)
             {
+                absorbBuildSound.Play();
                 GameObject sim = Instantiate(simulacrum, transform.position + (transform.up * 8), Quaternion.identity);
                 sim.GetComponent<SimulacrumAbilities>().type = "Absorb";
                 sim.GetComponent<SimulacrumAbilities>().damageCap = 50;
