@@ -30,6 +30,8 @@ public class PlayerAbilities : MonoBehaviour {
     private float comboResource = 0f;
     private float COMBORESOURCEMAX = 3f;
     private float comboResourceRegenRate = .05f;
+    public bool inTutorial = true;
+    public float tutorialMult = 8;
     public Image resourceBar;
 
     private bool wallHit = false;
@@ -472,9 +474,14 @@ public class PlayerAbilities : MonoBehaviour {
 
     private void ResourceRegenHandler()
     {
-        if(comboResource <= COMBORESOURCEMAX)
+        if(comboResource <= COMBORESOURCEMAX && !inTutorial)
         {
             comboResource += Time.deltaTime * comboResourceRegenRate;
+            resourceBar.fillAmount = comboResource / 3;
+        }
+        else if(comboResource <= COMBORESOURCEMAX && inTutorial)
+        {
+            comboResource += Time.deltaTime * comboResourceRegenRate * tutorialMult;
             resourceBar.fillAmount = comboResource / 3;
         }
     }
