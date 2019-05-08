@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class BossHealth : MonoBehaviour
 {
     //boss health bar
@@ -57,14 +59,16 @@ public class BossHealth : MonoBehaviour
 
             //Destroy(boss);
             bossAttackInfo.StopAttack();
-            bossArt.gameObject.SetActive(false);
+            //bossArt.gameObject.SetActive(false);
+            bossArt.gameObject.GetComponent<Animator>().SetBool("isDead",true);
             HealthBarParent.SetActive(false);
             healthBar.gameObject.SetActive(false);
+            bossArt.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
 
             isAlive = false;
-            Color c = gameObject.GetComponent<SpriteRenderer>().color;
-            c.a = .6f;
-            gameObject.GetComponent<SpriteRenderer>().color = c;
+      
+            Invoke("GoToWinScreen", 3);
+          
             print("you win woohoo!");
            // pylonAudioSource.Stop();
         }
@@ -133,6 +137,11 @@ public class BossHealth : MonoBehaviour
     public void HealBoss(float healAmount)
     {
         bossHealth += healAmount;
+    }
+
+    private void GoToWinScreen()
+    {
+        SceneManager.LoadScene("EndScrawl");
     }
 
 

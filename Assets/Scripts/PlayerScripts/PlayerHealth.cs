@@ -21,6 +21,9 @@ public class PlayerHealth : MonoBehaviour
     private PlayerMovement movement;
     private Animator playerAnimator;
 
+    public GameObject deathTeleportAnim;
+    public GameObject spawnTeleportAnim;
+
     public bool absorbDamage = false;
     public float damageAbsorbed{get; private set;}
 
@@ -48,7 +51,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if(playerHealth <= 0)
         {
-            respawnManagerInfo.KillPlayer();
+           
+            Instantiate(deathTeleportAnim, transform.position, transform.rotation);
         }
         else if(playerHealth > maxPlayerHealth)
         {
@@ -59,6 +63,11 @@ public class PlayerHealth : MonoBehaviour
         {
             damageAbsorbed = 0;
         }
+    }
+
+    public void SpawnReviveAnim()
+    {
+        Instantiate(spawnTeleportAnim, transform.position, transform.rotation);
     }
 
     public void DamagePlayer(float dmg)

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61643500174953312}
   - component: {fileID: 50753380855016262}
   - component: {fileID: 114365820699844792}
+  - component: {fileID: 95439827309414592}
   m_Layer: 9
   m_Name: SpinningDeathWall
   m_TagString: Environment
@@ -37,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1582193888876312}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 192.32103, y: -151.80002, z: 0}
-  m_LocalScale: {x: 12.68, y: 1, z: 1}
+  m_LocalPosition: {x: 800.2079, y: -163.78319, z: 0}
+  m_LocalScale: {x: 12.68, y: 16.03, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,19 +76,37 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.01059556, y: 0.008390784}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 4.66, y: 4.66}
     newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 4.463115, y: 0.6111623}
   m_EdgeRadius: 0
+--- !u!95 &95439827309414592
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1582193888876312}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11199e9d826d77047be13f14873688cc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114365820699844792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,8 +154,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 77164b88dd40f3f4d8961a33ae98ddfc, type: 3}
-  m_Color: {r: 0.75686276, g: 0, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: a5f09acfd2fd27441bbdf05ce6859335, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

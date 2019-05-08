@@ -16,6 +16,13 @@ public class TutorialManager : MonoBehaviour
     public GameObject splitDummyTwo;
     public GameObject splitDummyThree;
 
+    public TutorialTextManager textManager;
+
+
+    public GameObject rearWallClose;
+    public GameObject rearGroundLaser;
+    public GameObject rearGroundLaser2;
+
    // public GameObject tutorialRing;
    // public GameObject tutorialRingExit;
    // public GameObject tutorialDoor;
@@ -31,6 +38,9 @@ public class TutorialManager : MonoBehaviour
         splitDummyOne.SetActive(false);
         splitDummyTwo.SetActive(false);
         splitDummyThree.SetActive(false);
+        rearWallClose.SetActive(false);
+        
+
     }
 
     private void Update()
@@ -87,12 +97,18 @@ public class TutorialManager : MonoBehaviour
             case 10:
                 //     dummyTwo.SetActive(true);
                 attackDummyOne.SetActive(true);
+                rearWallClose.SetActive(true);
+                rearGroundLaser.SetActive(false);
+                rearGroundLaser2.SetActive(false);
+
+
                 Quartermaster.UpdateText(tutorialStage);
                 Quartermaster.UpdatePosition(tutorialStage);
                 break;
             case 11:
                 //    dummyThree.SetActive(true);
                 attackDummyTwo.SetActive(true);
+              
                 Quartermaster.UpdateText(tutorialStage);
                 Quartermaster.UpdatePosition(tutorialStage);
                 break;
@@ -104,6 +120,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case 13:
                 absorbDummyOne.SetActive(true);
+            
                 Quartermaster.UpdateText(tutorialStage);
                 Quartermaster.UpdatePosition(tutorialStage);
                 break;
@@ -120,6 +137,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             case 16:
                 splitDummyOne.SetActive(true);
+         
                 Quartermaster.UpdateText(tutorialStage);
                 Quartermaster.UpdatePosition(tutorialStage);
                 break;
@@ -141,6 +159,7 @@ public class TutorialManager : MonoBehaviour
         //Quartermaster.UpdateText(tutorialStage + 1);
        // Quartermaster.UpdatePosition(tutorialStage + 1);
         tutorialStage++;
+        textManager.IncrementMessageNumber();
     }
 
 }
