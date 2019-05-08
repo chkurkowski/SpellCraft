@@ -753,10 +753,16 @@ public class ProtoNovusAttacks : MonoBehaviour
     {
         Debug.Log("Attack 3 Explode 1 happened!");
         GameObject exp1 = Instantiate(attackThreeExplosion, transform.position, Quaternion.identity);
+       // GameObject exp2 = Instantiate(attackThreeExplosion, transform.position += new Vector3(50,0,0), Quaternion.identity);
+       // GameObject exp3 = Instantiate(attackThreeExplosion, transform.position += new Vector3(-50, 0, 0), Quaternion.identity);
         exp1.transform.Rotate(0, 0, 0);
+        //exp2.transform.Rotate(0, 0, 0);
+      //  exp3.transform.Rotate(0, 0, 0);
         if (bossInfoInfo.isMad)
         {
             GameObject exp1Mad = Instantiate(attackThreeExplosion, transform.position, Quaternion.identity);
+         //   GameObject exp2Mad = Instantiate(attackThreeExplosion, transform.position += new Vector3(30, 0, 0), Quaternion.identity);
+          //  GameObject exp3Mad = Instantiate(attackThreeExplosion, transform.position += new Vector3(-30, 0, 0), Quaternion.identity);
             exp1Mad.transform.Rotate(0, 0, 0);
             exp1Mad.GetComponent<PylonEnergyWave>().moveSpeed = 60;
         }
