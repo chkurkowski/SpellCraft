@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class BossHealth : MonoBehaviour
 {
     //boss health bar
@@ -65,7 +67,7 @@ public class BossHealth : MonoBehaviour
 
             isAlive = false;
       
-
+            Invoke("GoToWinScreen", 2);
           
             print("you win woohoo!");
            // pylonAudioSource.Stop();
@@ -135,6 +137,11 @@ public class BossHealth : MonoBehaviour
     public void HealBoss(float healAmount)
     {
         bossHealth += healAmount;
+    }
+
+    private void GoToWinScreen()
+    {
+        SceneManager.LoadScene("EndScrawl");
     }
 
 
