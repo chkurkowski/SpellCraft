@@ -11,6 +11,7 @@ public class SimulacrumAbsorb : MonoBehaviour {
     public float damageCap {private get; set;}
     private Vector2 cursorInWorldPos;
     private float lifetime = 8f;
+    private bool exploding = false;
 
 
 	// Use this for initialization
@@ -34,16 +35,24 @@ public class SimulacrumAbsorb : MonoBehaviour {
 
     public void Explode()
     {
-        int explodeAmount = Mathf.CeilToInt(damageTaken/4);
-
-        for (int i = 0; i < explodeAmount; i++)
+        if(!exploding)
         {
-            Vector2 direction = new Vector3(Random.Range(cursorInWorldPos.x - 20, cursorInWorldPos.x + 20), 
-            	Random.Range(cursorInWorldPos.y - 10, cursorInWorldPos.y + 10), cursorInWorldPos.x) - transform.position;
-            direction.Normalize();
-            GameObject fb = Instantiate(fireball, transform.position, PlayerAbilities.instance.handlers.rotator.transform.rotation);
-            fb.GetComponent<MagicBall>().isAbsorbSimMissile = true;
-            fb.GetComponent<Rigidbody2D>().velocity = direction * Random.Range(atkSpeed - 20, atkSpeed + 20);
+            if(!exploding)
+                exploding = true;
+
+            int explodeAmount = Mathf.CeilToInt(damageTaken/4);
+
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+
+            for (int i = 0; i < explodeAmount; i++)
+            {
+                Vector2 direction = new Vector3(Random.Range(cursorInWorldPos.x - 20, cursorInWorldPos.x + 20), 
+                    Random.Range(cursorInWorldPos.y - 10, cursorInWorldPos.y + 10), cursorInWorldPos.x) - transform.position;
+                direction.Normalize();
+                GameObject fb = Instantiate(fireball, transform.position, PlayerAbilities.instance.handlers.rotator.transform.rotation);
+                fb.GetComponent<MagicBall>().isAbsorbSimMissile = true;
+                fb.GetComponent<Rigidbody2D>().velocity = direction * Random.Range(atkSpeed - 20, atkSpeed + 20);
+            }
         }
     }
 
@@ -52,6 +61,14 @@ public class SimulacrumAbsorb : MonoBehaviour {
         Explode();
         damageTaken = 0;
         damageCap = 0;
+        Invoke("ActiveHandler", 1.25f);
+    }
+
+    private void ActiveHandler()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        exploding = false;
+        CancelInvoke();
         gameObject.SetActive(false);
     }
 }

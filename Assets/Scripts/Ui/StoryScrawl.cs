@@ -22,7 +22,7 @@ public class StoryScrawl : MonoBehaviour {
 	private const float HOLDMAXTIME = 2f;
 
 	private float scrawlTimer = 0f;
-	private const float SCRAWLTIME = 26.5f;
+	public float SCRAWLTIME = 26.5f;
 
 	void Start()
 	{
@@ -60,7 +60,10 @@ public class StoryScrawl : MonoBehaviour {
 		if(pressAnyButton.activeSelf && Input.anyKeyDown)
 		{
 			CancelInvoke();
-			SceneManager.LoadScene("ProtoNovusBoss");
+			if(SceneManager.GetActiveScene().name == "TitleScrawl")
+				SceneManager.LoadScene("ProtoNovusBoss");
+			else
+				SceneManager.LoadScene("Main Menu");
 		}
 
 	}
@@ -82,7 +85,10 @@ public class StoryScrawl : MonoBehaviour {
 			if(holdTimer >= HOLDMAXTIME)
 			{
 				CancelInvoke();
-				SceneManager.LoadScene("ProtoNovusBoss");
+				if(SceneManager.GetActiveScene().name == "TitleScrawl")
+					SceneManager.LoadScene("ProtoNovusBoss");
+				else
+					SceneManager.LoadScene("Main Menu");
 			}
 		}
 		else 
