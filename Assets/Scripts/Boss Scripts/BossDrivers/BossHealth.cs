@@ -67,7 +67,7 @@ public class BossHealth : MonoBehaviour
 
             isAlive = false;
       
-            Invoke("GoToWinScreen", 2);
+            Invoke("GoToWinScreen", 3);
           
             print("you win woohoo!");
            // pylonAudioSource.Stop();
