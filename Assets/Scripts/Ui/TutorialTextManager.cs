@@ -49,7 +49,8 @@ public class TutorialTextManager : MonoBehaviour {
 
 	private void SetMessage(int index)
 	{
-		text.text = textMessages[index];
+		if(index < textMessages.Length)
+			text.text = textMessages[index];
 	}
 
 	//Call this when the next tutorial text should appear

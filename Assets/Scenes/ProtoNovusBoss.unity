@@ -30137,6 +30137,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &236905325 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1270795568}
+  m_Script: {fileID: 11500000, guid: 6bf8f34da1f6c41839358b98a7775426, type: 3}
 --- !u!4 &236951833 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4953643258600454, guid: c2be94720319b8646b0ed6bf2fef576c,
@@ -32989,6 +32995,7 @@ MonoBehaviour:
   splitDummyOne: {fileID: 0}
   splitDummyTwo: {fileID: 0}
   splitDummyThree: {fileID: 0}
+  textManager: {fileID: 0}
   rearWallClose: {fileID: 0}
   rearGroundLaser: {fileID: 0}
   rearGroundLaser2: {fileID: 0}
@@ -38433,11 +38440,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -680
+      value: 596
       objectReference: {fileID: 0}
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 149
+      value: -493
       objectReference: {fileID: 0}
     - target: {fileID: 4705545203308976, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -61322,6 +61329,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1194995426}
     m_Modifications:
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.size
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 224546130355599982, guid: a8f5d597b73344a7d927f8efc8c1b52b,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -61411,6 +61423,190 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[1]
+      value: You're finally awake, Proto Novus. We haven't much time. Use WASD to
+        move. I'll see you up ahead.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[2]
+      value: Your newly formed body can Phase Shift (Spacebar) to move through harmful
+        energy. Purple energy must be Phase Shifted through.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[3]
+      value: Our mortal enemy, Pylon, will force you to use this ability to dodge
+        their Purple Magic energy attacks. Dodge them with Phase Shift (Spacebar).
+        We will speak more of the vile Pylon soon.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[4]
+      value: You also have the ability to summon Magic Missiles (Left Mouse Button).
+        You can use these Missiles to destroy our enemies and ensure our safety.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[5]
+      value: While our enemy, Pylon, has long since lost the ability to move from
+        their Dried Basin, not all targets will be stationary. Be prepared.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[6]
+      value: You have the ability to place a Speed Field (E). Magic Missiles fired
+        through it are faster and do more damage. Destroy the construct up ahead to
+        continue.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[7]
+      value: Use the Speed Field (E) to attack the reinforced target. While Pylon's
+        unbreakable shell has long since rotted off, this ability will be useful to
+        you nonetheless to grind them into the dust.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[8]
+      value: You have the ability to Reflect (Right Mouse Button) Red Magic. Pylon's
+        vile Purple Magic cannot be reflected. Reflect the projectiles back at the
+        constructs to proceed.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[9]
+      value: Don't forget, use your Phase Shift (Spacebar) ability to safely move
+        through Purple Magic energy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[10]
+      value: You must master the Burst Spell technique to pass through the teleporter.
+        You're almost ready to face Pylon, Proto. Head to the green node on your left
+        to proceed.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[11]
+      value: Use your Burst Spell (Q) to combine the last two abilities you used.
+        Make the Attack Similacrum by combining Magic Missile (LMB) and the Speed
+        Field (E). Use this Burst Spell to destroy the construct!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[12]
+      value: Once more, use your Burst Spell (Q) Attack Simulacrum (LMB + E), Proto!
+        Pylon will not show you the same patience I have when you face them.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[13]
+      value: Pylon sits in their Dried Basin, waiting to strike. We will destroy them
+        before they can strike!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[14]
+      value: Use your Burst Spell (Q) to combine the Speed Field (E) and Reflect (RMB)
+        to make the Absorb Simulacrum. This absorbs Red Energy and spits it back out.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[15]
+      value: 'Remember, only Red Magic energy can be absorbed. The foul Purple Magic
+        energy that Pylon is so fond of can only be Phase Shifted (Space) through. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[16]
+      value: This is why you were created Proto. With your power of Burst Spells,
+        we can finally crush the evil Pylon once and for all!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[17]
+      value: Use your Burst Spell (Q) to form the Split Simulacrum by combining Magic
+        Missile(LMB) and Reflect(RMB). Firing through this simulacrum supercharges
+        your projectiles, while the nodes absorb enemy projectiles and turn them into
+        health!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[18]
+      value: The Split Simulacrum can be used both offensively and defensively. Your
+        ability to combine spells into stronger Bursts is why Pylon fears you and
+        seeks to destroy you. We must show Pylon no mercy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136270801344086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: textMessages.Array.data[19]
+      value: 'After destroying this construct with the Split Simulacrum, return to
+        the center and enter the teleporter to Pylon''s tower. I''ve trapped him in
+        the Northwest wing of his tower. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381328509998170, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 224420203877472320, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -228.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 224420203877472320, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 343.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 224420203877472320, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 123.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 224420203877472320, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 203.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 114269998155134086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224936552096894872, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224936552096894872, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -4.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 224936552096894872, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224936552096894872, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.887
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381328509998170, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8f5d597b73344a7d927f8efc8c1b52b, type: 2}
@@ -76301,6 +76497,7 @@ MonoBehaviour:
   splitDummyOne: {fileID: 338935903}
   splitDummyTwo: {fileID: 59527478}
   splitDummyThree: {fileID: 181445869}
+  textManager: {fileID: 236905325}
   rearWallClose: {fileID: 2015809620}
   rearGroundLaser: {fileID: 1208966054}
   rearGroundLaser2: {fileID: 320900798}

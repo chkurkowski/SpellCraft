@@ -16,6 +16,8 @@ public class TutorialManager : MonoBehaviour
     public GameObject splitDummyTwo;
     public GameObject splitDummyThree;
 
+    public TutorialTextManager textManager;
+
 
     public GameObject rearWallClose;
     public GameObject rearGroundLaser;
@@ -157,6 +159,7 @@ public class TutorialManager : MonoBehaviour
         //Quartermaster.UpdateText(tutorialStage + 1);
        // Quartermaster.UpdatePosition(tutorialStage + 1);
         tutorialStage++;
+        textManager.IncrementMessageNumber();
     }
 
 }

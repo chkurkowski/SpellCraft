@@ -19,14 +19,14 @@ public class QuartermasterScript : MonoBehaviour
     {
         tutorialManagerInfo = GameObject.Find("TutorialManager").GetComponent<TutorialManager>();
         gameObject.transform.position = moveLocations[0].position;
-        GameObject.Find("QuartermasterUiImage").GetComponent<RectTransform>().anchoredPosition = new Vector3(62, 20, 0);
+        //GameObject.Find("QuartermasterUiImage").GetComponent<RectTransform>().anchoredPosition = new Vector3(62, 20, 0);
         //-69 is the left position for x
-        quartermasterText.text = instructions[0];
+        //quartermasterText.text = instructions[0];
 	}
 	
     public void UpdateText(int tutorialStage)
     {
-        quartermasterText.text = instructions[tutorialStage];
+        //quartermasterText.text = instructions[tutorialStage];
     }
 
     public void UpdatePosition(int newMoveLocation)

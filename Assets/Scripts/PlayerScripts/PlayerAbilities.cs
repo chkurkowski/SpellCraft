@@ -453,7 +453,7 @@ public class PlayerAbilities : MonoBehaviour {
     {
         if(movement.horizontalMovement != 0 || movement.verticalMovement != 0)
         {
-            float vert = Mathf.Ceil(movement.horizontalMovement);
+            float vert = Mathf.Ceil(movement.verticalMovement);
             float hori = Mathf.Ceil(movement.horizontalMovement);
 
             if(movement.horizontalMovement <= 0)
