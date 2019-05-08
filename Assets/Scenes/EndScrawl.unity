@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -231,10 +231,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyScrawl: {fileID: 0}
   pressAnyButton: {fileID: 1059865313}
-  scrawlSpeed: 20
+  scrawlSpeed: 10
   circle: {fileID: 598895284}
   skipText: {fileID: 1439287192}
-  SCRAWLTIME: 26.5
+  SCRAWLTIME: 30
 --- !u!114 &634223063
 MonoBehaviour:
   m_ObjectHideFlags: 0
