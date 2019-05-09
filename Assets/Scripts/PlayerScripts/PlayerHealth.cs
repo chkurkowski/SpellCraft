@@ -31,8 +31,8 @@ public class PlayerHealth : MonoBehaviour
     public AudioSource playerHealthSource;
     public AudioClip healPlayerSound;
     public AudioClip damagePlayerSound;
- //   public AudioSource teleportSound;
- //   public AudioClip teleportClip;
+    //public AudioSource teleportSound;
+    //public AudioClip teleportClip;
 
 
 	// Use this for initialization
@@ -156,4 +156,5 @@ public class PlayerHealth : MonoBehaviour
         playerHealthBar.fillAmount = playerHealth / 100;
         isAlive = true;
     }
+
 }

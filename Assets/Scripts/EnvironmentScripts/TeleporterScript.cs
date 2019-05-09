@@ -10,12 +10,14 @@ public class TeleporterScript : MonoBehaviour
     public GameObject teleAnim;
     public GameObject teleAnimReserved;
     public Transform teleportDestination;
-
+    public AudioSource tpSound;
 
     private void OnTriggerEnter2D(Collider2D trig)
     {
+
         if(trig.gameObject.tag == "Player")
         {
+            tpSound.Play();
             GameObject.Find("Player").GetComponent<PlayerMovement>().canMove = false;
             GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = new Vector3(0,0,0);
             GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
@@ -45,6 +47,7 @@ public class TeleporterScript : MonoBehaviour
 
     public void UnteleportPlayer()
     {
+        tpSound.Play();
         GameObject.Find("Player").GetComponent<PlayerMovement>().canMove = true;
         GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = true;
     }
