@@ -231,10 +231,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyScrawl: {fileID: 0}
   pressAnyButton: {fileID: 1059865313}
-  scrawlSpeed: 10
+  scrawlSpeed: 18
   circle: {fileID: 598895284}
   skipText: {fileID: 1439287192}
-  SCRAWLTIME: 30
+  SCRAWLTIME: 26
 --- !u!114 &634223063
 MonoBehaviour:
   m_ObjectHideFlags: 0
