@@ -33902,8 +33902,9 @@ MonoBehaviour:
     Magic cannot be reflected. Reflect the projectiles back at the constructs to proceed.
   - Don't forget, use your Phase Shift (Spacebar) ability to safely move through Purple
     Magic energy.
-  - You must master the Burst Spell technique to pass through the teleporter. You're
-    almost ready to face Pylon, Proto. Head to the green node on your left to proceed.
+  - Master the Burst Spell technique to continue. Your mana can be seen in the blue
+    bottle. You need at least 1/3 of the bottle to cast burst spells. Head to the
+    green node on your left to proceed.
   - Use your Burst Spell (Q) to combine the last two abilities you used. Make the
     Attack Similacrum by combining Magic Missile (LMB) and the Speed Field (E). Use
     this Burst Spell to destroy the construct!
@@ -33917,9 +33918,11 @@ MonoBehaviour:
     that Pylon is so fond of can only be Phase Shifted (Space) through. '
   - This is why you were created Proto. With your power of Burst Spells, we can finally
     crush the evil Pylon once and for all!
-  - Use your Burst Spell (Q) to form the Split Simulacrum by combining Magic Missile(LMB)
-    and Reflect(RMB). Firing through this simulacrum supercharges your projectiles,
-    while the nodes absorb enemy projectiles and turn them into health!
+  - I've increased how fast your mana recharges during this lesson, but I can't do
+    that in Pylon's domain. Use your Burst Spell (Q) to form the Split Simulacrum
+    by combining Magic Missile(LMB) and Reflect(RMB). Firing through this simulacrum
+    supercharges your projectiles, while the nodes absorb enemy projectiles and turn
+    them into health!
   - The Split Simulacrum can be used both offensively and defensively. Your ability
     to combine spells into stronger Bursts is why Pylon fears you and seeks to destroy
     you. We must show Pylon no mercy.
@@ -67335,7 +67338,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1426407902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1572.6, y: -766, z: 0}
+  m_LocalPosition: {x: -1572.6, y: -703, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1132020518}
