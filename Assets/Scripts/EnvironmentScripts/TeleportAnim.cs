@@ -6,6 +6,7 @@ public class TeleportAnim : MonoBehaviour
 {
     private GameObject parentTeleport;
     private TeleporterScript teleScript;
+
     // Use this for initialization
     void Start()
     {
@@ -28,11 +29,13 @@ public class TeleportAnim : MonoBehaviour
     public void TeleportPlayer()
     {
         teleScript.TeleportPlayer();
+
     }
 
     public void UnteleportPlayer()
     {
         teleScript.UnteleportPlayer();
+
     }
 
     public void DestroySelf()

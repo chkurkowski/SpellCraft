@@ -7,6 +7,7 @@ public class DeathAnimScript : MonoBehaviour
     private RespawnManager respawnManagerInfo;
     private GameObject playerObject;
 
+
 	// Use this for initialization
 	void Start ()
     {
@@ -21,10 +22,13 @@ public class DeathAnimScript : MonoBehaviour
         playerObject.GetComponent<SpriteRenderer>().enabled = true;
         playerObject.GetComponent<PlayerMovement>().canMove = true;
         playerObject.GetComponent<Collider2D>().enabled = true;
+
+
     }
 
     public void KillPlayer()
     {
+
         playerObject.GetComponent<SpriteRenderer>().enabled = false;
         playerObject.GetComponent<PlayerMovement>().canMove = false;
         playerObject.GetComponent<Collider2D>().enabled = false;

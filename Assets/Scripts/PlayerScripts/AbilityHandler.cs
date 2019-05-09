@@ -30,7 +30,7 @@ public class AbilityHandler : MonoBehaviour {
     public AudioSource attackSimSound;
     public AudioSource absorbBuildSound;
     public AudioSource absorbExplodeSound;
-
+    public AudioSource speedFieldSfx;
 
     [Space(10)]
 
@@ -241,6 +241,7 @@ public class AbilityHandler : MonoBehaviour {
     		Instantiate(projectileSpeed, PlacementCheck(), rotator.transform.rotation);
 	        abilities.AttackArrayHandler("ProjectileSpeed", abilities.lastAttacks);
 	        projectileSpeedTimer = 0;
+            speedFieldSfx.Play();
     	}
     }
 

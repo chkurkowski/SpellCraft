@@ -31,6 +31,8 @@ public class PlayerHealth : MonoBehaviour
     public AudioSource playerHealthSource;
     public AudioClip healPlayerSound;
     public AudioClip damagePlayerSound;
+ //   public AudioSource teleportSound;
+ //   public AudioClip teleportClip;
 
 
 	// Use this for initialization
@@ -51,9 +53,9 @@ public class PlayerHealth : MonoBehaviour
     {
         if(playerHealth <= 0)
         {
-           
             Instantiate(deathTeleportAnim, transform.position, transform.rotation);
-        }
+            isAlive = false;
+         }
         else if(playerHealth > maxPlayerHealth)
         {
             playerHealth = maxPlayerHealth;
@@ -68,7 +70,8 @@ public class PlayerHealth : MonoBehaviour
     public void SpawnReviveAnim()
     {
         Instantiate(spawnTeleportAnim, transform.position, transform.rotation);
-    }
+        isAlive = true;
+     }
 
     public void DamagePlayer(float dmg)
     {
@@ -151,6 +154,6 @@ public class PlayerHealth : MonoBehaviour
     {
         playerHealth = maxPlayerHealth;
         playerHealthBar.fillAmount = playerHealth / 100;
+        isAlive = true;
     }
-   
 }
