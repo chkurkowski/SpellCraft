@@ -35,6 +35,7 @@ public class PlayerAbilities : MonoBehaviour {
     public Image resourceBar;
 
     private bool wallHit = false;
+    public bool canDash = true;
 
     [Space(10)]
 
@@ -260,7 +261,7 @@ public class PlayerAbilities : MonoBehaviour {
 
     private void DashOptionThree()
     {
-        if (dashDirection != Vector3.zero)
+        if (dashDirection != Vector3.zero && canDash)
         {
             //EvadeAnimations();
 
@@ -452,7 +453,7 @@ public class PlayerAbilities : MonoBehaviour {
     {
         if(movement.horizontalMovement != 0 || movement.verticalMovement != 0)
         {
-            float vert = Mathf.Ceil(movement.horizontalMovement);
+            float vert = Mathf.Ceil(movement.verticalMovement);
             float hori = Mathf.Ceil(movement.horizontalMovement);
 
             if(movement.horizontalMovement <= 0)
