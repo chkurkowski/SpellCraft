@@ -35770,7 +35770,7 @@ RectTransform:
   - {fileID: 970961614}
   - {fileID: 1421535858}
   m_Father: {fileID: 1194995426}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -36163,7 +36163,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243233227199866826, guid: 5d051ddcd05e24e33a0b23f036dd8a19,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: d3cef0698b923415699ca52e9ba0cb2d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
@@ -47399,7 +47399,7 @@ RectTransform:
   - {fileID: 101259805}
   - {fileID: 1058170456}
   m_Father: {fileID: 1194995426}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -49732,7 +49732,7 @@ RectTransform:
   - {fileID: 33643458}
   - {fileID: 792795487}
   m_Father: {fileID: 1194995426}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -49793,7 +49793,7 @@ RectTransform:
   - {fileID: 582103603}
   - {fileID: 911604277}
   m_Father: {fileID: 1194995426}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -50434,7 +50434,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243233227199866826, guid: 5d051ddcd05e24e33a0b23f036dd8a19,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: d3cef0698b923415699ca52e9ba0cb2d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
@@ -57057,7 +57057,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243233227199866826, guid: 5d051ddcd05e24e33a0b23f036dd8a19,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: d3cef0698b923415699ca52e9ba0cb2d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
@@ -59405,7 +59405,7 @@ RectTransform:
   - {fileID: 423021801}
   - {fileID: 1161509479}
   m_Father: {fileID: 1194995426}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -60342,6 +60342,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1416583397}
   - {fileID: 1814932940}
   - {fileID: 1742427007}
   - {fileID: 868032269}
@@ -60350,7 +60351,6 @@ RectTransform:
   - {fileID: 1607873616}
   - {fileID: 818696358}
   - {fileID: 1162555632}
-  - {fileID: 1416583397}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62878,7 +62878,7 @@ Prefab:
     - target: {fileID: 224546130355599982, guid: a8f5d597b73344a7d927f8efc8c1b52b,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224546130355599982, guid: a8f5d597b73344a7d927f8efc8c1b52b,
         type: 2}
@@ -72338,7 +72338,7 @@ RectTransform:
   - {fileID: 1228255348}
   - {fileID: 839547609}
   m_Father: {fileID: 1194995426}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -72390,7 +72390,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243233227199866826, guid: 5d051ddcd05e24e33a0b23f036dd8a19,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: d3cef0698b923415699ca52e9ba0cb2d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
@@ -75030,7 +75030,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243233227199866826, guid: 5d051ddcd05e24e33a0b23f036dd8a19,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: d3cef0698b923415699ca52e9ba0cb2d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
@@ -76594,7 +76594,7 @@ RectTransform:
   - {fileID: 1892400407}
   - {fileID: 257520657}
   m_Father: {fileID: 1194995426}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -79242,7 +79242,7 @@ RectTransform:
   - {fileID: 1673603012}
   - {fileID: 1707997582}
   m_Father: {fileID: 1194995426}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
