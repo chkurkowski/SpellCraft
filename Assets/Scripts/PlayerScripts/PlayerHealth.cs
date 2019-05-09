@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     public float playerHealth = 100f;
     private RespawnManager respawnManagerInfo;
     private PlayerMovement movement;
+    private PlayerAbilities abilities;
     private Animator playerAnimator;
 
     public GameObject deathTeleportAnim;
@@ -41,6 +42,7 @@ public class PlayerHealth : MonoBehaviour
         respawnManagerInfo = GameObject.Find("RespawnManager").GetComponent<RespawnManager>();
         movement = GetComponent<PlayerMovement>();
         playerAnimator = GetComponent<Animator>();
+        abilities = GetComponent<PlayerAbilities>();
 	}
 
     private void Awake()
@@ -75,6 +77,7 @@ public class PlayerHealth : MonoBehaviour
     {
         Instantiate(spawnTeleportAnim, transform.position, transform.rotation);
         isAlive = true;
+        abilities.state = PlayerAbilities.State.IDLE;
         if (!teleportSound.isPlaying)
         {
             teleportSound.Play();
