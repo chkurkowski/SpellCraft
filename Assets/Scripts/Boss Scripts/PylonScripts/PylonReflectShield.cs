@@ -43,7 +43,8 @@ public class PylonReflectShield : MonoBehaviour {
         {
             // Debug.Log("laserTriggerDetected");
             // isLasered = true;
-            Instantiate(bomb, gameObject.transform.position, gameObject.transform.rotation);
+            GameObject bombBomb = Instantiate(bomb, gameObject.transform.position, gameObject.transform.rotation);
+            bombBomb.transform.Rotate(0, 0, 180);
         }
     }
 
