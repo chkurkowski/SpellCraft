@@ -267,11 +267,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This is the End of game text Blah Blah Blah Blah Blah Blah Blah Blah Blah
-    Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah
-    Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah
-    Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah
-    Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah
+  m_Text: '"So, you''re the Lich''s new vessel. You''re stronger than the last one,
+    I''ll grant you that...but in the end, you''re just another puppet. Oh, you didn''t
+    know? That''s right Proto, the Lich plans on perfecting your body in order to
+    possess it. Once the Lich completes your training, the Lich WILL turn on you.
+    When they do, you''ll wish I was there to help."'
 --- !u!222 &634223064
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -311,7 +311,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.024963379}
+  m_AnchoredPosition: {x: 0, y: 0.025024414}
   m_SizeDelta: {x: 0, y: 0.050079}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1050905761
