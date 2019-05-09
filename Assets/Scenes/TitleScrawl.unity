@@ -241,7 +241,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.764
+  m_FillAmount: 0.75
   m_FillClockwise: 1
   m_FillOrigin: 1
 --- !u!222 &682435847
@@ -284,7 +284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 5.4000244, y: -359.7}
+  m_AnchoredPosition: {x: 5.4000244, y: -350}
   m_SizeDelta: {x: -139.4, y: 343.9}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &928459093
@@ -345,10 +345,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyScrawl: {fileID: 0}
   pressAnyButton: {fileID: 942209770}
-  scrawlSpeed: 20
+  scrawlSpeed: 18
   circle: {fileID: 1964527676}
   skipText: {fileID: 1847699589}
-  SCRAWLTIME: 26.5
+  SCRAWLTIME: 26
 --- !u!1 &942209770
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,7 +396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

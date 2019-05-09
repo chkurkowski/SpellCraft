@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     public float playerHealth = 100f;
     private RespawnManager respawnManagerInfo;
     private PlayerMovement movement;
+    private PlayerAbilities abilities;
     private Animator playerAnimator;
 
     public GameObject deathTeleportAnim;
@@ -31,6 +32,8 @@ public class PlayerHealth : MonoBehaviour
     public AudioSource playerHealthSource;
     public AudioClip healPlayerSound;
     public AudioClip damagePlayerSound;
+    public AudioSource teleportSound;
+    public AudioClip teleportClip;
 
 
 	// Use this for initialization
@@ -39,6 +42,7 @@ public class PlayerHealth : MonoBehaviour
         respawnManagerInfo = GameObject.Find("RespawnManager").GetComponent<RespawnManager>();
         movement = GetComponent<PlayerMovement>();
         playerAnimator = GetComponent<Animator>();
+        abilities = GetComponent<PlayerAbilities>();
 	}
 
     private void Awake()
@@ -51,23 +55,36 @@ public class PlayerHealth : MonoBehaviour
     {
         if(playerHealth <= 0)
         {
-           
             Instantiate(deathTeleportAnim, transform.position, transform.rotation);
-        }
+           isAlive = false;
+            if(!teleportSound.isPlaying)
+            {
+                teleportSound.Play();
+            }
+         }
         else if(playerHealth > maxPlayerHealth)
         {
             playerHealth = maxPlayerHealth;
+          
         }
 
         if(!absorbDamage && damageAbsorbed > 0)
         {
             damageAbsorbed = 0;
         }
+        Debug.Log("isAlive: " + isAlive);
     }
 
     public void SpawnReviveAnim()
     {
         Instantiate(spawnTeleportAnim, transform.position, transform.rotation);
+       isAlive = true;
+        abilities.RestartFSM();
+        // abilities.state = PlayerAbilities.State.IDLE;
+        if (!teleportSound.isPlaying)
+        {
+            teleportSound.Play();
+        }
     }
 
     public void DamagePlayer(float dmg)
@@ -151,6 +168,7 @@ public class PlayerHealth : MonoBehaviour
     {
         playerHealth = maxPlayerHealth;
         playerHealthBar.fillAmount = playerHealth / 100;
+        isAlive = true;
     }
-   
+
 }

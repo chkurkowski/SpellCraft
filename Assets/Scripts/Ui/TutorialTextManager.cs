@@ -4,14 +4,14 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class TutorialTextManager : MonoBehaviour {
-
-	public string[] textMessages;
+    [Multiline]
+    public string[] textMessages;
 
 	public GameObject textBox;
 
 	public Text text;
 
-	private int messageNum = 0;
+	private int messageNum = 1;
 
 	// Use this for initialization
 	void Start () 

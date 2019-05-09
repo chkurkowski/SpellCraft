@@ -44,6 +44,9 @@ public class PlayerAbilities : MonoBehaviour {
 	public float dashSpeed;
 	public float dashDistance;
 
+
+    private bool fsmRunning = false;
+
     //States
     public enum State
     {
@@ -125,9 +128,20 @@ public class PlayerAbilities : MonoBehaviour {
 
         state = State.IDLE;
 
-        StartCoroutine(FSM());
+        RestartFSM();
+
 	}
 
+
+    public void RestartFSM()
+    {
+        if(!fsmRunning)
+        {
+            fsmRunning = true;
+            StartCoroutine(FSM());
+        }
+      
+    }
 	#region FiniteStateMachine
 
 	private IEnumerator FSM()
@@ -160,6 +174,7 @@ public class PlayerAbilities : MonoBehaviour {
 			}
 			yield return null;
 		}
+        fsmRunning = false;
 	}
 
 	#endregion
@@ -391,7 +406,7 @@ public class PlayerAbilities : MonoBehaviour {
     {
         if(lastAttacks.Count == 1)
             return new string[] {lastAttacks[0]};
-        if(lastAttacks.Count == 2)
+        else if(lastAttacks.Count == 2)
             return new string[] {lastAttacks[0], lastAttacks[1], NextBurst()};
         return new string[] {""};
     }
