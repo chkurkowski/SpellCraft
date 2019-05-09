@@ -38015,11 +38015,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4132043940919516, guid: 2ecbd041470d4684e9fe2fbcdc36990d, type: 2}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4132043940919516, guid: 2ecbd041470d4684e9fe2fbcdc36990d, type: 2}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 1582193888876312, guid: 2ecbd041470d4684e9fe2fbcdc36990d, type: 2}
       propertyPath: m_Name
