@@ -77,7 +77,7 @@ public class PlayerHealth : MonoBehaviour
     {
         Instantiate(spawnTeleportAnim, transform.position, transform.rotation);
         isAlive = true;
-        abilities.state = PlayerAbilities.State.IDLE;
+        // abilities.state = PlayerAbilities.State.IDLE;
         if (!teleportSound.isPlaying)
         {
             teleportSound.Play();
