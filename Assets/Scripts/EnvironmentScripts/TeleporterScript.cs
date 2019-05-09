@@ -21,6 +21,7 @@ public class TeleporterScript : MonoBehaviour
             GameObject.Find("Player").GetComponent<PlayerMovement>().canMove = false;
             GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = new Vector3(0,0,0);
             GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.Find("Player").GetComponent<PlayerAbilities>().canDash = false;
             GameObject spawnedAnim = Instantiate(teleAnim, GameObject.Find("Player").transform.position, transform.rotation);
             spawnedAnim.GetComponent<TeleportAnim>().SetTeleReference(gameObject);
         }
@@ -50,6 +51,7 @@ public class TeleporterScript : MonoBehaviour
         tpSound.Play();
         GameObject.Find("Player").GetComponent<PlayerMovement>().canMove = true;
         GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = true;
+        GameObject.Find("Player").GetComponent<PlayerAbilities>().canDash = true;
     }
 
     public void CanTeleport()
