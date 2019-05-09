@@ -38757,6 +38757,17 @@ Prefab:
       propertyPath: teleportClip
       value: 
       objectReference: {fileID: 8300000, guid: d3cef0698b923415699ca52e9ba0cb2d, type: 3}
+    - target: {fileID: 212477990389165660, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ae40e83f2815154aa2c909ad0b48553,
+        type: 3}
+    - target: {fileID: 95920738266203174, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfa0ad1711bc4d57b08ce6ad6b2bcc5, type: 2}
   m_IsPrefabAsset: 0

@@ -406,7 +406,7 @@ public class PlayerAbilities : MonoBehaviour {
     {
         if(lastAttacks.Count == 1)
             return new string[] {lastAttacks[0]};
-        if(lastAttacks.Count == 2)
+        else if(lastAttacks.Count == 2)
             return new string[] {lastAttacks[0], lastAttacks[1], NextBurst()};
         return new string[] {""};
     }
