@@ -23,6 +23,9 @@ public class TutorialManager : MonoBehaviour
     public GameObject rearGroundLaser;
     public GameObject rearGroundLaser2;
 
+    public GameObject yellowWall;
+    public GameObject blueWall;
+
    // public GameObject tutorialRing;
    // public GameObject tutorialRingExit;
    // public GameObject tutorialDoor;
@@ -123,6 +126,7 @@ public class TutorialManager : MonoBehaviour
             
                 Quartermaster.UpdateText(tutorialStage);
                 Quartermaster.UpdatePosition(tutorialStage);
+                yellowWall.SetActive(false);
                 break;
 
             case 14:
@@ -140,6 +144,8 @@ public class TutorialManager : MonoBehaviour
          
                 Quartermaster.UpdateText(tutorialStage);
                 Quartermaster.UpdatePosition(tutorialStage);
+
+                blueWall.SetActive(false);
                 break;
             case 17:
                 splitDummyTwo.SetActive(true);

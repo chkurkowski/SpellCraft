@@ -33097,6 +33097,8 @@ MonoBehaviour:
   rearWallClose: {fileID: 0}
   rearGroundLaser: {fileID: 0}
   rearGroundLaser2: {fileID: 0}
+  yellowWall: {fileID: 0}
+  blueWall: {fileID: 0}
 --- !u!1 &338935903
 GameObject:
   m_ObjectHideFlags: 0
@@ -45326,7 +45328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &786962647
 Transform:
   m_ObjectHideFlags: 0
@@ -62504,22 +62506,22 @@ Prefab:
     - target: {fileID: 224420203877472320, guid: a8f5d597b73344a7d927f8efc8c1b52b,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -228.27
+      value: -287.41
       objectReference: {fileID: 0}
     - target: {fileID: 224420203877472320, guid: a8f5d597b73344a7d927f8efc8c1b52b,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 343.47
+      value: 225.19
       objectReference: {fileID: 0}
     - target: {fileID: 224420203877472320, guid: a8f5d597b73344a7d927f8efc8c1b52b,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 123.41
+      value: 163.63
       objectReference: {fileID: 0}
     - target: {fileID: 224420203877472320, guid: a8f5d597b73344a7d927f8efc8c1b52b,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 203.22
+      value: 122.79
       objectReference: {fileID: 0}
     - target: {fileID: 114269998155134086, guid: a8f5d597b73344a7d927f8efc8c1b52b,
         type: 2}
@@ -62529,27 +62531,47 @@ Prefab:
     - target: {fileID: 224936552096894872, guid: a8f5d597b73344a7d927f8efc8c1b52b,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 1
+      value: 0.9700012
       objectReference: {fileID: 0}
     - target: {fileID: 224936552096894872, guid: a8f5d597b73344a7d927f8efc8c1b52b,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: -4.79
+      value: 2.1299992
       objectReference: {fileID: 0}
     - target: {fileID: 224936552096894872, guid: a8f5d597b73344a7d927f8efc8c1b52b,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -2.6
+      value: 3.4
       objectReference: {fileID: 0}
     - target: {fileID: 224936552096894872, guid: a8f5d597b73344a7d927f8efc8c1b52b,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.887
+      value: 0.82500005
       objectReference: {fileID: 0}
     - target: {fileID: 114381328509998170, guid: a8f5d597b73344a7d927f8efc8c1b52b,
         type: 2}
       propertyPath: m_FontData.m_MaxSize
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 224936552096894872, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.16332209
+      objectReference: {fileID: 0}
+    - target: {fileID: 224936552096894872, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.8237121
+      objectReference: {fileID: 0}
+    - target: {fileID: 224936552096894872, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.30000305
+      objectReference: {fileID: 0}
+    - target: {fileID: 224936552096894872, guid: a8f5d597b73344a7d927f8efc8c1b52b,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.22600001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8f5d597b73344a7d927f8efc8c1b52b, type: 2}
@@ -72362,7 +72384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1632507942
 Transform:
   m_ObjectHideFlags: 0
@@ -77542,6 +77564,8 @@ MonoBehaviour:
   rearWallClose: {fileID: 2015809620}
   rearGroundLaser: {fileID: 1208966054}
   rearGroundLaser2: {fileID: 320900798}
+  yellowWall: {fileID: 1632507941}
+  blueWall: {fileID: 786962646}
 --- !u!1 &1784182444
 GameObject:
   m_ObjectHideFlags: 0
@@ -79195,7 +79219,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 11.2, y: 11.2, z: 0}
+  m_ChunkCullingBounds: {x: 8.65, y: 8.65, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -79221,10 +79245,10 @@ Tilemap:
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 51b49268314ccd54590d6c45c4a15e92, type: 2}
+    m_Data: {fileID: 11400000, guid: 72509a158a246c443a4af43ce9f4a63f, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 0f7706c3cca8d8f4294aaca02cc8030d, type: 3}
+    m_Data: {fileID: 21300000, guid: 1d93af1ae96cd2540b184c25ae61b56e, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 1
     m_Data:
@@ -80758,7 +80782,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 11.2, y: 11.2, z: 0}
+  m_ChunkCullingBounds: {x: 8.65, y: 8.65, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -80784,10 +80808,10 @@ Tilemap:
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 51b49268314ccd54590d6c45c4a15e92, type: 2}
+    m_Data: {fileID: 11400000, guid: 72509a158a246c443a4af43ce9f4a63f, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 0f7706c3cca8d8f4294aaca02cc8030d, type: 3}
+    m_Data: {fileID: 21300000, guid: 1d93af1ae96cd2540b184c25ae61b56e, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 1
     m_Data:
