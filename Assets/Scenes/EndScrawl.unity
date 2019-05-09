@@ -267,11 +267,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '"So, you''re the Lich''s new vessel. You''re stronger than the last one,
-    I''ll grant you that...but in the end, you''re just another puppet. Oh, you didn''t
-    know? That''s right Proto, the Lich plans on perfecting your body in order to
-    possess it. Once the Lich completes your training, the Lich WILL turn on you.
-    When they do, you''ll wish I was there to help."'
+  m_Text: As Pylon's body starts to crumble into dust, they look at you and begin
+    to speak. "So, you're the Lich's new vessel. You're stronger than the last one,
+    I'll grant you that...but in the end, you're just another puppet." They smirk
+    at your bewildered and confused expression. "Oh, you didn't know? That's right
+    Proto, the Lich plans on perfecting your body in order to possess it. Once the
+    Lich completes your training, the Lich WILL turn on you. When they do, you'll
+    wish I was there to help."
 --- !u!222 &634223064
 CanvasRenderer:
   m_ObjectHideFlags: 0

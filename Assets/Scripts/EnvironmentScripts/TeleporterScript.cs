@@ -17,13 +17,17 @@ public class TeleporterScript : MonoBehaviour
 
         if(trig.gameObject.tag == "Player")
         {
-            tpSound.Play();
-            GameObject.Find("Player").GetComponent<PlayerMovement>().canMove = false;
-            GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = new Vector3(0,0,0);
-            GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
-            GameObject.Find("Player").GetComponent<PlayerAbilities>().canDash = false;
-            GameObject spawnedAnim = Instantiate(teleAnim, GameObject.Find("Player").transform.position, transform.rotation);
-            spawnedAnim.GetComponent<TeleportAnim>().SetTeleReference(gameObject);
+            if(canTeleport)
+            {
+                tpSound.Play();
+                GameObject.Find("Player").GetComponent<PlayerMovement>().canMove = false;
+                GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+                GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
+                GameObject.Find("Player").GetComponent<PlayerAbilities>().canDash = false;
+                GameObject spawnedAnim = Instantiate(teleAnim, GameObject.Find("Player").transform.position, transform.rotation);
+                spawnedAnim.GetComponent<TeleportAnim>().SetTeleReference(gameObject);
+            }
+        
         }
     }
 
