@@ -4,8 +4,8 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class TutorialTextManager : MonoBehaviour {
-
-	public string[] textMessages;
+    [Multiline]
+    public string[] textMessages;
 
 	public GameObject textBox;
 
