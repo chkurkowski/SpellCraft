@@ -11,7 +11,7 @@ public class TutorialTextManager : MonoBehaviour {
 
 	public Text text;
 
-	private int messageNum = 0;
+	private int messageNum = 1;
 
 	// Use this for initialization
 	void Start () 
