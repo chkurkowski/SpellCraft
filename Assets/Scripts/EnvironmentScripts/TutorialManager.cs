@@ -6,6 +6,7 @@ public class TutorialManager : MonoBehaviour
 {
     public int tutorialStage = 0;
     public QuartermasterScript Quartermaster;
+    private Animator quartermasterAnim;
     public GameObject attackDummyOne;
     public GameObject attackDummyTwo;
     public GameObject attackDummyThree;
@@ -42,6 +43,7 @@ public class TutorialManager : MonoBehaviour
         splitDummyTwo.SetActive(false);
         splitDummyThree.SetActive(false);
         rearWallClose.SetActive(false);
+        quartermasterAnim = Quartermaster.gameObject.GetComponent<Animator>();
         
 
     }
@@ -166,6 +168,8 @@ public class TutorialManager : MonoBehaviour
        // Quartermaster.UpdatePosition(tutorialStage + 1);
         tutorialStage++;
         textManager.IncrementMessageNumber();
+        quartermasterAnim.SetTrigger("isTalking");
+
     }
 
 }
