@@ -35,6 +35,8 @@ public class TeleporterScript : MonoBehaviour
             {
                 GameObject.Find("TutorialManager").GetComponent<TutorialManager>().NextTutorialStage();
                 isTutorialTeleport = false;
+                GameObject.Find("Player").GetComponent<PlayerAbilities>().inTutorial = false;
+                GameObject.Find("TutorialText").SetActive(false);
             }
             GameObject.Find("Player").GetComponent<PlayerHealth>().ResetPlayerHealth();
             GameObject.Find("Player").gameObject.transform.position = destination.gameObject.GetComponent<TeleporterScript>().teleportDestination.position;
